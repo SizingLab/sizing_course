@@ -22,9 +22,9 @@ my_list[5]
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mIndexError[0m                                Traceback (most recent call last)
-Cell [0;32mIn [69], line 1[0m
-[0;32m----> 1[0m [43mmy_list[49m[43m[[49m[38;5;241;43m5[39;49m[43m][49m
-
+[0;32m/tmp/ipykernel_1878/303719451.py[0m in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0;31m [0mmy_list[0m[0;34m[[0m[0;36m5[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0m
 [0;31mIndexError[0m: list index out of range
 IndexError: list index out of range
 
