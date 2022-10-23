@@ -3,5 +3,5 @@ Lecture 2 - Summary
 =======================
 
 ```{warning}
-This course is underconstruction
+This course is underconstruction...
 ```
