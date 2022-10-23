@@ -1,5 +1,5 @@
-(page_CM1)=
-CM1 - Summary
+(page_lecture_1)=
+Lecture 1 - Summary
 =======================
 
 This week we will be doing course introductions, I will be showing you how to navigate the course website, and how the course is set up. 
