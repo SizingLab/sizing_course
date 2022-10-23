@@ -2,19 +2,6 @@
 Lecture 1 - Summary
 =======================
 
-This week we will be doing course introductions, I will be showing you how to navigate the course website, and how the course is set up. 
-In terms of content, we will use this week to do a math diagnostic, get everyone access to the textbook and homework system, and understand the syllabus.
-
-## Course Introductions!
-
-Hello, my name is Firas Moosvi and I am your instructor for Physics 111! 
-
-## Navigating the course website
-
-Live demo...
-
-## Navigating Mastering Physics
-
-```{tip}
-I have added an assignment called "Introduction to Mastering Physics" to help familiarize you with the interface. It is due, but there are no marks associated with it.
-```
+This is the first lecture for the sizing and optimization of technological systems course. This lecture is an introduction where the objectives and ressources will be outlined.
+Then the needs for sizing and optimization will be illustrated before having a view of the general methodology.
+Finally, the lecture will end by presenting the concepts of scenarios and design drivers.
