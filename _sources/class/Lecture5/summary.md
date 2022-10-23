@@ -3,5 +3,5 @@ Lecture 5 - MDAO (Multidisciplinary Design Analysis and Optimization) and surrog
 =======================
 
 ```{warning}
-This course is underconstruction...
+This course is under construction...
 ```
