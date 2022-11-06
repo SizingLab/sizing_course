@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Estimation models with scaling laws and linear regression &#8212; Sizing and optimization of technological systems</title>
+    <title>Estimation models with scaling laws and linear regression (student version) &#8212; Sizing and optimization of technological systems</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -92,8 +92,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lab - WATT Project DC/DC converter project" href="../Lab-watt_project/summary.html" />
-    <link rel="prev" title="Estimation models with scaling laws and linear regression (student version)" href="2-estimation_models-student.html" />
+    <link rel="next" title="Estimation models with scaling laws and linear regression" href="2-estimation_models.html" />
+    <link rel="prev" title="Modeling of the mechanical load" href="1-sizing_scenarios.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -410,13 +410,13 @@ const thebe_selector_output = ".output, .cell_output"
      Modeling of the mechanical load
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-estimation_models-student.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Estimation models with scaling laws and linear regression (student version)
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-estimation_models.html">
      Estimation models with scaling laws and linear regression
     </a>
    </li>
@@ -496,7 +496,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/class/Lab-vega/2-estimation_models.ipynb"
+        <a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/class/Lab-vega/2-estimation_models-student.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -574,7 +574,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclass/Lab-vega/2-estimation_models.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclass/Lab-vega/2-estimation_models-student.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -591,7 +591,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/SizingLab/sizing_course/edit/main/class/Lab-vega/2-estimation_models.ipynb"
+        <a href="https://github.com/SizingLab/sizing_course/edit/main/class/Lab-vega/2-estimation_models-student.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -619,7 +619,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/class/Lab-vega/2-estimation_models.ipynb"
+        <a href="../../_sources/class/Lab-vega/2-estimation_models-student.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -689,8 +689,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#axial-maximal-force-estimation">
-     Axial maximal force estimation
+    <a class="reference internal nav-link" href="#exercice-axial-maximal-force-estimation">
+     Exercice: Axial maximal force estimation
     </a>
    </li>
   </ul>
@@ -709,6 +709,13 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#linear-regression">
      Linear regression
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercice">
+       Exercice
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -721,7 +728,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Estimation models with scaling laws and linear regression</h1>
+                <h1>Estimation models with scaling laws and linear regression (student version)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -742,8 +749,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#axial-maximal-force-estimation">
-     Axial maximal force estimation
+    <a class="reference internal nav-link" href="#exercice-axial-maximal-force-estimation">
+     Exercice: Axial maximal force estimation
     </a>
    </li>
   </ul>
@@ -762,6 +769,13 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#linear-regression">
      Linear regression
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercice">
+       Exercice
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -776,8 +790,8 @@ title="Print to PDF"
               <div>
                 
   <img alt="SizingLab" src="../../_images/logo.png" />
-<section class="tex2jax_ignore mathjax_ignore" id="estimation-models-with-scaling-laws-and-linear-regression">
-<h1>Estimation models with scaling laws and linear regression<a class="headerlink" href="#estimation-models-with-scaling-laws-and-linear-regression" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="estimation-models-with-scaling-laws-and-linear-regression-student-version">
+<h1>Estimation models with scaling laws and linear regression (student version)<a class="headerlink" href="#estimation-models-with-scaling-laws-and-linear-regression-student-version" title="Permalink to this headline">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse) and Scott Delbecq (ISAE-SUPAERO), Toulouse, France</em></p>
 <p>The estimation models calculate the component characteristics requested for their selection without requiring a detailed design. Scaling laws are particularly suitable for this purpose. This notebook illustrates the approach with  roller bearings used as thrust bearing in the linear Electro-mechanical Actuator.</p>
 <p><em>Roller bearing in face to face configuration (SKF) :</em></p>
@@ -799,24 +813,27 @@ title="Print to PDF"
 <p>For mechanical components, the mechanical stresses in the materials must be kept below elastic, fatigue, or contact pressure (Hertz) limits. Taking the same stress limit for a full product range yields: <span class="math notranslate nohighlight">\( F^* = d^{*2}\)</span></p>
 <p><em>Notation</em>: The x* scaling ratio of a given parameter is calculated as <span class="math notranslate nohighlight">\(x^*=\frac{x}{x_{ref}}\)</span> where <span class="math notranslate nohighlight">\(x_{ref}\)</span> is the parameter taken as the reference and <span class="math notranslate nohighlight">\(x\)</span> the parameter under study.</p>
 </section>
-<section id="axial-maximal-force-estimation">
-<h3>Axial maximal force estimation<a class="headerlink" href="#axial-maximal-force-estimation" title="Permalink to this headline">#</a></h3>
-<p>Propose a scaling law which links the Maximal axial force. Estimate the maximal force for a bearing of 90 mm external diameter knowing the following reference component:<br />
+<section id="exercice-axial-maximal-force-estimation">
+<h3>Exercice: Axial maximal force estimation<a class="headerlink" href="#exercice-axial-maximal-force-estimation" title="Permalink to this headline">#</a></h3>
+<p>Propose a scaling law which links the maximal axial force and diameter. Estimate and print the maximal force for a bearing of 90 mm external diameter knowing the following reference component:<br />
 <span class="math notranslate nohighlight">\(D_{ref} = 140 mm\)</span><br />
 <span class="math notranslate nohighlight">\(F_{axial,ref} = 475 kN\)</span></p>
+<p>Example of <code class="docutils literal notranslate"><span class="pre">print()</span></code> function use: <code class="docutils literal notranslate"><span class="pre">print(&quot;%s=%.2f&quot;</span> <span class="pre">%</span> <span class="pre">(&quot;pi&quot;,</span> <span class="pre">3.14159))</span></code> gives <code class="docutils literal notranslate"><span class="pre">pi=3.14</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D_ref</span> <span class="o">=</span> <span class="mi">140</span>  <span class="c1"># [mm] Reference diameter</span>
 <span class="n">F_axial_ref</span> <span class="o">=</span> <span class="mi">475</span>  <span class="c1"># [kN] Reference max axial force</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The estimated axial force is: </span><span class="si">%.2f</span><span class="s2"> kN&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">F_axial_ref</span> <span class="o">*</span> <span class="p">(</span><span class="mi">90</span> <span class="o">/</span> <span class="n">D_ref</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The estimation model is: F_axial_max = </span><span class="si">%.2e</span><span class="s2">.D^2&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">F_axial_ref</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">D_ref</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The estimated axial force is: </span><span class="si">%.2f</span><span class="s2"> kN&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">F_axial_ref</span> <span class="o">*</span> <span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The estimation model is: F_axial_max = </span><span class="si">%.2e</span><span class="s2">.D^2&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">F_axial_ref</span> <span class="o">*</span> <span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The estimated axial force is: 196.30 kN
-The estimation model is: F_axial_max = 2.42e-02.D^2
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_1812/2696004912.py&quot;</span><span class="gt">, line </span><span class="mi">4</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The estimated axial force is: </span><span class="si">%.2f</span><span class="s2"> kN&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">F_axial_ref</span> <span class="o">*</span> <span class="p">))</span>
+                                                                   <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
@@ -845,112 +862,6 @@ The estimation model is: F_axial_max = 2.42e-02.D^2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>d_</th>
-      <th>D</th>
-      <th>T</th>
-      <th>C</th>
-      <th>Co</th>
-      <th>Y0</th>
-      <th>Fa axial static</th>
-      <th>Pu</th>
-      <th>Wnom</th>
-      <th>Wmax</th>
-      <th>Mass</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>25</td>
-      <td>62</td>
-      <td>36.5</td>
-      <td>64.4</td>
-      <td>80</td>
-      <td>0.8</td>
-      <td>100</td>
-      <td>8.65</td>
-      <td>6000</td>
-      <td>11000</td>
-      <td>0.55</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>30</td>
-      <td>72</td>
-      <td>41.5</td>
-      <td>80.9</td>
-      <td>100</td>
-      <td>0.8</td>
-      <td>125</td>
-      <td>11.40</td>
-      <td>5300</td>
-      <td>9500</td>
-      <td>0.85</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>35</td>
-      <td>80</td>
-      <td>45.5</td>
-      <td>105.0</td>
-      <td>134</td>
-      <td>0.8</td>
-      <td>168</td>
-      <td>15.60</td>
-      <td>4500</td>
-      <td>8500</td>
-      <td>1.10</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>40</td>
-      <td>90</td>
-      <td>50.5</td>
-      <td>146.0</td>
-      <td>163</td>
-      <td>0.8</td>
-      <td>204</td>
-      <td>19.00</td>
-      <td>4500</td>
-      <td>7500</td>
-      <td>1.50</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>45</td>
-      <td>100</td>
-      <td>54.5</td>
-      <td>180.0</td>
-      <td>204</td>
-      <td>0.8</td>
-      <td>255</td>
-      <td>24.50</td>
-      <td>4000</td>
-      <td>6700</td>
-      <td>2.00</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>If we display these data in a scatter plot, we see that some components are not optimized in terms of axial effort.</p>
 <div class="cell docutils container">
@@ -966,9 +877,6 @@ The estimation model is: F_axial_max = 2.42e-02.D^2
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/2-estimation_models_8_0.png" src="../../_images/2-estimation_models_8_0.png" />
 </div>
 </div>
 <p>It is interesting to clean this data in order to keep only the components representative of the problem considered. For this purpose, Pareto filtering is used where only dominant components are kept. A componant dominate another if the first is not inferior to the second in all selected objectives. Here the objective is small diameter and high maximum static force.</p>
@@ -1006,418 +914,6 @@ The estimation model is: F_axial_max = 2.42e-02.D^2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>d_</th>
-      <th>D</th>
-      <th>T</th>
-      <th>C</th>
-      <th>Co</th>
-      <th>Y0</th>
-      <th>Fa axial static</th>
-      <th>Pu</th>
-      <th>Wnom</th>
-      <th>Wmax</th>
-      <th>Mass</th>
-      <th>Dominated</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>25</td>
-      <td>62</td>
-      <td>36.5</td>
-      <td>64.4</td>
-      <td>80</td>
-      <td>0.8</td>
-      <td>100</td>
-      <td>8.65</td>
-      <td>6000</td>
-      <td>11000</td>
-      <td>0.55</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>30</td>
-      <td>72</td>
-      <td>41.5</td>
-      <td>80.9</td>
-      <td>100</td>
-      <td>0.8</td>
-      <td>125</td>
-      <td>11.40</td>
-      <td>5300</td>
-      <td>9500</td>
-      <td>0.85</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>35</td>
-      <td>80</td>
-      <td>45.5</td>
-      <td>105.0</td>
-      <td>134</td>
-      <td>0.8</td>
-      <td>168</td>
-      <td>15.60</td>
-      <td>4500</td>
-      <td>8500</td>
-      <td>1.10</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>40</td>
-      <td>90</td>
-      <td>50.5</td>
-      <td>146.0</td>
-      <td>163</td>
-      <td>0.8</td>
-      <td>204</td>
-      <td>19.00</td>
-      <td>4500</td>
-      <td>7500</td>
-      <td>1.50</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>45</td>
-      <td>100</td>
-      <td>54.5</td>
-      <td>180.0</td>
-      <td>204</td>
-      <td>0.8</td>
-      <td>255</td>
-      <td>24.50</td>
-      <td>4000</td>
-      <td>6700</td>
-      <td>2.00</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>50</td>
-      <td>90</td>
-      <td>43.5</td>
-      <td>130.0</td>
-      <td>183</td>
-      <td>1.6</td>
-      <td>114</td>
-      <td>20.80</td>
-      <td>4500</td>
-      <td>7500</td>
-      <td>1.10</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>50</td>
-      <td>110</td>
-      <td>58.5</td>
-      <td>208.0</td>
-      <td>240</td>
-      <td>0.8</td>
-      <td>300</td>
-      <td>28.50</td>
-      <td>3600</td>
-      <td>6000</td>
-      <td>2.60</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>55</td>
-      <td>90</td>
-      <td>54.0</td>
-      <td>180.0</td>
-      <td>270</td>
-      <td>2.2</td>
-      <td>123</td>
-      <td>30.50</td>
-      <td>4500</td>
-      <td>7000</td>
-      <td>1.35</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>55</td>
-      <td>120</td>
-      <td>63.0</td>
-      <td>209.0</td>
-      <td>275</td>
-      <td>0.8</td>
-      <td>344</td>
-      <td>33.50</td>
-      <td>3000</td>
-      <td>5600</td>
-      <td>3.30</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>60</td>
-      <td>95</td>
-      <td>46.0</td>
-      <td>163.0</td>
-      <td>245</td>
-      <td>1.6</td>
-      <td>153</td>
-      <td>27.00</td>
-      <td>4300</td>
-      <td>6700</td>
-      <td>1.90</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>60</td>
-      <td>130</td>
-      <td>67.0</td>
-      <td>246.0</td>
-      <td>335</td>
-      <td>0.8</td>
-      <td>419</td>
-      <td>40.50</td>
-      <td>2800</td>
-      <td>5300</td>
-      <td>4.10</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>65</td>
-      <td>120</td>
-      <td>49.5</td>
-      <td>228.0</td>
-      <td>270</td>
-      <td>1.6</td>
-      <td>169</td>
-      <td>32.50</td>
-      <td>3600</td>
-      <td>5600</td>
-      <td>1.20</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>65</td>
-      <td>140</td>
-      <td>72.0</td>
-      <td>281.0</td>
-      <td>380</td>
-      <td>0.8</td>
-      <td>475</td>
-      <td>47.50</td>
-      <td>2600</td>
-      <td>4800</td>
-      <td>5.05</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>70</td>
-      <td>110</td>
-      <td>50.0</td>
-      <td>172.0</td>
-      <td>305</td>
-      <td>1.6</td>
-      <td>191</td>
-      <td>34.50</td>
-      <td>3400</td>
-      <td>5600</td>
-      <td>1.80</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>70</td>
-      <td>110</td>
-      <td>62.0</td>
-      <td>220.0</td>
-      <td>400</td>
-      <td>2.5</td>
-      <td>160</td>
-      <td>45.50</td>
-      <td>3400</td>
-      <td>5600</td>
-      <td>2.40</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>70</td>
-      <td>150</td>
-      <td>76.0</td>
-      <td>319.0</td>
-      <td>440</td>
-      <td>0.8</td>
-      <td>550</td>
-      <td>54.00</td>
-      <td>2400</td>
-      <td>4500</td>
-      <td>6.15</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>75</td>
-      <td>115</td>
-      <td>62.0</td>
-      <td>233.0</td>
-      <td>455</td>
-      <td>2.2</td>
-      <td>207</td>
-      <td>52.00</td>
-      <td>3200</td>
-      <td>5300</td>
-      <td>2.40</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>75</td>
-      <td>125</td>
-      <td>74.0</td>
-      <td>303.0</td>
-      <td>530</td>
-      <td>1.6</td>
-      <td>331</td>
-      <td>63.00</td>
-      <td>3000</td>
-      <td>5000</td>
-      <td>3.80</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>75</td>
-      <td>130</td>
-      <td>54.5</td>
-      <td>238.0</td>
-      <td>355</td>
-      <td>1.6</td>
-      <td>222</td>
-      <td>41.50</td>
-      <td>3000</td>
-      <td>5000</td>
-      <td>2.85</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>75</td>
-      <td>130</td>
-      <td>66.5</td>
-      <td>275.0</td>
-      <td>425</td>
-      <td>1.6</td>
-      <td>266</td>
-      <td>49.00</td>
-      <td>3000</td>
-      <td>5000</td>
-      <td>3.40</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>80</td>
-      <td>125</td>
-      <td>58.0</td>
-      <td>233.0</td>
-      <td>430</td>
-      <td>1.6</td>
-      <td>269</td>
-      <td>49.00</td>
-      <td>3000</td>
-      <td>5000</td>
-      <td>2.65</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>80</td>
-      <td>140</td>
-      <td>70.5</td>
-      <td>319.0</td>
-      <td>490</td>
-      <td>1.6</td>
-      <td>306</td>
-      <td>57.00</td>
-      <td>2800</td>
-      <td>4500</td>
-      <td>4.25</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>80</td>
-      <td>170</td>
-      <td>85.0</td>
-      <td>380.0</td>
-      <td>530</td>
-      <td>0.8</td>
-      <td>663</td>
-      <td>64.00</td>
-      <td>2200</td>
-      <td>4000</td>
-      <td>8.75</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>85</td>
-      <td>130</td>
-      <td>58.0</td>
-      <td>238.0</td>
-      <td>450</td>
-      <td>1.6</td>
-      <td>281</td>
-      <td>51.00</td>
-      <td>2800</td>
-      <td>4800</td>
-      <td>2.80</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>85</td>
-      <td>130</td>
-      <td>72.0</td>
-      <td>308.0</td>
-      <td>620</td>
-      <td>2.2</td>
-      <td>282</td>
-      <td>69.50</td>
-      <td>2800</td>
-      <td>4800</td>
-      <td>3.55</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>The Pareto front component are now ploted in red.</p>
 <div class="cell docutils container">
@@ -1433,9 +929,6 @@ The estimation model is: F_axial_max = 2.42e-02.D^2
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/2-estimation_models_12_0.png" src="../../_images/2-estimation_models_12_0.png" />
 </div>
 </div>
 </section>
@@ -1479,25 +972,17 @@ The estimation model is: F_axial_max = 2.42e-02.D^2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearRegression()
-</pre></div>
-</div>
-</div>
 </div>
 <p>We can now compare the coefficients of linear regression with scaling laws:</p>
+<section id="exercice">
+<h4>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">#</a></h4>
+<p>Print the expression of <span class="math notranslate nohighlight">\(F_{axial}\)</span> get with the regression.</p>
+<p>Example of <code class="docutils literal notranslate"><span class="pre">print()</span></code> function use: <code class="docutils literal notranslate"><span class="pre">print(&quot;%s=%.2f&quot;</span> <span class="pre">%</span> <span class="pre">(&quot;pi&quot;,</span> <span class="pre">3.14159))</span></code> gives <code class="docutils literal notranslate"><span class="pre">pi=3.14</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The coefficient are:&quot;</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The intercept is:&quot;</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The estimation model is: F_axial_max = </span><span class="si">%.2e</span><span class="s2">.D^</span><span class="si">%.1f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The coefficient are: [[1.91448233]]
-The intercept is: [-1.43355268]
-The estimation model is: F_axial_max = 3.69e-02.D^1.9
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The coefficient are:&quot;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The intercept is:&quot;</span><span class="p">,</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The estimation model is: F_axial_max = </span><span class="si">%.2e</span><span class="s2">.D^</span><span class="si">%.1f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1523,9 +1008,6 @@ The estimation model is: F_axial_max = 3.69e-02.D^1.9
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/2-estimation_models_18_0.png" src="../../_images/2-estimation_models_18_0.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1533,12 +1015,8 @@ The estimation model is: F_axial_max = 3.69e-02.D^1.9
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[203.14683888]])
-</pre></div>
 </div>
-</div>
-</div>
+</section>
 </section>
 </section>
 </section>
@@ -1570,17 +1048,17 @@ The estimation model is: F_axial_max = 3.69e-02.D^1.9
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="2-estimation_models-student.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="1-sizing_scenarios.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Estimation models with scaling laws and linear regression (student version)</p>
+            <p class="prev-next-title">Modeling of the mechanical load</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../Lab-watt_project/summary.html" title="next page">
+    <a class='right-next' id="next-link" href="2-estimation_models.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lab - WATT Project DC/DC converter project</p>
+        <p class="prev-next-title">Estimation models with scaling laws and linear regression</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
