@@ -848,7 +848,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_1767/2696004912.py&quot;</span><span class="gt">, line </span><span class="mi">4</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_1755/2696004912.py&quot;</span><span class="gt">, line </span><span class="mi">4</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The estimated axial force is: </span><span class="si">%.2f</span><span class="s2"> kN&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">F_axial_ref</span> <span class="o">*</span> <span class="p">))</span>
                                                                    <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -937,11 +937,15 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We keep only the non dominated component (Pareto front)</span>
-<span class="n">df_filter</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Dominated&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span>
+<span class="n">df_filter</span> <span class="o">=</span>
+<span class="c1"># Diameter of filtered bearings</span>
+<span class="n">df_filter_D</span> <span class="o">=</span>
+<span class="c1"># Axial force of filtered bearings</span>
+<span class="n">df_filter_F</span> <span class="o">=</span>
 
 <span class="c1"># plot of the data set with the Pareto front</span>
 <span class="n">g</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;D&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Fa axial static&quot;</span><span class="p">],</span> <span class="s2">&quot;.b&quot;</span><span class="p">,</span> <span class="n">df_filter</span><span class="p">[</span><span class="s2">&quot;D&quot;</span><span class="p">],</span> <span class="n">df_filter</span><span class="p">[</span><span class="s2">&quot;Fa axial static&quot;</span><span class="p">],</span> <span class="s2">&quot;.r&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;D&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Fa axial static&quot;</span><span class="p">],</span> <span class="s2">&quot;.b&quot;</span><span class="p">,</span> <span class="n">df_filter_D</span><span class="p">,</span> <span class="n">df_filter_F</span><span class="p">,</span> <span class="s2">&quot;.r&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Axial maximal static force (kN)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;External diameter (mm)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
@@ -1015,7 +1019,7 @@ title="Print to PDF"
 <span class="n">Yest</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xa</span><span class="p">)</span>
 
 <span class="c1"># Scaling law</span>
-<span class="n">Yscal</span> <span class="o">=</span> <span class="n">F_axial_ref</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">Xa</span> <span class="o">/</span> <span class="n">D_ref</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">Yscal</span> <span class="o">=</span>
 
 <span class="c1"># plot</span>
 <span class="n">h</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
