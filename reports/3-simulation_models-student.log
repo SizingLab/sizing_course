@@ -17,32 +17,15 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# import math package whic contains usefull mathematical functions and variables
-import math
-import numpy as np
-
-# Calculate SI unit values of Knozzle and Fnozzle
-# pi value is math.pi
-
-# student part -------------
-Knozzle =
-Fnozzle =
-# --------------------------
-
-# Print the corresponding values with print("xxx %f xxx %f "%(value1,value2)
-md(
-    """
->Remark: SI unit conversion of these parameters *K<sub>nozzle</sub>* = {:.2e} Nm/rad and *F<sub>nozzle</sub>* = {:.2e} Nms/rad
-""".format(
-        Knozzle, Fnozzle
-    )
-)
+time = 
+P =
+df =
 ------------------
 
-[0;36m  File [0;32m"/tmp/ipykernel_1719/2554588583.py"[0;36m, line [0;32m9[0m
-[0;31m    Knozzle =[0m
-[0m             ^[0m
+[0;36m  File [0;32m"/tmp/ipykernel_1800/2646677333.py"[0;36m, line [0;32m1[0m
+[0;31m    time =[0m
+[0m           ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-SyntaxError: invalid syntax (2554588583.py, line 9)
+SyntaxError: invalid syntax (2646677333.py, line 1)
 
