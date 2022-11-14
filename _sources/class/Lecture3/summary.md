@@ -1,5 +1,5 @@
 (page_lecture_3)=
-Lecture 3 - Development and implementation of an optimal sizing procedure
+Lecture 3 - Simulation and evaluation models
 =======================
 
 ```{warning}
