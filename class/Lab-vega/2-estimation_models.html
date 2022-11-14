@@ -866,9 +866,7 @@ The estimation model is: F_axial_max = 2.42e-02.D^2
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Read the .csv file with bearing data</span>
-<span class="n">path</span> <span class="o">=</span> <span class="n">pth</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;assets&quot;</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">)</span>
-<span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;bearings.csv&quot;</span>
-<span class="n">file_path</span> <span class="o">=</span> <span class="n">pth</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/SizingLab/sizing_course/main/class/Lab-vega/assets/data/bearings.csv&quot;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
 <span class="c1"># Print the head (first lines of the file)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
