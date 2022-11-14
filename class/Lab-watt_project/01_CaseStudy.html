@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Lecture 5 - MDAO (Multidisciplinary Design Analysis and Optimization) and surrogate models &#8212; Sizing and optimization of technological systems</title>
+    <title>Case study presentation &#8212; Sizing and optimization of technological systems</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -90,8 +90,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="MDAO (Multidisciplinary Design Analysis and Optimization)" href="1-mdao.html" />
-    <link rel="prev" title="Quizz" href="../Lecture4/5-quizz.html" />
+    <link rel="next" title="Lab - Multirotor case study" href="../Lab-multirotor/summary.html" />
+    <link rel="prev" title="Lab - WATT Project DC/DC converter project" href="summary.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -168,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
   Lectures
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Lecture1/summary.html">
    Lecture 1 - Introduction
@@ -307,38 +307,38 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture5/summary.html">
    Lecture 5 - MDAO and surrogate models
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="1-mdao.html">
+    <a class="reference internal" href="../Lecture5/1-mdao.html">
      MDAO (Multidisciplinary Design Analysis and Optimization)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="2-mdao_examples.html">
+    <a class="reference internal" href="../Lecture5/2-mdao_examples.html">
      MDAO examples
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-surrogate_models.html">
+    <a class="reference internal" href="../Lecture5/3-surrogate_models.html">
      Surrogate models
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-surrogate_model_examples.html">
+    <a class="reference internal" href="../Lecture5/4-surrogate_model_examples.html">
      Surrogate model examples
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="5-quizz.html">
+    <a class="reference internal" href="../Lecture5/5-quizz.html">
      Quizz
     </a>
    </li>
@@ -387,7 +387,7 @@ const thebe_selector_output = ".output, .cell_output"
   Laboratories
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Lab-vega/summary.html">
    Lab - VEGA Launcher TVC EMA
@@ -420,18 +420,18 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Lab-watt_project/summary.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="summary.html">
    Lab - WATT Project DC/DC converter
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Lab-watt_project/01_CaseStudy.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Case study presentation
     </a>
    </li>
@@ -498,6 +498,71 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/class/Lab-watt_project/01_CaseStudy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/class/Lab-watt_project/01_CaseStudy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -537,7 +602,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclass/Lecture5/summary.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclass/Lab-watt_project/01_CaseStudy.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -554,7 +619,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/SizingLab/sizing_course/edit/main/class/Lecture5/summary.md"
+        <a href="https://github.com/SizingLab/sizing_course/edit/main/class/Lab-watt_project/01_CaseStudy.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -582,7 +647,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/class/Lecture5/summary.md"
+        <a href="../../_sources/class/Lab-watt_project/01_CaseStudy.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -593,7 +658,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -619,23 +684,90 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-watt-system">
+   The “Watt System”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ultracapacitors-modules">
+   Ultracapacitors modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dc-dc-converters">
+   DC/DC converters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lecture 5 - MDAO (Multidisciplinary Design Analysis and Optimization) and surrogate models</h1>
+                <h1>Case study presentation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-watt-system">
+   The “Watt System”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ultracapacitors-modules">
+   Ultracapacitors modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dc-dc-converters">
+   DC/DC converters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -643,14 +775,59 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-5-mdao-multidisciplinary-design-analysis-and-optimization-and-surrogate-models">
-<span id="page-lecture-5"></span><h1>Lecture 5 - MDAO (Multidisciplinary Design Analysis and Optimization) and surrogate models<a class="headerlink" href="#lecture-5-mdao-multidisciplinary-design-analysis-and-optimization-and-surrogate-models" title="Permalink to this headline">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This course is under construction…</p>
-</div>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="case-study-presentation">
+<h1>Case study presentation<a class="headerlink" href="#case-study-presentation" title="Permalink to this headline">#</a></h1>
+<p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
+<p>Before sizing a system, it is important to define all the constraints that could have an influence on the design. It is therefore advisable to list meticulously:</p>
+<ul class="simple">
+<li><p>the power components to size in the architecture</p></li>
+<li><p>criteria and parameters useful for the selection of components</p></li>
+<li><p>system usage scenarios that can a effect the selection of components
+This is the target of this notebook.</p></li>
+</ul>
+<section id="the-watt-system">
+<h2>The “Watt System”<a class="headerlink" href="#the-watt-system" title="Permalink to this headline">#</a></h2>
+<p>The <a class="reference external" href="http://www.pvi.fr/wattsystem-watt-system,172.html">WATT system</a> includes:</p>
+<ul class="simple">
+<li><p>In the bus : a battery pack and a ultra capcitors pack associated with an electric power train, a connection system, an automatic arm installed on the roof of the vehicle</p></li>
+<li><p>On the sidewalk: a charging station or “totem” with the connection, as well as a pack of super capacitors, all integrated in the urban landscape.</p></li>
+</ul>
+<p>Each totem (or charging station) is connected to the household electricity distribution network and allows charging between the passage of each bus. There is no need for specific equipment (substation, transformer).
+In operation the bus is powered by supercapacitors, it travels the necessary distance to the next stop, thanks to the energy stored.
+At each stop, the arm deploys and realizes in 10 seconds the transfer of energy between the super capacitors of the totem and the super capacitors onboard the bus.
+An adapted Lithium-ion battery pack is installed in the bus for cases of impossibility of connection and trips without passengers.</p>
+<p><em>System Watt</em>
+<img alt="WattSystem" src="../../_images/SystemWatt.png" /></p>
+</section>
+<section id="ultracapacitors-modules">
+<h2>Ultracapacitors modules<a class="headerlink" href="#ultracapacitors-modules" title="Permalink to this headline">#</a></h2>
+<p>The major innovation of WATT System is the boost charge of the vehicle which consists in carrying out a transfer of energy from the stopping post (Totem) to the vehicle during the time of exchange of passengers. WATT System makes it possible to overcome the limits imposed by battery electric vehicles in terms of autonomy and passenger capacity, while minimizing urban infrastructure and energy needs.</p>
+<p><em>Boost charge with Ultra-Capacitors</em><br />
+<img alt="BoosteCharge" src="../../_images/BoostCharge.png" /></p>
+<p><em>Totem</em><br />
+<img alt="Totem" src="../../_images/Totem.png" /></p>
+</section>
+<section id="dc-dc-converters">
+<h2>DC/DC converters<a class="headerlink" href="#dc-dc-converters" title="Permalink to this headline">#</a></h2>
+<p>The following two diagrams describe an example of possible converters and control loops for the system Watt.</p>
+<p><em>Possible power converters for the Watt system</em><br />
+<img alt="ConvertersBusTotem" src="../../_images/ConvertersBusTotem.png" /></p>
+<p><em>Possible control loops for ultracapacitors</em>
+<img alt="Control" src="../../_images/ControlCurrentVoltage.png" /></p>
+</section>
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">#</a></h2>
+<p>Using the following <a class="reference external" href="http://www.maxwell.com/images/documents/2014_maxwell_faqs.pdf">FAQ about ultracapacitors</a> and your knowledge on power electronics converters, answer the following questions:</p>
+<ol class="simple">
+<li><p>What is the interest of the Watt system compared to battery energy storage ?</p></li>
+<li><p>What is the main constraint of the Watt system compared to battery storage ?</p></li>
+<li><p>What are the converters in the totem and what are their functions ?</p></li>
+<li><p>What is the nature of the converter (B) ?</p></li>
+<li><p>What is the nature of the converter (D) ?</p></li>
+<li><p>What are the inductors function used for converters (B) and © ?</p></li>
+<li><p>Explain the operation of the control loops during starting and braking of the bus.</p></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -666,7 +843,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./class/Lecture5"
+            path: "./class/Lab-watt_project"
         },
         predefinedOutput: true
     }
@@ -680,17 +857,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../Lecture4/5-quizz.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="summary.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Quizz</p>
+            <p class="prev-next-title">Lab - WATT Project DC/DC converter project</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="1-mdao.html" title="next page">
+    <a class='right-next' id="next-link" href="../Lab-multirotor/summary.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">MDAO (Multidisciplinary Design Analysis and Optimization)</p>
+        <p class="prev-next-title">Lab - Multirotor case study</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
