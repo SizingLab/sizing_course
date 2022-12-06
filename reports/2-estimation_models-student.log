@@ -24,7 +24,7 @@ print("The estimated axial force is: %.2f kN" % (F_axial_ref * ))
 print("The estimation model is: F_axial_max = %.2e.D^2" % (F_axial_ref * ))
 ------------------
 
-[0;36m  File [0;32m"/tmp/ipykernel_1744/2696004912.py"[0;36m, line [0;32m4[0m
+[0;36m  File [0;32m"/tmp/ipykernel_1863/2696004912.py"[0;36m, line [0;32m4[0m
 [0;31m    print("The estimated axial force is: %.2f kN" % (F_axial_ref * ))[0m
 [0m                                                                   ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
