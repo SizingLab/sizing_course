@@ -23,3 +23,6 @@ Open [Jupyter Hub](https://jupyter.isae-supaero.fr), open a new terminal and clo
 
 Then install the required dependencies by running:
 `pip install -r multirotor_sizing_isae_coa_2023_student_version/requirements.txt`
+
+### Binder
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/SizingLab/multirotor_sizing_isae_coa_2023_student_version/HEAD)
