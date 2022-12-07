@@ -38,6 +38,7 @@ Open a Anaconda Prompt terminal and `cd` to the recently unziped folder.
 You can then create a new conda environment by running:
 
 `conda create -n multirotor`
+
 `conda activate multirotor`
 
 Then install required dependencies:

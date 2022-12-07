@@ -942,14 +942,14 @@ Remark: ‘arange’, ‘concatenate’ and ‘array’ functions of numpy can b
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_1907/1604667484.py</span> in <span class="ni">&lt;cell line: 35&gt;</span><span class="nt">()</span>
+<span class="nn">/tmp/ipykernel_1971/1604667484.py</span> in <span class="ni">&lt;cell line: 35&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">     </span><span class="mi">33</span> 
 <span class="g g-Whitespace">     </span><span class="mi">34</span> 
 <span class="ne">---&gt; </span><span class="mi">35</span> <span class="n">df</span> <span class="o">=</span> <span class="n">test_profiles</span><span class="p">(</span><span class="n">profil</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">profil</span><span class="o">.</span><span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">36</span> 
 <span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="n">df</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/pandas/core/generic.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, name)</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/core/generic.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, name)</span>
 <span class="g g-Whitespace">   </span><span class="mi">5139</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="o">.</span><span class="n">_can_hold_identifiers_and_holds_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
 <span class="g g-Whitespace">   </span><span class="mi">5140</span>                 <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
 <span class="ne">-&gt; </span><span class="mi">5141</span>             <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
