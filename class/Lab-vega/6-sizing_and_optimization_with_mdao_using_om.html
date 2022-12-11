@@ -464,7 +464,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Lab-watt_project/summary.html">
-   Lab - WATT Project DC/DC converter
+   Lab - WATT system - DC/DC converter sizing
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -475,6 +475,31 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../Lab-watt_project/01_CaseStudy.html">
      Case study presentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/02_Architecture-Student.html">
+     Architecture of the converter and sizing scenarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/02_Architecture.html">
+     Architecture of the converter and sizing scenarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/03_SizingScenarios.html">
+     Equations of sizing scenarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/04_ScalingLaws-Student.html">
+     Estimation models with scaling laws and linear regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/04_ScalingLaws.html">
+     Estimation models with scaling laws and linear regression
     </a>
    </li>
   </ul>
@@ -1629,9 +1654,12 @@ NL: NLBGS Converged in 10 iterations
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
 cycle
 =====
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NL: NLBGS Converged in 9 iterations
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
 
 =====
 cycle
@@ -1639,12 +1667,6 @@ cycle
 NL: NLBGS Converged in 9 iterations
 
 =====
-cycle
-=====
-NL: NLBGS Converged in 9 iterations
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
 cycle
 =====
 NL: NLBGS Converged in 8 iterations
@@ -1653,7 +1675,9 @@ NL: NLBGS Converged in 8 iterations
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
 cycle
 =====
-NL: NLBGS Converged in 9 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NL: NLBGS Converged in 9 iterations
 
 =====
 cycle
@@ -1734,7 +1758,7 @@ Constraints (should be &gt;= 0):
      Speed margin: W_mot-reduction_ratio*max_speed/pitch= -0.000
      Length margin: actuator_length-stroke-L_nut-L_bearing-2*L_rod =  0.299
 Calculation time:
- 0.3309955596923828 s
+ 0.34798502922058105 s
 </pre></div>
 </div>
 </div>
@@ -1960,7 +1984,7 @@ Constraints (should be &gt;= 0):
      Torque margin: T_mot_guess-T_mot_real= 0.000 
      Length margin: actuator_length-stroke-L_nut-L_bearing-2*L_rod =  0.299
 Calculation time:
- 0.172760009765625 s
+ 0.1803269386291504 s
 </pre></div>
 </div>
 </div>
