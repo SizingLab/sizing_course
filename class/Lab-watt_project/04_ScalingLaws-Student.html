@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Estimation models with scaling laws and linear regression &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>Estimation models with scaling laws and linear regression (Student version) &#8212; Sizing and optimization of mechatronic systems</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -494,7 +494,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Estimation models with scaling laws and linear regression
+     Estimation models with scaling laws and linear regression (Student version)
     </a>
    </li>
    <li class="toctree-l2">
@@ -840,7 +840,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Estimation models with scaling laws and linear regression</h1>
+                <h1>Estimation models with scaling laws and linear regression (Student version)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -918,12 +918,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="estimation-models-with-scaling-laws-and-linear-regression">
-<h1>Estimation models with scaling laws and linear regression<a class="headerlink" href="#estimation-models-with-scaling-laws-and-linear-regression" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="estimation-models-with-scaling-laws-and-linear-regression-student-version">
+<h1>Estimation models with scaling laws and linear regression (Student version)<a class="headerlink" href="#estimation-models-with-scaling-laws-and-linear-regression-student-version" title="Permalink to this headline">#</a></h1>
 <p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
 <p>The estimation models calculate the component characteristics requested for their selection without requiring a detailed design. Scaling laws are particularly suitable for this purpose. This notebook illustrates the approach with IGBT component.</p>
 <p><em>IGBT modules</em>
-<img alt="IGBTmodule" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/class/Lab-watt_project/assets/images/IGBTmodule.png" /></p>
+<img alt="IGBTmodule" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/class/Lab-watt_project/assets/images/IGBTmodule.PNG" /></p>
 <p>Validation of the obtained scaling laws is realized thanks linear regression on catalog data.</p>
 <p>The <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1270963815003223">following article</a> give more details and other models for power converters:</p>
 <blockquote>
@@ -974,7 +974,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_2699/731227214.py</span> in <span class="ni">&lt;cell line: 6&gt;</span><span class="nt">()</span>
+<span class="nn">/tmp/ipykernel_2382/731227214.py</span> in <span class="ni">&lt;cell line: 6&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Read the .csv file with bearing data</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;./&#39;</span>
 <span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">+</span><span class="s1">&#39;DataIGBT.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
