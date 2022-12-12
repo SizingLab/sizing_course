@@ -1027,8 +1027,8 @@ title="Print to PDF"
 <section id="mdao-formulations-distributed-vs-monolithic-2-2">
 <h2>MDAO formulations: distributed vs monolithic (2/2)<a class="headerlink" href="#mdao-formulations-distributed-vs-monolithic-2-2" title="Permalink to this headline">#</a></h2>
 <p>The Sellar problem is a simple and well known test case for MDO formulations:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0e9a9495-c4a0-4912-949e-6b805b817274">
-<span class="eqno">(1)<a class="headerlink" href="#equation-0e9a9495-c4a0-4912-949e-6b805b817274" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9b0c24b9-0738-4c9a-b504-4973da6bb7f3">
+<span class="eqno">(1)<a class="headerlink" href="#equation-9b0c24b9-0738-4c9a-b504-4973da6bb7f3" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
     &amp; \text{minimize}
     &amp; &amp; x_{1}^{2} + z_{2} + y_{1} + e^{-y_{2}} \\
@@ -1080,33 +1080,33 @@ z_{1} + z_{2}\)</span>.</p>
 <section id="monolithic-formulations-high-dynamic-ema-case-study">
 <h2>Monolithic formulations: High dynamic EMA case study<a class="headerlink" href="#monolithic-formulations-high-dynamic-ema-case-study" title="Permalink to this headline">#</a></h2>
 <p><img alt="drawing50" src="../../_images/coupled_system.png" /></p>
-<div class="amsmath math notranslate nohighlight" id="equation-bf3c2f00-dc4b-46de-855e-307183778f0a">
-<span class="eqno">(2)<a class="headerlink" href="#equation-bf3c2f00-dc4b-46de-855e-307183778f0a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e1cda441-53a1-42d0-a91d-392ada67bb8c">
+<span class="eqno">(2)<a class="headerlink" href="#equation-e1cda441-53a1-42d0-a91d-392ada67bb8c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T_{em} = J_{mot} \cdot A_{max}\frac{N_{red}}{p} + F_{ema} \frac{p}{N_{red}}
 \label{eq_1}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-bf39bc2f-7403-492e-a49a-074010f95b8c">
-<span class="eqno">(3)<a class="headerlink" href="#equation-bf39bc2f-7403-492e-a49a-074010f95b8c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6e3010ec-9b75-4390-af92-bc9f70712c55">
+<span class="eqno">(3)<a class="headerlink" href="#equation-6e3010ec-9b75-4390-af92-bc9f70712c55" title="Permalink to this equation">#</a></span>\[\begin{equation}
 J_{mot} = J_{mot_{ref}} \cdot \left(\frac{T_{em}}{T_{em_{ref}}}\right)^{\frac{5}{3.5}}
 \label{eq_2}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-dc149f7e-3812-41f0-9659-4a8a6dd49f6e">
-<span class="eqno">(4)<a class="headerlink" href="#equation-dc149f7e-3812-41f0-9659-4a8a6dd49f6e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-80cde2e5-d286-42a3-85fa-a4c49221f99f">
+<span class="eqno">(4)<a class="headerlink" href="#equation-80cde2e5-d286-42a3-85fa-a4c49221f99f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Omega_{mot} = \Omega_{mot_{ref}} \cdot  \left(\frac{T_{em}}{T_{em_{ref}}}\right)^{-\frac{1}{3.5}}
 \label{eq_3}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-e9abb5a2-446a-441f-a128-5a515293d3b0">
-<span class="eqno">(5)<a class="headerlink" href="#equation-e9abb5a2-446a-441f-a128-5a515293d3b0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1c55d90f-81b3-45e9-894a-401ea89f4148">
+<span class="eqno">(5)<a class="headerlink" href="#equation-1c55d90f-81b3-45e9-894a-401ea89f4148" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Omega_{mot} \geq V_{max}\cdot \frac{N_{red}}{p}
 \label{eq_4}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-a9432383-9f7b-4c89-b9cd-a58b13bd03d1">
-<span class="eqno">(6)<a class="headerlink" href="#equation-a9432383-9f7b-4c89-b9cd-a58b13bd03d1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d96d4577-19ca-4f78-a992-320c13483bd8">
+<span class="eqno">(6)<a class="headerlink" href="#equation-d96d4577-19ca-4f78-a992-320c13483bd8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M_{mot} = M_{mot_{ref}} \cdot \left(\frac{T_{em}}{T_{em_{ref}}}\right)^{\frac{3}{3.5}}
 \label{eq_5}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-bb004047-d67d-47ba-9ebc-87f145a08725">
-<span class="eqno">(7)<a class="headerlink" href="#equation-bb004047-d67d-47ba-9ebc-87f145a08725" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-06683ac0-aaa9-44ef-a253-5855b9b0bb40">
+<span class="eqno">(7)<a class="headerlink" href="#equation-06683ac0-aaa9-44ef-a253-5855b9b0bb40" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
     &amp; \text{minimize}
     &amp; &amp; M_{mot} \\
@@ -1120,8 +1120,8 @@ M_{mot} = M_{mot_{ref}} \cdot \left(\frac{T_{em}}{T_{em_{ref}}}\right)^{\frac{3}
 <section id="monolithic-formulations-multidisciplinary-feasible-mdf">
 <h2>Monolithic formulations: MultiDisciplinary Feasible (MDF)<a class="headerlink" href="#monolithic-formulations-multidisciplinary-feasible-mdf" title="Permalink to this headline">#</a></h2>
 <p><img alt="drawing50" src="../../_images/mdf1.png" /></p>
-<div class="amsmath math notranslate nohighlight" id="equation-d7d9956b-853d-4ebf-aedb-41566ff9e489">
-<span class="eqno">(8)<a class="headerlink" href="#equation-d7d9956b-853d-4ebf-aedb-41566ff9e489" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-17891f00-fb23-401f-a256-4ad2ca941570">
+<span class="eqno">(8)<a class="headerlink" href="#equation-17891f00-fb23-401f-a256-4ad2ca941570" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
     &amp; \text{minimize}
     &amp; &amp; M_{mot} \\
@@ -1143,8 +1143,8 @@ M_{mot} = M_{mot_{ref}} \cdot \left(\frac{T_{em}}{T_{em_{ref}}}\right)^{\frac{3}
 <section id="monolithic-formulations-normalized-variable-hybrid-nvh">
 <h2>Monolithic formulations: Normalized Variable Hybrid (NVH)<a class="headerlink" href="#monolithic-formulations-normalized-variable-hybrid-nvh" title="Permalink to this headline">#</a></h2>
 <p><img alt="drawing50" src="../../_images/nvh.png" /></p>
-<div class="amsmath math notranslate nohighlight" id="equation-300e961e-562c-4624-811a-f5c1eff77346">
-<span class="eqno">(9)<a class="headerlink" href="#equation-300e961e-562c-4624-811a-f5c1eff77346" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e0411dec-af0e-4e23-96b4-3da5e09c6ff0">
+<span class="eqno">(9)<a class="headerlink" href="#equation-e0411dec-af0e-4e23-96b4-3da5e09c6ff0" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
     &amp; \text{min.}
     &amp; &amp; M_{mot} \\
