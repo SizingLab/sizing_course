@@ -29,7 +29,7 @@ df.head()
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2083/731227214.py[0m in [0;36m<cell line: 6>[0;34m()[0m
+[0;32m/tmp/ipykernel_2071/731227214.py[0m in [0;36m<cell line: 6>[0;34m()[0m
 [1;32m      4[0m [0;31m# Read the .csv file with bearing data[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      5[0m [0mpath[0m[0;34m=[0m[0;34m'./'[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 6[0;31m [0mdf[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0mpath[0m[0;34m+[0m[0;34m'DataIGBT.csv'[0m[0;34m,[0m [0msep[0m[0;34m=[0m[0;34m';'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
