@@ -51,14 +51,14 @@ print("-----------------------------------------------")
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2589/3395251727.py[0m in [0;36m<cell line: 14>[0;34m()[0m
+[0;32m/tmp/ipykernel_2184/3395251727.py[0m in [0;36m<cell line: 14>[0;34m()[0m
 [1;32m     12[0m [0mprint[0m[0;34m([0m[0;34m"Initial characteristics before optimization :"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     13[0m [0;34m[0m[0m
 [0;32m---> 14[0;31m [0mSizingCode[0m[0;34m([0m[0mparameters[0m[0;34m,[0m [0;34m'Prt'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m     15[0m [0mprint[0m[0;34m([0m[0;34m"-----------------------------------------------"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     16[0m [0;34m[0m[0m
 
-[0;32m/tmp/ipykernel_2589/1329022819.py[0m in [0;36mSizingCode[0;34m(param, arg)[0m
+[0;32m/tmp/ipykernel_2184/1329022819.py[0m in [0;36mSizingCode[0;34m(param, arg)[0m
 [1;32m     52[0m         [0mprint[0m[0;34m([0m[0;34m"           Current dendity J = %.2g"[0m[0;34m%[0m [0;34m([0m[0mJ[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     53[0m         [0mprint[0m[0;34m([0m[0;34m"* Components characteristics:"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 54[0;31m         [0mprint[0m[0;34m([0m[0;34m"           Core (2) mass = %.2f kg"[0m [0;34m%[0m [0;34m([0m[0;36m2[0m[0;34m*[0m[0mM_core[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
