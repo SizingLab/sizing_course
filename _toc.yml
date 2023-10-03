@@ -73,9 +73,12 @@ parts:
   - file: class/Lab-watt_project/summary
     title: Lab - WATT system - DC/DC converter sizing
     sections:
-      - file: class/Lab-watt_project/01_CaseStudy
-      - file: class/Lab-watt_project/02_Architecture-Student
-      - file: class/Lab-watt_project/02_Architecture
+      - file: class/Lab-watt_project/00_SustainableMobility
+      - file: class/Lab-watt_project/01a_CaseStudy
+      - file: class/Lab-watt_project/01a_CaseStudy_Specification
+      - file: class/Lab-watt_project/02a_Architecture_UltraCapacitor
+      - file: class/Lab-watt_project/02a_Architecture-Student
+      - file: class/Lab-watt_project/02b_Architecture_Hybrid
       - file: class/Lab-watt_project/03_SizingScenarios
       - file: class/Lab-watt_project/04_ScalingLaws-Student
       - file: class/Lab-watt_project/04_ScalingLaws
