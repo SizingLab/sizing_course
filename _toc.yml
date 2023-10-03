@@ -71,7 +71,7 @@ parts:
       - file: class/Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student
       - file: class/Lab-vega/6-sizing_and_optimization_with_mdao_using_om
   - file: class/Lab-watt_project/summary
-    title: Lab - WATT system - DC/DC converter sizing
+    title: Lab - Sustainable mobility - Storage systems & DC/DC converter sizing
     sections:
       - file: class/Lab-watt_project/00_SustainableMobility
       - file: class/Lab-watt_project/01a_CaseStudy
