@@ -70,7 +70,7 @@ parts:
       - file: class/Lab-vega/5-sizing_and_optimization
       - file: class/Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student
       - file: class/Lab-vega/6-sizing_and_optimization_with_mdao_using_om
-  - file: class/Lab-watt_project/summary
+  - file: class/Lab-mobility/summary
     title: Lab - Sustainable mobility - Mission profile & Specification
     sections: 
       - file: class/Lab-watt_project/00_SustainableMobility
