@@ -238,6 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="05c_BatteryESCSelection.html">Battery and ESC selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection-Student.html">Frame selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -605,7 +606,7 @@ Validation of the obtained scaling laws is realized thanks catalog data.</p>
 
 <span class="n">I_bat_max</span> <span class="o">=</span> <span class="n">I_bat_max_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">C_bat</span> <span class="o">/</span> <span class="n">C_bat_ref</span><span class="p">)</span>
 
-<span class="n">M_bat</span> <span class="o">=</span> <span class="n">M_bat_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">C_bat</span> <span class="o">/</span> <span class="n">C_bat_ref</span><span class="p">)</span> <span class="o">*</span>  <span class="p">(</span><span class="n">U_bat</span> <span class="o">/</span> <span class="n">U_bat_ref</span><span class="p">)</span>
+<span class="n">M_bat</span> <span class="o">=</span> <span class="n">M_bat_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">C_bat</span> <span class="o">/</span> <span class="n">C_bat_ref</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">U_bat</span> <span class="o">/</span> <span class="n">U_bat_ref</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Battery mass: </span><span class="si">{</span><span class="n">M_bat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> kg&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max discharge current: </span><span class="si">{</span><span class="n">I_bat_max</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
@@ -883,7 +884,7 @@ Max discharge current: 165 A
 <span class="n">R_mot_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;r (omn)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 
 <span class="c1"># ...</span>
-<span class="n">R_mot_sl</span> <span class="o">=</span> <span class="n">R_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">K_T</span><span class="o">/</span><span class="n">K_T_ref</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mf">3.5</span><span class="p">)</span>
+<span class="n">R_mot_sl</span> <span class="o">=</span> <span class="n">R_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">K_T</span> <span class="o">/</span> <span class="n">K_T_ref</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
 
 <span class="c1"># plot</span>
 <span class="n">h</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>

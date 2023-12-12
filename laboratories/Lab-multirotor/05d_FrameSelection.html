@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lab - VEGA Launcher TVC EMA case study" href="../Lab-vega/summary.html" />
+    <link rel="next" title="Sizing of a multirotor drone" href="06_SystemSizingCodeOptimization-Student.html" />
     <link rel="prev" title="Frame selection" href="05d_FrameSelection-Student.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -236,6 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="05c_BatteryESCSelection.html">Battery and ESC selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection-Student.html">Frame selection</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -564,7 +565,7 @@ document.write(`
 <figure class="align-center" id="design-graph-airframe">
 <a class="reference internal image-reference" href="../../_images/DesignGraphs_airframe.svg"><img alt="../../_images/DesignGraphs_airframe.svg" src="../../_images/DesignGraphs_airframe.svg" width="50%" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Airframe design graph</span><a class="headerlink" href="#design-graph-airframe" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Airframe design graph</span><a class="headerlink" href="#design-graph-airframe" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The design graphs for the overall drone system can be found in <a class="reference download internal" download="" href="../../_downloads/b62240d43ab34039ad90d2b56af9efe5/DesignGraphs_Overall_Solution.pdf"><span class="xref download myst">here</span></a>.</p>
@@ -575,19 +576,21 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Specifications</span>
-<span class="n">N_arm</span> <span class="o">=</span> <span class="mf">4.0</span> <span class="c1"># [-] Number of arms</span>
-<span class="n">N_pro_arm</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># [-] Number of propellers per arm (1 or 2)</span>
+<span class="n">N_arm</span> <span class="o">=</span> <span class="mf">4.0</span>  <span class="c1"># [-] Number of arms</span>
+<span class="n">N_pro_arm</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># [-] Number of propellers per arm (1 or 2)</span>
 
 <span class="c1"># Reference parameters for scaling laws</span>
-<span class="n">sigma_max</span> <span class="o">=</span> <span class="mf">280e6</span><span class="o">/</span><span class="mf">4.</span> <span class="c1"># [Pa] Composite max stress (2 reduction for dynamic, 2 reduction for stress concentration)</span>
-<span class="n">rho_s</span> <span class="o">=</span> <span class="mf">1700.</span> <span class="c1"># [kg/m3] Volumic mass of aluminum</span>
+<span class="n">sigma_max</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="mf">280e6</span> <span class="o">/</span> <span class="mf">4.0</span>
+<span class="p">)</span>  <span class="c1"># [Pa] Composite max stress (2 reduction for dynamic, 2 reduction for stress concentration)</span>
+<span class="n">rho_s</span> <span class="o">=</span> <span class="mf">1700.0</span>  <span class="c1"># [kg/m3] Volumic mass of aluminum</span>
 
 <span class="c1"># Assumptions</span>
-<span class="n">D_pro</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># [m] Propeller diameter</span>
-<span class="n">F_pro_to</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># [N] Thrust for one propeller during take off</span>
+<span class="n">D_pro</span> <span class="o">=</span> <span class="mf">0.3</span>  <span class="c1"># [m] Propeller diameter</span>
+<span class="n">F_pro_to</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># [N] Thrust for one propeller during take off</span>
 
 <span class="c1"># Design variables</span>
-<span class="n">k_D</span> <span class="o">=</span> <span class="mf">0.99</span> <span class="c1"># [-] aspect ratio D_in/D_out for the beam of the frame</span>
+<span class="n">k_D</span> <span class="o">=</span> <span class="mf">0.99</span>  <span class="c1"># [-] aspect ratio D_in/D_out for the beam of the frame</span>
 </pre></div>
 </div>
 </div>
@@ -597,16 +600,20 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Equations</span>
 
 <span class="c1"># Arms selection with propellers size</span>
-<span class="n">alpha_sep</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">N_arm</span> <span class="c1"># [rad] interior angle separation between propellers</span>
-<span class="n">L_arm</span> <span class="o">=</span> <span class="n">D_pro</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha_sep</span><span class="o">/</span><span class="mf">2.</span><span class="p">))</span>  <span class="c1"># [m] length of the arm</span>
+<span class="n">alpha_sep</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">N_arm</span>  <span class="c1"># [rad] interior angle separation between propellers</span>
+<span class="n">L_arm</span> <span class="o">=</span> <span class="n">D_pro</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha_sep</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">))</span>  <span class="c1"># [m] length of the arm</span>
 
 <span class="c1"># Tube diameter &amp; thickness selection with take-off scenario</span>
-<span class="n">D_out_arm</span> <span class="o">=</span> <span class="p">(</span><span class="n">F_pro_to</span> <span class="o">*</span> <span class="n">N_pro_arm</span> <span class="o">*</span> <span class="n">L_arm</span> <span class="o">*</span> <span class="mi">32</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">sigma_max</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">k_D</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)))</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># [m] outer diameter of the arm (hollow cylinder)</span>
-<span class="n">D_in_arm</span> <span class="o">=</span> <span class="n">k_D</span> <span class="o">*</span> <span class="n">D_out_arm</span> <span class="c1"># [m] inner diameter of the arm (hollow cylinder) </span>
+<span class="n">D_out_arm</span> <span class="o">=</span> <span class="p">(</span><span class="n">F_pro_to</span> <span class="o">*</span> <span class="n">N_pro_arm</span> <span class="o">*</span> <span class="n">L_arm</span> <span class="o">*</span> <span class="mi">32</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">sigma_max</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">k_D</span><span class="o">**</span><span class="mi">4</span><span class="p">)))</span> <span class="o">**</span> <span class="p">(</span>
+    <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="p">)</span>  <span class="c1"># [m] outer diameter of the arm (hollow cylinder)</span>
+<span class="n">D_in_arm</span> <span class="o">=</span> <span class="n">k_D</span> <span class="o">*</span> <span class="n">D_out_arm</span>  <span class="c1"># [m] inner diameter of the arm (hollow cylinder)</span>
 
 <span class="c1"># Estimation models</span>
-<span class="n">M_arms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">D_out_arm</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">k_D</span> <span class="o">*</span> <span class="n">D_out_arm</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">L_arm</span> <span class="o">*</span> <span class="n">rho_s</span> <span class="o">*</span> <span class="n">N_arm</span> <span class="c1"># [kg] mass of the arms</span>
-<span class="n">M_body</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">M_arms</span> <span class="c1"># [kg] mass of the body (40% of total mass is the arms)</span>
+<span class="n">M_arms</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">D_out_arm</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">k_D</span> <span class="o">*</span> <span class="n">D_out_arm</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">L_arm</span> <span class="o">*</span> <span class="n">rho_s</span> <span class="o">*</span> <span class="n">N_arm</span>
+<span class="p">)</span>  <span class="c1"># [kg] mass of the arms</span>
+<span class="n">M_body</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">M_arms</span>  <span class="c1"># [kg] mass of the body (40% of total mass is the arms)</span>
 <span class="n">M_frame</span> <span class="o">=</span> <span class="n">M_body</span> <span class="o">+</span> <span class="n">M_arms</span>  <span class="c1"># [kg] total mass of the frame</span>
 </pre></div>
 </div>
@@ -684,11 +691,11 @@ sigma_max   float      70000000.0
       </div>
     </a>
     <a class="right-next"
-       href="../Lab-vega/summary.html"
+       href="06_SystemSizingCodeOptimization-Student.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lab - VEGA Launcher TVC EMA case study</p>
+        <p class="prev-next-title">Sizing of a multirotor drone</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

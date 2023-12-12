@@ -236,6 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="05c_BatteryESCSelection.html">Battery and ESC selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection-Student.html">Frame selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -564,7 +565,7 @@ document.write(`
 <figure class="align-center" id="design-graph-propeller">
 <a class="reference internal image-reference" href="../../_images/DesignGraphs_propeller.svg"><img alt="../../_images/DesignGraphs_propeller.svg" src="../../_images/DesignGraphs_propeller.svg" width="50%" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Propeller design graph</span><a class="headerlink" href="#design-graph-propeller" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Propeller design graph</span><a class="headerlink" href="#design-graph-propeller" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The design graphs for the overall drone system can be found in <a class="reference download internal" download="" href="../../_downloads/b62240d43ab34039ad90d2b56af9efe5/DesignGraphs_Overall_Solution.pdf"><span class="xref download myst">here</span></a>.</p>
@@ -575,20 +576,20 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Specifications</span>
-<span class="n">rho_air</span><span class="o">=</span><span class="mf">1.18</span><span class="c1"># [kg/m^3] Air density</span>
-<span class="n">ND_max</span><span class="o">=</span><span class="mf">105000.</span><span class="o">/</span><span class="mf">60.</span><span class="o">*</span><span class="mf">.0254</span> <span class="c1">#[Hz.m] Max speed limit (N.D max) for APC MR propellers</span>
+<span class="n">rho_air</span> <span class="o">=</span> <span class="mf">1.18</span>  <span class="c1"># [kg/m^3] Air density</span>
+<span class="n">ND_max</span> <span class="o">=</span> <span class="mf">105000.0</span> <span class="o">/</span> <span class="mf">60.0</span> <span class="o">*</span> <span class="mf">0.0254</span>  <span class="c1"># [Hz.m] Max speed limit (N.D max) for APC MR propellers</span>
 
 <span class="c1"># Reference parameters for scaling laws</span>
-<span class="n">D_pro_ref</span><span class="o">=</span><span class="mf">11.</span><span class="o">*</span><span class="mf">.0254</span><span class="c1"># [m] Reference propeller diameter</span>
-<span class="n">M_pro_ref</span><span class="o">=</span><span class="mf">0.53</span><span class="o">*</span><span class="mf">0.0283</span><span class="c1"># [kg] Reference propeller mass</span>
+<span class="n">D_pro_ref</span> <span class="o">=</span> <span class="mf">11.0</span> <span class="o">*</span> <span class="mf">0.0254</span>  <span class="c1"># [m] Reference propeller diameter</span>
+<span class="n">M_pro_ref</span> <span class="o">=</span> <span class="mf">0.53</span> <span class="o">*</span> <span class="mf">0.0283</span>  <span class="c1"># [kg] Reference propeller mass</span>
 
 <span class="c1"># Assumptions</span>
-<span class="n">F_pro_to</span><span class="o">=</span><span class="mf">15.0</span> <span class="c1">#[N] Thrust for 1 propeller during Take Off</span>
-<span class="n">F_pro_hov</span><span class="o">=</span><span class="mf">5.0</span> <span class="c1">#[N] Thrust for 1 propeller during hover</span>
+<span class="n">F_pro_to</span> <span class="o">=</span> <span class="mf">15.0</span>  <span class="c1"># [N] Thrust for 1 propeller during Take Off</span>
+<span class="n">F_pro_hov</span> <span class="o">=</span> <span class="mf">5.0</span>  <span class="c1"># [N] Thrust for 1 propeller during hover</span>
 
 <span class="c1"># Design variables</span>
-<span class="n">beta_pro</span> <span class="o">=</span> <span class="mf">0.33</span> <span class="c1"># pitch/diameter ratio of the propeller</span>
-<span class="n">k_ND</span> <span class="o">=</span> <span class="mf">1.2</span> <span class="c1"># slow down propeller coef : ND = NDmax / k_ND</span>
+<span class="n">beta_pro</span> <span class="o">=</span> <span class="mf">0.33</span>  <span class="c1"># pitch/diameter ratio of the propeller</span>
+<span class="n">k_ND</span> <span class="o">=</span> <span class="mf">1.2</span>  <span class="c1"># slow down propeller coef : ND = NDmax / k_ND</span>
 </pre></div>
 </div>
 </div>
@@ -602,22 +603,22 @@ document.write(`
 <span class="n">C_p</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.48e-03</span> <span class="o">+</span> <span class="mf">9.72e-02</span> <span class="o">*</span> <span class="n">beta_pro</span>  <span class="c1"># Power coef with P=C_p.rho.n^3.D^5</span>
 
 <span class="c1"># Propeller selection with take-off scenario</span>
-<span class="n">D_pro</span> <span class="o">=</span> <span class="p">(</span><span class="n">F_pro_to</span> <span class="o">/</span> <span class="p">(</span><span class="n">C_t</span><span class="o">*</span><span class="n">rho_air</span><span class="o">*</span><span class="p">(</span><span class="n">ND_max</span><span class="o">/</span><span class="n">k_ND</span><span class="p">)</span><span class="o">**</span><span class="mf">2.</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>  <span class="c1"># [m] Propeller diameter</span>
-<span class="n">n_pro_to</span> <span class="o">=</span> <span class="n">ND_max</span> <span class="o">/</span> <span class="n">k_ND</span> <span class="o">/</span> <span class="n">D_pro</span>  <span class="c1"># [Hz] Propeller speed </span>
-<span class="n">Omega_pro_to</span> <span class="o">=</span> <span class="n">n_pro_to</span> <span class="o">*</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>  <span class="c1"># [rad/s] Propeller speed</span>
+<span class="n">D_pro</span> <span class="o">=</span> <span class="p">(</span><span class="n">F_pro_to</span> <span class="o">/</span> <span class="p">(</span><span class="n">C_t</span> <span class="o">*</span> <span class="n">rho_air</span> <span class="o">*</span> <span class="p">(</span><span class="n">ND_max</span> <span class="o">/</span> <span class="n">k_ND</span><span class="p">)</span> <span class="o">**</span> <span class="mf">2.0</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span>  <span class="c1"># [m] Propeller diameter</span>
+<span class="n">n_pro_to</span> <span class="o">=</span> <span class="n">ND_max</span> <span class="o">/</span> <span class="n">k_ND</span> <span class="o">/</span> <span class="n">D_pro</span>  <span class="c1"># [Hz] Propeller speed</span>
+<span class="n">Omega_pro_to</span> <span class="o">=</span> <span class="n">n_pro_to</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>  <span class="c1"># [rad/s] Propeller speed</span>
 
 <span class="c1"># Estimation model for mass</span>
-<span class="n">M_pro</span> <span class="o">=</span> <span class="n">M_pro_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">D_pro</span><span class="o">/</span><span class="n">D_pro_ref</span><span class="p">)</span><span class="o">**</span><span class="mf">2.</span> <span class="c1"># [kg] Propeller mass</span>
+<span class="n">M_pro</span> <span class="o">=</span> <span class="n">M_pro_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">D_pro</span> <span class="o">/</span> <span class="n">D_pro_ref</span><span class="p">)</span> <span class="o">**</span> <span class="mf">2.0</span>  <span class="c1"># [kg] Propeller mass</span>
 
 <span class="c1"># Performance in various operating conditions</span>
 <span class="c1"># Take-off</span>
-<span class="n">P_pro_to</span> <span class="o">=</span> <span class="n">C_p</span> <span class="o">*</span> <span class="n">rho_air</span> <span class="o">*</span> <span class="n">n_pro_to</span><span class="o">**</span><span class="mf">3.</span> <span class="o">*</span> <span class="n">D_pro</span><span class="o">**</span><span class="mf">5.</span> <span class="c1"># [W] Power per propeller</span>
-<span class="n">T_pro_to</span> <span class="o">=</span> <span class="n">P_pro_to</span> <span class="o">/</span> <span class="n">Omega_pro_to</span> <span class="c1"># [N*m] Propeller torque</span>
+<span class="n">P_pro_to</span> <span class="o">=</span> <span class="n">C_p</span> <span class="o">*</span> <span class="n">rho_air</span> <span class="o">*</span> <span class="n">n_pro_to</span><span class="o">**</span><span class="mf">3.0</span> <span class="o">*</span> <span class="n">D_pro</span><span class="o">**</span><span class="mf">5.0</span>  <span class="c1"># [W] Power per propeller</span>
+<span class="n">T_pro_to</span> <span class="o">=</span> <span class="n">P_pro_to</span> <span class="o">/</span> <span class="n">Omega_pro_to</span>  <span class="c1"># [N*m] Propeller torque</span>
 <span class="c1"># Hover</span>
-<span class="n">n_pro_hov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">F_pro_hov</span><span class="o">/</span><span class="p">(</span><span class="n">C_t</span> <span class="o">*</span> <span class="n">rho_air</span> <span class="o">*</span><span class="n">D_pro</span><span class="o">**</span><span class="mf">4.</span><span class="p">))</span> <span class="c1"># [Hz] hover speed</span>
-<span class="n">Omega_pro_hov</span> <span class="o">=</span> <span class="n">n_pro_hov</span> <span class="o">*</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="c1"># [rad/s] Propeller speed</span>
-<span class="n">P_pro_hov</span> <span class="o">=</span> <span class="n">C_p</span> <span class="o">*</span> <span class="n">rho_air</span> <span class="o">*</span> <span class="n">n_pro_hov</span><span class="o">**</span><span class="mf">3.</span> <span class="o">*</span> <span class="n">D_pro</span><span class="o">**</span><span class="mf">5.</span> <span class="c1"># [W] Power per propeller</span>
-<span class="n">T_pro_hov</span> <span class="o">=</span> <span class="n">P_pro_hov</span> <span class="o">/</span> <span class="n">Omega_pro_hov</span> <span class="c1"># [N*m] Propeller torque   </span>
+<span class="n">n_pro_hov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">F_pro_hov</span> <span class="o">/</span> <span class="p">(</span><span class="n">C_t</span> <span class="o">*</span> <span class="n">rho_air</span> <span class="o">*</span> <span class="n">D_pro</span><span class="o">**</span><span class="mf">4.0</span><span class="p">))</span>  <span class="c1"># [Hz] hover speed</span>
+<span class="n">Omega_pro_hov</span> <span class="o">=</span> <span class="n">n_pro_hov</span> <span class="o">*</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>  <span class="c1"># [rad/s] Propeller speed</span>
+<span class="n">P_pro_hov</span> <span class="o">=</span> <span class="n">C_p</span> <span class="o">*</span> <span class="n">rho_air</span> <span class="o">*</span> <span class="n">n_pro_hov</span><span class="o">**</span><span class="mf">3.0</span> <span class="o">*</span> <span class="n">D_pro</span><span class="o">**</span><span class="mf">5.0</span>  <span class="c1"># [W] Power per propeller</span>
+<span class="n">T_pro_hov</span> <span class="o">=</span> <span class="n">P_pro_hov</span> <span class="o">/</span> <span class="n">Omega_pro_hov</span>  <span class="c1"># [N*m] Propeller torque</span>
 </pre></div>
 </div>
 </div>

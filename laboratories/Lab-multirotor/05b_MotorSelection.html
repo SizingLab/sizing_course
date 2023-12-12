@@ -236,6 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="05c_BatteryESCSelection.html">Battery and ESC selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection-Student.html">Frame selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -564,7 +565,7 @@ document.write(`
 <figure class="align-center" id="design-graph-motor">
 <a class="reference internal image-reference" href="../../_images/DesignGraphs_motor.svg"><img alt="../../_images/DesignGraphs_motor.svg" src="../../_images/DesignGraphs_motor.svg" width="50%" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Motor design graph</span><a class="headerlink" href="#design-graph-motor" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Motor design graph</span><a class="headerlink" href="#design-graph-motor" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The design graphs for the overall drone system can be found in <a class="reference download internal" download="" href="../../_downloads/b62240d43ab34039ad90d2b56af9efe5/DesignGraphs_Overall_Solution.pdf"><span class="xref download myst">here</span></a>.</p>
@@ -578,25 +579,25 @@ document.write(`
 <span class="c1"># Motor reference</span>
 <span class="c1"># Ref : AXI 5325/16 GOLD LINE</span>
 <span class="n">T_nom_mot_ref</span> <span class="o">=</span> <span class="mf">2.32</span>  <span class="c1"># [N.m] rated torque</span>
-<span class="n">T_max_mot_ref</span> <span class="o">=</span> <span class="mf">85.</span><span class="o">/</span><span class="mf">70.</span><span class="o">*</span><span class="n">T_nom_mot_ref</span> <span class="c1"># [N.m] max torque</span>
+<span class="n">T_max_mot_ref</span> <span class="o">=</span> <span class="mf">85.0</span> <span class="o">/</span> <span class="mf">70.0</span> <span class="o">*</span> <span class="n">T_nom_mot_ref</span>  <span class="c1"># [N.m] max torque</span>
 <span class="n">R_mot_ref</span> <span class="o">=</span> <span class="mf">0.03</span>  <span class="c1"># [Ohm] resistance</span>
-<span class="n">M_mot_ref</span> <span class="o">=</span> <span class="mf">0.575</span> <span class="c1"># [kg] mass</span>
-<span class="n">K_T_ref</span> <span class="o">=</span> <span class="mf">0.03</span> <span class="c1"># [N.m/A] torque coefficient</span>
-<span class="n">T_mot_fr_ref</span> <span class="o">=</span> <span class="mf">0.03</span> <span class="c1"># [N.m] friction torque (zero load, nominal speed)</span>
+<span class="n">M_mot_ref</span> <span class="o">=</span> <span class="mf">0.575</span>  <span class="c1"># [kg] mass</span>
+<span class="n">K_T_ref</span> <span class="o">=</span> <span class="mf">0.03</span>  <span class="c1"># [N.m/A] torque coefficient</span>
+<span class="n">T_mot_fr_ref</span> <span class="o">=</span> <span class="mf">0.03</span>  <span class="c1"># [N.m] friction torque (zero load, nominal speed)</span>
 
 <span class="c1"># Assumptions</span>
-<span class="n">T_pro_to</span><span class="o">=</span><span class="mf">0.5</span><span class="c1">#[N.m] Propeller Torque during takeoff</span>
-<span class="n">P_pro_to</span><span class="o">=</span><span class="mi">100</span><span class="c1">#[W] Propeller Power during takeoff</span>
-<span class="n">Omega_pro_to</span><span class="o">=</span><span class="mf">400.0</span><span class="c1">#[rad/s] Propeller speed during takeoff</span>
-<span class="n">T_pro_hov</span><span class="o">=</span><span class="mf">1.0</span><span class="c1">#[N.m] Propeller Torque during hover</span>
-<span class="n">P_pro_hov</span><span class="o">=</span><span class="mi">50</span><span class="c1">#[W] Propeller Power during hover</span>
-<span class="n">Omega_pro_hov</span><span class="o">=</span><span class="mf">0.22</span><span class="c1">#[rad/s] Propeller speed during hover</span>
-<span class="n">U_bat_est</span><span class="o">=</span> <span class="mf">14.0</span><span class="c1">#[V] Battery voltage value (estimation)</span>
+<span class="n">T_pro_to</span> <span class="o">=</span> <span class="mf">0.5</span>  <span class="c1"># [N.m] Propeller Torque during takeoff</span>
+<span class="n">P_pro_to</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># [W] Propeller Power during takeoff</span>
+<span class="n">Omega_pro_to</span> <span class="o">=</span> <span class="mf">400.0</span>  <span class="c1"># [rad/s] Propeller speed during takeoff</span>
+<span class="n">T_pro_hov</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># [N.m] Propeller Torque during hover</span>
+<span class="n">P_pro_hov</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># [W] Propeller Power during hover</span>
+<span class="n">Omega_pro_hov</span> <span class="o">=</span> <span class="mf">0.22</span>  <span class="c1"># [rad/s] Propeller speed during hover</span>
+<span class="n">U_bat_est</span> <span class="o">=</span> <span class="mf">14.0</span>  <span class="c1"># [V] Battery voltage value (estimation)</span>
 
 <span class="c1"># Design variables</span>
-<span class="n">k_vb</span> <span class="o">=</span> <span class="mf">1.</span> <span class="c1"># oversizing coefficient for voltage evaluation</span>
-<span class="n">k_mot</span> <span class="o">=</span> <span class="mf">1.</span> <span class="c1"># over sizing coefficient on the motor torque</span>
-<span class="n">k_speed_mot</span> <span class="o">=</span> <span class="mf">1.2</span> <span class="c1"># adaption winding coef on the motor speed</span>
+<span class="n">k_vb</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># oversizing coefficient for voltage evaluation</span>
+<span class="n">k_mot</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># over sizing coefficient on the motor torque</span>
+<span class="n">k_speed_mot</span> <span class="o">=</span> <span class="mf">1.2</span>  <span class="c1"># adaption winding coef on the motor speed</span>
 </pre></div>
 </div>
 </div>
@@ -609,24 +610,26 @@ document.write(`
 <span class="n">T_nom_mot</span> <span class="o">=</span> <span class="n">k_mot</span> <span class="o">*</span> <span class="n">T_pro_hov</span>  <span class="c1"># [N*m] Motor nominal torque per propeller</span>
 
 <span class="c1"># Torque constant selection with take-off scenario</span>
-<span class="n">U_bat</span> <span class="o">=</span> <span class="n">k_vb</span><span class="o">*</span><span class="mf">1.84</span><span class="o">*</span><span class="n">P_pro_to</span><span class="o">**</span><span class="p">(</span><span class="mf">0.36</span><span class="p">)</span>  <span class="c1"># [V] battery voltage estimation</span>
-<span class="n">K_T</span> <span class="o">=</span> <span class="n">U_bat</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_speed_mot</span><span class="o">*</span><span class="n">Omega_pro_to</span><span class="p">)</span>  <span class="c1"># [N*m/A] or [V/(rad/s)] Kt motor</span>
+<span class="n">U_bat</span> <span class="o">=</span> <span class="n">k_vb</span> <span class="o">*</span> <span class="mf">1.84</span> <span class="o">*</span> <span class="n">P_pro_to</span> <span class="o">**</span> <span class="p">(</span><span class="mf">0.36</span><span class="p">)</span>  <span class="c1"># [V] battery voltage estimation</span>
+<span class="n">K_T</span> <span class="o">=</span> <span class="n">U_bat</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_speed_mot</span> <span class="o">*</span> <span class="n">Omega_pro_to</span><span class="p">)</span>  <span class="c1"># [N*m/A] or [V/(rad/s)] Kt motor</span>
 
 <span class="c1"># Estimation models</span>
-<span class="n">M_mot</span> <span class="o">=</span> <span class="n">M_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_nom_mot</span><span class="o">/</span><span class="n">T_nom_mot_ref</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">3.</span><span class="o">/</span><span class="mf">3.5</span><span class="p">)</span>  <span class="c1"># [kg] Motor mass</span>
-<span class="n">R_mot</span> <span class="o">=</span> <span class="n">R_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_nom_mot</span><span class="o">/</span><span class="n">T_nom_mot_ref</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">5.</span><span class="o">/</span><span class="mf">3.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">K_T</span><span class="o">/</span><span class="n">K_T_ref</span><span class="p">)</span><span class="o">**</span><span class="mf">2.</span>  <span class="c1"># [ohm] motor resistance</span>
-<span class="n">T_mot_fr</span> <span class="o">=</span> <span class="n">T_mot_fr_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_nom_mot</span><span class="o">/</span><span class="n">T_nom_mot_ref</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">3.</span><span class="o">/</span><span class="mf">3.5</span><span class="p">)</span>  <span class="c1"># [N*m] Friction torque</span>
-<span class="n">T_max_mot</span> <span class="o">=</span> <span class="n">T_max_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_nom_mot</span><span class="o">/</span><span class="n">T_nom_mot_ref</span><span class="p">)</span>  <span class="c1"># [N*m] Max. torque</span>
+<span class="n">M_mot</span> <span class="o">=</span> <span class="n">M_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_nom_mot</span> <span class="o">/</span> <span class="n">T_nom_mot_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mf">3.0</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>  <span class="c1"># [kg] Motor mass</span>
+<span class="n">R_mot</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">R_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_nom_mot</span> <span class="o">/</span> <span class="n">T_nom_mot_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">5.0</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">K_T</span> <span class="o">/</span> <span class="n">K_T_ref</span><span class="p">)</span> <span class="o">**</span> <span class="mf">2.0</span>
+<span class="p">)</span>  <span class="c1"># [ohm] motor resistance</span>
+<span class="n">T_mot_fr</span> <span class="o">=</span> <span class="n">T_mot_fr_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_nom_mot</span> <span class="o">/</span> <span class="n">T_nom_mot_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mf">3.0</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>  <span class="c1"># [N*m] Friction torque</span>
+<span class="n">T_max_mot</span> <span class="o">=</span> <span class="n">T_max_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_nom_mot</span> <span class="o">/</span> <span class="n">T_nom_mot_ref</span><span class="p">)</span>  <span class="c1"># [N*m] Max. torque</span>
 
 <span class="c1"># Performance in various operating conditions</span>
 <span class="c1"># Hover current and voltage</span>
-<span class="n">I_mot_hov</span> <span class="o">=</span> <span class="p">(</span><span class="n">T_pro_hov</span><span class="o">+</span><span class="n">T_mot_fr</span><span class="p">)</span> <span class="o">/</span> <span class="n">K_T</span>  <span class="c1"># [A] Current of the motor per propeller</span>
-<span class="n">U_mot_hov</span> <span class="o">=</span> <span class="n">R_mot</span><span class="o">*</span><span class="n">I_mot_hov</span> <span class="o">+</span> <span class="n">Omega_pro_hov</span><span class="o">*</span><span class="n">K_T</span>  <span class="c1"># [V] Voltage of the motor per propeller</span>
-<span class="n">P_el_mot_hov</span> <span class="o">=</span> <span class="n">U_mot_hov</span><span class="o">*</span><span class="n">I_mot_hov</span>  <span class="c1"># [W] Hover : electrical power</span>
+<span class="n">I_mot_hov</span> <span class="o">=</span> <span class="p">(</span><span class="n">T_pro_hov</span> <span class="o">+</span> <span class="n">T_mot_fr</span><span class="p">)</span> <span class="o">/</span> <span class="n">K_T</span>  <span class="c1"># [A] Current of the motor per propeller</span>
+<span class="n">U_mot_hov</span> <span class="o">=</span> <span class="n">R_mot</span> <span class="o">*</span> <span class="n">I_mot_hov</span> <span class="o">+</span> <span class="n">Omega_pro_hov</span> <span class="o">*</span> <span class="n">K_T</span>  <span class="c1"># [V] Voltage of the motor per propeller</span>
+<span class="n">P_el_mot_hov</span> <span class="o">=</span> <span class="n">U_mot_hov</span> <span class="o">*</span> <span class="n">I_mot_hov</span>  <span class="c1"># [W] Hover : electrical power</span>
 <span class="c1"># Takeoff current and voltage</span>
-<span class="n">I_mot_to</span> <span class="o">=</span> <span class="p">(</span><span class="n">T_pro_to</span><span class="o">+</span><span class="n">T_mot_fr</span><span class="p">)</span> <span class="o">/</span> <span class="n">K_T</span>  <span class="c1"># [A] Current of the motor per propeller</span>
-<span class="n">U_mot_to</span> <span class="o">=</span> <span class="n">R_mot</span><span class="o">*</span><span class="n">I_mot_to</span> <span class="o">+</span> <span class="n">Omega_pro_to</span><span class="o">*</span><span class="n">K_T</span>  <span class="c1"># [V] Voltage of the motor per propeller</span>
-<span class="n">P_el_mot_to</span> <span class="o">=</span> <span class="n">U_mot_to</span><span class="o">*</span><span class="n">I_mot_to</span>  <span class="c1"># [W] Takeoff : electrical power</span>
+<span class="n">I_mot_to</span> <span class="o">=</span> <span class="p">(</span><span class="n">T_pro_to</span> <span class="o">+</span> <span class="n">T_mot_fr</span><span class="p">)</span> <span class="o">/</span> <span class="n">K_T</span>  <span class="c1"># [A] Current of the motor per propeller</span>
+<span class="n">U_mot_to</span> <span class="o">=</span> <span class="n">R_mot</span> <span class="o">*</span> <span class="n">I_mot_to</span> <span class="o">+</span> <span class="n">Omega_pro_to</span> <span class="o">*</span> <span class="n">K_T</span>  <span class="c1"># [V] Voltage of the motor per propeller</span>
+<span class="n">P_el_mot_to</span> <span class="o">=</span> <span class="n">U_mot_to</span> <span class="o">*</span> <span class="n">I_mot_to</span>  <span class="c1"># [W] Takeoff : electrical power</span>
 </pre></div>
 </div>
 </div>

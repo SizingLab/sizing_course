@@ -236,6 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="05c_BatteryESCSelection.html">Battery and ESC selection</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Frame selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -564,7 +565,7 @@ document.write(`
 <figure class="align-center" id="design-graph-airframe-student">
 <a class="reference internal image-reference" href="../../_images/DesignGraphs_airframe_student.svg"><img alt="../../_images/DesignGraphs_airframe_student.svg" src="../../_images/DesignGraphs_airframe_student.svg" width="50%" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Airframe design graph</span><a class="headerlink" href="#design-graph-airframe-student" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Airframe design graph</span><a class="headerlink" href="#design-graph-airframe-student" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="exercise admonition" id="exercice_dg_frame">
@@ -586,16 +587,18 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Specifications</span>
-<span class="n">N_arm</span> <span class="o">=</span> <span class="mf">4.0</span> <span class="c1"># [-] Number of arms</span>
-<span class="n">N_pro_arm</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># [-] Number of propellers per arm (1 or 2)</span>
+<span class="n">N_arm</span> <span class="o">=</span> <span class="mf">4.0</span>  <span class="c1"># [-] Number of arms</span>
+<span class="n">N_pro_arm</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># [-] Number of propellers per arm (1 or 2)</span>
 
 <span class="c1"># Reference parameters for scaling laws</span>
-<span class="n">sigma_max</span> <span class="o">=</span> <span class="mf">280e6</span><span class="o">/</span><span class="mf">4.</span> <span class="c1"># [Pa] Composite max stress (2 reduction for dynamic, 2 reduction for stress concentration)</span>
-<span class="n">rho_s</span> <span class="o">=</span> <span class="mf">1700.</span> <span class="c1"># [kg/m3] Volumic mass of aluminum</span>
+<span class="n">sigma_max</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="mf">280e6</span> <span class="o">/</span> <span class="mf">4.0</span>
+<span class="p">)</span>  <span class="c1"># [Pa] Composite max stress (2 reduction for dynamic, 2 reduction for stress concentration)</span>
+<span class="n">rho_s</span> <span class="o">=</span> <span class="mf">1700.0</span>  <span class="c1"># [kg/m3] Volumic mass of aluminum</span>
 
 <span class="c1"># Assumptions</span>
-<span class="n">D_pro</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># [m] Propeller diameter</span>
-<span class="n">F_pro_to</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># [N] Thrust for one propeller during take off</span>
+<span class="n">D_pro</span> <span class="o">=</span> <span class="mf">0.3</span>  <span class="c1"># [m] Propeller diameter</span>
+<span class="n">F_pro_to</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># [N] Thrust for one propeller during take off</span>
 
 <span class="c1"># Design variables</span>
 

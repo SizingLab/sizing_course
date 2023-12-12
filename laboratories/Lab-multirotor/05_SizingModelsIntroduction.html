@@ -238,6 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="05c_BatteryESCSelection.html">Battery and ESC selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection-Student.html">Frame selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -567,7 +568,12 @@ document.write(`
 <section id="global-sizing-procedure-with-xdsm-representation">
 <h2>Global sizing procedure with XDSM representation<a class="headerlink" href="#global-sizing-procedure-with-xdsm-representation" title="Permalink to this heading">#</a></h2>
 <p>The following diagram represents the XDSM graph of the global sizing process of the multi-rotor.</p>
-<p><img alt="XDSM" src="../../_images/xdsm_multirotor_base.png" /></p>
+<figure class="align-center" id="multirotor-xdsm">
+<a class="reference internal image-reference" href="../../_images/xdsm_multirotor_base.png"><img alt="../../_images/xdsm_multirotor_base.png" src="../../_images/xdsm_multirotor_base.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Multirotor sizing XDSM diagram</span><a class="headerlink" href="#multirotor-xdsm" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="exercise admonition" id="exercice_sizing_code">
 
 <p class="admonition-title"><span class="caption-number">Exercise 5 </span></p>
@@ -581,10 +587,15 @@ document.write(`
 <section id="solution-using-the-normalized-variable-hybrid-formulation">
 <h3>Solution using the Normalized Variable Hybrid formulation<a class="headerlink" href="#solution-using-the-normalized-variable-hybrid-formulation" title="Permalink to this heading">#</a></h3>
 <p>The following diagram represents the XDSM graph of the global sizing process of the multi-rotor with the NVH formulation to achieve the MultiDisciplinary Analysis (MDA).</p>
-<p><img alt="XDSM" src="../../_images/xdsm_multirotor_mda.png" /></p>
+<figure class="align-center" id="multirotor-xdsm-mda">
+<a class="reference internal image-reference" href="../../_images/xdsm_multirotor_mda.png"><img alt="../../_images/xdsm_multirotor_mda.png" src="../../_images/xdsm_multirotor_mda.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Multirotor sizing MDA XDSM diagram</span><a class="headerlink" href="#multirotor-xdsm-mda" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>It consists in addition an oversizing coefficent <span class="math notranslate nohighlight">\(k_{os} \quad [1-10]\)</span> as a design variable and additional inequality constraint <span class="math notranslate nohighlight">\(M_{total} \geq M_{total,real}\)</span>. This way, we make sure that the drone is capable of lifting the load and itself. As we are minimizing the total mass <span class="math notranslate nohighlight">\(M_{total,real}\)</span> the oversizing coefficient <span class="math notranslate nohighlight">\(k_{os}\)</span> will tend to be as small as possible and thus the inequality constraint will be equivalent to an equality constraint (<span class="math notranslate nohighlight">\(M_{total} = M_{total,real}\)</span>). This is one way of solving an algebraic loop, other methods use numerical solvers or other optimizer-based formulations. The formulation of the optimization problem is the following:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8a6718bb-6b26-4203-b411-78a9479f6e8b">
-<span class="eqno">(1)<a class="headerlink" href="#equation-8a6718bb-6b26-4203-b411-78a9479f6e8b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7d7adfbd-f4cb-42d0-ba1c-2ebbce6fcd64">
+<span class="eqno">(1)<a class="headerlink" href="#equation-7d7adfbd-f4cb-42d0-ba1c-2ebbce6fcd64" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
         &amp; \text{minimize}
         &amp; &amp; M_{total,real} \\

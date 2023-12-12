@@ -238,6 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05c_BatteryESCSelection.html">Battery and ESC selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05d_FrameSelection-Student.html">Frame selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05d_FrameSelection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -988,14 +989,16 @@ Consumption per passenger: 20.44 kJ/(Pax.km)
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1174296675189548
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1534
-     nit: 33
+    nfev: 1714
+     nit: 37
  success: True
-       x: array([0.29929521, 0.19237301, 0.98118646])
-Optimal vector : [0.29929521 0.19237301 0.98118646]
+       x: array([0.29968444, 0.19343934, 0.98122195])
+Optimal vector : [0.29968444 0.19343934 0.98122195]
 0.5131326713242985
 Constraints vector : [0.0006464155866991004, 0.00020729684908794098, 0.08686732867570146]
-Consumption per passenger: 17.07 kJ/(Pax.km)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 17.07 kJ/(Pax.km)
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.066578187803167
@@ -1055,10 +1058,10 @@ Tramway :
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.2943682600385298
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1264
-     nit: 27
+    nfev: 1624
+     nit: 35
  success: True
-       x: array([0.10089033, 0.38116297, 0.98928854])
+       x: array([0.10591273, 0.39042963, 0.98922007])
 Consumption per passenger: 20.18 kJ/(Pax.km)
 ----
 Trolleybus :
@@ -1066,10 +1069,10 @@ Trolleybus :
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1340254283077316
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 2074
-     nit: 45
+    nfev: 1669
+     nit: 36
  success: True
-       x: array([0.05963532, 0.7578138 , 0.98941919])
+       x: array([0.05968294, 0.76287174, 0.98915828])
 Consumption per passenger: 33.90 kJ/(Pax.km)
 ----
 Bus :
@@ -1077,30 +1080,30 @@ Bus :
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1554437831959297
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1174
-     nit: 25
+    nfev: 1804
+     nit: 39
  success: True
-       x: array([0.05466417, 0.76193618, 0.98724939])
+       x: array([0.05650955, 0.7592146 , 0.98699318])
 Consumption per passenger: 35.30 kJ/(Pax.km)
 ----
 Car :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.708420855968792
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.710666062294959
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 904
-     nit: 19
+    nfev: 814
+     nit: 17
  success: True
-       x: array([0.02481619, 0.52007263, 0.9898961 ])
+       x: array([0.02744927, 0.48296571, 0.98978271])
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 115.54 kJ/(Pax.km)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 115.24 kJ/(Pax.km)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>115.54293197175056
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>115.2428050025813
 </pre></div>
 </div>
-<img alt="../../_images/5b7ac61682c4f2fd69f1e8bf071d777fd54ddb98e8ad39fe9346c1a17f84cc1d.png" src="../../_images/5b7ac61682c4f2fd69f1e8bf071d777fd54ddb98e8ad39fe9346c1a17f84cc1d.png" />
+<img alt="../../_images/9665459cc4b97d9ca61ea84dda81dcc0eefe04e6ba3825ec1bafc89e3b66ab0b.png" src="../../_images/9665459cc4b97d9ca61ea84dda81dcc0eefe04e6ba3825ec1bafc89e3b66ab0b.png" />
 </div>
 </div>
 </section>

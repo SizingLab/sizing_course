@@ -236,6 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Battery and ESC selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection-Student.html">Frame selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -564,13 +565,13 @@ document.write(`
 <figure class="align-center" id="design-graph-batter">
 <a class="reference internal image-reference" href="../../_images/DesignGraphs_battery.svg"><img alt="../../_images/DesignGraphs_battery.svg" src="../../_images/DesignGraphs_battery.svg" width="50%" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Battery design graph</span><a class="headerlink" href="#design-graph-batter" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Battery design graph</span><a class="headerlink" href="#design-graph-batter" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="design-graph-esc">
 <a class="reference internal image-reference" href="../../_images/DesignGraphs_esc.svg"><img alt="../../_images/DesignGraphs_esc.svg" src="../../_images/DesignGraphs_esc.svg" width="50%" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">ESC design graph</span><a class="headerlink" href="#design-graph-esc" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">ESC design graph</span><a class="headerlink" href="#design-graph-esc" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The design graphs for the overall drone system can be found in <a class="reference download internal" download="" href="../../_downloads/b62240d43ab34039ad90d2b56af9efe5/DesignGraphs_Overall_Solution.pdf"><span class="xref download myst">here</span></a>.</p>
@@ -579,30 +580,30 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specifications</span>
-<span class="n">N_pro</span><span class="o">=</span><span class="mf">4.0</span> <span class="c1"># [-] Number of propellers</span>
-<span class="n">M_pay</span><span class="o">=</span><span class="mf">1.0</span> <span class="c1"># [kg] Payload mass</span>
-<span class="n">nu_esc</span> <span class="o">=</span> <span class="mf">0.95</span> <span class="c1"># [–] ESC efficiency</span>
+<span class="n">N_pro</span> <span class="o">=</span> <span class="mf">4.0</span>  <span class="c1"># [-] Number of propellers</span>
+<span class="n">M_pay</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># [kg] Payload mass</span>
+<span class="n">nu_esc</span> <span class="o">=</span> <span class="mf">0.95</span>  <span class="c1"># [–] ESC efficiency</span>
 
 <span class="c1"># Reference parameters for scaling laws</span>
 <span class="c1"># Ref : MK-quadro</span>
-<span class="n">M_bat_ref</span> <span class="o">=</span> <span class="mf">.329</span> <span class="c1"># [kg] mass</span>
-<span class="n">E_bat_ref</span> <span class="o">=</span> <span class="mf">220.</span><span class="o">*</span><span class="mf">3600.</span><span class="o">*</span><span class="mf">.329</span> <span class="c1"># [J]</span>
-<span class="n">C_bat_ref</span><span class="o">=</span> <span class="mi">5</span> <span class="c1"># [Ah] Capacity</span>
-<span class="n">I_bat_max_ref</span> <span class="o">=</span> <span class="mi">50</span><span class="o">*</span><span class="n">C_bat_ref</span> <span class="c1"># [A] max discharge current</span>
+<span class="n">M_bat_ref</span> <span class="o">=</span> <span class="mf">0.329</span>  <span class="c1"># [kg] mass</span>
+<span class="n">E_bat_ref</span> <span class="o">=</span> <span class="mf">220.0</span> <span class="o">*</span> <span class="mf">3600.0</span> <span class="o">*</span> <span class="mf">0.329</span>  <span class="c1"># [J]</span>
+<span class="n">C_bat_ref</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># [Ah] Capacity</span>
+<span class="n">I_bat_max_ref</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">C_bat_ref</span>  <span class="c1"># [A] max discharge current</span>
 
-<span class="c1"># Ref : Turnigy K_Force 70HV </span>
-<span class="n">P_esc_ref</span> <span class="o">=</span> <span class="mf">3108.</span> <span class="c1"># [W] Power</span>
-<span class="n">M_esc_ref</span> <span class="o">=</span> <span class="mf">.115</span> <span class="c1"># [kg] Mass</span>
+<span class="c1"># Ref : Turnigy K_Force 70HV</span>
+<span class="n">P_esc_ref</span> <span class="o">=</span> <span class="mf">3108.0</span>  <span class="c1"># [W] Power</span>
+<span class="n">M_esc_ref</span> <span class="o">=</span> <span class="mf">0.115</span>  <span class="c1"># [kg] Mass</span>
 
 <span class="c1"># Assumptions</span>
-<span class="n">U_bat_est</span><span class="o">=</span><span class="mf">14.0</span> <span class="c1"># [V] Battery voltage estimation</span>
-<span class="n">P_el_mot_hov</span><span class="o">=</span><span class="mf">10.0</span> <span class="c1"># [W] Electrical power consumption for one motor during hover</span>
-<span class="n">P_el_mot_to</span><span class="o">=</span><span class="mf">30.0</span> <span class="c1"># [W] Electrical power consumption for one motor during takeoff</span>
-<span class="n">U_mot_to</span><span class="o">=</span><span class="mf">12.0</span> <span class="c1"># [V] Motor voltage during takeoff</span>
+<span class="n">U_bat_est</span> <span class="o">=</span> <span class="mf">14.0</span>  <span class="c1"># [V] Battery voltage estimation</span>
+<span class="n">P_el_mot_hov</span> <span class="o">=</span> <span class="mf">10.0</span>  <span class="c1"># [W] Electrical power consumption for one motor during hover</span>
+<span class="n">P_el_mot_to</span> <span class="o">=</span> <span class="mf">30.0</span>  <span class="c1"># [W] Electrical power consumption for one motor during takeoff</span>
+<span class="n">U_mot_to</span> <span class="o">=</span> <span class="mf">12.0</span>  <span class="c1"># [V] Motor voltage during takeoff</span>
 
 <span class="c1"># Design variables</span>
-<span class="n">k_vb</span> <span class="o">=</span> <span class="mf">1.</span> <span class="c1"># oversizing coefficient for voltage evaluation</span>
-<span class="n">k_mb</span> <span class="o">=</span> <span class="mf">1.</span> <span class="c1"># ratio battery/load mass</span>
+<span class="n">k_vb</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># oversizing coefficient for voltage evaluation</span>
+<span class="n">k_mb</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># ratio battery/load mass</span>
 </pre></div>
 </div>
 </div>
@@ -612,15 +613,17 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Equations</span>
 
 <span class="c1"># Voltage selection with takeoff scenario</span>
-<span class="n">U_bat</span> <span class="o">=</span> <span class="n">k_vb</span><span class="o">*</span><span class="mf">1.84</span><span class="o">*</span><span class="n">P_el_mot_to</span><span class="o">**</span><span class="p">(</span><span class="mf">0.36</span><span class="p">)</span>  <span class="c1"># [V] battery voltage estimation</span>
+<span class="n">U_bat</span> <span class="o">=</span> <span class="n">k_vb</span> <span class="o">*</span> <span class="mf">1.84</span> <span class="o">*</span> <span class="n">P_el_mot_to</span> <span class="o">**</span> <span class="p">(</span><span class="mf">0.36</span><span class="p">)</span>  <span class="c1"># [V] battery voltage estimation</span>
 
 <span class="c1"># Energy selection with payload mass</span>
 <span class="n">M_bat</span> <span class="o">=</span> <span class="n">k_mb</span> <span class="o">*</span> <span class="n">M_pay</span>  <span class="c1"># [kg] Battery mass</span>
-<span class="n">E_bat</span> <span class="o">=</span> <span class="n">E_bat_ref</span> <span class="o">*</span> <span class="n">M_bat</span><span class="o">/</span><span class="n">M_bat_ref</span> <span class="o">*</span> <span class="mf">.8</span>  <span class="c1"># [J] Energy  of the battery (.8 coefficient because 80% use only of the total capacity)</span>
+<span class="n">E_bat</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">E_bat_ref</span> <span class="o">*</span> <span class="n">M_bat</span> <span class="o">/</span> <span class="n">M_bat_ref</span> <span class="o">*</span> <span class="mf">0.8</span>
+<span class="p">)</span>  <span class="c1"># [J] Energy  of the battery (.8 coefficient because 80% use only of the total capacity)</span>
 
 <span class="c1"># Estimation models</span>
-<span class="n">C_bat</span> <span class="o">=</span> <span class="n">E_bat</span><span class="o">/</span><span class="n">U_bat</span> <span class="c1"># [A*s] Capacity  of the battery </span>
-<span class="n">I_bat_max</span> <span class="o">=</span> <span class="n">I_bat_max_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">C_bat</span><span class="o">/</span><span class="n">C_bat_ref</span><span class="p">)</span>  <span class="c1"># [A] Max discharge current</span>
+<span class="n">C_bat</span> <span class="o">=</span> <span class="n">E_bat</span> <span class="o">/</span> <span class="n">U_bat</span>  <span class="c1"># [A*s] Capacity  of the battery</span>
+<span class="n">I_bat_max</span> <span class="o">=</span> <span class="n">I_bat_max_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">C_bat</span> <span class="o">/</span> <span class="n">C_bat_ref</span><span class="p">)</span>  <span class="c1"># [A] Max discharge current</span>
 <span class="n">P_bat_max</span> <span class="o">=</span> <span class="n">U_bat</span> <span class="o">*</span> <span class="n">I_bat_max</span>  <span class="c1"># [W] Max power</span>
 
 <span class="c1"># Performance in hover</span>
@@ -630,11 +633,13 @@ document.write(`
 <span class="c1">#% ESC</span>
 <span class="c1"># ---</span>
 <span class="c1"># Power selection with takeoff scenario</span>
-<span class="n">P_esc</span> <span class="o">=</span> <span class="n">P_el_mot_to</span> <span class="o">*</span> <span class="n">U_bat</span> <span class="o">/</span> <span class="n">U_mot_to</span>  <span class="c1"># [W] power electronic power (corner power or apparent power)</span>
+<span class="n">P_esc</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">P_el_mot_to</span> <span class="o">*</span> <span class="n">U_bat</span> <span class="o">/</span> <span class="n">U_mot_to</span>
+<span class="p">)</span>  <span class="c1"># [W] power electronic power (corner power or apparent power)</span>
 
 <span class="c1"># Estimation models</span>
-<span class="n">U_esc</span> <span class="o">=</span> <span class="mf">1.84</span> <span class="o">*</span> <span class="n">P_esc</span><span class="o">**</span><span class="mf">0.36</span>  <span class="c1"># [V] ESC voltage     </span>
-<span class="n">M_esc</span> <span class="o">=</span> <span class="n">M_esc_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">P_esc</span><span class="o">/</span><span class="n">P_esc_ref</span><span class="p">)</span>  <span class="c1"># [kg] Mass ESC</span>
+<span class="n">U_esc</span> <span class="o">=</span> <span class="mf">1.84</span> <span class="o">*</span> <span class="n">P_esc</span><span class="o">**</span><span class="mf">0.36</span>  <span class="c1"># [V] ESC voltage</span>
+<span class="n">M_esc</span> <span class="o">=</span> <span class="n">M_esc_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">P_esc</span> <span class="o">/</span> <span class="n">P_esc_ref</span><span class="p">)</span>  <span class="c1"># [kg] Mass ESC</span>
 </pre></div>
 </div>
 </div>
