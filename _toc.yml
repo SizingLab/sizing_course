@@ -78,6 +78,7 @@ parts:
       - file: laboratories/Lab-multirotor/05c_BatteryESCSelection
       - file: laboratories/Lab-multirotor/05d_FrameSelection-Student
       - file: laboratories/Lab-multirotor/05d_FrameSelection
+      - file: laboratories/Lab-multirotor/06_SystemSizingCodeOptimization-Student
   - file: laboratories/Lab-vega/summary
     title: VEGA Launcher TVC EMA
     sections:
