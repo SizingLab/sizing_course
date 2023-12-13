@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Sizing scenarios and design drivers &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>Appendix 1: Sizing equations &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -63,12 +63,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-multirotor/02_SizingScenariosEquations';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-multirotor/A1_Sizing_equations';</script>
     <link rel="shortcut icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Propellers estimation models with dimensional analysis and linear regressions" href="03_PropellerLinearRegression-Student.html" />
-    <link rel="prev" title="Sizing scenarios and design drivers" href="02_SizingScenariosEquations-Student.html" />
+    <link rel="next" title="Lab - VEGA Launcher TVC EMA case study" href="../Lab-vega/summary.html" />
+    <link rel="prev" title="Sizing of a multirotor drone" href="06_SystemSizingCodeOptimization-Student.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -222,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">Multirotor UAV</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_CaseStudy.html">Case study and architecture presentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_SizingScenariosEquations-Student.html">Sizing scenarios and design drivers</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Sizing scenarios and design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_SizingScenariosEquations.html">Sizing scenarios and design drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_PropellerLinearRegression-Student.html">Propellers estimation models with dimensional analysis and linear regressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_PropellerLinearRegression.html">Propellers estimation models with dimensional analysis and linear regressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_ScalingLawsElectricalComponents-Student.html">Scaling laws of electrical components</a></li>
@@ -237,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection-Student.html">Frame selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection.html">Frame selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="A1_Sizing_equations.html">Appendix 1: Sizing equations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Appendix 1: Sizing equations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -336,7 +338,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/laboratories/Lab-multirotor/02_SizingScenariosEquations.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/laboratories/Lab-multirotor/A1_Sizing_equations.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -354,7 +356,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-multirotor/02_SizingScenariosEquations.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-multirotor/A1_Sizing_equations.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -402,7 +404,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/laboratories/Lab-multirotor/02_SizingScenariosEquations.ipynb" target="_blank"
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/laboratories/Lab-multirotor/A1_Sizing_equations.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -419,7 +421,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Flaboratories/Lab-multirotor/02_SizingScenariosEquations.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Flaboratories/Lab-multirotor/A1_Sizing_equations.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -449,7 +451,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/laboratories/Lab-multirotor/02_SizingScenariosEquations.ipynb" target="_blank"
+      <li><a href="../../_sources/laboratories/Lab-multirotor/A1_Sizing_equations.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -531,7 +533,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Sizing scenarios and design drivers</h1>
+    <h1>Appendix 1: Sizing equations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -541,8 +543,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-drivers">Design drivers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-scenarios">Sizing scenarios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-notation">General notation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-variables">Power variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrical-dimensions">Geometrical dimensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-variables">Other variables:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-i-values-variable-definition">Index <span class="math notranslate nohighlight">\(i\)</span> (values, variable definition):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-j-components">Index <span class="math notranslate nohighlight">\(j\)</span> (components)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-k-sizing-scenarios-reference-values">Index <span class="math notranslate nohighlight">\(k\)</span> (sizing scenarios, reference values)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-mass">Balance mass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-forces">Global forces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propeller">Propeller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motor">Motor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esc">ESC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#battery">Battery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frame">Frame</a></li>
 </ul>
             </nav>
         </div>
@@ -554,175 +570,184 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p><img alt="SizingLab" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/logo_sizinglab.png" /></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="sizing-scenarios-and-design-drivers">
-<h1>Sizing scenarios and design drivers<a class="headerlink" href="#sizing-scenarios-and-design-drivers" title="Permalink to this heading">#</a></h1>
-<p><em>Written by Marc Budinger (INSA Toulouse), Scott Delbecq (ISAE-SUPAERO) and Félix Pollet (ISAE-SUPAERO), Toulouse, France.</em></p>
-<p>The preliminary sizing of UAVs aims at defining the main drone characteristics and selecting the components based on a few <strong>sizing scenarios</strong>. The sizing scenarios are part of the specification process and may include both transient and endurance criteria, such as maximum rate of climb and hover flight endurance. The final overall design has to consider simultaneously the various sizing scenarios that may impact the components selection through <strong>design drivers</strong>.</p>
-<section id="design-drivers">
-<h2>Design drivers<a class="headerlink" href="#design-drivers" title="Permalink to this heading">#</a></h2>
-<p>Design drivers are physical factors that influence the design process of a component. For example, the propeller design is driven, among others, by the maximum thrust it can provide.</p>
-<p>Table 1 summarizes the main system components.</p>
-<blockquote>
-<div><p><strong>Exercise</strong>: for each component, list the main design drivers to be taken into account for the design process. Complete Table 1.</p>
-</div></blockquote>
+  <p><img alt="SizingLab" src="laboratories/Lab-multirotor/pictures/logo_sizinglab.png" /></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="appendix-1-sizing-equations">
+<h1>Appendix 1: Sizing equations<a class="headerlink" href="#appendix-1-sizing-equations" title="Permalink to this heading">#</a></h1>
+<p>Summary of all sizing equations (sizing scenarios and estimation models).</p>
+<p>Here is a convention used to express variables:</p>
+<figure class="align-center" id="appendix-glosary">
+<a class="reference internal image-reference" href="../../_images/glosary.png"><img alt="../../_images/glosary.png" src="../../_images/glosary.png" style="width: 40%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Glosary for variable naming</span><a class="headerlink" href="#appendix-glosary" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When coding the variable, the comas <code class="docutils literal notranslate"><span class="pre">,</span></code> are replaced with underscores <code class="docutils literal notranslate"><span class="pre">_</span></code>for example <span class="math notranslate nohighlight">\(T_{nom,mot,hov}\)</span> will be coded <code class="docutils literal notranslate"><span class="pre">T_nom_mot_hov</span></code>.</p>
+<section id="general-notation">
+<h2>General notation<a class="headerlink" href="#general-notation" title="Permalink to this heading">#</a></h2>
+<section id="power-variables">
+<h3>Power variables<a class="headerlink" href="#power-variables" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F\)</span> : force, thrust <span class="math notranslate nohighlight">\([N]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : torque <span class="math notranslate nohighlight">\([N.m]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega, n\)</span> : rotational speed <span class="math notranslate nohighlight">\([rad/s]\)</span>, frequency <span class="math notranslate nohighlight">\([rev/s]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P\)</span> : power <span class="math notranslate nohighlight">\([W]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U\)</span> : voltage <span class="math notranslate nohighlight">\([V]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(I\)</span> : current <span class="math notranslate nohighlight">\([A]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(V\)</span> : drone speed <span class="math notranslate nohighlight">\([m/s]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(K_T\)</span> : Kt motor <span class="math notranslate nohighlight">\([N.m/A\)</span> or <span class="math notranslate nohighlight">\(V/(rad.s^{-1})]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(J\)</span> : Inertia <span class="math notranslate nohighlight">\([kg.m^2]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_b\)</span> : Energy battery <span class="math notranslate nohighlight">\([J]\)</span></p></li>
+</ul>
 </section>
-<section id="sizing-scenarios">
-<h2>Sizing scenarios<a class="headerlink" href="#sizing-scenarios" title="Permalink to this heading">#</a></h2>
-<p>Endurance scenarios, like hover flight need to be taken into account for the selection of the battery endurance and the evaluation of the motor temperature rise. Extreme performance criteria, such as maximum transitory acceleration or maximum rate of climb are fundamental to determine the maximum rotational speed, maximum propeller torque, Electronic Speed Controller (ESC) corner power, battery voltage and power, and mechanical stress.</p>
-<blockquote>
-<div><p><strong>Exercise</strong>: for each design driver, list the critical scenarios that need to be taken into account for the component selection. Complete Table 1.</p>
-</div></blockquote>
-<p><strong><center>Table 1: Design drivers and sizing scenarios</center></strong></p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Components</p></th>
-<th class="head"><p>Design drivers</p></th>
-<th class="head"><p>Parameters involved</p></th>
-<th class="head"><p>Sizing scenarios</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Propeller</p></td>
-<td><p>Max thrust</p></td>
-<td><p>Diameter, tip speed</p></td>
-<td><p>Takeoff</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p>Climb</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>Efficiency</p></td>
-<td><p>Pitch</p></td>
-<td><p>Hover</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p>Cruise</p></td>
-</tr>
-<tr class="row-even"><td><p>Motor</p></td>
-<td><p>Temperature rise</p></td>
-<td><p>Nominal torque, Resistance</p></td>
-<td><p>Hover</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p>Cruise</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>Max. voltage</p></td>
-<td><p>Torque constant, Resistance</p></td>
-<td><p>Takeoff</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p>Climb</p></td>
-</tr>
-<tr class="row-even"><td><p>Electronic Speed Controller</p></td>
-<td><p>Temperature rise</p></td>
-<td><p>Max power, Max current</p></td>
-<td><p>Takeoff</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p>Climb</p></td>
-</tr>
-<tr class="row-even"><td><p>Battery</p></td>
-<td><p>Energy</p></td>
-<td><p>Voltage, Capacity</p></td>
-<td><p>Hover (autonomy)</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p>Cruise (range)</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>Power</p></td>
-<td><p>Voltage, Max discharge rate</p></td>
-<td><p>Takeoff</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p>Climb</p></td>
-</tr>
-<tr class="row-even"><td><p>Frame</p></td>
-<td><p>Stress</p></td>
-<td><p>Mechanical strength</p></td>
-<td><p>Takeoff</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p>Landing</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p>Crash</p></td>
-</tr>
-</tbody>
-</table>
-<p>In the rest of this lab, <strong>only the hover and takeoff scenarios will be covered</strong>.</p>
-<p><strong><center>Table 2: Design drivers and sizing scenarios with focus on hover and takeoff scenarios</center></strong></p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Components</p></th>
-<th class="head"><p>Design drivers</p></th>
-<th class="head"><p>Parameters involved</p></th>
-<th class="head"><p>Sizing scenarios</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Propeller</p></td>
-<td><p>Max thrust</p></td>
-<td><p>Diameter, tip speed</p></td>
-<td><p>Takeoff</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>Efficiency</p></td>
-<td><p>Pitch</p></td>
-<td><p>Hover</p></td>
-</tr>
-<tr class="row-even"><td><p>Motor</p></td>
-<td><p>Temperature rise</p></td>
-<td><p>Nominal torque, Resistance</p></td>
-<td><p>Hover</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>Max. voltage</p></td>
-<td><p>Torque constant, Resistance</p></td>
-<td><p>Takeoff</p></td>
-</tr>
-<tr class="row-even"><td><p>Electronic Speed Controller</p></td>
-<td><p>Temperature rise</p></td>
-<td><p>Max power, Max current</p></td>
-<td><p>Takeoff</p></td>
-</tr>
-<tr class="row-odd"><td><p>Battery</p></td>
-<td><p>Energy</p></td>
-<td><p>Voltage, Capacity</p></td>
-<td><p>Hover (autonomy)</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>Power</p></td>
-<td><p>Voltage, Max discharge rate</p></td>
-<td><p>Takeoff</p></td>
-</tr>
-<tr class="row-odd"><td><p>Frame</p></td>
-<td><p>Stress</p></td>
-<td><p>Mechanical strength</p></td>
-<td><p>Takeoff</p></td>
-</tr>
-</tbody>
-</table>
+<section id="geometrical-dimensions">
+<h3>Geometrical dimensions<a class="headerlink" href="#geometrical-dimensions" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : radius <span class="math notranslate nohighlight">\([m]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(l\)</span> : length <span class="math notranslate nohighlight">\([m]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(D\)</span> : diameter <span class="math notranslate nohighlight">\([m]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H\)</span> : outer height of a rectangular cross section <span class="math notranslate nohighlight">\([m]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : inner height of a rectangular cross section <span class="math notranslate nohighlight">\([m]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : pitch <span class="math notranslate nohighlight">\([m]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(S\)</span> : surface <span class="math notranslate nohighlight">\([m^2]\)</span></p></li>
+</ul>
+</section>
+<section id="other-variables">
+<h3>Other variables:<a class="headerlink" href="#other-variables" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(M\)</span> : Mass <span class="math notranslate nohighlight">\([kg]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : Gravity constant <span class="math notranslate nohighlight">\([N/kg]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N_j\)</span> : number of “j” component</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho_{air}\)</span> : air volume density <span class="math notranslate nohighlight">\([kg/m^3]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho_{s}\)</span> : structural material volume density <span class="math notranslate nohighlight">\([kg/m^3]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_x\)</span> : Drag coefficient</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_T\)</span> : Thrust coefficient</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_P\)</span> : Power coefficient</p></li>
+<li><p><span class="math notranslate nohighlight">\(time\)</span>: Max current time</p></li>
+</ul>
+</section>
+<section id="index-i-values-variable-definition">
+<h3>Index <span class="math notranslate nohighlight">\(i\)</span> (values, variable definition):<a class="headerlink" href="#index-i-values-variable-definition" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(moy\)</span> : nominal</p></li>
+<li><p><span class="math notranslate nohighlight">\(max\)</span> : maximum</p></li>
+<li><p><span class="math notranslate nohighlight">\(min\)</span> : minimum</p></li>
+<li><p><span class="math notranslate nohighlight">\(fr\)</span> : friction</p></li>
+<li><p><span class="math notranslate nohighlight">\(total\)</span> : all components</p></li>
+<li><p><span class="math notranslate nohighlight">\(out\)</span> : outer</p></li>
+<li><p><span class="math notranslate nohighlight">\(in\)</span> : inner</p></li>
+</ul>
+</section>
+<section id="index-j-components">
+<h3>Index <span class="math notranslate nohighlight">\(j\)</span> (components)<a class="headerlink" href="#index-j-components" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(pro\)</span> : propeller</p></li>
+<li><p><span class="math notranslate nohighlight">\(mot\)</span> : motor</p></li>
+<li><p><span class="math notranslate nohighlight">\(esc\)</span> : ESC</p></li>
+<li><p><span class="math notranslate nohighlight">\(bat\)</span> : battery</p></li>
+<li><p><span class="math notranslate nohighlight">\(arm\)</span> : arm</p></li>
+<li><p><span class="math notranslate nohighlight">\(lg\)</span> : landing gear</p></li>
+<li><p><span class="math notranslate nohighlight">\(pay\)</span> : payload</p></li>
+<li><p><span class="math notranslate nohighlight">\(body\)</span>: core frame</p></li>
+<li><p><span class="math notranslate nohighlight">\(frame\)</span>: body + arm</p></li>
+</ul>
+</section>
+<section id="index-k-sizing-scenarios-reference-values">
+<h3>Index <span class="math notranslate nohighlight">\(k\)</span> (sizing scenarios, reference values)<a class="headerlink" href="#index-k-sizing-scenarios-reference-values" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(hov\)</span> : Hover</p></li>
+<li><p><span class="math notranslate nohighlight">\(to\)</span> : Take-Off</p></li>
+<li><p><span class="math notranslate nohighlight">\(stat\)</span> : advance speed V=0 (hover or take-off scenario)</p></li>
+<li><p><span class="math notranslate nohighlight">\(ref\)</span> : reference value for scaling laws</p></li>
+<li><p><span class="math notranslate nohighlight">\(mvs\)</span> : Maximum vertical speed</p></li>
+</ul>
+</section>
+</section>
+<section id="balance-mass">
+<h2>Balance mass<a class="headerlink" href="#balance-mass" title="Permalink to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(M_{total}=\left(M_{mot}+M_{esc}+M_{pro}\right) \cdot N_{pro}+ \left(M_{arm}+M_{LG}\right) \cdot N_{arm}+M_{body}+M_{bat}+M_{pay}\)</span></p>
+</section>
+<section id="global-forces">
+<h2>Global forces<a class="headerlink" href="#global-forces" title="Permalink to this heading">#</a></h2>
+<p>Hover:</p>
+<p><span class="math notranslate nohighlight">\(F_{total,hov} = M_{total}g\)</span></p>
+<p>Take-Off:</p>
+<p><span class="math notranslate nohighlight">\(F_{total,to} = M_{total}\left(g + a_{to}\right)\)</span></p>
+<p>Maximum Vertical speed:</p>
+<p><span class="math notranslate nohighlight">\(F_{total,mvs}=M_{total} \cdot g+\frac{1}{2}\rho_{air} \cdot C_x \cdot S \cdot V^2\)</span></p>
+<p>Total force per propeller:</p>
+<p><span class="math notranslate nohighlight">\(F_{pro,j}=\frac{F_{total,j}}{N_{pro}}\)</span></p>
+</section>
+<section id="propeller">
+<h2>Propeller<a class="headerlink" href="#propeller" title="Permalink to this heading">#</a></h2>
+<p>Rotational speed of propeller:</p>
+<p><span class="math notranslate nohighlight">\(\Omega_{pro,k} = \frac{n_{pro,k}}{2\pi}\)</span></p>
+<p>Thrust generated per propeller:</p>
+<p><span class="math notranslate nohighlight">\(F_{pro,k} = C_t\rho n_{pro,k}^2 D_{pro}^4\)</span></p>
+<p>Power generated per propeller:</p>
+<p><span class="math notranslate nohighlight">\(P_{pro,k} = C_p\rho n_{pro,k}^3 D_{pro,k}^5\)</span></p>
+<p>Torque:</p>
+<p><span class="math notranslate nohighlight">\(T_{pro,k} = \frac{P_{pro,k}}{\Omega_{pro,k}}\)</span></p>
+<p>Scaling laws equations:</p>
+<p><span class="math notranslate nohighlight">\(M_{pro}=M_{pro,ref}\left(\frac{D_{pro}}{D_{pro,ref}}\right)^3\)</span></p>
+<p>Extracted from regressions models based on APC Propellers:</p>
+<p><span class="math notranslate nohighlight">\(C_{t,pro,k,stat}=4.27 \cdot 10^{-2} + 1.44 \cdot 10^{-1}\frac{p_{pro,k}}{D_{pro,k}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(C_{p,pro,k,stat}=-1.48 \cdot 10^{-3} + 9.72 \cdot 10^{-2}\frac{p_{pro,k}}{D_{pro,k}}\)</span></p>
+</section>
+<section id="motor">
+<h2>Motor<a class="headerlink" href="#motor" title="Permalink to this heading">#</a></h2>
+<p>Analytical equations:</p>
+<p><span class="math notranslate nohighlight">\(T_{mot,k} = K_TI_{mot,j}\)</span></p>
+<p><span class="math notranslate nohighlight">\(T_{mot,k} = T_{pro,k}+T_{fr,mot,k}\)</span></p>
+<p><span class="math notranslate nohighlight">\(U_{mot,k} = K_T\Omega_{pro,k} + R_{mot}I_{mot,k} \)</span></p>
+<p><span class="math notranslate nohighlight">\(P_{mot,k}= U_{mot,k} \cdot I_{mot,k}\)</span></p>
+<p>Scenario condition:</p>
+<p><span class="math notranslate nohighlight">\(T_{max,mot,k}&gt;T_{pro,to}\)</span></p>
+<p>Scaling laws:</p>
+<p><span class="math notranslate nohighlight">\(M_{mot}=M_{mot,ref}\left(\frac{T_{nom,mot}}{T_{nom,mot,ref}}\right)^{3/3.5}\)</span></p>
+<p><span class="math notranslate nohighlight">\(T_{max, mot}=T_{max, mot,ref} \frac{T_{nom, mot}}{T_{nom, mot,ref}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(T_{mot,fr}=T_{mot,fr,ref} \left(\frac{T_{nom}}{T_{nom,ref}}\right)^{3/3.5}\)</span></p>
+<p><span class="math notranslate nohighlight">\(R_{mot}=R_{mot,ref}\left(\frac{K_T}{K_{T,ref}}\right)^2 \left(\frac{T_{nom}}{T_{nom,ref}}\right)^{-5/3.5}\)</span></p>
+<p><span class="math notranslate nohighlight">\(J_{mot}=J_{mot,ref}\left(\frac{T_{nom,mot}}{T_{nom,mot,ref}}\right)^{5/3.5}\)</span></p>
+</section>
+<section id="esc">
+<h2>ESC<a class="headerlink" href="#esc" title="Permalink to this heading">#</a></h2>
+<p>Corner power or apparent power:</p>
+<p><span class="math notranslate nohighlight">\(P_{esc,to}=P_{mot,to}\frac{U_{bat}}{U_{mot,to}}\)</span></p>
+<p>Scenario condition:</p>
+<p><span class="math notranslate nohighlight">\(P_{esc}&gt;P_{esc,to}\)</span></p>
+<p>Scaling laws:</p>
+<p><span class="math notranslate nohighlight">\(U_{esc}=U_{esc,ref}\left(\frac{P_{esc}}{P_{esc,ref}}\right)^{1/3}\)</span></p>
+<p><span class="math notranslate nohighlight">\(M_{esc} = M_{esc,ref}\frac{P_{esc}}{P_{esc,ref}}\)</span></p>
+</section>
+<section id="battery">
+<h2>Battery<a class="headerlink" href="#battery" title="Permalink to this heading">#</a></h2>
+<p>Condition for voltage : <span class="math notranslate nohighlight">\(U_{bat} &gt; U_{mot,to}\)</span></p>
+<p>Condition for power : <span class="math notranslate nohighlight">\(U_{bat}I_{bat} &gt; \frac{U_{mot,to}I_{mot,to}N_{pro,to}}{\eta_{esc}}\)</span></p>
+<p>Condition for autonomy: <span class="math notranslate nohighlight">\(0.8C_{bat} &gt; I_{bat} \cdot t_{hov}\)</span></p>
+<p>Voltage battery: <span class="math notranslate nohighlight">\(U_{bat}=3.7 \cdot N_{s,bat}\)</span></p>
+<p>Capacity battery: <span class="math notranslate nohighlight">\(\displaystyle C_{bat}=\frac{E_{bat}}{U_{bat}}\)</span></p>
+<p>Scaling laws:</p>
+<p><span class="math notranslate nohighlight">\(I_{max,bat}=I_{max,ref}\frac{C_{bat}}{C_{bat,ref}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(M_{bat}=M_{bat,ref}\frac{U_{bat}}{U_{bat,ref}}\frac{C_{bat}}{C_{bat,ref}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(E_{bat}=E_{bat,ref} \cdot \frac{M_{bat}}{M_{bat,ref}}\)</span></p>
+</section>
+<section id="frame">
+<h2>Frame<a class="headerlink" href="#frame" title="Permalink to this heading">#</a></h2>
+<p>Max force per arm:
+<span class="math notranslate nohighlight">\(\displaystyle F_{max,arm} = N_{pro,arm} \cdot F_{pro,k}\)</span></p>
+<p>Minimum arm length:
+<span class="math notranslate nohighlight">\(\displaystyle L_{arm}&gt;\frac{D_{pro}/2}{sin(\pi/N_{arm})}\)</span></p>
+<p>Max stress for square section:</p>
+<ul class="simple">
+<li><p>for circular hollow section: <span class="math notranslate nohighlight">\(\displaystyle \frac{F_{max,arm} \cdot L_{arm}}{\frac{\pi \cdot \left(D_{out}^4-D_{in}^4\right)}{32 \cdot D_{out}}}&lt;\sigma_{max}\)</span></p></li>
+<li><p>for square hollow section: <span class="math notranslate nohighlight">\(\displaystyle \frac{F_{max,arm} \cdot L_{arm}}{\frac{H^3}{6}-\frac{h^4}{6 \cdot H}} &lt;\sigma_{max}\)</span></p></li>
+</ul>
+<p>Total mass beams:</p>
+<ul class="simple">
+<li><p>for circular hollow section: <span class="math notranslate nohighlight">\(M_{arm}=\frac{\pi}{4} \cdot \left(D_{out,arm}^2-D_{in,arm}^2\right) \cdot \rho_{s} \cdot L_{arm}.N_{arm}\)</span></p></li>
+<li><p>for square hollow section: <span class="math notranslate nohighlight">\(M_{arm}=\left(H_{out,arm}^2-H_{in,arm}^2\right) \cdot \rho_{s} \cdot L_{arm} \cdot N_{arm}\)</span></p></li>
+</ul>
+<p>Mass of global frame: <span class="math notranslate nohighlight">\(M_{frame}=M_{frame,ref}\left(\frac{M_{arm}}{M_{arm,ref}}\right)\)</span></p>
 </section>
 </section>
 
@@ -757,20 +782,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="02_SizingScenariosEquations-Student.html"
+       href="06_SystemSizingCodeOptimization-Student.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Sizing scenarios and design drivers</p>
+        <p class="prev-next-title">Sizing of a multirotor drone</p>
       </div>
     </a>
     <a class="right-next"
-       href="03_PropellerLinearRegression-Student.html"
+       href="../Lab-vega/summary.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Propellers estimation models with dimensional analysis and linear regressions</p>
+        <p class="prev-next-title">Lab - VEGA Launcher TVC EMA case study</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -789,8 +814,22 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-drivers">Design drivers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-scenarios">Sizing scenarios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-notation">General notation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-variables">Power variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrical-dimensions">Geometrical dimensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-variables">Other variables:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-i-values-variable-definition">Index <span class="math notranslate nohighlight">\(i\)</span> (values, variable definition):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-j-components">Index <span class="math notranslate nohighlight">\(j\)</span> (components)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-k-sizing-scenarios-reference-values">Index <span class="math notranslate nohighlight">\(k\)</span> (sizing scenarios, reference values)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-mass">Balance mass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-forces">Global forces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propeller">Propeller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motor">Motor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esc">ESC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#battery">Battery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frame">Frame</a></li>
 </ul>
   </nav></div>
 
