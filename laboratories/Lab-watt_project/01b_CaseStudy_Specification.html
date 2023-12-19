@@ -239,6 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05d_FrameSelection-Student.html">Frame selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05d_FrameSelection.html">Frame selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/07_DesignExploration-Student.html">Design optimization and exploration of a multirotor drone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/A1_Sizing_equations.html">Appendix 1: Sizing equations</a></li>
 </ul>
 </li>
@@ -988,24 +989,24 @@ Consumption per passenger: 20.44 kJ/(Pax.km)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1174296675189548
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1174817311084206
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1579
-     nit: 34
+    nfev: 1039
+     nit: 22
  success: True
-       x: array([0.29929124, 0.19326003, 0.98278288])
-Optimal vector : [0.29929124 0.19326003 0.98278288]
-0.5131326713242985
-Constraints vector : [0.0006464155866991004, 0.00020729684908794098, 0.08686732867570146]
+       x: array([0.29948844, 0.19640783, 0.98459921])
+Optimal vector : [0.29948844 0.19640783 0.98459921]
+0.5146899991676072
+Constraints vector : [0.0023811497208096476, 0.00020729684908794098, 0.08531000083239282]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 17.07 kJ/(Pax.km)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 17.10 kJ/(Pax.km)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.066578187803167
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.096961587345987
 </pre></div>
 </div>
-<img alt="../../_images/6244689041dffc088569b56e5ef771ee2f757e85163f3427b67a1a7536582bf7.png" src="../../_images/6244689041dffc088569b56e5ef771ee2f757e85163f3427b67a1a7536582bf7.png" />
+<img alt="../../_images/e2a98dc49b5282e197a99e699e69c5968b2cee2a4d607678a621ab0a085dadd6.png" src="../../_images/e2a98dc49b5282e197a99e699e69c5968b2cee2a4d607678a621ab0a085dadd6.png" />
 </div>
 </div>
 <blockquote>
@@ -1059,50 +1060,52 @@ Tramway :
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.2943682600385298
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1579
-     nit: 34
+    nfev: 1174
+     nit: 25
  success: True
-       x: array([0.10401178, 0.38942771, 0.98816544])
+       x: array([0.11584306, 0.3931352 , 0.98943502])
 Consumption per passenger: 20.18 kJ/(Pax.km)
 ----
 Trolleybus :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1340254283077316
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1396852632064673
  message: &#39;Optimization terminated successfully.&#39;
     nfev: 1264
      nit: 27
  success: True
-       x: array([0.04883703, 0.76690518, 0.9881916 ])
-Consumption per passenger: 33.90 kJ/(Pax.km)
+       x: array([0.09034062, 0.61145162, 0.98839301])
+Consumption per passenger: 33.77 kJ/(Pax.km)
 ----
 Bus :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1554437831959297
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1635713075867082
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1264
-     nit: 27
+    nfev: 1444
+     nit: 31
  success: True
-       x: array([0.05343409, 0.76050503, 0.98650129])
-Consumption per passenger: 35.30 kJ/(Pax.km)
+       x: array([0.08178307, 0.6142465 , 0.98951894])
+Consumption per passenger: 35.33 kJ/(Pax.km)
 ----
 Car :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.522255018926166
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.708420855968792
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1804
-     nit: 39
+    nfev: 1219
+     nit: 26
  success: True
-       x: array([0.00422173, 0.99808936, 0.98326125])
-Consumption per passenger: 102.08 kJ/(Pax.km)
+       x: array([0.03774251, 0.51710618, 0.98999675])
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>102.08184402614765
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 115.54 kJ/(Pax.km)
 </pre></div>
 </div>
-<img alt="../../_images/65c46b24f0826e9cce5503ae417e837d37bc25d4db31da23296bfb928c23858e.png" src="../../_images/65c46b24f0826e9cce5503ae417e837d37bc25d4db31da23296bfb928c23858e.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>115.54293197175056
+</pre></div>
+</div>
+<img alt="../../_images/5b7ac61682c4f2fd69f1e8bf071d777fd54ddb98e8ad39fe9346c1a17f84cc1d.png" src="../../_images/5b7ac61682c4f2fd69f1e8bf071d777fd54ddb98e8ad39fe9346c1a17f84cc1d.png" />
 </div>
 </div>
 </section>
