@@ -70,7 +70,7 @@ You can then create a new conda environment by running:
 
 `conda create -n sizing_course python=3.9`
 
-`conda activate sizing_course`
+`conda activate sizing_course` or `source activate sizing_course`
 
 Then install required dependencies:
 `pip install -r requirements.txt`
