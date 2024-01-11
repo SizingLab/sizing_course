@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -143,6 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../about/homepage.html">
@@ -504,6 +505,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -513,6 +515,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -700,6 +703,19 @@ and the torque can be calculated with the simple equation:<br />
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># import vector manipulation and symbols definition of Sympy</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">sympy.physics.mechanics</span> <span class="kn">import</span> <span class="n">ReferenceFrame</span><span class="p">,</span> <span class="n">Vector</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">lambdify</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">sympy</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>The expression of the actuator length is :</p>
 <div class="cell docutils container">
@@ -709,8 +725,14 @@ and the torque can be calculated with the simple equation:<br />
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle (0.2248 d_{1} - 0.3757)\mathbf{\hat{n}_x} + (- 0.9744 d_{1} + d_{2} - 1.172)\mathbf{\hat{n}_y}\]</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">NM</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;NM&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>The expression of the equivalent lever arm  is :</p>
@@ -721,8 +743,14 @@ and the torque can be calculated with the simple equation:<br />
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 0.8532 \left(\left(- \frac{\left(- 0.9744 d_{1} - 1.372\right) \left(0.2248 d_{1} - 0.3757\right)}{\left(0.1028 \left(0.5984 d_{1} - 1.0\right)^{2} + \left(- 0.8313 d_{1} + 0.8532 d_{2} - 1.0\right)^{2}\right)^{0.5}} + \frac{\left(0.2248 d_{1} + 0.9823\right) \left(- 0.9744 d_{1} + d_{2} - 1.172\right)}{\left(0.1028 \left(0.5984 d_{1} - 1.0\right)^{2} + \left(- 0.8313 d_{1} + 0.8532 d_{2} - 1.0\right)^{2}\right)^{0.5}}\right)^{2}\right)^{0.5}\]</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Larm</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;Larm&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>This expression can be evaluated:</p>
@@ -740,7 +768,16 @@ and the torque can be calculated with the simple equation:<br />
 </div>
 </div>
 <div class="cell_output docutils container">
-<p>The lever arm for the nominal dimensions is 1.35 m</p>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Transform the expression into a numerical function</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">Evaluate_Larm</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">((</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">),</span> <span class="n">Larm</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">md</span><span class="p">(</span><span class="s2">&quot;The lever arm for the nominal dimensions is </span><span class="si">%4.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">Evaluate_Larm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;lambdify&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -766,9 +803,15 @@ and the torque can be calculated with the simple equation:<br />
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7c1c53e497ccb86fe986b3746a1ea1f88eb386dcf521d9105bcc5db8e8dacd2f.png" src="../../_images/7c1c53e497ccb86fe986b3746a1ea1f88eb386dcf521d9105bcc5db8e8dacd2f.png" />
-<img alt="../../_images/32f6e365b9092220f2fb3db99574c88969fff67e8246b8442213a9edef29afda.png" src="../../_images/32f6e365b9092220f2fb3db99574c88969fff67e8246b8442213a9edef29afda.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fa5e8a9e670&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import plot3d function  from sympy package</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">sympy.plotting</span> <span class="kn">import</span> <span class="n">plot3d</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># plot the Lever arm in function of d1 and d2 variables</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
 </pre></div>
 </div>
 </div>
@@ -796,7 +839,16 @@ and the torque can be calculated with the simple equation:<br />
 </div>
 </div>
 <div class="cell_output docutils container">
-<p>The maximum static force is 6.40e+04 N.</p>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">teta_max</span> <span class="o">=</span> <span class="mf">5.7</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">Fstat_max</span> <span class="o">=</span> <span class="n">Knozzle</span> <span class="o">*</span> <span class="n">teta_max</span> <span class="o">/</span> <span class="n">Evaluate_Larm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">md</span><span class="p">(</span><span class="s2">&quot;The maximum static force is </span><span class="si">%4.2e</span><span class="s2"> N.&quot;</span> <span class="o">%</span> <span class="n">Fstat_max</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;Evaluate_Larm&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -870,7 +922,18 @@ with <span class="math notranslate nohighlight">\(\xi=0.7\)</span> and thus <spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d675bb68fbf2e4cff47b576285e115305a5caf22d73264da32ed324f44e9a3f4.png" src="../../_images/d675bb68fbf2e4cff47b576285e115305a5caf22d73264da32ed324f44e9a3f4.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">teta</span><span class="p">,</span> <span class="n">tetap</span><span class="p">,</span> <span class="n">tetapp</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">yp</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">ypp</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Force calculation</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">Fdyn</span> <span class="o">=</span> <span class="p">(</span><span class="n">Jnozzle</span> <span class="o">*</span> <span class="n">tetapp</span> <span class="o">+</span> <span class="n">Fnozzle</span> <span class="o">*</span> <span class="n">tetap</span> <span class="o">+</span> <span class="n">Knozzle</span> <span class="o">*</span> <span class="n">teta</span><span class="p">)</span> <span class="o">/</span> <span class="n">Evaluate_Larm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">g</span><span class="p">,</span> <span class="n">gx1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">gx1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Fdyn</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;Evaluate_Larm&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -892,7 +955,19 @@ with <span class="math notranslate nohighlight">\(\xi=0.7\)</span> and thus <spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ecc152cd77ac377facb186eee6fd995672071df7e2b43d572f7a962fb6121d6f.png" src="../../_images/ecc152cd77ac377facb186eee6fd995672071df7e2b43d572f7a962fb6121d6f.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># we create here a force-speed diagram</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">h</span><span class="p">,</span> <span class="n">hx1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">hx1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yp</span><span class="p">,</span> <span class="n">Fdyn</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Fstat_max</span><span class="p">,</span> <span class="s2">&quot;.k&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">hx1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Force (N)&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">hx1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Speed (°/s)&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;Fdyn&#39; is not defined
+</pre></div>
+</div>
+<img alt="../../_images/5aa844c34abce8e545a3b821b4fb87c6745d9c1bfeca2f14a380859345c39b6f.png" src="../../_images/5aa844c34abce8e545a3b821b4fb87c6745d9c1bfeca2f14a380859345c39b6f.png" />
 </div>
 </div>
 <section id="summary">
@@ -928,12 +1003,28 @@ with <span class="math notranslate nohighlight">\(\xi=0.7\)</span> and thus <spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<p>|                             |       Value | Unit   |
-|:—————————-|————:|:——-|
-| Max nozzle rotational speed |     9.23502 | °/s    |
-| Max static torque           | 86640       | N.m    |
-| Max dynamic torque          | 73000.8     | N.m    |
-| Max acceleration            |   811.15    | °/s²   |</p>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df_rot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="p">{</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>         <span class="s2">&quot;Value&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">yp</span><span class="p">),</span> <span class="n">Knozzle</span> <span class="o">*</span> <span class="n">teta_max</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">Fdyn</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">ypp</span><span class="p">)],</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="s2">&quot;Unit&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;°/s&quot;</span><span class="p">,</span> <span class="s2">&quot;N.m&quot;</span><span class="p">,</span> <span class="s2">&quot;N.m&quot;</span><span class="p">,</span> <span class="s2">&quot;°/s²&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="p">},</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">index</span><span class="o">=</span><span class="p">[</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="s2">&quot;Max nozzle rotational speed&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="s2">&quot;Max static torque&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="s2">&quot;Max dynamic torque&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="s2">&quot;Max acceleration&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">float_format</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:,.2e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="n">md</span><span class="p">(</span><span class="n">df_rot</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">())</span>
+
+<span class="ne">NameError</span>: name &#39;Fdyn&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>For the linear actuator (translational movement) with <span class="math notranslate nohighlight">\(d_1=0\)</span> and <span class="math notranslate nohighlight">\(d_2=0\)</span>:</p>
@@ -964,13 +1055,33 @@ with <span class="math notranslate nohighlight">\(\xi=0.7\)</span> and thus <spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<p>|                   |        Value | Unit   |
-|:——————|————-:|:——-|
-| Lever arm         |     1.35423  | m      |
-| Max linear speed  |     0.218277 | m/s    |
-| Max static force  | 63977.1      | N      |
-| Max dynamic force | 73000.8      | N      |
-| Max acceleration  |    19.1722   | m/s²   |</p>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">df_lin</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="p">{</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="s2">&quot;Value&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>             <span class="n">Evaluate_Larm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>             <span class="nb">max</span><span class="p">(</span><span class="n">yp</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">Evaluate_Larm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>             <span class="n">Knozzle</span> <span class="o">*</span> <span class="n">teta_max</span> <span class="o">/</span> <span class="n">Evaluate_Larm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>             <span class="nb">max</span><span class="p">(</span><span class="n">Fdyn</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>             <span class="nb">max</span><span class="p">(</span><span class="n">ypp</span><span class="p">)</span> <span class="o">*</span> <span class="n">Evaluate_Larm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="s2">&quot;Unit&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="s2">&quot;m/s&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;m/s²&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="p">},</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">index</span><span class="o">=</span><span class="p">[</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>         <span class="s2">&quot;Lever arm&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>         <span class="s2">&quot;Max linear speed&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>         <span class="s2">&quot;Max static force&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>         <span class="s2">&quot;Max dynamic force&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>         <span class="s2">&quot;Max acceleration&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">md</span><span class="p">(</span><span class="n">df_lin</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">())</span>
+
+<span class="ne">NameError</span>: name &#39;Evaluate_Larm&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -1004,7 +1115,7 @@ with <span class="math notranslate nohighlight">\(\xi=0.7\)</span> and thus <spa
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="1-sizing_scenarios-student.html"
@@ -1077,6 +1188,7 @@ By Marc Budinger, Scott Delbecq, Félix Pollet
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -1103,8 +1215,8 @@ By Marc Budinger, Scott Delbecq, Félix Pollet
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

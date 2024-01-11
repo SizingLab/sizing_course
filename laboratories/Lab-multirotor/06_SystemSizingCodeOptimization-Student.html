@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -143,6 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../about/homepage.html">
@@ -504,6 +505,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -513,6 +515,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -965,10 +968,10 @@ For this purpose you can refer to the <a class="reference external" href="https:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/system.py:2668,</span> in <span class="ni">System._call_user_function</span><span class="nt">(self, fname, protect_inputs, protect_outputs, protect_residuals)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2667</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2668</span>     <span class="k">yield</span>
-<span class="g g-Whitespace">   </span><span class="mi">2669</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/system.py:2674,</span> in <span class="ni">System._call_user_function</span><span class="nt">(self, fname, protect_inputs, protect_outputs, protect_residuals)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2673</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2674</span>     <span class="k">yield</span>
+<span class="g g-Whitespace">   </span><span class="mi">2675</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/explicitcomponent.py:292,</span> in <span class="ni">ExplicitComponent._compute_wrapper</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">    </span><span class="mi">291</span> <span class="k">else</span><span class="p">:</span>
@@ -999,12 +1002,12 @@ For this purpose you can refer to the <a class="reference external" href="https:
 <span class="g g-Whitespace">    </span><span class="mi">132</span>     <span class="n">_run_hooks</span><span class="p">(</span><span class="n">post_hooks</span><span class="p">,</span> <span class="n">inst</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="k">return</span> <span class="n">ret</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/problem.py:733,</span> in <span class="ni">Problem.run_driver</span><span class="nt">(self, case_prefix, reset_iter_counts)</span>
-<span class="g g-Whitespace">    </span><span class="mi">731</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">732</span>         <span class="k">with</span> <span class="n">SaveOptResult</span><span class="p">(</span><span class="n">driver</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">733</span>             <span class="k">return</span> <span class="n">driver</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">735</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">736</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_recording_iter</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">old_prefix</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/problem.py:740,</span> in <span class="ni">Problem.run_driver</span><span class="nt">(self, case_prefix, reset_iter_counts)</span>
+<span class="g g-Whitespace">    </span><span class="mi">738</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">739</span>         <span class="k">with</span> <span class="n">SaveOptResult</span><span class="p">(</span><span class="n">driver</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">740</span>             <span class="k">return</span> <span class="n">driver</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">742</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">743</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_recording_iter</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">old_prefix</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/drivers/scipy_optimizer.py:281,</span> in <span class="ni">ScipyOptimizeDriver.run</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">    </span><span class="mi">279</span> <span class="c1"># Initial Run</span>
@@ -1013,19 +1016,19 @@ For this purpose you can refer to the <a class="reference external" href="https:
 <span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="bp">self</span><span class="o">.</span><span class="n">iter_count</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="g g-Whitespace">    </span><span class="mi">284</span> <span class="bp">self</span><span class="o">.</span><span class="n">_con_cache</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_constraint_values</span><span class="p">()</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/system.py:4552,</span> in <span class="ni">System.run_solve_nonlinear</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4546</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4547</span><span class="sd"> Compute outputs.</span>
-<span class="g g-Whitespace">   </span><span class="mi">4548</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">4549</span><span class="sd"> This calls _solve_nonlinear, but with the model assumed to be in an unscaled state.</span>
-<span class="g g-Whitespace">   </span><span class="mi">4550</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4551</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scaled_context_all</span><span class="p">():</span>
-<span class="ne">-&gt; </span><span class="mi">4552</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_solve_nonlinear</span><span class="p">()</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/system.py:4558,</span> in <span class="ni">System.run_solve_nonlinear</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4552</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">4553</span><span class="sd"> Compute outputs.</span>
+<span class="g g-Whitespace">   </span><span class="mi">4554</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">4555</span><span class="sd"> This calls _solve_nonlinear, but with the model assumed to be in an unscaled state.</span>
+<span class="g g-Whitespace">   </span><span class="mi">4556</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">4557</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scaled_context_all</span><span class="p">():</span>
+<span class="ne">-&gt; </span><span class="mi">4558</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_solve_nonlinear</span><span class="p">()</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/group.py:3593,</span> in <span class="ni">Group._solve_nonlinear</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3590</span> <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pathname</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pathname</span> <span class="k">else</span> <span class="s1">&#39;root&#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">3592</span> <span class="k">with</span> <span class="n">Recording</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;._solve_nonlinear&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">iter_count</span><span class="p">,</span> <span class="bp">self</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">3593</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_nonlinear_solver</span><span class="o">.</span><span class="n">_solve_with_cache_check</span><span class="p">()</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/group.py:3669,</span> in <span class="ni">Group._solve_nonlinear</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3666</span> <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pathname</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pathname</span> <span class="k">else</span> <span class="s1">&#39;root&#39;</span>
+<span class="g g-Whitespace">   </span><span class="mi">3668</span> <span class="k">with</span> <span class="n">Recording</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;._solve_nonlinear&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">iter_count</span><span class="p">,</span> <span class="bp">self</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">3669</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_nonlinear_solver</span><span class="o">.</span><span class="n">_solve_with_cache_check</span><span class="p">()</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/solvers/nonlinear/nonlinear_runonce.py:26,</span> in <span class="ni">NonlinearRunOnce._solve_with_cache_check</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="k">def</span> <span class="nf">_solve_with_cache_check</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1068,20 +1071,20 @@ For this purpose you can refer to the <a class="reference external" href="https:
 <span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="c1"># raised inside the &quot;with&quot; statement from being suppressed.</span>
 <span class="g g-Whitespace">    </span><span class="mi">142</span>     <span class="k">return</span> <span class="n">exc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">value</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/system.py:2674,</span> in <span class="ni">System._call_user_function</span><span class="nt">(self, fname, protect_inputs, protect_outputs, protect_residuals)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2672</span>         <span class="k">raise</span>
-<span class="g g-Whitespace">   </span><span class="mi">2673</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2674</span>         <span class="k">raise</span> <span class="n">err_type</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2675</span>             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">msginfo</span><span class="si">}</span><span class="s2">: Error calling </span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s2">(), </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">with_traceback</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2676</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2677</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="o">.</span><span class="n">read_only</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/system.py:2680,</span> in <span class="ni">System._call_user_function</span><span class="nt">(self, fname, protect_inputs, protect_outputs, protect_residuals)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2678</span>         <span class="k">raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">2679</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2680</span>         <span class="k">raise</span> <span class="n">err_type</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2681</span>             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">msginfo</span><span class="si">}</span><span class="s2">: Error calling </span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s2">(), </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">with_traceback</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2682</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2683</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="o">.</span><span class="n">read_only</span> <span class="o">=</span> <span class="kc">False</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/system.py:2668,</span> in <span class="ni">System._call_user_function</span><span class="nt">(self, fname, protect_inputs, protect_outputs, protect_residuals)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2665</span> <span class="bp">self</span><span class="o">.</span><span class="n">_residuals</span><span class="o">.</span><span class="n">read_only</span> <span class="o">=</span> <span class="n">protect_residuals</span>
-<span class="g g-Whitespace">   </span><span class="mi">2667</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2668</span>     <span class="k">yield</span>
-<span class="g g-Whitespace">   </span><span class="mi">2669</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2670</span>     <span class="n">err_type</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/system.py:2674,</span> in <span class="ni">System._call_user_function</span><span class="nt">(self, fname, protect_inputs, protect_outputs, protect_residuals)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2671</span> <span class="bp">self</span><span class="o">.</span><span class="n">_residuals</span><span class="o">.</span><span class="n">read_only</span> <span class="o">=</span> <span class="n">protect_residuals</span>
+<span class="g g-Whitespace">   </span><span class="mi">2673</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2674</span>     <span class="k">yield</span>
+<span class="g g-Whitespace">   </span><span class="mi">2675</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2676</span>     <span class="n">err_type</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/explicitcomponent.py:292,</span> in <span class="ni">ExplicitComponent._compute_wrapper</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">    </span><span class="mi">289</span>     <span class="bp">self</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_outputs</span><span class="p">,</span>
@@ -1134,7 +1137,7 @@ For this purpose you can refer to the <a class="reference external" href="https:
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="05d_FrameSelection.html"
@@ -1202,6 +1205,7 @@ By Marc Budinger, Scott Delbecq, Félix Pollet
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -1228,8 +1232,8 @@ By Marc Budinger, Scott Delbecq, Félix Pollet
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
