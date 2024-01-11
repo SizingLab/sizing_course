@@ -698,15 +698,15 @@ The models are separated by components and located in different Python files <co
 <span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="s2">&quot;cons_6&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
 <span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="s1">&#39;cons_7&#39;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
 
-<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_objective</span><span class="p">(</span><span class="s1">&#39;t_hov&#39;</span><span class="p">,</span> <span class="n">scaler</span><span class="o">=-</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="c1"># prob.model.add_objective(&quot;M_total_real&quot;, scaler=0.1)</span>
+<span class="c1"># prob.model.add_objective(&#39;t_hov&#39;, scaler=-0.1)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_objective</span><span class="p">(</span><span class="s2">&quot;M_total_real&quot;</span><span class="p">,</span> <span class="n">scaler</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 
 <span class="n">prob</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openmdao.core.problem.Problem at 0x7f1c3c099730&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openmdao.core.problem.Problem at 0x7f12a2394fa0&gt;
 </pre></div>
 </div>
 </div>
@@ -723,11 +723,15 @@ The models are separated by components and located in different Python files <co
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/scipy/optimize/_optimize.py:284: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn(&quot;Values in x were outside bounds during a &quot;
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimization terminated successfully    (Exit mode 0)
-            Current function value: -4.7169662715083325
-            Iterations: 15
-            Function evaluations: 19
-            Gradient evaluations: 14
+            Current function value: 10.377302309077761
+            Iterations: 11
+            Function evaluations: 12
+            Gradient evaluations: 11
 Optimization Complete
 -----------------------------------
 </pre></div>
@@ -752,33 +756,33 @@ Design Variables
 name         val           size  lower  upper  min         max         
 -----------  ------------  ----  -----  -----  ----------  ---------- 
 beta_pro     [0.3]         1     0.3    0.6    0.3         0.3         
-k_os         [7.2]         1     1.0    10.0   7.2         7.2         
-k_ND         [1.40117981]  1     1.0    10.0   1.40117981  1.40117981  
+k_os         [2.07546046]  1     1.0    10.0   2.07546046  2.07546046  
+k_ND         [1.25998295]  1     1.0    10.0   1.25998295  1.25998295  
 k_mot        [1.02941176]  1     1.0    10.0   1.02941176  1.02941176  
-k_speed_mot  [1.25865204]  1     1.0    10.0   1.25865204  1.25865204  
-k_mb         [3.76735351]  1     0.1    10.0   3.76735351  3.76735351  
-k_vb         [1.00746919]  1     1.0    10.0   1.00746919  1.00746919  
+k_speed_mot  [1.26195253]  1     1.0    10.0   1.26195253  1.26195253  
+k_mb         [0.64317582]  1     0.1    10.0   0.64317582  0.64317582  
+k_vb         [1.]          1     1.0    10.0   1.0         1.0         
 k_D          [0.99]        1     0.01   0.99   0.99        0.99        
 
 -----------
 Constraints
 -----------
-name    val                size  lower  upper  equals  min                max                
-------  -----------------  ----  -----  -----  ------  -----------------  ----------------- 
-cons_1  [7.95807864e-13]   1     0.0    1e+30  None    0.0                0.0                
-cons_2  [-2.81374923e-12]  1     0.0    1e+30  None    -0.0               -0.0               
-cons_3  [7.31859018e-13]   1     0.0    1e+30  None    0.0                0.0                
-cons_4  [5.96742782e+09]   1     0.0    1e+30  None    5967427816.017701  5967427816.017701  
-cons_5  [4.29528005]       1     0.0    1e+30  None    4.29528005         4.29528005         
-cons_6  [22.16966272]      1     0.0    1e+30  None    22.16966272        22.16966272        
-cons_7  [1.64845915e-12]   1     0.0    1e+30  None    0.0                0.0                
+name    val                size  lower  upper  equals  min                 max                 
+------  -----------------  ----  -----  -----  ------  ------------------  ------------------ 
+cons_1  [-2.88650881e-10]  1     0.0    1e+30  None    -0.0                -0.0                
+cons_2  [-9.7664099e-11]   1     0.0    1e+30  None    -0.0                -0.0                
+cons_3  [3.60671493e-11]   1     0.0    1e+30  None    0.0                 0.0                 
+cons_4  [1.01877114e+09]   1     0.0    1e+30  None    1018771135.3738992  1018771135.3738992  
+cons_5  [3.17643194]       1     0.0    1e+30  None    3.17643194          3.17643194          
+cons_6  [-7.82875986e-11]  1     0.0    1e+30  None    -0.0                -0.0                
+cons_7  [256.22697691]     1     0.0    1e+30  None    256.22697691        256.22697691        
 
 ----------
 Objectives
 ----------
-name   val            size  scaler  
------  -------------  ----  ------ 
-t_hov  [-4.71696627]  1     -0.1    
+name          val            size  scaler  
+------------  -------------  ----  ------ 
+M_total_real  [10.37730231]  1     0.1     
 </pre></div>
 </div>
 </div>
@@ -793,86 +797,86 @@ t_hov  [-4.71696627]  1     -0.1
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70 Input(s) in &#39;model&#39;
 
-varname          val                 prom_name    
----------------  ------------------  -------------
+varname          val                prom_name    
+---------------  -----------------  -------------
 scenarios
-  k_os           [7.2]               k_os         
-  M_pay          [50.]               M_pay        
-  N_pro_arm      [1.]                N_pro_arm    
-  N_arm          [4.]                N_arm        
-  a_to           [2.4525]            a_to         
+  k_os           [2.07546046]       k_os         
+  M_pay          [50.]              M_pay        
+  N_pro_arm      [1.]               N_pro_arm    
+  N_arm          [4.]               N_arm        
+  a_to           [2.4525]           a_to         
 propeller
-  beta_pro       [0.3]               beta_pro     
-  F_pro_to       [1103.625]          F_pro_to     
-  rho_air        [1.18]              rho_air      
-  ND_max         [44.45]             ND_max       
-  k_ND           [1.40117981]        k_ND         
-  M_pro_ref      [0.014999]          M_pro_ref    
-  D_pro_ref      [0.2794]            D_pro_ref    
-  F_pro_hov      [882.9]             F_pro_hov    
+  beta_pro       [0.3]              beta_pro     
+  F_pro_to       [318.12917391]     F_pro_to     
+  rho_air        [1.18]             rho_air      
+  ND_max         [44.45]            ND_max       
+  k_ND           [1.25998295]       k_ND         
+  M_pro_ref      [0.014999]         M_pro_ref    
+  D_pro_ref      [0.2794]           D_pro_ref    
+  F_pro_hov      [254.50333913]     F_pro_hov    
 motor
-  k_mot          [1.02941176]        k_mot        
-  T_pro_hov      [148.93605851]      T_pro_hov    
-  k_vb           [1.00746919]        k_vb         
-  P_pro_to       [11281.64280579]    P_pro_to     
-  k_speed_mot    [1.25865204]        k_speed_mot  
-  Omega_pro_to   [60.59858395]       Omega_pro_to 
-  M_mot_ref      [0.575]             M_mot_ref    
-  T_nom_mot_ref  [2.32]              T_nom_mot_ref
-  R_mot_ref      [0.03]              R_mot_ref    
-  K_T_ref        [0.03]              K_T_ref      
-  T_mot_fr_ref   [0.03]              T_mot_fr_ref 
-  T_max_mot_ref  [2.81714286]        T_max_mot_ref
-  Omega_pro_hov  [54.20102122]       Omega_pro_hov
-  T_pro_to       [186.17007314]      T_pro_to     
+  k_mot          [1.02941176]       k_mot        
+  T_pro_hov      [20.72734165]      T_pro_hov    
+  k_vb           [1.]               k_vb         
+  P_pro_to       [3616.45874658]    P_pro_to     
+  k_speed_mot    [1.26195253]       k_speed_mot  
+  Omega_pro_to   [139.58215416]     Omega_pro_to 
+  M_mot_ref      [0.575]            M_mot_ref    
+  T_nom_mot_ref  [2.32]             T_nom_mot_ref
+  R_mot_ref      [0.03]             R_mot_ref    
+  K_T_ref        [0.03]             K_T_ref      
+  T_mot_fr_ref   [0.03]             T_mot_fr_ref 
+  T_max_mot_ref  [2.81714286]       T_max_mot_ref
+  Omega_pro_hov  [124.84607406]     Omega_pro_hov
+  T_pro_to       [25.90917706]      T_pro_to     
 battery
-  k_mb           [3.76735351]        k_mb         
-  M_pay          [50.]               M_pay        
-  E_bat_ref      [260568.]           E_bat_ref    
-  M_bat_ref      [0.329]             M_bat_ref    
-  U_bat          [53.32165735]       U_bat        
-  I_bat_max_ref  [250.]              I_bat_max_ref
-  C_bat_ref      [5.]                C_bat_ref    
-  P_el_mot_hov   [10015.4655025]     P_el_mot_hov 
-  N_pro          [4.]                N_pro        
+  k_mb           [0.64317582]       k_mb         
+  M_pay          [50.]              M_pay        
+  E_bat_ref      [260568.]          E_bat_ref    
+  M_bat_ref      [0.329]            M_bat_ref    
+  U_bat          [35.13984881]      U_bat        
+  I_bat_max_ref  [250.]             I_bat_max_ref
+  C_bat_ref      [5.]               C_bat_ref    
+  P_el_mot_hov   [3226.16991799]    P_el_mot_hov 
+  N_pro          [4.]               N_pro        
 esc
-  P_el_mot_to    [14282.75789788]    P_el_mot_to  
-  U_bat          [53.32165735]       U_bat        
-  U_mot_to       [53.32165735]       U_mot_to     
-  M_esc_ref      [0.115]             M_esc_ref    
-  P_esc_ref      [3108.]             P_esc_ref    
+  P_el_mot_to    [4599.19697756]    P_el_mot_to  
+  U_bat          [35.13984881]      U_bat        
+  U_mot_to       [35.13984881]      U_mot_to     
+  M_esc_ref      [0.115]            M_esc_ref    
+  P_esc_ref      [3108.]            P_esc_ref    
 frame
-  N_arm          [4.]                N_arm        
-  D_pro          [3.2892379]         D_pro        
-  F_pro_to       [1103.625]          F_pro_to     
-  N_pro_arm      [1.]                N_pro_arm    
-  sigma_max      [70000000.]         sigma_max    
-  k_D            [0.99]              k_D          
-  rho_s          [1700.]             rho_s        
+  N_arm          [4.]               N_arm        
+  D_pro          [1.58802402]       D_pro        
+  F_pro_to       [318.12917391]     F_pro_to     
+  N_pro_arm      [1.]               N_pro_arm    
+  sigma_max      [70000000.]        sigma_max    
+  k_D            [0.99]             k_D          
+  rho_s          [1700.]            rho_s        
 objectives
-  C_bat          [2238298.00132669]  C_bat        
-  I_bat_hov      [790.86778538]      I_bat_hov    
-  M_esc          [0.52848042]        M_esc        
-  M_pro          [2.07873952]        M_pro        
-  M_mot          [20.88115009]       M_mot        
-  N_pro          [4.]                N_pro        
-  M_pay          [50.]               M_pay        
-  M_bat          [188.36767531]      M_bat        
-  M_frame        [27.67884452]       M_frame      
+  C_bat          [579849.10864506]  C_bat        
+  I_bat_hov      [386.56607243]     I_bat_hov    
+  M_esc          [0.17017621]       M_esc        
+  M_pro          [0.48453331]       M_pro        
+  M_mot          [3.85166988]       M_mot        
+  N_pro          [4.]               N_pro        
+  M_pay          [50.]              M_pay        
+  M_bat          [32.15879105]      M_bat        
+  M_frame        [3.58871446]       M_frame      
 constraints
-  M_total        [360.]              M_total      
-  M_total_real   [360.]              M_total_real 
-  T_max_mot      [186.17007314]      T_max_mot    
-  T_pro_to       [186.17007314]      T_pro_to     
-  U_bat          [53.32165735]       U_bat        
-  U_mot_to       [53.32165735]       U_mot_to     
-  P_bat_max      [5.96748795e+09]    P_bat_max    
-  P_el_mot_to    [14282.75789788]    P_el_mot_to  
-  N_pro          [4.]                N_pro        
-  U_esc          [57.61693741]       U_esc        
-  t_hov          [47.16966272]       t_hov        
-  t_hov_spec     [25.]               t_hov_spec   
-  MTOW           [360.]              MTOW         
+  M_total        [103.77302309]     M_total      
+  M_total_real   [103.77302309]     M_total_real 
+  T_max_mot      [25.90917706]      T_max_mot    
+  T_pro_to       [25.90917706]      T_pro_to     
+  U_bat          [35.13984881]      U_bat        
+  U_mot_to       [35.13984881]      U_mot_to     
+  P_bat_max      [1.0187905e+09]    P_bat_max    
+  P_el_mot_to    [4599.19697756]    P_el_mot_to  
+  N_pro          [4.]               N_pro        
+  U_esc          [38.31628075]      U_esc        
+  t_hov          [25.]              t_hov        
+  t_hov_spec     [25.]              t_hov_spec   
+  MTOW           [360.]             MTOW         
 </pre></div>
 </div>
 </div>
@@ -887,70 +891,70 @@ constraints
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>54 Explicit Output(s) in &#39;model&#39;
 
-varname          val                 prom_name    
----------------  ------------------  -------------
+varname          val                  prom_name    
+---------------  -------------------  -------------
 scenarios
-  M_total        [360.]              M_total      
-  N_pro          [4.]                N_pro        
-  F_pro_hov      [882.9]             F_pro_hov    
-  F_pro_to       [1103.625]          F_pro_to     
+  M_total        [103.77302309]       M_total      
+  N_pro          [4.]                 N_pro        
+  F_pro_hov      [254.50333913]       F_pro_hov    
+  F_pro_to       [318.12917391]       F_pro_to     
 propeller
-  C_t            [0.0859]            C_t          
-  C_p            [0.02768]           C_p          
-  D_pro          [3.2892379]         D_pro        
-  n_pro_to       [9.64456418]        n_pro_to     
-  Omega_pro_to   [60.59858395]       Omega_pro_to 
-  M_pro          [2.07873952]        M_pro        
-  P_pro_to       [11281.64280579]    P_pro_to     
-  T_pro_to       [186.17007314]      T_pro_to     
-  n_pro_hov      [8.62636045]        n_pro_hov    
-  Omega_pro_hov  [54.20102122]       Omega_pro_hov
-  P_pro_hov      [8072.48646772]     P_pro_hov    
-  T_pro_hov      [148.93605851]      T_pro_hov    
+  C_t            [0.0859]             C_t          
+  C_p            [0.02768]            C_p          
+  D_pro          [1.58802402]         D_pro        
+  n_pro_to       [22.2151898]         n_pro_to     
+  Omega_pro_to   [139.58215416]       Omega_pro_to 
+  M_pro          [0.48453331]         M_pro        
+  P_pro_to       [3616.45874658]      P_pro_to     
+  T_pro_to       [25.90917706]        T_pro_to     
+  n_pro_hov      [19.86986981]        n_pro_hov    
+  Omega_pro_hov  [124.84607406]       Omega_pro_hov
+  P_pro_hov      [2587.72723046]      P_pro_hov    
+  T_pro_hov      [20.72734165]        T_pro_hov    
 motor
-  T_nom_mot      [153.31653082]      T_nom_mot    
-  U_bat          [53.32165735]       U_bat        
-  K_T            [0.69909385]        K_T          
-  M_mot          [20.88115009]       M_mot        
-  R_mot          [0.04090773]        R_mot        
-  T_mot_fr       [1.08945131]        T_mot_fr     
-  T_max_mot      [186.17007314]      T_max_mot    
-  I_mot_hov      [214.59995672]      I_mot_hov    
-  U_mot_hov      [46.67039852]       U_mot_hov    
-  P_el_mot_hov   [10015.4655025]     P_el_mot_hov 
-  I_mot_to       [267.86035182]      I_mot_to     
-  U_mot_to       [53.32165735]       U_mot_to     
-  P_el_mot_to    [14282.75789788]    P_el_mot_to  
+  T_nom_mot      [21.33696934]        T_nom_mot    
+  U_bat          [35.13984881]        U_bat        
+  K_T            [0.19949268]         K_T          
+  M_mot          [3.85166988]         M_mot        
+  R_mot          [0.05573106]         R_mot        
+  T_mot_fr       [0.20095669]         T_mot_fr     
+  T_max_mot      [25.90917706]        T_max_mot    
+  I_mot_hov      [104.90759786]       I_mot_hov    
+  U_mot_hov      [30.75249061]        U_mot_hov    
+  P_el_mot_hov   [3226.16991799]      P_el_mot_hov 
+  I_mot_to       [130.88266267]       I_mot_to     
+  U_mot_to       [35.13984881]        U_mot_to     
+  P_el_mot_to    [4599.19697756]      P_el_mot_to  
 battery
-  M_bat          [188.36767531]      M_bat        
-  E_bat          [1.19349759e+08]    E_bat        
-  C_bat          [2238298.00132669]  C_bat        
-  I_bat_max      [1.119149e+08]      I_bat_max    
-  P_bat_max      [5.96748795e+09]    P_bat_max    
-  I_bat_hov      [790.86778538]      I_bat_hov    
+  M_bat          [32.15879105]        M_bat        
+  E_bat          [20375810.00827609]  E_bat        
+  C_bat          [579849.10864506]    C_bat        
+  I_bat_max      [28992455.43225309]  I_bat_max    
+  P_bat_max      [1.0187905e+09]      P_bat_max    
+  I_bat_hov      [386.56607243]       I_bat_hov    
 esc
-  P_esc          [14282.75789789]    P_esc        
-  U_esc          [57.61693741]       U_esc        
-  M_esc          [0.52848042]        M_esc        
+  P_esc          [4599.19697756]      P_esc        
+  U_esc          [38.31628075]        U_esc        
+  M_esc          [0.17017621]         M_esc        
 frame
-  alpha_sep      [1.57079633]        alpha_sep    
-  L_arm          [2.32584243]        L_arm        
-  D_out_arm      [0.2116352]         D_out_arm    
-  D_in_arm       [0.20951884]        D_in_arm     
-  M_arms         [11.07153781]       M_arms       
-  M_body         [16.60730671]       M_body       
-  M_frame        [27.67884452]       M_frame      
+  alpha_sep      [1.57079633]         alpha_sep    
+  L_arm          [1.12290255]         L_arm        
+  D_out_arm      [0.1096737]          D_out_arm    
+  D_in_arm       [0.10857696]         D_in_arm     
+  M_arms         [1.43548578]         M_arms       
+  M_body         [2.15322867]         M_body       
+  M_frame        [3.58871446]         M_frame      
 objectives
-  t_hov          [47.16966272]       t_hov        
-  M_total_real   [360.]              M_total_real 
+  t_hov          [25.]                t_hov        
+  M_total_real   [103.77302309]       M_total_real 
 constraints
-  cons_1         [7.95807864e-13]    cons_1       
-  cons_2         [-2.81374923e-12]   cons_2       
-  cons_3         [7.31859018e-13]    cons_3       
-  cons_4         [5.96742782e+09]    cons_4       
-  cons_5         [4.29528005]        cons_5       
-  cons_6         [22.16966272]       cons_6       
-  cons_7         [1.64845915e-12]    cons_7       
+  cons_1         [-2.88650881e-10]    cons_1       
+  cons_2         [-9.7664099e-11]     cons_2       
+  cons_3         [3.60671493e-11]     cons_3       
+  cons_4         [1.01877114e+09]     cons_4       
+  cons_5         [3.17643194]         cons_5       
+  cons_6         [-7.82875986e-11]    cons_6       
+  cons_7         [256.22697691]       cons_7       
 
 
 0 Implicit Output(s) in &#39;model&#39;
