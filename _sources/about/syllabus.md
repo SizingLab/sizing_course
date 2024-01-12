@@ -8,8 +8,8 @@
 - Félix Pollet  (felix.pollet@isae-supaero.fr)
 
 ## Schedule (2023-2024)
-- 5 lectures (Scott Delbecq)
-- 5 labs (Scott Delbecq)
+- 12/01/2024: 4 hours lectures & labs (Scott Delbecq & Félix Pollet)
+- 19/01/2024: 6 hours lectures & labs (Scott Delbecq & Félix Pollet)
 
 ## Course Description
 ```{warning}
