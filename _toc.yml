@@ -1,101 +1,124 @@
 format: jb-book
 root: about/homepage
 parts:
-- caption: About this course
+- caption: Introduction and overview
   chapters:
   - file: about/syllabus
-- caption: Lectures
+  - file: about/installation
+- caption: Classes
+  numbered: true
+  maxdepth: 2
   chapters:
-  - file: class/Lecture1/summary
-    title: Lecture 1 - Introduction
+  - file: classes/Lecture1/summary
+    title: Architectures, sizing scenarios and design drivers
     sections:
-      - file: class/Lecture1/1-objectives_and_ressources
-      - file: class/Lecture1/2-needs_and_general_methodology
-      - file: class/Lecture1/3-scenarios_and_design_drivers
-      - file: class/Lecture1/4-quizz
-  - file: class/Lecture2/summary
-    title: Lecture 2 - Estimation models
+      - file: classes/Lecture1/1-objectives_and_ressources
+      - file: classes/Lecture1/2-needs_and_general_methodology
+      - file: classes/Lecture1/3-scenarios_and_design_drivers
+      - file: classes/Lecture1/4-quizz
+  - file: classes/Lecture2/summary
+    title: Estimation models
     sections:
-      - file: class/Lecture2/1-needs
-      - file: class/Lecture2/2-linear_regressions
-      - file: class/Lecture2/3-scaling_laws
-      - file: class/Lecture2/4-quizz
-  - file: class/Lecture4/summary
-    title: Lecture 3 - Simulation and evaluation models
+      - file: classes/Lecture2/1-needs
+      - file: classes/Lecture2/2-linear_regressions
+      - file: classes/Lecture2/3-scaling_laws
+      - file: classes/Lecture2/4-quizz
+  - file: classes/Lecture4/summary
+    title: Simulation and evaluation models
     sections:
-      - file: class/Lecture3/1-simulation_models
-      - file: class/Lecture3/2-simulation_model_examples
-      - file: class/Lecture3/3-evaluation_models
-      - file: class/Lecture3/4-evaluation_model_examples
-      - file: class/Lecture3/5-quizz
-  - file: class/Lecture3/summary
-    title: Lecture 4 - Optimal sizing procedures
+      - file: classes/Lecture3/1-simulation_models
+      - file: classes/Lecture3/2-simulation_model_examples
+      - file: classes/Lecture3/3-evaluation_models
+      - file: classes/Lecture3/4-evaluation_model_examples
+      - file: classes/Lecture3/5-quizz
+  - file: classes/Lecture3/summary
+    title: Optimal sizing procedures
     sections:
-      - file: class/Lecture4/1-design_and_optimization_problems
-      - file: class/Lecture4/2-optimization_examples
-      - file: class/Lecture4/3-sizing_procedures
-      - file: class/Lecture4/4-sizing_procedure_examples
-      - file: class/Lecture4/5-quizz
-  - file: class/Lecture5/summary
-    title: Lecture 5 - MDAO and surrogate models
+      - file: classes/Lecture4/1-design_and_optimization_problems
+      - file: classes/Lecture4/2-optimization_examples
+      - file: classes/Lecture4/3-sizing_procedures
+      - file: classes/Lecture4/4-sizing_procedure_examples
+      - file: classes/Lecture4/5-quizz
+  - file: classes/Lecture5/summary
+    title: MDAO and surrogate models
     sections:
-      - file: class/Lecture5/1-mdao
-      - file: class/Lecture5/2-mdao_examples
-      - file: class/Lecture5/3-surrogate_models
-      - file: class/Lecture5/4-surrogate_model_examples
-      - file: class/Lecture5/5-quizz
-  - file: class/Lecture6/summary
-    title: Lecture 6 - LCA and sustainable scenarios
+      - file: classes/Lecture5/1-mdao
+      - file: classes/Lecture5/2-mdao_examples
+      - file: classes/Lecture5/3-surrogate_models
+      - file: classes/Lecture5/4-surrogate_model_examples
+      - file: classes/Lecture5/5-quizz
+  - file: classes/Lecture6/summary
+    title: LCA and sustainable scenarios
     sections:
-      - file: class/Lecture6/1-lca
-      - file: class/Lecture6/2-lca_examples
-      - file: class/Lecture6/3-sustainable_scenarios
-      - file: class/Lecture6/4-sustainable_scenario_examples
-      - file: class/Lecture6/5-quizz
+      - file: classes/Lecture6/1-lca
+      - file: classes/Lecture6/2-lca_examples
+      - file: classes/Lecture6/3-sustainable_scenarios
+      - file: classes/Lecture6/4-sustainable_scenario_examples
+      - file: classes/Lecture6/5-quizz
 
 - caption: Laboratories
   chapters:
-  - file: class/Lab-vega/summary
-    title: Lab - VEGA Launcher TVC EMA
+  - file: laboratories/Lab-multirotor/summary
+    title: Multirotor UAV
     sections:
-      - file: class/Lab-vega/1-sizing_scenarios-student
-      - file: class/Lab-vega/1-sizing_scenarios
-      - file: class/Lab-vega/2-estimation_models-student
-      - file: class/Lab-vega/2-estimation_models
-      - file: class/Lab-vega/3-simulation_models-student
-      - file: class/Lab-vega/3-simulation_models
-      - file: class/Lab-vega/4-evaluation_models-student
-      - file: class/Lab-vega/4-evaluation_models
-      - file: class/Lab-vega/5-sizing_and_optimization-student
-      - file: class/Lab-vega/5-sizing_and_optimization
-      - file: class/Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student
-      - file: class/Lab-vega/6-sizing_and_optimization_with_mdao_using_om
-  - file: class/Lab-mobility/summary
+      - file: laboratories/Lab-multirotor/00_Introduction
+      - file: laboratories/Lab-multirotor/01_CaseStudy
+      - file: laboratories/Lab-multirotor/02_SizingScenariosEquations-Student
+      - file: laboratories/Lab-multirotor/02_SizingScenariosEquations
+      - file: laboratories/Lab-multirotor/03_PropellerLinearRegression-Student
+      - file: laboratories/Lab-multirotor/03_PropellerLinearRegression
+      - file: laboratories/Lab-multirotor/04_ScalingLawsElectricalComponents-Student
+      - file: laboratories/Lab-multirotor/04_ScalingLawsElectricalComponents
+      - file: laboratories/Lab-multirotor/05_SizingModelsIntroduction
+      - file: laboratories/Lab-multirotor/05a_PropellerSelection-Student
+      - file: laboratories/Lab-multirotor/05a_PropellerSelection
+      - file: laboratories/Lab-multirotor/05b_MotorSelection-Student
+      - file: laboratories/Lab-multirotor/05b_MotorSelection
+      - file: laboratories/Lab-multirotor/05c_BatteryESCSelection-Student
+      - file: laboratories/Lab-multirotor/05c_BatteryESCSelection
+      - file: laboratories/Lab-multirotor/05d_FrameSelection-Student
+      - file: laboratories/Lab-multirotor/05d_FrameSelection
+      - file: laboratories/Lab-multirotor/06_SystemSizingCodeOptimization-Student
+      - file: laboratories/Lab-multirotor/07_DesignExploration-Student
+      - file: laboratories/Lab-multirotor/A1_Sizing_equations
+  - file: laboratories/Lab-vega/summary
+    title: VEGA Launcher TVC EMA
+    sections:
+      - file: laboratories/Lab-vega/1-sizing_scenarios-student
+      - file: laboratories/Lab-vega/1-sizing_scenarios
+      - file: laboratories/Lab-vega/2-estimation_models-student
+      - file: laboratories/Lab-vega/2-estimation_models
+      - file: laboratories/Lab-vega/3-simulation_models-student
+      - file: laboratories/Lab-vega/3-simulation_models
+      - file: laboratories/Lab-vega/4-evaluation_models-student
+      - file: laboratories/Lab-vega/4-evaluation_models
+      - file: laboratories/Lab-vega/5-sizing_and_optimization-student
+      - file: laboratories/Lab-vega/5-sizing_and_optimization
+      - file: laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student
+      - file: laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om
+  - file: laboratories/Lab-watt_project/summary-short
     title: Lab - Sustainable mobility - Mission profile & Specification
-    sections: 
-      - file: class/Lab-watt_project/00_SustainableMobility
-      - file: class/Lab-watt_project/01a_CaseStudy
-      - file: class/Lab-watt_project/01b_CaseStudy_Specification-Student
-      - file: class/Lab-watt_project/01b_CaseStudy_Specification
-      - file: class/Lab-watt_project/02a_Architecture-Student
-      - file: class/Lab-watt_project/02b_Architecture_Hybrid
-   
-  - file: class/Lab-watt_project/summary
+    sections:
+      - file: laboratories/Lab-watt_project/00_SustainableMobility
+      - file: laboratories/Lab-watt_project/01a_CaseStudy
+      - file: laboratories/Lab-watt_project/01b_CaseStudy_Specification-Student
+      - file: laboratories/Lab-watt_project/01b_CaseStudy_Specification
+      - file: laboratories/Lab-watt_project/02a_Architecture-Student
+      - file: laboratories/Lab-watt_project/02b_Architecture_Hybrid
+  - file: laboratories/Lab-watt_project/summary
     title: Lab - Sustainable mobility - DC/DC converter sizing
-    sections: 
-      - file: class/Lab-watt_project/02a_Architecture_UltraCapacitor
-      - file: class/Lab-watt_project/03_SizingScenarios
-      - file: class/Lab-watt_project/04_ScalingLaws-Student
-      - file: class/Lab-watt_project/04_ScalingLaws
-      - file: class/Lab-watt_project/05_HeatsinkLinearRegression-Student
-      - file: class/Lab-watt_project/05_HeatsinkLinearRegression
-      - file: class/Lab-watt_project/06_SizingCodeInductor
-      - file: class/Lab-watt_project/07_SizingCodeInductor-Surrogate-Student
-      - file: class/Lab-watt_project/07_SizingCodeInductor-Surrogate
-      - file: class/Lab-watt_project/08_DCDC_converter_sizing_introduction-Student
-      - file: class/Lab-watt_project/08_DCDC_converter_sizing_introduction
-      - file: class/Lab-watt_project/09_SizingCodeDCDCconverter
-  - file: class/Lab-multirotor/summary
-    title: Lab - Multirotor
-  - file: class/Lab-elevator/summary
-    title: Lab - Elevator
+    sections:
+      - file: laboratories/Lab-watt_project/02a_Architecture_UltraCapacitor
+      - file: laboratories/Lab-watt_project/03_SizingScenarios
+      - file: laboratories/Lab-watt_project/04_ScalingLaws-Student
+      - file: laboratories/Lab-watt_project/04_ScalingLaws
+      - file: laboratories/Lab-watt_project/05_HeatsinkLinearRegression-Student
+      - file: laboratories/Lab-watt_project/05_HeatsinkLinearRegression
+      - file: laboratories/Lab-watt_project/06_SizingCodeInductor
+      - file: laboratories/Lab-watt_project/07_SizingCodeInductor-Surrogate-Student
+      - file: laboratories/Lab-watt_project/07_SizingCodeInductor-Surrogate
+      - file: laboratories/Lab-watt_project/08_DCDC_converter_sizing_introduction-Student
+      - file: laboratories/Lab-watt_project/08_DCDC_converter_sizing_introduction
+      - file: laboratories/Lab-watt_project/09_SizingCodeDCDCconverter
+      - file: laboratories/Lab-watt_project/10_LCA_Inductor-Student
+      - file: laboratories/Lab-watt_project/10_LCA_Inductor

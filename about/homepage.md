@@ -1,6 +1,3 @@
 ![](../images/header.jpg)
 
-# Course Description
-```{warning}
-This course is under construction...
-```
+# Preliminary design and sizing of mechatronic systems
