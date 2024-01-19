@@ -1,0 +1,1471 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Heatsink estimation models with simple and multiple linear regressions (Student version) &#8212; Sizing and optimization of mechatronic systems</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pdf_print.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "SizingLab/sizing_course");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script src="../../_static/save_state.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Heatsink estimation models with simple and multiple linear regressions" href="05_HeatsinkLinearRegression.html" />
+    <link rel="prev" title="Estimation models with scaling laws and linear regression" href="04_ScalingLaws.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">Welcome to this new course!</div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Sizing and optimization of mechatronic systems</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/homepage.html">
+                    Course Description
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About this course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/syllabus.html">
+   Instructors
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture1/summary.html">
+   Lecture 1 - Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture1/1-objectives_and_ressources.html">
+     Objectives and ressources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture1/2-needs_and_general_methodology.html">
+     Needs and general methodology
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture1/3-scenarios_and_design_drivers.html">
+     Scenarios and Design Drivers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture1/4-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture2/summary.html">
+   Lecture 2 - Estimation models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture2/1-needs.html">
+     Needs for estimation models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture2/2-linear_regressions.html">
+     Linear regressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture2/3-scaling_laws.html">
+     Scaling laws
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture2/4-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture4/summary.html">
+   Lecture 3 - Simulation and evaluation models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/1-simulation_models.html">
+     Simulation models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/2-simulation_model_examples.html">
+     Simulation model examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/3-evaluation_models.html">
+     Evaluation models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/4-evaluation_model_examples.html">
+     Evaluation model examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/5-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture3/summary.html">
+   Lecture 4 - Optimal sizing procedures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/1-design_and_optimization_problems.html">
+     Representation of a design problem and basics of optimization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/2-optimization_examples.html">
+     Optimization problem examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/3-sizing_procedures.html">
+     Development of a sizing procedure using design graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/4-sizing_procedure_examples.html">
+     Sizing procedure examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/5-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture5/summary.html">
+   Lecture 5 - MDAO and surrogate models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/1-mdao.html">
+     MDAO (Multidisciplinary Design Analysis and Optimization)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/2-mdao_examples.html">
+     MDAO examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/3-surrogate_models.html">
+     Surrogate models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/4-surrogate_model_examples.html">
+     Surrogate model examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/5-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture6/summary.html">
+   Lecture 6 - LCA and sustainable scenarios
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/1-lca.html">
+     Life Cyle Assessment (LCA)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/2-lca_examples.html">
+     LCA examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/3-sustainable_scenarios.html">
+     Sustainable scenarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/4-sustainable_scenario_examples.html">
+     Sustainable scenario examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/5-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Laboratories
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lab-vega/summary.html">
+   Lab - VEGA Launcher TVC EMA
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-vega/1-sizing_scenarios-student.html">
+     Modeling of the mechanical load (student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-vega/1-sizing_scenarios.html">
+     Modeling of the mechanical load
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-vega/2-estimation_models-student.html">
+     Estimation models with scaling laws and linear regression (student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-vega/2-estimation_models.html">
+     Estimation models with scaling laws and linear regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-vega/3-simulation_models-student.html">
+     Simulation models with Python (student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-vega/3-simulation_models.html">
+     Simulation models with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-vega/4-evaluation_models-student.html">
+     Evaluation models: endurance of the actuator (student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-vega/4-evaluation_models.html">
+     Evaluation models: endurance of the actuator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-vega/5-sizing_and_optimization-student.html">
+     Sizing procedure and optimization (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-vega/5-sizing_and_optimization.html">
+     Sizing procedure and optimization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student.html">
+     Sizing procedure and optimization with OpenMDAO (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">
+     Sizing procedure and optimization with OpenMDAO
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lab-mobility/summary.html">
+   Lab - Sustainable mobility - Mission profile &amp; Specification
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="00_SustainableMobility.html">
+     Sustainable mobilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01a_CaseStudy.html">
+     Case study presentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01b_CaseStudy_Specification-Student.html">
+     Case study specification (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01b_CaseStudy_Specification.html">
+     Case study specification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02a_Architecture-Student.html">
+     Architecture of the converter and sizing scenarios (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02b_Architecture_Hybrid.html">
+     Hydrid Storage Architecture and Specification
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="summary.html">
+   Lab - Sustainable mobility - DC/DC converter sizing
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02a_Architecture_UltraCapacitor.html">
+     Architecture of the converter and sizing scenarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_SizingScenarios.html">
+     Equations of sizing scenarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_ScalingLaws-Student.html">
+     Estimation models with scaling laws and linear regression (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_ScalingLaws.html">
+     Estimation models with scaling laws and linear regression
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Heatsink  estimation models with simple and multiple linear regressions (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_HeatsinkLinearRegression.html">
+     Heatsink  estimation models with simple and multiple linear regressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_SizingCodeInductor.html">
+     Sizing code of an inductor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_SizingCodeInductor-Surrogate-Student.html">
+     Sizing code of an inductor with surrogate models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_SizingCodeInductor-Surrogate.html">
+     Sizing code of an inductor with surrogate models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08_DCDC_converter_sizing_introduction.html">
+     Design graphs for the sizing a DC/DC converter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09_SizingCodeDCDCconverter.html">
+     Sizing code of a DC/DC converter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab-multirotor/summary.html">
+   Lab - Multirotor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab-elevator/summary.html">
+   Lab - Elevator
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/class/Lab-watt_project/05_HeatsinkLinearRegression-Student.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/class/Lab-watt_project/05_HeatsinkLinearRegression-Student.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/SizingLab/sizing_course"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclass/Lab-watt_project/05_HeatsinkLinearRegression-Student.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/SizingLab/sizing_course/edit/main/class/Lab-watt_project/05_HeatsinkLinearRegression-Student.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/class/Lab-watt_project/05_HeatsinkLinearRegression-Student.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-linear-regression">
+   Simple linear regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#identification-of-the-most-important-dimensions">
+   Identification of the most important dimensions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-linear-regression">
+     Multiple linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Heatsink  estimation models with simple and multiple linear regressions (Student version)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-linear-regression">
+   Simple linear regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#identification-of-the-most-important-dimensions">
+   Identification of the most important dimensions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-linear-regression">
+     Multiple linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="heatsink-estimation-models-with-simple-and-multiple-linear-regressions-student-version">
+<h1>Heatsink  estimation models with simple and multiple linear regressions (Student version)<a class="headerlink" href="#heatsink-estimation-models-with-simple-and-multiple-linear-regressions-student-version" title="Permalink to this headline">#</a></h1>
+<p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
+<p>To improve cooling of components heatsinks with natural of forced convection are used. We want to have simple models to make the links between the dimensions, mass, heat resistance and conditions of use of a heatsink.  We will use catalogs data  to establish these estimation models necessary for our study.<br />
+This tutorial illustrates how to use simple and multiple linear regressions of catalog data to set up estimation models.</p>
+<p><em>Heatsink</em>
+<img alt="Heatsink" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/class/Lab-watt_project/assets/images/Heatsink.png" /></p>
+<section id="simple-linear-regression">
+<h2>Simple linear regression<a class="headerlink" href="#simple-linear-regression" title="Permalink to this headline">#</a></h2>
+<p>For a heat sink, the relation linking the thermal resistance <span class="math notranslate nohighlight">\(R_{th,n}\)</span> in natural convection, temperature rise <span class="math notranslate nohighlight">\(\Delta T=T_{heatsink}-T_{ambient}\)</span> and power dissipated <span class="math notranslate nohighlight">\(P_{th}\)</span> is:<br />
+<span class="math notranslate nohighlight">\(\Delta T=T_{heatsink}-T_{ambient} = R_{th,n}.P_{th}\)</span></p>
+<p>This relationship has to be corrected when temperature rise is not equal to 75 °C. The following gives this multiplication factor. Corresponding points are given and plot below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># input data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">30</span><span class="p">]))</span> <span class="c1"># temperature rise</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.99</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">,</span> <span class="mf">1.075</span><span class="p">,</span> <span class="mf">1.15</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.39</span><span class="p">]))</span> <span class="c1"># multiplication factor</span>
+
+<span class="c1"># plot the data </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature rise [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Multiplication factor of thermal resistance [-]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/05_HeatsinkLinearRegression-Student_2_0.png" src="../../_images/05_HeatsinkLinearRegression-Student_2_0.png" />
+</div>
+</div>
+<p>We want to express this relation with a polynomial model:</p>
+<p><span class="math notranslate nohighlight">\(\frac{R_{th,n}}{R_{th,n,75^{\circ} C}}=\beta _{0}+\beta _{1}.\Delta T+\beta _{2}.\Delta T^{2}\)</span></p>
+<p>For this model the relation between data and regression coefficients can be represented with a matrix notation:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+Y=X.\beta +\varepsilon
+\end{align*}\]</div>
+<p>Equivalent to:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left(\begin{array}{l}
+y_{1}\\
+\ldots \\
+y_{p}
+\end{array}\right)=\left(\begin{array}{lll}
+1 &amp; x_{11} &amp; \ldots \\
+\ldots &amp; \ldots &amp; \ldots \\
+1 &amp; x_{p1} &amp; \ldots 
+\end{array}\right)\left(\begin{array}{l}
+\beta _{0}\\
+\ldots \\
+\beta _{p}
+\end{array}\right)+\left(\begin{array}{l}
+\varepsilon _{1}\\
+\ldots \\
+\varepsilon _{p}
+\end{array}\right)
+\end{align*}\]</div>
+<p>with:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Y\)</span>, the output data vector: here <span class="math notranslate nohighlight">\(R_{th,n}/R_{th,n,70°C}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(X\)</span>, the input data matrix: here <span class="math notranslate nohighlight">\(\Delta T\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span>, the coefficients of model</p></li>
+</ul>
+<blockquote>
+<div><p>Exercice 1: In the case of least square error assumption, demonstrate that the <span class="math notranslate nohighlight">\(\beta\)</span> vector can be calculated with the following relation: <span class="math notranslate nohighlight">\(\beta=(X^tX)^{-1}X^tY\)</span>. Implement this calculation with python numpy functions: matrix products, matrix inversion and matrix tranposition (here a tutorial about <a class="reference external" href="https://www.python-course.eu/matrix_arithmetic.php">Matrix arithmetic</a>). Plot the regression and the original data on the same plot.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><em>Student Work</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Determination of the least squares estimator with matrix arithmetic</span>
+
+<span class="c1"># Matrix X and Y</span>
+<span class="n">X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="p">)))</span>
+<span class="n">Y</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Vector Beta calculation</span>
+<span class="n">Beta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The parameters are :&quot;</span><span class="p">,</span><span class="n">Beta</span><span class="p">)</span>
+
+<span class="c1"># Y vector prediction</span>
+<span class="n">y_est</span><span class="o">=</span><span class="n">X</span> <span class="o">@</span> <span class="n">Beta</span>
+
+<span class="c1"># plot the data </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y_est</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature rise [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Multiplication factor of thermal resistance [-]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparison of original data (circles) and OLS regression (red)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The parameters are : [ 1.93618886e+00 -2.22112013e-02  1.29959433e-04]
+</pre></div>
+</div>
+<img alt="../../_images/05_HeatsinkLinearRegression-Student_5_1.png" src="../../_images/05_HeatsinkLinearRegression-Student_5_1.png" />
+</div>
+</div>
+<blockquote>
+<div><p>Exercice 2: Compare your result with an <a class="reference external" href="https://www.statsmodels.org/stable/examples/notebooks/generated/ols.html">Ordinary Least Square</a> (OLS) regression function of the <a class="reference external" href="https://www.statsmodels.org/stable/index.html">StatsModels</a> package.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Determination of the least squares estimator with the OLS function </span>
+<span class="c1"># of the SatsModels package</span>
+
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parameters: &#39;</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R2: &#39;</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">rsquared</span><span class="p">)</span>
+
+<span class="c1"># Y vector prediction</span>
+<span class="n">y_OLS</span><span class="o">=</span><span class="n">results</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># plot the data </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y_OLS</span><span class="p">,</span> <span class="s1">&#39;-g&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature rise [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Multiplication factor of thermal resistance [-]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparison of original data (circles) and OLS regression (red)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameters:  [ 1.93618886e+00 -2.22112013e-02  1.29959433e-04]
+R2:  0.9995370514106131
+</pre></div>
+</div>
+<img alt="../../_images/05_HeatsinkLinearRegression-Student_7_1.png" src="../../_images/05_HeatsinkLinearRegression-Student_7_1.png" />
+</div>
+</div>
+</section>
+<section id="identification-of-the-most-important-dimensions">
+<h2>Identification of the most important dimensions<a class="headerlink" href="#identification-of-the-most-important-dimensions" title="Permalink to this headline">#</a></h2>
+<p>The objective of the estimation model sought here is to evaluate the thermal resistance in natural convection of a heat sink <span class="math notranslate nohighlight">\(R_{th,n}\)</span> according to its dimensions (see Figure below). The statistical data are from a heat sinks catalog (standard extruded heat sinks of <a class="reference external" href="https://www.boydcorp.com/thermal/heat-sinks/extruded.html">Aavid Thermalloy</a>).</p>
+<p><em>Section of a heat sink (Length L)</em>
+<img alt="HeatsinkSection" src="class/Lab-watt_project/pictures/HeatsinkSection.png" /></p>
+<p>The first step is to import catalog data stored in a .csv file. We use for that functions from <a class="reference external" href="https://pandas.pydata.org/index.html">Panda</a> package (with here an <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/03.00-introduction-to-pandas.html">introduction to panda</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inmport Heatsink data</span>
+
+<span class="c1"># Panda package Importation</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Read the .csv file with bearing data</span>
+<span class="n">path</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/SizingLab/sizing_course/main/class/Lab-watt_project/assets/data/&#39;</span>
+<span class="n">dHS</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">+</span><span class="s1">&#39;DataHeatsink.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+<span class="c1"># Print the head (first lines of the file)</span>
+<span class="n">dHS</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">HTTPError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">/tmp/ipykernel_2604/3704479994.py</span> in <span class="ni">&lt;cell line: 8&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Read the .csv file with bearing data</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/SizingLab/sizing_course/main/class/Lab-watt_project/assets/data/&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">dHS</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">+</span><span class="s1">&#39;DataHeatsink.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># Print the head (first lines of the file)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
+<span class="g g-Whitespace">    </span><span class="mi">686</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span> 
+<span class="ne">--&gt; </span><span class="mi">688</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">689</span> 
+<span class="g g-Whitespace">    </span><span class="mi">690</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span>     <span class="c1"># though mypy handling of conditional imports is difficult.</span>
+<span class="g g-Whitespace">    </span><span class="mi">435</span>     <span class="c1"># See https://github.com/python/mypy/issues/1297</span>
+<span class="ne">--&gt; </span><span class="mi">436</span>     <span class="n">fp_or_buf</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">compression</span><span class="p">,</span> <span class="n">should_close</span> <span class="o">=</span> <span class="n">get_filepath_or_buffer</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">437</span>         <span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="n">compression</span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span>     <span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/io/common.py</span> in <span class="ni">get_filepath_or_buffer</span><span class="nt">(filepath_or_buffer, encoding, compression, mode, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_url</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>         <span class="c1"># TODO: fsspec can also handle HTTP via requests, but leaving this unchanged</span>
+<span class="ne">--&gt; </span><span class="mi">183</span>         <span class="n">req</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>         <span class="n">content_encoding</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Content-Encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>         <span class="k">if</span> <span class="n">content_encoding</span> <span class="o">==</span> <span class="s2">&quot;gzip&quot;</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/io/common.py</span> in <span class="ni">urlopen</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span> 
+<span class="ne">--&gt; </span><span class="mi">137</span>     <span class="k">return</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> 
+<span class="g g-Whitespace">    </span><span class="mi">139</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/urllib/request.py</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
+<span class="ne">--&gt; </span><span class="mi">222</span>     <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span> 
+<span class="g g-Whitespace">    </span><span class="mi">224</span> <span class="k">def</span> <span class="nf">install_opener</span><span class="p">(</span><span class="n">opener</span><span class="p">):</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/urllib/request.py</span> in <span class="ni">open</span><span class="nt">(self, fullurl, data, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">529</span>         <span class="k">for</span> <span class="n">processor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="p">[]):</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span>             <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">531</span>             <span class="n">response</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span> 
+<span class="g g-Whitespace">    </span><span class="mi">533</span>         <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/urllib/request.py</span> in <span class="ni">http_response</span><span class="nt">(self, request, response)</span>
+<span class="g g-Whitespace">    </span><span class="mi">638</span>         <span class="c1"># request was successfully received, understood, and accepted.</span>
+<span class="g g-Whitespace">    </span><span class="mi">639</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">640</span>             <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">641</span>                 <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/urllib/request.py</span> in <span class="ni">error</span><span class="nt">(self, proto, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">567</span>         <span class="k">if</span> <span class="n">http_err</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">568</span>             <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;http_error_default&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">orig_args</span>
+<span class="ne">--&gt; </span><span class="mi">569</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">570</span> 
+<span class="g g-Whitespace">    </span><span class="mi">571</span> <span class="c1"># XXX probably also want an abstract factory that knows when it makes</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/urllib/request.py</span> in <span class="ni">_call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">500</span>         <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">501</span>             <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">502</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span>             <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>                 <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/urllib/request.py</span> in <span class="ni">http_error_default</span><span class="nt">(self, req, fp, code, msg, hdrs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">647</span> <span class="k">class</span> <span class="nc">HTTPDefaultErrorHandler</span><span class="p">(</span><span class="n">BaseHandler</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">648</span>     <span class="k">def</span> <span class="nf">http_error_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">649</span>         <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">650</span> 
+<span class="g g-Whitespace">    </span><span class="mi">651</span> <span class="k">class</span> <span class="nc">HTTPRedirectHandler</span><span class="p">(</span><span class="n">BaseHandler</span><span class="p">):</span>
+
+<span class="ne">HTTPError</span>: HTTP Error 404: Not Found
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Exercice: By using a correlation analysis or a scatter matrix (here <a class="reference external" href="http://benalexkeen.com/correlation-in-python/">examples</a>), identify the most important dimensions among <span class="math notranslate nohighlight">\(W, H, L, W_f, H_f, H_s\)</span>.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dHS</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rthn</th>
+      <th>Rthf</th>
+      <th>W</th>
+      <th>H</th>
+      <th>L</th>
+      <th>Wf</th>
+      <th>Df</th>
+      <th>Hs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Rthn</th>
+      <td>1.000000</td>
+      <td>8.209009e-01</td>
+      <td>-0.547883</td>
+      <td>-4.802456e-01</td>
+      <td>-3.165148e-01</td>
+      <td>-4.778697e-01</td>
+      <td>-4.781087e-01</td>
+      <td>-5.254152e-01</td>
+    </tr>
+    <tr>
+      <th>Rthf</th>
+      <td>0.820901</td>
+      <td>1.000000e+00</td>
+      <td>-0.605701</td>
+      <td>-5.583399e-01</td>
+      <td>-1.279035e-17</td>
+      <td>-5.479748e-01</td>
+      <td>-5.231688e-01</td>
+      <td>-6.306939e-01</td>
+    </tr>
+    <tr>
+      <th>W</th>
+      <td>-0.547883</td>
+      <td>-6.057011e-01</td>
+      <td>1.000000</td>
+      <td>1.690900e-01</td>
+      <td>0.000000e+00</td>
+      <td>3.767281e-01</td>
+      <td>4.783354e-01</td>
+      <td>2.661124e-01</td>
+    </tr>
+    <tr>
+      <th>H</th>
+      <td>-0.480246</td>
+      <td>-5.583399e-01</td>
+      <td>0.169090</td>
+      <td>1.000000e+00</td>
+      <td>-4.420263e-18</td>
+      <td>5.042339e-01</td>
+      <td>2.310279e-01</td>
+      <td>7.317083e-01</td>
+    </tr>
+    <tr>
+      <th>L</th>
+      <td>-0.316515</td>
+      <td>-1.279035e-17</td>
+      <td>0.000000</td>
+      <td>-4.420263e-18</td>
+      <td>1.000000e+00</td>
+      <td>-1.139859e-17</td>
+      <td>1.970126e-17</td>
+      <td>-9.426127e-19</td>
+    </tr>
+    <tr>
+      <th>Wf</th>
+      <td>-0.477870</td>
+      <td>-5.479748e-01</td>
+      <td>0.376728</td>
+      <td>5.042339e-01</td>
+      <td>-1.139859e-17</td>
+      <td>1.000000e+00</td>
+      <td>7.978588e-01</td>
+      <td>5.282451e-01</td>
+    </tr>
+    <tr>
+      <th>Df</th>
+      <td>-0.478109</td>
+      <td>-5.231688e-01</td>
+      <td>0.478335</td>
+      <td>2.310279e-01</td>
+      <td>1.970126e-17</td>
+      <td>7.978588e-01</td>
+      <td>1.000000e+00</td>
+      <td>3.624208e-01</td>
+    </tr>
+    <tr>
+      <th>Hs</th>
+      <td>-0.525415</td>
+      <td>-6.306939e-01</td>
+      <td>0.266112</td>
+      <td>7.317083e-01</td>
+      <td>-9.426127e-19</td>
+      <td>5.282451e-01</td>
+      <td>3.624208e-01</td>
+      <td>1.000000e+00</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Correlation matrix</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">dHS</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dHS</span><span class="o">.</span><span class="n">columns</span><span class="p">)),</span> <span class="n">dHS</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dHS</span><span class="o">.</span><span class="n">columns</span><span class="p">)),</span> <span class="n">dHS</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Scatter matrix</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">scatter_matrix</span><span class="p">(</span><span class="n">dHS</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/05_HeatsinkLinearRegression-Student_14_0.png" src="../../_images/05_HeatsinkLinearRegression-Student_14_0.png" />
+<img alt="../../_images/05_HeatsinkLinearRegression-Student_14_1.png" src="../../_images/05_HeatsinkLinearRegression-Student_14_1.png" />
+</div>
+</div>
+<hr class="docutils" />
+<p><em>Student explanations</em></p>
+<section id="multiple-linear-regression">
+<h3>Multiple linear regression<a class="headerlink" href="#multiple-linear-regression" title="Permalink to this headline">#</a></h3>
+<p>We want to perform here a multiple linear regression to determine an estimation model of the form.<br />
+<span class="math notranslate nohighlight">\(R_{th,n}=a+bX+cY+dZ\)</span></p>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\({a, b, c, d}\)</span> are the coefficients of the model</p></li>
+<li><p><span class="math notranslate nohighlight">\({X, Y, Z}\)</span> are the most influential dimensions.</p></li>
+</ul>
+<blockquote>
+<div><p>Exercice: Perform this multiple linear regression with the <a class="reference external" href="https://www.statsmodels.org/stable/index.html">StatsModels</a> package.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#student work</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We want to compare the result with an estimation model of the form.<br />
+<span class="math notranslate nohighlight">\(R_{th,n}=aX^{b}Y^{c}Z^{d}\)</span></p>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\({a, b, c, d}\)</span> are the coefficients of the model</p></li>
+<li><p><span class="math notranslate nohighlight">\({X, Y, Z}\)</span> are the most influential dimensions.</p></li>
+</ul>
+<blockquote>
+<div><p>Exercice: Complete the verification diagram with previous results and conclude about the best mathematical form to choose.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Determination of the least squares estimator with the OLS function </span>
+<span class="c1"># of the SatsModels package</span>
+
+<span class="c1"># log transformation of the data</span>
+<span class="n">dHSlog</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">dHS</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">dHS</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1"># Generation of Y and X matrix</span>
+<span class="n">YHS</span><span class="o">=</span><span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;Rthn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">YHS</span><span class="o">=</span><span class="n">YHS</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">YHS</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">XHS</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)),</span> <span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;H&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)))</span>
+
+<span class="c1"># OLS regression</span>
+<span class="n">modelHS</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">YHS</span><span class="p">,</span> <span class="n">XHS</span><span class="p">)</span>
+<span class="n">resultHS</span> <span class="o">=</span> <span class="n">modelHS</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># Results print</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parameters: &#39;</span><span class="p">,</span> <span class="n">resultHS</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R2: &#39;</span><span class="p">,</span> <span class="n">resultHS</span><span class="o">.</span><span class="n">rsquared</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The estimation function is: Rthn = </span><span class="si">%.3g</span><span class="s1">.W^</span><span class="si">%.2f</span><span class="s1">.H^</span><span class="si">%3.2f</span><span class="s1">.L^</span><span class="si">%.2f</span><span class="s1">&#39;</span>
+      <span class="o">%</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">resultHS</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">resultHS</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">resultHS</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">resultHS</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;with Rthn in [°/W], W,H and L in [mm]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameters:  [ 4.27428462 -0.91835926 -0.55758774 -0.73      ]
+R2:  0.9881820015880768
+The estimation function is: Rthn = 1.88e+04.W^-0.92.H^-0.56.L^-0.73
+with Rthn in [°/W], W,H and L in [mm]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Y vector prediction</span>
+<span class="n">y_HS</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">resultHS</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">XHS</span><span class="p">))</span>
+
+<span class="c1"># plot the data </span>
+<span class="c1">#plt.plot(dHS[&#39;Rthn&#39;].values,dHS[&#39;Rthn&#39;].values, &#39;-&#39;,dHS[&#39;Rthn&#39;].values,y_HS, &#39;o&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">y_HS</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Catalog data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Prediction&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Natural convection thermal resistance (°/W)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/05_HeatsinkLinearRegression-Student_20_0.png" src="../../_images/05_HeatsinkLinearRegression-Student_20_0.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "SizingLab/sizing_course",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./class/Lab-watt_project"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="04_ScalingLaws.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Estimation models with scaling laws and linear regression</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="05_HeatsinkLinearRegression.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Heatsink  estimation models with simple and multiple linear regressions</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Marc Budinger, Scott Delbecq<br/>
+  
+    <div class="extra_footer">
+      <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

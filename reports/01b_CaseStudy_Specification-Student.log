@@ -1,0 +1,43 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Definition of the section under study
+Trajet = SimulSection(Vehicle=Tram, Distance=670, MeanSpeed=26*1e3/3600,BrakeRatioMax=0.6,dt=1)
+
+# Definition of k1, k2, k3 parameters
+X=[0.036125972011676784, 1, 0.9638740279883232]
+
+# Profile integration, plotting and consummption per passenger evaluation
+Trajet.solver(X)
+Trajet.plot()
+Trajet.ConsumptionPerPax(X)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m/tmp/ipykernel_2418/3903909148.py[0m in [0;36m<cell line: 2>[0;34m()[0m
+[1;32m      1[0m [0;31m# Definition of the section under study[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mTrajet[0m [0;34m=[0m [0mSimulSection[0m[0;34m([0m[0mVehicle[0m[0;34m=[0m[0mTram[0m[0;34m,[0m [0mDistance[0m[0;34m=[0m[0;36m670[0m[0;34m,[0m [0mMeanSpeed[0m[0;34m=[0m[0;36m26[0m[0;34m*[0m[0;36m1e3[0m[0;34m/[0m[0;36m3600[0m[0;34m,[0m[0mBrakeRatioMax[0m[0;34m=[0m[0;36m0.6[0m[0;34m,[0m[0mdt[0m[0;34m=[0m[0;36m1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0;34m[0m[0m
+[1;32m      4[0m [0;31m# Definition of k1, k2, k3 parameters[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0mX[0m[0;34m=[0m[0;34m[[0m[0;36m0.036125972011676784[0m[0;34m,[0m [0;36m1[0m[0;34m,[0m [0;36m0.9638740279883232[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNameError[0m: name 'Tram' is not defined
+NameError: name 'Tram' is not defined
+

@@ -1,0 +1,1402 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Modeling of the mechanical load (student version) &#8212; Sizing and optimization of mechatronic systems</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pdf_print.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "SizingLab/sizing_course");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script src="../../_static/save_state.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Modeling of the mechanical load" href="1-sizing_scenarios.html" />
+    <link rel="prev" title="Lab - VEGA Launcher TVC EMA case study" href="summary.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">Welcome to this new course!</div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Sizing and optimization of mechatronic systems</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/homepage.html">
+                    Course Description
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About this course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/syllabus.html">
+   Instructors
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture1/summary.html">
+   Lecture 1 - Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture1/1-objectives_and_ressources.html">
+     Objectives and ressources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture1/2-needs_and_general_methodology.html">
+     Needs and general methodology
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture1/3-scenarios_and_design_drivers.html">
+     Scenarios and Design Drivers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture1/4-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture2/summary.html">
+   Lecture 2 - Estimation models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture2/1-needs.html">
+     Needs for estimation models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture2/2-linear_regressions.html">
+     Linear regressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture2/3-scaling_laws.html">
+     Scaling laws
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture2/4-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture4/summary.html">
+   Lecture 3 - Simulation and evaluation models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/1-simulation_models.html">
+     Simulation models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/2-simulation_model_examples.html">
+     Simulation model examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/3-evaluation_models.html">
+     Evaluation models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/4-evaluation_model_examples.html">
+     Evaluation model examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/5-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture3/summary.html">
+   Lecture 4 - Optimal sizing procedures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/1-design_and_optimization_problems.html">
+     Representation of a design problem and basics of optimization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/2-optimization_examples.html">
+     Optimization problem examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/3-sizing_procedures.html">
+     Development of a sizing procedure using design graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/4-sizing_procedure_examples.html">
+     Sizing procedure examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/5-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture5/summary.html">
+   Lecture 5 - MDAO and surrogate models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/1-mdao.html">
+     MDAO (Multidisciplinary Design Analysis and Optimization)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/2-mdao_examples.html">
+     MDAO examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/3-surrogate_models.html">
+     Surrogate models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/4-surrogate_model_examples.html">
+     Surrogate model examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/5-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture6/summary.html">
+   Lecture 6 - LCA and sustainable scenarios
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/1-lca.html">
+     Life Cyle Assessment (LCA)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/2-lca_examples.html">
+     LCA examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/3-sustainable_scenarios.html">
+     Sustainable scenarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/4-sustainable_scenario_examples.html">
+     Sustainable scenario examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/5-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Laboratories
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="summary.html">
+   Lab - VEGA Launcher TVC EMA
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Modeling of the mechanical load (student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1-sizing_scenarios.html">
+     Modeling of the mechanical load
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-estimation_models-student.html">
+     Estimation models with scaling laws and linear regression (student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-estimation_models.html">
+     Estimation models with scaling laws and linear regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-simulation_models-student.html">
+     Simulation models with Python (student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-simulation_models.html">
+     Simulation models with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4-evaluation_models-student.html">
+     Evaluation models: endurance of the actuator (student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4-evaluation_models.html">
+     Evaluation models: endurance of the actuator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5-sizing_and_optimization-student.html">
+     Sizing procedure and optimization (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5-sizing_and_optimization.html">
+     Sizing procedure and optimization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om-student.html">
+     Sizing procedure and optimization with OpenMDAO (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om.html">
+     Sizing procedure and optimization with OpenMDAO
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lab-mobility/summary.html">
+   Lab - Sustainable mobility - Mission profile &amp; Specification
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/00_SustainableMobility.html">
+     Sustainable mobilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/01a_CaseStudy.html">
+     Case study presentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification-Student.html">
+     Case study specification (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification.html">
+     Case study specification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/02a_Architecture-Student.html">
+     Architecture of the converter and sizing scenarios (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/02b_Architecture_Hybrid.html">
+     Hydrid Storage Architecture and Specification
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lab-watt_project/summary.html">
+   Lab - Sustainable mobility - DC/DC converter sizing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/02a_Architecture_UltraCapacitor.html">
+     Architecture of the converter and sizing scenarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/03_SizingScenarios.html">
+     Equations of sizing scenarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/04_ScalingLaws-Student.html">
+     Estimation models with scaling laws and linear regression (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/04_ScalingLaws.html">
+     Estimation models with scaling laws and linear regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression-Student.html">
+     Heatsink  estimation models with simple and multiple linear regressions (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression.html">
+     Heatsink  estimation models with simple and multiple linear regressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/06_SizingCodeInductor.html">
+     Sizing code of an inductor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate-Student.html">
+     Sizing code of an inductor with surrogate models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate.html">
+     Sizing code of an inductor with surrogate models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/08_DCDC_converter_sizing_introduction.html">
+     Design graphs for the sizing a DC/DC converter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/09_SizingCodeDCDCconverter.html">
+     Sizing code of a DC/DC converter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab-multirotor/summary.html">
+   Lab - Multirotor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab-elevator/summary.html">
+   Lab - Elevator
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/class/Lab-vega/1-sizing_scenarios-student.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/class/Lab-vega/1-sizing_scenarios-student.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/SizingLab/sizing_course"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclass/Lab-vega/1-sizing_scenarios-student.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/SizingLab/sizing_course/edit/main/class/Lab-vega/1-sizing_scenarios-student.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/class/Lab-vega/1-sizing_scenarios-student.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Modeling of the mechanical load (student version)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nozzle-modeling">
+     Nozzle modeling
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lever-arm-calculation">
+       Lever arm calculation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sizing-scenarios-modeling">
+     Sizing scenarios modeling
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#static-sizing-scenario">
+       Static sizing scenario
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dynamic-sizing-scenario">
+       Dynamic sizing scenario
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#force-speed-diagram">
+   Force speed diagram
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Modeling of the mechanical load (student version)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Modeling of the mechanical load (student version)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nozzle-modeling">
+     Nozzle modeling
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lever-arm-calculation">
+       Lever arm calculation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sizing-scenarios-modeling">
+     Sizing scenarios modeling
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#static-sizing-scenario">
+       Static sizing scenario
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dynamic-sizing-scenario">
+       Dynamic sizing scenario
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#force-speed-diagram">
+   Force speed diagram
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <img alt="SizingLab" src="../../_images/logo.png" />
+<section class="tex2jax_ignore mathjax_ignore" id="modeling-of-the-mechanical-load-student-version">
+<h1>Modeling of the mechanical load (student version)<a class="headerlink" href="#modeling-of-the-mechanical-load-student-version" title="Permalink to this headline">#</a></h1>
+<p><em>Written by Marc Budinger (INSA Toulouse) and Scott Delbecq (ISAE-SUPAERO), Toulouse, France</em></p>
+<p>The actuation system of the 1st stage of the launcher consists of a set of Lithium-ion batteries, a control unit (2 inverters and control/command electronics) and two electromechanical actuators (EMA). This set makes it possible to control the nozzle according to 2 axes of rotation. We will be interested here only in one axis axis of rotation and we will neglect the couplings between these 2 axes.</p>
+<p><em>Vega Launcher 1st stage (P80) :</em><br />
+<img alt="Vega 1st stage" src="../../_images/P80_stage1.png" /></p>
+<p><em>Thrust Vector Control (TVC) actuation system :</em><br />
+<img alt="TVC Actuation system" src="../../_images/P80_vega_TVC_system.png" /></p>
+<section id="nozzle-modeling">
+<h2>Nozzle modeling<a class="headerlink" href="#nozzle-modeling" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Markdown</span> <span class="k">as</span> <span class="n">md</span>  <span class="c1"># enable Markdown printing</span>
+
+<span class="c1"># Definition of nozzle equivalent parameters with engineering units</span>
+<span class="n">Jnozzle</span> <span class="o">=</span> <span class="mf">1.40e03</span>  <span class="c1"># [kg.m2] Inertia</span>
+<span class="n">Knozzle</span> <span class="o">=</span> <span class="mf">1.52e04</span>  <span class="c1"># [Nm/deg] Stiffness</span>
+<span class="n">Fnozzle</span> <span class="o">=</span> <span class="mf">1.74e02</span>  <span class="c1"># [Nms/deg] Viscous damping</span>
+
+<span class="c1">#</span>
+<span class="n">md</span><span class="p">(</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The nozzle is composed of :</span>
+<span class="sd">- a flexible bearing or flexseal which links the nozzle to the launcher and enables rotational movement. The equivalent characteristics and parameters for this flexible bearing are:</span>
+<span class="sd">    - a **stiffness** of {:.0f} Nm/deg.</span>
+<span class="sd">    - a **viscous damping** of {:.0f}	Nms/deg</span>
+<span class="sd">- a rigid cone modeled here as: </span>
+<span class="sd">    - an **inertia** of {:.0f} kg.m^2</span>
+<span class="sd">    &quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">Knozzle</span><span class="p">,</span> <span class="n">Fnozzle</span><span class="p">,</span> <span class="n">Jnozzle</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>The nozzle is composed of :</p>
+<ul class="simple">
+<li><p>a flexible bearing or flexseal which links the nozzle to the launcher and enables rotational movement. The equivalent characteristics and parameters for this flexible bearing are:</p>
+<ul>
+<li><p>a <strong>stiffness</strong> of 15200 Nm/deg.</p></li>
+<li><p>a <strong>viscous damping</strong> of 174	Nms/deg</p></li>
+</ul>
+</li>
+<li><p>a rigid cone modeled here as:</p>
+<ul>
+<li><p>an <strong>inertia</strong> of 1400 kg.m^2</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p><em>P80 Nozzle (from [ESA presentation]</em></p>
+<p>(<a class="reference external" href="http://www.ingaero.uniroma1.it/attachments/1609_VEGA%20%20sapienza%20small.pdf">http://www.ingaero.uniroma1.it/attachments/1609_VEGA  sapienza small.pdf</a>)):
+<img alt="P80" src="../../_images/nozzle.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import math package whic contains usefull mathematical functions and variables</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Calculate SI unit values of Knozzle and Fnozzle</span>
+<span class="c1"># pi value is math.pi</span>
+
+<span class="c1"># student part -------------</span>
+<span class="n">Knozzle</span> <span class="o">=</span>
+<span class="n">Fnozzle</span> <span class="o">=</span>
+<span class="c1"># --------------------------</span>
+
+<span class="c1"># Print the corresponding values with print(&quot;xxx %f xxx %f &quot;%(value1,value2)</span>
+<span class="n">md</span><span class="p">(</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">&gt;Remark: SI unit conversion of these parameters *K&lt;sub&gt;nozzle&lt;/sub&gt;* = {:.2e} Nm/rad and *F&lt;sub&gt;nozzle&lt;/sub&gt;* = {:.2e} Nms/rad</span>
+<span class="sd">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">Knozzle</span><span class="p">,</span> <span class="n">Fnozzle</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_2114/2554588583.py&quot;</span><span class="gt">, line </span><span class="mi">9</span>
+    <span class="n">Knozzle</span> <span class="o">=</span>
+             <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<section id="lever-arm-calculation">
+<h3>Lever arm calculation<a class="headerlink" href="#lever-arm-calculation" title="Permalink to this headline">#</a></h3>
+<p>The EMA (Electro Mechanical Actuator) is between M and N points of the following drawing. The given values correspond to a nominal case. But during the sizng we want to evaluate and optimize the position of N and M points. d1 and d2 are thus design variables.</p>
+<p><em>P80 Nozzle section :</em></p>
+<p><img alt="P80" src="../../_images/LeverArmNozzle.png" /></a></p>
+<p>For the following steps, we need to calculate the equivalent lever arm between the linear displacement of the actuator and the rotational displacement of the nozzle. Thanks to the <em>Sympy</em> package, a symbolic calculation of this lever arm, function of d1 and d2, is possible.</p>
+<p>Remember that the link between the torque T on the nozzle and the force F of the actuator can be calculated with the following cross product:<br />
+<span class="math notranslate nohighlight">\(\vec{T}=\vec{OM} \times \vec{F}=\vec{OM} \times \frac{\vec{NM}}{\left|\vec{NM}\right|} F \)</span><br />
+thus the equivalent lever arm can be calculated with:<br />
+<span class="math notranslate nohighlight">\(L_{arm}=\left| \vec{OM} \times \frac{\vec{NM}}{\left|\vec{NM}\right|} \right|\)</span><br />
+and the torque can be calculated with the simple equation:<br />
+<span class="math notranslate nohighlight">\(T=L_{arm}.F\)</span></p>
+<p>Remark: the variation of lever arm with position order is assumed to be negligeable here due to the small nozzle deflection (+/- 5.7° max)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import vector manipulation and symbols definition of Sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.physics.mechanics</span> <span class="kn">import</span> <span class="n">ReferenceFrame</span><span class="p">,</span> <span class="n">Vector</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">lambdify</span>
+<span class="kn">import</span> <span class="nn">sympy</span>
+
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">13</span> <span class="o">*</span> <span class="mf">3.14</span> <span class="o">/</span> <span class="mi">180</span>  <span class="c1"># [rad] cone angle</span>
+
+<span class="c1"># definition of d1 and d2 variable for symbolic calculation</span>
+<span class="n">d1</span><span class="p">,</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;d1 d2&quot;</span><span class="p">)</span>
+
+<span class="c1"># definition of a reference frame for vectors definiions</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">ReferenceFrame</span><span class="p">(</span><span class="s2">&quot;N&quot;</span><span class="p">)</span>
+
+<span class="c1"># definition of OM and ON vectors thanks N.x and N.y reference (unit) vectors</span>
+<span class="n">OM</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">+</span> <span class="p">(</span><span class="mf">2.145</span> <span class="o">+</span> <span class="n">d1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span> <span class="o">*</span> <span class="n">N</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.718</span> <span class="o">-</span> <span class="p">(</span><span class="mf">2.145</span> <span class="o">+</span> <span class="n">d1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span> <span class="o">*</span> <span class="n">N</span><span class="o">.</span><span class="n">y</span>
+
+<span class="n">ON</span> <span class="o">=</span> <span class="mf">1.358</span> <span class="o">*</span> <span class="n">N</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.2</span> <span class="o">+</span> <span class="n">d2</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span><span class="o">.</span><span class="n">y</span>
+
+<span class="c1"># Actuator length</span>
+<span class="n">NM</span> <span class="o">=</span> <span class="n">OM</span> <span class="o">-</span> <span class="n">ON</span>
+
+<span class="c1"># The lever arm</span>
+<span class="n">Larm</span> <span class="o">=</span> <span class="p">(</span><span class="n">OM</span> <span class="o">^</span> <span class="n">NM</span><span class="o">.</span><span class="n">normalize</span><span class="p">())</span><span class="o">.</span><span class="n">magnitude</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The expression of the actuator length is :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NM</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The expression of the equivalent lever arm  is :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Larm</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This expression can be evaluated:</p>
+<ul class="simple">
+<li><p>at the nominal anchorage point (d1=0 and d2=0)</p></li>
+<li><p>for different anchorage points</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transform the expression into a numerical function</span>
+<span class="n">Evaluate_Larm</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">((</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">),</span> <span class="n">Larm</span><span class="p">)</span>
+
+<span class="n">md</span><span class="p">(</span><span class="s2">&quot;The lever arm for the nominal dimensions is </span><span class="si">%4.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">Evaluate_Larm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import plot3d function  from sympy package</span>
+<span class="kn">from</span> <span class="nn">sympy.plotting</span> <span class="kn">import</span> <span class="n">plot3d</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># plot the Lever arm in function of d1 and d2 variables</span>
+<span class="n">plot3d</span><span class="p">(</span><span class="n">Larm</span><span class="p">,</span> <span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">+</span><span class="mf">0.1</span><span class="p">),</span> <span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">+</span><span class="mf">0.1</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;d1&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;d2&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Lever arm&quot;</span><span class="p">)</span>
+
+<span class="c1"># plot the Actuator Length in function of d1 and d2 variables</span>
+<span class="n">plot3d</span><span class="p">(</span>
+    <span class="n">NM</span><span class="o">.</span><span class="n">magnitude</span><span class="p">(),</span>
+    <span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">+</span><span class="mf">0.1</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">d2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">+</span><span class="mf">0.1</span><span class="p">),</span>
+    <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;d1&quot;</span><span class="p">,</span>
+    <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;d2&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Actuator length&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="sizing-scenarios-modeling">
+<h2>Sizing scenarios modeling<a class="headerlink" href="#sizing-scenarios-modeling" title="Permalink to this headline">#</a></h2>
+<p>2 use cases must be checked during the design:</p>
+<ul class="simple">
+<li><p>a static deflection of 5.7 °</p></li>
+<li><p>a dynamic mission profile which must ensure a response time of 72 ms for a position step from 5.2 to 5.7°.</p></li>
+</ul>
+<section id="static-sizing-scenario">
+<h3>Static sizing scenario<a class="headerlink" href="#static-sizing-scenario" title="Permalink to this headline">#</a></h3>
+<p>The maximal angular displacement is 5.7°. The corresping force can be calculated thanks the flexible bearing stiffness.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teta_max</span> <span class="o">=</span> <span class="mf">5.7</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+
+<span class="n">Fstat_max</span> <span class="o">=</span> <span class="n">Knozzle</span> <span class="o">*</span> <span class="n">teta_max</span> <span class="o">/</span> <span class="n">Evaluate_Larm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">md</span><span class="p">(</span><span class="s2">&quot;The maximum static force is </span><span class="si">%4.2e</span><span class="s2"> N.&quot;</span> <span class="o">%</span> <span class="n">Fstat_max</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dynamic-sizing-scenario">
+<h3>Dynamic sizing scenario<a class="headerlink" href="#dynamic-sizing-scenario" title="Permalink to this headline">#</a></h3>
+<p>For this scenario, we will assume that the position close loop system will response as a second order filter between real position and order:<br />
+<span class="math notranslate nohighlight">\(H(p)=\frac{1}{1+\frac{2\xi p}{\omega_0}+\frac{p^2}{\omega_0^2}}\)</span><br />
+with <span class="math notranslate nohighlight">\(\xi=0.7\)</span> and thus <span class="math notranslate nohighlight">\(t_{r5}=\frac{2.9}{\omega_0}\)</span></p>
+<p>We calculate here position, speed and acceleration of the nozzle for a step request (5.2 to 5.7° in 72 ms).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import from scipy of the step response</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">step</span>
+
+<span class="c1"># Definition of time response, damping coef, and angular frequency of the filter</span>
+<span class="n">tr</span> <span class="o">=</span> <span class="mf">72e-3</span>
+<span class="n">w0</span> <span class="o">=</span> <span class="mf">2.9</span> <span class="o">/</span> <span class="n">tr</span>
+<span class="n">eps</span> <span class="o">=</span> <span class="mf">0.7</span>
+
+<span class="c1"># position calculation with a second order step response</span>
+<span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span>
+<span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">/</span> <span class="n">w0</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">eps</span> <span class="o">/</span> <span class="n">w0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">step</span><span class="p">(</span><span class="n">system</span><span class="o">=</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">5.2</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">y</span>
+
+<span class="c1"># speed, we change here only the numerator of the transfer function</span>
+<span class="n">nump</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">yp</span> <span class="o">=</span> <span class="n">step</span><span class="p">(</span><span class="n">system</span><span class="o">=</span><span class="p">(</span><span class="n">nump</span><span class="p">,</span> <span class="n">den</span><span class="p">))</span>
+<span class="n">yp</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">yp</span>
+
+<span class="c1"># acceleration</span>
+<span class="n">nump</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">ypp</span> <span class="o">=</span> <span class="n">step</span><span class="p">(</span><span class="n">system</span><span class="o">=</span><span class="p">(</span><span class="n">nump</span><span class="p">,</span> <span class="n">den</span><span class="p">))</span>
+<span class="n">ypp</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">ypp</span>
+
+<span class="c1"># plot of the different dynamic answers</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Position (°)&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">yp</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Speed (°/s)&quot;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">ypp</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Acceleration (°/s²)&quot;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s now possible to calculate the force of the actuator which is requested to respect this mission profile.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># degree to rad</span>
+<span class="n">teta</span><span class="p">,</span> <span class="n">tetap</span><span class="p">,</span> <span class="n">tetapp</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">yp</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">ypp</span>
+
+<span class="c1"># Force calculation</span>
+<span class="c1"># calculate Fdyn of the EMA</span>
+<span class="c1"># remark : Evaluate_Larm(0,0) give the Lever arm for d1=0 and d2=0</span>
+<span class="n">Fdyn</span> <span class="o">=</span>
+
+<span class="n">g</span><span class="p">,</span> <span class="n">gx1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">gx1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Fdyn</span><span class="p">)</span>
+<span class="n">gx1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Force (N)&quot;</span><span class="p">)</span>
+<span class="n">gx1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">)</span>
+<span class="n">gx1</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="force-speed-diagram">
+<h1>Force speed diagram<a class="headerlink" href="#force-speed-diagram" title="Permalink to this headline">#</a></h1>
+<p>This sizing scenarios can be represented on a force-speed diagram usefull for compenent selection.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we create here a force-speed diagram</span>
+<span class="n">h</span><span class="p">,</span> <span class="n">hx1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">hx1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yp</span><span class="p">,</span> <span class="n">Fdyn</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Fstat_max</span><span class="p">,</span> <span class="s2">&quot;.k&quot;</span><span class="p">)</span>
+<span class="n">hx1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Force (N)&quot;</span><span class="p">)</span>
+<span class="n">hx1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Speed (°/s)&quot;</span><span class="p">)</span>
+<span class="n">hx1</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>For the next sizing steps, we will use</p>
+<ul class="simple">
+<li><p>the nozzle max speed (step response)</p></li>
+<li><p>the max static torque (max deflexion)</p></li>
+<li><p>for max dynamic point (step response) : Max force with acceleration</p></li>
+</ul>
+<p>In the nozzle frame (rotational movement):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df_rot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;Value&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">yp</span><span class="p">),</span> <span class="n">Knozzle</span> <span class="o">*</span> <span class="n">teta_max</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">Fdyn</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">ypp</span><span class="p">)],</span>
+        <span class="s2">&quot;Unit&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;°/s&quot;</span><span class="p">,</span> <span class="s2">&quot;N.m&quot;</span><span class="p">,</span> <span class="s2">&quot;N.m&quot;</span><span class="p">,</span> <span class="s2">&quot;°/s²&quot;</span><span class="p">],</span>
+    <span class="p">},</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;Max nozzle rotational speed&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Max static torque&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Max dynamic torque&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Max acceleration&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">float_format</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:,.2e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span>
+
+<span class="n">md</span><span class="p">(</span><span class="n">df_rot</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the linear actuator (translational movement) with <span class="math notranslate nohighlight">\(d_1=0\)</span> and <span class="math notranslate nohighlight">\(d_2=0\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lin</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;Value&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="n">Evaluate_Larm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="nb">max</span><span class="p">(</span><span class="n">yp</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">Evaluate_Larm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="n">Knozzle</span> <span class="o">*</span> <span class="n">teta_max</span> <span class="o">/</span> <span class="n">Evaluate_Larm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="nb">max</span><span class="p">(</span><span class="n">Fdyn</span><span class="p">),</span>
+            <span class="nb">max</span><span class="p">(</span><span class="n">ypp</span><span class="p">)</span> <span class="o">*</span> <span class="n">Evaluate_Larm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;Unit&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="s2">&quot;m/s&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;m/s²&quot;</span><span class="p">],</span>
+    <span class="p">},</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;Lever arm&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Max linear speed&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Max static force&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Max dynamic force&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Max acceleration&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">md</span><span class="p">(</span><span class="n">df_lin</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "SizingLab/sizing_course",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./class/Lab-vega"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="summary.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lab - VEGA Launcher TVC EMA case study</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="1-sizing_scenarios.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Modeling of the mechanical load</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Marc Budinger, Scott Delbecq<br/>
+  
+    <div class="extra_footer">
+      <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

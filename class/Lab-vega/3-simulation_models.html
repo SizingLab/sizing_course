@@ -1,0 +1,1223 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Simulation models with Python &#8212; Sizing and optimization of mechatronic systems</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pdf_print.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "SizingLab/sizing_course");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script src="../../_static/save_state.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Evaluation models: endurance of the actuator (student version)" href="4-evaluation_models-student.html" />
+    <link rel="prev" title="Simulation models with Python (student version)" href="3-simulation_models-student.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">Welcome to this new course!</div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Sizing and optimization of mechatronic systems</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about/homepage.html">
+                    Course Description
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About this course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/syllabus.html">
+   Instructors
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture1/summary.html">
+   Lecture 1 - Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture1/1-objectives_and_ressources.html">
+     Objectives and ressources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture1/2-needs_and_general_methodology.html">
+     Needs and general methodology
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture1/3-scenarios_and_design_drivers.html">
+     Scenarios and Design Drivers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture1/4-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture2/summary.html">
+   Lecture 2 - Estimation models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture2/1-needs.html">
+     Needs for estimation models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture2/2-linear_regressions.html">
+     Linear regressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture2/3-scaling_laws.html">
+     Scaling laws
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture2/4-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture4/summary.html">
+   Lecture 3 - Simulation and evaluation models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/1-simulation_models.html">
+     Simulation models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/2-simulation_model_examples.html">
+     Simulation model examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/3-evaluation_models.html">
+     Evaluation models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/4-evaluation_model_examples.html">
+     Evaluation model examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture3/5-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture3/summary.html">
+   Lecture 4 - Optimal sizing procedures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/1-design_and_optimization_problems.html">
+     Representation of a design problem and basics of optimization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/2-optimization_examples.html">
+     Optimization problem examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/3-sizing_procedures.html">
+     Development of a sizing procedure using design graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/4-sizing_procedure_examples.html">
+     Sizing procedure examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture4/5-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture5/summary.html">
+   Lecture 5 - MDAO and surrogate models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/1-mdao.html">
+     MDAO (Multidisciplinary Design Analysis and Optimization)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/2-mdao_examples.html">
+     MDAO examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/3-surrogate_models.html">
+     Surrogate models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/4-surrogate_model_examples.html">
+     Surrogate model examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture5/5-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lecture6/summary.html">
+   Lecture 6 - LCA and sustainable scenarios
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/1-lca.html">
+     Life Cyle Assessment (LCA)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/2-lca_examples.html">
+     LCA examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/3-sustainable_scenarios.html">
+     Sustainable scenarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/4-sustainable_scenario_examples.html">
+     Sustainable scenario examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lecture6/5-quizz.html">
+     Quizz
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Laboratories
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="summary.html">
+   Lab - VEGA Launcher TVC EMA
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1-sizing_scenarios-student.html">
+     Modeling of the mechanical load (student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1-sizing_scenarios.html">
+     Modeling of the mechanical load
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-estimation_models-student.html">
+     Estimation models with scaling laws and linear regression (student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2-estimation_models.html">
+     Estimation models with scaling laws and linear regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-simulation_models-student.html">
+     Simulation models with Python (student version)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Simulation models with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4-evaluation_models-student.html">
+     Evaluation models: endurance of the actuator (student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4-evaluation_models.html">
+     Evaluation models: endurance of the actuator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5-sizing_and_optimization-student.html">
+     Sizing procedure and optimization (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5-sizing_and_optimization.html">
+     Sizing procedure and optimization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om-student.html">
+     Sizing procedure and optimization with OpenMDAO (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om.html">
+     Sizing procedure and optimization with OpenMDAO
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lab-mobility/summary.html">
+   Lab - Sustainable mobility - Mission profile &amp; Specification
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/00_SustainableMobility.html">
+     Sustainable mobilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/01a_CaseStudy.html">
+     Case study presentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification-Student.html">
+     Case study specification (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification.html">
+     Case study specification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/02a_Architecture-Student.html">
+     Architecture of the converter and sizing scenarios (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/02b_Architecture_Hybrid.html">
+     Hydrid Storage Architecture and Specification
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Lab-watt_project/summary.html">
+   Lab - Sustainable mobility - DC/DC converter sizing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/02a_Architecture_UltraCapacitor.html">
+     Architecture of the converter and sizing scenarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/03_SizingScenarios.html">
+     Equations of sizing scenarios
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/04_ScalingLaws-Student.html">
+     Estimation models with scaling laws and linear regression (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/04_ScalingLaws.html">
+     Estimation models with scaling laws and linear regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression-Student.html">
+     Heatsink  estimation models with simple and multiple linear regressions (Student version)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression.html">
+     Heatsink  estimation models with simple and multiple linear regressions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/06_SizingCodeInductor.html">
+     Sizing code of an inductor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate-Student.html">
+     Sizing code of an inductor with surrogate models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate.html">
+     Sizing code of an inductor with surrogate models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/08_DCDC_converter_sizing_introduction.html">
+     Design graphs for the sizing a DC/DC converter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Lab-watt_project/09_SizingCodeDCDCconverter.html">
+     Sizing code of a DC/DC converter
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab-multirotor/summary.html">
+   Lab - Multirotor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab-elevator/summary.html">
+   Lab - Elevator
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/class/Lab-vega/3-simulation_models.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/class/Lab-vega/3-simulation_models.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/SizingLab/sizing_course"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclass/Lab-vega/3-simulation_models.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/SizingLab/sizing_course/edit/main/class/Lab-vega/3-simulation_models.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/class/Lab-vega/3-simulation_models.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thermal-model-of-an-electric-motor">
+   Thermal model of an electric motor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelica-or-state-space-model">
+   Modelica or state space model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Simulation models with Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thermal-model-of-an-electric-motor">
+   Thermal model of an electric motor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelica-or-state-space-model">
+   Modelica or state space model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <img alt="SizingLab" src="../../_images/logo.png" />
+<section class="tex2jax_ignore mathjax_ignore" id="simulation-models-with-python">
+<h1>Simulation models with Python<a class="headerlink" href="#simulation-models-with-python" title="Permalink to this headline">#</a></h1>
+<p><em>Written by Marc Budinger (INSA Toulouse) and Scott Delbecq (ISAE-SUPAERO), Toulouse, France</em></p>
+<section id="thermal-model-of-an-electric-motor">
+<h2>Thermal model of an electric motor<a class="headerlink" href="#thermal-model-of-an-electric-motor" title="Permalink to this headline">#</a></h2>
+<p>The thermal model of a motor, <strong>Figure n° 1</strong>, distinguish temperature between
+winding and yoke with a 2 bodies model. One can distinguish:</p>
+<ul class="simple">
+<li><p>heat capacity of the winding: <em>Cth1</em></p></li>
+<li><p>heat capacity of the yoke: <em>Cth2</em></p></li>
+<li><p>the thermal resistance between the winding and the yoke (corresponding to
+the electrical insulator): <em>Rth1</em></p></li>
+<li><p>the thermal resistance between the yoke and the ambient air: <em>Rth2</em></p></li>
+</ul>
+<p><strong>Figure n° 1 –</strong> <em>2 bodies thermal model of the motor</em></p>
+<p><img alt="ThermalModel" src="../../_images/thermalmodel.png" /></p>
+</section>
+<section id="modelica-or-state-space-model">
+<h2>Modelica or state space model<a class="headerlink" href="#modelica-or-state-space-model" title="Permalink to this headline">#</a></h2>
+<p>A Modelica model such as <strong>Figure 2</strong> could be simulated in Dymola or OpenModelica.
+<strong>Figure n° 2</strong> – <em>Modelica model</em>
+<img alt="Modelica Model" src="../../_images/modelicathermalmodel.png" /></p>
+<p>To simulate it in Python it is possible to use Functional Mock-up Units (<a class="reference external" href="https://github.com/modelon-community/PyFMI">FMU</a>) which can be exported by system simulation softwares.</p>
+<p>Here, we propose to use a simple state-space approach using the <a class="reference external" href="https://scipy.org">scipy</a> package.</p>
+<p>Recall: the transfert function of the problem can be expressed as</p>
+<p><span class="math notranslate nohighlight">\(Z_{th}=\frac{\theta(p)}{P(p)}=R_{th,eq}\frac{1+T_0p}{1+(T_1+T_2)p+T_1T_2p}\)</span><br />
+with:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_{th,eq}=R_1+R_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T_0=\frac{R_1R_2}{R_1+R_2}C_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T_1+T_2=(R_1+R_2)C_1 + R_2C_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T_1T_2=R_1C_1R_2C_2\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">step</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<span class="k">def</span> <span class="nf">motor_temperature</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">C1</span><span class="p">,</span> <span class="n">R2</span><span class="p">,</span> <span class="n">C2</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)):</span>
+    <span class="n">Rtheq</span> <span class="o">=</span> <span class="n">R1</span> <span class="o">+</span> <span class="n">R2</span>
+    <span class="n">T0</span> <span class="o">=</span> <span class="n">R1</span> <span class="o">*</span> <span class="n">R2</span> <span class="o">/</span> <span class="p">(</span><span class="n">R1</span> <span class="o">+</span> <span class="n">R2</span><span class="p">)</span> <span class="o">*</span> <span class="n">C2</span>
+    <span class="n">T1pT2</span> <span class="o">=</span> <span class="p">(</span><span class="n">R1</span> <span class="o">+</span> <span class="n">R2</span><span class="p">)</span> <span class="o">*</span> <span class="n">C1</span> <span class="o">+</span> <span class="n">R2</span> <span class="o">*</span> <span class="n">C2</span>
+    <span class="n">T1T2</span> <span class="o">=</span> <span class="n">R1</span> <span class="o">*</span> <span class="n">C1</span> <span class="o">*</span> <span class="n">R2</span> <span class="o">*</span> <span class="n">C2</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">step</span><span class="p">(</span><span class="n">system</span><span class="o">=</span><span class="p">([</span><span class="n">Rtheq</span> <span class="o">*</span> <span class="n">T0</span><span class="p">,</span> <span class="n">Rtheq</span><span class="p">],</span> <span class="p">[</span><span class="n">T1T2</span><span class="p">,</span> <span class="n">T1pT2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span> <span class="n">T</span><span class="o">=</span><span class="n">time</span><span class="p">)</span>
+    <span class="n">theta_winding</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">P</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;t&quot;</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span> <span class="s2">&quot;theta_winding&quot;</span><span class="p">:</span> <span class="n">theta_winding</span><span class="p">}</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters</span>
+<span class="c1"># Losses [W]</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mf">100.0</span>
+<span class="c1"># R1 [K/W]</span>
+<span class="n">R1</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="c1"># C1 [J/K]</span>
+<span class="n">C1</span> <span class="o">=</span> <span class="mf">150.0</span>
+<span class="c1"># R2 [K/W]</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="c1"># C2 [J/K]</span>
+<span class="n">C2</span> <span class="o">=</span> <span class="mf">150.0</span>
+<span class="c1"># Simulation time [s]</span>
+<span class="n">t_final</span> <span class="o">=</span> <span class="mf">150.0</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_final</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">motor_temperature</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">C1</span><span class="p">,</span> <span class="n">R2</span><span class="p">,</span> <span class="n">C2</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now access to the simulation results and plot them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>t</th>
+      <th>theta_winding</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.515152</td>
+      <td>0.993470</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.030303</td>
+      <td>1.955111</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.545455</td>
+      <td>2.886946</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6.060606</td>
+      <td>3.790832</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>143.939394</td>
+      <td>43.250294</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>145.454545</td>
+      <td>43.464381</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>146.969697</td>
+      <td>43.675729</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>148.484848</td>
+      <td>43.884372</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>150.000000</td>
+      <td>44.090345</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;theta_winding&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time [s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Temperature [°C]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3-simulation_models_8_0.png" src="../../_images/3-simulation_models_8_0.png" />
+</div>
+</div>
+<p>We can access the motor final temperature:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Final temperature = </span><span class="si">%.2f</span><span class="s2"> °C&quot;</span> <span class="o">%</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;theta_winding&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Final temperature = 44.09 °C
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use interpolation to estimate intermediate temperatures:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+
+<span class="n">theta_mot_f</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp1d</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;theta_winding&quot;</span><span class="p">])</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="mf">100.0</span>
+<span class="n">theta_mot</span> <span class="o">=</span> <span class="n">theta_mot_f</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The temperature at t = </span><span class="si">%.2f</span><span class="s2"> s is </span><span class="si">%.2f</span><span class="s2"> °C&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">theta_mot</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The temperature at t = 100.00 s is 35.67 °C
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
+<p>Simulate the winding temperature for 500 s and 200 W losses:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">motor_temperature</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">R1</span><span class="p">,</span> <span class="n">C1</span><span class="p">,</span> <span class="n">R2</span><span class="p">,</span> <span class="n">C2</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;theta_winding&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time [s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Temperature [°C]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;theta_winding&quot;</span><span class="p">,</span> <span class="s2">&quot;theta_core&quot;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f7bcf916f10&gt;
+</pre></div>
+</div>
+<img alt="../../_images/3-simulation_models_15_1.png" src="../../_images/3-simulation_models_15_1.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "SizingLab/sizing_course",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./class/Lab-vega"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="3-simulation_models-student.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Simulation models with Python (student version)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="4-evaluation_models-student.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Evaluation models: endurance of the actuator (student version)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Marc Budinger, Scott Delbecq<br/>
+  
+    <div class="extra_footer">
+      <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
