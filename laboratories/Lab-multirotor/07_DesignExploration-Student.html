@@ -1,0 +1,1240 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Design optimization and exploration of a multirotor drone &#8212; Sizing and optimization of mechatronic systems</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-multirotor/07_DesignExploration-Student';</script>
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Appendix 1: Sizing equations" href="A1_Sizing_equations.html" />
+    <link rel="prev" title="Sizing of a multirotor drone" href="06_SystemSizingCodeOptimization-Student.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../about/homepage.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Sizing and optimization of mechatronic systems - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Sizing and optimization of mechatronic systems - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction and overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about/syllabus.html">Preliminary design and sizing of mechatronic systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/installation.html">Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1/summary.html">1. Architectures, sizing scenarios and design drivers</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/1-objectives_and_ressources.html">1.1. Objectives and ressources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/2-needs_and_general_methodology.html">1.2. Needs and general methodology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/3-scenarios_and_design_drivers.html">1.3. Scenarios and Design Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/4-quizz.html">1.4. Quiz</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture2/summary.html">2. Estimation models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/1-needs.html">2.1. Needs for estimation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/2-linear_regressions.html">2.2. Linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/3-scaling_laws.html">2.3. Scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/4-quizz.html">2.4. Quiz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4/summary.html">3. Simulation and evaluation models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/1-simulation_models.html">3.1. Simulation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/2-simulation_model_examples.html">3.2. Simulation model examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/3-evaluation_models.html">3.3. Evaluation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/4-evaluation_model_examples.html">3.4. Evaluation model examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/5-quizz.html">3.5. Quizz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture3/summary.html">4. Optimal sizing procedures</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics of optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/2-optimization_examples.html">4.2. Optimization problem examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/3-sizing_procedures.html">4.3. Development of a sizing procedure using design graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/4-sizing_procedure_examples.html">4.4. Sizing procedure examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/5-quizz.html">4.5. Quizz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture5/summary.html">5. MDAO and surrogate models</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/1-mdao.html">5.1. MDAO (Multidisciplinary Design Analysis and Optimization)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/2-mdao_examples.html">5.3. MDAO examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/3-surrogate_models.html">5.4. Surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/4-surrogate_model_examples.html">5.5. Surrogate model examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/5-quizz.html">5.6. Quizz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture6/summary.html">6. LCA and sustainable scenarios</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/1-lca.html">6.1. Life Cyle Assessment (LCA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/2-lca_examples.html">6.2. LCA examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/3-sustainable_scenarios.html">6.3. Sustainable scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/4-sustainable_scenario_examples.html">6.4. Sustainable scenario examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/5-quizz.html">6.5. Quizz</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">Multirotor UAV</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_CaseStudy.html">Case study and architecture presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_SizingScenariosEquations-Student.html">Sizing scenarios and design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_SizingScenariosEquations.html">Sizing scenarios and design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_PropellerLinearRegression-Student.html">Propellers estimation models with dimensional analysis and linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_PropellerLinearRegression.html">Propellers estimation models with dimensional analysis and linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_ScalingLawsElectricalComponents-Student.html">Scaling laws of electrical components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_ScalingLawsElectricalComponents.html">Scaling laws of electrical components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_SizingModelsIntroduction.html">Sizing models for multi-rotor definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05a_PropellerSelection-Student.html">Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05a_PropellerSelection.html">Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05b_MotorSelection-Student.html">Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05b_MotorSelection.html">Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05c_BatteryESCSelection-Student.html">Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05c_BatteryESCSelection.html">Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection-Student.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05d_FrameSelection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Design optimization and exploration of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="A1_Sizing_equations.html">Appendix 1: Sizing equations</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios-student.html">Modeling of the mechanical load (student version)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios.html">Modeling of the mechanical load</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/2-estimation_models-student.html">Estimation models with scaling laws and linear regression (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/2-estimation_models.html">Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/3-simulation_models-student.html">Simulation models with Python (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/3-simulation_models.html">Simulation models with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/4-evaluation_models-student.html">Evaluation models: endurance of the actuator (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/4-evaluation_models.html">Evaluation models: endurance of the actuator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/5-sizing_and_optimization-student.html">Sizing procedure and optimization (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/5-sizing_and_optimization.html">Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student.html">Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">Sizing procedure and optimization with OpenMDAO</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">Lab - Sustainable mobility - Mission profile &amp; Specification</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/00_SustainableMobility.html">Sustainable mobilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01a_CaseStudy.html">Case study presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification-Student.html">Case study specification (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification.html">Case study specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture-Student.html">Architecture of the converter and sizing scenarios (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02b_Architecture_Hybrid.html">Hydrid Storage Architecture and Specification</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary.html">Lab - Sustainable mobility - DC/DC converter sizing</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture_UltraCapacitor.html">Architecture of the converter and sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/03_SizingScenarios.html">Equations of sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws-Student.html">Estimation models with scaling laws and linear regression (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws.html">Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression-Student.html">Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression.html">Heatsink  estimation models with simple and multiple linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/06_SizingCodeInductor.html">Sizing code of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate-Student.html">Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate.html">Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/08_DCDC_converter_sizing_introduction.html">Design graphs for the sizing a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/09_SizingCodeDCDCconverter.html">Sizing code of a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor-Student.html">Life Cycle Assessment of an inductor (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor.html">Life Cycle Assessment of an inductor</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/laboratories/Lab-multirotor/07_DesignExploration-Student.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-multirotor/07_DesignExploration-Student.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/laboratories/Lab-multirotor/07_DesignExploration-Student.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Flaboratories/Lab-multirotor/07_DesignExploration-Student.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/laboratories/Lab-multirotor/07_DesignExploration-Student.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Design optimization and exploration of a multirotor drone</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modular-sizing-code">Modular sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-the-physical-limits-of-the-design-space">Determining the physical limits of the design space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#payload">Payload</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#take-off-acceleration">Take-off acceleration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomy">Autonomy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uav-total-mass-m-total-real">UAV total mass (<span class="math notranslate nohighlight">\(M_{total,real}\)</span>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-total-real-vs-autonomy"><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Autonomy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-total-real-vs-payload"><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Payload</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomy-vs-payload">Autonomy vs Payload</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-modifications">Model modifications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motor-reference-component">Motor reference component</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#battery-reference-component">Battery reference component</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn-bonus">Your turn (Bonus)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><img alt="SizingLab" src="laboratories/Lab-multirotor/pictures/logo_sizinglab.png" /></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="design-optimization-and-exploration-of-a-multirotor-drone">
+<h1>Design optimization and exploration of a multirotor drone<a class="headerlink" href="#design-optimization-and-exploration-of-a-multirotor-drone" title="Permalink to this heading">#</a></h1>
+<p><em>Written by Marc Budinger (INSA Toulouse), Scott Delbecq (ISAE-SUPAERO) and Félix Pollet (ISAE-SUPAERO), Toulouse, France.</em></p>
+<p>The objective of this notebook is to use and modify the sizing code of the UAV to explore the design space.</p>
+<section id="modular-sizing-code">
+<h2>Modular sizing code<a class="headerlink" href="#modular-sizing-code" title="Permalink to this heading">#</a></h2>
+<p>Here we use the sizing code but decomposed into several <code class="docutils literal notranslate"><span class="pre">ExplicitComponent</span></code> of <a class="reference external" href="https://openmdao.org/newdocs/versions/latest/main.html">OpenMDAO</a>. You might notice an improvement in computational cost and robustness compared to the previous sizing code that used a single <code class="docutils literal notranslate"><span class="pre">ExplicitComponent</span></code> to wrap all the sizing code.
+The models are separated by components and located in different Python files <code class="docutils literal notranslate"><span class="pre">/models/openmdao</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">openmdao.api</span> <span class="k">as</span> <span class="nn">om</span>
+
+<span class="kn">from</span> <span class="nn">models.openmdao.scenarios</span> <span class="kn">import</span> <span class="n">Scenarios</span>
+<span class="kn">from</span> <span class="nn">models.openmdao.propeller</span> <span class="kn">import</span> <span class="n">Propeller</span>
+<span class="kn">from</span> <span class="nn">models.openmdao.motor</span> <span class="kn">import</span> <span class="n">Motor</span>
+<span class="kn">from</span> <span class="nn">models.openmdao.battery</span> <span class="kn">import</span> <span class="n">Battery</span>
+<span class="kn">from</span> <span class="nn">models.openmdao.esc</span> <span class="kn">import</span> <span class="n">ESC</span>
+<span class="kn">from</span> <span class="nn">models.openmdao.frame</span> <span class="kn">import</span> <span class="n">Frame</span>
+<span class="kn">from</span> <span class="nn">models.openmdao.objectives</span> <span class="kn">import</span> <span class="n">Objectives</span>
+<span class="kn">from</span> <span class="nn">models.openmdao.constraints</span> <span class="kn">import</span> <span class="n">Constraints</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The inputs of the whole sizing code are stored in <code class="docutils literal notranslate"><span class="pre">dict</span></code>s that we be passed to the problem before the run. Here are the default values seperated by:</p>
+<ul class="simple">
+<li><p>specifications</p></li>
+<li><p>design assumtpions</p></li>
+<li><p>design variable initialization</p></li>
+</ul>
+<p>However, one of the objective of the notebook is to modify these input values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specifications</span>
+<span class="n">specifications_default</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;M_pay&quot;</span><span class="p">:</span> <span class="mf">50.0</span><span class="p">,</span>  <span class="c1"># [kg] load mass</span>
+    <span class="s2">&quot;a_to&quot;</span><span class="p">:</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="mf">9.81</span><span class="p">,</span>  <span class="c1"># [m/s**2] acceleration</span>
+    <span class="s2">&quot;t_hov_spec&quot;</span><span class="p">:</span> <span class="mf">25.0</span><span class="p">,</span>  <span class="c1"># [min] time of hover flight</span>
+    <span class="s2">&quot;MTOW&quot;</span><span class="p">:</span> <span class="mf">360.0</span><span class="p">,</span>  <span class="c1"># [kg] maximal mass allowed</span>
+<span class="p">}</span>
+
+<span class="c1"># Design assumptions</span>
+<span class="n">design_assumptions_default</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;N_arm&quot;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>  <span class="c1"># [-] number of arms</span>
+    <span class="s2">&quot;N_pro_arm&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>  <span class="c1"># [-] number of propeller per arm (1 or 2)</span>
+    <span class="s2">&quot;M_bat_ref&quot;</span> <span class="p">:</span> <span class="mf">0.329</span><span class="p">,</span>  <span class="c1"># [kg] mass</span>
+    <span class="s2">&quot;E_bat_ref&quot;</span> <span class="p">:</span> <span class="mf">220.0</span> <span class="o">*</span> <span class="mf">3600.0</span> <span class="o">*</span> <span class="mf">0.329</span><span class="p">,</span>  <span class="c1"># [J]</span>
+    <span class="s2">&quot;C_bat_ref&quot;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>  <span class="c1"># [Ah] Capacity</span>
+    <span class="s2">&quot;I_bat_max_ref&quot;</span> <span class="p">:</span> <span class="mi">50</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span>  <span class="c1"># [A] max discharge current</span>
+    <span class="s2">&quot;P_esc_ref&quot;</span> <span class="p">:</span> <span class="mf">3108.0</span><span class="p">,</span>  <span class="c1"># [W] Power</span>
+    <span class="s2">&quot;M_esc_ref&quot;</span> <span class="p">:</span> <span class="mf">0.115</span><span class="p">,</span>  <span class="c1"># [kg] Mass</span>
+    <span class="s2">&quot;T_nom_mot_ref&quot;</span> <span class="p">:</span> <span class="mf">2.32</span><span class="p">,</span>  <span class="c1"># [N*m] rated torque</span>
+    <span class="s2">&quot;T_max_mot_ref&quot;</span> <span class="p">:</span> <span class="mf">85.0</span> <span class="o">/</span> <span class="mf">70.0</span> <span class="o">*</span> <span class="mf">2.32</span><span class="p">,</span>  <span class="c1"># [N*m] max torque</span>
+    <span class="s2">&quot;R_mot_ref&quot;</span> <span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>  <span class="c1"># [ohm] resistance</span>
+    <span class="s2">&quot;M_mot_ref&quot;</span> <span class="p">:</span> <span class="mf">0.575</span><span class="p">,</span>  <span class="c1"># [kg] mass</span>
+    <span class="s2">&quot;K_T_ref&quot;</span> <span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>  <span class="c1"># [N*m/A] torque coefficient</span>
+    <span class="s2">&quot;T_mot_fr_ref&quot;</span> <span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>  <span class="c1"># [N*m] friction torque (zero load, nominal speed)</span>
+    <span class="s2">&quot;sigma_max&quot;</span> <span class="p">:</span> <span class="p">(</span>
+        <span class="mf">280e6</span> <span class="o">/</span> <span class="mf">4.0</span>
+    <span class="p">),</span>  <span class="c1"># [Pa] Composite max stress (2 reduction for dynamic, 2 reduction for stress concentration)</span>
+    <span class="s2">&quot;rho_s&quot;</span> <span class="p">:</span> <span class="mf">1700.0</span><span class="p">,</span>  <span class="c1"># [kg/m**3] Volumic mass of aluminum</span>
+    <span class="s2">&quot;rho_air&quot;</span> <span class="p">:</span> <span class="mf">1.18</span><span class="p">,</span>  <span class="c1"># [kg/m**3] Air density</span>
+    <span class="s2">&quot;ND_max&quot;</span> <span class="p">:</span> <span class="mf">105000.0</span> <span class="o">/</span> <span class="mf">60.0</span> <span class="o">*</span> <span class="mf">0.0254</span><span class="p">,</span>  <span class="c1"># [Hz.m] Max speed limit (N.D max) for APC MR propellers</span>
+    <span class="s2">&quot;D_pro_ref&quot;</span> <span class="p">:</span> <span class="mf">11.0</span> <span class="o">*</span> <span class="mf">0.0254</span><span class="p">,</span>  <span class="c1"># [m] Reference propeller diameter</span>
+    <span class="s2">&quot;M_pro_ref&quot;</span> <span class="p">:</span> <span class="mf">0.53</span> <span class="o">*</span> <span class="mf">0.0283</span><span class="p">,</span>  <span class="c1"># [kg] Reference propeller mass</span>
+<span class="p">}</span>
+
+<span class="c1"># Design variables initial values </span>
+
+<span class="n">design_variables_default</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;beta_pro&quot;</span><span class="p">:</span> <span class="mf">0.33</span><span class="p">,</span>  <span class="c1"># pitch/diameter ratio of the propeller</span>
+    <span class="s2">&quot;k_os&quot;</span><span class="p">:</span> <span class="mf">3.2</span><span class="p">,</span>  <span class="c1"># over sizing coefficient on the load mass</span>
+    <span class="s2">&quot;k_ND&quot;</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">,</span>  <span class="c1"># slow down propeller coef : ND = NDmax / k_ND</span>
+    <span class="s2">&quot;k_mot&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># over sizing coefficient on the motor torque</span>
+    <span class="s2">&quot;k_speed_mot&quot;</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">,</span>  <span class="c1"># adaption winding coef on the motor speed</span>
+    <span class="s2">&quot;k_mb&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># ratio battery/load mass</span>
+    <span class="s2">&quot;k_vb&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># oversizing coefficient for voltage evaluation</span>
+    <span class="s2">&quot;k_D&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># aspect ratio D_in/D_out for the beam of the frame</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similar to the previous notebook, we define the models to include in the problem as well as the optimization formulation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prob</span> <span class="o">=</span> <span class="n">om</span><span class="o">.</span><span class="n">Problem</span><span class="p">()</span>
+
+<span class="n">group</span> <span class="o">=</span> <span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
+<span class="n">group</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;scenarios&quot;</span><span class="p">,</span> <span class="n">Scenarios</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+<span class="n">group</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;propeller&quot;</span><span class="p">,</span> <span class="n">Propeller</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+<span class="n">group</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;motor&quot;</span><span class="p">,</span> <span class="n">Motor</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+<span class="n">group</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;battery&quot;</span><span class="p">,</span> <span class="n">Battery</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+<span class="n">group</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;esc&quot;</span><span class="p">,</span> <span class="n">ESC</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+<span class="n">group</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;frame&quot;</span><span class="p">,</span> <span class="n">Frame</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+<span class="n">group</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;objectives&quot;</span><span class="p">,</span> <span class="n">Objectives</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+<span class="n">group</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;constraints&quot;</span><span class="p">,</span> <span class="n">Constraints</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+
+
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">group</span>
+
+<span class="n">prob</span><span class="o">.</span><span class="n">driver</span> <span class="o">=</span> <span class="n">om</span><span class="o">.</span><span class="n">ScipyOptimizeDriver</span><span class="p">()</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;optimizer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;SLSQP&quot;</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;maxiter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;tol&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1e-8</span>
+
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;beta_pro&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;k_os&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;k_ND&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;k_mot&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;k_speed_mot&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;k_mb&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;k_vb&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;k_D&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mf">0.99</span><span class="p">)</span>
+
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="s2">&quot;cons_1&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="s2">&quot;cons_2&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="s2">&quot;cons_3&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="s2">&quot;cons_4&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="s2">&quot;cons_5&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="s2">&quot;cons_6&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="s1">&#39;cons_7&#39;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+
+<span class="c1"># prob.model.add_objective(&#39;t_hov&#39;, scaler=-0.1)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_objective</span><span class="p">(</span><span class="s2">&quot;M_total_real&quot;</span><span class="p">,</span> <span class="n">scaler</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">prob</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openmdao.core.problem.Problem at 0x7f5e224c2250&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we set the inputs based on the values provided by the dictionnaries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup initial values</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">{</span><span class="o">**</span><span class="n">specifications_default</span><span class="p">,</span> <span class="o">**</span><span class="n">design_assumptions_default</span><span class="p">,</span> <span class="o">**</span><span class="n">design_variables_default</span><span class="p">}</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">prob</span><span class="o">.</span><span class="n">set_val</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<span class="n">optimization_unsuccessful</span> <span class="o">=</span> <span class="n">prob</span><span class="o">.</span><span class="n">run_driver</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/scipy/optimize/_optimize.py:284: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn(&quot;Values in x were outside bounds during a &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimization terminated successfully    (Exit mode 0)
+            Current function value: 10.377302309077761
+            Iterations: 11
+            Function evaluations: 12
+            Gradient evaluations: 11
+Optimization Complete
+-----------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>Please note that if the optimization is unsuccessful <code class="docutils literal notranslate"><span class="pre">optimization_unsuccessful</span> <span class="pre">=</span> <span class="pre">True</span></code>. This could be useful.</p>
+<p>We can check the details of the optimization results:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">prob</span><span class="o">.</span><span class="n">list_problem_vars</span><span class="p">(</span><span class="n">print_arrays</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                       <span class="n">desvar_opts</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="s1">&#39;upper&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">],</span>
+                       <span class="n">cons_opts</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="s1">&#39;equals&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">],</span>
+                       <span class="n">objs_opts</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;scaler&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------
+Design Variables
+----------------
+name         val           size  lower  upper  min         max         
+-----------  ------------  ----  -----  -----  ----------  ---------- 
+beta_pro     [0.3]         1     0.3    0.6    0.3         0.3         
+k_os         [2.07546046]  1     1.0    10.0   2.07546046  2.07546046  
+k_ND         [1.25998295]  1     1.0    10.0   1.25998295  1.25998295  
+k_mot        [1.02941176]  1     1.0    10.0   1.02941176  1.02941176  
+k_speed_mot  [1.26195253]  1     1.0    10.0   1.26195253  1.26195253  
+k_mb         [0.64317582]  1     0.1    10.0   0.64317582  0.64317582  
+k_vb         [1.]          1     1.0    10.0   1.0         1.0         
+k_D          [0.99]        1     0.01   0.99   0.99        0.99        
+
+-----------
+Constraints
+-----------
+name    val                size  lower  upper  equals  min                 max                 
+------  -----------------  ----  -----  -----  ------  ------------------  ------------------ 
+cons_1  [-2.88650881e-10]  1     0.0    1e+30  None    -0.0                -0.0                
+cons_2  [-9.7664099e-11]   1     0.0    1e+30  None    -0.0                -0.0                
+cons_3  [3.60671493e-11]   1     0.0    1e+30  None    0.0                 0.0                 
+cons_4  [1.01877114e+09]   1     0.0    1e+30  None    1018771135.3738992  1018771135.3738992  
+cons_5  [3.17643194]       1     0.0    1e+30  None    3.17643194          3.17643194          
+cons_6  [-7.82875986e-11]  1     0.0    1e+30  None    -0.0                -0.0                
+cons_7  [256.22697691]     1     0.0    1e+30  None    256.22697691        256.22697691        
+
+----------
+Objectives
+----------
+name          val            size  scaler  
+------------  -------------  ----  ------ 
+M_total_real  [10.37730231]  1     0.1     
+</pre></div>
+</div>
+</div>
+</div>
+<p>And check the details of the final inputs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">list_inputs</span><span class="p">(</span><span class="n">prom_name</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70 Input(s) in &#39;model&#39;
+
+varname          val                prom_name    
+---------------  -----------------  -------------
+scenarios
+  k_os           [2.07546046]       k_os         
+  M_pay          [50.]              M_pay        
+  N_pro_arm      [1.]               N_pro_arm    
+  N_arm          [4.]               N_arm        
+  a_to           [2.4525]           a_to         
+propeller
+  beta_pro       [0.3]              beta_pro     
+  F_pro_to       [318.12917391]     F_pro_to     
+  rho_air        [1.18]             rho_air      
+  ND_max         [44.45]            ND_max       
+  k_ND           [1.25998295]       k_ND         
+  M_pro_ref      [0.014999]         M_pro_ref    
+  D_pro_ref      [0.2794]           D_pro_ref    
+  F_pro_hov      [254.50333913]     F_pro_hov    
+motor
+  k_mot          [1.02941176]       k_mot        
+  T_pro_hov      [20.72734165]      T_pro_hov    
+  k_vb           [1.]               k_vb         
+  P_pro_to       [3616.45874658]    P_pro_to     
+  k_speed_mot    [1.26195253]       k_speed_mot  
+  Omega_pro_to   [139.58215416]     Omega_pro_to 
+  M_mot_ref      [0.575]            M_mot_ref    
+  T_nom_mot_ref  [2.32]             T_nom_mot_ref
+  R_mot_ref      [0.03]             R_mot_ref    
+  K_T_ref        [0.03]             K_T_ref      
+  T_mot_fr_ref   [0.03]             T_mot_fr_ref 
+  T_max_mot_ref  [2.81714286]       T_max_mot_ref
+  Omega_pro_hov  [124.84607406]     Omega_pro_hov
+  T_pro_to       [25.90917706]      T_pro_to     
+battery
+  k_mb           [0.64317582]       k_mb         
+  M_pay          [50.]              M_pay        
+  E_bat_ref      [260568.]          E_bat_ref    
+  M_bat_ref      [0.329]            M_bat_ref    
+  U_bat          [35.13984881]      U_bat        
+  I_bat_max_ref  [250.]             I_bat_max_ref
+  C_bat_ref      [5.]               C_bat_ref    
+  P_el_mot_hov   [3226.16991799]    P_el_mot_hov 
+  N_pro          [4.]               N_pro        
+esc
+  P_el_mot_to    [4599.19697756]    P_el_mot_to  
+  U_bat          [35.13984881]      U_bat        
+  U_mot_to       [35.13984881]      U_mot_to     
+  M_esc_ref      [0.115]            M_esc_ref    
+  P_esc_ref      [3108.]            P_esc_ref    
+frame
+  N_arm          [4.]               N_arm        
+  D_pro          [1.58802402]       D_pro        
+  F_pro_to       [318.12917391]     F_pro_to     
+  N_pro_arm      [1.]               N_pro_arm    
+  sigma_max      [70000000.]        sigma_max    
+  k_D            [0.99]             k_D          
+  rho_s          [1700.]            rho_s        
+objectives
+  C_bat          [579849.10864506]  C_bat        
+  I_bat_hov      [386.56607243]     I_bat_hov    
+  M_esc          [0.17017621]       M_esc        
+  M_pro          [0.48453331]       M_pro        
+  M_mot          [3.85166988]       M_mot        
+  N_pro          [4.]               N_pro        
+  M_pay          [50.]              M_pay        
+  M_bat          [32.15879105]      M_bat        
+  M_frame        [3.58871446]       M_frame      
+constraints
+  M_total        [103.77302309]     M_total      
+  M_total_real   [103.77302309]     M_total_real 
+  T_max_mot      [25.90917706]      T_max_mot    
+  T_pro_to       [25.90917706]      T_pro_to     
+  U_bat          [35.13984881]      U_bat        
+  U_mot_to       [35.13984881]      U_mot_to     
+  P_bat_max      [1.0187905e+09]    P_bat_max    
+  P_el_mot_to    [4599.19697756]    P_el_mot_to  
+  N_pro          [4.]               N_pro        
+  U_esc          [38.31628075]      U_esc        
+  t_hov          [25.]              t_hov        
+  t_hov_spec     [25.]              t_hov_spec   
+  MTOW           [360.]             MTOW         
+</pre></div>
+</div>
+</div>
+</div>
+<p>And check the details of the final outputs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outputs</span> <span class="o">=</span> <span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">list_outputs</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>54 Explicit Output(s) in &#39;model&#39;
+
+varname          val                  prom_name    
+---------------  -------------------  -------------
+scenarios
+  M_total        [103.77302309]       M_total      
+  N_pro          [4.]                 N_pro        
+  F_pro_hov      [254.50333913]       F_pro_hov    
+  F_pro_to       [318.12917391]       F_pro_to     
+propeller
+  C_t            [0.0859]             C_t          
+  C_p            [0.02768]            C_p          
+  D_pro          [1.58802402]         D_pro        
+  n_pro_to       [22.2151898]         n_pro_to     
+  Omega_pro_to   [139.58215416]       Omega_pro_to 
+  M_pro          [0.48453331]         M_pro        
+  P_pro_to       [3616.45874658]      P_pro_to     
+  T_pro_to       [25.90917706]        T_pro_to     
+  n_pro_hov      [19.86986981]        n_pro_hov    
+  Omega_pro_hov  [124.84607406]       Omega_pro_hov
+  P_pro_hov      [2587.72723046]      P_pro_hov    
+  T_pro_hov      [20.72734165]        T_pro_hov    
+motor
+  T_nom_mot      [21.33696934]        T_nom_mot    
+  U_bat          [35.13984881]        U_bat        
+  K_T            [0.19949268]         K_T          
+  M_mot          [3.85166988]         M_mot        
+  R_mot          [0.05573106]         R_mot        
+  T_mot_fr       [0.20095669]         T_mot_fr     
+  T_max_mot      [25.90917706]        T_max_mot    
+  I_mot_hov      [104.90759786]       I_mot_hov    
+  U_mot_hov      [30.75249061]        U_mot_hov    
+  P_el_mot_hov   [3226.16991799]      P_el_mot_hov 
+  I_mot_to       [130.88266267]       I_mot_to     
+  U_mot_to       [35.13984881]        U_mot_to     
+  P_el_mot_to    [4599.19697756]      P_el_mot_to  
+battery
+  M_bat          [32.15879105]        M_bat        
+  E_bat          [20375810.00827609]  E_bat        
+  C_bat          [579849.10864506]    C_bat        
+  I_bat_max      [28992455.43225309]  I_bat_max    
+  P_bat_max      [1.0187905e+09]      P_bat_max    
+  I_bat_hov      [386.56607243]       I_bat_hov    
+esc
+  P_esc          [4599.19697756]      P_esc        
+  U_esc          [38.31628075]        U_esc        
+  M_esc          [0.17017621]         M_esc        
+frame
+  alpha_sep      [1.57079633]         alpha_sep    
+  L_arm          [1.12290255]         L_arm        
+  D_out_arm      [0.1096737]          D_out_arm    
+  D_in_arm       [0.10857696]         D_in_arm     
+  M_arms         [1.43548578]         M_arms       
+  M_body         [2.15322867]         M_body       
+  M_frame        [3.58871446]         M_frame      
+objectives
+  t_hov          [25.]                t_hov        
+  M_total_real   [103.77302309]       M_total_real 
+constraints
+  cons_1         [-2.88650881e-10]    cons_1       
+  cons_2         [-9.7664099e-11]     cons_2       
+  cons_3         [3.60671493e-11]     cons_3       
+  cons_4         [1.01877114e+09]     cons_4       
+  cons_5         [3.17643194]         cons_5       
+  cons_6         [-7.82875986e-11]    cons_6       
+  cons_7         [256.22697691]       cons_7       
+
+
+0 Implicit Output(s) in &#39;model&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now feel free to copy/duplicate and modify peaces of the previosu code to answer the different exercices.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please highlight during the exercice the design space where no physical solutions are found (if relevant).</p>
+</div>
+</section>
+<section id="determining-the-physical-limits-of-the-design-space">
+<h2>Determining the physical limits of the design space<a class="headerlink" href="#determining-the-physical-limits-of-the-design-space" title="Permalink to this heading">#</a></h2>
+<section id="payload">
+<h3>Payload<a class="headerlink" href="#payload" title="Permalink to this heading">#</a></h3>
+<div class="exercise admonition" id="exercise_max_payload">
+
+<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<section id="exercise-content">
+<p>Determine with the default requirements what is the payload value where the UAV design optimization does not find a solution?</p>
+</section>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Please comment…</p>
+</section>
+<section id="take-off-acceleration">
+<h3>Take-off acceleration<a class="headerlink" href="#take-off-acceleration" title="Permalink to this heading">#</a></h3>
+<div class="exercise admonition" id="exercise_max_acceleration">
+
+<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
+<section id="exercise-content">
+<p>Determine with the default requirements what is the take-off acceleration value where the UAV design optimization does not find a solution?</p>
+</section>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Please comment…</p>
+</section>
+<section id="autonomy">
+<h3>Autonomy<a class="headerlink" href="#autonomy" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Please comment…</p>
+</section>
+</section>
+<section id="uav-total-mass-m-total-real">
+<h2>UAV total mass (<span class="math notranslate nohighlight">\(M_{total,real}\)</span>)<a class="headerlink" href="#uav-total-mass-m-total-real" title="Permalink to this heading">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>From now on, deactivate the constraint on the MTOW.</p>
+</div>
+<section id="m-total-real-vs-autonomy">
+<h3><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Autonomy<a class="headerlink" href="#m-total-real-vs-autonomy" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Please comment…</p>
+</section>
+<section id="m-total-real-vs-payload">
+<h3><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Payload<a class="headerlink" href="#m-total-real-vs-payload" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Please comment…</p>
+</section>
+<section id="autonomy-vs-payload">
+<h3>Autonomy vs Payload<a class="headerlink" href="#autonomy-vs-payload" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Please comment…</p>
+</section>
+</section>
+<section id="model-modifications">
+<h2>Model modifications<a class="headerlink" href="#model-modifications" title="Permalink to this heading">#</a></h2>
+<section id="motor-reference-component">
+<h3>Motor reference component<a class="headerlink" href="#motor-reference-component" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Please comment…</p>
+</section>
+<section id="battery-reference-component">
+<h3>Battery reference component<a class="headerlink" href="#battery-reference-component" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Please comment…</p>
+</section>
+</section>
+<section id="your-turn-bonus">
+<h2>Your turn (Bonus)<a class="headerlink" href="#your-turn-bonus" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Please comment…</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./laboratories/Lab-multirotor"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="06_SystemSizingCodeOptimization-Student.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sizing of a multirotor drone</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="A1_Sizing_equations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix 1: Sizing equations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modular-sizing-code">Modular sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-the-physical-limits-of-the-design-space">Determining the physical limits of the design space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#payload">Payload</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#take-off-acceleration">Take-off acceleration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomy">Autonomy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uav-total-mass-m-total-real">UAV total mass (<span class="math notranslate nohighlight">\(M_{total,real}\)</span>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-total-real-vs-autonomy"><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Autonomy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-total-real-vs-payload"><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Payload</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomy-vs-payload">Autonomy vs Payload</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-modifications">Model modifications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motor-reference-component">Motor reference component</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#battery-reference-component">Battery reference component</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn-bonus">Your turn (Bonus)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marc Budinger, Scott Delbecq, Félix Pollet
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1443 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Heatsink estimation models with simple and multiple linear regressions &#8212; Sizing and optimization of mechatronic systems</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-watt_project/05_HeatsinkLinearRegression';</script>
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sizing code of an inductor" href="06_SizingCodeInductor.html" />
+    <link rel="prev" title="Heatsink estimation models with simple and multiple linear regressions (Student version)" href="05_HeatsinkLinearRegression-Student.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../about/homepage.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Sizing and optimization of mechatronic systems - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Sizing and optimization of mechatronic systems - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction and overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about/syllabus.html">Preliminary design and sizing of mechatronic systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/installation.html">Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1/summary.html">1. Architectures, sizing scenarios and design drivers</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/1-objectives_and_ressources.html">1.1. Objectives and ressources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/2-needs_and_general_methodology.html">1.2. Needs and general methodology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/3-scenarios_and_design_drivers.html">1.3. Scenarios and Design Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/4-quizz.html">1.4. Quiz</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture2/summary.html">2. Estimation models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/1-needs.html">2.1. Needs for estimation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/2-linear_regressions.html">2.2. Linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/3-scaling_laws.html">2.3. Scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/4-quizz.html">2.4. Quiz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4/summary.html">3. Simulation and evaluation models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/1-simulation_models.html">3.1. Simulation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/2-simulation_model_examples.html">3.2. Simulation model examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/3-evaluation_models.html">3.3. Evaluation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/4-evaluation_model_examples.html">3.4. Evaluation model examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/5-quizz.html">3.5. Quizz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture3/summary.html">4. Optimal sizing procedures</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics of optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/2-optimization_examples.html">4.2. Optimization problem examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/3-sizing_procedures.html">4.3. Development of a sizing procedure using design graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/4-sizing_procedure_examples.html">4.4. Sizing procedure examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/5-quizz.html">4.5. Quizz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture5/summary.html">5. MDAO and surrogate models</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/1-mdao.html">5.1. MDAO (Multidisciplinary Design Analysis and Optimization)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/2-mdao_examples.html">5.3. MDAO examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/3-surrogate_models.html">5.4. Surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/4-surrogate_model_examples.html">5.5. Surrogate model examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/5-quizz.html">5.6. Quizz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture6/summary.html">6. LCA and sustainable scenarios</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/1-lca.html">6.1. Life Cyle Assessment (LCA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/2-lca_examples.html">6.2. LCA examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/3-sustainable_scenarios.html">6.3. Sustainable scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/4-sustainable_scenario_examples.html">6.4. Sustainable scenario examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/5-quizz.html">6.5. Quizz</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-multirotor/summary.html">Multirotor UAV</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/01_CaseStudy.html">Case study and architecture presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/02_SizingScenariosEquations-Student.html">Sizing scenarios and design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/02_SizingScenariosEquations.html">Sizing scenarios and design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/03_PropellerLinearRegression-Student.html">Propellers estimation models with dimensional analysis and linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/03_PropellerLinearRegression.html">Propellers estimation models with dimensional analysis and linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/04_ScalingLawsElectricalComponents-Student.html">Scaling laws of electrical components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/04_ScalingLawsElectricalComponents.html">Scaling laws of electrical components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05_SizingModelsIntroduction.html">Sizing models for multi-rotor definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05a_PropellerSelection-Student.html">Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05a_PropellerSelection.html">Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05b_MotorSelection-Student.html">Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05b_MotorSelection.html">Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05c_BatteryESCSelection-Student.html">Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05c_BatteryESCSelection.html">Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05d_FrameSelection-Student.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05d_FrameSelection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/07_DesignExploration-Student.html">Design optimization and exploration of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/A1_Sizing_equations.html">Appendix 1: Sizing equations</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios-student.html">Modeling of the mechanical load (student version)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios.html">Modeling of the mechanical load</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/2-estimation_models-student.html">Estimation models with scaling laws and linear regression (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/2-estimation_models.html">Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/3-simulation_models-student.html">Simulation models with Python (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/3-simulation_models.html">Simulation models with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/4-evaluation_models-student.html">Evaluation models: endurance of the actuator (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/4-evaluation_models.html">Evaluation models: endurance of the actuator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/5-sizing_and_optimization-student.html">Sizing procedure and optimization (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/5-sizing_and_optimization.html">Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student.html">Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">Sizing procedure and optimization with OpenMDAO</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="summary-short.html">Lab - Sustainable mobility - Mission profile &amp; Specification</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="00_SustainableMobility.html">Sustainable mobilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01a_CaseStudy.html">Case study presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01b_CaseStudy_Specification-Student.html">Case study specification (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01b_CaseStudy_Specification.html">Case study specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02a_Architecture-Student.html">Architecture of the converter and sizing scenarios (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02b_Architecture_Hybrid.html">Hydrid Storage Architecture and Specification</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">Lab - Sustainable mobility - DC/DC converter sizing</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="02a_Architecture_UltraCapacitor.html">Architecture of the converter and sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_SizingScenarios.html">Equations of sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_ScalingLaws-Student.html">Estimation models with scaling laws and linear regression (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_ScalingLaws.html">Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression-Student.html">Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Heatsink  estimation models with simple and multiple linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_SizingCodeInductor.html">Sizing code of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate-Student.html">Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate.html">Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_DCDC_converter_sizing_introduction.html">Design graphs for the sizing a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_SizingCodeDCDCconverter.html">Sizing code of a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor-Student.html">Life Cycle Assessment of an inductor (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor.html">Life Cycle Assessment of an inductor</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/laboratories/Lab-watt_project/05_HeatsinkLinearRegression.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-watt_project/05_HeatsinkLinearRegression.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/laboratories/Lab-watt_project/05_HeatsinkLinearRegression.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Flaboratories/Lab-watt_project/05_HeatsinkLinearRegression.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/laboratories/Lab-watt_project/05_HeatsinkLinearRegression.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Heatsink  estimation models with simple and multiple linear regressions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-linear-regression">Simple linear regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-correction-factor">Temperature correction factor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length-correction-factor">Length correction factor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#air-speed-correction-factor">Air speed correction factor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-resistance-identification-of-the-most-important-dimensions">Thermal resistance : Identification of the most important dimensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-thermal-resistance-multiple-linear-regression">Natural thermal resistance : Multiple linear regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-models-for-lineic-mass-and-forced-convective-thermal-resistance">Estimation models for lineic mass and forced convective thermal resistance</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="heatsink-estimation-models-with-simple-and-multiple-linear-regressions">
+<h1>Heatsink  estimation models with simple and multiple linear regressions<a class="headerlink" href="#heatsink-estimation-models-with-simple-and-multiple-linear-regressions" title="Permalink to this heading">#</a></h1>
+<p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
+<p>To improve cooling of components heatsinks with natural of forced convection are used. We want to have simple models to make the links between the dimensions, mass, heat resistance and conditions of use of a heatsink.  We will use catalogs data  to establish these estimation models necessary for our study.<br />
+This tutorial illustrates how to use simple and multiple linear regressions of catalog data to set up estimation models.</p>
+<p><em>Heatsink</em>
+<img alt="Heatsink" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/Heatsink.png" /></p>
+<section id="simple-linear-regression">
+<h2>Simple linear regression<a class="headerlink" href="#simple-linear-regression" title="Permalink to this heading">#</a></h2>
+<p>For a heat sink, the relation linking the thermal resistance <span class="math notranslate nohighlight">\(R_{th}\)</span>, temperature rise <span class="math notranslate nohighlight">\(\Delta T=T_{heatsink}-T_{ambient}\)</span> and power dissipated <span class="math notranslate nohighlight">\(P_{th}\)</span> is:<br />
+<span class="math notranslate nohighlight">\(\Delta T=T_{heatsink}-T_{ambient} = R_{th}.P_{th}\)</span></p>
+<p>The folowing data are from a heat sinks catalog (standard extruded heat sinks of Aavid Thermalloy). The given thermal resisatnce have to be corrected when temperature rise is not equal to 75 °C, the length different of 150 mm, and the speed for forced convection different of 2 m/s. Correction factors are thus discussed in the following sections.</p>
+<section id="temperature-correction-factor">
+<h3>Temperature correction factor<a class="headerlink" href="#temperature-correction-factor" title="Permalink to this heading">#</a></h3>
+<p>Both natural convection and radiation coefficients are related to the sink-to-ambient temperature
+difference. To evaluate the thermal performance of a heat sink for an application requiring a sink-to-
+ambient temperature rise other than 75 º C, use the correction factor from the thermal resistance vs (Ts - Ta) graph shown. This factor must be used only for thermal resistance in natural convection.</p>
+<p><img alt="Temperature Correction Factor" src="laboratories/Lab-watt_project/pictures/TemperatureCorrectionFactor.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># input data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">30</span><span class="p">]))</span> <span class="c1"># temperature rise</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.99</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">,</span> <span class="mf">1.075</span><span class="p">,</span> <span class="mf">1.15</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.39</span><span class="p">]))</span> <span class="c1"># multiplication factor</span>
+
+<span class="c1"># plot the data </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature rise [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Multiplication factor of thermal resistance [-]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/bd6b2dd198a3cac381ce5076ab5dbf66a3fcc8499b8dd11331b7ef372e2fba89.png" src="../../_images/bd6b2dd198a3cac381ce5076ab5dbf66a3fcc8499b8dd11331b7ef372e2fba89.png" />
+</div>
+</div>
+<p>We want to express this relation with a polynomial model:</p>
+<p><span class="math notranslate nohighlight">\(\frac{R_{th,n}}{R_{th,n,75^{\circ} C}}=\beta _{0}+\beta _{1}.\Delta T+\beta _{2}.\Delta T^{2}\)</span></p>
+<p>For this model the relation between data and regression coefficients can be represented with a matrix notation:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+Y=X.\beta +\varepsilon
+\end{align*}\]</div>
+<p>Equivalent to:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\left(\begin{array}{l}
+y_{1}\\
+\ldots \\
+y_{p}
+\end{array}\right)=\left(\begin{array}{lll}
+1 &amp; x_{11} &amp; \ldots \\
+\ldots &amp; \ldots &amp; \ldots \\
+1 &amp; x_{p1} &amp; \ldots 
+\end{array}\right)\left(\begin{array}{l}
+\beta _{0}\\
+\ldots \\
+\beta _{p}
+\end{array}\right)+\left(\begin{array}{l}
+\varepsilon _{1}\\
+\ldots \\
+\varepsilon _{p}
+\end{array}\right)
+\end{align*}\]</div>
+<p>with:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Y\)</span>, the output data vector: here <span class="math notranslate nohighlight">\(R_{th,n}/R_{th,n,70°C}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(X\)</span>, the input data matrix: here <span class="math notranslate nohighlight">\(\Delta T\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span>, the coefficients of model</p></li>
+</ul>
+<blockquote>
+<div><p>Exercice 1: In the case of least square error assumption, demonstrate that the <span class="math notranslate nohighlight">\(\beta\)</span> vector can be calculated with the following relation: <span class="math notranslate nohighlight">\(\beta=(X^tX)^{-1}X^tY\)</span>. Implement this calculation with python numpy functions: matrix products, matrix inversion and matrix tranposition (here a tutorial about <a class="reference external" href="https://www.python-course.eu/matrix_arithmetic.php">Matrix arithmetic</a>). Plot the regression and the original data on the same plot.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Answer: The errors can be expressed by <span class="math notranslate nohighlight">\(\varepsilon = Y-X\beta\)</span>. To determine the least squares estimator, we write the sum of squares of the residuals:<br />
+<span class="math notranslate nohighlight">\(S(\beta)=\sum\varepsilon^2=\varepsilon^t\varepsilon = (Y-X\beta)^t(Y-X\beta)=Y^tY-Y^tX\beta-\beta^tX^tY+\beta^tX^tX\beta\)</span><br />
+The minimum of <span class="math notranslate nohighlight">\(S(\beta)\)</span> is obtained by setting the derivatives of <span class="math notranslate nohighlight">\(S(\beta)\)</span> equal to zero:</p>
+</div></blockquote>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\frac{\partial S(\varepsilon)}{\partial \beta}=-2Y^tX+2X^tX\beta\)</span><br />
+which gives <span class="math notranslate nohighlight">\(\beta=(X^tX)^{-1}X^tY\)</span></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Determination of the least squares estimator with matrix arithmetic</span>
+
+<span class="c1"># Matrix X and Y</span>
+<span class="n">X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="p">)))</span>
+<span class="n">Y</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Vector Beta calculation</span>
+<span class="n">Beta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The parameters are :&quot;</span><span class="p">,</span><span class="n">Beta</span><span class="p">)</span>
+
+<span class="c1"># Y vector prediction</span>
+<span class="n">y_est</span><span class="o">=</span><span class="n">X</span> <span class="o">@</span> <span class="n">Beta</span>
+
+<span class="c1"># plot the data </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y_est</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature rise [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Multiplication factor of thermal resistance [-]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparison of original data (circles) and OLS regression (red)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The parameters are : [ 1.93618886e+00 -2.22112013e-02  1.29959433e-04]
+</pre></div>
+</div>
+<img alt="../../_images/cc41b734c63b868ab3cb1de9db0c8b872b6815ae02c97872e2ebfcfc09a3237e.png" src="../../_images/cc41b734c63b868ab3cb1de9db0c8b872b6815ae02c97872e2ebfcfc09a3237e.png" />
+</div>
+</div>
+<blockquote>
+<div><p>Exercice 2: Compare your result with an <a class="reference external" href="https://www.statsmodels.org/stable/examples/notebooks/generated/ols.html">Ordinary Least Square</a> (OLS) regression function of the <a class="reference external" href="https://www.statsmodels.org/stable/index.html">StatsModels</a> package.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Exercice 3: Adapt the linear regression prosses to a power law model<br />
+<span class="math notranslate nohighlight">\(\frac{R_{th,n}}{R_{th,n,75^{\circ} C}}=\beta _{0}.\Delta T^{\beta_{1}}\)</span></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Determination of the least squares estimator with the OLS function </span>
+<span class="c1"># of the SatsModels package</span>
+
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parameters: &#39;</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R2: &#39;</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">rsquared</span><span class="p">)</span>
+
+<span class="c1"># Y vector prediction</span>
+<span class="n">y_OLS</span><span class="o">=</span><span class="n">results</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># plot the data </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y_OLS</span><span class="p">,</span> <span class="s1">&#39;-g&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature rise [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Multiplication factor of thermal resistance [-]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparison of original data (circles) and OLS regression (red)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Determination of the least squares estimator with the OLS function </span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># of the SatsModels package</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Power law regression</span>
+
+<span class="n">Y_p</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+<span class="n">X_p</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)))</span>
+
+<span class="n">Beta_p</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X_p</span><span class="p">)</span> <span class="o">@</span> <span class="n">X_p</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X_p</span><span class="p">)</span> <span class="o">@</span> <span class="n">Y_p</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The parameters are :&quot;</span><span class="p">,</span><span class="n">Beta_p</span><span class="p">)</span>
+
+<span class="c1"># Y vector prediction</span>
+<span class="n">y_est_p</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">X_p</span> <span class="o">@</span> <span class="n">Beta_p</span><span class="p">)</span>
+
+<span class="c1"># plot the data </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y_est_p</span><span class="p">,</span> <span class="s1">&#39;-g&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature rise [°C]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Multiplication factor of thermal resistance [-]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparison of original data (circles) and OLS regression (red)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The parameters are : [[ 0.6633644 ]
+ [-0.35364883]]
+</pre></div>
+</div>
+<img alt="../../_images/bf1a002e05af92504ee4296f2c8ffd63e4ce1f80ad3cbeaa3afaad8c5ace9483.png" src="../../_images/bf1a002e05af92504ee4296f2c8ffd63e4ce1f80ad3cbeaa3afaad8c5ace9483.png" />
+</div>
+</div>
+</section>
+<section id="length-correction-factor">
+<h3>Length correction factor<a class="headerlink" href="#length-correction-factor" title="Permalink to this heading">#</a></h3>
+<p>Because the air heats up while circulating through the extrusion, the convection coefficient is not constant throughout the extrusion length. Therefore, the thermal resistance changes nonlinearly as the length changes. To calculate the correct thermal resistance for extrusion lengths other than the standard 150 mm length, multiply
+the given thermal resistance data by the appropriate factor taken from the thermal resistance vs length graph shown. The same correction factor must be used for thermal resistance in both natural convection and forced convection.</p>
+<p><img alt="Length correction factor" src="laboratories/Lab-watt_project/pictures/LengthCorrectionFactor.png" /></p>
+<blockquote>
+<div><p>Exercice : Express this relation with a power law model:
+<span class="math notranslate nohighlight">\(\frac{R_{th}}{R_{th,150mm^{\circ} C}}=k.L^a\)</span></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># input data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">350</span><span class="p">,</span><span class="mi">400</span><span class="p">]))</span> <span class="c1"># temperature rise</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.3</span><span class="p">,</span> <span class="mf">1.35</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">.7</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">.55</span><span class="p">,</span> <span class="mf">.5</span><span class="p">]))</span> <span class="c1"># multiplication factor</span>
+ 
+<span class="c1"># Matrix X and Y</span>
+<span class="n">X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">))))</span>
+<span class="n">Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">modelL</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">resultsL</span> <span class="o">=</span> <span class="n">modelL</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parameters: &#39;</span><span class="p">,</span> <span class="n">resultsL</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R2: &#39;</span><span class="p">,</span> <span class="n">resultsL</span><span class="o">.</span><span class="n">rsquared</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The estimation function is: Rth/Rth,150mm = </span><span class="si">%.3g</span><span class="s1">.L^</span><span class="si">%.2f</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">resultsL</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">resultsL</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;with L in mm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">))))</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">modelL</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">resultsL</span> <span class="o">=</span> <span class="n">modelL</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parameters: &#39;</span><span class="p">,</span> <span class="n">resultsL</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;sm&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="air-speed-correction-factor">
+<h3>Air speed correction factor<a class="headerlink" href="#air-speed-correction-factor" title="Permalink to this heading">#</a></h3>
+<p>The convection coefficient is also closely related to the air speed through the fins. Since evaluation of
+air speed through the fins is difficult to evaluate under normal circumstances, we show the thermal resistance of an extrusion in forced convection evaluated using a tunnel the same size as the extrusion. For a tunnel airflow other than 2 m/s, refer to the factor in the thermal resistance vs air speed graph shown. Use this factor to figure
+thermal resistance in forced convection.</p>
+<p><img alt="Length correction factor" src="laboratories/Lab-watt_project/pictures/SpeedCorrectionFactor.png" /></p>
+<blockquote>
+<div><p>Exercice : Express this relation with a polynomial model:
+<span class="math notranslate nohighlight">\(\frac{R_{th,f}}{R_{th,f,2m/s^{\circ} C}}=\beta _{0}+\beta _{1}.v+\beta _{2}.v^{2}\)</span></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># input data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">30</span><span class="p">]))</span> <span class="c1"># temperature rise</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.99</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">,</span> <span class="mf">1.075</span><span class="p">,</span> <span class="mf">1.15</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.39</span><span class="p">]))</span> <span class="c1"># multiplication factor</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parameters: &#39;</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R2: &#39;</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">rsquared</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">30</span><span class="p">]))</span> <span class="c1"># temperature rise</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.99</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">,</span> <span class="mf">1.075</span><span class="p">,</span> <span class="mf">1.15</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.39</span><span class="p">]))</span> <span class="c1"># multiplication factor</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parameters: &#39;</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;sm&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="thermal-resistance-identification-of-the-most-important-dimensions">
+<h2>Thermal resistance : Identification of the most important dimensions<a class="headerlink" href="#thermal-resistance-identification-of-the-most-important-dimensions" title="Permalink to this heading">#</a></h2>
+<p>The objective of the estimation model sought here is to evaluate the thermal resistance in natural convection of a heat sink <span class="math notranslate nohighlight">\(R_{th,n}\)</span> according to its dimensions (see Figure below). The statistical data are from a heat sinks catalog (standard extruded heat sinks of <a class="reference external" href="https://www.boydcorp.com/thermal/heat-sinks/extruded.html">Aavid Thermalloy</a>).</p>
+<p><em>Section of a heat sink (Length L)</em>
+<img alt="HeatsinkSection" src="laboratories/Lab-watt_project/pictures/HeatsinkSection.png" /></p>
+<p>The first step is to import catalog data stored in a .csv file. We use for that functions from <a class="reference external" href="https://pandas.pydata.org/index.html">Panda</a> package (with here an <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/03.00-introduction-to-pandas.html">introduction to panda</a>).<br />
+All heatsinks have the same length <em>L</em> = 150 mm. <em>Ml</em> corresponds to the lineic mass (kg/m) of the extruded heatsink.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import Heatsink data</span>
+
+<span class="c1"># Panda package Importation</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Read the .csv file with bearing data</span>
+<span class="n">path</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/data/&#39;</span>
+<span class="n">dHS</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">+</span><span class="s1">&#39;DataHeatsink_Lcst.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+<span class="c1"># Print the head (first lines of the file)</span>
+<span class="n">dHS</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rthn</th>
+      <th>Rthf</th>
+      <th>W</th>
+      <th>H</th>
+      <th>Wf</th>
+      <th>Df</th>
+      <th>Hs</th>
+      <th>Ml</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>13.20</td>
+      <td>5.15</td>
+      <td>19.0</td>
+      <td>4.8</td>
+      <td>0.6</td>
+      <td>1.9</td>
+      <td>1.1</td>
+      <td>0.17</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>11.37</td>
+      <td>3.82</td>
+      <td>19.0</td>
+      <td>6.0</td>
+      <td>0.8</td>
+      <td>2.3</td>
+      <td>1.1</td>
+      <td>0.15</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.98</td>
+      <td>0.46</td>
+      <td>134.3</td>
+      <td>19.2</td>
+      <td>1.6</td>
+      <td>10.8</td>
+      <td>4.0</td>
+      <td>2.34</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8.79</td>
+      <td>3.06</td>
+      <td>24.0</td>
+      <td>7.3</td>
+      <td>1.5</td>
+      <td>3.8</td>
+      <td>2.3</td>
+      <td>0.29</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7.52</td>
+      <td>3.83</td>
+      <td>37.5</td>
+      <td>3.1</td>
+      <td>1.0</td>
+      <td>2.6</td>
+      <td>1.1</td>
+      <td>0.18</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<blockquote>
+<div><p>Exercice: By using a correlation analysis or a scatter matrix (here <a class="reference external" href="http://benalexkeen.com/correlation-in-python/">examples</a>), identify the most important dimensions among <span class="math notranslate nohighlight">\(W, H, W_f, H_f, H_s\)</span>. A log transformation can be usefull because of the large range of data.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># log transformation of the data</span>
+<span class="n">dHSlog</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">dHS</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">dHS</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1"># Correlation matrix</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">dHSlog</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dHS</span><span class="o">.</span><span class="n">columns</span><span class="p">)),</span> <span class="n">dHS</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dHS</span><span class="o">.</span><span class="n">columns</span><span class="p">)),</span> <span class="n">dHS</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Scatter matrix</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">scatter_matrix</span><span class="p">(</span><span class="n">dHSlog</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8a980e17ae75e8a826613212cc5075a632f5ef8186a44453b9e9b955f735b492.png" src="../../_images/8a980e17ae75e8a826613212cc5075a632f5ef8186a44453b9e9b955f735b492.png" />
+<img alt="../../_images/d5135d8028da54907e8ff90c9f31a3c5d336fcf8f049f2b639e3980318549046.png" src="../../_images/d5135d8028da54907e8ff90c9f31a3c5d336fcf8f049f2b639e3980318549046.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dHSlog</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rthn</th>
+      <th>Rthf</th>
+      <th>W</th>
+      <th>H</th>
+      <th>Wf</th>
+      <th>Df</th>
+      <th>Hs</th>
+      <th>Ml</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Rthn</th>
+      <td>1.000000</td>
+      <td>0.982988</td>
+      <td>-0.941497</td>
+      <td>-0.772130</td>
+      <td>-0.641824</td>
+      <td>-0.601228</td>
+      <td>-0.720154</td>
+      <td>-0.972432</td>
+    </tr>
+    <tr>
+      <th>Rthf</th>
+      <td>0.982988</td>
+      <td>1.000000</td>
+      <td>-0.921047</td>
+      <td>-0.795847</td>
+      <td>-0.638099</td>
+      <td>-0.551368</td>
+      <td>-0.753251</td>
+      <td>-0.983578</td>
+    </tr>
+    <tr>
+      <th>W</th>
+      <td>-0.941497</td>
+      <td>-0.921047</td>
+      <td>1.000000</td>
+      <td>0.538247</td>
+      <td>0.539831</td>
+      <td>0.635455</td>
+      <td>0.578804</td>
+      <td>0.896725</td>
+    </tr>
+    <tr>
+      <th>H</th>
+      <td>-0.772130</td>
+      <td>-0.795847</td>
+      <td>0.538247</td>
+      <td>1.000000</td>
+      <td>0.724113</td>
+      <td>0.394089</td>
+      <td>0.868716</td>
+      <td>0.841858</td>
+    </tr>
+    <tr>
+      <th>Wf</th>
+      <td>-0.641824</td>
+      <td>-0.638099</td>
+      <td>0.539831</td>
+      <td>0.724113</td>
+      <td>1.000000</td>
+      <td>0.660137</td>
+      <td>0.705544</td>
+      <td>0.720821</td>
+    </tr>
+    <tr>
+      <th>Df</th>
+      <td>-0.601228</td>
+      <td>-0.551368</td>
+      <td>0.635455</td>
+      <td>0.394089</td>
+      <td>0.660137</td>
+      <td>1.000000</td>
+      <td>0.419632</td>
+      <td>0.570614</td>
+    </tr>
+    <tr>
+      <th>Hs</th>
+      <td>-0.720154</td>
+      <td>-0.753251</td>
+      <td>0.578804</td>
+      <td>0.868716</td>
+      <td>0.705544</td>
+      <td>0.419632</td>
+      <td>1.000000</td>
+      <td>0.829186</td>
+    </tr>
+    <tr>
+      <th>Ml</th>
+      <td>-0.972432</td>
+      <td>-0.983578</td>
+      <td>0.896725</td>
+      <td>0.841858</td>
+      <td>0.720821</td>
+      <td>0.570614</td>
+      <td>0.829186</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="natural-thermal-resistance-multiple-linear-regression">
+<h3>Natural thermal resistance : Multiple linear regression<a class="headerlink" href="#natural-thermal-resistance-multiple-linear-regression" title="Permalink to this heading">#</a></h3>
+<p>We want to perform here a multiple linear regression to determine an estimation model of the form.<br />
+<span class="math notranslate nohighlight">\(R_{th,n}=aX^{b}Y^{c}\)</span></p>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\({a, b, c}\)</span> are the coefficients of the model</p></li>
+<li><p><span class="math notranslate nohighlight">\({X, Y}\)</span> are the most influential dimensions.</p></li>
+</ul>
+<blockquote>
+<div><p>Exercice: Perform this multiple linear regression with the <a class="reference external" href="https://www.statsmodels.org/stable/index.html">StatsModels</a> package and dedicated transformations.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Determination of the least squares estimator with the OLS function </span>
+<span class="c1"># of the SatsModels package</span>
+
+<span class="c1"># Generation of Y and X matrix</span>
+<span class="n">YHS</span><span class="o">=</span><span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;Rthn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">YHS</span><span class="o">=</span><span class="n">YHS</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">YHS</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">XHS</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)),</span> <span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;H&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)))</span>
+
+<span class="c1"># OLS regression</span>
+<span class="n">modelHS</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">YHS</span><span class="p">,</span> <span class="n">XHS</span><span class="p">)</span>
+<span class="n">resultHS</span> <span class="o">=</span> <span class="n">modelHS</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># Results print</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parameters: &#39;</span><span class="p">,</span> <span class="n">resultHS</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R2: </span><span class="si">%.3f</span><span class="s1">&#39;</span><span class="o">%</span> <span class="n">resultHS</span><span class="o">.</span><span class="n">rsquared</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The estimation function is: Rth,n = </span><span class="si">%.3g</span><span class="s1">.W^</span><span class="si">%.2f</span><span class="s1">.H^</span><span class="si">%3.2f</span><span class="s1">&#39;</span>
+      <span class="o">%</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">resultHS</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">resultHS</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">resultHS</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;with Rth,n in [°/W], W,H in [mm] and L=150 mm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">XHS</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)),</span> <span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;H&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)))</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># OLS regression</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">modelHS</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">YHS</span><span class="p">,</span> <span class="n">XHS</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">resultHS</span> <span class="o">=</span> <span class="n">modelHS</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># Results print</span>
+
+<span class="ne">NameError</span>: name &#39;sm&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Y vector prediction</span>
+<span class="n">y_HS</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">resultHS</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">XHS</span><span class="p">))</span>
+
+<span class="c1"># plot the data </span>
+<span class="c1">#plt.plot(dHS[&#39;Rthn&#39;].values,dHS[&#39;Rthn&#39;].values, &#39;-&#39;,dHS[&#39;Rthn&#39;].values,y_HS, &#39;o&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">y_HS</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Catalog data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Prediction&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Natural convection thermal resistance (°/W)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Y vector prediction</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">y_HS</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">resultHS</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">XHS</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># plot the data </span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1">#plt.plot(dHS[&#39;Rthn&#39;].values,dHS[&#39;Rthn&#39;].values, &#39;-&#39;,dHS[&#39;Rthn&#39;].values,y_HS, &#39;o&#39;)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;resultHS&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="estimation-models-for-lineic-mass-and-forced-convective-thermal-resistance">
+<h3>Estimation models for lineic mass and forced convective thermal resistance<a class="headerlink" href="#estimation-models-for-lineic-mass-and-forced-convective-thermal-resistance" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>Exercice: Perform the regressions in order to generate estimation models for lineic mass and forced convective thermal resistance .</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Forced convection</span>
+
+<span class="c1"># Generation of Y and X matrix</span>
+<span class="n">YHS_f</span><span class="o">=</span><span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;Rthf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># OLS regression</span>
+<span class="n">modelHS_f</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">YHS_f</span><span class="p">,</span> <span class="n">XHS</span><span class="p">)</span>
+<span class="n">resultHS_f</span> <span class="o">=</span> <span class="n">modelHS_f</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parameters: &#39;</span><span class="p">,</span> <span class="n">resultHS_f</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R2: </span><span class="si">%.3f</span><span class="s1">&#39;</span><span class="o">%</span> <span class="n">resultHS_f</span><span class="o">.</span><span class="n">rsquared</span><span class="p">)</span>
+
+<span class="c1"># Results print</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The estimation function is: Rth,f = </span><span class="si">%.3e</span><span class="s1">.W^</span><span class="si">%.2f</span><span class="s1">.H^</span><span class="si">%3.2f</span><span class="s1">&#39;</span>
+      <span class="o">%</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">resultHS_f</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">resultHS_f</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">resultHS_f</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;with Rth,f in [°/W], W,H in [mm] and L=150 mm&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;with R2: </span><span class="si">%.3f</span><span class="s1">&#39;</span><span class="o">%</span> <span class="n">resultHS_f</span><span class="o">.</span><span class="n">rsquared</span><span class="p">)</span>
+
+<span class="c1"># Lineic Mass</span>
+
+<span class="c1"># Generation of Y and X matrix</span>
+<span class="n">YHS_ML</span><span class="o">=</span><span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;Ml&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># OLS regression</span>
+<span class="n">modelHS_ML</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">YHS_ML</span><span class="p">,</span> <span class="n">XHS</span><span class="p">)</span>
+<span class="n">resultHS_ML</span> <span class="o">=</span> <span class="n">modelHS_ML</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># Results print</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The estimation function is: Ml = </span><span class="si">%.3e</span><span class="s1">.W^</span><span class="si">%.2f</span><span class="s1">.H^</span><span class="si">%3.2f</span><span class="s1">&#39;</span>
+      <span class="o">%</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">resultHS_ML</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">resultHS_ML</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">resultHS_ML</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;with Ml in [kg/m], W,H in [mm]&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;with R2: </span><span class="si">%.3f</span><span class="s1">&#39;</span><span class="o">%</span> <span class="n">resultHS_ML</span><span class="o">.</span><span class="n">rsquared</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">YHS_f</span><span class="o">=</span><span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;Rthf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># OLS regression</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">modelHS_f</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">YHS_f</span><span class="p">,</span> <span class="n">XHS</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">resultHS_f</span> <span class="o">=</span> <span class="n">modelHS_f</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parameters: &#39;</span><span class="p">,</span> <span class="n">resultHS_f</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;sm&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Y vector prediction</span>
+<span class="n">y_HSf</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">resultHS_f</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">XHS</span><span class="p">))</span>
+
+<span class="c1"># plot the data </span>
+<span class="c1">#plt.plot(dHS[&#39;Rthn&#39;].values,dHS[&#39;Rthn&#39;].values, &#39;-&#39;,dHS[&#39;Rthn&#39;].values,y_HS, &#39;o&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">y_HSf</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Catalog data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Prediction&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Forced convection thermal resistance (°/W)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Y vector prediction</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">y_HSf</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">resultHS_f</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">XHS</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># plot the data </span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1">#plt.plot(dHS[&#39;Rthn&#39;].values,dHS[&#39;Rthn&#39;].values, &#39;-&#39;,dHS[&#39;Rthn&#39;].values,y_HS, &#39;o&#39;)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;resultHS_f&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.500e+02</span><span class="o">*</span><span class="mi">197</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.85</span><span class="p">)</span><span class="o">*</span><span class="mi">20</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.62</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.26251635741381324
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./laboratories/Lab-watt_project"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05_HeatsinkLinearRegression-Student.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Heatsink  estimation models with simple and multiple linear regressions (Student version)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="06_SizingCodeInductor.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Sizing code of an inductor</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-linear-regression">Simple linear regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-correction-factor">Temperature correction factor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length-correction-factor">Length correction factor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#air-speed-correction-factor">Air speed correction factor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-resistance-identification-of-the-most-important-dimensions">Thermal resistance : Identification of the most important dimensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-thermal-resistance-multiple-linear-regression">Natural thermal resistance : Multiple linear regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-models-for-lineic-mass-and-forced-convective-thermal-resistance">Estimation models for lineic mass and forced convective thermal resistance</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marc Budinger, Scott Delbecq, Félix Pollet
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1845 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Sizing procedure and optimization with OpenMDAO &#8212; Sizing and optimization of mechatronic systems</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om';</script>
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab - Sustainable Mobility - Storage Systems &amp; DC/DC converter sizing" href="../Lab-watt_project/summary-short.html" />
+    <link rel="prev" title="Sizing procedure and optimization with OpenMDAO (Student version)" href="6-sizing_and_optimization_with_mdao_using_om-student.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../about/homepage.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Sizing and optimization of mechatronic systems - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Sizing and optimization of mechatronic systems - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction and overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about/syllabus.html">Preliminary design and sizing of mechatronic systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/installation.html">Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1/summary.html">1. Architectures, sizing scenarios and design drivers</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/1-objectives_and_ressources.html">1.1. Objectives and ressources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/2-needs_and_general_methodology.html">1.2. Needs and general methodology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/3-scenarios_and_design_drivers.html">1.3. Scenarios and Design Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/4-quizz.html">1.4. Quiz</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture2/summary.html">2. Estimation models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/1-needs.html">2.1. Needs for estimation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/2-linear_regressions.html">2.2. Linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/3-scaling_laws.html">2.3. Scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/4-quizz.html">2.4. Quiz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4/summary.html">3. Simulation and evaluation models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/1-simulation_models.html">3.1. Simulation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/2-simulation_model_examples.html">3.2. Simulation model examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/3-evaluation_models.html">3.3. Evaluation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/4-evaluation_model_examples.html">3.4. Evaluation model examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/5-quizz.html">3.5. Quizz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture3/summary.html">4. Optimal sizing procedures</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics of optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/2-optimization_examples.html">4.2. Optimization problem examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/3-sizing_procedures.html">4.3. Development of a sizing procedure using design graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/4-sizing_procedure_examples.html">4.4. Sizing procedure examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/5-quizz.html">4.5. Quizz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture5/summary.html">5. MDAO and surrogate models</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/1-mdao.html">5.1. MDAO (Multidisciplinary Design Analysis and Optimization)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/2-mdao_examples.html">5.3. MDAO examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/3-surrogate_models.html">5.4. Surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/4-surrogate_model_examples.html">5.5. Surrogate model examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/5-quizz.html">5.6. Quizz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture6/summary.html">6. LCA and sustainable scenarios</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/1-lca.html">6.1. Life Cyle Assessment (LCA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/2-lca_examples.html">6.2. LCA examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/3-sustainable_scenarios.html">6.3. Sustainable scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/4-sustainable_scenario_examples.html">6.4. Sustainable scenario examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/5-quizz.html">6.5. Quizz</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-multirotor/summary.html">Multirotor UAV</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/01_CaseStudy.html">Case study and architecture presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/02_SizingScenariosEquations-Student.html">Sizing scenarios and design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/02_SizingScenariosEquations.html">Sizing scenarios and design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/03_PropellerLinearRegression-Student.html">Propellers estimation models with dimensional analysis and linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/03_PropellerLinearRegression.html">Propellers estimation models with dimensional analysis and linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/04_ScalingLawsElectricalComponents-Student.html">Scaling laws of electrical components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/04_ScalingLawsElectricalComponents.html">Scaling laws of electrical components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05_SizingModelsIntroduction.html">Sizing models for multi-rotor definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05a_PropellerSelection-Student.html">Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05a_PropellerSelection.html">Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05b_MotorSelection-Student.html">Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05b_MotorSelection.html">Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05c_BatteryESCSelection-Student.html">Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05c_BatteryESCSelection.html">Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05d_FrameSelection-Student.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05d_FrameSelection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/07_DesignExploration-Student.html">Design optimization and exploration of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/A1_Sizing_equations.html">Appendix 1: Sizing equations</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">VEGA Launcher TVC EMA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-sizing_scenarios-student.html">Modeling of the mechanical load (student version)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="1-sizing_scenarios.html">Modeling of the mechanical load</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="2-estimation_models-student.html">Estimation models with scaling laws and linear regression (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-estimation_models.html">Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-simulation_models-student.html">Simulation models with Python (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-simulation_models.html">Simulation models with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-evaluation_models-student.html">Evaluation models: endurance of the actuator (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-evaluation_models.html">Evaluation models: endurance of the actuator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization-student.html">Sizing procedure and optimization (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization.html">Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om-student.html">Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Sizing procedure and optimization with OpenMDAO</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">Lab - Sustainable mobility - Mission profile &amp; Specification</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/00_SustainableMobility.html">Sustainable mobilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01a_CaseStudy.html">Case study presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification-Student.html">Case study specification (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification.html">Case study specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture-Student.html">Architecture of the converter and sizing scenarios (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02b_Architecture_Hybrid.html">Hydrid Storage Architecture and Specification</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary.html">Lab - Sustainable mobility - DC/DC converter sizing</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture_UltraCapacitor.html">Architecture of the converter and sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/03_SizingScenarios.html">Equations of sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws-Student.html">Estimation models with scaling laws and linear regression (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws.html">Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression-Student.html">Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression.html">Heatsink  estimation models with simple and multiple linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/06_SizingCodeInductor.html">Sizing code of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate-Student.html">Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate.html">Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/08_DCDC_converter_sizing_introduction.html">Design graphs for the sizing a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/09_SizingCodeDCDCconverter.html">Sizing code of a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor-Student.html">Life Cycle Assessment of an inductor (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor.html">Life Cycle Assessment of an inductor</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Flaboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sizing procedure and optimization with OpenMDAO</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">Objectives and specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">Optimization with SLSQP algorithm</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mdf-formulation">MDF formulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nvh-formulation">NVH formulation</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <img alt="SizingLab" src="../../_images/logo.png" />
+<section class="tex2jax_ignore mathjax_ignore" id="sizing-procedure-and-optimization-with-openmdao">
+<h1>Sizing procedure and optimization with OpenMDAO<a class="headerlink" href="#sizing-procedure-and-optimization-with-openmdao" title="Permalink to this heading">#</a></h1>
+<p><em>Written by Marc Budinger (INSA Toulouse) and Scott Delbecq (ISAE-SUPAERO), Toulouse, France</em></p>
+<p>The objective of this notebook is to learn how to implement a sizing code and use a simple numerical optimization to find the optimal design of the system. The system studied is the TVC EMA of the VEGA launcher.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.optimize</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">log10</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="objectives-and-specifications">
+<h2>Objectives and specifications<a class="headerlink" href="#objectives-and-specifications" title="Permalink to this heading">#</a></h2>
+<p>The objective is to select the reduction ratio of a gear reducer in order to minimize the mass of the motor.</p>
+<p>The application have to ensure at nozzle level :</p>
+<ul class="simple">
+<li><p>a max torque <span class="math notranslate nohighlight">\(T_{load}\)</span> of <span class="math notranslate nohighlight">\(48 kNm\)</span> and a max acceleration of <span class="math notranslate nohighlight">\(\dot{\omega}_{max}=811 °/s²\)</span></p></li>
+<li><p>a max speed <span class="math notranslate nohighlight">\(\omega_{max}\)</span> of 9.24 °/s</p></li>
+<li><p>a max magnitude <span class="math notranslate nohighlight">\(\alpha_{max}\)</span> of 5.7 °</p></li>
+</ul>
+<p>We will give here an example based on a linear actuator with a preselected roller screw (pitch of 10 mm/rev).
+We assume here, for simplification, the efficiency equal to 70%.</p>
+<p><em>EMA components:</em></p>
+<p><img alt="EMA" src="../../_images/EMA_VEGA.png" /></p>
+<p>We first define the specifications and assumptions for the sizing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specifications</span>
+<span class="n">angular_magnitude_max</span> <span class="o">=</span> <span class="mf">5.7</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>  <span class="c1"># [rad]</span>
+<span class="n">max_dyn_torque</span> <span class="o">=</span> <span class="mf">48e3</span>  <span class="c1"># [N.m]</span>
+<span class="n">max_speed_rot</span> <span class="o">=</span> <span class="mf">9.24</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>  <span class="c1"># [rad/s]</span>
+<span class="n">max_acc_rot</span> <span class="o">=</span> <span class="mi">811</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>  <span class="c1"># [rad/s²]</span>
+
+<span class="c1"># Assumptions</span>
+<span class="n">pitch</span> <span class="o">=</span> <span class="mf">10e-3</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">pi</span>  <span class="c1"># [m/rad]</span>
+<span class="n">nu_screw</span> <span class="o">=</span> <span class="mf">0.7</span>  <span class="c1"># [-]</span>
+
+<span class="c1"># Security coefficient for mechanical components</span>
+<span class="n">k_sec</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We then define the main characteristics for the components for the scaling laws:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Motor</span>
+<span class="n">T_mot_guess_max_ref</span> <span class="o">=</span> <span class="mf">13.4</span>  <span class="c1"># [N.m]</span>
+<span class="n">W_mot_max_ref</span> <span class="o">=</span> <span class="mi">754</span>  <span class="c1"># [rad/s]</span>
+<span class="n">J_mot_ref</span> <span class="o">=</span> <span class="mf">2.9e-4</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># [kg.m²]</span>
+<span class="n">M_mot_ref</span> <span class="o">=</span> <span class="mf">3.8</span>  <span class="c1"># [kg]</span>
+
+<span class="c1"># Rod end</span>
+<span class="n">F_rod_max_ref</span> <span class="o">=</span> <span class="mf">183e3</span>  <span class="c1"># [N]</span>
+<span class="n">M_rod_ref</span> <span class="o">=</span> <span class="mf">1.55</span>  <span class="c1"># [kg]</span>
+<span class="n">L_rod_ref</span> <span class="o">=</span> <span class="mf">0.061</span>  <span class="c1"># [m]</span>
+
+<span class="c1"># Screw</span>
+<span class="n">M_nut_ref</span> <span class="o">=</span> <span class="mf">2.1</span>  <span class="c1"># [kg]</span>
+<span class="n">Ml_screw_ref</span> <span class="o">=</span> <span class="mf">9.4</span>  <span class="c1"># [kg/m]</span>
+<span class="n">D_nut_ref</span> <span class="o">=</span> <span class="mf">0.08</span>  <span class="c1"># [m]</span>
+<span class="n">L_nut_ref</span> <span class="o">=</span> <span class="mf">0.12</span> <span class="o">*</span> <span class="mf">0.08</span> <span class="o">/</span> <span class="mf">0.09</span>  <span class="c1"># [m]</span>
+<span class="n">F_screw_max_ref</span> <span class="o">=</span> <span class="mf">135e3</span>  <span class="c1"># [N]</span>
+
+<span class="c1"># Bearing</span>
+<span class="n">M_bearing_ref</span> <span class="o">=</span> <span class="mf">5.05</span>  <span class="c1"># [kg]</span>
+<span class="n">L_bearing_ref</span> <span class="o">=</span> <span class="mf">0.072</span>  <span class="c1"># [m]</span>
+<span class="n">F_bearing_max_ref</span> <span class="o">=</span> <span class="mf">475e3</span>  <span class="c1"># [N]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sizing-code">
+<h2>Sizing code<a class="headerlink" href="#sizing-code" title="Permalink to this heading">#</a></h2>
+<p>The sizing code is defined here in a function which can give an evaluation of the objective and of the constraints function of design variables.</p>
+<p>The <strong>design variables</strong> of this sizing code are :</p>
+<ul class="simple">
+<li><p>the reduction ratio of the reducer</p></li>
+<li><p>an oversizing coefficient for the selection of the motor used to tacke an algebraic loop</p></li>
+<li><p>the positions (<span class="math notranslate nohighlight">\(d_1\)</span> and <span class="math notranslate nohighlight">\(d_2\)</span>) of the actuator anchorages</p></li>
+</ul>
+<p><em>New design variables</em>
+<img alt="Mechanical Loads" src="../../_images/design_variables_vega.png" /></p>
+<p>The <strong>objective</strong> is the global mass of the actuator.</p>
+<p>The <strong>constraints</strong> which should be positives are here:</p>
+<ul class="simple">
+<li><p>the speed margin, ie. the motor doesn’t exceed its maximum speed</p></li>
+<li><p>the torque margin, ie. the motor doesn’t exceed its maximum torque</p></li>
+<li><p>the length margin, ie. the global length of the actuator doesn’t exceed the distance between anchorage points</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">openmdao.api</span> <span class="k">as</span> <span class="nn">om</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LeverArm</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Actuator model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;lever_arm&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;lever_arm = ((-(-0.9744 * d1 - 1.372) * (0.2248 * d1 - 0.3757) * ((0.2248 * d1 - 0.3757) ** 2 + (-0.9744 * d1 + d2 - 1.172) ** 2) ** (-0.5) + (0.2248 * d1 + 0.9823) * ((0.2248 * d1 - 0.3757) ** 2 + (-0.9744 * d1 + d2 - 1.172) ** 2) ** (-0.5)* (-0.9744 * d1 + d2 - 1.172))** 2) ** 0.5&quot;</span><span class="p">,</span>
+                <span class="n">d1</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                <span class="n">d2</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Actuator</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Actuator model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;actuator_length&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;actuator_length = ((0.2248 * d1 - 0.3757) ** 2 + (-0.9744 * d1 + d2 - 1.172) ** 2) ** 0.5&quot;</span><span class="p">,</span>
+                <span class="n">d1</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                <span class="n">d2</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;stroke&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;stroke = angular_magnitude_max * 2 * lever_arm&quot;</span><span class="p">,</span>
+                <span class="n">angular_magnitude_max</span><span class="o">=</span><span class="n">angular_magnitude_max</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LoadSpeed</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load and speed model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;max_speed&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span><span class="s2">&quot;max_speed = max_speed_rot * lever_arm&quot;</span><span class="p">,</span> <span class="n">max_speed_rot</span><span class="o">=</span><span class="n">max_speed_rot</span><span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;max_load&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span><span class="s2">&quot;max_load = max_dyn_torque / lever_arm&quot;</span><span class="p">,</span> <span class="n">max_dyn_torque</span><span class="o">=</span><span class="n">max_dyn_torque</span><span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Forces</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Stall and mechanical forces model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;max_stall_force&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span><span class="s2">&quot;max_stall_force = T_mot_guess / pitch * reduction_ratio&quot;</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="n">pitch</span><span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;max_mech_force&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span><span class="s2">&quot;max_mech_force = k_sec * max_stall_force&quot;</span><span class="p">,</span> <span class="n">k_sec</span><span class="o">=</span><span class="n">k_sec</span><span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Motor</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Motor model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;M_mot&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;M_mot = M_mot_ref * (T_mot_guess / T_mot_guess_max_ref) ** (3 / 3.5)&quot;</span><span class="p">,</span>
+                <span class="n">M_mot_ref</span><span class="o">=</span><span class="n">M_mot_ref</span><span class="p">,</span>
+                <span class="n">T_mot_guess_max_ref</span><span class="o">=</span><span class="n">T_mot_guess_max_ref</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;J_mot&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;J_mot = J_mot_ref * (T_mot_guess / T_mot_guess_max_ref) ** (5 / 3.5)&quot;</span><span class="p">,</span>
+                <span class="n">J_mot_ref</span><span class="o">=</span><span class="n">J_mot_ref</span><span class="p">,</span>
+                <span class="n">T_mot_guess_max_ref</span><span class="o">=</span><span class="n">T_mot_guess_max_ref</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;W_mot&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;W_mot = W_mot_max_ref * (T_mot_guess / T_mot_guess_max_ref) ** (-1 / 3.5)&quot;</span><span class="p">,</span>
+                <span class="n">W_mot_max_ref</span><span class="o">=</span><span class="n">W_mot_max_ref</span><span class="p">,</span>
+                <span class="n">T_mot_guess_max_ref</span><span class="o">=</span><span class="n">T_mot_guess_max_ref</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RodEnd</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Rod end model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;M_rod&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;M_rod = M_rod_ref * (max_mech_force / F_rod_max_ref) ** (3 / 2)&quot;</span><span class="p">,</span>
+                <span class="n">M_rod_ref</span><span class="o">=</span><span class="n">M_rod_ref</span><span class="p">,</span>
+                <span class="n">F_rod_max_ref</span><span class="o">=</span><span class="n">F_rod_max_ref</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;L_rod&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;L_rod = L_rod_ref * (max_mech_force / F_rod_max_ref) ** (1 / 2)&quot;</span><span class="p">,</span>
+                <span class="n">L_rod_ref</span><span class="o">=</span><span class="n">L_rod_ref</span><span class="p">,</span>
+                <span class="n">F_rod_max_ref</span><span class="o">=</span><span class="n">F_rod_max_ref</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Nut</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Nut model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;M_bearing&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;M_bearing = M_bearing_ref * (max_mech_force / F_bearing_max_ref) ** (3 / 2)&quot;</span><span class="p">,</span>
+                <span class="n">M_bearing_ref</span><span class="o">=</span><span class="n">M_bearing_ref</span><span class="p">,</span>
+                <span class="n">F_bearing_max_ref</span><span class="o">=</span><span class="n">F_bearing_max_ref</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;M_screw&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;M_screw = Ml_screw_ref * (max_mech_force / F_screw_max_ref) ** (2 / 2) * actuator_length / 2&quot;</span><span class="p">,</span>
+                <span class="n">Ml_screw_ref</span><span class="o">=</span><span class="n">Ml_screw_ref</span><span class="p">,</span>
+                <span class="n">F_screw_max_ref</span><span class="o">=</span><span class="n">F_screw_max_ref</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;D_nut&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;D_nut = D_nut_ref * (max_mech_force / F_screw_max_ref) ** (1 / 2)&quot;</span><span class="p">,</span>
+                <span class="n">D_nut_ref</span><span class="o">=</span><span class="n">D_nut_ref</span><span class="p">,</span>
+                <span class="n">F_screw_max_ref</span><span class="o">=</span><span class="n">F_screw_max_ref</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;L_nut&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;L_nut = L_nut_ref * (max_mech_force / F_screw_max_ref) ** (1 / 2)&quot;</span><span class="p">,</span>
+                <span class="n">L_nut_ref</span><span class="o">=</span><span class="n">L_nut_ref</span><span class="p">,</span>
+                <span class="n">F_screw_max_ref</span><span class="o">=</span><span class="n">F_screw_max_ref</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Bearing</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Bearing model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;M_nut&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;M_nut = M_nut_ref * (max_mech_force / F_screw_max_ref) ** (3 / 2)&quot;</span><span class="p">,</span>
+                <span class="n">M_nut_ref</span><span class="o">=</span><span class="n">M_nut_ref</span><span class="p">,</span>
+                <span class="n">F_screw_max_ref</span><span class="o">=</span><span class="n">F_screw_max_ref</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;L_bearing&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;L_bearing = L_bearing_ref * (max_mech_force / F_bearing_max_ref) ** (1 / 2)&quot;</span><span class="p">,</span>
+                <span class="n">L_bearing_ref</span><span class="o">=</span><span class="n">L_bearing_ref</span><span class="p">,</span>
+                <span class="n">F_bearing_max_ref</span><span class="o">=</span><span class="n">F_bearing_max_ref</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MotorTorqueReal</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Real motor torque model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;T_mot_real&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;T_mot_real = max_load * pitch / reduction_ratio / nu_screw + J_mot * max_acc_rot * lever_arm * reduction_ratio / pitch&quot;</span><span class="p">,</span>
+                <span class="n">pitch</span><span class="o">=</span><span class="n">pitch</span><span class="p">,</span>
+                <span class="n">nu_screw</span><span class="o">=</span><span class="n">nu_screw</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="optimization-with-slsqp-algorithm">
+<h2>Optimization with SLSQP algorithm<a class="headerlink" href="#optimization-with-slsqp-algorithm" title="Permalink to this heading">#</a></h2>
+<p>We will now use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html">opmization algorithms</a> of the Scipy package to solve and optimize the configuration. We will first use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.minimize-slsqp.html">SLSQP</a> algorithm without explicit expression of the gradient (Jacobian).</p>
+<p>The first step is to give an initial value of optimisation variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimization variables</span>
+<span class="c1"># Reduction ratio</span>
+<span class="n">reduction_ratio_init</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># [-]</span>
+<span class="n">reduction_ratio_min</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># [-]</span>
+<span class="n">reduction_ratio_max</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># [-]</span>
+
+<span class="c1"># Oversizing coefficient for multidisciplinary coupling</span>
+<span class="n">k_oversizing_init</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># [-]</span>
+<span class="n">k_oversizing_min</span> <span class="o">=</span> <span class="mf">0.2</span>  <span class="c1"># [-]</span>
+<span class="n">k_oversizing_max</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># [-]</span>
+
+<span class="c1"># Anchorage positions</span>
+<span class="n">d1_init</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># [m]</span>
+<span class="n">d1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mi">80</span> <span class="o">/</span> <span class="mi">100</span>  <span class="c1"># [m]</span>
+<span class="n">d1_max</span> <span class="o">=</span> <span class="mi">80</span> <span class="o">/</span> <span class="mi">100</span>  <span class="c1"># [m]</span>
+
+<span class="n">d2_init</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># [m]</span>
+<span class="n">d2_min</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span> <span class="o">/</span> <span class="mi">100</span>  <span class="c1"># [m]</span>
+<span class="n">d2_max</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">/</span> <span class="mi">100</span>  <span class="c1"># [m]</span>
+
+<span class="c1"># Initial values vector for design variables</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">reduction_ratio_init</span><span class="p">,</span> <span class="n">k_oversizing_init</span><span class="p">,</span> <span class="n">d1_init</span><span class="p">,</span> <span class="n">d2_init</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="mdf-formulation">
+<h3>MDF formulation<a class="headerlink" href="#mdf-formulation" title="Permalink to this heading">#</a></h3>
+<p><img alt="MDF" src="../../_images/mdf1.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MotorTorque</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Real motor torque model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;T_mot_guess&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;T_mot_guess = max_load * pitch / reduction_ratio / nu_screw + J_mot * max_acc_rot * lever_arm * reduction_ratio / pitch&quot;</span><span class="p">,</span>
+                <span class="n">pitch</span><span class="o">=</span><span class="n">pitch</span><span class="p">,</span>
+                <span class="n">nu_screw</span><span class="o">=</span><span class="n">nu_screw</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ObjectiveConstraints</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Objective and constraints model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;objective&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span><span class="s2">&quot;objective = M_mot + M_bearing + 2 * M_rod + M_screw + M_nut&quot;</span><span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;C1&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span><span class="s2">&quot;C1 = W_mot - reduction_ratio * max_speed / pitch&quot;</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="n">pitch</span><span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;C3&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span><span class="s2">&quot;C3 = actuator_length - stroke - L_nut - L_bearing - 2 * L_rod&quot;</span><span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SystemMDF</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Overall system model with MDF formulation</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;lever_arm&quot;</span><span class="p">,</span> <span class="n">LeverArm</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;actuator&quot;</span><span class="p">,</span> <span class="n">Actuator</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;load_speed&quot;</span><span class="p">,</span> <span class="n">LoadSpeed</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+
+        <span class="c1"># We have to do something here regarding the cycle</span>
+        <span class="n">cycle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;cycle&quot;</span><span class="p">,</span> <span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="n">cycle</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;motor_torque&quot;</span><span class="p">,</span> <span class="n">MotorTorque</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="n">cycle</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;forces&quot;</span><span class="p">,</span> <span class="n">Forces</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="n">cycle</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;motor&quot;</span><span class="p">,</span> <span class="n">Motor</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="c1"># We had a solver</span>
+        <span class="n">cycle</span><span class="o">.</span><span class="n">nonlinear_solver</span> <span class="o">=</span> <span class="n">om</span><span class="o">.</span><span class="n">NonlinearBlockGS</span><span class="p">(</span><span class="n">maxiter</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;rod_end&quot;</span><span class="p">,</span> <span class="n">RodEnd</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;nut&quot;</span><span class="p">,</span> <span class="n">Nut</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;bearing&quot;</span><span class="p">,</span> <span class="n">Bearing</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;motor_torque_real&quot;</span><span class="p">,</span> <span class="n">MotorTorqueReal</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;objective_constraints&quot;</span><span class="p">,</span> <span class="n">ObjectiveConstraints</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">openmdao.api</span> <span class="k">as</span> <span class="nn">om</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">prob</span> <span class="o">=</span> <span class="n">om</span><span class="o">.</span><span class="n">Problem</span><span class="p">()</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">SystemMDF</span><span class="p">()</span>
+
+<span class="n">prob</span><span class="o">.</span><span class="n">driver</span> <span class="o">=</span> <span class="n">om</span><span class="o">.</span><span class="n">ScipyOptimizeDriver</span><span class="p">()</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;optimizer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;SLSQP&quot;</span>
+<span class="c1"># prob.driver.options[&#39;maxiter&#39;] = 100</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;tol&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1e-8</span>
+
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;reduction_ratio&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="n">reduction_ratio_min</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">reduction_ratio_max</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;d1&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="n">d1_min</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">d1_max</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;d2&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="n">d2_min</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">d2_max</span><span class="p">)</span>
+
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_objective</span><span class="p">(</span><span class="s2">&quot;objective&quot;</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="s2">&quot;C1&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="s2">&quot;C3&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Ask OpenMDAO to finite-difference across the model to compute the gradients for the optimizer</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">approx_totals</span><span class="p">()</span>
+
+<span class="n">prob</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">set_solver_print</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Initialization of design variables</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">set_val</span><span class="p">(</span><span class="s2">&quot;reduction_ratio&quot;</span><span class="p">,</span> <span class="n">reduction_ratio_init</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">set_val</span><span class="p">(</span><span class="s2">&quot;d1&quot;</span><span class="p">,</span> <span class="n">d1_init</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">set_val</span><span class="p">(</span><span class="s2">&quot;d2&quot;</span><span class="p">,</span> <span class="n">d2_init</span><span class="p">)</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">run_driver</span><span class="p">()</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 4 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 7 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 7 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 7 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 12 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 10 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 10 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 10 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 10 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 10 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 6 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 12 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 10 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 11 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 11 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 10 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 8 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 10 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 10 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 10 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 10 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 10 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 8 iterations
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+
+=====
+cycle
+=====
+NL: NLBGS Converged in 9 iterations
+Optimization terminated successfully    (Exit mode 0)
+            Current function value: 10.915557692240649
+            Iterations: 13
+            Function evaluations: 15
+            Gradient evaluations: 13
+Optimization Complete
+-----------------------------------
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/scipy/optimize/_optimize.py:284: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn(&quot;Values in x were outside bounds during a &quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objective:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Total mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;objective&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Design variables:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     reduction_ratio =  </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;reduction_ratio&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     d_1 =  </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;d1&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     d_2 =  </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;d2&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Performances:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Stroke = </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;stroke&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Max load = </span><span class="si">%.0f</span><span class="s2"> N&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;max_load&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Stall load = </span><span class="si">%.0f</span><span class="s2"> N&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;max_stall_force&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Components characteristics:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Lever arm = </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;lever_arm&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Actuator length = </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;actuator_length&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Motor mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;M_mot&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Max Tem = </span><span class="si">%.2f</span><span class="s2"> N.m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;T_mot_real&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Rod-end mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;M_rod&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Rod-end length = </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;L_rod&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Screw mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;M_screw&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Nut mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;M_nut&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Nut length = </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;L_nut&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Bearing length = </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;L_bearing&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraints (should be &gt;= 0):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Speed margin: W_mot-reduction_ratio*max_speed/pitch= </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;C1&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;     Length margin: actuator_length-stroke-L_nut-L_bearing-2*L_rod =  </span><span class="si">%.3f</span><span class="s2">&quot;</span>
+    <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;C3&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculation time:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Objective:
+     Total mass = 10.92 kg
+Design variables:
+     reduction_ratio =  5.23
+     d_1 =  -0.33 m
+     d_2 =  0.20 m
+Performances:
+     Stroke = 0.27 m
+     Max load = 35719 N
+     Stall load = 53830 N
+Components characteristics:
+     Lever arm = 1.34 m
+     Actuator length = 0.79 m
+     Motor mass = 4.52 kg
+     Max Tem = 16.39 N.m
+     Rod-end mass = 1.40 kg
+     Rod-end length = 0.05 m
+     Screw mass = 2.96 kg
+     Nut mass = 2.99 kg
+     Nut length = 0.10 m
+     Bearing length = 0.03 m
+Constraints (should be &gt;= 0):
+     Speed margin: W_mot-reduction_ratio*max_speed/pitch= -0.000
+     Length margin: actuator_length-stroke-L_nut-L_bearing-2*L_rod =  0.299
+Calculation time:
+ 0.5024919509887695 s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">om</span><span class="o">.</span><span class="n">n2</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="100%"
+            height="700"
+            src="n2.html"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
+</section>
+<section id="nvh-formulation">
+<h3>NVH formulation<a class="headerlink" href="#nvh-formulation" title="Permalink to this heading">#</a></h3>
+<p><img alt="MDF" src="../../_images/mdf1.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MotorTorqueGuess</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Guess of motor torque model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;T_mot_guess&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span>
+                <span class="s2">&quot;T_mot_guess = k_oversizing * max_load * pitch / reduction_ratio / nu_screw&quot;</span><span class="p">,</span>
+                <span class="n">pitch</span><span class="o">=</span><span class="n">pitch</span><span class="p">,</span>
+                <span class="n">nu_screw</span><span class="o">=</span><span class="n">nu_screw</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ObjectiveConstraints</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Objective and constraints model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;objective&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span><span class="s2">&quot;objective = M_mot + M_bearing + 2 * M_rod + M_screw + M_nut&quot;</span><span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;C1&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span><span class="s2">&quot;C1 = W_mot - reduction_ratio * max_speed / pitch&quot;</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="n">pitch</span><span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;C2&quot;</span><span class="p">,</span> <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span><span class="s2">&quot;C2 = T_mot_guess - T_mot_real&quot;</span><span class="p">),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span>
+            <span class="s2">&quot;C3&quot;</span><span class="p">,</span>
+            <span class="n">om</span><span class="o">.</span><span class="n">ExecComp</span><span class="p">(</span><span class="s2">&quot;C3 = actuator_length - stroke - L_nut - L_bearing - 2 * L_rod&quot;</span><span class="p">),</span>
+            <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SystemNVH</span><span class="p">(</span><span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Overall system model with NVH formulation</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;lever_arm&quot;</span><span class="p">,</span> <span class="n">LeverArm</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;actuator&quot;</span><span class="p">,</span> <span class="n">Actuator</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;load_speed&quot;</span><span class="p">,</span> <span class="n">LoadSpeed</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;motor_torque&quot;</span><span class="p">,</span> <span class="n">MotorTorqueGuess</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="c1"># self.add_subsystem(&#39;motor_torque&#39;, MotorTorque(), promotes=[&quot;*&quot;])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;forces&quot;</span><span class="p">,</span> <span class="n">Forces</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;motor&quot;</span><span class="p">,</span> <span class="n">Motor</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;rod_end&quot;</span><span class="p">,</span> <span class="n">RodEnd</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;nut&quot;</span><span class="p">,</span> <span class="n">Nut</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;bearing&quot;</span><span class="p">,</span> <span class="n">Bearing</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;motor_torque_real&quot;</span><span class="p">,</span> <span class="n">MotorTorqueReal</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;objective_constraints&quot;</span><span class="p">,</span> <span class="n">ObjectiveConstraints</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">openmdao.api</span> <span class="k">as</span> <span class="nn">om</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">prob</span> <span class="o">=</span> <span class="n">om</span><span class="o">.</span><span class="n">Problem</span><span class="p">()</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">SystemNVH</span><span class="p">()</span>
+
+<span class="n">prob</span><span class="o">.</span><span class="n">driver</span> <span class="o">=</span> <span class="n">om</span><span class="o">.</span><span class="n">ScipyOptimizeDriver</span><span class="p">()</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;optimizer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;SLSQP&quot;</span>
+<span class="c1"># prob.driver.options[&#39;maxiter&#39;] = 100</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;tol&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1e-8</span>
+
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;reduction_ratio&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="n">reduction_ratio_min</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">reduction_ratio_max</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;k_oversizing&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="n">k_oversizing_min</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">k_oversizing_max</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;d1&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="n">d1_min</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">d1_max</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_design_var</span><span class="p">(</span><span class="s2">&quot;d2&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="n">d2_min</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">d2_max</span><span class="p">)</span>
+
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_objective</span><span class="p">(</span><span class="s2">&quot;objective&quot;</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="s2">&quot;C1&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="s2">&quot;C2&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="s2">&quot;C3&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Ask OpenMDAO to finite-difference across the model to compute the gradients for the optimizer</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">approx_totals</span><span class="p">()</span>
+
+<span class="n">prob</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">set_solver_print</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Initialization of design variables</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">set_val</span><span class="p">(</span><span class="s2">&quot;reduction_ratio&quot;</span><span class="p">,</span> <span class="n">reduction_ratio_init</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">set_val</span><span class="p">(</span><span class="s2">&quot;k_oversizing&quot;</span><span class="p">,</span> <span class="n">k_oversizing_init</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">set_val</span><span class="p">(</span><span class="s2">&quot;d1&quot;</span><span class="p">,</span> <span class="n">d1_init</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">set_val</span><span class="p">(</span><span class="s2">&quot;d2&quot;</span><span class="p">,</span> <span class="n">d2_init</span><span class="p">)</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">run_driver</span><span class="p">()</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimization terminated successfully    (Exit mode 0)
+            Current function value: 10.915557693843436
+            Iterations: 12
+            Function evaluations: 13
+            Gradient evaluations: 12
+Optimization Complete
+-----------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can print of the characterisitcs of the problem before optimization with the intitial vector of optimization variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objective:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Total mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;objective&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Design variables:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     reduction_ratio =  </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;reduction_ratio&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     k_oversizing =  </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;k_oversizing&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     d_1 =  </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;d1&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     d_2 =  </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;d2&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Performances:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Stroke = </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;stroke&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Max load = </span><span class="si">%.0f</span><span class="s2"> N&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;max_load&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Stall load = </span><span class="si">%.0f</span><span class="s2"> N&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;max_stall_force&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Components characteristics:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Lever arm = </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;lever_arm&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Actuator length = </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;actuator_length&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Motor mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;M_mot&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Max Tem = </span><span class="si">%.2f</span><span class="s2"> N.m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;T_mot_real&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Rod-end mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;M_rod&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Rod-end length = </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;L_rod&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Screw mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;M_screw&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Nut mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;M_nut&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Nut length = </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;L_nut&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Bearing length = </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;L_bearing&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraints (should be &gt;= 0):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Speed margin: W_mot-reduction_ratio*max_speed/pitch= </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;C1&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Torque margin: T_mot_guess-T_mot_real= </span><span class="si">%.3f</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;C2&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;     Length margin: actuator_length-stroke-L_nut-L_bearing-2*L_rod =  </span><span class="si">%.3f</span><span class="s2">&quot;</span>
+    <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;C3&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculation time:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Objective:
+     Total mass = 10.92 kg
+Design variables:
+     reduction_ratio =  5.23
+     k_oversizing =  1.05
+     d_1 =  -0.33 m
+     d_2 =  0.20 m
+Performances:
+     Stroke = 0.27 m
+     Max load = 35719 N
+     Stall load = 53830 N
+Components characteristics:
+     Lever arm = 1.34 m
+     Actuator length = 0.79 m
+     Motor mass = 4.52 kg
+     Max Tem = 16.39 N.m
+     Rod-end mass = 1.40 kg
+     Rod-end length = 0.05 m
+     Screw mass = 2.96 kg
+     Nut mass = 2.99 kg
+     Nut length = 0.10 m
+     Bearing length = 0.03 m
+Constraints (should be &gt;= 0):
+     Speed margin: W_mot-reduction_ratio*max_speed/pitch= 0.000
+     Torque margin: T_mot_guess-T_mot_real= 0.000 
+     Length margin: actuator_length-stroke-L_nut-L_bearing-2*L_rod =  0.299
+Calculation time:
+ 0.44238877296447754 s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">om</span><span class="o">.</span><span class="n">n2</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="100%"
+            height="700"
+            src="n2.html"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./laboratories/Lab-vega"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="6-sizing_and_optimization_with_mdao_using_om-student.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sizing procedure and optimization with OpenMDAO (Student version)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Lab-watt_project/summary-short.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab - Sustainable Mobility - Storage Systems &amp; DC/DC converter sizing</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">Objectives and specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">Optimization with SLSQP algorithm</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mdf-formulation">MDF formulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nvh-formulation">NVH formulation</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marc Budinger, Scott Delbecq, Félix Pollet
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
