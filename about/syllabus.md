@@ -8,11 +8,14 @@
 - Félix Pollet  (felix.pollet@isae-supaero.fr)
 
 ## Schedule (2023-2024)
+
+INSA Toulouse  
+- See ADE (Marc Budinger)  
+
 ISAE Supaero
 - 12/01/2024: 4 hours lectures & labs (Scott Delbecq & Félix Pollet)
-- 19/01/2024: 6 hours lectures & labs (Scott Delbecq & Félix Pollet)
-INSA Toulouse
-- See ADE (Marc Budinger)
+- 19/01/2024: 6 hours lectures & labs (Scott Delbecq & Félix Pollet)  
+
 
 ## Course Description
 
@@ -29,8 +32,8 @@ Mechatronic and aerospace systems are highly complex systems that often have to 
 Design optimization of a multirotor UAV
 
 ## Evaluation
-- Project report (ISAE Supaero)
 - Project report & Written control (INSA Toulouse)
+- Project report (ISAE Supaero)
 
 
 ## Tools:

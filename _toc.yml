@@ -17,20 +17,20 @@ parts:
       - file: classes/Lecture1/3-scenarios_and_design_drivers
       - file: classes/Lecture1/4-quizz
   - file: classes/Lecture2/summary
-    title: Estimation models
-    sections:
-      - file: classes/Lecture2/1-needs
-      - file: classes/Lecture2/2-linear_regressions
-      - file: classes/Lecture2/3-scaling_laws
-      - file: classes/Lecture2/4-quizz
-  - file: classes/Lecture4/summary
     title: Simulation and evaluation models
     sections:
-      - file: classes/Lecture3/1-simulation_models
-      - file: classes/Lecture3/2-simulation_model_examples
-      - file: classes/Lecture3/3-evaluation_models
-      - file: classes/Lecture3/4-evaluation_model_examples
-      - file: classes/Lecture3/5-quizz
+      - file: classes/Lecture2/1-simulation_models
+      - file: classes/Lecture2/2-simulation_model_examples
+      - file: classes/Lecture2/3-evaluation_models
+      - file: classes/Lecture2/4-evaluation_model_examples
+      - file: classes/Lecture2/5-quizz
+  - file: classes/Lecture3/summary
+    title: Estimation models
+    sections:
+      - file: classes/Lecture3/1-needs
+      - file: classes/Lecture3/2-linear_regressions
+      - file: classes/Lecture3/3-scaling_laws
+      - file: classes/Lecture3/4-quizz
   - file: classes/Lecture3/summary
     title: Optimal sizing procedures
     sections:
