@@ -8,11 +8,10 @@ Finally, the lecture will end by presenting the concepts of scenarios and design
 
 For those interested, videos of this course are available online:  
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/h6V0P5p2Hlk?si=xOLHEupJaqEZmIui" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+- [Mechatronic systems: definition and design](https://youtu.be/h6V0P5p2Hlk?si=8hMhaRxWxADrjZel)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Y1vBlkmjJ2s?si=U2JinuuvaLZK7faA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+- [Sizing process and models](https://youtu.be/Y1vBlkmjJ2s?si=p8w94Yb8NL-c-wAw)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s0wR5wKXwrA?si=5-zCz2TfGDbuJD2H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
-
+- [Design drivers and sizing scenarios](https://youtu.be/s0wR5wKXwrA?si=N29q8sFkPPgy74RE)
 
 
