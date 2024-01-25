@@ -8,7 +8,7 @@ The goal of evaluation model is to check the ability of a component to operate i
 
 For those interested, videos of this course are available online:
 
-- [Simulatoin models and mission profiles](https://youtu.be/M6HZlkl3x7w?si=t-7wzTS0Y0sk0qMw)
+- [Simulation models and mission profiles](https://youtu.be/M6HZlkl3x7w?si=t-7wzTS0Y0sk0qMw)
 
 - [Evaluation models and lifetimes calculation](https://youtu.be/n0IhKxVZ23k?si=_HNo_rsUYZboEOxZ)
 

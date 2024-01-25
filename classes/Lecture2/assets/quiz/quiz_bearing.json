@@ -1,0 +1,54 @@
+[
+	{
+        "question": "Enter the service life in millions of revolutions (integer please):",
+        "type": "numeric",
+        "precision": 0,
+        "answers": [
+            {
+                "type": "value",
+                "value": 169,
+                "correct": true,
+                "feedback": "Correct !"
+            },
+            {
+                "type": "default",
+                "feedback": "Try again."
+            }
+        ]
+    },
+	{
+        "question": "Enter the service life in hours (integer please):",
+        "type": "numeric",
+        "precision": 0,
+        "answers": [
+            {
+                "type": "value",
+                "value": 940,
+                "correct": true,
+                "feedback": "Correct !"
+            },
+            {
+                "type": "default",
+                "feedback": "Try again."
+            }
+        ]
+    },	
+	{
+        "question": "What should be the dynamic load Cd (integer round in kN) if we want 2000 operating hours ?",
+        "type": "numeric",
+        "precision": 0,
+        "answers": [
+            {
+                "type": "value",
+                "value": 71,
+                "correct": true,
+                "feedback": "Correct !"
+            },
+            {
+                "type": "default",
+                "feedback": "Try again."
+            }
+        ]
+    }	
+    
+]

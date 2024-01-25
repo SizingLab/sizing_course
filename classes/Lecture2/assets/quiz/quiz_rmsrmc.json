@@ -1,0 +1,70 @@
+[
+    {
+        "question": "What is the RMS value (integer value) for F(t) if Amax = 100 ?",
+        "type": "numeric",
+		"precision": 0,
+        "answers": [
+            {
+                "type": "value",
+                "value": 71,
+                "correct": true,
+                "feedback": "True !"
+            },
+            {
+                "type": "default",
+                "feedback": "Try again."
+            }
+			]
+	},
+	{
+        "question": "What is the RMS value (integer value) for F(t) if Bmax = 100 ?",
+        "type": "numeric",
+		"precision": 0,
+        "answers": [
+            {
+                "type": "value",
+                "value": 100,
+                "correct": true,
+                "feedback": "True !"
+            },
+            {
+                "type": "default",
+                "feedback": "Try again."
+            }
+			]
+	},
+	{
+        "question": "What is the RMS value (integer value) for F(t) if Cmax = 100 ?",
+        "type": "numeric",
+		"precision": 0,
+        "answers": [
+            {
+                "type": "value",
+                "value": 82,
+                "correct": true,
+                "feedback": "True !"
+            },
+            {
+                "type": "default",
+                "feedback": "Try again."
+            }
+			]
+	},
+	{
+        "question": "What is the RMC value (integer value) for F(t) if Dmax = 100 ?",
+        "type": "numeric",
+		"precision": 0,
+        "answers": [
+            {
+                "type": "value",
+                "value": 79,
+                "correct": true,
+                "feedback": "True !"
+            },
+            {
+                "type": "default",
+                "feedback": "Try again."
+            }
+			]
+	}
+]
