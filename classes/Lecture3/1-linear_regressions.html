@@ -1,0 +1,1638 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>3.1. Linear regressions &#8212; Sizing and optimization of mechatronic systems</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture3/1-linear_regressions';</script>
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.2. Quiz" href="2-quiz_regressions.html" />
+    <link rel="prev" title="3. Evaluation models - Summary" href="summary.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../about/homepage.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Sizing and optimization of mechatronic systems - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Sizing and optimization of mechatronic systems - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction and overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about/syllabus.html">Preliminary design and sizing of mechatronic systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/installation.html">Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture1/summary.html">1. Architectures, sizing scenarios and design drivers</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture1/1-objectives_and_ressources.html">1.1. Objectives and ressources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture1/2-needs_and_general_methodology.html">1.2. Needs and general methodology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture1/3-scenarios_and_design_drivers.html">1.3. Scenarios and Design Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture1/4-quiz.html">1.4. Quiz</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture2/summary.html">2. Simulation and evaluation models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2/1-simulation_models.html">2.1. Simulation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2/2-evaluation_models.html">2.2. Evaluation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2/3-quiz_evaluation_models.html">2.3. Quiz</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2/4-homework.html">2.5. Homework: mission profile analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">3. Estimation models</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.1. Linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-quiz_regressions.html">3.2. Quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-scaling_laws.html">3.3. Scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-quiz_scaling_laws.html">3.4. Quiz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture4/summary.html">4. Optimal sizing procedures</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture4/1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics of optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture4/2-optimization_examples.html">4.2. Optimization problem examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture4/3-sizing_procedures.html">4.3. Development of a sizing procedure using design graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture4/4-sizing_procedure_examples.html">4.4. Sizing procedure examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture4/5-quizz.html">4.5. Quizz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture5/summary.html">5. MDAO and surrogate models</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture5/1-mdao.html">5.1. MDAO (Multidisciplinary Design Analysis and Optimization)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lecture5/2-mdao_examples.html">5.3. MDAO examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture5/3-surrogate_models.html">5.4. Surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture5/4-surrogate_model_examples.html">5.5. Surrogate model examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture5/5-quizz.html">5.6. Quizz</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture6/summary.html">6. LCA and sustainable scenarios</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture6/1-lca.html">6.1. Life Cyle Assessment (LCA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture6/2-lca_examples.html">6.2. LCA examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture6/3-sustainable_scenarios.html">6.3. Sustainable scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture6/4-sustainable_scenario_examples.html">6.4. Sustainable scenario examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture6/5-quizz.html">6.5. Quizz</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-multirotor/summary.html">Multirotor UAV</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/01_CaseStudy.html">Case study and architecture presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/02_SizingScenariosEquations-Student.html">Sizing scenarios and design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/02_SizingScenariosEquations.html">Sizing scenarios and design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/03_PropellerLinearRegression-Student.html">Propellers estimation models with dimensional analysis and linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/03_PropellerLinearRegression.html">Propellers estimation models with dimensional analysis and linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/04_ScalingLawsElectricalComponents-Student.html">Scaling laws of electrical components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/04_ScalingLawsElectricalComponents.html">Scaling laws of electrical components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05_SizingModelsIntroduction.html">Sizing models for multi-rotor definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05a_PropellerSelection-Student.html">Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05a_PropellerSelection.html">Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05b_MotorSelection-Student.html">Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05b_MotorSelection.html">Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05c_BatteryESCSelection-Student.html">Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05c_BatteryESCSelection.html">Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05d_FrameSelection-Student.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05d_FrameSelection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/07_DesignExploration-Student.html">Design optimization and exploration of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/A1_Sizing_equations.html">Appendix 1: Sizing equations</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/1-sizing_scenarios-student.html">Modeling of the mechanical load (student version)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/1-sizing_scenarios.html">Modeling of the mechanical load</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/2-estimation_models-student.html">Estimation models with scaling laws and linear regression (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/2-estimation_models.html">Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/3-simulation_models-student.html">Simulation models with Python (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/3-simulation_models.html">Simulation models with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/4-evaluation_models-student.html">Evaluation models: endurance of the actuator (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/4-evaluation_models.html">Evaluation models: endurance of the actuator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/5-sizing_and_optimization-student.html">Sizing procedure and optimization (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/5-sizing_and_optimization.html">Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student.html">Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">Sizing procedure and optimization with OpenMDAO</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-watt_project/summary-short.html">Lab - Sustainable mobility - Mission profile &amp; Specification</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/00_SustainableMobility.html">Sustainable mobilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/01a_CaseStudy.html">Case study presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/01b_CaseStudy_Specification-Student.html">Case study specification (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/01b_CaseStudy_Specification.html">Case study specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/02a_Architecture-Student.html">Architecture of the converter and sizing scenarios (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/02b_Architecture_Hybrid.html">Hydrid Storage Architecture and Specification</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-watt_project/summary.html">Lab - Sustainable mobility - DC/DC converter sizing</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/02a_Architecture_UltraCapacitor.html">Architecture of the converter and sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/03_SizingScenarios.html">Equations of sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/04_ScalingLaws-Student.html">Estimation models with scaling laws and linear regression (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/04_ScalingLaws.html">Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/05_HeatsinkLinearRegression-Student.html">Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/05_HeatsinkLinearRegression.html">Heatsink  estimation models with simple and multiple linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/06_SizingCodeInductor.html">Sizing code of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/07_SizingCodeInductor-Surrogate-Student.html">Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/07_SizingCodeInductor-Surrogate.html">Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/08_DCDC_converter_sizing_introduction.html">Design graphs for the sizing a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/09_SizingCodeDCDCconverter.html">Sizing code of a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/10_LCA_Inductor-Student.html">Life Cycle Assessment of an inductor (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/10_LCA_Inductor.html">Life Cycle Assessment of an inductor</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/classes/Lecture3/1-linear_regressions.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/classes/Lecture3/1-linear_regressions.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/classes/Lecture3/1-linear_regressions.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclasses/Lecture3/1-linear_regressions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/classes/Lecture3/1-linear_regressions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Linear regressions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-data-analysis-main-steps">3.1.1. Statistical data analysis: main steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gearbox-data">3.1.2. Gearbox Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-parameters">3.1.3. Choosing parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">3.1.4. Linear regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-and-inertia-regression">3.1.5. Mass and inertia regression</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-regressions">
+<h1><span class="section-number">3.1. </span>Linear regressions<a class="headerlink" href="#linear-regressions" title="Permalink to this heading">#</a></h1>
+<p>During preliminary design and, above all, when optimising solutions, it is useful to have simple equations for calculating the main characteristics of the component. We will now look at how to transform data, coming from catalogs, into algebraic equations using regression.</p>
+<p><img alt="Simulation Models" src="../../_images/RegressionNeeds.png" /></p>
+<section id="statistical-data-analysis-main-steps">
+<h2><span class="section-number">3.1.1. </span>Statistical data analysis: main steps<a class="headerlink" href="#statistical-data-analysis-main-steps" title="Permalink to this heading">#</a></h2>
+<p>The main steps to follow in order to obtain an estimation model using data are:<br />
+1– <strong>Obtaining data</strong>: components’ data can be provided by catalogues or design models on which we will have simulated a set of well chosen design parameters (using design of experiments for instance).<br />
+2– <strong>Choosing parameters</strong> representating primary characteristics: the objective here is to reduce the number of inputs for the model. In order to do that, we can detect and choose the most important parameters using a correlation analysis. A dimensional analysis  can also help to reduce the number of coefficients to be considered.<br />
+3– <strong>Choosing the mathematical model type</strong>: this means to choose the mathematical form of the equation on which the regression will be applied (polynoms, linear sum of functions, power products,…).<br />
+4– <strong>Apply the regression</strong>: the objective is to minimize the disparity between data and the mathematical equation of the model.</p>
+</section>
+<section id="gearbox-data">
+<h2><span class="section-number">3.1.2. </span>Gearbox Data<a class="headerlink" href="#gearbox-data" title="Permalink to this heading">#</a></h2>
+<p>Examples of this notebook will be given using gear reducers data coming from manufacturers.</p>
+<p><img alt="Simulation Models" src="../../_images/GearBoxData.png" /></p>
+<p>These data are stored in excel files, which can be read here using the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package in <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> format.  The database contains a wide range of information: mass, torsional stiffness, efficiency, dimensions, etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Read the meaning of the different parameters</span>
+<span class="n">df_head</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;GearBoxHead.xlsx&quot;</span><span class="p">)</span>
+<span class="n">df_head</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Constructor</th>
+      <th>size</th>
+      <th>number stage</th>
+      <th>ratio</th>
+      <th>torque output</th>
+      <th>rate input</th>
+      <th>efficiency</th>
+      <th>torsional stiffness</th>
+      <th>backlash</th>
+      <th>inertia input</th>
+      <th>mass</th>
+      <th>Power</th>
+      <th>Diameter</th>
+      <th>Length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>(-)</td>
+      <td>(-)</td>
+      <td>(-)</td>
+      <td>(-)</td>
+      <td>(Nm)</td>
+      <td>(tr/min)</td>
+      <td>(%)</td>
+      <td>(Nm/arcmin)</td>
+      <td>(arcmin)</td>
+      <td>(kg cm2)</td>
+      <td>(kg)</td>
+      <td>(W)</td>
+      <td>(mm)</td>
+      <td>(mm)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Constructor</td>
+      <td>size</td>
+      <td>Ns</td>
+      <td>N</td>
+      <td>Tout</td>
+      <td>Win</td>
+      <td>Eta</td>
+      <td>K</td>
+      <td>Dteta</td>
+      <td>J</td>
+      <td>M</td>
+      <td>P</td>
+      <td>D</td>
+      <td>L</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;GearBoxData.xlsx&quot;</span><span class="p">)</span>
+
+<span class="c1"># Print the 5 first lines of the database</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Constructor</th>
+      <th>size</th>
+      <th>Ns</th>
+      <th>N</th>
+      <th>Tout</th>
+      <th>Win</th>
+      <th>Eta</th>
+      <th>K</th>
+      <th>Dteta</th>
+      <th>J</th>
+      <th>M</th>
+      <th>P</th>
+      <th>D</th>
+      <th>L</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NEUGART</td>
+      <td>PLS 70 HP-4</td>
+      <td>1</td>
+      <td>4</td>
+      <td>110.0</td>
+      <td>1700</td>
+      <td>98</td>
+      <td>7.0</td>
+      <td>3.0</td>
+      <td>0.42</td>
+      <td>2.6</td>
+      <td>4895.648552</td>
+      <td>75</td>
+      <td>122.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NEUGART</td>
+      <td>PLS 70 HP-5</td>
+      <td>1</td>
+      <td>5</td>
+      <td>110.0</td>
+      <td>2000</td>
+      <td>98</td>
+      <td>7.0</td>
+      <td>3.0</td>
+      <td>0.37</td>
+      <td>2.6</td>
+      <td>4607.669225</td>
+      <td>75</td>
+      <td>122.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NEUGART</td>
+      <td>PLS 90 HP-4</td>
+      <td>1</td>
+      <td>4</td>
+      <td>220.0</td>
+      <td>1350</td>
+      <td>98</td>
+      <td>10.0</td>
+      <td>3.0</td>
+      <td>1.05</td>
+      <td>4.0</td>
+      <td>7775.441818</td>
+      <td>100</td>
+      <td>138.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NEUGART</td>
+      <td>PLS 90 HP-5</td>
+      <td>1</td>
+      <td>5</td>
+      <td>220.0</td>
+      <td>1600</td>
+      <td>98</td>
+      <td>10.0</td>
+      <td>3.0</td>
+      <td>0.85</td>
+      <td>4.0</td>
+      <td>7372.270760</td>
+      <td>100</td>
+      <td>138.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NEUGART</td>
+      <td>PLS 115 HP-4</td>
+      <td>1</td>
+      <td>4</td>
+      <td>520.0</td>
+      <td>800</td>
+      <td>98</td>
+      <td>22.0</td>
+      <td>3.0</td>
+      <td>2.30</td>
+      <td>7.5</td>
+      <td>10890.854532</td>
+      <td>130</td>
+      <td>189.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="choosing-parameters">
+<h2><span class="section-number">3.1.3. </span>Choosing parameters<a class="headerlink" href="#choosing-parameters" title="Permalink to this heading">#</a></h2>
+<p>We will assume that we want to construct a gearbox mass estimation model. We therefore first need to determine which parameters are most important in estimating this. Using the catalogue data, we can apply a correlation analysis and display it in the form of a table showing the correlation between each parameter. This table is symmetrical.</p>
+<blockquote>
+<div><p><strong>Statistics Basic:</strong>
+Classical statistic tools can be used to characterize a data serie and the links that exist between two data series:<br />
+-The <strong>mean</strong> of each data series.<br />
+<span class="math notranslate nohighlight">\(\bar{x}=\frac{1}{n}\sum_{i=1}^{n} x_i\)</span><br />
+-The <strong>standard deviation</strong> which gives the dispersion of a series of values, around their mean value.<br />
+<span class="math notranslate nohighlight">\(\sigma=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n} (x_i-\bar{x})^2}\)</span><br />
+-The <strong>covariance</strong> which is a number that gives the possibility to evaluate the variation way of two variables and , that way, define if these variables are independant or not. That way, if 2 quantities vary the same way, or in opposite ways, the covariance value will be higher.<br />
+<span class="math notranslate nohighlight">\(cov(x,y)=\frac{1}{n-1}\sum_{i=1}^{n} (x_i-\bar{x})(y_i-\bar{y})\)</span><br />
+-The <strong>correlation</strong>, also related to the link between two variables. It’s actually the Covariance, normalized on a scale from -1 to 1.<br />
+<span class="math notranslate nohighlight">\(cor(x,y)=\frac{1}{n-1}\frac{\sum_{i=1}^{n} (x_i-\bar{x})(y_i-\bar{y})}{s_xs_y}\)</span></p>
+</div></blockquote>
+<p>Dataframes can be used to calculate the correlation matrix directly and simply.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2070/1134722465.py:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+  df.corr()
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Ns</th>
+      <th>N</th>
+      <th>Tout</th>
+      <th>Win</th>
+      <th>Eta</th>
+      <th>K</th>
+      <th>Dteta</th>
+      <th>J</th>
+      <th>M</th>
+      <th>P</th>
+      <th>D</th>
+      <th>L</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Ns</th>
+      <td>1.000000</td>
+      <td>0.354501</td>
+      <td>-0.204966</td>
+      <td>0.530513</td>
+      <td>-0.734179</td>
+      <td>-0.236948</td>
+      <td>0.680305</td>
+      <td>-0.238785</td>
+      <td>-0.103814</td>
+      <td>-0.203182</td>
+      <td>-0.263935</td>
+      <td>0.293952</td>
+    </tr>
+    <tr>
+      <th>N</th>
+      <td>0.354501</td>
+      <td>1.000000</td>
+      <td>0.063755</td>
+      <td>0.040779</td>
+      <td>-0.608730</td>
+      <td>0.079991</td>
+      <td>0.182424</td>
+      <td>0.057529</td>
+      <td>-0.000207</td>
+      <td>-0.244010</td>
+      <td>0.043081</td>
+      <td>-0.098758</td>
+    </tr>
+    <tr>
+      <th>Tout</th>
+      <td>-0.204966</td>
+      <td>0.063755</td>
+      <td>1.000000</td>
+      <td>-0.436716</td>
+      <td>0.088456</td>
+      <td>0.916671</td>
+      <td>-0.320480</td>
+      <td>0.885686</td>
+      <td>0.800741</td>
+      <td>0.290815</td>
+      <td>0.798191</td>
+      <td>0.350260</td>
+    </tr>
+    <tr>
+      <th>Win</th>
+      <td>0.530513</td>
+      <td>0.040779</td>
+      <td>-0.436716</td>
+      <td>1.000000</td>
+      <td>-0.272927</td>
+      <td>-0.437381</td>
+      <td>0.639898</td>
+      <td>-0.301804</td>
+      <td>-0.442977</td>
+      <td>-0.127484</td>
+      <td>-0.652336</td>
+      <td>-0.139995</td>
+    </tr>
+    <tr>
+      <th>Eta</th>
+      <td>-0.734179</td>
+      <td>-0.608730</td>
+      <td>0.088456</td>
+      <td>-0.272927</td>
+      <td>1.000000</td>
+      <td>0.063514</td>
+      <td>-0.505211</td>
+      <td>0.082149</td>
+      <td>0.073080</td>
+      <td>0.357831</td>
+      <td>0.156639</td>
+      <td>0.000155</td>
+    </tr>
+    <tr>
+      <th>K</th>
+      <td>-0.236948</td>
+      <td>0.079991</td>
+      <td>0.916671</td>
+      <td>-0.437381</td>
+      <td>0.063514</td>
+      <td>1.000000</td>
+      <td>-0.332987</td>
+      <td>0.775942</td>
+      <td>0.853291</td>
+      <td>0.219011</td>
+      <td>0.820234</td>
+      <td>0.280267</td>
+    </tr>
+    <tr>
+      <th>Dteta</th>
+      <td>0.680305</td>
+      <td>0.182424</td>
+      <td>-0.320480</td>
+      <td>0.639898</td>
+      <td>-0.505211</td>
+      <td>-0.332987</td>
+      <td>1.000000</td>
+      <td>-0.256920</td>
+      <td>-0.288968</td>
+      <td>-0.167897</td>
+      <td>-0.465782</td>
+      <td>-0.023637</td>
+    </tr>
+    <tr>
+      <th>J</th>
+      <td>-0.238785</td>
+      <td>0.057529</td>
+      <td>0.885686</td>
+      <td>-0.301804</td>
+      <td>0.082149</td>
+      <td>0.775942</td>
+      <td>-0.256920</td>
+      <td>1.000000</td>
+      <td>0.587566</td>
+      <td>0.347930</td>
+      <td>0.640275</td>
+      <td>0.176444</td>
+    </tr>
+    <tr>
+      <th>M</th>
+      <td>-0.103814</td>
+      <td>-0.000207</td>
+      <td>0.800741</td>
+      <td>-0.442977</td>
+      <td>0.073080</td>
+      <td>0.853291</td>
+      <td>-0.288968</td>
+      <td>0.587566</td>
+      <td>1.000000</td>
+      <td>0.295261</td>
+      <td>0.791580</td>
+      <td>0.592270</td>
+    </tr>
+    <tr>
+      <th>P</th>
+      <td>-0.203182</td>
+      <td>-0.244010</td>
+      <td>0.290815</td>
+      <td>-0.127484</td>
+      <td>0.357831</td>
+      <td>0.219011</td>
+      <td>-0.167897</td>
+      <td>0.347930</td>
+      <td>0.295261</td>
+      <td>1.000000</td>
+      <td>0.245700</td>
+      <td>0.355627</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>-0.263935</td>
+      <td>0.043081</td>
+      <td>0.798191</td>
+      <td>-0.652336</td>
+      <td>0.156639</td>
+      <td>0.820234</td>
+      <td>-0.465782</td>
+      <td>0.640275</td>
+      <td>0.791580</td>
+      <td>0.245700</td>
+      <td>1.000000</td>
+      <td>0.428592</td>
+    </tr>
+    <tr>
+      <th>L</th>
+      <td>0.293952</td>
+      <td>-0.098758</td>
+      <td>0.350260</td>
+      <td>-0.139995</td>
+      <td>0.000155</td>
+      <td>0.280267</td>
+      <td>-0.023637</td>
+      <td>0.176444</td>
+      <td>0.592270</td>
+      <td>0.355627</td>
+      <td>0.428592</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>This matrix can then be <a class="reference external" href="https://medium.com/&#64;szabo.bibor/how-to-create-a-seaborn-correlation-heatmap-in-python-834c0686b88e">graphically formatted</a> for easier analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> 
+
+<span class="c1"># define the mask to set the values in the upper triangle to Truemask </span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">))</span> <span class="c1"># one_like = 1 matrix with df.corr size + triu = Upper triangle of an array.</span>
+
+<span class="n">heatmap</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;BrBG&#39;</span><span class="p">)</span>
+<span class="n">heatmap</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Triangle Correlation Heatmap&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fontsize&#39;</span><span class="p">:</span><span class="mi">18</span><span class="p">},</span> <span class="n">pad</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that :</p>
+<ul class="simple">
+<li><p>the reduction ratio and the number of stages have little influence on the mass</p></li>
+<li><p>the most important and primary parameter is the output torque.</p></li>
+</ul>
+<p><strong>Note:</strong> the <a class="reference external" href="https://www.ablebits.com/office-addins-blog/correlation-excel-coefficient-matrix-graph/">correlation matrix</a> can also be produced in Excel using the <a class="reference external" href="https://support.microsoft.com/fr-fr/office/charger-l-analysis-toolpak-dans-excel-6a63e598-cd6d-42e3-9317-6b40ba1a66b4">analysis toolpack</a>.</p>
+</section>
+<section id="linear-regression">
+<h2><span class="section-number">3.1.4. </span>Linear regression<a class="headerlink" href="#linear-regression" title="Permalink to this heading">#</a></h2>
+<p>Parametric regressions are based on models requiring the estimation of a finite number of parameters <span class="math notranslate nohighlight">\(\theta\)</span> that express the effects of basis functions on the response surface. With polynomial interpolation or regression, the basis functions are <span class="math notranslate nohighlight">\({1, x, x^2, …, x^p}\)</span>. The idea is to obtain a surface that is differentiable and continuous. For a polynomial development of order 2 (p = 2), the expression is:</p>
+<p><span class="math notranslate nohighlight">\(y=f(\underline{x}, \underline{\theta})=\theta_0 + \sum_{i=1}^{k} \theta_0 x_i + \sum_{i=1, j=1}^{k} \theta_{ij} x_i x_j \)</span></p>
+<p>with <span class="math notranslate nohighlight">\(\underline{x}=\begin{pmatrix}
+           x_{1} \\
+           x_{2} \\
+           \vdots \\
+           x_{k}
+         \end{pmatrix}\)</span></p>
+<p>which, for the <span class="math notranslate nohighlight">\(n\)</span> experiments, can be written with a matrix representation:
+<span class="math notranslate nohighlight">\(\underline{Y}=\underline{X}.\underline{\theta}+\underline{\varepsilon}\)</span></p>
+<p>with <span class="math notranslate nohighlight">\(\underline{Y}=\begin{pmatrix}
+           y^{(1)} \\
+           \vdots \\
+           y^{(n)}
+         \end{pmatrix}\)</span> ,
+<span class="math notranslate nohighlight">\(\underline{x}=\begin{pmatrix}
+           1, x_{1}^{(1)}, ..., x_{k}^{2(1)}   \\
+           \vdots \\
+           1, x_{1}^{(n)}, ..., x_{k}^{2(n)}   
+         \end{pmatrix}\)</span>,
+<span class="math notranslate nohighlight">\(\underline{x}=\begin{pmatrix}
+           \theta_0 \\
+           \vdots \\
+           \theta_{k_{theta}}
+         \end{pmatrix}\)</span>,
+<span class="math notranslate nohighlight">\(\underline{x}=\begin{pmatrix}
+           \varepsilon^{(1)} \\
+           \vdots \\
+           y^{(n)}
+         \end{pmatrix}\)</span></p>
+<p>where :</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k_x\)</span> is the number of design parameters;</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> is the number of experiments of the DoE;</p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> is the order of the polynomial function;</p></li>
+<li><p><span class="math notranslate nohighlight">\(k_\theta\)</span> is the size of vector θ.</p></li>
+</ul>
+<p>If <span class="math notranslate nohighlight">\(n=k_\theta\)</span>, the matrix <span class="math notranslate nohighlight">\(X\)</span> is square and the interpolation is possible. In the most common case, where <span class="math notranslate nohighlight">\(k_\theta\)</span> is lower than <span class="math notranslate nohighlight">\(n\)</span>, interpolation is impossible. The objective of regression is to find an approximation showing an error of zero mean and a minimum standard deviation. The errors are expressed by:<br />
+<span class="math notranslate nohighlight">\(\underline{\varepsilon}=\underline{Y}-\underline{X}.\underline{\theta}\)</span></p>
+<p>The standard deviation is a function of the sum of the quadratic error <span class="math notranslate nohighlight">\(\underline{\varepsilon}^t\underline{\varepsilon}\)</span> and is minimum for:</p>
+<p><span class="math notranslate nohighlight">\(\underline{\theta}=(\underline{X}^t\underline{X})^{-1} \underline{X}^t\underline{Y}\)</span></p>
+</section>
+<section id="mass-and-inertia-regression">
+<h2><span class="section-number">3.1.5. </span>Mass and inertia regression<a class="headerlink" href="#mass-and-inertia-regression" title="Permalink to this heading">#</a></h2>
+<p>The aim is to perform regression on part of the data: the <a class="reference external" href="https://us.sumitomodrive.com/sites/default/files/2023-07/precision-gearbox-catalog-07-2021.pdf">Sumitomo cyclo-reducers</a>. First, only the Sumitomo are selected:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data Filtering</span>
+<span class="c1"># Keeping only SUMITOMO type</span>
+<span class="n">df_S</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Constructor&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;SUMITOMO&quot;</span><span class="p">]</span>
+<span class="n">df_S</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Constructor</th>
+      <th>size</th>
+      <th>Ns</th>
+      <th>N</th>
+      <th>Tout</th>
+      <th>Win</th>
+      <th>Eta</th>
+      <th>K</th>
+      <th>Dteta</th>
+      <th>J</th>
+      <th>M</th>
+      <th>P</th>
+      <th>D</th>
+      <th>L</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>613</th>
+      <td>SUMITOMO</td>
+      <td>106</td>
+      <td>1</td>
+      <td>11</td>
+      <td>25.0</td>
+      <td>500</td>
+      <td>95</td>
+      <td>1.5</td>
+      <td>3.0</td>
+      <td>0.15</td>
+      <td>1.2</td>
+      <td>118.999722</td>
+      <td>85</td>
+      <td>130.0</td>
+    </tr>
+    <tr>
+      <th>614</th>
+      <td>SUMITOMO</td>
+      <td>106</td>
+      <td>1</td>
+      <td>17</td>
+      <td>25.0</td>
+      <td>500</td>
+      <td>95</td>
+      <td>1.6</td>
+      <td>3.0</td>
+      <td>0.14</td>
+      <td>1.2</td>
+      <td>76.999820</td>
+      <td>85</td>
+      <td>130.0</td>
+    </tr>
+    <tr>
+      <th>615</th>
+      <td>SUMITOMO</td>
+      <td>106</td>
+      <td>1</td>
+      <td>29</td>
+      <td>25.0</td>
+      <td>500</td>
+      <td>95</td>
+      <td>2.6</td>
+      <td>3.0</td>
+      <td>0.14</td>
+      <td>1.2</td>
+      <td>45.137825</td>
+      <td>85</td>
+      <td>130.0</td>
+    </tr>
+    <tr>
+      <th>616</th>
+      <td>SUMITOMO</td>
+      <td>106</td>
+      <td>1</td>
+      <td>43</td>
+      <td>25.0</td>
+      <td>500</td>
+      <td>95</td>
+      <td>2.8</td>
+      <td>3.0</td>
+      <td>0.14</td>
+      <td>1.2</td>
+      <td>30.441789</td>
+      <td>85</td>
+      <td>130.0</td>
+    </tr>
+    <tr>
+      <th>617</th>
+      <td>SUMITOMO</td>
+      <td>108</td>
+      <td>1</td>
+      <td>11</td>
+      <td>75.0</td>
+      <td>500</td>
+      <td>95</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>1.30</td>
+      <td>4.3</td>
+      <td>356.999165</td>
+      <td>118</td>
+      <td>180.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The data shows a dispersion due to several types of reducers. They differ in the type of output shaft. We will now only included the lightest ones here, i.e. the FC range.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;Tout&quot;</span><span class="p">],</span> <span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;M&quot;</span><span class="p">],</span> <span class="s2">&quot;bo&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Low speed torque (N.m)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Mass (kg)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Plot the data</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;Tout&quot;</span><span class="p">],</span> <span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;M&quot;</span><span class="p">],</span> <span class="s2">&quot;bo&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Low speed torque (N.m)&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Mass (kg)&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data Filtering</span>
+<span class="c1"># Keeping only FC range type</span>
+<span class="n">df_S</span> <span class="o">=</span> <span class="n">df_S</span><span class="p">[</span><span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;FC&quot;</span><span class="p">]</span>
+<span class="n">df_S</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Constructor</th>
+      <th>size</th>
+      <th>Ns</th>
+      <th>N</th>
+      <th>Tout</th>
+      <th>Win</th>
+      <th>Eta</th>
+      <th>K</th>
+      <th>Dteta</th>
+      <th>J</th>
+      <th>M</th>
+      <th>P</th>
+      <th>D</th>
+      <th>L</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>634</th>
+      <td>SUMITOMO</td>
+      <td>FC-A15(G)</td>
+      <td>1</td>
+      <td>59</td>
+      <td>149.0</td>
+      <td>1500</td>
+      <td>95</td>
+      <td>20.0</td>
+      <td>2.0</td>
+      <td>0.313</td>
+      <td>2.7</td>
+      <td>396.692632</td>
+      <td>120</td>
+      <td>60.0</td>
+    </tr>
+    <tr>
+      <th>635</th>
+      <td>SUMITOMO</td>
+      <td>FC-A15(G)</td>
+      <td>1</td>
+      <td>89</td>
+      <td>149.0</td>
+      <td>1500</td>
+      <td>95</td>
+      <td>20.0</td>
+      <td>2.0</td>
+      <td>0.310</td>
+      <td>2.7</td>
+      <td>262.976014</td>
+      <td>120</td>
+      <td>60.0</td>
+    </tr>
+    <tr>
+      <th>636</th>
+      <td>SUMITOMO</td>
+      <td>FC-A25(G)</td>
+      <td>1</td>
+      <td>29</td>
+      <td>349.0</td>
+      <td>1500</td>
+      <td>95</td>
+      <td>53.0</td>
+      <td>2.0</td>
+      <td>1.380</td>
+      <td>5.2</td>
+      <td>1890.372131</td>
+      <td>150</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <th>637</th>
+      <td>SUMITOMO</td>
+      <td>FC-A25(G)</td>
+      <td>1</td>
+      <td>59</td>
+      <td>349.0</td>
+      <td>1500</td>
+      <td>95</td>
+      <td>70.0</td>
+      <td>2.0</td>
+      <td>1.340</td>
+      <td>5.2</td>
+      <td>929.165963</td>
+      <td>150</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <th>638</th>
+      <td>SUMITOMO</td>
+      <td>FC-A25(G)</td>
+      <td>1</td>
+      <td>89</td>
+      <td>349.0</td>
+      <td>1500</td>
+      <td>95</td>
+      <td>70.0</td>
+      <td>2.0</td>
+      <td>1.330</td>
+      <td>5.2</td>
+      <td>615.963953</td>
+      <td>150</td>
+      <td>75.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;Tout&quot;</span><span class="p">],</span> <span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;M&quot;</span><span class="p">],</span> <span class="s2">&quot;bo&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Low speed torque (N.m)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Mass (kg)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Plot the data</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;Tout&quot;</span><span class="p">],</span> <span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;M&quot;</span><span class="p">],</span> <span class="s2">&quot;bo&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Low speed torque (N.m)&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Mass (kg)&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="https://scikit-learn.org">Scikit-learn</a>  is a free machine learning package and can be used for linear regression.  It features also various classification, regression and clustering algorithms including support-vector machines, random forests, gradient boosting, k-means, … Below an example of use of this package for <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html">linear regression</a> of the gear reducers data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">PolynomialFeatures</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;Tout&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="c1"># Torque input</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;M&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="c1"># Mass output</span>
+
+<span class="c1"># Matrix X and Y</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">1</span> <span class="c1"># order of polynomial regression</span>
+
+<span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">include_bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># 1 vector is nt necessary with sklearn</span>
+<span class="n">X</span> <span class="o">=</span><span class="n">poly</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1">#  reshape(-1,1) transforms our numpy array x from a 1D array to a 2D array</span>
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+      
+<span class="c1"># Create a new object for the linear regression</span>
+<span class="n">reg_M</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
+
+<span class="n">reg_M</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+<span class="c1"># Y vector prediction</span>
+<span class="n">M_est</span> <span class="o">=</span> <span class="n">reg_M</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># M regression Parameters</span>
+<span class="c1"># ----</span>
+<span class="n">coef</span> <span class="o">=</span> <span class="n">reg_M</span><span class="o">.</span><span class="n">coef_</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">reg_M</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">M_est</span><span class="p">)</span>
+
+
+<span class="c1"># Plot the data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Reference data&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">M_est</span><span class="p">,</span> <span class="s2">&quot;-g&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Data prediction&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Torque (N.m)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Mass (kg)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Comparison of reference data and regression&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mass estimation model : M = </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">coef</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> * Tout with R2=</span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c32b0e8c7a76eebbadd6546ab880e4dbc701b317dc58cd60d24218ede97f37ca.png" src="../../_images/c32b0e8c7a76eebbadd6546ab880e4dbc701b317dc58cd60d24218ede97f37ca.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mass estimation model : M = 1.54 + 0.01 * Tout with R2=0.999
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Note:</strong> the <a class="reference external" href="https://www.ablebits.com/office-addins-blog/linear-regression-analysis-excel/">linear regression</a> can also be produced in Excel using the <a class="reference external" href="https://support.microsoft.com/fr-fr/office/charger-l-analysis-toolpak-dans-excel-6a63e598-cd6d-42e3-9317-6b40ba1a66b4">analysis toolpack</a> or with trendline option on excel graphs.</p>
+<blockquote>
+<div><p><strong>Homework</strong>: Adapt previous code to set up an inertia estimation model. Two types of models can be used and compared: an order 2 polynom and a power law.</p>
+</div></blockquote>
+<p><strong>Note:</strong> A product of power laws, can be linearized by a logarithmic transformation.<br />
+<span class="math notranslate nohighlight">\(y=a_0 \prod_i x_i^{a_i} \longrightarrow log(y)=log(a_0) + \sum_i a_i log(x_i) \)</span></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./classes/Lecture3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="summary.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Evaluation models - Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2-quiz_regressions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Quiz</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-data-analysis-main-steps">3.1.1. Statistical data analysis: main steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gearbox-data">3.1.2. Gearbox Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-parameters">3.1.3. Choosing parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">3.1.4. Linear regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-and-inertia-regression">3.1.5. Mass and inertia regression</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marc Budinger, Scott Delbecq, Félix Pollet
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
