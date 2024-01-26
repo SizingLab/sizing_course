@@ -1,5 +1,5 @@
 (page_lecture_1)=
-Lecture 1 - Summary
+Sizing process - Summary
 =======================
 
 This is the first lecture for the sizing and optimization of mechatronic systems course. This lecture is an introduction where the objectives and ressources will be outlined.

@@ -26,10 +26,10 @@ parts:
   - file: classes/Lecture3/summary
     title: Estimation models
     sections:
-      - file: classes/Lecture3/1-needs
-      - file: classes/Lecture3/2-linear_regressions
+      - file: classes/Lecture3/1-linear_regressions
+      - file: classes/Lecture3/2-quiz_regressions
       - file: classes/Lecture3/3-scaling_laws
-      - file: classes/Lecture3/4-quiz
+      - file: classes/Lecture3/4-quiz_scaling_laws
   - file: classes/Lecture4/summary
     title: Optimal sizing procedures
     sections:
