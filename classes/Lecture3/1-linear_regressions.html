@@ -827,7 +827,7 @@ Classical statistic tools can be used to characterize a data serie and the links
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2066/1134722465.py:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2192/1134722465.py:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
   df.corr()
 </pre></div>
 </div>
@@ -1066,16 +1066,13 @@ Classical statistic tools can be used to characterize a data serie and the links
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2192/2861457890.py:8: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+  mask = np.triu(np.ones_like(df.corr(), dtype=bool)) # one_like = 1 matrix with df.corr size + triu = Upper triangle of an array.
+/tmp/ipykernel_2192/2861457890.py:10: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+  heatmap = sns.heatmap(df.corr(), mask=mask, vmin=-1, vmax=1, annot=True, cmap=&#39;BrBG&#39;)
 </pre></div>
 </div>
+<img alt="../../_images/80399a46dda9a819a267cbbe5256944c172ac9158f89d30fff86236067560e82.png" src="../../_images/80399a46dda9a819a267cbbe5256944c172ac9158f89d30fff86236067560e82.png" />
 </div>
 </div>
 <p>We can see that :</p>
@@ -1279,17 +1276,7 @@ Classical statistic tools can be used to characterize a data serie and the links
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Plot the data</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;Tout&quot;</span><span class="p">],</span> <span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;M&quot;</span><span class="p">],</span> <span class="s2">&quot;bo&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Low speed torque (N.m)&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Mass (kg)&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
-</pre></div>
-</div>
+<img alt="../../_images/3b96e275dc67232888248ce0d091dbdd7a1a7c2f3583005886cf27535ef17fdd.png" src="../../_images/3b96e275dc67232888248ce0d091dbdd7a1a7c2f3583005886cf27535ef17fdd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1438,17 +1425,7 @@ Classical statistic tools can be used to characterize a data serie and the links
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Plot the data</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;Tout&quot;</span><span class="p">],</span> <span class="n">df_S</span><span class="p">[</span><span class="s2">&quot;M&quot;</span><span class="p">],</span> <span class="s2">&quot;bo&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Low speed torque (N.m)&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Mass (kg)&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
-</pre></div>
-</div>
+<img alt="../../_images/41a7f4ae1a11c2ccbb69c4e730f328e2c3561c939825965ce7cd9b32c885043a.png" src="../../_images/41a7f4ae1a11c2ccbb69c4e730f328e2c3561c939825965ce7cd9b32c885043a.png" />
 </div>
 </div>
 <p><a class="reference external" href="https://scikit-learn.org">Scikit-learn</a>  is a free machine learning package and can be used for linear regression.  It features also various classification, regression and clustering algorithms including support-vector machines, random forests, gradient boosting, k-means, … Below an example of use of this package for <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html">linear regression</a> of the gear reducers data.</p>
