@@ -194,10 +194,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture4/summary.html">4. Optimal sizing procedures</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lecture4/1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics of optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture4/2-optimization_examples.html">4.2. Optimization problem examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture4/2-optimization_examples.html">4.2. Optimization with python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lecture4/3-sizing_procedures.html">4.3. Development of a sizing procedure using design graphs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture4/4-sizing_procedure_examples.html">4.4. Sizing procedure examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture4/5-quizz.html">4.5. Quizz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture4/4-sizing_procedure_examples.html">4.4. Design graph and optimization with python</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture5/summary.html">5. MDAO and surrogate models</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -573,13 +572,13 @@ document.write(`
 <p><img alt="Linear regression" src="../../_images/LinearRegression_ScatterPlot.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="LRiYJrrCUSgP" data-shufflequestions="False"
+<div class="output text_html"><div id="PYvXpxPQDSyA" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#LRiYJrrCUSgP {
+#PYvXpxPQDSyA {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -749,7 +748,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsLRiYJrrCUSgP=[
+</style></div><script type="application/javascript">var questionsPYvXpxPQDSyA=[
     {
         "question": "Which correlation correlation best describes the scatter plot?",
         "type": "multiple_choice",
@@ -1556,8 +1555,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("LRiYJrrCUSgP")) {
-            show_questions(questionsLRiYJrrCUSgP,  LRiYJrrCUSgP); 
+          if(document.getElementById("PYvXpxPQDSyA")) {
+            show_questions(questionsPYvXpxPQDSyA,  PYvXpxPQDSyA); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1566,8 +1565,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("LRiYJrrCUSgP");
-        // console.log(document.getElementById("LRiYJrrCUSgP"));
+        //console.log("PYvXpxPQDSyA");
+        // console.log(document.getElementById("PYvXpxPQDSyA"));
 
         try_show();
         }
@@ -1577,13 +1576,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Bearing correlation matrix" src="../../_images/LinearRegression_CorrelationBearing.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="KXubXkKTcTwf" data-shufflequestions="False"
+<div class="output text_html"><div id="jvNunkWMcsVE" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#KXubXkKTcTwf {
+#jvNunkWMcsVE {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1753,7 +1752,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsKXubXkKTcTwf=[
+</style></div><script type="application/javascript">var questionsjvNunkWMcsVE=[
     {
         "question": "Select the variable that seems the most related to the Mass.",
         "type": "multiple_choice",
@@ -2529,8 +2528,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("KXubXkKTcTwf")) {
-            show_questions(questionsKXubXkKTcTwf,  KXubXkKTcTwf); 
+          if(document.getElementById("jvNunkWMcsVE")) {
+            show_questions(questionsjvNunkWMcsVE,  jvNunkWMcsVE); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2539,8 +2538,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("KXubXkKTcTwf");
-        // console.log(document.getElementById("KXubXkKTcTwf"));
+        //console.log("jvNunkWMcsVE");
+        // console.log(document.getElementById("jvNunkWMcsVE"));
 
         try_show();
         }
@@ -2553,13 +2552,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Best fit" src="../../_images/LinearRegression_bestFit.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="dSkYMuFvWyWt" data-shufflequestions="False"
+<div class="output text_html"><div id="cQLRXXjpctEx" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#dSkYMuFvWyWt {
+#cQLRXXjpctEx {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2729,7 +2728,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsdSkYMuFvWyWt=[
+</style></div><script type="application/javascript">var questionscQLRXXjpctEx=[
     {
         "question": "For which data set is this line the best fit?",
         "type": "multiple_choice",
@@ -3505,8 +3504,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("dSkYMuFvWyWt")) {
-            show_questions(questionsdSkYMuFvWyWt,  dSkYMuFvWyWt); 
+          if(document.getElementById("cQLRXXjpctEx")) {
+            show_questions(questionscQLRXXjpctEx,  cQLRXXjpctEx); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -3515,8 +3514,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("dSkYMuFvWyWt");
-        // console.log(document.getElementById("dSkYMuFvWyWt"));
+        //console.log("cQLRXXjpctEx");
+        // console.log(document.getElementById("cQLRXXjpctEx"));
 
         try_show();
         }
@@ -3525,13 +3524,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Regression analysis" src="../../_images/LinearRegression_ValidationRegression.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="LzButOBzkbnQ" data-shufflequestions="False"
+<div class="output text_html"><div id="RHGBIzSAKrLo" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#LzButOBzkbnQ {
+#RHGBIzSAKrLo {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3701,7 +3700,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsLzButOBzkbnQ=[
+</style></div><script type="application/javascript">var questionsRHGBIzSAKrLo=[
     {
         "question": "What is the greatest concern about the regression above?",
         "type": "multiple_choice",
@@ -4482,8 +4481,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("LzButOBzkbnQ")) {
-            show_questions(questionsLzButOBzkbnQ,  LzButOBzkbnQ); 
+          if(document.getElementById("RHGBIzSAKrLo")) {
+            show_questions(questionsRHGBIzSAKrLo,  RHGBIzSAKrLo); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -4492,8 +4491,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("LzButOBzkbnQ");
-        // console.log(document.getElementById("LzButOBzkbnQ"));
+        //console.log("RHGBIzSAKrLo");
+        // console.log(document.getElementById("RHGBIzSAKrLo"));
 
         try_show();
         }
@@ -4503,13 +4502,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Regression analysis" src="../../_images/LinearRegression_BearingRegression.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="righpLfToyFS" data-shufflequestions="False"
+<div class="output text_html"><div id="FNWlBOBZyiwc" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#righpLfToyFS {
+#FNWlBOBZyiwc {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -4679,7 +4678,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsrighpLfToyFS=[
+</style></div><script type="application/javascript">var questionsFNWlBOBZyiwc=[
     {
         "question": "Some points have been removed. What for?",
         "type": "multiple_choice",
@@ -5471,8 +5470,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("righpLfToyFS")) {
-            show_questions(questionsrighpLfToyFS,  righpLfToyFS); 
+          if(document.getElementById("FNWlBOBZyiwc")) {
+            show_questions(questionsFNWlBOBZyiwc,  FNWlBOBZyiwc); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -5481,8 +5480,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("righpLfToyFS");
-        // console.log(document.getElementById("righpLfToyFS"));
+        //console.log("FNWlBOBZyiwc");
+        // console.log(document.getElementById("FNWlBOBZyiwc"));
 
         try_show();
         }
@@ -5492,13 +5491,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Regression analysis" src="../../_images/LinearRegression_BearingTransformation.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="YCnZRchYfvxY" data-shufflequestions="False"
+<div class="output text_html"><div id="gJXNTDnjaMDI" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#YCnZRchYfvxY {
+#gJXNTDnjaMDI {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -5668,7 +5667,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsYCnZRchYfvxY=[
+</style></div><script type="application/javascript">var questionsgJXNTDnjaMDI=[
     {
         "question": "What is the equation of the regression?",
         "type": "multiple_choice",
@@ -6439,8 +6438,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("YCnZRchYfvxY")) {
-            show_questions(questionsYCnZRchYfvxY,  YCnZRchYfvxY); 
+          if(document.getElementById("gJXNTDnjaMDI")) {
+            show_questions(questionsgJXNTDnjaMDI,  gJXNTDnjaMDI); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -6449,8 +6448,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("YCnZRchYfvxY");
-        // console.log(document.getElementById("YCnZRchYfvxY"));
+        //console.log("gJXNTDnjaMDI");
+        // console.log(document.getElementById("gJXNTDnjaMDI"));
 
         try_show();
         }

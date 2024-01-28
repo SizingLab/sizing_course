@@ -196,10 +196,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture4/summary.html">4. Optimal sizing procedures</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lecture4/1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics of optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture4/2-optimization_examples.html">4.2. Optimization problem examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture4/2-optimization_examples.html">4.2. Optimization with python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lecture4/3-sizing_procedures.html">4.3. Development of a sizing procedure using design graphs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture4/4-sizing_procedure_examples.html">4.4. Sizing procedure examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture4/5-quizz.html">4.5. Quizz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture4/4-sizing_procedure_examples.html">4.4. Design graph and optimization with python</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture5/summary.html">5. MDAO and surrogate models</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -827,7 +826,7 @@ Classical statistic tools can be used to characterize a data serie and the links
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2192/1134722465.py:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2181/1134722465.py:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
   df.corr()
 </pre></div>
 </div>
@@ -1066,9 +1065,9 @@ Classical statistic tools can be used to characterize a data serie and the links
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2192/2861457890.py:8: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2181/2861457890.py:8: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
   mask = np.triu(np.ones_like(df.corr(), dtype=bool)) # one_like = 1 matrix with df.corr size + triu = Upper triangle of an array.
-/tmp/ipykernel_2192/2861457890.py:10: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+/tmp/ipykernel_2181/2861457890.py:10: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
   heatmap = sns.heatmap(df.corr(), mask=mask, vmin=-1, vmax=1, annot=True, cmap=&#39;BrBG&#39;)
 </pre></div>
 </div>
