@@ -8,7 +8,7 @@ Finally, the lecture will end by presenting the concepts of scenarios and design
 
 For those interested, videos of this course are available online:  
 
-- [Mechatronic systems: definition and design](https://youtu.be/h6V0P5p2Hlk?si=8hMhaRxWxADrjZel)
+- [Mechatronic systems](https://youtu.be/h6V0P5p2Hlk?si=8hMhaRxWxADrjZel)
 
 - [Sizing process and models](https://youtu.be/Y1vBlkmjJ2s?si=p8w94Yb8NL-c-wAw)
 
