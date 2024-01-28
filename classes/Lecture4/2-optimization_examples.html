@@ -70,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4.3. Development of a sizing procedure using design graphs" href="3-sizing_procedures.html" />
-    <link rel="prev" title="4.1. Representation of a design problem and basics of optimization" href="1-design_and_optimization_problems.html" />
+    <link rel="prev" title="4.1. Representation of a design problem and basics optimal design" href="1-design_and_optimization_problems.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -195,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">4. Optimal sizing procedures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics of optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics optimal design</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. Optimization with python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3-sizing_procedures.html">4.3. Development of a sizing procedure using design graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4-sizing_procedure_examples.html">4.4. Design graph and optimization with python</a></li>
@@ -564,7 +564,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="optimization-with-python">
 <h1><span class="section-number">4.2. </span>Optimization with python<a class="headerlink" href="#optimization-with-python" title="Permalink to this heading">#</a></h1>
-<p><em>Written by Marc Budinger (INSA Toulouse) and Scott Delbecq (ISAE-SUPAERO), Toulouse, France</em></p>
+<p><em>Written by Marc Budinger (INSA Toulouse), Toulouse, France</em></p>
 <p>The objective of this notebook is to learn how to implement a sizing code and use a simple numerical optimization into a python notebook. The system studied a Electromechanical Actuator (EMA) used for Thrust Vector Control (TVC) of a launcher.</p>
 <p>For interested readers, more information can be found in :</p>
 <ul class="simple">
@@ -688,7 +688,7 @@ document.write(`
 <p>The sizing code is defined here in a function which can give an evaluation of the objective and of the constraints function of design variables.</p>
 <div class="exercise admonition" id="Equations">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.2 </span></p>
 <section id="exercise-content">
 <ol class="arabic simple">
 <li><p>Give equations which link forces and speeds at nozzle and motor levels.</p></li>
@@ -699,7 +699,7 @@ document.write(`
 </div>
 <div class="solution dropdown admonition" id="EquationsSolution">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#Equations"> Exercise 4.1</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#Equations"> Exercise 4.2</a></p>
 <section id="solution-content">
 <ol class="arabic simple">
 <li><p>For the sizing scenario :</p></li>
@@ -918,7 +918,7 @@ Constraints (should be &gt;= 0):
      Torque margin:  T_mot_max - T_mot_scenario= -0.000 
 -----------------------------------------------
 Calculation time:
- 0.13523459434509277 s
+ 0.13432955741882324 s
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/scipy/optimize/_optimize.py:284: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
@@ -972,11 +972,11 @@ Components characteristics:
      Motor mass = 9.37 kg
      Motor max torque = 38.40 N.m
 Constraints (should be &gt;= 0):
-     Speed margin: W_mot-reduction_ratio*max_speed/pitch= 0.000
+     Speed margin: W_mot-reduction_ratio*max_speed/pitch= 0.001
      Torque margin:  T_mot_max - T_mot_scenario= 0.000 
 -----------------------------------------------
 Calculation time:
- 0.18458080291748047 s
+ 0.14753365516662598 s
 </pre></div>
 </div>
 </div>
@@ -1020,7 +1020,7 @@ Calculation time:
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.1. </span>Representation of a design problem and basics of optimization</p>
+        <p class="prev-next-title"><span class="section-number">4.1. </span>Representation of a design problem and basics optimal design</p>
       </div>
     </a>
     <a class="right-next"

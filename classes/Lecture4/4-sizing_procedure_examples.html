@@ -195,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">4. Optimal sizing procedures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics of optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics optimal design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2-optimization_examples.html">4.2. Optimization with python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3-sizing_procedures.html">4.3. Development of a sizing procedure using design graphs</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.4. Design graph and optimization with python</a></li>
@@ -563,7 +563,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="design-graph-and-optimization-with-python">
 <h1><span class="section-number">4.4. </span>Design graph and optimization with python<a class="headerlink" href="#design-graph-and-optimization-with-python" title="Permalink to this heading">#</a></h1>
-<p><em>Written by Marc Budinger (INSA Toulouse) and Scott Delbecq (ISAE-SUPAERO), Toulouse, France</em></p>
+<p><em>Written by Marc Budinger (INSA Toulouse), Toulouse, France</em></p>
 <p>This notebook continues the example started <a class="reference internal" href="2-optimization_examples.html"><span class="doc std std-doc">earlier</span></a>. It aims to show how a design graph can be used to structure the optimisation problem.</p>
 <p>For interested readers, more information can be found in :</p>
 <blockquote>
@@ -668,7 +668,7 @@ document.write(`
 <p>The objective is to select the motor and the reduction ratio of a gear reducer in order to minimize the mass of the motor.</p>
 <div class="exercise admonition" id="DesignGraph">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.3 </span></p>
 <section id="exercise-content">
 <ul class="simple">
 <li><p>Draw the design graph and highlight the main problems.</p></li>
@@ -679,7 +679,7 @@ document.write(`
 </div>
 <div class="solution dropdown admonition" id="DesignGraphSolution">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#DesignGraph"> Exercise 4.2</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#DesignGraph"> Exercise 4.3</a></p>
 <section id="solution-content">
 <p>The design graph of this sizing problem is:
 <img alt="Algebraic Loop" src="../../_images/AlgebraicLoop.png" />
@@ -894,14 +894,14 @@ Constraints (should be &gt;= 0):
      Torque margin:  T_mot_max - T_mot_scenario= -29.089 
 -----------------------------------------------
 Calculation time:
- 0.12652063369750977 s
+ 0.13077592849731445 s
 </pre></div>
 </div>
 </div>
 </div>
 <div class="exercise admonition" id="Resolution speed">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.4 </span></p>
 <section id="exercise-content">
 <ul class="simple">
 <li><p>Compare the speed of execution of this optimization with the <a class="reference internal" href="2-optimization_examples.html"><span class="doc std std-doc">previous solution</span></a>. This speed can be evaluated with the number of calls to the function (the sizing code).</p></li>

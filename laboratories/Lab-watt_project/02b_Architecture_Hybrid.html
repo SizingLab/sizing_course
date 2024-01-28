@@ -193,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4/summary.html">4. Optimal sizing procedures</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics of optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics optimal design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/2-optimization_examples.html">4.2. Optimization with python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/3-sizing_procedures.html">4.3. Development of a sizing procedure using design graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/4-sizing_procedure_examples.html">4.4. Design graph and optimization with python</a></li>
@@ -636,21 +636,21 @@ Consumption per passenger: 20.44 kJ/(Pax.km)
 </pre></div>
 </div>
 <img alt="../../_images/8fba898326fa1c0e7756ce2c990b52729fc18d452e7756922bf692facb54e0c9.png" src="../../_images/8fba898326fa1c0e7756ce2c990b52729fc18d452e7756922bf692facb54e0c9.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1174296675189548
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1159001242362934
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1624
-     nit: 35
+    nfev: 994
+     nit: 21
  success: True
-       x: array([0.29926685, 0.19332414, 0.98204229])
-Optimal vector : [0.29926685 0.19332414 0.98204229]
-0.5131326713242985
-Constraints vector : [0.0006464155866991004, 0.00020729684908794098, 0.08686732867570146]
+       x: array([0.1474497 , 0.35623947, 0.9879296 ])
+Optimal vector : [0.1474497  0.35623947 0.9879296 ]
+0.5705464574206788
+Constraints vector : [0.00850395447235165, 0.00020729684908794098, 0.0294535425793212]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 17.07 kJ/(Pax.km)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 17.18 kJ/(Pax.km)
 </pre></div>
 </div>
-<img alt="../../_images/6244689041dffc088569b56e5ef771ee2f757e85163f3427b67a1a7536582bf7.png" src="../../_images/6244689041dffc088569b56e5ef771ee2f757e85163f3427b67a1a7536582bf7.png" />
+<img alt="../../_images/113ba706fe3faf235c276b58336d940c8b094431802fccd0e0757b694c1c7f90.png" src="../../_images/113ba706fe3faf235c276b58336d940c8b094431802fccd0e0757b694c1c7f90.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculation of energy consumption of different vehicles: 
 
 Tramway :
@@ -658,10 +658,10 @@ Tramway :
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.2943682600385298
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1219
-     nit: 26
+    nfev: 1399
+     nit: 30
  success: True
-       x: array([0.0985737 , 0.38278935, 0.98863863])
+       x: array([0.10596667, 0.38949318, 0.98929328])
 Consumption per passenger: 20.18 kJ/(Pax.km)
 ----
 Trolleybus :
@@ -669,36 +669,36 @@ Trolleybus :
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1340254283077316
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1264
-     nit: 27
+    nfev: 1714
+     nit: 37
  success: True
-       x: array([0.05290357, 0.75661207, 0.98813981])
+       x: array([0.05708035, 0.76817692, 0.9889151 ])
 Consumption per passenger: 33.90 kJ/(Pax.km)
 ----
 Bus :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.2120989840144358
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1554437831959297
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1174
-     nit: 25
+    nfev: 1444
+     nit: 31
  success: True
-       x: array([0.29907475, 0.31521147, 0.98829644])
-Consumption per passenger: 36.79 kJ/(Pax.km)
+       x: array([0.05447898, 0.76804008, 0.98801131])
+Consumption per passenger: 35.30 kJ/(Pax.km)
 ----
 Car :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.522255018926166
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.495083491840943
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1624
-     nit: 35
+    nfev: 2479
+     nit: 54
  success: True
-       x: array([1.19383635e-05, 9.95295333e-01, 9.87492365e-01])
-Consumption per passenger: 102.08 kJ/(Pax.km)
+       x: array([0.00942011, 0.65327009, 0.98889713])
+Consumption per passenger: 93.25 kJ/(Pax.km)
 </pre></div>
 </div>
-<img alt="../../_images/65c46b24f0826e9cce5503ae417e837d37bc25d4db31da23296bfb928c23858e.png" src="../../_images/65c46b24f0826e9cce5503ae417e837d37bc25d4db31da23296bfb928c23858e.png" />
+<img alt="../../_images/590672dd26191bee7ef21eb28797083156c171edabe296f0424d420ee20ebc4b.png" src="../../_images/590672dd26191bee7ef21eb28797083156c171edabe296f0424d420ee20ebc4b.png" />
 </div>
 </div>
 <p>Here we define a <code class="docutils literal notranslate"><span class="pre">line</span></code> class with all the functionalities described just before.</p>
@@ -881,50 +881,50 @@ Section 8: 300 m at 5.00 m/s whith charger
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0802796716463516
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1984
-     nit: 43
+    nfev: 2119
+     nit: 46
  success: True
-       x: array([0.04978784, 0.79446783, 0.98941203])
+       x: array([0.04996464, 0.7932235 , 0.98962347])
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0947533298861154
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0945237778934926
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1354
-     nit: 29
+    nfev: 1489
+     nit: 32
  success: True
-       x: array([0.11202967, 0.62464373, 0.9841844 ])
+       x: array([0.09338955, 0.68987929, 0.98543936])
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1043612789972144
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1069096481828278
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1354
-     nit: 29
+    nfev: 994
+     nit: 21
  success: True
-       x: array([0.145633  , 0.61132128, 0.97107311])
+       x: array([0.16428952, 0.56122789, 0.9717083 ])
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0537924920275576
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 2074
-     nit: 45
+    nfev: 2119
+     nit: 46
  success: True
-       x: array([0.02603765, 0.89872088, 0.9899695 ])
+       x: array([0.02571852, 0.8975544 , 0.98982112])
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0639706836488805
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0639068253503727
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1399
-     nit: 30
+    nfev: 1309
+     nit: 28
  success: True
-       x: array([0.06504466, 0.73566737, 0.98683406])
+       x: array([0.06773462, 0.73966815, 0.98740483])
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0638753299209696
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0658168093770781
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1534
-     nit: 33
+    nfev: 904
+     nit: 19
  success: True
-       x: array([0.06658029, 0.74267703, 0.98977284])
+       x: array([0.06353436, 0.7706568 , 0.97919562])
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -932,147 +932,78 @@ Section 8: 300 m at 5.00 m/s whith charger
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ToulouseC</span><span class="o">.</span><span class="n">optimLine</span><span class="p">()</span>
 
-<span class="nn">Cell In[2], line 34,</span> in <span class="ni">line.optimLine</span><span class="nt">(self)</span>
+<span class="nn">Cell In[2], line 33,</span> in <span class="ni">line.optimLine</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.9</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">)):</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span>     <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">optimizeG</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">34</span>     <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">33</span>     <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">optimizeG</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 
-<span class="nn">File /tmp/ipykernel_3365/3938155709.py:100,</span> in <span class="ni">SimulSection.plot</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span> <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">100</span>     <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span>     <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tsection</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">xsection</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Simulation&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tsection</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">Distance</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tsection</span><span class="p">)),</span><span class="s1">&#39;g-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Specification&#39;</span><span class="p">)</span>
+<span class="nn">File /tmp/ipykernel_3251/2875550521.py:45,</span> in <span class="ni">OptimSection.optimizeG</span><span class="nt">(self, x0)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="k">def</span> <span class="nf">optimizeG</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x0</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="n">Xbound</span><span class="o">=</span> <span class="p">[(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.99</span><span class="p">)]</span>
+<span class="ne">---&gt; </span><span class="mi">45</span>     <span class="n">res</span><span class="o">=</span><span class="n">differential_evolution</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">objectifG</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">Xbound</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/pyplot.py:1502,</span> in <span class="ni">subplots</span><span class="nt">(nrows, ncols, sharex, sharey, squeeze, width_ratios, height_ratios, subplot_kw, gridspec_kw, **fig_kw)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1358</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1359</span><span class="sd"> Create a figure and a set of subplots.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1360</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1499</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1500</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1501</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="o">**</span><span class="n">fig_kw</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1502</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="n">sharex</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="n">sharey</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1503</span>                    <span class="n">squeeze</span><span class="o">=</span><span class="n">squeeze</span><span class="p">,</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="n">subplot_kw</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1504</span>                    <span class="n">gridspec_kw</span><span class="o">=</span><span class="n">gridspec_kw</span><span class="p">,</span> <span class="n">height_ratios</span><span class="o">=</span><span class="n">height_ratios</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1505</span>                    <span class="n">width_ratios</span><span class="o">=</span><span class="n">width_ratios</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1506</span> <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/scipy/optimize/_differentialevolution.py:392,</span> in <span class="ni">differential_evolution</span><span class="nt">(func, bounds, args, strategy, maxiter, popsize, tol, mutation, recombination, seed, callback, disp, polish, init, atol, updating, workers, constraints, x0, integrality, vectorized)</span>
+<span class="g g-Whitespace">    </span><span class="mi">375</span> <span class="c1"># using a context manager means that any created Pool objects are</span>
+<span class="g g-Whitespace">    </span><span class="mi">376</span> <span class="c1"># cleared up.</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span> <span class="k">with</span> <span class="n">DifferentialEvolutionSolver</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span>                                  <span class="n">strategy</span><span class="o">=</span><span class="n">strategy</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span>                                  <span class="n">maxiter</span><span class="o">=</span><span class="n">maxiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span>                                  <span class="n">integrality</span><span class="o">=</span><span class="n">integrality</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span>                                  <span class="n">vectorized</span><span class="o">=</span><span class="n">vectorized</span><span class="p">)</span> <span class="k">as</span> <span class="n">solver</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">392</span>     <span class="n">ret</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">394</span> <span class="k">return</span> <span class="n">ret</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/figure.py:917,</span> in <span class="ni">FigureBase.subplots</span><span class="nt">(self, nrows, ncols, sharex, sharey, squeeze, width_ratios, height_ratios, subplot_kw, gridspec_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">914</span>     <span class="n">gridspec_kw</span><span class="p">[</span><span class="s1">&#39;width_ratios&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">width_ratios</span>
-<span class="g g-Whitespace">    </span><span class="mi">916</span> <span class="n">gs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">gridspec_kw</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">917</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">gs</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">sharex</span><span class="o">=</span><span class="n">sharex</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="n">sharey</span><span class="p">,</span> <span class="n">squeeze</span><span class="o">=</span><span class="n">squeeze</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">918</span>                   <span class="n">subplot_kw</span><span class="o">=</span><span class="n">subplot_kw</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">919</span> <span class="k">return</span> <span class="n">axs</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/scipy/optimize/_differentialevolution.py:993,</span> in <span class="ni">DifferentialEvolutionSolver.solve</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">990</span> <span class="k">for</span> <span class="n">nit</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxiter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">991</span>     <span class="c1"># evolve the population by a generation</span>
+<span class="g g-Whitespace">    </span><span class="mi">992</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">993</span>         <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">994</span>     <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">995</span>         <span class="n">warning_flag</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/gridspec.py:299,</span> in <span class="ni">GridSpecBase.subplots</span><span class="nt">(self, sharex, sharey, squeeze, subplot_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span>         <span class="n">subplot_kw</span><span class="p">[</span><span class="s2">&quot;sharex&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">shared_with</span><span class="p">[</span><span class="n">sharex</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="n">subplot_kw</span><span class="p">[</span><span class="s2">&quot;sharey&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">shared_with</span><span class="p">[</span><span class="n">sharey</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">299</span>         <span class="n">axarr</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">figure</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span>             <span class="bp">self</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">],</span> <span class="o">**</span><span class="n">subplot_kw</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span> <span class="c1"># turn off redundant tick labeling</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">if</span> <span class="n">sharex</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;col&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">]:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/scipy/optimize/_differentialevolution.py:1379,</span> in <span class="ni">DifferentialEvolutionSolver.__next__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1377</span>     <span class="n">feasible</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">   </span><span class="mi">1378</span>     <span class="n">cv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">([</span><span class="mf">0.</span><span class="p">])</span>
+<span class="ne">-&gt; </span><span class="mi">1379</span>     <span class="n">energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1380</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_nfev</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">   </span><span class="mi">1382</span> <span class="c1"># compare trial and population member</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/figure.py:768,</span> in <span class="ni">FigureBase.add_subplot</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">765</span>         <span class="n">args</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
-<span class="g g-Whitespace">    </span><span class="mi">766</span>     <span class="n">projection_class</span><span class="p">,</span> <span class="n">pkw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_projection_requirements</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">767</span>         <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">768</span>     <span class="n">ax</span> <span class="o">=</span> <span class="n">projection_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">pkw</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">769</span>     <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">projection_class</span><span class="p">,</span> <span class="n">pkw</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">770</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_axes_internal</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/scipy/_lib/_util.py:407,</span> in <span class="ni">_FunctionWrapper.__call__</span><span class="nt">(self, x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">407</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/axes/_base.py:683,</span> in <span class="ni">_AxesBase.__init__</span><span class="nt">(self, fig, facecolor, frameon, sharex, sharey, label, xscale, yscale, box_aspect, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">680</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_axisbelow</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.axisbelow&#39;</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">682</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rasterization_zorder</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">683</span> <span class="bp">self</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">685</span> <span class="c1"># funcs used to format x and y - fall back on major formatters</span>
-<span class="g g-Whitespace">    </span><span class="mi">686</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmt_xdata</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nn">File /tmp/ipykernel_3251/2875550521.py:29,</span> in <span class="ni">OptimSection.objectifG</span><span class="nt">(self, x)</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="k">def</span> <span class="nf">objectifG</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">29</span>     <span class="bp">self</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>     <span class="n">NRJmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Weight</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">g</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Crr</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="n">pen</span><span class="o">=</span><span class="mi">0</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/axes/_base.py:1395,</span> in <span class="ni">_AxesBase.clear</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1393</span>     <span class="bp">self</span><span class="o">.</span><span class="n">cla</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1394</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1395</span>     <span class="bp">self</span><span class="o">.</span><span class="n">__clear</span><span class="p">()</span>
+<span class="nn">File /tmp/ipykernel_3251/3938155709.py:77,</span> in <span class="ni">SimulSection.solver</span><span class="nt">(self, x)</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="k">elif</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="n">k3</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Distance</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span>     <span class="n">F</span><span class="o">=</span><span class="mi">0</span>
+<span class="ne">---&gt; </span><span class="mi">77</span>     <span class="n">dydt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span>     <span class="n">F</span><span class="o">=-</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Fmax</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/axes/_base.py:1363,</span> in <span class="ni">_AxesBase.__clear</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1359</span> <span class="bp">self</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_transform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transAxes</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1361</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_axis_on</span><span class="p">()</span>
-<span class="ne">-&gt; </span><span class="mi">1363</span> <span class="bp">self</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_clip_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">patch</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1364</span> <span class="bp">self</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_clip_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">patch</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1366</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shared_axes</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/axis.py:1097,</span> in <span class="ni">Axis.set_clip_path</span><span class="nt">(self, clippath, transform)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1095</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">set_clip_path</span><span class="p">(</span><span class="n">clippath</span><span class="p">,</span> <span class="n">transform</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1096</span> <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">majorTicks</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">minorTicks</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1097</span>     <span class="n">child</span><span class="o">.</span><span class="n">set_clip_path</span><span class="p">(</span><span class="n">clippath</span><span class="p">,</span> <span class="n">transform</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1098</span> <span class="bp">self</span><span class="o">.</span><span class="n">stale</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/axis.py:239,</span> in <span class="ni">Tick.set_clip_path</span><span class="nt">(self, clippath, transform)</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span> <span class="k">def</span> <span class="nf">set_clip_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clippath</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="c1"># docstring inherited</span>
-<span class="ne">--&gt; </span><span class="mi">239</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">set_clip_path</span><span class="p">(</span><span class="n">clippath</span><span class="p">,</span> <span class="n">transform</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="bp">self</span><span class="o">.</span><span class="n">gridline</span><span class="o">.</span><span class="n">set_clip_path</span><span class="p">(</span><span class="n">clippath</span><span class="p">,</span> <span class="n">transform</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span>     <span class="bp">self</span><span class="o">.</span><span class="n">stale</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/artist.py:809,</span> in <span class="ni">Artist.set_clip_path</span><span class="nt">(self, path, transform)</span>
-<span class="g g-Whitespace">    </span><span class="mi">806</span> <span class="k">if</span> <span class="n">transform</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">807</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">Rectangle</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">808</span>         <span class="bp">self</span><span class="o">.</span><span class="n">clipbox</span> <span class="o">=</span> <span class="n">TransformedBbox</span><span class="p">(</span><span class="n">Bbox</span><span class="o">.</span><span class="n">unit</span><span class="p">(),</span>
-<span class="ne">--&gt; </span><span class="mi">809</span>                                        <span class="n">path</span><span class="o">.</span><span class="n">get_transform</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">810</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_clippath</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">811</span>         <span class="n">success</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/patches.py:264,</span> in <span class="ni">Patch.get_transform</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">262</span> <span class="k">def</span> <span class="nf">get_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">263</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Return the `~.transforms.Transform` applied to the `Patch`.&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">264</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_patch_transform</span><span class="p">()</span> <span class="o">+</span> <span class="n">artist</span><span class="o">.</span><span class="n">Artist</span><span class="o">.</span><span class="n">get_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/patches.py:755,</span> in <span class="ni">Rectangle.get_patch_transform</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">753</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">754</span>     <span class="n">rotation_point</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rotation_point</span>
-<span class="ne">--&gt; </span><span class="mi">755</span> <span class="k">return</span> <span class="n">transforms</span><span class="o">.</span><span class="n">BboxTransformTo</span><span class="p">(</span><span class="n">bbox</span><span class="p">)</span> \
-<span class="g g-Whitespace">    </span><span class="mi">756</span>         <span class="o">+</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Affine2D</span><span class="p">()</span> \
-<span class="g g-Whitespace">    </span><span class="mi">757</span>         <span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="o">-</span><span class="n">rotation_point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="n">rotation_point</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> \
-<span class="g g-Whitespace">    </span><span class="mi">758</span>         <span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aspect_ratio_correction</span><span class="p">)</span> \
-<span class="g g-Whitespace">    </span><span class="mi">759</span>         <span class="o">.</span><span class="n">rotate_deg</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">angle</span><span class="p">)</span> \
-<span class="g g-Whitespace">    </span><span class="mi">760</span>         <span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aspect_ratio_correction</span><span class="p">)</span> \
-<span class="g g-Whitespace">    </span><span class="mi">761</span>         <span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="o">*</span><span class="n">rotation_point</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/transforms.py:1350,</span> in <span class="ni">Transform.__add__</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1343</span> <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1344</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1345</span><span class="sd">     Compose two transforms together so that *self* is followed by *other*.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1346</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1347</span><span class="sd">     ``A + B`` returns a transform ``C`` so that</span>
-<span class="g g-Whitespace">   </span><span class="mi">1348</span><span class="sd">     ``C.transform(x) == B.transform(A.transform(x))``.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1349</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1350</span>     <span class="k">return</span> <span class="p">(</span><span class="n">composite_transform_factory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1351</span>             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Transform</span><span class="p">)</span> <span class="k">else</span>
-<span class="g g-Whitespace">   </span><span class="mi">1352</span>             <span class="bp">NotImplemented</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/transforms.py:2535,</span> in <span class="ni">composite_transform_factory</span><span class="nt">(a, b)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2533</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Affine2D</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">Affine2D</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">2534</span>     <span class="k">return</span> <span class="n">CompositeAffine2D</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2535</span> <span class="k">return</span> <span class="n">CompositeGenericTransform</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/transforms.py:2373,</span> in <span class="ni">CompositeGenericTransform.__init__</span><span class="nt">(self, a, b, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2371</span> <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="n">a</span>
-<span class="g g-Whitespace">   </span><span class="mi">2372</span> <span class="bp">self</span><span class="o">.</span><span class="n">_b</span> <span class="o">=</span> <span class="n">b</span>
-<span class="ne">-&gt; </span><span class="mi">2373</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_children</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/matplotlib/transforms.py:208,</span> in <span class="ni">TransformNode.set_children</span><span class="nt">(self, *children)</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span> <span class="c1"># Parents are stored as weak references, so that if the</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span> <span class="c1"># parents are destroyed, references from the children won&#39;t</span>
-<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="c1"># keep them alive.</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="c1"># Use weak references so this dictionary won&#39;t keep obsolete nodes</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span>     <span class="c1"># alive; the callback deletes the dictionary entry. This is a</span>
-<span class="g g-Whitespace">    </span><span class="mi">207</span>     <span class="c1"># performance improvement over using WeakValueDictionary.</span>
-<span class="ne">--&gt; </span><span class="mi">208</span>     <span class="n">ref</span> <span class="o">=</span> <span class="n">weakref</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>         <span class="bp">self</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">,</span> <span class="n">pop</span><span class="o">=</span><span class="n">child</span><span class="o">.</span><span class="n">_parents</span><span class="o">.</span><span class="n">pop</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="n">pop</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>     <span class="n">child</span><span class="o">.</span><span class="n">_parents</span><span class="p">[</span><span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)]</span> <span class="o">=</span> <span class="n">ref</span>
+<span class="nn">File /tmp/ipykernel_3251/3938155709.py:42,</span> in <span class="ni">SimulSection.model</span><span class="nt">(self, y, F)</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="n">x</span><span class="p">,</span> <span class="n">dxdt</span> <span class="o">=</span> <span class="n">y</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="c1"># System: acceleration calculation</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="n">dxdt2</span> <span class="o">=</span> <span class="p">(</span><span class="n">F</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Crr</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Weight</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">g</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">dxdt</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">42</span>          <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">rho</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Cd</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">FrontArea</span><span class="o">*</span><span class="n">dxdt</span><span class="o">**</span><span class="mi">2</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">dxdt</span><span class="p">))</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Weight</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="n">dydt</span> <span class="o">=</span> <span class="p">[</span><span class="n">dxdt</span><span class="p">,</span> <span class="n">dxdt2</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">return</span> <span class="n">dydt</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
+<img alt="../../_images/1ec72f8742bd5d930d00b17d4a9e8b6a7666dafbd1aec943efd3a0c4855e4450.png" src="../../_images/1ec72f8742bd5d930d00b17d4a9e8b6a7666dafbd1aec943efd3a0c4855e4450.png" />
+<img alt="../../_images/ed9037909bc9521d2eb7096f0ed76c8e6b5c24a221b1eb4d7f9b33d1c1020be6.png" src="../../_images/ed9037909bc9521d2eb7096f0ed76c8e6b5c24a221b1eb4d7f9b33d1c1020be6.png" />
+<img alt="../../_images/9c38090c0aa08f8a8307ab7839c681fb3805770b65ff078c0e6f4c4a28ea38f5.png" src="../../_images/9c38090c0aa08f8a8307ab7839c681fb3805770b65ff078c0e6f4c4a28ea38f5.png" />
+<img alt="../../_images/9a528a292cf615704ed9b69b1a7061c2fe5999fba09f016bda767edec1f53773.png" src="../../_images/9a528a292cf615704ed9b69b1a7061c2fe5999fba09f016bda767edec1f53773.png" />
 </div>
 </div>
 <p>A time vector of evolution of the power required at each section or supplied to each charger is constructed.</p>
