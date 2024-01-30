@@ -10,7 +10,11 @@ Readers interested in this subject may wish to take a closer look at the followi
 
 > Budinger, M., Reysset, A., Ochotorena, A., & Delbecq, S. (2020). Scaling laws and similarity models for the preliminary design of multirotor drones. Aerospace Science and Technology, 98, 105658.  
 
-### Schedule ISAE Supaero
+### Schedule 
+INSA Toulouse:   
+- See ADE (Marc Budinger)  
+
+ISAE Supaero:  
 - 12/01/2024: 4 hours lectures & labs (Scott Delbecq & Félix Pollet)
 - 19/01/2024: 6 hours lectures & labs (Scott Delbecq & Félix Pollet) 
 
@@ -18,3 +22,5 @@ Readers interested in this subject may wish to take a closer look at the followi
 - Project report & Written control (INSA Toulouse)
 - Project report (ISAE Supaero)
 
+### Evaluation
+- Project report & Written control (INSA Toulouse)
