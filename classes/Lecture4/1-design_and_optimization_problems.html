@@ -627,7 +627,7 @@ Description<div class="sd-summary-down docutils">
 <section id="graphs">
 <h3><span class="section-number">4.1.2.3. </span>Graphs<a class="headerlink" href="#graphs" title="Permalink to this heading">#</a></h3>
 <p>A sizing procedure is quite similar to a constraint network where sizing parameters represent variables and equalities/inequalities represent constraints. Therefore, all the tools applied to the representation of constraint networks and so graph theory, can be applied.</p>
-<p><img alt="Graph Example" src="classes/Lecture4/assets/images/GraphExample.png" /></p>
+<p><img alt="Graph Example" src="../../_images/GraphExample.PNG" /></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 Description<div class="sd-summary-down docutils">
@@ -648,13 +648,9 @@ c. once equations are oriented (one parameter is matched to the equation, i.e. i
 <h3><span class="section-number">4.1.3.1. </span>Optimization problem formulation<a class="headerlink" href="#optimization-problem-formulation" title="Permalink to this heading">#</a></h3>
 <p>An optimization problem can be formulated mathematically as follows:</p>
 <ul class="simple">
-<li><p>Minimize an objective function:			
-$<span class="math notranslate nohighlight">\(f(x)\)</span>$</p></li>
-<li><p>Subject to equality and inequality constraints:<br />
-$<span class="math notranslate nohighlight">\(h(x) = 0\)</span><span class="math notranslate nohighlight">\( 
-\)</span><span class="math notranslate nohighlight">\(g(x) &gt; 0\)</span>$</p></li>
-<li><p>By action on the variable vector <span class="math notranslate nohighlight">\(x\)</span> in the range<br />
-$<span class="math notranslate nohighlight">\(x_{low}&lt;x&lt;x_{up}\)</span>$</p></li>
+<li><p>Minimize an objective function: <span class="math notranslate nohighlight">\(f(x)\)</span></p></li>
+<li><p>Subject to equality and inequality constraints: <span class="math notranslate nohighlight">\(h(x) = 0\)</span> and <span class="math notranslate nohighlight">\(g(x) &gt; 0\)</span></p></li>
+<li><p>By action on the variable vector <span class="math notranslate nohighlight">\(x\)</span> in the range <span class="math notranslate nohighlight">\(x_{low}&lt;x&lt;x_{up}\)</span></p></li>
 </ul>
 <p>where:</p>
 <ul class="simple">
@@ -675,16 +671,16 @@ $<span class="math notranslate nohighlight">\(x_{low}&lt;x&lt;x_{up}\)</span>$</
 <p class="admonition-title">Solution to<a class="reference internal" href="#SizingProblem"> Exercise 4.1</a></p>
 <section id="solution-content">
 <p><strong>Objective</strong>:<br />
-$<span class="math notranslate nohighlight">\(\text{Minimise the mass of the entire drone}\)</span><span class="math notranslate nohighlight">\(  
-**Design variables**:  
-\)</span><span class="math notranslate nohighlight">\(x=[\text{propeller diameter, propeller pitch, motor torque, battery capacity}]\)</span>$<br />
+<span class="math notranslate nohighlight">\(\text{Minimise the mass of the entire drone}\)</span><br />
+<strong>Design variables</strong>:<br />
+<span class="math notranslate nohighlight">\(x=[\text{propeller diameter, propeller pitch, motor torque, battery capacity}]\)</span><br />
 <strong>Constraints</strong>:</p>
 <ul class="simple">
 <li><p><em>equality</em>:
-$<span class="math notranslate nohighlight">\(\text{hovering range - 15 min} = 0\)</span>$</p></li>
+<span class="math notranslate nohighlight">\(\text{hovering range - 15 min} = 0\)</span></p></li>
 <li><p><em>inequalities</em>:
-$<span class="math notranslate nohighlight">\(\text{take-off thrust - k.weight}  &gt; 0\)</span><span class="math notranslate nohighlight">\(
-  \)</span><span class="math notranslate nohighlight">\(\text{battery voltage - motor voltage} &gt; 0\)</span>$</p></li>
+<span class="math notranslate nohighlight">\(\text{take-off thrust - k.weight}  &gt; 0\)</span><br />
+<span class="math notranslate nohighlight">\(\text{battery voltage - motor voltage} &gt; 0\)</span></p></li>
 </ul>
 </section>
 </div>
