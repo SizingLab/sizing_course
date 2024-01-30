@@ -57,7 +57,7 @@ parts:
 
 - caption: INSA Laboratories
   chapters:
-  - file: laboratories/Lab-multirotor/summary
+  - file: laboratories/Lab-multirotor/summaryINSA
     title: Multirotor UAV
     sections:
       - file: laboratories/Lab-multirotor/00_Introduction
@@ -124,7 +124,7 @@ parts:
       
 - caption: SUPAERO Laboratories
   chapters:
-  - file: laboratories/Lab-multirotor/summary
+  - file: laboratories/Lab-multirotor/summaryISAE
     title: Multirotor UAV
     sections:
       - file: laboratories/Lab-multirotor/00_Introduction
