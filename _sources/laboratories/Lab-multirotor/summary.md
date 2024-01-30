@@ -2,12 +2,11 @@
 Lab - Multirotor case study
 =======================
 
-### Table of contents
+Multirotor UAVs are interesting mechatronic systems for dimensioning, particularly in an educational or academic context. They present a number of dimensioning scenarios involving components from several technologies. Couplings are numerous and strong, particularly in terms of on-board mass. 
 
-##### Architecture & sizing scenarios
-1. [Case study and architecture presentation](01_CaseStudy.ipynb)
-2. [Sizing scenarios equations](02_SizingScenariosEquations.ipynb) ([Student Version](02_SizingScenariosEquations-Student.ipynb))
+Readers interested in this subject may wish to take a closer look at the following references:   
 
-##### Estimation models 
-3. [Scaling laws of electrical components](03_ScalingLawsElectricalComponents.ipynb) ([Student Version](03_ScalingLawsElectricalComponents-Student.ipynb))
-4. [Linear regression of propellers data](04_PropellerLinearRegression.ipynb) ([Student Version](04_PropellerLinearRegression-Student.ipynb))
+> Delbecq, S., Budinger, M., Ochotorena, A., Reysset, A., & Defaÿ, F. (2020). Efficient sizing and optimization of multirotor drones based on scaling laws and similarity models. Aerospace Science and Technology, 102, 105873.  
+
+> Budinger, M., Reysset, A., Ochotorena, A., & Delbecq, S. (2020). Scaling laws and similarity models for the preliminary design of multirotor drones. Aerospace Science and Technology, 98, 105658.  
+
