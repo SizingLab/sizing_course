@@ -55,7 +55,7 @@ parts:
       - file: classes/Lecture6/4-sustainable_scenario_examples
       - file: classes/Lecture6/5-quizz
 
-- caption: Laboratories
+- caption: INSA Laboratories
   chapters:
   - file: laboratories/Lab-multirotor/summary
     title: Multirotor UAV
@@ -121,3 +121,30 @@ parts:
       - file: laboratories/Lab-watt_project/09_SizingCodeDCDCconverter
       - file: laboratories/Lab-watt_project/10_LCA_Inductor-Student
       - file: laboratories/Lab-watt_project/10_LCA_Inductor
+      
+- caption: SUPAERO Laboratories
+  chapters:
+  - file: laboratories/Lab-multirotor/summary
+    title: Multirotor UAV
+    sections:
+      - file: laboratories/Lab-multirotor/00_Introduction
+      - file: laboratories/Lab-multirotor/01_CaseStudy
+      - file: laboratories/Lab-multirotor/02_SizingScenariosEquations-Student
+      - file: laboratories/Lab-multirotor/02_SizingScenariosEquations
+      - file: laboratories/Lab-multirotor/03_PropellerLinearRegression-Student
+      - file: laboratories/Lab-multirotor/03_PropellerLinearRegression
+      - file: laboratories/Lab-multirotor/04_ScalingLawsElectricalComponents-Student
+      - file: laboratories/Lab-multirotor/04_ScalingLawsElectricalComponents
+      - file: laboratories/Lab-multirotor/05_SizingModelsIntroduction
+      - file: laboratories/Lab-multirotor/05a_PropellerSelection-Student
+      - file: laboratories/Lab-multirotor/05a_PropellerSelection
+      - file: laboratories/Lab-multirotor/05b_MotorSelection-Student
+      - file: laboratories/Lab-multirotor/05b_MotorSelection
+      - file: laboratories/Lab-multirotor/05c_BatteryESCSelection-Student
+      - file: laboratories/Lab-multirotor/05c_BatteryESCSelection
+      - file: laboratories/Lab-multirotor/05d_FrameSelection-Student
+      - file: laboratories/Lab-multirotor/05d_FrameSelection
+      - file: laboratories/Lab-multirotor/06_SystemSizingCodeOptimization-Student
+      - file: laboratories/Lab-multirotor/07_DesignExploration-Student
+      - file: laboratories/Lab-multirotor/A1_Sizing_equations
+  
