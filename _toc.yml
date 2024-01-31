@@ -62,8 +62,9 @@ parts:
     sections:
       - file: laboratories/Lab-multirotor/00_Introduction
       - file: laboratories/Lab-multirotor/01_CaseStudy
-      - file: laboratories/Lab-multirotor/02_SizingScenariosEquations-Student
-      - file: laboratories/Lab-multirotor/02_SizingScenariosEquations
+      - file: laboratories/Lab-multirotor/02a_SizingScenarios-Student
+      - file: laboratories/Lab-multirotor/02a_SizingScenarios
+      - file: laboratories/Lab-multirotor/02b_SizingScenariosEquations-Student
       - file: laboratories/Lab-multirotor/03_PropellerLinearRegression-Student
       - file: laboratories/Lab-multirotor/03_PropellerLinearRegression
       - file: laboratories/Lab-multirotor/04_ScalingLawsElectricalComponents-Student
