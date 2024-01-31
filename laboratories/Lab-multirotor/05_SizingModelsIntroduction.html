@@ -223,8 +223,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">Multirotor UAV</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_CaseStudy.html">Case study and architecture presentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_SizingScenariosEquations-Student.html">Sizing scenarios and design drivers (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_SizingScenariosEquations.html">Sizing scenarios and design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02a_SizingScenarios-Student.html">Sizing scenarios and design drivers (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02a_SizingScenarios.html">Sizing scenarios and design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02b_SizingScenariosEquations-Student.html">Equations of sizing scenarios (INSA)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_PropellerLinearRegression-Student.html">Propellers estimation models with dimensional analysis and linear regressions  (student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03_PropellerLinearRegression.html">Propellers estimation models with dimensional analysis and linear regressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_ScalingLawsElectricalComponents-Student.html">Scaling laws of electrical components (student version)</a></li>
@@ -597,8 +598,8 @@ document.write(`
 </figcaption>
 </figure>
 <p>It consists in addition an oversizing coefficent <span class="math notranslate nohighlight">\(k_{os} \quad [1-10]\)</span> as a design variable and additional inequality constraint <span class="math notranslate nohighlight">\(M_{total} \geq M_{total,real}\)</span>. This way, we make sure that the drone is capable of lifting the load and itself. As we are minimizing the total mass <span class="math notranslate nohighlight">\(M_{total,real}\)</span> the oversizing coefficient <span class="math notranslate nohighlight">\(k_{os}\)</span> will tend to be as small as possible and thus the inequality constraint will be equivalent to an equality constraint (<span class="math notranslate nohighlight">\(M_{total} = M_{total,real}\)</span>). This is one way of solving an algebraic loop, other methods use numerical solvers or other optimizer-based formulations. The formulation of the optimization problem is the following:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dff43792-2337-4907-b28e-88a085293982">
-<span class="eqno">(1)<a class="headerlink" href="#equation-dff43792-2337-4907-b28e-88a085293982" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-658ecc05-ee9b-4f99-a5e0-340bd7550d71">
+<span class="eqno">(1)<a class="headerlink" href="#equation-658ecc05-ee9b-4f99-a5e0-340bd7550d71" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
         &amp; \text{minimize}
         &amp; &amp; M_{total,real} \\

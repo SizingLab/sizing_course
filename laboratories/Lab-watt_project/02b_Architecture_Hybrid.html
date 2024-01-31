@@ -221,8 +221,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-multirotor/summary.html">Multirotor UAV</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/01_CaseStudy.html">Case study and architecture presentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/02_SizingScenariosEquations-Student.html">Sizing scenarios and design drivers (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/02_SizingScenariosEquations.html">Sizing scenarios and design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/02a_SizingScenarios-Student.html">Sizing scenarios and design drivers (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/02a_SizingScenarios.html">Sizing scenarios and design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/02b_SizingScenariosEquations-Student.html">Equations of sizing scenarios (INSA)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/03_PropellerLinearRegression-Student.html">Propellers estimation models with dimensional analysis and linear regressions  (student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/03_PropellerLinearRegression.html">Propellers estimation models with dimensional analysis and linear regressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/04_ScalingLawsElectricalComponents-Student.html">Scaling laws of electrical components (student version)</a></li>
@@ -636,66 +637,68 @@ Consumption per passenger: 20.44 kJ/(Pax.km)
 </pre></div>
 </div>
 <img alt="../../_images/8fba898326fa1c0e7756ce2c990b52729fc18d452e7756922bf692facb54e0c9.png" src="../../_images/8fba898326fa1c0e7756ce2c990b52729fc18d452e7756922bf692facb54e0c9.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1158969465170516
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.118051381247718
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1219
-     nit: 26
+    nfev: 1534
+     nit: 33
  success: True
-       x: array([0.14019961, 0.35898546, 0.9892513 ])
-Optimal vector : [0.14019961 0.35898546 0.9892513 ]
-0.5722045302065372
-Constraints vector : [0.00994567209685108, 0.00020729684908794098, 0.027795469793462813]
+       x: array([0.19419284, 0.28735854, 0.98963711])
+Optimal vector : [0.19419284 0.28735854 0.98963711]
+0.5466575491695908
+Constraints vector : [0.010347655921263405, 0.00020729684908794098, 0.05334245083040923]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 17.20 kJ/(Pax.km)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 17.24 kJ/(Pax.km)
 </pre></div>
 </div>
-<img alt="../../_images/71c3793062b1fa8d7e8cdaf319072ad978323a076a3c1631f0fe98726350373d.png" src="../../_images/71c3793062b1fa8d7e8cdaf319072ad978323a076a3c1631f0fe98726350373d.png" />
+<img alt="../../_images/3917473dd4b6f6a0eecc5d56fa6cb6572ea644398f42da4ca038d6636d98af5e.png" src="../../_images/3917473dd4b6f6a0eecc5d56fa6cb6572ea644398f42da4ca038d6636d98af5e.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculation of energy consumption of different vehicles: 
 
 Tramway :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.2943682600385298
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.3155835512285257
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1309
-     nit: 28
+    nfev: 1174
+     nit: 25
  success: True
-       x: array([0.10529728, 0.38423503, 0.98967196])
-Consumption per passenger: 20.18 kJ/(Pax.km)
+       x: array([0.29436764, 0.17986039, 0.98970939])
+Consumption per passenger: 20.59 kJ/(Pax.km)
 ----
 Trolleybus :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1340254283077316
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1342249763229937
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 994
-     nit: 21
+    nfev: 1624
+     nit: 35
  success: True
-       x: array([0.05034686, 0.75799634, 0.98917121])
-Consumption per passenger: 33.90 kJ/(Pax.km)
+       x: array([0.05768907, 0.77902434, 0.9857991 ])
+Consumption per passenger: 33.87 kJ/(Pax.km)
 ----
 Bus :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1554437831959297
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1814761265878264
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1309
-     nit: 28
+    nfev: 1264
+     nit: 27
  success: True
-       x: array([0.04930846, 0.7620628 , 0.98739784])
-Consumption per passenger: 35.30 kJ/(Pax.km)
+       x: array([0.14030757, 0.51153731, 0.98957283])
+Consumption per passenger: 35.87 kJ/(Pax.km)
 ----
 Car :
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.522255018926166
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1354
-     nit: 29
+    nfev: 1894
+     nit: 41
  success: True
-       x: array([0.00390925, 0.99798435, 0.98382824])
-Consumption per passenger: 102.08 kJ/(Pax.km)
+       x: array([0.00337664, 0.99099536, 0.98946155])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 102.08 kJ/(Pax.km)
 </pre></div>
 </div>
 <img alt="../../_images/65c46b24f0826e9cce5503ae417e837d37bc25d4db31da23296bfb928c23858e.png" src="../../_images/65c46b24f0826e9cce5503ae417e837d37bc25d4db31da23296bfb928c23858e.png" />
@@ -879,52 +882,36 @@ Section 8: 300 m at 5.00 m/s whith charger
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0802796716463516
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0812474375995766
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1804
-     nit: 39
+    nfev: 1489
+     nit: 32
  success: True
-       x: array([0.0500682 , 0.79289549, 0.989905  ])
+       x: array([0.05058945, 0.80018984, 0.98833972])
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.094597172378344
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0947533298861154
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 994
-     nit: 21
+    nfev: 1174
+     nit: 25
  success: True
-       x: array([0.09300643, 0.68936752, 0.98321987])
+       x: array([0.10744538, 0.62336849, 0.98431498])
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1043612789972144
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1669
-     nit: 36
+    nfev: 1309
+     nit: 28
  success: True
-       x: array([0.14366204, 0.61199865, 0.96937046])
+       x: array([0.14202136, 0.61236669, 0.97140174])
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0643945392323624
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0537924920275576
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 2029
-     nit: 44
+    nfev: 2839
+     nit: 62
  success: True
-       x: array([0.03474291, 0.85055323, 0.989794  ])
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0639706836488805
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1264
-     nit: 27
- success: True
-       x: array([0.06578649, 0.73874076, 0.98522384])
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0639068253503727
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1084
-     nit: 23
- success: True
-       x: array([0.06527357, 0.7437242 , 0.98762268])
+       x: array([0.02601645, 0.89907709, 0.98975887])
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0638753299209696
@@ -932,7 +919,15 @@ Section 8: 300 m at 5.00 m/s whith charger
     nfev: 1309
      nit: 28
  success: True
-       x: array([0.06485414, 0.7467559 , 0.98965199])
+       x: array([0.06874846, 0.74513837, 0.98978879])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0823852255584083
+ message: &#39;Optimization terminated successfully.&#39;
+    nfev: 859
+     nit: 18
+ success: True
+       x: array([0.2480819 , 0.38002826, 0.98974714])
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -946,7 +941,7 @@ Section 8: 300 m at 5.00 m/s whith charger
 <span class="ne">---&gt; </span><span class="mi">33</span>     <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">optimizeG</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 
-<span class="nn">File /tmp/ipykernel_3228/2875550521.py:45,</span> in <span class="ni">OptimSection.optimizeG</span><span class="nt">(self, x0)</span>
+<span class="nn">File /tmp/ipykernel_3232/2875550521.py:45,</span> in <span class="ni">OptimSection.optimizeG</span><span class="nt">(self, x0)</span>
 <span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="k">def</span> <span class="nf">optimizeG</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x0</span><span class="p">):</span>
 <span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="n">Xbound</span><span class="o">=</span> <span class="p">[(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.99</span><span class="p">)]</span>
 <span class="ne">---&gt; </span><span class="mi">45</span>     <span class="n">res</span><span class="o">=</span><span class="n">differential_evolution</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">objectifG</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">Xbound</span><span class="p">)</span>
@@ -984,33 +979,26 @@ Section 8: 300 m at 5.00 m/s whith charger
 <span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">407</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
 
-<span class="nn">File /tmp/ipykernel_3228/2875550521.py:29,</span> in <span class="ni">OptimSection.objectifG</span><span class="nt">(self, x)</span>
+<span class="nn">File /tmp/ipykernel_3232/2875550521.py:29,</span> in <span class="ni">OptimSection.objectifG</span><span class="nt">(self, x)</span>
 <span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="k">def</span> <span class="nf">objectifG</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">29</span>     <span class="bp">self</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">30</span>     <span class="n">NRJmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Weight</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">g</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Crr</span>
 <span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="n">pen</span><span class="o">=</span><span class="mi">0</span>
 
-<span class="nn">File /tmp/ipykernel_3228/3938155709.py:71,</span> in <span class="ni">SimulSection.solver</span><span class="nt">(self, x)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="k">if</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="n">k1</span><span class="o">*</span><span class="n">k2</span><span class="o">*</span><span class="n">k3</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Distance</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span>     <span class="n">F</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Fmax</span>
-<span class="ne">---&gt; </span><span class="mi">71</span>     <span class="n">dydt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="k">elif</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="n">k3</span><span class="o">*</span><span class="n">k2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Distance</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="n">F</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Crr</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Weight</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">g</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">rho</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Cd</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">FrontArea</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="nn">File /tmp/ipykernel_3228/3938155709.py:43,</span> in <span class="ni">SimulSection.model</span><span class="nt">(self, y, F)</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="c1"># System: acceleration calculation</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="n">dxdt2</span> <span class="o">=</span> <span class="p">(</span><span class="n">F</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Crr</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Weight</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">g</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">dxdt</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span>          <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">rho</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Cd</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">FrontArea</span><span class="o">*</span><span class="n">dxdt</span><span class="o">**</span><span class="mi">2</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">dxdt</span><span class="p">))</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Weight</span>
-<span class="ne">---&gt; </span><span class="mi">43</span> <span class="n">dydt</span> <span class="o">=</span> <span class="p">[</span><span class="n">dxdt</span><span class="p">,</span> <span class="n">dxdt2</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">return</span> <span class="n">dydt</span>
+<span class="nn">File /tmp/ipykernel_3232/3938155709.py:85,</span> in <span class="ni">SimulSection.solver</span><span class="nt">(self, x)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span> <span class="bp">self</span><span class="o">.</span><span class="n">Fsection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Fsection</span> <span class="o">+</span> <span class="p">[</span><span class="n">F</span><span class="p">]</span>    
+<span class="g g-Whitespace">     </span><span class="mi">84</span> <span class="c1"># Euler integration de la postion y[0] et de la vitesse y[1]</span>
+<span class="ne">---&gt; </span><span class="mi">85</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dydt</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="n">NRJ</span> <span class="o">=</span> <span class="n">NRJ</span><span class="o">+</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">F</span><span class="o">*</span><span class="n">dt</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
-<img alt="../../_images/1ec72f8742bd5d930d00b17d4a9e8b6a7666dafbd1aec943efd3a0c4855e4450.png" src="../../_images/1ec72f8742bd5d930d00b17d4a9e8b6a7666dafbd1aec943efd3a0c4855e4450.png" />
-<img alt="../../_images/a6f4545ed5e79eed0ba24f8971cd42efbbac5bfc0f6c49e5a6efd23473d6b5c2.png" src="../../_images/a6f4545ed5e79eed0ba24f8971cd42efbbac5bfc0f6c49e5a6efd23473d6b5c2.png" />
+<img alt="../../_images/e880e3ec56e9197a1ddc227d920e1c4b17a6c32bdc408f4e6e94c822cc27213a.png" src="../../_images/e880e3ec56e9197a1ddc227d920e1c4b17a6c32bdc408f4e6e94c822cc27213a.png" />
+<img alt="../../_images/8da5ec2315835086d73f347a8db870a8d911f3d90e01a1aced3e125de1c77c1a.png" src="../../_images/8da5ec2315835086d73f347a8db870a8d911f3d90e01a1aced3e125de1c77c1a.png" />
 <img alt="../../_images/d9e8934431a6668ab772b4acf0932d486a685eb5cfa4f95075e841399effb382.png" src="../../_images/d9e8934431a6668ab772b4acf0932d486a685eb5cfa4f95075e841399effb382.png" />
-<img alt="../../_images/938a691787fd7bacc70793be93bff1967a3a820a12d1e0a12f5d94077d8d4898.png" src="../../_images/938a691787fd7bacc70793be93bff1967a3a820a12d1e0a12f5d94077d8d4898.png" />
+<img alt="../../_images/9a528a292cf615704ed9b69b1a7061c2fe5999fba09f016bda767edec1f53773.png" src="../../_images/9a528a292cf615704ed9b69b1a7061c2fe5999fba09f016bda767edec1f53773.png" />
 </div>
 </div>
 <p>A time vector of evolution of the power required at each section or supplied to each charger is constructed.</p>
