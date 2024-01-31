@@ -57,7 +57,7 @@ parts:
 
 - caption: Laboratories
   chapters:
-  - file: laboratories/Lab-multirotor/summaryINSA
+  - file: laboratories/Lab-multirotor/summary
     title: Multirotor UAV
     sections:
       - file: laboratories/Lab-multirotor/00_Introduction
