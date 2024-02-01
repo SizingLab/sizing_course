@@ -21,13 +21,14 @@
         "answers": [
             {
                 "answer": "Dynamic load: Ca or Cd",
-                "correct": false,
-                "feedback": "Incorrect!"
+                "correct": true,
+                "feedback": "Correct!"
+                
             },
             {
                 "answer": "Static load: C0 or Ca0",
-                "correct": true,
-                "feedback": "Correct!"
+                 "correct": false,
+                "feedback": "Incorrect!"
             }
         ]
     },
@@ -53,13 +54,14 @@
         "answers": [
             {
                 "answer": "Dynamic load: Ca or Cd",
-                "correct": true,
-                "feedback": "Correct!"
+                "correct": false,
+                "feedback": "Incorrect."
+
             },
             {
                 "answer": "Static load: C0 or Ca0",
-                "correct": false,
-                "feedback": "Incorrect."
+                "correct": true,
+                "feedback": "Correct!"
             }
         ]
     }
