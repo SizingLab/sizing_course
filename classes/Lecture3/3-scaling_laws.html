@@ -678,8 +678,137 @@ where:</p>
 </section>
 <section id="buckingham-theorem">
 <h3><span class="section-number">3.3.4.2. </span>Buckingham  theorem<a class="headerlink" href="#buckingham-theorem" title="Permalink to this heading">#</a></h3>
-<p>In the second approach, we will use the Buckingham theorem to find the same result. The time constant of the system is linked to the dimensions and to the physical characteristics of the component:</p>
-<p>The number of parameters by finding dimensionless numbers as a combination of these characteristics.As the final parameter we found is a constant, we can establish that the Time constant is proportional to the length to the power 1.</p>
+<p>In the second approach, we will use the Buckingham theorem to find the same result. The time constant of the system is linked to the dimensions and to the physical characteristics of the component.</p>
+<div class="admonition-buckingham-theroem admonition">
+<p class="admonition-title">Buckingham theroem</p>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Buckingham_%CF%80_theorem">Buckhigham theorem</a> states that if there is a physically meaningful equation involving a certain number <span class="math notranslate nohighlight">\(n\)</span> of physical variables, then the original equation can be rewritten in terms of a set of <span class="math notranslate nohighlight">\(p = n − k\)</span> dimensionless parameters <span class="math notranslate nohighlight">\(π_1\)</span>, <span class="math notranslate nohighlight">\(π_2\)</span>, …, <span class="math notranslate nohighlight">\(π_p\)</span> constructed from the original variables, where <span class="math notranslate nohighlight">\(k\)</span> is the number of physical dimensions involved.</p>
+<p>The dimensions of the multiple involved parameters (geometrical dimensions, physical properties, …) can be express and analyse in the following table.</p>
+</div>
+<p>The dimensional analysis that can lead to a scaling law can be broken down into several stages:</p>
+<p><strong>Step 1:</strong> List all the variables that are involved in the problem.</p>
+<p><span class="math notranslate nohighlight">\(\tau_{th}=f(d,L,h,\rho,c_p)\)</span></p>
+<p><strong>Step 2:</strong> Express each of the variables in terms of basic dimensions.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>M</p></th>
+<th class="head"><p>L</p></th>
+<th class="head"><p>T</p></th>
+<th class="head"><p>θ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Thermal time constant <span class="math notranslate nohighlight">\(\tau_{th}\)</span></p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Diameter <span class="math notranslate nohighlight">\(d\)</span></p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Length <span class="math notranslate nohighlight">\(L\)</span></p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Newton coefficient <span class="math notranslate nohighlight">\(h\)</span></p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>-3</p></td>
+<td><p>-1</p></td>
+</tr>
+<tr class="row-even"><td><p>Density <span class="math notranslate nohighlight">\(\rho\)</span></p></td>
+<td><p>1</p></td>
+<td><p>-3</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Specific heat capacity <span class="math notranslate nohighlight">\(c_p\)</span></p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>-2</p></td>
+<td><p>-1</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: The numbers in the table above correspond to the powers of the dimensions
+<span class="math notranslate nohighlight">\([x]=M^a L^b T^c θ^d \)</span></em></p>
+<p><strong>Step 3:</strong> Determine the required number of pi terms.</p>
+<p><em>The problem involves <span class="math notranslate nohighlight">\(6\)</span> of physical variables and <span class="math notranslate nohighlight">\(4\)</span> physical dimensions : the original equation can be rewritten in terms of a set of <span class="math notranslate nohighlight">\(p = 6 − 4 = 2\)</span> dimensionless parameters <span class="math notranslate nohighlight">\(π_0\)</span> and <span class="math notranslate nohighlight">\(π_1\)</span>.</em></p>
+<p><strong>Step 5:</strong> Select a number of repeating variables, where the number required is equal to the number of reference dimensions. All of the required reference dimensions must be included within the
+group of repeating variables, and each repeating variable must be dimensionally independent of the others.</p>
+<p><em>The dependent variable (as <span class="math notranslate nohighlight">\(\tau_{th}\)</span>) are not include in the repeating variables. We select here
+<span class="math notranslate nohighlight">\(L,h,\rho,c_p\)</span>.</em></p>
+<p><strong>Step 6:</strong> Combine dependant variables with repeating variable in sequence, to find the π dimensionless numbers. Check dimensions with the table.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>M</p></th>
+<th class="head"><p>L</p></th>
+<th class="head"><p>T</p></th>
+<th class="head"><p>θ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Thermal time constant <span class="math notranslate nohighlight">\(\tau_{th}\)</span></p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Diameter <span class="math notranslate nohighlight">\(d\)</span></p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Length <span class="math notranslate nohighlight">\(L\)</span></p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Newton coefficient <span class="math notranslate nohighlight">\(h\)</span></p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>-3</p></td>
+<td><p>-1</p></td>
+</tr>
+<tr class="row-even"><td><p>Density <span class="math notranslate nohighlight">\(\rho\)</span></p></td>
+<td><p>1</p></td>
+<td><p>-3</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Specific heat capacity <span class="math notranslate nohighlight">\(c_p\)</span></p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>-2</p></td>
+<td><p>-1</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\pi_0 = \frac{\tau_{th}h}{\rho c_p L}\)</span></p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\pi_1 = \frac{d}{L}\)</span></p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 7:</strong> Express the final form as a relationship among the <span class="math notranslate nohighlight">\(\pi\)</span> terms.</p>
+<p><span class="math notranslate nohighlight">\(\pi_0 = \frac{\tau_{th}h}{\rho c_p L} = f(\pi_1 = \frac{d}{L})\)</span></p>
+<p><strong>Step 8:</strong> State ratio of geometric dimension as constant in cause of geometrical similarity and extract scaling laws.</p>
+<p><span class="math notranslate nohighlight">\(\frac{\tau_{th}h}{\rho c_p L} = C^{st}  \longrightarrow  \tau_{th}^*=L^* \)</span></p>
 </section>
 </section>
 <section id="scaling-law-adaptation">
