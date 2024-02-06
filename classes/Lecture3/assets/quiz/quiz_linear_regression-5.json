@@ -14,9 +14,9 @@
                 "feedback": "Incorrect."
             },
             {
-                "answer": "Some components are dominated by others (it is possible to find lighter components for bigger static load)",
+                "answer": "Some components are dominated by others ",
                 "correct": true,
-                "feedback": "Correct!"
+                "feedback": "Correct! It is possible to find lighter components for bigger static load"
             }
         ]
     },
@@ -25,17 +25,17 @@
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "$M=0,0012$",
+                "answer": "M=0,0012",
                 "correct": false,
                 "feedback": "Incorrect."
             },
             {
-                "answer": "$M=0,0012+0,011.C_0$",
+                "answer": "M=0,0012+0,011.Co",
                 "correct": false,
                 "feedback": "Incorrect."
             },
             {
-                "answer": "$M=0,0012+0,011.C_0+0,00021.C_0^2$",
+                "answer": "M=0,0012+0,011.Co+0,00021.Co²$",
                 "correct": true,
                 "feedback": "Correct!"
             }

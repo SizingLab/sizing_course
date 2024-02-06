@@ -4,19 +4,19 @@
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "$M=1.299C_0-2.1398$",
+                "answer": "M=1.299Co-2.1398",
+                "correct": false,
+                "feedback": "Incorrect!"
+            },
+            {
+                "answer": "M=-2.1398Co^{1.299}",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "M=10^-2.1398.Co^1.299",
                 "correct": true,
-                "feedback": "Correct!"
-            },
-            {
-                "answer": "$M=-2.1398C_0^{1.299}$",
-                "correct": false,
-                "feedback": "Incorrect."
-            },
-            {
-                "answer": "$M=10^{-2.1398}.C_0^{1.299}$",
-                "correct": false,
-                "feedback": "Incorrect."
+                "feedback": "Correct !"
             }
         ]
     }
