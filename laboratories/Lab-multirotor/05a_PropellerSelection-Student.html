@@ -547,6 +547,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-graph">Design graph</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">Sizing code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization">Optimization</a></li>
 </ul>
 </li>
 </ul>
@@ -645,6 +646,30 @@ rho_air     float     1.18
 </div>
 </div>
 </section>
+<section id="optimization">
+<h3>Optimization<a class="headerlink" href="#optimization" title="Permalink to this heading">#</a></h3>
+<div class="exercise admonition" id="exercice_optimize_propeller">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
+<section id="exercise-content">
+<p>Adapt the sizing code for the optimal selection of propellers of a drone with the following:</p>
+<ul class="simple">
+<li><p>requirements: Payload mass (1 kg), Hovering time (20 min), Take off acceleration (1 g)</p></li>
+<li><p>Design assumptions: Number of propellers per arm (1), Number of arms (4), Battery discharge margin (20%), ESC power efficiency (0.95), Motor efficiency (0.80)., a Structure+Motor / Load mass ratio (1).</p></li>
+</ul>
+</section>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reference battery parameters for scaling laws</span>
+<span class="n">M_bat_ref</span><span class="o">=</span><span class="mf">0.273</span> <span class="c1"># [kg] Reference mass of battery</span>
+<span class="n">E_bat_ref</span><span class="o">=</span><span class="mi">133200</span> <span class="c1"># [J] Reference Energy of battery</span>
+<span class="n">P_max_ref</span><span class="o">=</span><span class="mi">1850</span> <span class="c1"># [W] Reference max power of battery</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -713,6 +738,7 @@ rho_air     float     1.18
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-graph">Design graph</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">Sizing code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization">Optimization</a></li>
 </ul>
 </li>
 </ul>
