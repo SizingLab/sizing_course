@@ -241,6 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/05d_FrameSelection.html">Frame selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone (ISAE)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/07_DesignExploration-Student.html">Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/08_SystemSizingCodeOptimization.html">Sizing of a multi-rotor drone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/A1_Sizing_equations.html">Appendix 1: Sizing equations</a></li>
 </ul>
 </li>
@@ -938,7 +939,7 @@ Constraints (should be &gt;= 0):
      Length margin: actuator_length-stroke-L_nut-L_bearing-2*L_rod =  0.258
 -----------------------------------------------
 Calculation time:
- 0.017479658126831055 s
+ 0.017489194869995117 s
 </pre></div>
 </div>
 </div>
@@ -984,17 +985,17 @@ Objective:
 Design variables:
      reduction_ratio =  1.29
      k_oversizing =  1.69
-     d_1 =  -0.30 m
+     d_1 =  -0.31 m
      d_2 =  0.20 m
 Performances:
      Stroke = 0.27 m
-     Max load = 35434 N
-     Stall load = 85448 N
+     Max load = 35448 N
+     Stall load = 85454 N
 Components characteristics:
      Lever arm = 1.35 m
      Actuator length = 0.81 m
-     Motor mass = 22.22 kg
-     Max Tem = 105.19 N.m
+     Motor mass = 22.23 kg
+     Max Tem = 105.22 N.m
      Rod-end mass = 2.80 kg
      Rod-end length = 0.06 m
      Screw mass = 4.81 kg
@@ -1002,12 +1003,12 @@ Components characteristics:
      Nut length = 0.12 m
      Bearing length = 0.04 m
 Constraints (should be &gt;= 0):
-     Speed margin: W_mot-reduction_ratio*max_speed/pitch= 241.043
+     Speed margin: W_mot-reduction_ratio*max_speed/pitch= 241.112
      Torque margin: T_mot_guess-T_mot_real= 0.000 
-     Length margin: actuator_length-stroke-L_nut-L_bearing-2*L_rod =  0.258
+     Length margin: actuator_length-stroke-L_nut-L_bearing-2*L_rod =  0.257
 -----------------------------------------------
 Calculation time:
- 0.5669698715209961 s
+ 0.5827314853668213 s
 </pre></div>
 </div>
 </div>
