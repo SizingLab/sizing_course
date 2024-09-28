@@ -1404,7 +1404,7 @@ Optimization Complete
 -----------------------------------
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/scipy/optimize/_optimize.py:284: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/scipy/optimize/_optimize.py:284: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
   warnings.warn(&quot;Values in x were outside bounds during a &quot;
 </pre></div>
 </div>
@@ -1469,7 +1469,7 @@ Constraints (should be &gt;= 0):
      Speed margin: W_mot-reduction_ratio*max_speed/pitch= -0.000
      Length margin: actuator_length-stroke-L_nut-L_bearing-2*L_rod =  0.299
 Calculation time:
- 0.4518289566040039 s
+ 0.47068023681640625 s
 </pre></div>
 </div>
 </div>
@@ -1672,7 +1672,7 @@ Calculation time:
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Design variables:&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     reduction_ratio =  </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;reduction_ratio&quot;</span><span class="p">))</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/core/problem.py:517,</span> in <span class="ni">Problem.get_val</span><span class="nt">(self, name, units, indices, get_remote)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/problem.py:517,</span> in <span class="ni">Problem.get_val</span><span class="nt">(self, name, units, indices, get_remote)</span>
 <span class="g g-Whitespace">    </span><span class="mi">490</span> <span class="k">def</span> <span class="nf">get_val</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">get_remote</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">491</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">492</span><span class="sd">     Get an output/input variable.</span>
@@ -1701,14 +1701,14 @@ Calculation time:
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">om</span><span class="o">.</span><span class="n">n2</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/visualization/n2_viewer/n2_viewer.py:637,</span> in <span class="ni">n2</span><span class="nt">(data_source, outfile, path, values, case_id, show_browser, embeddable, title, display_in_notebook)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/visualization/n2_viewer/n2_viewer.py:637,</span> in <span class="ni">n2</span><span class="nt">(data_source, outfile, path, values, case_id, show_browser, embeddable, title, display_in_notebook)</span>
 <span class="g g-Whitespace">    </span><span class="mi">635</span> <span class="c1"># grab the model viewer data</span>
 <span class="g g-Whitespace">    </span><span class="mi">636</span> <span class="k">try</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">637</span>     <span class="n">model_data</span> <span class="o">=</span> <span class="n">_get_viewer_data</span><span class="p">(</span><span class="n">data_source</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">case_id</span><span class="o">=</span><span class="n">case_id</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">638</span>     <span class="n">err_msg</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="g g-Whitespace">    </span><span class="mi">639</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/visualization/n2_viewer/n2_viewer.py:510,</span> in <span class="ni">_get_viewer_data</span><span class="nt">(data_source, values, case_id)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/visualization/n2_viewer/n2_viewer.py:510,</span> in <span class="ni">_get_viewer_data</span><span class="nt">(data_source, values, case_id)</span>
 <span class="g g-Whitespace">    </span><span class="mi">506</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Viewer data is not available for &#39;</span><span class="si">{</span><span class="n">data_source</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">507</span>                     <span class="s2">&quot;The source must be a Problem, model or the filename of a recording.&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">509</span> <span class="n">data_dict</span> <span class="o">=</span> <span class="p">{}</span>
@@ -1716,7 +1716,7 @@ Calculation time:
 <span class="g g-Whitespace">    </span><span class="mi">511</span> <span class="n">data_dict</span><span class="p">[</span><span class="s1">&#39;md5_hash&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">root_group</span><span class="o">.</span><span class="n">_generate_md5_hash</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">513</span> <span class="n">connections_list</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/openmdao/visualization/n2_viewer/n2_viewer.py:254,</span> in <span class="ni">_get_tree_dict</span><span class="nt">(system, values, is_parallel)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/visualization/n2_viewer/n2_viewer.py:254,</span> in <span class="ni">_get_tree_dict</span><span class="nt">(system, values, is_parallel)</span>
 <span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="n">tree_dict</span><span class="p">[</span><span class="s1">&#39;is_parallel&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">is_parallel</span>
 <span class="g g-Whitespace">    </span><span class="mi">251</span> <span class="n">children</span> <span class="o">=</span> <span class="p">[</span><span class="n">_get_tree_dict</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">is_parallel</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">252</span>             <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">_subsystems_myproc</span><span class="p">]</span>
