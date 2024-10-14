@@ -759,7 +759,7 @@ document.write(`
                 <span class="n">F</span><span class="o">=</span><span class="mi">0</span>
                 <span class="n">dydt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">F</span><span class="o">=-</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Fmax</span>
+                <span class="n">F</span><span class="o">=-</span><span class="bp">self</span><span class="o">.</span><span class="n">BrakeRatioMax</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Fmax</span>
                 <span class="n">dydt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
                 
             <span class="bp">self</span><span class="o">.</span><span class="n">Fsection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Fsection</span> <span class="o">+</span> <span class="p">[</span><span class="n">F</span><span class="p">]</span>    
@@ -840,13 +840,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 14.35 kJ/(Pax.km)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 14.24 kJ/(Pax.km)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.35180016858578
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.23696270552972
 </pre></div>
 </div>
-<img alt="../../_images/be177c4884206f9c0847743a521e46fcd0931e9118d5d6b59fb62d0f593b61f8.png" src="../../_images/be177c4884206f9c0847743a521e46fcd0931e9118d5d6b59fb62d0f593b61f8.png" />
+<img alt="../../_images/6a1390fd5c4c7e5c98f9159cdd11a07a34e1d3ec755d54687c34ba7ed6f15d1d.png" src="../../_images/6a1390fd5c4c7e5c98f9159cdd11a07a34e1d3ec755d54687c34ba7ed6f15d1d.png" />
 </div>
 </div>
 <p>A extrema case is a triangular profile without constant speed and coasting modes which minimizes acceleration and inertial driving force.</p>
@@ -993,24 +993,22 @@ Consumption per passenger: 20.44 kJ/(Pax.km)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1174296675189548
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1107024523621547
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1669
-     nit: 36
+    nfev: 994
+     nit: 21
  success: True
-       x: array([0.29774013, 0.19338005, 0.98142268])
-Optimal vector : [0.29774013 0.19338005 0.98142268]
-0.5131326713242985
-Constraints vector : [0.0006464155866991004, 0.00020729684908794098, 0.08686732867570146]
+       x: array([0.19026097, 0.29859532, 0.96789098])
+Optimal vector : [0.19026097 0.29859532 0.96789098]
+0.34915354595639303
+Constraints vector : [0.0014158832892343892, 0.00020729684908794098, 0.25084645404360695]
+Consumption per passenger: 16.98 kJ/(Pax.km)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 17.07 kJ/(Pax.km)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.976877669240576
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.066578187803167
-</pre></div>
-</div>
-<img alt="../../_images/6244689041dffc088569b56e5ef771ee2f757e85163f3427b67a1a7536582bf7.png" src="../../_images/6244689041dffc088569b56e5ef771ee2f757e85163f3427b67a1a7536582bf7.png" />
+<img alt="../../_images/9cfca3548e76811d9ba7efcb72c414cd583b59e01a5caa9978ca270d4208b7f3.png" src="../../_images/9cfca3548e76811d9ba7efcb72c414cd583b59e01a5caa9978ca270d4208b7f3.png" />
 </div>
 </div>
 <blockquote>
@@ -1062,54 +1060,54 @@ Constraints vector : [0.0006464155866991004, 0.00020729684908794098, 0.086867328
 Tramway :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.3155835512285257
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.2482194479805129
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1264
-     nit: 27
+    nfev: 724
+     nit: 15
  success: True
-       x: array([0.28504265, 0.18151599, 0.9899746 ])
-Consumption per passenger: 20.59 kJ/(Pax.km)
+       x: array([0.0895802 , 0.49828292, 0.9727554 ])
+Consumption per passenger: 19.71 kJ/(Pax.km)
 ----
 Trolleybus :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1396852632064673
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1171417308272777
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1129
-     nit: 24
+    nfev: 904
+     nit: 19
  success: True
-       x: array([0.0957578 , 0.61122428, 0.98775226])
-Consumption per passenger: 33.77 kJ/(Pax.km)
+       x: array([0.06127818, 0.76155088, 0.9700272 ])
+Consumption per passenger: 33.14 kJ/(Pax.km)
 ----
 Bus :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1554437831959297
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1382110888204808
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1354
-     nit: 29
+    nfev: 1309
+     nit: 28
  success: True
-       x: array([0.05354922, 0.76157377, 0.98724261])
-Consumption per passenger: 35.30 kJ/(Pax.km)
+       x: array([0.05431709, 0.76408141, 0.96663114])
+Consumption per passenger: 34.50 kJ/(Pax.km)
 ----
 Car :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.495083491840943
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.509129192627761
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 2209
-     nit: 48
+    nfev: 994
+     nit: 21
  success: True
-       x: array([7.01150978e-04, 6.52940399e-01, 9.89423845e-01])
+       x: array([0.07775605, 0.22760196, 0.98904032])
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 93.25 kJ/(Pax.km)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 99.96 kJ/(Pax.km)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>93.25025025004533
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99.95589732616823
 </pre></div>
 </div>
-<img alt="../../_images/590672dd26191bee7ef21eb28797083156c171edabe296f0424d420ee20ebc4b.png" src="../../_images/590672dd26191bee7ef21eb28797083156c171edabe296f0424d420ee20ebc4b.png" />
+<img alt="../../_images/3c1c2d64baecc30c8cb284eab87b287206cf1f87b613e15ee67e2d3e91e1c1a7.png" src="../../_images/3c1c2d64baecc30c8cb284eab87b287206cf1f87b613e15ee67e2d3e91e1c1a7.png" />
 </div>
 </div>
 </section>

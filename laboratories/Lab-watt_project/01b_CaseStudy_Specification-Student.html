@@ -749,7 +749,7 @@ document.write(`
                 <span class="n">F</span><span class="o">=</span><span class="mi">0</span>
                 <span class="n">dydt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">F</span><span class="o">=-</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Fmax</span>
+                <span class="n">F</span><span class="o">=-</span><span class="bp">self</span><span class="o">.</span><span class="n">BrakeRatioMax</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Fmax</span>
                 <span class="n">dydt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
                 
             <span class="bp">self</span><span class="o">.</span><span class="n">Fsection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Fsection</span> <span class="o">+</span> <span class="p">[</span><span class="n">F</span><span class="p">]</span>    
