@@ -660,7 +660,7 @@ document.write(`
 <ul class="simple">
 <li><p>Accelerating mode</p></li>
 <li><p>Constant speed mode</p></li>
-<li><p>Coasting mode</p></li>
+<li><p>Coasting/freewheel mode</p></li>
 <li><p>Braking mode</p></li>
 </ul>
 <p>The control points for switching from one mode to another are defined in the following code using 3 parameters <span class="math notranslate nohighlight">\(k_1, k_2, k_3\)</span> as shown in the figure below.
@@ -804,9 +804,14 @@ document.write(`
         <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">ConsumptionPerPax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
-        <span class="n">Trajet</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Consumption per passenger: </span><span class="si">%.2f</span><span class="s2"> kJ/(Pax.km)&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">Trajet</span><span class="o">.</span><span class="n">NRJsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">Trajet</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">NumberPass</span><span class="o">/</span><span class="n">Trajet</span><span class="o">.</span><span class="n">Distance</span><span class="p">))</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">Trajet</span><span class="o">.</span><span class="n">NRJsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">Trajet</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">NumberPass</span><span class="o">/</span><span class="n">Trajet</span><span class="o">.</span><span class="n">Distance</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Consumption per passenger: </span><span class="si">%.2f</span><span class="s2"> kJ/(Pax.km)&quot;</span><span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NRJsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">NumberPass</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">Distance</span><span class="p">))</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NRJsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">NumberPass</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">Distance</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">MaxEnergyPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Max energy discharge: </span><span class="si">%.0f</span><span class="s2"> kJ&quot;</span><span class="o">%</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NRJsection</span><span class="p">)</span><span class="o">*</span><span class="mf">1e-3</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NRJsection</span><span class="p">)</span><span class="o">*</span><span class="mf">1e-3</span>
     
 </pre></div>
 </div>
@@ -816,15 +821,16 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definition of the section under study</span>
-<span class="n">Trajet</span> <span class="o">=</span> <span class="n">SimulSection</span><span class="p">(</span><span class="n">Vehicle</span><span class="o">=</span><span class="n">Tram</span><span class="p">,</span> <span class="n">Distance</span><span class="o">=</span><span class="mi">670</span><span class="p">,</span> <span class="n">MeanSpeed</span><span class="o">=</span><span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="n">BrakeRatioMax</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">dt</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Definition of k1, k2, k3 parameters</span>
-<span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mf">0.036125972011676784</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.9638740279883232</span><span class="p">]</span>
+<span class="n">Trajet_Tram</span> <span class="o">=</span> <span class="n">SimulSection</span><span class="p">(</span><span class="n">Vehicle</span><span class="o">=</span><span class="n">Tram</span><span class="p">,</span> <span class="n">Distance</span><span class="o">=</span><span class="mi">670</span><span class="p">,</span> <span class="n">MeanSpeed</span><span class="o">=</span><span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="n">BrakeRatioMax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">dt</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#Trajet_Car = SimulSection(Vehicle=Car, Distance=670, MeanSpeed=26*1e3/3600,BrakeRatioMax=1.0,dt=1)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Duration of traject for given mean speed: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">670</span><span class="o">/</span><span class="p">(</span><span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">))</span> <span class="o">+</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
 
 <span class="c1"># Profile integration, plotting and consummption per passenger evaluation</span>
-<span class="n">Trajet</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">Trajet</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">Trajet</span><span class="o">.</span><span class="n">ConsumptionPerPax</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mf">0.036125972011676784</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.9638740279883232</span><span class="p">]</span>
+<span class="n">Trajet_Tram</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Trajet_Tram</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">Trajet_Tram</span><span class="o">.</span><span class="n">ConsumptionPerPax</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Trajet_Tram</span><span class="o">.</span><span class="n">MaxEnergyPoint</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -833,27 +839,65 @@ document.write(`
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Definition of the section under study</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">Trajet</span> <span class="o">=</span> <span class="n">SimulSection</span><span class="p">(</span><span class="n">Vehicle</span><span class="o">=</span><span class="n">Tram</span><span class="p">,</span> <span class="n">Distance</span><span class="o">=</span><span class="mi">670</span><span class="p">,</span> <span class="n">MeanSpeed</span><span class="o">=</span><span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="n">BrakeRatioMax</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">dt</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Definition of k1, k2, k3 parameters</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mf">0.036125972011676784</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.9638740279883232</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">Trajet_Tram</span> <span class="o">=</span> <span class="n">SimulSection</span><span class="p">(</span><span class="n">Vehicle</span><span class="o">=</span><span class="n">Tram</span><span class="p">,</span> <span class="n">Distance</span><span class="o">=</span><span class="mi">670</span><span class="p">,</span> <span class="n">MeanSpeed</span><span class="o">=</span><span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="n">BrakeRatioMax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">dt</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#Trajet_Car = SimulSection(Vehicle=Car, Distance=670, MeanSpeed=26*1e3/3600,BrakeRatioMax=1.0,dt=1)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Duration of traject for given mean speed: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">670</span><span class="o">/</span><span class="p">(</span><span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">))</span> <span class="o">+</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;Tram&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
-<p>A extrema case is a triangular profile without constant speed and coasting modes which minimizes acceleration and inertial driving force.</p>
+<p>Two extrema cases are :</p>
+<ul class="simple">
+<li><p>a triangular profile (acceleration/deceleration, without constant speed &amp; freewheel)</p></li>
+<li><p>a trapezoidal profile (without freewheel)</p></li>
+</ul>
 <blockquote>
-<div><p><strong>Question:</strong> Give the relationship between acceleration, average speed and distance traveled if we assume the acceleration and braking phases are perfectly linear.</p>
+<div><p><strong>Question 1:</strong> Give the relationship between acceleration, average speed and distance traveled for triangular profile if we assume the acceleration and braking phases are perfectly linear and of the same slope (i.e. resistive force negligible): does it match a warning message of the SimulSection class?</p>
 </div></blockquote>
+<blockquote>
+<div><p><strong>Question 2:</strong> Give the relationship between k1 (k2=1), average speed and distance traveled if we assume the acceleration and braking phases are perfectly linear and of the same slope.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculus of lower acceleration</span>
+<span class="n">a_min</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">670</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Min acceleration is: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">a_min</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;m/s²&#39;</span><span class="p">)</span>
+<span class="n">Tram_low_acc</span> <span class="o">=</span> <span class="n">vehicle</span><span class="p">(</span><span class="n">MaxSpeed</span> <span class="o">=</span> <span class="mi">60</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span> <span class="n">MaxAcc</span><span class="o">=</span><span class="n">a_min</span><span class="p">,</span><span class="n">NumberPass</span><span class="o">=</span><span class="mi">220</span><span class="p">,</span><span class="n">Weight</span><span class="o">=</span><span class="mi">57049</span><span class="p">,</span><span class="n">Crr</span><span class="o">=</span><span class="mf">0.006</span><span class="p">,</span><span class="n">Cd</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">FrontArea</span><span class="o">=</span><span class="mf">8.5</span><span class="p">)</span>
+
+<span class="c1"># Triangular profile test</span>
+<span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]</span> <span class="c1">#if resistive force not negligieble in front of propulsive force not k1&gt;0.5</span>
+<span class="n">Trajet_Tram_low_acc</span> <span class="o">=</span> <span class="n">SimulSection</span><span class="p">(</span><span class="n">Vehicle</span><span class="o">=</span><span class="n">Tram_low_acc</span><span class="p">,</span> <span class="n">Distance</span><span class="o">=</span><span class="mi">670</span><span class="p">,</span> <span class="n">MeanSpeed</span><span class="o">=</span><span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="n">BrakeRatioMax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">dt</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Trajet_Tram_low_acc</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Trajet_Tram_low_acc</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">Trajet_Tram_low_acc</span><span class="o">.</span><span class="n">ConsumptionPerPax</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Trajet_Tram_low_acc</span><span class="o">.</span><span class="n">MaxEnergyPoint</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Min acceleration is: 0.3114059332964806m/s²
+Vehicle Max Acceleration (depending of max force) is too low or travel distance too small or mean speed too small
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 18.74 kJ/(Pax.km)
+Max energy discharge: 7420 kJ
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7419.990488324914
+</pre></div>
+</div>
+<img alt="../../_images/0d534f0acb514c15302ffa81341c4109274e9861a7554a835c657cd7d9c0f81d.png" src="../../_images/0d534f0acb514c15302ffa81341c4109274e9861a7554a835c657cd7d9c0f81d.png" />
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters calculation</span>
 <span class="c1"># on pose x = sqrt(k1)</span>
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">root</span>
 
-<span class="n">Trajet</span> <span class="o">=</span> <span class="n">SimulSection</span><span class="p">(</span><span class="n">Tram</span><span class="p">,</span> <span class="mi">670</span><span class="p">,</span> <span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">Trajet</span><span class="o">.</span><span class="n">MeanSpeed</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">Trajet</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">MaxAcc</span><span class="o">*</span><span class="n">Trajet</span><span class="o">.</span><span class="n">Distance</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Trajet_Tram</span><span class="o">.</span><span class="n">MeanSpeed</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">Trajet_Tram</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">MaxAcc</span><span class="o">*</span><span class="n">Trajet_Tram</span><span class="o">.</span><span class="n">Distance</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="mf">1.5</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
 
@@ -866,42 +910,44 @@ document.write(`
 <span class="n">sol</span><span class="o">=</span><span class="n">root</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
 
 <span class="n">k1</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">k1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Parameters calculation</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># on pose x = sqrt(k1)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">root</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">Trajet</span> <span class="o">=</span> <span class="n">SimulSection</span><span class="p">(</span><span class="n">Tram</span><span class="p">,</span> <span class="mi">670</span><span class="p">,</span> <span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Trajet</span><span class="o">.</span><span class="n">MeanSpeed</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">Trajet</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">MaxAcc</span><span class="o">*</span><span class="n">Trajet</span><span class="o">.</span><span class="n">Distance</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="mf">1.5</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Trajet_Tram</span><span class="o">.</span><span class="n">MeanSpeed</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">Trajet_Tram</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">MaxAcc</span><span class="o">*</span><span class="n">Trajet_Tram</span><span class="o">.</span><span class="n">Distance</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">a</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="mf">1.5</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;Tram&#39; is not defined
+<span class="ne">NameError</span>: name &#39;Trajet_Tram&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k3</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">k1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k3</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">k1</span><span class="p">)</span><span class="o">/</span><span class="n">k1</span>
 
 <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="n">k1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">k3</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">Trajet</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">Trajet</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">Trajet</span><span class="o">.</span><span class="n">ConsumptionPerPax</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Trajet_Tram</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Trajet_Tram</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">Trajet_Tram</span><span class="o">.</span><span class="n">ConsumptionPerPax</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Trajet_Tram</span><span class="o">.</span><span class="n">MaxEnergyPoint</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">k3</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">k1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">k3</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">k1</span><span class="p">)</span><span class="o">/</span><span class="n">k1</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="n">k1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">k3</span><span class="p">]</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
@@ -923,33 +969,31 @@ document.write(`
 <p>The previous class is now extended to allow optimization of variables <span class="math notranslate nohighlight">\(k_1, k_2, k_3\)</span> in order to minimize energy consumption (even with braking power lower than acceleration power).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">OptimSection</span><span class="p">(</span><span class="n">SimulSection</span><span class="p">):</span>   
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">OptimSection</span><span class="p">(</span><span class="n">SimulSection</span><span class="p">):</span>
+    
     <span class="c1"># Gradient optimization</span>
-    <span class="k">def</span> <span class="nf">objectif</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">objectifConso</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="n">NRJmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Weight</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">g</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Crr</span>
-        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NRJsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">NRJmin</span><span class="p">)</span>
-                
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NRJsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">NRJmin</span><span class="p">)</span>   
+    
     <span class="k">def</span> <span class="nf">contraintes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="n">TimeTrajet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Distance</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">MeanSpeed</span>  
         <span class="n">PowerAccBrakeRatio</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">psection</span><span class="p">))</span><span class="o">/</span><span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">psection</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">PowerAccBrakeRatio</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Brake power/Acceleration power ratio is: &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">PowerAccBrakeRatio</span><span class="p">))</span>
         <span class="c1"># contraintes en distance, vitesse moyenne (ou duree de trajet, vitesse au freinage), ratio puissance freinage / acc </span>
-        <span class="k">return</span> <span class="p">[(</span><span class="bp">self</span><span class="o">.</span><span class="n">xsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">Distance</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">Distance</span><span class="p">,</span> <span class="p">(</span><span class="n">TimeTrajet</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">tsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">TimeTrajet</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">BrakeRatioMax</span><span class="o">-</span><span class="n">PowerAccBrakeRatio</span> <span class="p">]</span>    
+        <span class="k">return</span> <span class="p">[(</span><span class="bp">self</span><span class="o">.</span><span class="n">xsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">Distance</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">Distance</span><span class="p">,</span> <span class="p">(</span><span class="n">TimeTrajet</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">tsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">TimeTrajet</span><span class="p">,</span> 
+                <span class="bp">self</span><span class="o">.</span><span class="n">BrakeRatioMax</span><span class="o">-</span><span class="n">PowerAccBrakeRatio</span> <span class="p">]</span>    
       
-    
-    <span class="k">def</span> <span class="nf">optimize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x0</span><span class="p">):</span>
-        
+    <span class="k">def</span> <span class="nf">optimizeConso</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x0</span><span class="p">):</span>
         <span class="n">Xbound</span><span class="o">=</span> <span class="p">[(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">.99</span><span class="p">)]</span>
-        
-        <span class="n">Xopt</span><span class="o">=</span><span class="n">fmin_slsqp</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">objectif</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">f_ieqcons</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">contraintes</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">Xbound</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">)</span>
-                
+        <span class="n">Xopt</span><span class="o">=</span><span class="n">fmin_slsqp</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">objectifConso</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">f_ieqcons</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">contraintes</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">Xbound</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">)</span>      
         <span class="k">return</span> <span class="n">Xopt</span>
     
+
     <span class="c1"># Differential evolution optimization</span>
-    
-    <span class="k">def</span> <span class="nf">objectifG</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">objectifGConso</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="n">NRJmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Weight</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">g</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Crr</span>
         <span class="n">pen</span><span class="o">=</span><span class="mi">0</span>
@@ -959,14 +1003,30 @@ document.write(`
         <span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="n">VecC</span><span class="p">:</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">C</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">):</span>
                 <span class="n">pen</span><span class="o">=</span><span class="n">pen</span><span class="o">-</span><span class="mf">1e2</span><span class="o">*</span><span class="n">C</span>
-        
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NRJsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">NRJmin</span><span class="o">+</span><span class="n">pen</span><span class="p">)</span>
     
-    
-    
-    <span class="k">def</span> <span class="nf">optimizeG</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x0</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">optimizeGConso</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x0</span><span class="p">):</span>
         <span class="n">Xbound</span><span class="o">=</span> <span class="p">[(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.99</span><span class="p">)]</span>
-        <span class="n">res</span><span class="o">=</span><span class="n">differential_evolution</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">objectifG</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">Xbound</span><span class="p">)</span>
+        <span class="n">res</span><span class="o">=</span><span class="n">differential_evolution</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">objectifGConso</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">Xbound</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
+    
+    <span class="c1"># Differential evolution optimization</span>
+    <span class="k">def</span> <span class="nf">objectifGEmax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">NRJmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Weight</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">g</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">Vehicle</span><span class="o">.</span><span class="n">Crr</span>
+        <span class="n">pen</span><span class="o">=</span><span class="mi">0</span>
+        <span class="n">TimeTrajet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Distance</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">MeanSpeed</span>  
+        <span class="n">PowerAccBrakeRatio</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">psection</span><span class="p">))</span><span class="o">/</span><span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">psection</span><span class="p">)</span>
+        <span class="n">VecC</span><span class="o">=</span><span class="p">[(</span><span class="bp">self</span><span class="o">.</span><span class="n">xsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">Distance</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">Distance</span><span class="p">,</span> <span class="p">(</span><span class="n">TimeTrajet</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">tsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">TimeTrajet</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">BrakeRatioMax</span><span class="o">-</span><span class="n">PowerAccBrakeRatio</span> <span class="p">]</span>      
+        <span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="n">VecC</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">C</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">):</span>
+                <span class="n">pen</span><span class="o">=</span><span class="n">pen</span><span class="o">-</span><span class="mf">1e2</span><span class="o">*</span><span class="n">C</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NRJsection</span><span class="p">)</span><span class="o">/</span><span class="n">NRJmin</span><span class="o">+</span><span class="n">pen</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">optimizeGEmax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x0</span><span class="p">):</span>
+        <span class="n">Xbound</span><span class="o">=</span> <span class="p">[(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.99</span><span class="p">)]</span>
+        <span class="n">res</span><span class="o">=</span><span class="n">differential_evolution</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">objectifGEmax</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">Xbound</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
     
@@ -978,31 +1038,45 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definition of the section under study</span>
-<span class="n">Trajet</span> <span class="o">=</span> <span class="n">OptimSection</span><span class="p">(</span><span class="n">Vehicle</span><span class="o">=</span><span class="n">Tram</span><span class="p">,</span> <span class="n">Distance</span><span class="o">=</span><span class="mi">670</span><span class="p">,</span> <span class="n">MeanSpeed</span><span class="o">=</span><span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="n">BrakeRatioMax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">dt</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Trajet</span> <span class="o">=</span> <span class="n">OptimSection</span><span class="p">(</span><span class="n">Vehicle</span><span class="o">=</span><span class="n">Tram</span><span class="p">,</span> <span class="n">Distance</span><span class="o">=</span><span class="mi">670</span><span class="p">,</span> <span class="n">MeanSpeed</span><span class="o">=</span><span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="n">BrakeRatioMax</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">dt</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
 
 <span class="c1"># Initial variables vector</span>
 <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mf">0.036125972011676784</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.9638740279883232</span><span class="p">]</span>
 
-<span class="c1"># Optimization</span>
-<span class="n">Xopt</span><span class="o">=</span><span class="n">Trajet</span><span class="o">.</span><span class="n">optimizeG</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="c1"># Global optimization with differential evolution algorithm</span>
-
-<span class="c1"># Xopt=Trajet.optimize(X) # Opitmization with gradient algorithm</span>
+<span class="c1"># Optimization of the consumption</span>
+<span class="n">Xopt1</span><span class="o">=</span><span class="n">Trajet</span><span class="o">.</span><span class="n">optimizeGConso</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="c1"># Global optimization with differential evolution algorithm</span>
+<span class="c1">#Xopt1=Trajet.optimizeConso(X) # Opitmization with gradient algorithm</span>
 
 <span class="c1"># print and plot results</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Optimal vector :&quot;</span><span class="p">,</span><span class="n">Xopt</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraints vector :&quot;</span><span class="p">,</span> <span class="n">Trajet</span><span class="o">.</span><span class="n">contraintes</span><span class="p">(</span><span class="n">Xopt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Optimal vector :&quot;</span><span class="p">,</span> <span class="n">Xopt1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraints vector :&quot;</span><span class="p">,</span> <span class="n">Trajet</span><span class="o">.</span><span class="n">contraintes</span><span class="p">(</span><span class="n">Xopt1</span><span class="p">))</span>
 
+<span class="n">Trajet</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">Xopt1</span><span class="p">)</span>
 <span class="n">Trajet</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">Trajet</span><span class="o">.</span><span class="n">ConsumptionPerPax</span><span class="p">(</span><span class="n">Xopt</span><span class="p">)</span>
+<span class="n">Trajet</span><span class="o">.</span><span class="n">ConsumptionPerPax</span><span class="p">(</span><span class="n">Xopt1</span><span class="p">)</span>
+<span class="n">Trajet</span><span class="o">.</span><span class="n">MaxEnergyPoint</span><span class="p">(</span><span class="n">Xopt1</span><span class="p">)</span>
+
+<span class="c1"># Optimization of the max energy point</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">######################################</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">Xopt2</span><span class="o">=</span><span class="n">Trajet</span><span class="o">.</span><span class="n">optimizeGEmax</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="c1"># Global optimization with differential evolution algorithm</span>
+
+<span class="c1"># print and plot results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Optimal vector :&quot;</span><span class="p">,</span> <span class="n">Xopt2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraints vector :&quot;</span><span class="p">,</span> <span class="n">Trajet</span><span class="o">.</span><span class="n">contraintes</span><span class="p">(</span><span class="n">Xopt2</span><span class="p">))</span>
+
+<span class="n">Trajet</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="n">Xopt2</span><span class="p">)</span>
+<span class="n">Trajet</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">Trajet</span><span class="o">.</span><span class="n">ConsumptionPerPax</span><span class="p">(</span><span class="n">Xopt2</span><span class="p">)</span>
+<span class="n">Trajet</span><span class="o">.</span><span class="n">MaxEnergyPoint</span><span class="p">(</span><span class="n">Xopt2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Definition of the section under study</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">Trajet</span> <span class="o">=</span> <span class="n">OptimSection</span><span class="p">(</span><span class="n">Vehicle</span><span class="o">=</span><span class="n">Tram</span><span class="p">,</span> <span class="n">Distance</span><span class="o">=</span><span class="mi">670</span><span class="p">,</span> <span class="n">MeanSpeed</span><span class="o">=</span><span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="n">BrakeRatioMax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">dt</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">Trajet</span> <span class="o">=</span> <span class="n">OptimSection</span><span class="p">(</span><span class="n">Vehicle</span><span class="o">=</span><span class="n">Tram</span><span class="p">,</span> <span class="n">Distance</span><span class="o">=</span><span class="mi">670</span><span class="p">,</span> <span class="n">MeanSpeed</span><span class="o">=</span><span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="n">BrakeRatioMax</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">dt</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Initial variables vector</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mf">0.036125972011676784</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.9638740279883232</span><span class="p">]</span>
 
