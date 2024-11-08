@@ -1084,41 +1084,41 @@ Max energy discharge: 4450 kJ
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vehicle Max Acceleration (depending of max force) is too low or travel distance too small or mean speed too small
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.104985206108134
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1045813941322162
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 949
-     nit: 20
+    nfev: 904
+     nit: 19
  success: True
-       x: array([0.04493286, 0.91435328, 0.94233583])
-Optimal vector : [0.04493286 0.91435328 0.94233583]
-Brake power/Acceleration power ratio is: 0.5526261025282487
-Constraints vector : [0.0010901690439572014, 0.00020729684908794098, 0.04737389747175125]
-Consumption per passenger: 16.88 kJ/(Pax.km)
-Max energy discharge: 3953 kJ
+       x: array([0.0669986 , 0.67345896, 0.95646444])
+Optimal vector : [0.0669986  0.67345896 0.95646444]
+Brake power/Acceleration power ratio is: 0.4590335453000751
+Constraints vector : [0.00014083936459357248, 0.00020729684908794098, 0.14096645469992486]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 16.86 kJ/(Pax.km)
+Max energy discharge: 3574 kJ
 
 ######################################
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.4627161460359577
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.4822231652256583
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1174
-     nit: 25
+    nfev: 1939
+     nit: 42
  success: True
-       x: array([0.26325065, 0.22207072, 0.96818627])
-Optimal vector : [0.26325065 0.22207072 0.96818627]
-Brake power/Acceleration power ratio is: 0.33307979392645
-Constraints vector : [0.0006461216493124681, 0.00020729684908794098, 0.26692020607355]
+       x: array([0.14379966, 0.37498686, 0.96690832])
+Optimal vector : [0.14379966 0.37498686 0.96690832]
+Brake power/Acceleration power ratio is: 0.36515128415938675
+Constraints vector : [0.0007442074331796862, 0.00020729684908794098, 0.23484871584061323]
+Consumption per passenger: 16.93 kJ/(Pax.km)
+Max energy discharge: 3337 kJ
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 16.97 kJ/(Pax.km)
-Max energy discharge: 3293 kJ
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3337.1811210436854
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3292.9388688877516
-</pre></div>
-</div>
-<img alt="../../_images/5530d64fb8673bcb8d930cb65c4b30fd839ab10806ca4b1a94c79afcece6274b.png" src="../../_images/5530d64fb8673bcb8d930cb65c4b30fd839ab10806ca4b1a94c79afcece6274b.png" />
-<img alt="../../_images/8f9d7952317792d350411bdc13a1b4477614697828b42ceb3abfc1552f4fc179.png" src="../../_images/8f9d7952317792d350411bdc13a1b4477614697828b42ceb3abfc1552f4fc179.png" />
+<img alt="../../_images/0b0fbb38885ddd4b0b17f3ef656606c392a70386c5c9645efc5bb847fb69c77d.png" src="../../_images/0b0fbb38885ddd4b0b17f3ef656606c392a70386c5c9645efc5bb847fb69c77d.png" />
+<img alt="../../_images/2f222aa64a8ad7dd73a535181e724ddc5d04ddb6f0691da5dc0a4f3d9648f2bd.png" src="../../_images/2f222aa64a8ad7dd73a535181e724ddc5d04ddb6f0691da5dc0a4f3d9648f2bd.png" />
 </div>
 </div>
 <blockquote>
@@ -1137,28 +1137,28 @@ Max energy discharge: 3293 kJ
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tramway :&quot;</span><span class="p">)</span>
 <span class="n">Trajet</span> <span class="o">=</span> <span class="n">OptimSection</span><span class="p">(</span><span class="n">Tram</span><span class="p">,</span> <span class="mi">670</span><span class="p">,</span> <span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mf">0.036125972011676784</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.9638740279883232</span><span class="p">]</span>
-<span class="n">Xopt</span><span class="o">=</span><span class="n">Trajet</span><span class="o">.</span><span class="n">optimizeG</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Xopt</span><span class="o">=</span><span class="n">Trajet</span><span class="o">.</span><span class="n">optimizeGConso</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="n">Trajet</span><span class="o">.</span><span class="n">ConsumptionPerPax</span><span class="p">(</span><span class="n">Xopt</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trolleybus :&quot;</span><span class="p">)</span>
 <span class="n">Trajet</span> <span class="o">=</span> <span class="n">OptimSection</span><span class="p">(</span><span class="n">TrolleyBus</span><span class="p">,</span> <span class="mi">670</span><span class="p">,</span> <span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mf">0.036125972011676784</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.9638740279883232</span><span class="p">]</span>
-<span class="n">Xopt</span><span class="o">=</span><span class="n">Trajet</span><span class="o">.</span><span class="n">optimizeG</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Xopt</span><span class="o">=</span><span class="n">Trajet</span><span class="o">.</span><span class="n">optimizeGConso</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="n">Trajet</span><span class="o">.</span><span class="n">ConsumptionPerPax</span><span class="p">(</span><span class="n">Xopt</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bus :&quot;</span><span class="p">)</span>
 <span class="n">Trajet</span> <span class="o">=</span> <span class="n">OptimSection</span><span class="p">(</span><span class="n">Bus</span><span class="p">,</span> <span class="mi">670</span><span class="p">,</span> <span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mf">0.036125972011676784</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.9638740279883232</span><span class="p">]</span>
-<span class="n">Xopt</span><span class="o">=</span><span class="n">Trajet</span><span class="o">.</span><span class="n">optimizeG</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Xopt</span><span class="o">=</span><span class="n">Trajet</span><span class="o">.</span><span class="n">optimizeGConso</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="n">Trajet</span><span class="o">.</span><span class="n">ConsumptionPerPax</span><span class="p">(</span><span class="n">Xopt</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Car :&quot;</span><span class="p">)</span>
 <span class="n">Trajet</span> <span class="o">=</span> <span class="n">OptimSection</span><span class="p">(</span><span class="n">Car</span><span class="p">,</span> <span class="mi">670</span><span class="p">,</span> <span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mf">0.036125972011676784</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.9638740279883232</span><span class="p">]</span>
-<span class="n">Xopt</span><span class="o">=</span><span class="n">Trajet</span><span class="o">.</span><span class="n">optimizeG</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Xopt</span><span class="o">=</span><span class="n">Trajet</span><span class="o">.</span><span class="n">optimizeGConso</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="n">Trajet</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">Trajet</span><span class="o">.</span><span class="n">ConsumptionPerPax</span><span class="p">(</span><span class="n">Xopt</span><span class="p">)</span>
 </pre></div>
@@ -1171,18 +1171,54 @@ Tramway :
 Vehicle Max Acceleration (depending of max force) is too low or travel distance too small or mean speed too small
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">Trajet</span> <span class="o">=</span> <span class="n">OptimSection</span><span class="p">(</span><span class="n">Tram</span><span class="p">,</span> <span class="mi">670</span><span class="p">,</span> <span class="mi">26</span><span class="o">*</span><span class="mf">1e3</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mf">0.036125972011676784</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.9638740279883232</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">Xopt</span><span class="o">=</span><span class="n">Trajet</span><span class="o">.</span><span class="n">optimizeG</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">Trajet</span><span class="o">.</span><span class="n">ConsumptionPerPax</span><span class="p">(</span><span class="n">Xopt</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----&quot;</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;OptimSection&#39; object has no attribute &#39;optimizeG&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.2482194479805129
+ message: &#39;Optimization terminated successfully.&#39;
+    nfev: 904
+     nit: 19
+ success: True
+       x: array([0.07753076, 0.49041467, 0.97726101])
+Consumption per passenger: 19.71 kJ/(Pax.km)
+----
+Trolleybus :
+Vehicle Max Acceleration (depending of max force) is too low or travel distance too small or mean speed too small
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1171417308272777
+ message: &#39;Optimization terminated successfully.&#39;
+    nfev: 1264
+     nit: 27
+ success: True
+       x: array([0.04834065, 0.76580666, 0.97483769])
+Consumption per passenger: 33.14 kJ/(Pax.km)
+----
+Bus :
+Vehicle Max Acceleration (depending of max force) is too low or travel distance too small or mean speed too small
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1382110888204808
+ message: &#39;Optimization terminated successfully.&#39;
+    nfev: 904
+     nit: 19
+ success: True
+       x: array([0.05717722, 0.76760684, 0.96557636])
+Consumption per passenger: 34.50 kJ/(Pax.km)
+----
+Car :
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.509129192627761
+ message: &#39;Optimization terminated successfully.&#39;
+    nfev: 1219
+     nit: 26
+ success: True
+       x: array([0.03660293, 0.23172662, 0.98657611])
+Consumption per passenger: 99.96 kJ/(Pax.km)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99.95589732616823
+</pre></div>
+</div>
+<img alt="../../_images/3c1c2d64baecc30c8cb284eab87b287206cf1f87b613e15ee67e2d3e91e1c1a7.png" src="../../_images/3c1c2d64baecc30c8cb284eab87b287206cf1f87b613e15ee67e2d3e91e1c1a7.png" />
 </div>
 </div>
 </section>
