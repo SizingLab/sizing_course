@@ -105,11 +105,11 @@ parts:
       - file: laboratories/Lab-watt_project/01b_CaseStudy_Specification-Student
       - file: laboratories/Lab-watt_project/01b_CaseStudy_Specification
       - file: laboratories/Lab-watt_project/02a_Architecture-Student
+      - file: laboratories/Lab-watt_project/02a_Architecture_UltraCapacitor
       - file: laboratories/Lab-watt_project/02b_Architecture_Hybrid
   - file: laboratories/Lab-watt_project/summary
     title: Lab - Sustainable mobility - DC/DC converter sizing
     sections:
-      - file: laboratories/Lab-watt_project/02a_Architecture_UltraCapacitor
       - file: laboratories/Lab-watt_project/03_SizingScenarios
       - file: laboratories/Lab-watt_project/04_ScalingLaws-Student
       - file: laboratories/Lab-watt_project/04_ScalingLaws
