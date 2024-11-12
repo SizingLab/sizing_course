@@ -279,7 +279,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression-Student.html">Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Heatsink  estimation models with simple and multiple linear regressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="06_SizingCodeInductor.html">Sizing code of an inductor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate-Student.html">Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate-Student.html">Sizing code of an inductor with surrogate models (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate.html">Sizing code of an inductor with surrogate models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="08_DCDC_converter_sizing_introduction.html">Design graphs for the sizing a DC/DC converter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="09_SizingCodeDCDCconverter.html">Sizing code of a DC/DC converter</a></li>
@@ -700,6 +700,18 @@ which gives <span class="math notranslate nohighlight">\(\beta=(X^tX)^{-1}X^tY\)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Determination of the least squares estimator with the OLS function </span>
 <span class="c1"># of the SatsModels package</span>
 
+<span class="kn">import</span>  <span class="nn">scipy.signal.signaltools</span>
+
+<span class="k">def</span> <span class="nf">_centered</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">newsize</span><span class="p">):</span>
+    <span class="c1"># Return the center newsize portion of the array.</span>
+    <span class="n">newsize</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">newsize</span><span class="p">)</span>
+    <span class="n">currsize</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">startind</span> <span class="o">=</span> <span class="p">(</span><span class="n">currsize</span> <span class="o">-</span> <span class="n">newsize</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">endind</span> <span class="o">=</span> <span class="n">startind</span> <span class="o">+</span> <span class="n">newsize</span>
+    <span class="n">myslice</span> <span class="o">=</span> <span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="n">startind</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">endind</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">endind</span><span class="p">))]</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">myslice</span><span class="p">)]</span>
+
+<span class="n">scipy</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">signaltools</span><span class="o">.</span><span class="n">_centered</span> <span class="o">=</span> <span class="n">_centered</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
@@ -722,55 +734,11 @@ which gives <span class="math notranslate nohighlight">\(\beta=(X^tX)^{-1}X^tY\)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/statsmodels/tsa/base/tsa_model.py:7: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
-  from pandas import (to_datetime, Int64Index, DatetimeIndex, Period,
-/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/statsmodels/tsa/base/tsa_model.py:7: FutureWarning: pandas.Float64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
-  from pandas import (to_datetime, Int64Index, DatetimeIndex, Period,
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameters:  [ 1.93618886e+00 -2.22112013e-02  1.29959433e-04]
+R2:  0.999537051410613
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Determination of the least squares estimator with the OLS function </span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># of the SatsModels package</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">statsmodels</span><span class="o">/</span><span class="n">api</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">27</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">from</span> <span class="nn">.discrete.discrete_model</span> <span class="kn">import</span> <span class="p">(</span><span class="n">Poisson</span><span class="p">,</span> <span class="n">Logit</span><span class="p">,</span> <span class="n">Probit</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>                                       <span class="n">MNLogit</span><span class="p">,</span> <span class="n">NegativeBinomial</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>                                       <span class="n">GeneralizedPoisson</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>                                       <span class="n">NegativeBinomialP</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="kn">from</span> <span class="nn">.discrete.count_model</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ZeroInflatedPoisson</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>                                    <span class="n">ZeroInflatedGeneralizedPoisson</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>                                    <span class="n">ZeroInflatedNegativeBinomialP</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">27</span> <span class="kn">from</span> <span class="nn">.tsa</span> <span class="kn">import</span> <span class="n">api</span> <span class="k">as</span> <span class="n">tsa</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="kn">from</span> <span class="nn">.duration.survfunc</span> <span class="kn">import</span> <span class="n">SurvfuncRight</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="kn">from</span> <span class="nn">.duration.hazard_regression</span> <span class="kn">import</span> <span class="n">PHReg</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">statsmodels</span><span class="o">/</span><span class="n">tsa</span><span class="o">/</span><span class="n">api</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">31</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="kn">from</span> <span class="nn">.vector_ar.vecm</span> <span class="kn">import</span> <span class="n">VECM</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="kn">from</span> <span class="nn">.vector_ar.svar_model</span> <span class="kn">import</span> <span class="n">SVAR</span>
-<span class="ne">---&gt; </span><span class="mi">31</span> <span class="kn">from</span> <span class="nn">.filters</span> <span class="kn">import</span> <span class="n">api</span> <span class="k">as</span> <span class="n">filters</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">tsatools</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="kn">from</span> <span class="nn">.tsatools</span> <span class="kn">import</span> <span class="p">(</span><span class="n">add_trend</span><span class="p">,</span> <span class="n">detrend</span><span class="p">,</span> <span class="n">lagmat</span><span class="p">,</span> <span class="n">lagmat2ds</span><span class="p">,</span> <span class="n">add_lag</span><span class="p">)</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">statsmodels</span><span class="o">/</span><span class="n">tsa</span><span class="o">/</span><span class="n">filters</span><span class="o">/</span><span class="n">api</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">.hp_filter</span> <span class="kn">import</span> <span class="n">hpfilter</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">.cf_filter</span> <span class="kn">import</span> <span class="n">cffilter</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">.filtertools</span> <span class="kn">import</span> <span class="n">miso_lfilter</span><span class="p">,</span> <span class="n">convolution_filter</span><span class="p">,</span> <span class="n">recursive_filter</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">statsmodels</span><span class="o">/</span><span class="n">tsa</span><span class="o">/</span><span class="n">filters</span><span class="o">/</span><span class="n">filtertools</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">18</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">import</span> <span class="nn">scipy.fftpack</span> <span class="k">as</span> <span class="nn">fft</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
-<span class="ne">---&gt; </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">scipy.signal.signaltools</span> <span class="kn">import</span> <span class="n">_centered</span> <span class="k">as</span> <span class="n">trim_centered</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">from</span> <span class="nn">statsmodels.tools.validation</span> <span class="kn">import</span> <span class="n">array_like</span><span class="p">,</span> <span class="n">PandasWrapper</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="k">def</span> <span class="nf">_pad_nans</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">head</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tail</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-
-<span class="ne">ImportError</span>: cannot import name &#39;_centered&#39; from &#39;scipy.signal.signaltools&#39; (/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/scipy/signal/signaltools.py)
-</pre></div>
-</div>
+<img alt="../../_images/49dcd0ab5f3edfc46e005d1a4f4f20908c11c485d4c07b760bce7bce4e04acb7.png" src="../../_images/49dcd0ab5f3edfc46e005d1a4f4f20908c11c485d4c07b760bce7bce4e04acb7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -836,16 +804,10 @@ the given thermal resistance data by the appropriate factor taken from the therm
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">))))</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">modelL</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">resultsL</span> <span class="o">=</span> <span class="n">modelL</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parameters: &#39;</span><span class="p">,</span> <span class="n">resultsL</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sm&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameters:  [ 1.60057829 -0.73345535]
+R2:  0.9991401923462344
+The estimation function is: Rth/Rth,150mm = 39.9.L^-0.73
+with L in mm
 </pre></div>
 </div>
 </div>
@@ -876,16 +838,8 @@ thermal resistance in forced convection.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">30</span><span class="p">]))</span> <span class="c1"># temperature rise</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.99</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">,</span> <span class="mf">1.075</span><span class="p">,</span> <span class="mf">1.15</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.39</span><span class="p">]))</span> <span class="c1"># multiplication factor</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parameters: &#39;</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sm&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameters:  [ 1.60057829 -0.73345535]
+R2:  0.9991401923462344
 </pre></div>
 </div>
 </div>
@@ -1195,16 +1149,10 @@ All heatsinks have the same length <em>L</em> = 150 mm. <em>Ml</em> corresponds 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">XHS</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)),</span> <span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;H&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)))</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># OLS regression</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">modelHS</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">YHS</span><span class="p">,</span> <span class="n">XHS</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">resultHS</span> <span class="o">=</span> <span class="n">modelHS</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># Results print</span>
-
-<span class="ne">NameError</span>: name &#39;sm&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameters:  [ 2.685738   -0.91835926 -0.55758774]
+R2: 0.986
+The estimation function is: Rth,n = 485.W^-0.92.H^-0.56
+with Rth,n in [°/W], W,H in [mm] and L=150 mm
 </pre></div>
 </div>
 </div>
@@ -1227,18 +1175,7 @@ All heatsinks have the same length <em>L</em> = 150 mm. <em>Ml</em> corresponds 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Y vector prediction</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">y_HS</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">resultHS</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">XHS</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># plot the data </span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1">#plt.plot(dHS[&#39;Rthn&#39;].values,dHS[&#39;Rthn&#39;].values, &#39;-&#39;,dHS[&#39;Rthn&#39;].values,y_HS, &#39;o&#39;)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;resultHS&#39; is not defined
-</pre></div>
-</div>
+<img alt="../../_images/d4239b099248b5c94f22a74a6b3cd2a710bdb3d903c02382a699ed23574aa260.png" src="../../_images/d4239b099248b5c94f22a74a6b3cd2a710bdb3d903c02382a699ed23574aa260.png" />
 </div>
 </div>
 </section>
@@ -1288,16 +1225,16 @@ All heatsinks have the same length <em>L</em> = 150 mm. <em>Ml</em> corresponds 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">YHS_f</span><span class="o">=</span><span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;Rthf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># OLS regression</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">modelHS_f</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">YHS_f</span><span class="p">,</span> <span class="n">XHS</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">resultHS_f</span> <span class="o">=</span> <span class="n">modelHS_f</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parameters: &#39;</span><span class="p">,</span> <span class="n">resultHS_f</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sm&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameters:  [ 2.17619395 -0.84842184 -0.62180147]
+R2: 0.975
+------------------
+The estimation function is: Rth,f = 1.500e+02.W^-0.85.H^-0.62
+with Rth,f in [°/W], W,H in [mm] and L=150 mm
+with R2: 0.975
+------------------
+The estimation function is: Ml = 2.632e-03.W^0.91.H^0.89
+with Ml in [kg/m], W,H in [mm]
+with R2: 0.986
 </pre></div>
 </div>
 </div>
@@ -1320,18 +1257,7 @@ All heatsinks have the same length <em>L</em> = 150 mm. <em>Ml</em> corresponds 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Y vector prediction</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">y_HSf</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">resultHS_f</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">XHS</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># plot the data </span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1">#plt.plot(dHS[&#39;Rthn&#39;].values,dHS[&#39;Rthn&#39;].values, &#39;-&#39;,dHS[&#39;Rthn&#39;].values,y_HS, &#39;o&#39;)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;resultHS_f&#39; is not defined
-</pre></div>
-</div>
+<img alt="../../_images/8cb920be986511fdd56c9e63348e1ead70e976ac32bbfb345a875bd39298f0b8.png" src="../../_images/8cb920be986511fdd56c9e63348e1ead70e976ac32bbfb345a875bd39298f0b8.png" />
 </div>
 </div>
 <div class="cell docutils container">

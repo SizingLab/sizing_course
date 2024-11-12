@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Sizing code of an inductor with surrogate models &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>Sizing code of an inductor with surrogate models (Student version) &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -279,7 +279,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression-Student.html">Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression.html">Heatsink  estimation models with simple and multiple linear regressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="06_SizingCodeInductor.html">Sizing code of an inductor</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Sizing code of an inductor with surrogate models (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate.html">Sizing code of an inductor with surrogate models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="08_DCDC_converter_sizing_introduction.html">Design graphs for the sizing a DC/DC converter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="09_SizingCodeDCDCconverter.html">Sizing code of a DC/DC converter</a></li>
@@ -538,7 +538,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Sizing code of an inductor with surrogate models</h1>
+    <h1>Sizing code of an inductor with surrogate models (Student version)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -565,8 +565,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sizing-code-of-an-inductor-with-surrogate-models">
-<h1>Sizing code of an inductor with surrogate models<a class="headerlink" href="#sizing-code-of-an-inductor-with-surrogate-models" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="sizing-code-of-an-inductor-with-surrogate-models-student-version">
+<h1>Sizing code of an inductor with surrogate models (Student version)<a class="headerlink" href="#sizing-code-of-an-inductor-with-surrogate-models-student-version" title="Permalink to this heading">#</a></h1>
 <p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
 <p>The previous study showed some shortcomings such as not taking into account the thermal and a limitation on the dimensions of the air gap. We will see here how to set up surrogate models from thermal or magnetic finite element simulations.</p>
 <section id="thermal-configuration-description">
@@ -665,6 +665,19 @@ with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import FEM thermal simulations results</span>
+
+<span class="kn">import</span>  <span class="nn">scipy.signal.signaltools</span>
+
+<span class="k">def</span> <span class="nf">_centered</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">newsize</span><span class="p">):</span>
+    <span class="c1"># Return the center newsize portion of the array.</span>
+    <span class="n">newsize</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">newsize</span><span class="p">)</span>
+    <span class="n">currsize</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">startind</span> <span class="o">=</span> <span class="p">(</span><span class="n">currsize</span> <span class="o">-</span> <span class="n">newsize</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">endind</span> <span class="o">=</span> <span class="n">startind</span> <span class="o">+</span> <span class="n">newsize</span>
+    <span class="n">myslice</span> <span class="o">=</span> <span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="n">startind</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">endind</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">endind</span><span class="p">))]</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">myslice</span><span class="p">)]</span>
+
+<span class="n">scipy</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">signaltools</span><span class="o">.</span><span class="n">_centered</span> <span class="o">=</span> <span class="n">_centered</span>
 
 <span class="c1"># Panda package Importation</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -896,7 +909,7 @@ Two assumptions are considered for the study:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3800/3395251727.py:8: DeprecationWarning: scipy.array is deprecated and will be removed in SciPy 2.0.0, use numpy.array instead
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3764/3395251727.py:8: DeprecationWarning: scipy.array is deprecated and will be removed in SciPy 2.0.0, use numpy.array instead
   parameters = scipy.array((e_D,J))
 </pre></div>
 </div>
