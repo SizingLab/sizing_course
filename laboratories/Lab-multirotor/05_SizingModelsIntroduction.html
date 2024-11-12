@@ -268,11 +268,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification-Student.html">Case study specification (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification.html">Case study specification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture-Student.html">Architecture of the converter and sizing scenarios (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture_UltraCapacitor.html">Architecture of the converter and sizing scenarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02b_Architecture_Hybrid.html">Hydrid Storage Architecture and Specification</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary.html">Lab - Sustainable mobility - DC/DC converter sizing</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture_UltraCapacitor.html">Architecture of the converter and sizing scenarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/03_SizingScenarios.html">Equations of sizing scenarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws-Student.html">Estimation models with scaling laws and linear regression (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws.html">Estimation models with scaling laws and linear regression</a></li>
@@ -599,8 +599,8 @@ document.write(`
 </figcaption>
 </figure>
 <p>It consists in addition an oversizing coefficent <span class="math notranslate nohighlight">\(k_{os} \quad [1-10]\)</span> as a design variable and additional inequality constraint <span class="math notranslate nohighlight">\(M_{total} \geq M_{total,real}\)</span>. This way, we make sure that the drone is capable of lifting the load and itself. As we are minimizing the total mass <span class="math notranslate nohighlight">\(M_{total,real}\)</span> the oversizing coefficient <span class="math notranslate nohighlight">\(k_{os}\)</span> will tend to be as small as possible and thus the inequality constraint will be equivalent to an equality constraint (<span class="math notranslate nohighlight">\(M_{total} = M_{total,real}\)</span>). This is one way of solving an algebraic loop, other methods use numerical solvers or other optimizer-based formulations. The formulation of the optimization problem is the following:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-485c7e57-de48-478a-8624-bb4458852ed8">
-<span class="eqno">(1)<a class="headerlink" href="#equation-485c7e57-de48-478a-8624-bb4458852ed8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4807a9da-aae1-4094-b88e-0dc0b6778e38">
+<span class="eqno">(1)<a class="headerlink" href="#equation-4807a9da-aae1-4094-b88e-0dc0b6778e38" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
         &amp; \text{minimize}
         &amp; &amp; M_{total,real} \\
