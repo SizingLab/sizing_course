@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Sizing of a multirotor drone (ISAE) &#8212; Sizing and optimization of mechatronic systems</title>
   
@@ -15,64 +14,64 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-multirotor/06_SystemSizingCodeOptimization-Student';</script>
-    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Design optimization and exploration of a multirotor drone (ISAE)" href="07_DesignExploration-Student.html" />
     <link rel="prev" title="Frame selection" href="05d_FrameSelection.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -80,32 +79,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -113,7 +96,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -121,16 +103,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -145,6 +136,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../about/homepage.html">
   
@@ -158,11 +151,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="../../_static/logo.png" class="logo__image only-light" alt="Sizing and optimization of mechatronic systems - Home"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Sizing and optimization of mechatronic systems - Home"/>`);</script>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Sizing and optimization of mechatronic systems - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction and overview</span></p>
 <ul class="nav bd-sidenav">
@@ -171,37 +171,37 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1/summary.html">1. Architectures, sizing scenarios and design drivers</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1/summary.html">1. Architectures, sizing scenarios and design drivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/1-objectives_and_ressources.html">1.1. Objectives and ressources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/2-needs_and_general_methodology.html">1.2. Needs and general methodology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/3-scenarios_and_design_drivers.html">1.3. Scenarios and Design Drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/4-quiz.html">1.4. Quiz</a></li>
 
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture2/summary.html">2. Simulation and evaluation models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture2/summary.html">2. Simulation and evaluation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/1-simulation_models.html">2.1. Simulation models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/2-evaluation_models.html">2.2. Evaluation models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/3-quiz_evaluation_models.html">2.3. Quiz</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/4-homework.html">2.5. Homework: mission profile analysis</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture3/summary.html">3. Estimation models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture3/summary.html">3. Estimation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/1-linear_regressions.html">3.1. Linear regressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/2-quiz_regressions.html">3.2. Quiz</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/3-scaling_laws.html">3.3. Scaling laws</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/4-quiz_scaling_laws.html">3.4. Quiz</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4/summary.html">4. Optimal sizing procedures</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4/summary.html">4. Optimal sizing procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics optimal design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/2-optimization_examples.html">4.2. Optimization with python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/3-sizing_procedures.html">4.3. Development of a sizing procedure using design graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/4-sizing_procedure_examples.html">4.4. Design graph and optimization with python</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture5/summary.html">5. MDAO and surrogate models</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture5/summary.html">5. MDAO and surrogate models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/1-mdao.html">5.1. MDAO (Multidisciplinary Design Analysis and Optimization)</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/2-mdao_examples.html">5.3. MDAO examples</a></li>
@@ -209,19 +209,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/4-surrogate_model_examples.html">5.5. Surrogate model examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/5-quizz.html">5.6. Quizz</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture6/summary.html">6. LCA and sustainable scenarios</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture6/summary.html">6. LCA and sustainable scenarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/1-lca.html">6.1. Life Cyle Assessment (LCA)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/2-lca_examples.html">6.2. LCA examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/3-sustainable_scenarios.html">6.3. Sustainable scenarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/4-sustainable_scenario_examples.html">6.4. Sustainable scenario examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/5-quizz.html">6.5. Quizz</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">Multirotor UAV</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">Multirotor UAV</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_CaseStudy.html">Case study and architecture presentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02a_SizingScenarios-Student.html">Sizing scenarios and design drivers (student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02a_SizingScenarios.html">Sizing scenarios and design drivers</a></li>
@@ -244,8 +244,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="08_SystemSizingCodeOptimization.html">Sizing of a multi-rotor drone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="A1_Sizing_equations.html">Appendix 1: Sizing equations</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios-student.html">Modeling of the mechanical load (student version)</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios.html">Modeling of the mechanical load</a></li>
@@ -261,8 +261,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student.html">Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">Sizing procedure and optimization with OpenMDAO</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">Lab - Sustainable mobility - Mission profile &amp; Specification</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">Lab - Sustainable mobility - Mission profile &amp; Specification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/00_SustainableMobility.html">Sustainable mobilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01a_CaseStudy.html">Case study presentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification-Student.html">Case study specification (Student version)</a></li>
@@ -271,8 +271,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture_UltraCapacitor.html">Architecture of the converter and sizing scenarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02b_Architecture_Hybrid.html">Hydrid Storage Architecture and Specification</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary.html">Lab - Sustainable mobility - DC/DC converter sizing</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary.html">Lab - Sustainable mobility - DC/DC converter sizing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/03_SizingScenarios.html">Equations of sizing scenarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws-Student.html">Estimation models with scaling laws and linear regression (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws.html">Estimation models with scaling laws and linear regression</a></li>
@@ -286,7 +286,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor-Student.html">Life Cycle Assessment of an inductor (student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor.html">Life Cycle Assessment of an inductor</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -302,7 +302,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -311,14 +311,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -343,14 +343,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/laboratories/Lab-multirotor/06_SystemSizingCodeOptimization-Student.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -361,14 +361,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-multirotor/06_SystemSizingCodeOptimization-Student.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -507,27 +507,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -569,10 +561,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sizing-of-a-multirotor-drone-isae">
-<h1>Sizing of a multirotor drone (ISAE)<a class="headerlink" href="#sizing-of-a-multirotor-drone-isae" title="Permalink to this heading">#</a></h1>
+<h1>Sizing of a multirotor drone (ISAE)<a class="headerlink" href="#sizing-of-a-multirotor-drone-isae" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Scott Delbecq (ISAE-SUPAERO) and Félix Pollet (ISAE-SUPAERO), Toulouse, France.</em></p>
 <p>The objective of this notebook is to select the best compromise of components (propeller, motor, ESC, battery) of a multi-rotor drone for given specifiations.</p>
 <div class="cell docutils container">
@@ -585,7 +577,7 @@ document.write(`
 </div>
 </div>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>We have seen that even at the component level the set of equations of a sizing code can generate typical issues such :</p>
 <ul class="simple">
 <li><p>Underconstrained set of equations: the lacking equations can come from additional scenarios, estimation models or additional sizing variable</p></li>
@@ -607,7 +599,7 @@ document.write(`
 </div></blockquote>
 </section>
 <section id="design-variables">
-<h2>Design variables<a class="headerlink" href="#design-variables" title="Permalink to this heading">#</a></h2>
+<h2>Design variables<a class="headerlink" href="#design-variables" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="exercise_design_variables">
 
 <p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
@@ -617,9 +609,9 @@ document.write(`
 </div>
 <div class="solution dropdown admonition" id="solution_design_variables">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#exercise_design_variables"> Exercise 15</a></p>
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Name</p></th>
 <th class="head text-center"><p>Unit</p></th>
@@ -649,7 +641,7 @@ document.write(`
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(k_{D}\)</span></p></td>
 <td class="text-center"><p>[-]</p></td>
-<td class="text-left"><p>over sizing coeffcient on the motor speed to take into account voltage limits during hover or take-off flight</p></td>
+<td class="text-left"><p>aspect ratio D_in/D_out for the beam of the frame</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(k_{mb}\)</span></p></td>
 <td class="text-center"><p>[-]</p></td>
@@ -661,9 +653,10 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 </div>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Name</p></th>
 <th class="head text-center"><p>Unit</p></th>
@@ -677,9 +670,10 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="constraints">
-<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this heading">#</a></h2>
+<h2>Constraints<a class="headerlink" href="#constraints" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="exercise_constraints">
 
 <p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
@@ -689,9 +683,9 @@ document.write(`
 </div>
 <div class="solution dropdown admonition" id="solution_constraints">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#exercise_constraints"> Exercise 16</a></p>
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Name</p></th>
 <th class="head text-center"><p>Unit</p></th>
@@ -729,9 +723,10 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 </div>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Name</p></th>
 <th class="head text-center"><p>Unit</p></th>
@@ -745,12 +740,13 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
+<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 </section>
 <section id="workflow">
-<h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading">#</a></h2>
+<h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="exercise_workflow">
 
 <p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
@@ -760,13 +756,13 @@ document.write(`
 </div>
 <div class="solution dropdown admonition" id="solution_workflow">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#exercise_workflow"> Exercise 17</a></p>
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
 <p>Here is a non-exhaustive XDSM diagram of the multirotor sizing code:</p>
 <figure class="align-center" id="multirotor-xdsm-mdo">
 <a class="reference internal image-reference" href="../../_images/xdsm_multirotor_mdo.png"><img alt="../../_images/xdsm_multirotor_mdo.png" src="../../_images/xdsm_multirotor_mdo.png" style="width: 75%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Multirotor sizing MDO XDSM diagram</span><a class="headerlink" href="#multirotor-xdsm-mdo" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Multirotor sizing MDO XDSM diagram</span><a class="headerlink" href="#multirotor-xdsm-mdo" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -777,7 +773,7 @@ document.write(`
 </div>
 </section>
 <section id="sizing-code">
-<h2>Sizing code<a class="headerlink" href="#sizing-code" title="Permalink to this heading">#</a></h2>
+<h2>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h2>
 <p>Lets now implement the code to size the multirotor. For this purpose we use the MDAO framework <a class="reference external" href="https://openmdao.org">OpenMDAO</a>.
 To stay simple first, we will embed the sizing in a simple OpenMDAO <code class="docutils literal notranslate"><span class="pre">ExplicitComponent</span></code> which is not the most efficient way of solving the problem.
 The best practice would be to decompose the problem into several <code class="docutils literal notranslate"><span class="pre">ExplicitComponent</span></code> to make the code more modular and the problem solving more efficient.
@@ -786,7 +782,7 @@ For this purpose you can refer to the <a class="reference external" href="https:
 <div><p>Delbecq, S., Budinger, M., &amp; Reysset, A. (2020). Benchmarking of monolithic MDO formulations and derivative computation techniques using OpenMDAO. Structural and Multidisciplinary Optimization, 62(2), 645-666.</p>
 </div></blockquote>
 <section id="specifications">
-<h3>Specifications<a class="headerlink" href="#specifications" title="Permalink to this heading">#</a></h3>
+<h3>Specifications<a class="headerlink" href="#specifications" title="Link to this heading">#</a></h3>
 <p>The first step is to provide the specifications (top-level requirements) for the drone.</p>
 <p>Main specifications :</p>
 <ul class="simple">
@@ -815,7 +811,7 @@ For this purpose you can refer to the <a class="reference external" href="https:
 </div>
 </section>
 <section id="architecture-definition-and-design-assumptions">
-<h3>Architecture definition and design assumptions<a class="headerlink" href="#architecture-definition-and-design-assumptions" title="Permalink to this heading">#</a></h3>
+<h3>Architecture definition and design assumptions<a class="headerlink" href="#architecture-definition-and-design-assumptions" title="Link to this heading">#</a></h3>
 <p>Then, we must provide the architecture definition and design assumptions for the models.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -863,7 +859,7 @@ For this purpose you can refer to the <a class="reference external" href="https:
 </div>
 </section>
 <section id="optimization-variables">
-<h3>Optimization variables<a class="headerlink" href="#optimization-variables" title="Permalink to this heading">#</a></h3>
+<h3>Optimization variables<a class="headerlink" href="#optimization-variables" title="Link to this heading">#</a></h3>
 <p>The next step is to give an initial value for the optimisation variables:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -882,7 +878,7 @@ For this purpose you can refer to the <a class="reference external" href="https:
 </div>
 </section>
 <section id="id1">
-<h3>Sizing code<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Sizing code<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Now, complete the following sizing code with the missing design variables (inputs), constraints/objective (outputs) and equations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -968,14 +964,14 @@ For this purpose you can refer to the <a class="reference external" href="https:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/system.py:2674,</span> in <span class="ni">System._call_user_function</span><span class="nt">(self, fname, protect_inputs, protect_outputs, protect_residuals)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2673</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2674</span>     <span class="k">yield</span>
-<span class="g g-Whitespace">   </span><span class="mi">2675</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/system.py:2738,</span> in <span class="ni">System._call_user_function</span><span class="nt">(self, fname, protect_inputs, protect_outputs, protect_residuals)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2737</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2738</span>     <span class="k">yield</span>
+<span class="g g-Whitespace">   </span><span class="mi">2739</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/explicitcomponent.py:292,</span> in <span class="ni">ExplicitComponent._compute_wrapper</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">292</span>     <span class="bp">self</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_outputs</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/explicitcomponent.py:271,</span> in <span class="ni">ExplicitComponent._compute_wrapper</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">271</span>     <span class="bp">self</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_outputs</span><span class="p">)</span>
 
 <span class="nn">Cell In[5], line 22,</span> in <span class="ni">SizingCode.compute</span><span class="nt">(self, inputs, outputs)</span>
 <span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="c1">#% OBJECTIVES</span>
@@ -995,40 +991,64 @@ For this purpose you can refer to the <a class="reference external" href="https:
 <span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Design variables&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;beta_pro :&quot;</span><span class="p">,</span> <span class="n">prob</span><span class="o">.</span><span class="n">get_val</span><span class="p">(</span><span class="s2">&quot;beta_pro&quot;</span><span class="p">))</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/utils/hooks.py:131,</span> in <span class="ni">_hook_decorator.&lt;locals&gt;.execute_hooks</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span> <span class="k">def</span> <span class="nf">execute_hooks</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="n">_run_hooks</span><span class="p">(</span><span class="n">pre_hooks</span><span class="p">,</span> <span class="n">inst</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">131</span>     <span class="n">ret</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span>     <span class="n">_run_hooks</span><span class="p">(</span><span class="n">post_hooks</span><span class="p">,</span> <span class="n">inst</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="k">return</span> <span class="n">ret</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/utils/hooks.py:370,</span> in <span class="ni">_HookDecorator.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span><span class="sd"> Run the function with any pre and post hooks.</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span><span class="sd">     The return value of the function.</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_hooks</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pre_hooks</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">370</span> <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">371</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_hooks</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post_hooks</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">ret</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">372</span> <span class="k">return</span> <span class="n">ret</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/problem.py:740,</span> in <span class="ni">Problem.run_driver</span><span class="nt">(self, case_prefix, reset_iter_counts)</span>
-<span class="g g-Whitespace">    </span><span class="mi">738</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">739</span>         <span class="k">with</span> <span class="n">SaveOptResult</span><span class="p">(</span><span class="n">driver</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">740</span>             <span class="k">return</span> <span class="n">driver</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">742</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">743</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_recording_iter</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">old_prefix</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/problem.py:749,</span> in <span class="ni">Problem.run_driver</span><span class="nt">(self, case_prefix, reset_iter_counts)</span>
+<span class="g g-Whitespace">    </span><span class="mi">745</span>     <span class="n">record_model_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_counter</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">747</span>     <span class="n">model</span><span class="o">.</span><span class="n">_clear_iprint</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">749</span>     <span class="k">return</span> <span class="n">driver</span><span class="o">.</span><span class="n">_run</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">750</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">751</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_recording_iter</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">old_prefix</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/drivers/scipy_optimizer.py:281,</span> in <span class="ni">ScipyOptimizeDriver.run</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span> <span class="c1"># Initial Run</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span> <span class="k">with</span> <span class="n">RecordingDebugging</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_name</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">iter_count</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span> <span class="k">as</span> <span class="n">rec</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">281</span>     <span class="n">model</span><span class="o">.</span><span class="n">run_solve_nonlinear</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="bp">self</span><span class="o">.</span><span class="n">iter_count</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">284</span> <span class="bp">self</span><span class="o">.</span><span class="n">_con_cache</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_constraint_values</span><span class="p">()</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/driver.py:821,</span> in <span class="ni">Driver._run</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">819</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">820</span>     <span class="k">with</span> <span class="n">SaveOptResult</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">821</span>         <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">823</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/system.py:4558,</span> in <span class="ni">System.run_solve_nonlinear</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4552</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4553</span><span class="sd"> Compute outputs.</span>
-<span class="g g-Whitespace">   </span><span class="mi">4554</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">4555</span><span class="sd"> This calls _solve_nonlinear, but with the model assumed to be in an unscaled state.</span>
-<span class="g g-Whitespace">   </span><span class="mi">4556</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4557</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scaled_context_all</span><span class="p">():</span>
-<span class="ne">-&gt; </span><span class="mi">4558</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_solve_nonlinear</span><span class="p">()</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/drivers/scipy_optimizer.py:268,</span> in <span class="ni">ScipyOptimizeDriver.run</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span> <span class="k">with</span> <span class="n">RecordingDebugging</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_name</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">iter_count</span><span class="p">,</span> <span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span>     <span class="k">with</span> <span class="n">model</span><span class="o">.</span><span class="n">_relevance</span><span class="o">.</span><span class="n">nonlinear_active</span><span class="p">(</span><span class="s1">&#39;iter&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">268</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_run_solve_nonlinear</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span>     <span class="bp">self</span><span class="o">.</span><span class="n">iter_count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="bp">self</span><span class="o">.</span><span class="n">_con_cache</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_constraint_values</span><span class="p">()</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/group.py:3669,</span> in <span class="ni">Group._solve_nonlinear</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3666</span> <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pathname</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pathname</span> <span class="k">else</span> <span class="s1">&#39;root&#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">3668</span> <span class="k">with</span> <span class="n">Recording</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;._solve_nonlinear&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">iter_count</span><span class="p">,</span> <span class="bp">self</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">3669</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_nonlinear_solver</span><span class="o">.</span><span class="n">_solve_with_cache_check</span><span class="p">()</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/driver.py:177,</span> in <span class="ni">DriverResult.track_stats.&lt;locals&gt;._track_time.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span> <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">177</span>     <span class="n">ret</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">result</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/driver.py:1267,</span> in <span class="ni">Driver._run_solve_nonlinear</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1265</span> <span class="nd">@DriverResult</span><span class="o">.</span><span class="n">track_stats</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;model&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1266</span> <span class="k">def</span> <span class="nf">_run_solve_nonlinear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1267</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_problem</span><span class="p">()</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">run_solve_nonlinear</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/system.py:4749,</span> in <span class="ni">System.run_solve_nonlinear</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4743</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">4744</span><span class="sd"> Compute outputs.</span>
+<span class="g g-Whitespace">   </span><span class="mi">4745</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">4746</span><span class="sd"> This calls _solve_nonlinear, but with the model assumed to be in an unscaled state.</span>
+<span class="g g-Whitespace">   </span><span class="mi">4747</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">4748</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scaled_context_all</span><span class="p">():</span>
+<span class="ne">-&gt; </span><span class="mi">4749</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_solve_nonlinear</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/group.py:3529,</span> in <span class="ni">Group._solve_nonlinear</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3527</span> <span class="k">with</span> <span class="n">Recording</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;._solve_nonlinear&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">iter_count</span><span class="p">,</span> <span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3528</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_relevance</span><span class="o">.</span><span class="n">active</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nonlinear_solver</span><span class="o">.</span><span class="n">use_relevance</span><span class="p">()):</span>
+<span class="ne">-&gt; </span><span class="mi">3529</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_nonlinear_solver</span><span class="o">.</span><span class="n">_solve_with_cache_check</span><span class="p">()</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/solvers/nonlinear/nonlinear_runonce.py:26,</span> in <span class="ni">NonlinearRunOnce._solve_with_cache_check</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="k">def</span> <span class="nf">_solve_with_cache_check</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1042,24 +1062,24 @@ For this purpose you can refer to the <a class="reference external" href="https:
 <span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="n">rec</span><span class="o">.</span><span class="n">abs</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="n">rec</span><span class="o">.</span><span class="n">rel</span> <span class="o">=</span> <span class="mf">0.0</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/solvers/solver.py:803,</span> in <span class="ni">NonlinearSolver._gs_iter</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">801</span> <span class="k">if</span> <span class="n">subsys</span><span class="o">.</span><span class="n">_is_local</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">802</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">803</span>         <span class="n">subsys</span><span class="o">.</span><span class="n">_solve_nonlinear</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">804</span>     <span class="k">except</span> <span class="n">AnalysisError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">805</span>         <span class="k">if</span> <span class="s1">&#39;reraise_child_analysiserror&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span> <span class="ow">or</span> \
-<span class="g g-Whitespace">    </span><span class="mi">806</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;reraise_child_analysiserror&#39;</span><span class="p">]:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/solvers/solver.py:897,</span> in <span class="ni">NonlinearSolver._gs_iter</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">895</span> <span class="k">if</span> <span class="n">subsys</span><span class="o">.</span><span class="n">_is_local</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">896</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">897</span>         <span class="n">subsys</span><span class="o">.</span><span class="n">_solve_nonlinear</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">898</span>     <span class="k">except</span> <span class="n">AnalysisError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">899</span>         <span class="k">if</span> <span class="s1">&#39;reraise_child_analysiserror&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span> <span class="ow">or</span> \
+<span class="g g-Whitespace">    </span><span class="mi">900</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;reraise_child_analysiserror&#39;</span><span class="p">]:</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/explicitcomponent.py:318,</span> in <span class="ni">ExplicitComponent._solve_nonlinear</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">316</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unscaled_context</span><span class="p">(</span><span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_outputs</span><span class="p">],</span> <span class="n">residuals</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_residuals</span><span class="p">]):</span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_residuals</span><span class="o">.</span><span class="n">set_val</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">318</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_compute_wrapper</span><span class="p">()</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/explicitcomponent.py:297,</span> in <span class="ni">ExplicitComponent._solve_nonlinear</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unscaled_context</span><span class="p">(</span><span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_outputs</span><span class="p">],</span> <span class="n">residuals</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_residuals</span><span class="p">]):</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_residuals</span><span class="o">.</span><span class="n">set_val</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">297</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_compute_wrapper</span><span class="p">()</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/explicitcomponent.py:292,</span> in <span class="ni">ExplicitComponent._compute_wrapper</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">289</span>     <span class="bp">self</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_outputs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">290</span>                  <span class="bp">self</span><span class="o">.</span><span class="n">_discrete_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_discrete_outputs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">292</span>     <span class="bp">self</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_outputs</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/explicitcomponent.py:271,</span> in <span class="ni">ExplicitComponent._compute_wrapper</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>     <span class="bp">self</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_outputs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span>                  <span class="bp">self</span><span class="o">.</span><span class="n">_discrete_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_discrete_outputs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">271</span>     <span class="bp">self</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_outputs</span><span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/contextlib.py:137,</span> in <span class="ni">_GeneratorContextManager.__exit__</span><span class="nt">(self, typ, value, traceback)</span>
 <span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="n">value</span> <span class="o">=</span> <span class="n">typ</span><span class="p">()</span>
@@ -1071,26 +1091,26 @@ For this purpose you can refer to the <a class="reference external" href="https:
 <span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="c1"># raised inside the &quot;with&quot; statement from being suppressed.</span>
 <span class="g g-Whitespace">    </span><span class="mi">142</span>     <span class="k">return</span> <span class="n">exc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">value</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/system.py:2680,</span> in <span class="ni">System._call_user_function</span><span class="nt">(self, fname, protect_inputs, protect_outputs, protect_residuals)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2678</span>         <span class="k">raise</span>
-<span class="g g-Whitespace">   </span><span class="mi">2679</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2680</span>         <span class="k">raise</span> <span class="n">err_type</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2681</span>             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">msginfo</span><span class="si">}</span><span class="s2">: Error calling </span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s2">(), </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">with_traceback</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2682</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2683</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="o">.</span><span class="n">read_only</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/system.py:2744,</span> in <span class="ni">System._call_user_function</span><span class="nt">(self, fname, protect_inputs, protect_outputs, protect_residuals)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2742</span>         <span class="k">raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">2743</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2744</span>         <span class="k">raise</span> <span class="n">err_type</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2745</span>             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">msginfo</span><span class="si">}</span><span class="s2">: Error calling </span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s2">(), </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">with_traceback</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2746</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2747</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="o">.</span><span class="n">read_only</span> <span class="o">=</span> <span class="kc">False</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/system.py:2674,</span> in <span class="ni">System._call_user_function</span><span class="nt">(self, fname, protect_inputs, protect_outputs, protect_residuals)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2671</span> <span class="bp">self</span><span class="o">.</span><span class="n">_residuals</span><span class="o">.</span><span class="n">read_only</span> <span class="o">=</span> <span class="n">protect_residuals</span>
-<span class="g g-Whitespace">   </span><span class="mi">2673</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2674</span>     <span class="k">yield</span>
-<span class="g g-Whitespace">   </span><span class="mi">2675</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2676</span>     <span class="n">err_type</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/system.py:2738,</span> in <span class="ni">System._call_user_function</span><span class="nt">(self, fname, protect_inputs, protect_outputs, protect_residuals)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2735</span> <span class="bp">self</span><span class="o">.</span><span class="n">_residuals</span><span class="o">.</span><span class="n">read_only</span> <span class="o">=</span> <span class="n">protect_residuals</span>
+<span class="g g-Whitespace">   </span><span class="mi">2737</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2738</span>     <span class="k">yield</span>
+<span class="g g-Whitespace">   </span><span class="mi">2739</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2740</span>     <span class="n">err_type</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">trace</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/explicitcomponent.py:292,</span> in <span class="ni">ExplicitComponent._compute_wrapper</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">289</span>     <span class="bp">self</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_outputs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">290</span>                  <span class="bp">self</span><span class="o">.</span><span class="n">_discrete_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_discrete_outputs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">292</span>     <span class="bp">self</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_outputs</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/explicitcomponent.py:271,</span> in <span class="ni">ExplicitComponent._compute_wrapper</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>     <span class="bp">self</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_outputs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span>                  <span class="bp">self</span><span class="o">.</span><span class="n">_discrete_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_discrete_outputs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">271</span>     <span class="bp">self</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_outputs</span><span class="p">)</span>
 
 <span class="nn">Cell In[5], line 22,</span> in <span class="ni">SizingCode.compute</span><span class="nt">(self, inputs, outputs)</span>
 <span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="n">beta_pro</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;beta_pro&quot;</span><span class="p">]</span>
@@ -1136,7 +1156,7 @@ For this purpose you can refer to the <a class="reference external" href="https:
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1164,7 +1184,9 @@ For this purpose you can refer to the <a class="reference external" href="https:
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1232,8 +1254,8 @@ By Marc Budinger, Scott Delbecq, Félix Pollet
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

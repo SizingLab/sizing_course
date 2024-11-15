@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Hydrid Storage Architecture and Specification &#8212; Sizing and optimization of mechatronic systems</title>
   
@@ -15,62 +14,62 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-watt_project/02b_Architecture_Hybrid';</script>
-    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Lab - Sustainable Mobility - Storage Systems &amp; DC/DC converter sizing" href="summary.html" />
     <link rel="prev" title="Architecture of the converter and sizing scenarios" href="02a_Architecture_UltraCapacitor.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -78,32 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -111,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -119,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -143,6 +134,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../about/homepage.html">
   
@@ -156,11 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="../../_static/logo.png" class="logo__image only-light" alt="Sizing and optimization of mechatronic systems - Home"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Sizing and optimization of mechatronic systems - Home"/>`);</script>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Sizing and optimization of mechatronic systems - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction and overview</span></p>
 <ul class="nav bd-sidenav">
@@ -169,37 +169,37 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1/summary.html">1. Architectures, sizing scenarios and design drivers</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1/summary.html">1. Architectures, sizing scenarios and design drivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/1-objectives_and_ressources.html">1.1. Objectives and ressources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/2-needs_and_general_methodology.html">1.2. Needs and general methodology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/3-scenarios_and_design_drivers.html">1.3. Scenarios and Design Drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/4-quiz.html">1.4. Quiz</a></li>
 
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture2/summary.html">2. Simulation and evaluation models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture2/summary.html">2. Simulation and evaluation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/1-simulation_models.html">2.1. Simulation models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/2-evaluation_models.html">2.2. Evaluation models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/3-quiz_evaluation_models.html">2.3. Quiz</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/4-homework.html">2.5. Homework: mission profile analysis</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture3/summary.html">3. Estimation models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture3/summary.html">3. Estimation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/1-linear_regressions.html">3.1. Linear regressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/2-quiz_regressions.html">3.2. Quiz</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/3-scaling_laws.html">3.3. Scaling laws</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/4-quiz_scaling_laws.html">3.4. Quiz</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4/summary.html">4. Optimal sizing procedures</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4/summary.html">4. Optimal sizing procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics optimal design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/2-optimization_examples.html">4.2. Optimization with python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/3-sizing_procedures.html">4.3. Development of a sizing procedure using design graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/4-sizing_procedure_examples.html">4.4. Design graph and optimization with python</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture5/summary.html">5. MDAO and surrogate models</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture5/summary.html">5. MDAO and surrogate models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/1-mdao.html">5.1. MDAO (Multidisciplinary Design Analysis and Optimization)</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/2-mdao_examples.html">5.3. MDAO examples</a></li>
@@ -207,19 +207,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/4-surrogate_model_examples.html">5.5. Surrogate model examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/5-quizz.html">5.6. Quizz</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture6/summary.html">6. LCA and sustainable scenarios</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture6/summary.html">6. LCA and sustainable scenarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/1-lca.html">6.1. Life Cyle Assessment (LCA)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/2-lca_examples.html">6.2. LCA examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/3-sustainable_scenarios.html">6.3. Sustainable scenarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/4-sustainable_scenario_examples.html">6.4. Sustainable scenario examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/5-quizz.html">6.5. Quizz</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-multirotor/summary.html">Multirotor UAV</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-multirotor/summary.html">Multirotor UAV</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/01_CaseStudy.html">Case study and architecture presentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/02a_SizingScenarios-Student.html">Sizing scenarios and design drivers (student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/02a_SizingScenarios.html">Sizing scenarios and design drivers</a></li>
@@ -242,8 +242,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/08_SystemSizingCodeOptimization.html">Sizing of a multi-rotor drone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-multirotor/A1_Sizing_equations.html">Appendix 1: Sizing equations</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios-student.html">Modeling of the mechanical load (student version)</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios.html">Modeling of the mechanical load</a></li>
@@ -259,8 +259,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student.html">Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">Sizing procedure and optimization with OpenMDAO</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary-short.html">Lab - Sustainable mobility - Mission profile &amp; Specification</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary-short.html">Lab - Sustainable mobility - Mission profile &amp; Specification</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="00_SustainableMobility.html">Sustainable mobilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01a_CaseStudy.html">Case study presentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01b_CaseStudy_Specification-Student.html">Case study specification (Student version)</a></li>
@@ -269,8 +269,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="02a_Architecture_UltraCapacitor.html">Architecture of the converter and sizing scenarios</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Hydrid Storage Architecture and Specification</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="summary.html">Lab - Sustainable mobility - DC/DC converter sizing</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="summary.html">Lab - Sustainable mobility - DC/DC converter sizing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="03_SizingScenarios.html">Equations of sizing scenarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_ScalingLaws-Student.html">Estimation models with scaling laws and linear regression (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04_ScalingLaws.html">Estimation models with scaling laws and linear regression</a></li>
@@ -284,7 +284,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor-Student.html">Life Cycle Assessment of an inductor (student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor.html">Life Cycle Assessment of an inductor</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -300,7 +300,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -309,14 +309,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -341,14 +341,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/laboratories/Lab-watt_project/02b_Architecture_Hybrid.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -359,14 +359,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-watt_project/02b_Architecture_Hybrid.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -505,27 +505,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -560,11 +552,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <p><img alt="Sizing Lab" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/Baniere.png" /></p>
 <section class="tex2jax_ignore mathjax_ignore" id="hydrid-storage-architecture-and-specification">
-<h1>Hydrid Storage Architecture and Specification<a class="headerlink" href="#hydrid-storage-architecture-and-specification" title="Permalink to this heading">#</a></h1>
+<h1>Hydrid Storage Architecture and Specification<a class="headerlink" href="#hydrid-storage-architecture-and-specification" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
 <p>We will consider here an hybrid solutions with super capacities and traction battery packs. This notebook is dedicated :</p>
 <ul class="simple">
@@ -577,7 +569,7 @@ document.write(`
 <div><p>Jaafar, A., Sareni, B., Roboam, X., &amp; Thiounn-Guermeur, M. (2010, September). Sizing of a hybrid locomotive based on accumulators and ultracapacitors. In 2010 IEEE Vehicle Power and Propulsion Conference (pp. 1-6). IEEE.[<a class="reference external" href="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/papers/Sizing_of_a_hybrid_locomotive_based_on_accumulators_and_ultracapacitors.pdf">pdf</a>]</p>
 </div></blockquote>
 <section id="main-operating-limits-of-energy-storage-components">
-<h2>Main operating limits of energy storage components<a class="headerlink" href="#main-operating-limits-of-energy-storage-components" title="Permalink to this heading">#</a></h2>
+<h2>Main operating limits of energy storage components<a class="headerlink" href="#main-operating-limits-of-energy-storage-components" title="Link to this heading">#</a></h2>
 <p>To enable the selection of energy storage means, it is necessary to understand their main operational limitations. These limits can be representative:</p>
 <ul class="simple">
 <li><p><strong>rapid deterioration</strong> that can develop over an operating cycle, for example one journey or a few journeys over the same day.</p></li>
@@ -590,7 +582,7 @@ document.write(`
 <p><img alt="Ultracapacitor Cell" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/SCCellExample.png" /></p>
 </section>
 <section id="simulation-of-a-complete-line">
-<h2>Simulation of a complete line<a class="headerlink" href="#simulation-of-a-complete-line" title="Permalink to this heading">#</a></h2>
+<h2>Simulation of a complete line<a class="headerlink" href="#simulation-of-a-complete-line" title="Link to this heading">#</a></h2>
 <p>The objective of this section is to propose an evolution of the previous python codes to be able to:</p>
 <ul class="simple">
 <li><p>simulate the power profile necessary for a complete line comprising several sections.</p></li>
@@ -637,107 +629,151 @@ Max energy discharge: 5039 kJ
 Consumption per passenger: 103.06 kJ/(Pax.km)
 </pre></div>
 </div>
-<img alt="../../_images/c4e9651f1661e7e20b1d92b71762f2c7cefd9f667120e1d1be38dfca4960f9d9.png" src="../../_images/c4e9651f1661e7e20b1d92b71762f2c7cefd9f667120e1d1be38dfca4960f9d9.png" />
-<img alt="../../_images/67b3ebe361093ed522770b4c33d4d4ec3060e7dbc34f5437712496c4d5cab979.png" src="../../_images/67b3ebe361093ed522770b4c33d4d4ec3060e7dbc34f5437712496c4d5cab979.png" />
+<img alt="../../_images/02e0f58c0274abacf4607f3606257d1b2cfc9e51f58b1adc19e37270fbde1828.png" src="../../_images/02e0f58c0274abacf4607f3606257d1b2cfc9e51f58b1adc19e37270fbde1828.png" />
+<img alt="../../_images/27393b51991fe43431d48339b173c15943e9b1a86a4a4ad1692b945d639e9f52.png" src="../../_images/27393b51991fe43431d48339b173c15943e9b1a86a4a4ad1692b945d639e9f52.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Min acceleration is: 0.3114059332964806m/s²
 Vehicle Max Acceleration (depending of max force) is too low or travel distance too small or mean speed too small
-Consumption per passenger: 18.74 kJ/(Pax.km)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 18.74 kJ/(Pax.km)
 Max energy discharge: 7420 kJ
 </pre></div>
 </div>
-<img alt="../../_images/0d534f0acb514c15302ffa81341c4109274e9861a7554a835c657cd7d9c0f81d.png" src="../../_images/0d534f0acb514c15302ffa81341c4109274e9861a7554a835c657cd7d9c0f81d.png" />
-<img alt="../../_images/d73d733237df3d59676a23dd2bf89bc1f86f652efe33b130dc47b80e732ff742.png" src="../../_images/d73d733237df3d59676a23dd2bf89bc1f86f652efe33b130dc47b80e732ff742.png" />
+<img alt="../../_images/8820e2182d7479264adf73c9107b521a387502e3193b66e59dcea640665e78bf.png" src="../../_images/8820e2182d7479264adf73c9107b521a387502e3193b66e59dcea640665e78bf.png" />
+<img alt="../../_images/66a7682669dad9abf964b2358d0e5e3173d4f08456a66ac2fe6e8f944ffad54e.png" src="../../_images/66a7682669dad9abf964b2358d0e5e3173d4f08456a66ac2fe6e8f944ffad54e.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3334/2473967107.py:17: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  k1=float(sol.x)
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.036125972011676784
 [0.036125972011676784, 1, 0.9638740279883232]
 Consumption per passenger: 20.44 kJ/(Pax.km)
 Max energy discharge: 4450 kJ
 </pre></div>
 </div>
-<img alt="../../_images/8fba898326fa1c0e7756ce2c990b52729fc18d452e7756922bf692facb54e0c9.png" src="../../_images/8fba898326fa1c0e7756ce2c990b52729fc18d452e7756922bf692facb54e0c9.png" />
+<img alt="../../_images/6566fe3bc3b10c067316d38d0c872ecc87cfe39ff330131d31e5ec64b66fd3be.png" src="../../_images/6566fe3bc3b10c067316d38d0c872ecc87cfe39ff330131d31e5ec64b66fd3be.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vehicle Max Acceleration (depending of max force) is too low or travel distance too small or mean speed too small
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1056209167387727
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 814
-     nit: 17
- success: True
-       x: array([0.08183359, 0.55754322, 0.96351271])
-Optimal vector : [0.08183359 0.55754322 0.96351271]
-Brake power/Acceleration power ratio is: 0.4182128984332544
-Constraints vector : [0.0020084176406168076, 0.00020729684908794098, 0.1817871015667456]
-Consumption per passenger: 16.91 kJ/(Pax.km)
-Max energy discharge: 3461 kJ
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.1061255620529638
+                   x: [ 4.097e-02  9.816e-01  9.400e-01]
+                 nit: 20
+                nfev: 949
+          population: [[ 4.097e-02  9.816e-01  9.400e-01]
+                       [ 4.967e-02  9.534e-01  9.472e-01]
+                       ...
+                       [ 1.130e-01  7.128e-01  9.301e-01]
+                       [ 8.420e-02  6.778e-01  9.617e-01]]
+ population_energies: [ 1.106e+00  1.116e+00 ...  1.160e+00  1.128e+00]
+Optimal vector : [0.04096948 0.98156347 0.93999446]
+Brake power/Acceleration power ratio is: 0.5782972110706176
+Constraints vector : [0.00234609753552482, 0.00020729684908794098, 0.021702788929382377]
+Consumption per passenger: 16.92 kJ/(Pax.km)
+Max energy discharge: 4095 kJ
 
 ######################################
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.46759988403257
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1714
-     nit: 37
- success: True
-       x: array([0.19090393, 0.2908296 , 0.96774634])
-Optimal vector : [0.19090393 0.2908296  0.96774634]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.46759988403257
+                   x: [ 1.887e-01  2.939e-01  9.677e-01]
+                 nit: 44
+                nfev: 2029
+          population: [[ 1.887e-01  2.939e-01  9.677e-01]
+                       [ 1.911e-01  2.942e-01  9.685e-01]
+                       ...
+                       [ 1.893e-01  2.937e-01  9.702e-01]
+                       [ 1.870e-01  2.972e-01  9.689e-01]]
+ population_energies: [ 1.468e+00  1.469e+00 ...  1.469e+00  1.469e+00]
+Optimal vector : [0.18874847 0.29388936 0.96768179]
 Brake power/Acceleration power ratio is: 0.34625552284989947
 Constraints vector : [0.00022399837510389642, 0.00020729684908794098, 0.2537444771501005]
 Consumption per passenger: 16.94 kJ/(Pax.km)
 Max energy discharge: 3303 kJ
 </pre></div>
 </div>
-<img alt="../../_images/4a13cea03e1e584f88dedf2e5c8be2222d945661bb8da382b5305271389c2b27.png" src="../../_images/4a13cea03e1e584f88dedf2e5c8be2222d945661bb8da382b5305271389c2b27.png" />
-<img alt="../../_images/f0092463f210a6dffa0730d39a72b0162e8aa251e9c9c1b5d70baa0001a11886.png" src="../../_images/f0092463f210a6dffa0730d39a72b0162e8aa251e9c9c1b5d70baa0001a11886.png" />
+<img alt="../../_images/11b2744d9136339afed4b51b8d27a4a4c08d6556b45b302401f634c764620136.png" src="../../_images/11b2744d9136339afed4b51b8d27a4a4c08d6556b45b302401f634c764620136.png" />
+<img alt="../../_images/a38358d6f0a56dc5a3adb2f758e79c58107acd849b3e074143268f60d42726f6.png" src="../../_images/a38358d6f0a56dc5a3adb2f758e79c58107acd849b3e074143268f60d42726f6.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculation of energy consumption of different vehicles: 
 
 Tramway :
 Vehicle Max Acceleration (depending of max force) is too low or travel distance too small or mean speed too small
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.2482194479805129
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1084
-     nit: 23
- success: True
-       x: array([0.08968357, 0.49256947, 0.97875356])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.2482194479805129
+                   x: [ 8.182e-02  4.873e-01  9.774e-01]
+                 nit: 16
+                nfev: 769
+          population: [[ 8.182e-02  4.873e-01  9.774e-01]
+                       [ 8.621e-02  4.824e-01  9.731e-01]
+                       ...
+                       [ 9.148e-02  5.464e-01  9.476e-01]
+                       [ 9.463e-02  4.725e-01  9.653e-01]]
+ population_energies: [ 1.248e+00  1.249e+00 ...  1.260e+00  1.249e+00]
 Consumption per passenger: 19.71 kJ/(Pax.km)
 ----
 Trolleybus :
 Vehicle Max Acceleration (depending of max force) is too low or travel distance too small or mean speed too small
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.119398008169179
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 994
-     nit: 21
- success: True
-       x: array([0.04444743, 0.81657784, 0.9767402 ])
-Consumption per passenger: 33.80 kJ/(Pax.km)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.1171417308272777
+                   x: [ 6.033e-02  7.631e-01  9.731e-01]
+                 nit: 16
+                nfev: 769
+          population: [[ 6.033e-02  7.631e-01  9.731e-01]
+                       [ 5.284e-02  8.003e-01  9.725e-01]
+                       ...
+                       [ 4.764e-02  8.611e-01  9.700e-01]
+                       [ 7.059e-02  7.736e-01  9.508e-01]]
+ population_energies: [ 1.117e+00  1.120e+00 ...  1.123e+00  1.144e+00]
+Consumption per passenger: 33.14 kJ/(Pax.km)
 ----
 Bus :
 Vehicle Max Acceleration (depending of max force) is too low or travel distance too small or mean speed too small
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1382110888204808
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1624
-     nit: 35
- success: True
-       x: array([0.05194963, 0.76344226, 0.97326837])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.1382110888204808
+                   x: [ 5.767e-02  7.704e-01  9.658e-01]
+                 nit: 20
+                nfev: 949
+          population: [[ 5.767e-02  7.704e-01  9.658e-01]
+                       [ 5.720e-02  8.697e-01  9.896e-01]
+                       ...
+                       [ 4.848e-02  8.577e-01  9.829e-01]
+                       [ 4.484e-02  8.418e-01  9.830e-01]]
+ population_energies: [ 1.138e+00  1.171e+00 ...  1.144e+00  1.144e+00]
 Consumption per passenger: 34.50 kJ/(Pax.km)
 ----
 Car :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.3512967382800352
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1444
-     nit: 31
- success: True
-       x: array([0.00489628, 0.7031994 , 0.98524275])
-Consumption per passenger: 89.63 kJ/(Pax.km)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.3512967382800352
+                   x: [ 8.035e-03  6.942e-01  9.865e-01]
+                 nit: 36
+                nfev: 1669
+          population: [[ 8.035e-03  6.942e-01  9.865e-01]
+                       [ 9.397e-03  6.958e-01  9.875e-01]
+                       ...
+                       [ 9.631e-03  6.945e-01  9.858e-01]
+                       [ 7.086e-03  8.325e-01  9.878e-01]]
+ population_energies: [ 1.351e+00  1.351e+00 ...  1.351e+00  1.383e+00]
 </pre></div>
 </div>
-<img alt="../../_images/508caee5d8a72e9cf35e1d73e89f22e0eba2e8d84b6bf8e7e398540fd58b132c.png" src="../../_images/508caee5d8a72e9cf35e1d73e89f22e0eba2e8d84b6bf8e7e398540fd58b132c.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 89.63 kJ/(Pax.km)
+</pre></div>
+</div>
+<img alt="../../_images/da3552c53986000641065fca6d2d0a7242bfee02cd8dd84434a145adfe915e94.png" src="../../_images/da3552c53986000641065fca6d2d0a7242bfee02cd8dd84434a145adfe915e94.png" />
 </div>
 </div>
 <p>Here we define a <code class="docutils literal notranslate"><span class="pre">line</span></code> class with all the functionalities described just before.</p>
@@ -888,7 +924,7 @@ Consumption per passenger: 89.63 kJ/(Pax.km)
 </div>
 </section>
 <section id="example-of-a-line-definition">
-<h2>Example of a line definition<a class="headerlink" href="#example-of-a-line-definition" title="Permalink to this heading">#</a></h2>
+<h2>Example of a line definition<a class="headerlink" href="#example-of-a-line-definition" title="Link to this heading">#</a></h2>
 <p>We can now use this new class to define a bus transport line with the following requirements:</p>
 <ul class="simple">
 <li><p>distances: 700, 500, 400, 700, 300, 300, 300, 300, 300, 300 m/s</p></li>
@@ -930,78 +966,126 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0783631490042147
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 994
-     nit: 21
- success: True
-       x: array([0.041922  , 0.92240283, 0.96308391])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.0790038760811214
+                   x: [ 4.993e-02  8.185e-01  9.787e-01]
+                 nit: 15
+                nfev: 724
+          population: [[ 4.993e-02  8.185e-01  9.787e-01]
+                       [ 5.548e-02  9.210e-01  9.803e-01]
+                       ...
+                       [ 5.006e-02  8.569e-01  9.739e-01]
+                       [ 5.463e-02  9.237e-01  9.748e-01]]
+ population_energies: [ 1.079e+00  1.103e+00 ...  1.086e+00  1.098e+00]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.090891177386056
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1129
-     nit: 24
- success: True
-       x: array([0.07725852, 0.81357868, 0.9539676 ])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.090891177386056
+                   x: [ 7.606e-02  8.109e-01  9.552e-01]
+                 nit: 17
+                nfev: 814
+          population: [[ 7.606e-02  8.109e-01  9.552e-01]
+                       [ 1.045e-01  6.990e-01  9.591e-01]
+                       ...
+                       [ 6.758e-02  9.182e-01  9.406e-01]
+                       [ 7.529e-02  8.638e-01  9.717e-01]]
+ population_energies: [ 1.091e+00  1.101e+00 ...  1.094e+00  1.097e+00]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.1030579998247887
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 769
-     nit: 16
- success: True
-       x: array([0.10282707, 0.85065909, 0.92316113])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.103692829581585
+                   x: [ 9.933e-02  8.808e-01  9.226e-01]
+                 nit: 19
+                nfev: 904
+          population: [[ 9.933e-02  8.808e-01  9.226e-01]
+                       [ 1.377e-01  9.270e-01  9.073e-01]
+                       ...
+                       [ 9.426e-02  9.210e-01  9.145e-01]
+                       [ 1.142e-01  8.538e-01  9.089e-01]]
+ population_energies: [ 1.104e+00  1.135e+00 ...  1.105e+00  1.114e+00]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0405787055502655
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1579
-     nit: 34
- success: True
-       x: array([0.01880519, 0.92129178, 0.98963806])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.0408802965154798
+                   x: [ 1.836e-02  9.285e-01  9.873e-01]
+                 nit: 33
+                nfev: 1534
+          population: [[ 1.836e-02  9.285e-01  9.873e-01]
+                       [ 2.038e-02  9.482e-01  9.879e-01]
+                       ...
+                       [ 1.994e-02  9.209e-01  9.884e-01]
+                       [ 1.797e-02  9.732e-01  9.851e-01]]
+ population_energies: [ 1.041e+00  1.045e+00 ...  1.044e+00  1.042e+00]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.060977605934655
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 1129
-     nit: 24
- success: True
-       x: array([0.06578157, 0.78211888, 0.97661969])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.060351732967735
+                   x: [ 6.799e-02  7.673e-01  9.752e-01]
+                 nit: 24
+                nfev: 1129
+          population: [[ 6.799e-02  7.673e-01  9.752e-01]
+                       [ 6.946e-02  7.799e-01  9.692e-01]
+                       ...
+                       [ 5.867e-02  8.761e-01  9.748e-01]
+                       [ 8.901e-02  6.819e-01  9.866e-01]]
+ population_energies: [ 1.060e+00  1.066e+00 ...  1.064e+00  1.066e+00]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0756863059035497
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 724
-     nit: 15
- success: True
-       x: array([0.20715344, 0.41672036, 0.98919557])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.0609329840248514
+                   x: [ 6.502e-02  7.877e-01  9.783e-01]
+                 nit: 18
+                nfev: 859
+          population: [[ 6.502e-02  7.877e-01  9.783e-01]
+                       [ 6.255e-02  8.553e-01  9.810e-01]
+                       ...
+                       [ 6.311e-02  8.023e-01  9.826e-01]
+                       [ 1.318e-01  7.215e-01  9.461e-01]]
+ population_energies: [ 1.061e+00  1.067e+00 ...  1.062e+00  1.098e+00]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0625292844515968
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 499
-     nit: 10
- success: True
-       x: array([0.06112553, 0.81678634, 0.96917292])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.0615157926725947
+                   x: [ 6.230e-02  8.041e-01  9.816e-01]
+                 nit: 20
+                nfev: 949
+          population: [[ 6.230e-02  8.041e-01  9.816e-01]
+                       [ 7.206e-02  7.551e-01  9.827e-01]
+                       ...
+                       [ 7.599e-02  7.773e-01  9.800e-01]
+                       [ 5.716e-02  8.707e-01  9.586e-01]]
+ population_energies: [ 1.062e+00  1.065e+00 ...  1.070e+00  1.064e+00]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 1.0611603540598697
- message: &#39;Optimization terminated successfully.&#39;
-    nfev: 814
-     nit: 17
- success: True
-       x: array([0.08223191, 0.68479864, 0.98081296])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.060351732967735
+                   x: [ 6.575e-02  7.669e-01  9.746e-01]
+                 nit: 20
+                nfev: 949
+          population: [[ 6.575e-02  7.669e-01  9.746e-01]
+                       [ 6.364e-02  8.052e-01  9.708e-01]
+                       ...
+                       [ 6.155e-02  8.179e-01  9.779e-01]
+                       [ 6.092e-02  8.019e-01  9.804e-01]]
+ population_energies: [ 1.060e+00  1.062e+00 ...  1.062e+00  1.062e+00]
 </pre></div>
 </div>
-<img alt="../../_images/b339aa27fbfe5f3a1a3c750783784942666adcd8c6e09b4de9e328b60f1a7580.png" src="../../_images/b339aa27fbfe5f3a1a3c750783784942666adcd8c6e09b4de9e328b60f1a7580.png" />
-<img alt="../../_images/f38fe7064183632954e902c86a93bd13a9a935eabea44d30029c006e7b6f01e6.png" src="../../_images/f38fe7064183632954e902c86a93bd13a9a935eabea44d30029c006e7b6f01e6.png" />
-<img alt="../../_images/819ce6c2bce3d0749fa1631e8e4b03c718e1da3d6fbb716ebd8d754b63862539.png" src="../../_images/819ce6c2bce3d0749fa1631e8e4b03c718e1da3d6fbb716ebd8d754b63862539.png" />
-<img alt="../../_images/3130193acd002d2cb76ef551992fbca2a32fb5159a3694bf378e49f97e65977c.png" src="../../_images/3130193acd002d2cb76ef551992fbca2a32fb5159a3694bf378e49f97e65977c.png" />
-<img alt="../../_images/094bdb89fbe47e88abc14ff4f728921fb1fd30b50b9108019885b61aa628c4eb.png" src="../../_images/094bdb89fbe47e88abc14ff4f728921fb1fd30b50b9108019885b61aa628c4eb.png" />
-<img alt="../../_images/d3b125c8d9229fa4a07ba3b7707271855d2ac86b1c74ecaeb0c6297b7fbaf2a1.png" src="../../_images/d3b125c8d9229fa4a07ba3b7707271855d2ac86b1c74ecaeb0c6297b7fbaf2a1.png" />
-<img alt="../../_images/d907f2dfa4fc2b6a71a1a5a8a70f58b91cc4d9278f802f364cfff2e9b78d5eba.png" src="../../_images/d907f2dfa4fc2b6a71a1a5a8a70f58b91cc4d9278f802f364cfff2e9b78d5eba.png" />
-<img alt="../../_images/cca1504a257c834c083237bfd283a7e4f4da5e1020d683e9813d829039b6c7bf.png" src="../../_images/cca1504a257c834c083237bfd283a7e4f4da5e1020d683e9813d829039b6c7bf.png" />
+<img alt="../../_images/5f775ef359cd1cf7c80e24d9dfcbc20e7145d88685eeab59126095e0c11a7ee7.png" src="../../_images/5f775ef359cd1cf7c80e24d9dfcbc20e7145d88685eeab59126095e0c11a7ee7.png" />
+<img alt="../../_images/1b477cb3dc595e8ef06085a22b54706368bc063d832c29088daac6424672d4bd.png" src="../../_images/1b477cb3dc595e8ef06085a22b54706368bc063d832c29088daac6424672d4bd.png" />
+<img alt="../../_images/35ccbf8f22b7112c4d06a5c95322034e2a33b4146a71e1780355367097a4487b.png" src="../../_images/35ccbf8f22b7112c4d06a5c95322034e2a33b4146a71e1780355367097a4487b.png" />
+<img alt="../../_images/42a41a2e12c591d151fd6c73ae2a936f42b3e004a546b7d5aea346a2c154ace5.png" src="../../_images/42a41a2e12c591d151fd6c73ae2a936f42b3e004a546b7d5aea346a2c154ace5.png" />
+<img alt="../../_images/da92ab302f6d10c06ce76713b2c46c20629af03588afa862b619304d7c248544.png" src="../../_images/da92ab302f6d10c06ce76713b2c46c20629af03588afa862b619304d7c248544.png" />
+<img alt="../../_images/dd31bb1ba091c43431f2ca412616c880ee0be53f1aadbd3755fabd9e7f3aca17.png" src="../../_images/dd31bb1ba091c43431f2ca412616c880ee0be53f1aadbd3755fabd9e7f3aca17.png" />
+<img alt="../../_images/f41deae677c4e444c4c089b4bf099957714545186bf98dd2a1539c5c226db3ce.png" src="../../_images/f41deae677c4e444c4c089b4bf099957714545186bf98dd2a1539c5c226db3ce.png" />
+<img alt="../../_images/da92ab302f6d10c06ce76713b2c46c20629af03588afa862b619304d7c248544.png" src="../../_images/da92ab302f6d10c06ce76713b2c46c20629af03588afa862b619304d7c248544.png" />
 </div>
 </div>
 <p>A time vector of evolution of the power required at each section or supplied to each charger is constructed.</p>
@@ -1013,12 +1097,12 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/00d3536364132ec5ce31b4b321f9cff82f31929ddc401a328be25c1ba7c58cdd.png" src="../../_images/00d3536364132ec5ce31b4b321f9cff82f31929ddc401a328be25c1ba7c58cdd.png" />
+<img alt="../../_images/9352529dd418b54b8c4a2a992be34b369298bb2fe133a1a5778872ef5032b912.png" src="../../_images/9352529dd418b54b8c4a2a992be34b369298bb2fe133a1a5778872ef5032b912.png" />
 </div>
 </div>
 </section>
 <section id="hybrid-storage-system-sizing">
-<h2>Hybrid storage system sizing<a class="headerlink" href="#hybrid-storage-system-sizing" title="Permalink to this heading">#</a></h2>
+<h2>Hybrid storage system sizing<a class="headerlink" href="#hybrid-storage-system-sizing" title="Link to this heading">#</a></h2>
 <p>The energy flow or the resulting power demand will be shared between battery and supercapacity with control based on frequency sharing of demands. The Figure below show how the low frequency power will be provided by the batteries while the high frequency part will be provided by supercapacitors.</p>
 <p><img alt="Sizing Stategy" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/EnergyManagment.png" /></p>
 <p>The cutoff frequency defines the power sharing and has a strong influence on the sizing of the storage elements. The following code analyzes this power sharing by varying this cutoff frequency.</p>
@@ -1098,8 +1182,8 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/93cb25e9ea1d8645b0b066c4d893e69634f9b3c4abb692a0bca3316a48042512.png" src="../../_images/93cb25e9ea1d8645b0b066c4d893e69634f9b3c4abb692a0bca3316a48042512.png" />
-<img alt="../../_images/a17d90f49859a57fa657917618ae2c1bcb7cfc298da32f9ad5564dd8dd4c8f48.png" src="../../_images/a17d90f49859a57fa657917618ae2c1bcb7cfc298da32f9ad5564dd8dd4c8f48.png" />
+<img alt="../../_images/5783144d57ce560d40db035c8e00b75393fa1c5706f97ff22092dc14d9a5fe81.png" src="../../_images/5783144d57ce560d40db035c8e00b75393fa1c5706f97ff22092dc14d9a5fe81.png" />
+<img alt="../../_images/23e6d57f5105556398d10c8bcfaff82a2dc63b0a6705bc0a3996b8540d6effb7.png" src="../../_images/23e6d57f5105556398d10c8bcfaff82a2dc63b0a6705bc0a3996b8540d6effb7.png" />
 </div>
 </div>
 <p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Pareto_front">Pareto front</a> can help find a solution achieving a compromise between 2 objectives.</p>
@@ -1117,7 +1201,7 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/cb10bd27b74cab8dfbaef9a80a9b8ed40f6df448e5790ebea33a3964c6bebc61.png" src="../../_images/cb10bd27b74cab8dfbaef9a80a9b8ed40f6df448e5790ebea33a3964c6bebc61.png" />
+<img alt="../../_images/502fda1267b15357b72b7d2b0579735e0a34c923e127ae805e1de9c55861ac0c.png" src="../../_images/502fda1267b15357b72b7d2b0579735e0a34c923e127ae805e1de9c55861ac0c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1151,26 +1235,26 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Super Capacitor:
-Pmax: 109.73 kW
+Pmax: 111.88 kW
 NRJ:  0.23 kWh
-Mass:  107.6 kg
+Mass:  109.7 kg
 ---
 Traction battery:
 Pmax discharge: 99.95 kW
-Pmax charge: 44.76 kW
-NRJ: 11.23 kWh
-NRJ one travel: 3.01 kWh
-Mass:  447.6 kg
+Pmax charge: 46.59 kW
+NRJ: 11.27 kWh
+NRJ one travel: 3.03 kWh
+Mass:  465.9 kg
 Mass (brake criteria):  333.2 kg
 ---
 </pre></div>
 </div>
-<img alt="../../_images/56293681b27e646c1b8463fa797d5011f220127197e5bce521b4adcdeb57307e.png" src="../../_images/56293681b27e646c1b8463fa797d5011f220127197e5bce521b4adcdeb57307e.png" />
+<img alt="../../_images/817799a1e72ce2a7256b3d1c4aba0a4dc7a3bb90ca94404db7ae473f3fde7a4a.png" src="../../_images/817799a1e72ce2a7256b3d1c4aba0a4dc7a3bb90ca94404db7ae473f3fde7a4a.png" />
 </div>
 </div>
 </section>
 <section id="labwork-and-homework">
-<h2>Labwork and homework<a class="headerlink" href="#labwork-and-homework" title="Permalink to this heading">#</a></h2>
+<h2>Labwork and homework<a class="headerlink" href="#labwork-and-homework" title="Link to this heading">#</a></h2>
 <p>Your objective is to specify the hybrid storage system of an electric bus for doubling line 78 between the IUT Rangueil and MFJA stations.
 The characteristics of the bus are <a class="reference external" href="https://www.bluebus.fr/bluebus-6-metres">here</a><br />
 <img alt="BlueBus" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/bluebus.png" />
@@ -1225,7 +1309,7 @@ We will assume a round trip in 20 min, charge at the ends of the lines included.
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1253,7 +1337,9 @@ We will assume a round trip in 20 min, charge at the ends of the lines included.
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1314,8 +1400,8 @@ By Marc Budinger, Scott Delbecq, Félix Pollet
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Design optimization and exploration of a multirotor drone (ISAE) &#8212; Sizing and optimization of mechatronic systems</title>
   
@@ -15,64 +14,64 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-multirotor/07_DesignExploration-Student';</script>
-    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Sizing of a multi-rotor drone" href="08_SystemSizingCodeOptimization.html" />
     <link rel="prev" title="Sizing of a multirotor drone (ISAE)" href="06_SystemSizingCodeOptimization-Student.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -80,32 +79,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -113,7 +96,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -121,16 +103,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -145,6 +136,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../about/homepage.html">
   
@@ -158,11 +151,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="../../_static/logo.png" class="logo__image only-light" alt="Sizing and optimization of mechatronic systems - Home"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Sizing and optimization of mechatronic systems - Home"/>`);</script>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Sizing and optimization of mechatronic systems - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction and overview</span></p>
 <ul class="nav bd-sidenav">
@@ -171,37 +171,37 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1/summary.html">1. Architectures, sizing scenarios and design drivers</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1/summary.html">1. Architectures, sizing scenarios and design drivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/1-objectives_and_ressources.html">1.1. Objectives and ressources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/2-needs_and_general_methodology.html">1.2. Needs and general methodology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/3-scenarios_and_design_drivers.html">1.3. Scenarios and Design Drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/4-quiz.html">1.4. Quiz</a></li>
 
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture2/summary.html">2. Simulation and evaluation models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture2/summary.html">2. Simulation and evaluation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/1-simulation_models.html">2.1. Simulation models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/2-evaluation_models.html">2.2. Evaluation models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/3-quiz_evaluation_models.html">2.3. Quiz</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2/4-homework.html">2.5. Homework: mission profile analysis</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture3/summary.html">3. Estimation models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture3/summary.html">3. Estimation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/1-linear_regressions.html">3.1. Linear regressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/2-quiz_regressions.html">3.2. Quiz</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/3-scaling_laws.html">3.3. Scaling laws</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3/4-quiz_scaling_laws.html">3.4. Quiz</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4/summary.html">4. Optimal sizing procedures</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4/summary.html">4. Optimal sizing procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/1-design_and_optimization_problems.html">4.1. Representation of a design problem and basics optimal design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/2-optimization_examples.html">4.2. Optimization with python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/3-sizing_procedures.html">4.3. Development of a sizing procedure using design graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/4-sizing_procedure_examples.html">4.4. Design graph and optimization with python</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture5/summary.html">5. MDAO and surrogate models</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture5/summary.html">5. MDAO and surrogate models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/1-mdao.html">5.1. MDAO (Multidisciplinary Design Analysis and Optimization)</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/2-mdao_examples.html">5.3. MDAO examples</a></li>
@@ -209,19 +209,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/4-surrogate_model_examples.html">5.5. Surrogate model examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/5-quizz.html">5.6. Quizz</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture6/summary.html">6. LCA and sustainable scenarios</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture6/summary.html">6. LCA and sustainable scenarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/1-lca.html">6.1. Life Cyle Assessment (LCA)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/2-lca_examples.html">6.2. LCA examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/3-sustainable_scenarios.html">6.3. Sustainable scenarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/4-sustainable_scenario_examples.html">6.4. Sustainable scenario examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/5-quizz.html">6.5. Quizz</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">Multirotor UAV</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">Multirotor UAV</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_CaseStudy.html">Case study and architecture presentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02a_SizingScenarios-Student.html">Sizing scenarios and design drivers (student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02a_SizingScenarios.html">Sizing scenarios and design drivers</a></li>
@@ -244,8 +244,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="08_SystemSizingCodeOptimization.html">Sizing of a multi-rotor drone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="A1_Sizing_equations.html">Appendix 1: Sizing equations</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios-student.html">Modeling of the mechanical load (student version)</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios.html">Modeling of the mechanical load</a></li>
@@ -261,8 +261,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student.html">Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">Sizing procedure and optimization with OpenMDAO</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">Lab - Sustainable mobility - Mission profile &amp; Specification</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">Lab - Sustainable mobility - Mission profile &amp; Specification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/00_SustainableMobility.html">Sustainable mobilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01a_CaseStudy.html">Case study presentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification-Student.html">Case study specification (Student version)</a></li>
@@ -271,8 +271,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture_UltraCapacitor.html">Architecture of the converter and sizing scenarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02b_Architecture_Hybrid.html">Hydrid Storage Architecture and Specification</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary.html">Lab - Sustainable mobility - DC/DC converter sizing</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary.html">Lab - Sustainable mobility - DC/DC converter sizing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/03_SizingScenarios.html">Equations of sizing scenarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws-Student.html">Estimation models with scaling laws and linear regression (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws.html">Estimation models with scaling laws and linear regression</a></li>
@@ -286,7 +286,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor-Student.html">Life Cycle Assessment of an inductor (student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor.html">Life Cycle Assessment of an inductor</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -302,7 +302,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -311,14 +311,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -343,14 +343,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/laboratories/Lab-multirotor/07_DesignExploration-Student.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -361,14 +361,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-multirotor/07_DesignExploration-Student.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -507,27 +507,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -576,14 +568,14 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="design-optimization-and-exploration-of-a-multirotor-drone-isae">
-<h1>Design optimization and exploration of a multirotor drone (ISAE)<a class="headerlink" href="#design-optimization-and-exploration-of-a-multirotor-drone-isae" title="Permalink to this heading">#</a></h1>
+<h1>Design optimization and exploration of a multirotor drone (ISAE)<a class="headerlink" href="#design-optimization-and-exploration-of-a-multirotor-drone-isae" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Scott Delbecq (ISAE-SUPAERO) and Félix Pollet (ISAE-SUPAERO), Toulouse, France.</em></p>
 <p>The objective of this notebook is to use and modify the sizing code of the UAV to explore the design space.</p>
 <section id="modular-sizing-code">
-<h2>Modular sizing code<a class="headerlink" href="#modular-sizing-code" title="Permalink to this heading">#</a></h2>
+<h2>Modular sizing code<a class="headerlink" href="#modular-sizing-code" title="Link to this heading">#</a></h2>
 <p>Here we use the sizing code but decomposed into several <code class="docutils literal notranslate"><span class="pre">ExplicitComponent</span></code> of <a class="reference external" href="https://openmdao.org/newdocs/versions/latest/main.html">OpenMDAO</a>. You might notice an improvement in computational cost and robustness compared to the previous sizing code that used a single <code class="docutils literal notranslate"><span class="pre">ExplicitComponent</span></code> to wrap all the sizing code.
 The models are separated by components and located in different Python files <code class="docutils literal notranslate"><span class="pre">/models/openmdao</span></code>.</p>
 <div class="cell docutils container">
@@ -711,7 +703,7 @@ The models are separated by components and located in different Python files <co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openmdao.core.problem.Problem at 0x7fb710ab6d30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openmdao.core.problem.Problem at 0x7f1ee4a2b310&gt;
 </pre></div>
 </div>
 </div>
@@ -728,14 +720,14 @@ The models are separated by components and located in different Python files <co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/scipy/optimize/_optimize.py:284: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
-  warnings.warn(&quot;Values in x were outside bounds during a &quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/scipy/optimize/_slsqp_py.py:437: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimization terminated successfully    (Exit mode 0)
-            Current function value: 10.377302309077761
+            Current function value: 10.377302309050386
             Iterations: 11
-            Function evaluations: 12
+            Function evaluations: 13
             Gradient evaluations: 11
 Optimization Complete
 -----------------------------------
@@ -762,7 +754,7 @@ name         val           size  lower  upper  min         max
 -----------  ------------  ----  -----  -----  ----------  ---------- 
 beta_pro     [0.3]         1     0.3    0.6    0.3         0.3         
 k_os         [2.07546046]  1     1.0    10.0   2.07546046  2.07546046  
-k_ND         [1.25998295]  1     1.0    10.0   1.25998295  1.25998295  
+k_ND         [1.25998296]  1     1.0    10.0   1.25998296  1.25998296  
 k_mot        [1.02941176]  1     1.0    10.0   1.02941176  1.02941176  
 k_speed_mot  [1.26195253]  1     1.0    10.0   1.26195253  1.26195253  
 k_mb         [0.64317582]  1     0.1    10.0   0.64317582  0.64317582  
@@ -774,12 +766,12 @@ Constraints
 -----------
 name    val                size  lower  upper  equals  min                 max                 
 ------  -----------------  ----  -----  -----  ------  ------------------  ------------------ 
-cons_1  [-2.88650881e-10]  1     0.0    1e+30  None    -0.0                -0.0                
-cons_2  [-9.7664099e-11]   1     0.0    1e+30  None    -0.0                -0.0                
-cons_3  [3.60671493e-11]   1     0.0    1e+30  None    0.0                 0.0                 
-cons_4  [1.01877114e+09]   1     0.0    1e+30  None    1018771135.3738992  1018771135.3738992  
+cons_1  [-7.61446017e-10]  1     0.0    1e+30  None    -0.0                -0.0                
+cons_2  [-3.75628417e-11]  1     0.0    1e+30  None    -0.0                -0.0                
+cons_3  [-5.05906428e-12]  1     0.0    1e+30  None    -0.0                -0.0                
+cons_4  [1.01877113e+09]   1     0.0    1e+30  None    1018771130.9464543  1018771130.9464543  
 cons_5  [3.17643194]       1     0.0    1e+30  None    3.17643194          3.17643194          
-cons_6  [-7.82875986e-11]  1     0.0    1e+30  None    -0.0                -0.0                
+cons_6  [-1.57811542e-11]  1     0.0    1e+30  None    -0.0                -0.0                
 cons_7  [256.22697691]     1     0.0    1e+30  None    256.22697691        256.22697691        
 
 ----------
@@ -788,6 +780,10 @@ Objectives
 name          val            size  scaler  
 ------------  -------------  ----  ------ 
 M_total_real  [10.37730231]  1     0.1     
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/openmdao/core/problem.py:2074: OMDeprecationWarning:Method `list_problem_vars` has been renamed `list_driver_vars`.
+Please update your code to use list_driver_vars to avoid this warning.
 </pre></div>
 </div>
 </div>
@@ -815,70 +811,70 @@ propeller
   F_pro_to       [318.12917391]     F_pro_to     
   rho_air        [1.18]             rho_air      
   ND_max         [44.45]            ND_max       
-  k_ND           [1.25998295]       k_ND         
+  k_ND           [1.25998296]       k_ND         
   M_pro_ref      [0.014999]         M_pro_ref    
   D_pro_ref      [0.2794]           D_pro_ref    
   F_pro_hov      [254.50333913]     F_pro_hov    
 motor
   k_mot          [1.02941176]       k_mot        
-  T_pro_hov      [20.72734165]      T_pro_hov    
+  T_pro_hov      [20.72734178]      T_pro_hov    
   k_vb           [1.]               k_vb         
-  P_pro_to       [3616.45874658]    P_pro_to     
+  P_pro_to       [3616.45872422]    P_pro_to     
   k_speed_mot    [1.26195253]       k_speed_mot  
-  Omega_pro_to   [139.58215416]     Omega_pro_to 
+  Omega_pro_to   [139.58215244]     Omega_pro_to 
   M_mot_ref      [0.575]            M_mot_ref    
   T_nom_mot_ref  [2.32]             T_nom_mot_ref
   R_mot_ref      [0.03]             R_mot_ref    
   K_T_ref        [0.03]             K_T_ref      
   T_mot_fr_ref   [0.03]             T_mot_fr_ref 
   T_max_mot_ref  [2.81714286]       T_max_mot_ref
-  Omega_pro_hov  [124.84607406]     Omega_pro_hov
-  T_pro_to       [25.90917706]      T_pro_to     
+  Omega_pro_hov  [124.84607252]     Omega_pro_hov
+  T_pro_to       [25.90917722]      T_pro_to     
 battery
   k_mb           [0.64317582]       k_mb         
   M_pay          [50.]              M_pay        
   E_bat_ref      [260568.]          E_bat_ref    
   M_bat_ref      [0.329]            M_bat_ref    
-  U_bat          [35.13984881]      U_bat        
+  U_bat          [35.13984874]      U_bat        
   I_bat_max_ref  [250.]             I_bat_max_ref
   C_bat_ref      [5.]               C_bat_ref    
-  P_el_mot_hov   [3226.16991799]    P_el_mot_hov 
+  P_el_mot_hov   [3226.16990396]    P_el_mot_hov 
   N_pro          [4.]               N_pro        
 esc
-  P_el_mot_to    [4599.19697756]    P_el_mot_to  
-  U_bat          [35.13984881]      U_bat        
-  U_mot_to       [35.13984881]      U_mot_to     
+  P_el_mot_to    [4599.19695835]    P_el_mot_to  
+  U_bat          [35.13984874]      U_bat        
+  U_mot_to       [35.13984874]      U_mot_to     
   M_esc_ref      [0.115]            M_esc_ref    
   P_esc_ref      [3108.]            P_esc_ref    
 frame
   N_arm          [4.]               N_arm        
-  D_pro          [1.58802402]       D_pro        
+  D_pro          [1.58802403]       D_pro        
   F_pro_to       [318.12917391]     F_pro_to     
   N_pro_arm      [1.]               N_pro_arm    
   sigma_max      [70000000.]        sigma_max    
   k_D            [0.99]             k_D          
   rho_s          [1700.]            rho_s        
 objectives
-  C_bat          [579849.10864506]  C_bat        
-  I_bat_hov      [386.56607243]     I_bat_hov    
+  C_bat          [579849.10715616]  C_bat        
+  I_bat_hov      [386.56607144]     I_bat_hov    
   M_esc          [0.17017621]       M_esc        
   M_pro          [0.48453331]       M_pro        
-  M_mot          [3.85166988]       M_mot        
+  M_mot          [3.8516699]        M_mot        
   N_pro          [4.]               N_pro        
   M_pay          [50.]              M_pay        
-  M_bat          [32.15879105]      M_bat        
-  M_frame        [3.58871446]       M_frame      
+  M_bat          [32.15879091]      M_bat        
+  M_frame        [3.58871449]       M_frame      
 constraints
   M_total        [103.77302309]     M_total      
   M_total_real   [103.77302309]     M_total_real 
-  T_max_mot      [25.90917706]      T_max_mot    
-  T_pro_to       [25.90917706]      T_pro_to     
-  U_bat          [35.13984881]      U_bat        
-  U_mot_to       [35.13984881]      U_mot_to     
+  T_max_mot      [25.90917722]      T_max_mot    
+  T_pro_to       [25.90917722]      T_pro_to     
+  U_bat          [35.13984874]      U_bat        
+  U_mot_to       [35.13984874]      U_mot_to     
   P_bat_max      [1.0187905e+09]    P_bat_max    
-  P_el_mot_to    [4599.19697756]    P_el_mot_to  
+  P_el_mot_to    [4599.19695835]    P_el_mot_to  
   N_pro          [4.]               N_pro        
-  U_esc          [38.31628075]      U_esc        
+  U_esc          [38.31628069]      U_esc        
   t_hov          [25.]              t_hov        
   t_hov_spec     [25.]              t_hov_spec   
   MTOW           [360.]             MTOW         
@@ -906,59 +902,59 @@ scenarios
 propeller
   C_t            [0.0859]             C_t          
   C_p            [0.02768]            C_p          
-  D_pro          [1.58802402]         D_pro        
-  n_pro_to       [22.2151898]         n_pro_to     
-  Omega_pro_to   [139.58215416]       Omega_pro_to 
+  D_pro          [1.58802403]         D_pro        
+  n_pro_to       [22.21518953]        n_pro_to     
+  Omega_pro_to   [139.58215244]       Omega_pro_to 
   M_pro          [0.48453331]         M_pro        
-  P_pro_to       [3616.45874658]      P_pro_to     
-  T_pro_to       [25.90917706]        T_pro_to     
-  n_pro_hov      [19.86986981]        n_pro_hov    
-  Omega_pro_hov  [124.84607406]       Omega_pro_hov
-  P_pro_hov      [2587.72723046]      P_pro_hov    
-  T_pro_hov      [20.72734165]        T_pro_hov    
+  P_pro_to       [3616.45872422]      P_pro_to     
+  T_pro_to       [25.90917722]        T_pro_to     
+  n_pro_hov      [19.86986957]        n_pro_hov    
+  Omega_pro_hov  [124.84607252]       Omega_pro_hov
+  P_pro_hov      [2587.72721446]      P_pro_hov    
+  T_pro_hov      [20.72734178]        T_pro_hov    
 motor
-  T_nom_mot      [21.33696934]        T_nom_mot    
-  U_bat          [35.13984881]        U_bat        
-  K_T            [0.19949268]         K_T          
-  M_mot          [3.85166988]         M_mot        
-  R_mot          [0.05573106]         R_mot        
+  T_nom_mot      [21.33696947]        T_nom_mot    
+  U_bat          [35.13984874]        U_bat        
+  K_T            [0.19949269]         K_T          
+  M_mot          [3.8516699]          M_mot        
+  R_mot          [0.05573107]         R_mot        
   T_mot_fr       [0.20095669]         T_mot_fr     
-  T_max_mot      [25.90917706]        T_max_mot    
-  I_mot_hov      [104.90759786]       I_mot_hov    
-  U_mot_hov      [30.75249061]        U_mot_hov    
-  P_el_mot_hov   [3226.16991799]      P_el_mot_hov 
-  I_mot_to       [130.88266267]       I_mot_to     
-  U_mot_to       [35.13984881]        U_mot_to     
-  P_el_mot_to    [4599.19697756]      P_el_mot_to  
+  T_max_mot      [25.90917722]        T_max_mot    
+  I_mot_hov      [104.90759761]       I_mot_hov    
+  U_mot_hov      [30.75249055]        U_mot_hov    
+  P_el_mot_hov   [3226.16990396]      P_el_mot_hov 
+  I_mot_to       [130.88266235]       I_mot_to     
+  U_mot_to       [35.13984874]        U_mot_to     
+  P_el_mot_to    [4599.19695835]      P_el_mot_to  
 battery
-  M_bat          [32.15879105]        M_bat        
-  E_bat          [20375810.00827609]  E_bat        
-  C_bat          [579849.10864506]    C_bat        
-  I_bat_max      [28992455.43225309]  I_bat_max    
+  M_bat          [32.15879091]        M_bat        
+  E_bat          [20375809.91972557]  E_bat        
+  C_bat          [579849.10715616]    C_bat        
+  I_bat_max      [28992455.35780776]  I_bat_max    
   P_bat_max      [1.0187905e+09]      P_bat_max    
-  I_bat_hov      [386.56607243]       I_bat_hov    
+  I_bat_hov      [386.56607144]       I_bat_hov    
 esc
-  P_esc          [4599.19697756]      P_esc        
-  U_esc          [38.31628075]        U_esc        
+  P_esc          [4599.19695835]      P_esc        
+  U_esc          [38.31628069]        U_esc        
   M_esc          [0.17017621]         M_esc        
 frame
   alpha_sep      [1.57079633]         alpha_sep    
-  L_arm          [1.12290255]         L_arm        
+  L_arm          [1.12290256]         L_arm        
   D_out_arm      [0.1096737]          D_out_arm    
   D_in_arm       [0.10857696]         D_in_arm     
-  M_arms         [1.43548578]         M_arms       
-  M_body         [2.15322867]         M_body       
-  M_frame        [3.58871446]         M_frame      
+  M_arms         [1.4354858]          M_arms       
+  M_body         [2.1532287]          M_body       
+  M_frame        [3.58871449]         M_frame      
 objectives
   t_hov          [25.]                t_hov        
   M_total_real   [103.77302309]       M_total_real 
 constraints
-  cons_1         [-2.88650881e-10]    cons_1       
-  cons_2         [-9.7664099e-11]     cons_2       
-  cons_3         [3.60671493e-11]     cons_3       
-  cons_4         [1.01877114e+09]     cons_4       
+  cons_1         [-7.61446017e-10]    cons_1       
+  cons_2         [-3.75628417e-11]    cons_2       
+  cons_3         [-5.05906428e-12]    cons_3       
+  cons_4         [1.01877113e+09]     cons_4       
   cons_5         [3.17643194]         cons_5       
-  cons_6         [-7.82875986e-11]    cons_6       
+  cons_6         [-1.57811542e-11]    cons_6       
   cons_7         [256.22697691]       cons_7       
 
 
@@ -974,9 +970,9 @@ constraints
 </div>
 </section>
 <section id="determining-the-physical-limits-of-the-design-space">
-<h2>Determining the physical limits of the design space<a class="headerlink" href="#determining-the-physical-limits-of-the-design-space" title="Permalink to this heading">#</a></h2>
+<h2>Determining the physical limits of the design space<a class="headerlink" href="#determining-the-physical-limits-of-the-design-space" title="Link to this heading">#</a></h2>
 <section id="payload">
-<h3>Payload<a class="headerlink" href="#payload" title="Permalink to this heading">#</a></h3>
+<h3>Payload<a class="headerlink" href="#payload" title="Link to this heading">#</a></h3>
 <div class="exercise admonition" id="exercise_max_payload">
 
 <p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
@@ -994,7 +990,7 @@ constraints
 <p>Please comment…</p>
 </section>
 <section id="take-off-acceleration">
-<h3>Take-off acceleration<a class="headerlink" href="#take-off-acceleration" title="Permalink to this heading">#</a></h3>
+<h3>Take-off acceleration<a class="headerlink" href="#take-off-acceleration" title="Link to this heading">#</a></h3>
 <div class="exercise admonition" id="exercise_max_acceleration">
 
 <p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
@@ -1012,7 +1008,7 @@ constraints
 <p>Please comment…</p>
 </section>
 <section id="autonomy">
-<h3>Autonomy<a class="headerlink" href="#autonomy" title="Permalink to this heading">#</a></h3>
+<h3>Autonomy<a class="headerlink" href="#autonomy" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
@@ -1024,13 +1020,13 @@ constraints
 </section>
 </section>
 <section id="uav-total-mass-m-total-real">
-<h2>UAV total mass (<span class="math notranslate nohighlight">\(M_{total,real}\)</span>)<a class="headerlink" href="#uav-total-mass-m-total-real" title="Permalink to this heading">#</a></h2>
+<h2>UAV total mass (<span class="math notranslate nohighlight">\(M_{total,real}\)</span>)<a class="headerlink" href="#uav-total-mass-m-total-real" title="Link to this heading">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>From now on, deactivate the constraint on the MTOW.</p>
 </div>
 <section id="m-total-real-vs-autonomy">
-<h3><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Autonomy<a class="headerlink" href="#m-total-real-vs-autonomy" title="Permalink to this heading">#</a></h3>
+<h3><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Autonomy<a class="headerlink" href="#m-total-real-vs-autonomy" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
@@ -1041,7 +1037,7 @@ constraints
 <p>Please comment…</p>
 </section>
 <section id="m-total-real-vs-payload">
-<h3><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Payload<a class="headerlink" href="#m-total-real-vs-payload" title="Permalink to this heading">#</a></h3>
+<h3><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Payload<a class="headerlink" href="#m-total-real-vs-payload" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
@@ -1052,7 +1048,7 @@ constraints
 <p>Please comment…</p>
 </section>
 <section id="autonomy-vs-payload">
-<h3>Autonomy vs Payload<a class="headerlink" href="#autonomy-vs-payload" title="Permalink to this heading">#</a></h3>
+<h3>Autonomy vs Payload<a class="headerlink" href="#autonomy-vs-payload" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
@@ -1064,9 +1060,9 @@ constraints
 </section>
 </section>
 <section id="model-modifications">
-<h2>Model modifications<a class="headerlink" href="#model-modifications" title="Permalink to this heading">#</a></h2>
+<h2>Model modifications<a class="headerlink" href="#model-modifications" title="Link to this heading">#</a></h2>
 <section id="motor-reference-component">
-<h3>Motor reference component<a class="headerlink" href="#motor-reference-component" title="Permalink to this heading">#</a></h3>
+<h3>Motor reference component<a class="headerlink" href="#motor-reference-component" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
@@ -1077,7 +1073,7 @@ constraints
 <p>Please comment…</p>
 </section>
 <section id="battery-reference-component">
-<h3>Battery reference component<a class="headerlink" href="#battery-reference-component" title="Permalink to this heading">#</a></h3>
+<h3>Battery reference component<a class="headerlink" href="#battery-reference-component" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
@@ -1089,7 +1085,7 @@ constraints
 </section>
 </section>
 <section id="your-turn-bonus">
-<h2>Your turn (Bonus)<a class="headerlink" href="#your-turn-bonus" title="Permalink to this heading">#</a></h2>
+<h2>Your turn (Bonus)<a class="headerlink" href="#your-turn-bonus" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
@@ -1128,7 +1124,7 @@ constraints
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1156,7 +1152,9 @@ constraints
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1231,8 +1229,8 @@ By Marc Budinger, Scott Delbecq, Félix Pollet
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
