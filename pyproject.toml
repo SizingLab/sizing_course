@@ -28,22 +28,45 @@
     ]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
+
+# Scientific computing
 numpy="^1.24.0"
 pandas="^1.5.0"
-matplotlib="^3.5.0"
+xlrd="^2"
 scipy="^1.7.0"
 openmdao="^3"
 openpyxl="^3"
-xlrd="^2"
-jupyter-book="^0.15.0"
-rise="^5.7.1"
-jupyterlab-markup-expr="*"
-jupyterlab_imarkdown="*"
 scikit-learn = "^1.0.0"
+sympy = "^1.10.1"
+anyio = "^4.2.0"
+attrs = "^23.2.0"
+babel = "^2.14.0"
+colorama = "^0.4.6"
+comm = "^0.2.1"
+entrypoints = "^0.4"
+greenlet = "^3.0.3"
+idna = "^3.6"
+importlib-metadata = "^7.0.1"
+ipykernel = "^6.28.0"
+jinja2 = "^3.1.3"
+
+
+# Plotting
+matplotlib="^3.5.0"
+seaborn="^0.11.2"
+
+# Jupyter ecosystem
+jupyter-client="^7.4.9"
+jupyter-core="^5.7.1"
+jupyterlab="^4.0.0"
+jupyter-book="^1.0.0"
+# jupyterlab_markup="*"
+jupyterlab_imarkdown="*"
 jupytercards = "^2.1.2"
 jupyterquiz = "^2.0.7"
 jupyterlab-myst = "^2.1.0"
 sphinx="*"
 sphinx-exercise="*"
-jupyterlab-drawio = "^0.9.0"
+ipydrawio = "*"
+jupyterlab_rise="*"
