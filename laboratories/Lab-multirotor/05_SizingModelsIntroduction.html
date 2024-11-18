@@ -201,23 +201,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/4-sizing_procedure_examples.html">4.4. Design graph and optimization with python</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture5/summary.html">5. MDAO and surrogate models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/1-mdao.html">5.1. MDAO (Multidisciplinary Design Analysis and Optimization)</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/2-mdao_examples.html">5.3. MDAO examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/3-surrogate_models.html">5.4. Surrogate models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/4-surrogate_model_examples.html">5.5. Surrogate model examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture5/5-quizz.html">5.6. Quizz</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture6/summary.html">6. LCA and sustainable scenarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/1-lca.html">6.1. Life Cyle Assessment (LCA)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/2-lca_examples.html">6.2. LCA examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/3-sustainable_scenarios.html">6.3. Sustainable scenarios</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/4-sustainable_scenario_examples.html">6.4. Sustainable scenario examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture6/5-quizz.html">6.5. Quizz</a></li>
-</ul>
-</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
 <ul class="current nav bd-sidenav">
@@ -591,8 +574,8 @@
 </figcaption>
 </figure>
 <p>It consists in addition an oversizing coefficent <span class="math notranslate nohighlight">\(k_{os} \quad [1-10]\)</span> as a design variable and additional inequality constraint <span class="math notranslate nohighlight">\(M_{total} \geq M_{total,real}\)</span>. This way, we make sure that the drone is capable of lifting the load and itself. As we are minimizing the total mass <span class="math notranslate nohighlight">\(M_{total,real}\)</span> the oversizing coefficient <span class="math notranslate nohighlight">\(k_{os}\)</span> will tend to be as small as possible and thus the inequality constraint will be equivalent to an equality constraint (<span class="math notranslate nohighlight">\(M_{total} = M_{total,real}\)</span>). This is one way of solving an algebraic loop, other methods use numerical solvers or other optimizer-based formulations. The formulation of the optimization problem is the following:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3aa3d912-74e9-4cb1-9ec5-08e292a34b31">
-<span class="eqno">(1)<a class="headerlink" href="#equation-3aa3d912-74e9-4cb1-9ec5-08e292a34b31" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9acc0a24-33ad-4d7b-9f8f-d2a6f24e24ae">
+<span class="eqno">(1)<a class="headerlink" href="#equation-9acc0a24-33ad-4d7b-9f8f-d2a6f24e24ae" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
         &amp; \text{minimize}
         &amp; &amp; M_{total,real} \\
