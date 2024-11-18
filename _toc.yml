@@ -38,22 +38,22 @@ parts:
       - file: classes/Lecture4/3-sizing_procedures
       - file: classes/Lecture4/4-sizing_procedure_examples
       - file: classes/Lecture4/5-quizz
-  - file: classes/Lecture5/summary
-    title: MDAO and surrogate models
-    sections:
-      - file: classes/Lecture5/1-mdao
-      - file: classes/Lecture5/2-mdao_examples
-      - file: classes/Lecture5/3-surrogate_models
-      - file: classes/Lecture5/4-surrogate_model_examples
-      - file: classes/Lecture5/5-quizz
-  - file: classes/Lecture6/summary
-    title: LCA and sustainable scenarios
-    sections:
-      - file: classes/Lecture6/1-lca
-      - file: classes/Lecture6/2-lca_examples
-      - file: classes/Lecture6/3-sustainable_scenarios
-      - file: classes/Lecture6/4-sustainable_scenario_examples
-      - file: classes/Lecture6/5-quizz
+  # - file: classes/Lecture5/summary
+  #   title: MDAO and surrogate models
+  #   sections:
+  #     - file: classes/Lecture5/1-mdao
+  #     - file: classes/Lecture5/2-mdao_examples
+  #     - file: classes/Lecture5/3-surrogate_models
+  #     - file: classes/Lecture5/4-surrogate_model_examples
+  #     - file: classes/Lecture5/5-quizz
+  # - file: classes/Lecture6/summary
+  #   title: LCA and sustainable scenarios
+  #   sections:
+  #     - file: classes/Lecture6/1-lca
+  #     - file: classes/Lecture6/2-lca_examples
+  #     - file: classes/Lecture6/3-sustainable_scenarios
+  #     - file: classes/Lecture6/4-sustainable_scenario_examples
+  #     - file: classes/Lecture6/5-quizz
 
 - caption: Laboratories
   chapters:
