@@ -9,13 +9,6 @@ parts:
   numbered: true
   maxdepth: 2
   chapters:
-  # - file: classes/Lecture0/summary
-  #   title: Concept of Operations and architectures
-  #   sections:
-  #     - file: classes/Lecture0/1-concept_of_operations
-  #     - file: classes/Lecture0/2-requirements_and_mission_profile
-  #     - file: classes/Lecture0/3-architectures
-  #     - file: classes/Lecture0/4-quiz
   - file: classes/Lecture1/summary
     title: Architectures, sizing scenarios and design drivers
     sections:
