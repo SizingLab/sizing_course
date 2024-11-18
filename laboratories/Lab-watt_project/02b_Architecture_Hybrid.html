@@ -340,24 +340,6 @@
       
       
       
-      <li><a href="https://jupyter.isae-supaero.fr/hub/user-redirect/git-pull?repo=https%3A//github.com/SizingLab/sizing_course&urlpath=lab/tree/sizing_course/laboratories/Lab-watt_project/02b_Architecture_Hybrid.ipynb&branch=main" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on JupyterHub"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
-  </span>
-<span class="btn__text-container">JupyterHub</span>
-</a>
-</li>
-      
-      
-      
-      
       <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-watt_project/02b_Architecture_Hybrid.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
@@ -634,13 +616,15 @@ Consumption per passenger: 103.06 kJ/(Pax.km)
 <img alt="../../_images/27393b51991fe43431d48339b173c15943e9b1a86a4a4ad1692b945d639e9f52.png" src="../../_images/27393b51991fe43431d48339b173c15943e9b1a86a4a4ad1692b945d639e9f52.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Min acceleration is: 0.3114059332964806m/s²
 Vehicle Max Acceleration (depending of max force) is too low or travel distance too small or mean speed too small
-Consumption per passenger: 18.74 kJ/(Pax.km)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 18.74 kJ/(Pax.km)
 Max energy discharge: 7420 kJ
 </pre></div>
 </div>
 <img alt="../../_images/8820e2182d7479264adf73c9107b521a387502e3193b66e59dcea640665e78bf.png" src="../../_images/8820e2182d7479264adf73c9107b521a387502e3193b66e59dcea640665e78bf.png" />
 <img alt="../../_images/66a7682669dad9abf964b2358d0e5e3173d4f08456a66ac2fe6e8f944ffad54e.png" src="../../_images/66a7682669dad9abf964b2358d0e5e3173d4f08456a66ac2fe6e8f944ffad54e.png" />
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2995/2473967107.py:17: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2970/2473967107.py:17: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   k1=float(sol.x)
 </pre></div>
 </div>
@@ -656,21 +640,21 @@ Max energy discharge: 4450 kJ
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.104730263876016
-                   x: [ 6.551e-02  6.904e-01  9.574e-01]
-                 nit: 13
-                nfev: 634
-          population: [[ 6.551e-02  6.904e-01  9.574e-01]
-                       [ 7.286e-02  6.538e-01  9.667e-01]
+                 fun: 1.106710868081236
+                   x: [ 8.081e-02  5.920e-01  9.694e-01]
+                 nit: 20
+                nfev: 949
+          population: [[ 8.081e-02  5.920e-01  9.694e-01]
+                       [ 7.623e-02  6.790e-01  9.641e-01]
                        ...
-                       [ 6.286e-02  7.215e-01  9.719e-01]
-                       [ 7.368e-02  6.236e-01  9.687e-01]]
- population_energies: [ 1.105e+00  1.109e+00 ...  1.111e+00  1.108e+00]
-Optimal vector : [0.06550745 0.69042939 0.95740587]
-Brake power/Acceleration power ratio is: 0.4656939987653252
-Constraints vector : [0.002012862957602845, 0.002902155887230561, 0.1343060012346748]
-Consumption per passenger: 16.90 kJ/(Pax.km)
-Max energy discharge: 3611 kJ
+                       [ 8.567e-02  5.710e-01  9.629e-01]
+                       [ 6.642e-02  6.825e-01  9.825e-01]]
+ population_energies: [ 1.107e+00  1.121e+00 ...  1.112e+00  1.109e+00]
+Optimal vector : [0.08080843 0.5919629  0.96937493]
+Brake power/Acceleration power ratio is: 0.4331845104321586
+Constraints vector : [0.010153143516305278, 0.002902155887230561, 0.16681548956784137]
+Consumption per passenger: 17.06 kJ/(Pax.km)
+Max energy discharge: 3553 kJ
 
 ######################################
 </pre></div>
@@ -678,23 +662,23 @@ Max energy discharge: 3611 kJ
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
                  fun: 1.4627161460359577
-                   x: [ 2.745e-01  2.194e-01  9.693e-01]
-                 nit: 43
-                nfev: 1984
-          population: [[ 2.745e-01  2.194e-01  9.693e-01]
-                       [ 2.785e-01  2.191e-01  9.688e-01]
+                   x: [ 2.715e-01  2.211e-01  9.685e-01]
+                 nit: 32
+                nfev: 1489
+          population: [[ 2.715e-01  2.211e-01  9.685e-01]
+                       [ 2.678e-01  2.232e-01  9.699e-01]
                        ...
-                       [ 2.669e-01  2.264e-01  9.712e-01]
-                       [ 2.502e-01  2.398e-01  9.734e-01]]
- population_energies: [ 1.463e+00  1.463e+00 ...  1.466e+00  1.473e+00]
-Optimal vector : [0.27451573 0.21944942 0.96926944]
+                       [ 2.638e-01  2.244e-01  9.713e-01]
+                       [ 2.535e-01  2.337e-01  9.690e-01]]
+ population_energies: [ 1.463e+00  1.464e+00 ...  1.464e+00  1.477e+00]
+Optimal vector : [0.27152917 0.22107501 0.96848876]
 Brake power/Acceleration power ratio is: 0.33307979392645
 Constraints vector : [0.0006461216493124681, 0.00020729684908794098, 0.26692020607355]
 Consumption per passenger: 16.97 kJ/(Pax.km)
 Max energy discharge: 3293 kJ
 </pre></div>
 </div>
-<img alt="../../_images/be1f5fbc67c35eafe4eb03ef9c314d7a26772068797f446c36750c37baf4f020.png" src="../../_images/be1f5fbc67c35eafe4eb03ef9c314d7a26772068797f446c36750c37baf4f020.png" />
+<img alt="../../_images/52e5477ce9d6335b81323b61d83c2a1c9ea1cdc3cc82de51650e9167f340e7c5.png" src="../../_images/52e5477ce9d6335b81323b61d83c2a1c9ea1cdc3cc82de51650e9167f340e7c5.png" />
 <img alt="../../_images/657cf7ec09f5041b280e845b7c59c4ab34fa13113cfd9a340bf3545cc4542b57.png" src="../../_images/657cf7ec09f5041b280e845b7c59c4ab34fa13113cfd9a340bf3545cc4542b57.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculation of energy consumption of different vehicles: 
 
@@ -705,15 +689,15 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
                  fun: 1.2482194479805129
-                   x: [ 8.736e-02  4.888e-01  9.776e-01]
+                   x: [ 9.828e-02  4.938e-01  9.789e-01]
                  nit: 22
                 nfev: 1039
-          population: [[ 8.736e-02  4.888e-01  9.776e-01]
-                       [ 7.983e-02  5.392e-01  9.722e-01]
+          population: [[ 9.828e-02  4.938e-01  9.789e-01]
+                       [ 1.298e-01  4.490e-01  9.265e-01]
                        ...
-                       [ 8.339e-02  7.161e-01  9.865e-01]
-                       [ 6.363e-02  5.819e-01  9.886e-01]]
- population_energies: [ 1.248e+00  1.256e+00 ...  1.296e+00  1.252e+00]
+                       [ 1.031e-01  4.707e-01  9.583e-01]
+                       [ 8.787e-02  4.748e-01  9.697e-01]]
+ population_energies: [ 1.248e+00  1.296e+00 ...  1.251e+00  1.249e+00]
 Consumption per passenger: 19.71 kJ/(Pax.km)
 ----
 Trolleybus :
@@ -722,17 +706,17 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.119398008169179
-                   x: [ 5.732e-02  8.073e-01  9.801e-01]
-                 nit: 16
-                nfev: 769
-          population: [[ 5.732e-02  8.073e-01  9.801e-01]
-                       [ 4.816e-02  9.018e-01  9.787e-01]
+                 fun: 1.1171417308272777
+                   x: [ 5.405e-02  7.582e-01  9.720e-01]
+                 nit: 34
+                nfev: 1579
+          population: [[ 5.405e-02  7.582e-01  9.720e-01]
+                       [ 4.468e-02  8.584e-01  9.571e-01]
                        ...
-                       [ 4.127e-02  9.143e-01  9.808e-01]
-                       [ 5.083e-02  7.912e-01  9.703e-01]]
- population_energies: [ 1.119e+00  1.124e+00 ...  1.124e+00  1.120e+00]
-Consumption per passenger: 33.80 kJ/(Pax.km)
+                       [ 5.234e-02  7.659e-01  9.672e-01]
+                       [ 5.147e-02  7.900e-01  9.744e-01]]
+ population_energies: [ 1.117e+00  1.123e+00 ...  1.150e+00  1.120e+00]
+Consumption per passenger: 33.14 kJ/(Pax.km)
 ----
 Bus :
 Vehicle Max Acceleration (depending of max force) is too low or travel distance too small or mean speed too small
@@ -740,17 +724,17 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.1409487341333717
-                   x: [ 5.045e-02  8.112e-01  9.760e-01]
-                 nit: 18
-                nfev: 859
-          population: [[ 5.045e-02  8.112e-01  9.760e-01]
-                       [ 5.235e-02  7.842e-01  9.741e-01]
+                 fun: 1.1382110888204808
+                   x: [ 5.660e-02  7.686e-01  9.706e-01]
+                 nit: 21
+                nfev: 994
+          population: [[ 5.660e-02  7.686e-01  9.706e-01]
+                       [ 6.310e-02  7.601e-01  9.740e-01]
                        ...
-                       [ 5.209e-02  8.126e-01  9.801e-01]
-                       [ 4.634e-02  8.517e-01  9.774e-01]]
- population_energies: [ 1.141e+00  1.142e+00 ...  1.141e+00  1.144e+00]
-Consumption per passenger: 35.21 kJ/(Pax.km)
+                       [ 8.515e-02  6.380e-01  9.806e-01]
+                       [ 5.871e-02  7.570e-01  9.709e-01]]
+ population_energies: [ 1.138e+00  1.166e+00 ...  1.153e+00  1.138e+00]
+Consumption per passenger: 34.50 kJ/(Pax.km)
 ----
 Car :
 </pre></div>
@@ -758,16 +742,18 @@ Car :
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
                  fun: 1.509129192627761
-                   x: [ 7.701e-02  2.357e-01  9.874e-01]
-                 nit: 28
-                nfev: 1309
-          population: [[ 7.701e-02  2.357e-01  9.874e-01]
-                       [ 6.824e-02  2.429e-01  9.894e-01]
+                   x: [ 7.370e-02  2.392e-01  9.896e-01]
+                 nit: 36
+                nfev: 1669
+          population: [[ 7.370e-02  2.392e-01  9.896e-01]
+                       [ 2.420e-02  3.814e-01  9.872e-01]
                        ...
-                       [ 8.486e-02  2.321e-01  9.871e-01]
-                       [ 8.031e-02  2.351e-01  9.870e-01]]
- population_energies: [ 1.509e+00  1.509e+00 ...  1.509e+00  1.509e+00]
-Consumption per passenger: 99.96 kJ/(Pax.km)
+                       [ 6.154e-02  2.383e-01  9.887e-01]
+                       [ 8.085e-02  2.408e-01  9.882e-01]]
+ population_energies: [ 1.509e+00  1.558e+00 ...  1.509e+00  1.509e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 99.96 kJ/(Pax.km)
 </pre></div>
 </div>
 <img alt="../../_images/78e3ab709ba6f8977c701cce31ec1982e0ff232e1a7c3821a4189d2f5f4247f8.png" src="../../_images/78e3ab709ba6f8977c701cce31ec1982e0ff232e1a7c3821a4189d2f5f4247f8.png" />
@@ -965,124 +951,124 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.079984874592746
-                   x: [ 4.992e-02  8.382e-01  9.774e-01]
-                 nit: 20
-                nfev: 949
-          population: [[ 4.992e-02  8.382e-01  9.774e-01]
-                       [ 5.245e-02  8.543e-01  9.799e-01]
+                 fun: 1.0794641001264038
+                   x: [ 4.967e-02  8.300e-01  9.800e-01]
+                 nit: 27
+                nfev: 1264
+          population: [[ 4.967e-02  8.300e-01  9.800e-01]
+                       [ 5.050e-02  8.361e-01  9.774e-01]
                        ...
-                       [ 4.982e-02  8.658e-01  9.780e-01]
-                       [ 5.605e-02  7.679e-01  9.866e-01]]
- population_energies: [ 1.080e+00  1.085e+00 ...  1.086e+00  1.081e+00]
+                       [ 4.478e-02  9.110e-01  9.671e-01]
+                       [ 5.479e-02  7.855e-01  9.858e-01]]
+ population_energies: [ 1.079e+00  1.085e+00 ...  1.083e+00  1.082e+00]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.092188293317853
-                   x: [ 9.063e-02  7.242e-01  9.657e-01]
-                 nit: 16
-                nfev: 769
-          population: [[ 9.063e-02  7.242e-01  9.657e-01]
-                       [ 9.705e-02  6.989e-01  9.720e-01]
+                 fun: 1.090891177386056
+                   x: [ 7.655e-02  8.098e-01  9.563e-01]
+                 nit: 33
+                nfev: 1534
+          population: [[ 7.655e-02  8.098e-01  9.563e-01]
+                       [ 9.679e-02  7.109e-01  9.746e-01]
                        ...
-                       [ 9.267e-02  7.341e-01  9.659e-01]
-                       [ 9.169e-02  7.454e-01  9.812e-01]]
- population_energies: [ 1.092e+00  1.096e+00 ...  1.092e+00  1.098e+00]
+                       [ 8.671e-02  7.441e-01  9.691e-01]
+                       [ 7.362e-02  8.349e-01  9.478e-01]]
+ population_energies: [ 1.091e+00  1.097e+00 ...  1.093e+00  1.092e+00]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.1031850209873424
-                   x: [ 9.904e-02  8.514e-01  9.190e-01]
-                 nit: 20
-                nfev: 949
-          population: [[ 9.904e-02  8.514e-01  9.190e-01]
-                       [ 1.021e-01  8.729e-01  9.212e-01]
-                       ...
-                       [ 1.190e-01  9.022e-01  9.595e-01]
-                       [ 1.100e-01  8.115e-01  9.340e-01]]
- population_energies: [ 1.103e+00  1.104e+00 ...  1.123e+00  1.107e+00]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
-             success: True
-                 fun: 1.0408672140757163
-                   x: [ 1.780e-02  9.307e-01  9.898e-01]
-                 nit: 37
-                nfev: 1714
-          population: [[ 1.780e-02  9.307e-01  9.898e-01]
-                       [ 1.984e-02  9.719e-01  9.775e-01]
-                       ...
-                       [ 2.813e-02  8.913e-01  9.868e-01]
-                       [ 2.604e-02  9.306e-01  9.881e-01]]
- population_energies: [ 1.041e+00  1.046e+00 ...  1.055e+00  1.052e+00]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
-             success: True
-                 fun: 1.0619114740959332
-                   x: [ 7.676e-02  6.914e-01  9.817e-01]
-                 nit: 14
-                nfev: 679
-          population: [[ 7.676e-02  6.914e-01  9.817e-01]
-                       [ 7.346e-02  8.500e-01  9.757e-01]
-                       ...
-                       [ 6.317e-02  8.189e-01  9.686e-01]
-                       [ 5.565e-02  9.153e-01  9.809e-01]]
- population_energies: [ 1.062e+00  1.072e+00 ...  1.062e+00  1.064e+00]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
-             success: True
-                 fun: 1.0610520025445085
-                   x: [ 6.678e-02  7.834e-01  9.716e-01]
+                 fun: 1.1030579998247887
+                   x: [ 1.039e-01  8.509e-01  9.252e-01]
                  nit: 17
                 nfev: 814
-          population: [[ 6.678e-02  7.834e-01  9.716e-01]
-                       [ 1.042e-01  7.639e-01  9.846e-01]
+          population: [[ 1.039e-01  8.509e-01  9.252e-01]
+                       [ 1.132e-01  7.988e-01  9.390e-01]
                        ...
-                       [ 7.602e-02  7.208e-01  9.857e-01]
-                       [ 7.259e-02  8.022e-01  9.658e-01]]
- population_energies: [ 1.061e+00  1.088e+00 ...  1.063e+00  1.072e+00]
+                       [ 9.374e-02  9.251e-01  9.112e-01]
+                       [ 1.296e-01  7.107e-01  9.418e-01]]
+ population_energies: [ 1.103e+00  1.107e+00 ...  1.105e+00  1.103e+00]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.0610453764966636
-                   x: [ 6.436e-02  7.853e-01  9.751e-01]
-                 nit: 18
-                nfev: 859
-          population: [[ 6.436e-02  7.853e-01  9.751e-01]
-                       [ 1.140e-01  7.093e-01  9.756e-01]
+                 fun: 1.0411624190087885
+                   x: [ 1.825e-02  9.368e-01  9.874e-01]
+                 nit: 28
+                nfev: 1309
+          population: [[ 1.825e-02  9.368e-01  9.874e-01]
+                       [ 1.992e-02  9.610e-01  9.806e-01]
                        ...
-                       [ 6.500e-02  7.750e-01  9.747e-01]
-                       [ 7.337e-02  7.193e-01  9.804e-01]]
- population_energies: [ 1.061e+00  1.087e+00 ...  1.061e+00  1.063e+00]
+                       [ 2.880e-02  9.534e-01  9.892e-01]
+                       [ 1.856e-02  9.400e-01  9.874e-01]]
+ population_energies: [ 1.041e+00  1.046e+00 ...  1.061e+00  1.041e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.062351170459943
+                   x: [ 6.387e-02  8.223e-01  9.722e-01]
+                 nit: 14
+                nfev: 679
+          population: [[ 6.387e-02  8.223e-01  9.722e-01]
+                       [ 6.511e-02  8.206e-01  9.786e-01]
+                       ...
+                       [ 7.559e-02  7.323e-01  9.878e-01]
+                       [ 5.300e-02  9.319e-01  9.656e-01]]
+ population_energies: [ 1.062e+00  1.067e+00 ...  1.063e+00  1.065e+00]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
                  fun: 1.060351732967735
-                   x: [ 6.307e-02  7.657e-01  9.744e-01]
+                   x: [ 6.613e-02  7.673e-01  9.728e-01]
                  nit: 21
                 nfev: 994
-          population: [[ 6.307e-02  7.657e-01  9.744e-01]
-                       [ 5.120e-02  9.689e-01  9.526e-01]
+          population: [[ 6.613e-02  7.673e-01  9.728e-01]
+                       [ 9.538e-02  6.596e-01  9.899e-01]
                        ...
-                       [ 9.006e-02  6.749e-01  9.855e-01]
-                       [ 6.051e-02  8.826e-01  9.885e-01]]
- population_energies: [ 1.060e+00  1.066e+00 ...  1.066e+00  1.068e+00]
+                       [ 6.093e-02  8.249e-01  9.667e-01]
+                       [ 7.529e-02  7.296e-01  9.896e-01]]
+ population_energies: [ 1.060e+00  1.069e+00 ...  1.063e+00  1.063e+00]
 </pre></div>
 </div>
-<img alt="../../_images/acc38a904d43c5588012d975cc6586ea779fb115d400de3ff96b6f1b9aa41e33.png" src="../../_images/acc38a904d43c5588012d975cc6586ea779fb115d400de3ff96b6f1b9aa41e33.png" />
-<img alt="../../_images/5d51adc541e6a97bfa36a6a35bd404e45803207f21edeea367d5894558684282.png" src="../../_images/5d51adc541e6a97bfa36a6a35bd404e45803207f21edeea367d5894558684282.png" />
-<img alt="../../_images/73f6e774f2e21bab06cb4fdd72445b3a9acaa395f885c7ff705753c1d259126a.png" src="../../_images/73f6e774f2e21bab06cb4fdd72445b3a9acaa395f885c7ff705753c1d259126a.png" />
-<img alt="../../_images/8d49d4b5157d3f3566351c88d4aa86625cfde248e7f933692cabe676495eb63e.png" src="../../_images/8d49d4b5157d3f3566351c88d4aa86625cfde248e7f933692cabe676495eb63e.png" />
-<img alt="../../_images/b198a29d7a5a77f8b2a70ab244aed7cf9bc033b5fce33625ee9fca90cd8ac392.png" src="../../_images/b198a29d7a5a77f8b2a70ab244aed7cf9bc033b5fce33625ee9fca90cd8ac392.png" />
-<img alt="../../_images/371821126d29d910d749828997546618f1aeccc73ed45fecaec7f5144ab471f1.png" src="../../_images/371821126d29d910d749828997546618f1aeccc73ed45fecaec7f5144ab471f1.png" />
-<img alt="../../_images/65dc405b7b27e000ac007f47f4afb00d2f2f8cb1d9ff97b8c58d6bfbd74938e0.png" src="../../_images/65dc405b7b27e000ac007f47f4afb00d2f2f8cb1d9ff97b8c58d6bfbd74938e0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.0617460075986889
+                   x: [ 5.991e-02  8.037e-01  9.716e-01]
+                 nit: 14
+                nfev: 679
+          population: [[ 5.991e-02  8.037e-01  9.716e-01]
+                       [ 1.239e-01  6.284e-01  9.764e-01]
+                       ...
+                       [ 6.395e-02  9.114e-01  9.599e-01]
+                       [ 7.584e-02  7.818e-01  9.693e-01]]
+ population_energies: [ 1.062e+00  1.079e+00 ...  1.069e+00  1.070e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.0610480033351233
+                   x: [ 6.195e-02  7.747e-01  9.746e-01]
+                 nit: 24
+                nfev: 1129
+          population: [[ 6.195e-02  7.747e-01  9.746e-01]
+                       [ 7.748e-02  7.218e-01  9.839e-01]
+                       ...
+                       [ 7.493e-02  8.182e-01  9.797e-01]
+                       [ 8.853e-02  6.583e-01  9.799e-01]]
+ population_energies: [ 1.061e+00  1.063e+00 ...  1.071e+00  1.065e+00]
+</pre></div>
+</div>
+<img alt="../../_images/fd67ca34e1df1ee9f17540adf76a60a0b11a2b3a5ce6d3f041b5260a6e100550.png" src="../../_images/fd67ca34e1df1ee9f17540adf76a60a0b11a2b3a5ce6d3f041b5260a6e100550.png" />
+<img alt="../../_images/1b477cb3dc595e8ef06085a22b54706368bc063d832c29088daac6424672d4bd.png" src="../../_images/1b477cb3dc595e8ef06085a22b54706368bc063d832c29088daac6424672d4bd.png" />
+<img alt="../../_images/9d5def67c7aa4ff6b85d5145f58797d012e257a7ed3dcc4f912dc0d7dca9b7ea.png" src="../../_images/9d5def67c7aa4ff6b85d5145f58797d012e257a7ed3dcc4f912dc0d7dca9b7ea.png" />
+<img alt="../../_images/87561af0e9b9041f96af8bc6b58206e1a47181f28f3172d72478fc6a1e8b22b4.png" src="../../_images/87561af0e9b9041f96af8bc6b58206e1a47181f28f3172d72478fc6a1e8b22b4.png" />
+<img alt="../../_images/250eb7d754de5409e1747e9ddac9c43785b69ad215bac8f20b369187dca92052.png" src="../../_images/250eb7d754de5409e1747e9ddac9c43785b69ad215bac8f20b369187dca92052.png" />
 <img alt="../../_images/da92ab302f6d10c06ce76713b2c46c20629af03588afa862b619304d7c248544.png" src="../../_images/da92ab302f6d10c06ce76713b2c46c20629af03588afa862b619304d7c248544.png" />
+<img alt="../../_images/39a2975ceb66368df45edd0bb4f9e7a78e8de428e98bf062ba0f1c64fbee7fd5.png" src="../../_images/39a2975ceb66368df45edd0bb4f9e7a78e8de428e98bf062ba0f1c64fbee7fd5.png" />
+<img alt="../../_images/aa4f918fec772da6286dcabd72450055e9dc2bd9bc4bc34faad08520e2823354.png" src="../../_images/aa4f918fec772da6286dcabd72450055e9dc2bd9bc4bc34faad08520e2823354.png" />
 </div>
 </div>
 <p>A time vector of evolution of the power required at each section or supplied to each charger is constructed.</p>
@@ -1094,7 +1080,7 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/53fa7cd7b8ccdbecd75ef4f6561d082e57d578c89c87b8e87059687d219bf67d.png" src="../../_images/53fa7cd7b8ccdbecd75ef4f6561d082e57d578c89c87b8e87059687d219bf67d.png" />
+<img alt="../../_images/4aae4a512b10389c64fee8d083557af75c9a7c3c0093c6d43dfc7aaaebbe69bb.png" src="../../_images/4aae4a512b10389c64fee8d083557af75c9a7c3c0093c6d43dfc7aaaebbe69bb.png" />
 </div>
 </div>
 </section>
@@ -1179,8 +1165,8 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/44be08421b6ec05379625b829e4b1a8f5356f0e19679369bec2e3dcae414e4e6.png" src="../../_images/44be08421b6ec05379625b829e4b1a8f5356f0e19679369bec2e3dcae414e4e6.png" />
-<img alt="../../_images/7a0e2c73d498e306f735ef751dd98a16b2069c508917f0628667ac4c46a12f7e.png" src="../../_images/7a0e2c73d498e306f735ef751dd98a16b2069c508917f0628667ac4c46a12f7e.png" />
+<img alt="../../_images/f3ec447f1e8d5f2cab775840ce7126f3daa0e9e0e802f00ba1f2c0c2e19d7411.png" src="../../_images/f3ec447f1e8d5f2cab775840ce7126f3daa0e9e0e802f00ba1f2c0c2e19d7411.png" />
+<img alt="../../_images/8452a9a0769634fb0cd927e6858bce63bc151fe6d3936fe1b107186f0c3a7c30.png" src="../../_images/8452a9a0769634fb0cd927e6858bce63bc151fe6d3936fe1b107186f0c3a7c30.png" />
 </div>
 </div>
 <p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Pareto_front">Pareto front</a> can help find a solution achieving a compromise between 2 objectives.</p>
@@ -1198,7 +1184,7 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3bd2690981369b21aab35ac9bd20833ef223e81cf7b63c3666a0f0cf8d8eb958.png" src="../../_images/3bd2690981369b21aab35ac9bd20833ef223e81cf7b63c3666a0f0cf8d8eb958.png" />
+<img alt="../../_images/18d47bd5124b0a0d71644df0f8e605ff32526ae8e73b3e65e42caa36d32263e8.png" src="../../_images/18d47bd5124b0a0d71644df0f8e605ff32526ae8e73b3e65e42caa36d32263e8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1239,14 +1225,14 @@ Mass:  107.6 kg
 Traction battery:
 Pmax discharge: 99.95 kW
 Pmax charge: 44.76 kW
-NRJ: 11.26 kWh
-NRJ one travel: 3.02 kWh
+NRJ: 11.28 kWh
+NRJ one travel: 3.03 kWh
 Mass:  447.6 kg
 Mass (brake criteria):  333.2 kg
 ---
 </pre></div>
 </div>
-<img alt="../../_images/95e4b472ef1e9e3d13602729c0c484a61a2ef464ddad32c58aa789a3854446ce.png" src="../../_images/95e4b472ef1e9e3d13602729c0c484a61a2ef464ddad32c58aa789a3854446ce.png" />
+<img alt="../../_images/103613330e65d021263b5d83dd641c2a26badb476e8c73031fd28a73bcf5531d.png" src="../../_images/103613330e65d021263b5d83dd641c2a26badb476e8c73031fd28a73bcf5531d.png" />
 </div>
 </div>
 </section>

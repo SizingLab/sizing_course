@@ -342,24 +342,6 @@
       
       
       
-      <li><a href="https://jupyter.isae-supaero.fr/hub/user-redirect/git-pull?repo=https%3A//github.com/SizingLab/sizing_course&urlpath=lab/tree/sizing_course/laboratories/Lab-multirotor/05_SizingModelsIntroduction.ipynb&branch=main" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on JupyterHub"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
-  </span>
-<span class="btn__text-container">JupyterHub</span>
-</a>
-</li>
-      
-      
-      
-      
       <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-multirotor/05_SizingModelsIntroduction.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
@@ -592,8 +574,8 @@
 </figcaption>
 </figure>
 <p>It consists in addition an oversizing coefficent <span class="math notranslate nohighlight">\(k_{os} \quad [1-10]\)</span> as a design variable and additional inequality constraint <span class="math notranslate nohighlight">\(M_{total} \geq M_{total,real}\)</span>. This way, we make sure that the drone is capable of lifting the load and itself. As we are minimizing the total mass <span class="math notranslate nohighlight">\(M_{total,real}\)</span> the oversizing coefficient <span class="math notranslate nohighlight">\(k_{os}\)</span> will tend to be as small as possible and thus the inequality constraint will be equivalent to an equality constraint (<span class="math notranslate nohighlight">\(M_{total} = M_{total,real}\)</span>). This is one way of solving an algebraic loop, other methods use numerical solvers or other optimizer-based formulations. The formulation of the optimization problem is the following:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8ae81869-c645-401f-b00e-5cc5e793cd3a">
-<span class="eqno">(1)<a class="headerlink" href="#equation-8ae81869-c645-401f-b00e-5cc5e793cd3a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f0c443e4-b0be-4a64-ba98-71b97a52de96">
+<span class="eqno">(1)<a class="headerlink" href="#equation-f0c443e4-b0be-4a64-ba98-71b97a52de96" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
         &amp; \text{minimize}
         &amp; &amp; M_{total,real} \\
