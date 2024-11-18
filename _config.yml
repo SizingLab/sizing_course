@@ -18,6 +18,26 @@ latex:
   latex_documents:
     targetname: book.tex
 
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - html_admonition
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
+    - mermaid
+
+  myst_substitutions:
+    TITLE: "Sizing and optimization of mechatronic systems"
+
+  myst_url_schemes: [ mailto, http, https ] # URI schemes that will be recognised as external URLs in Markdown links
+  myst_dmath_double_inline: true  # Allow display math ($$) within an inline context
+
 html:
   favicon: images/logo.png
   home_page_in_navbar : false
@@ -47,25 +67,6 @@ sphinx:
     - sphinx_exercise
   config:
     html_show_copyright: true
-    use_repository_button: true
-    use_issues_button: true
-    use_edit_page_button: true
-    use_download_button: true
 
     bibtex_reference_style: author_year
 
-    myst_enable_extensions: 
-    - amsmath
-    - colon_fence
-    - deflist
-    - dollarmath
-    - html_admonition
-    - html_image
-    - linkify
-    - replacements
-    - smartquotes
-    - substitution
-    - mermaid
-
-    myst_substitutions:
-      TITLE: "Sizing and optimization of mechatronic systems"
