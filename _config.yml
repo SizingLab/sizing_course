@@ -55,6 +55,7 @@ launch_buttons:
   notebook_interface : "jupyterlab"
   binderhub_url      : "https://mybinder.org"
   colab_url          : "https://colab.research.google.com"
+  jupyterhub_url     : "https://jupyter.isae-supaero.fr/"
 
 repository: 
   url          : https://github.com/SizingLab/sizing_course
