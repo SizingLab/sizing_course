@@ -30,7 +30,6 @@ parse:
     - replacements
     - smartquotes
     - substitution
-    - mermaid
 
   myst_substitutions:
     TITLE: "Sizing and optimization of mechatronic systems"
