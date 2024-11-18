@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.1. Concept of Operations and Architectures &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>1.1. Introduction to Concept of Operations &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -178,7 +178,9 @@ window.addEventListener("load", () => mermaid.run());
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">1. Concept of Operations and architectures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. Concept of Operations and Architectures</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. Introduction to Concept of Operations</a></li>
+
+
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture1/summary.html">2. Architectures, sizing scenarios and design drivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -540,7 +542,7 @@ window.addEventListener("load", () => mermaid.run());
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Concept of Operations and Architectures</h1>
+    <h1>Introduction to Concept of Operations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -550,29 +552,75 @@ window.addEventListener("load", () => mermaid.run());
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.1.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-of-operations-conops">1.1.2. 1. Concept of Operations (ConOps)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-concept-of-operations-conops">1.1.2.1. 1.1 What is a Concept of Operations (ConOps)?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-a-conops">1.1.2.2. 1.2 Components of a ConOps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-develop-a-conops">1.1.2.3. 1.3 Steps to Develop a ConOps</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.1. Introduction to Concept of Operations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-concept-of-operations">1.1.1. What is a Concept of Operations?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-of-a-conops">1.1.1.1. Objectives of a ConOps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components-of-a-conops">1.1.1.2. Key Components of a ConOps</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-architectures">1.1.3. 2. System Architectures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-system-architecture">1.1.3.1. 2.1 What is a System Architecture?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-system-architectures">1.1.3.2. 2.2 Types of System Architectures</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-principles-of-system-architecture">1.1.3.3. 2.3 Key Principles of System Architecture</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-develop-a-system-architecture">1.1.3.4. 2.4 Steps to Develop a System Architecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-conops-in-systems-engineering">1.1.2. Importance of ConOps in Systems Engineering</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-multirotor-uav-for-package-delivery">1.1.4. 3. Example: Multirotor UAV for Package Delivery</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-conops-to-a-multirotor-uav">1.1.4.1. 3.1 Applying ConOps to a Multirotor UAV</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-system-architecture-to-a-multirotor-uav">1.1.4.2. 3.2 Applying System Architecture to a Multirotor UAV</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-architecture">1.1.4.2.1. Functional Architecture</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-develop-a-concept-of-operations">1.2. Steps to Develop a Concept of Operations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-package-delivery-uav-concept-of-operations-in-europe">1.3. Example: Package Delivery UAV Concept of Operations in Europe</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-overview">1.3.1. 1. System Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mission-statement">1.3.1.1. Mission Statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-description">1.3.1.2. System Description</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stakeholder-analysis">1.3.2. 2. Stakeholder Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operational-environment">1.3.3. 3. Operational Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geographic-and-physical-environment">1.3.3.1. Geographic and Physical Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-conditions">1.3.3.2. Environmental Conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-environment">1.3.3.3. Regulatory Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#airspace-considerations">1.3.3.4. Airspace Considerations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operational-scenarios">1.3.4. 4. Operational Scenarios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-operation">1.3.4.1. 4.1 Normal Operation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-1-standard-delivery">1.3.4.1.1. Scenario 1: Standard Delivery</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-2-multiple-deliveries-in-one-flight">1.3.4.1.2. Scenario 2: Multiple Deliveries in One Flight</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abnormal-operations">1.3.4.2. 4.2 Abnormal Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-1-adverse-weather-encounter">1.3.4.2.1. Scenario 1: Adverse Weather Encounter</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-2-obstacle-avoidance">1.3.4.2.2. Scenario 2: Obstacle Avoidance</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emergency-operations">1.3.4.3. 4.3 Emergency Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-1-system-failure">1.3.4.3.1. Scenario 1: System Failure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-2-communication-loss">1.3.4.3.2. Scenario 2: Communication Loss</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-capabilities-and-limitations">1.3.5. 5. System Capabilities and Limitations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capabilities">1.3.5.1. Capabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics">1.3.5.2. Performance Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">1.3.5.3. Limitations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaces-and-interactions">1.3.6. 6. Interfaces and Interactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-interfaces">1.3.6.1. User Interfaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#external-systems">1.3.6.2. External Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-management">1.3.6.3. Data Management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-assessment-and-mitigation">1.3.7. 7. Risk Assessment and Mitigation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identified-risks">1.3.7.1. Identified Risks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emergency-response-plans">1.3.7.2. Emergency Response Plans</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maintenance-and-support">1.3.8. 8. Maintenance and Support</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preventive-maintenance">1.3.8.1. Preventive Maintenance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corrective-maintenance">1.3.8.2. Corrective Maintenance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#support-infrastructure">1.3.8.3. Support Infrastructure</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -583,270 +631,673 @@ window.addEventListener("load", () => mermaid.run());
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="concept-of-operations-and-architectures">
-<h1><span class="section-number">1.1. </span>Concept of Operations and Architectures<a class="headerlink" href="#concept-of-operations-and-architectures" title="Link to this heading">#</a></h1>
-<section id="introduction">
-<h2><span class="section-number">1.1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>The <strong>Concept of Operations (ConOps)</strong> and <strong>system architecture</strong> are fundamental for designing efficient and reliable systems. This chapter introduces these concepts independently of any specific application, followed by a focused example on a <strong>multirotor UAV for package delivery</strong>.</p>
-</section>
-<hr class="docutils" />
-<section id="concept-of-operations-conops">
-<h2><span class="section-number">1.1.2. </span>1. Concept of Operations (ConOps)<a class="headerlink" href="#concept-of-operations-conops" title="Link to this heading">#</a></h2>
-<section id="what-is-a-concept-of-operations-conops">
-<h3><span class="section-number">1.1.2.1. </span>1.1 What is a Concept of Operations (ConOps)?<a class="headerlink" href="#what-is-a-concept-of-operations-conops" title="Link to this heading">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-concept-of-operations">
+<h1><span class="section-number">1.1. </span>Introduction to Concept of Operations<a class="headerlink" href="#introduction-to-concept-of-operations" title="Link to this heading">#</a></h1>
+<p>This section provides an overview of the Concept of Operations (ConOps) in systems engineering. It explains the purpose, components, and importance of a ConOps in the system development process. The section also outlines the steps involved in developing a ConOps document. It is mainly based on the NASA Systems Engineering Handbook.</p>
+<section id="what-is-a-concept-of-operations">
+<h2><span class="section-number">1.1.1. </span>What is a Concept of Operations?<a class="headerlink" href="#what-is-a-concept-of-operations" title="Link to this heading">#</a></h2>
+<p>The <strong>Concept of Operations (ConOps)</strong> is a foundational document in systems engineering that describes the characteristics of a proposed system from the stakeholders’ perspectives. It provides a user-oriented view of the system, detailing how it will be employed to achieve the desired objectives without delving into technical specifications. A ConOps bridges the gap between the operational needs and the technical requirements, serving as a guide throughout the system’s lifecycle.</p>
+<section id="objectives-of-a-conops">
+<h3><span class="section-number">1.1.1.1. </span>Objectives of a ConOps<a class="headerlink" href="#objectives-of-a-conops" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Definition</strong>: A Concept of Operations (ConOps) is a high-level description of how a system is intended to operate to achieve its objectives.</p></li>
-<li><p><strong>Purpose</strong>:</p>
-<ul>
-<li><p>Align stakeholders on the system’s goals, functionality, and usage.</p></li>
-<li><p>Provide a foundation for defining system requirements and architecture.</p></li>
-</ul>
-</li>
+<li><p><strong>Communicate User Needs</strong>: Clearly articulate what users expect from the system.</p></li>
+<li><p><strong>Guide Development</strong>: Inform system designers and developers about operational expectations.</p></li>
+<li><p><strong>Facilitate Understanding</strong>: Ensure all stakeholders have a common understanding of the system’s purpose and operation.</p></li>
+<li><p><strong>Support Decision-Making</strong>: Provide a basis for trade-off analyses and design decisions.</p></li>
 </ul>
 </section>
-<section id="components-of-a-conops">
-<h3><span class="section-number">1.1.2.2. </span>1.2 Components of a ConOps<a class="headerlink" href="#components-of-a-conops" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Stakeholders and Their Needs</strong>:</p>
+<section id="key-components-of-a-conops">
+<h3><span class="section-number">1.1.1.2. </span>Key Components of a ConOps<a class="headerlink" href="#key-components-of-a-conops" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Stakeholders can include:</p>
-<ul>
-<li><p>Primary users and operators.</p></li>
-<li><p>Maintenance teams.</p></li>
-<li><p>Regulatory bodies.</p></li>
-<li><p>Secondary users or beneficiaries.</p></li>
+<li><p><strong>Scope and Objectives</strong>: Defines the boundaries and goals of the system.</p></li>
+<li><p><strong>Operational Context</strong>: Describes the environment in which the system operates.</p></li>
+<li><p><strong>Operational Scenarios</strong>: Illustrates how the system will be used in various situations.</p></li>
+<li><p><strong>System Overview</strong>: Provides a high-level description of the system’s functions and interactions.</p></li>
+<li><p><strong>Operational Needs</strong>: Details the capabilities required to meet the objectives.</p></li>
+<li><p><strong>Impacts and Limitations</strong>: Identifies potential constraints and their implications.</p></li>
 </ul>
-</li>
-<li><p>Needs are specific to the context and include performance, safety, and operational requirements.</p></li>
-</ul>
-</li>
-</ol>
-<pre  class="mermaid">
-        graph TD
-    A[Stakeholders] --&gt;|Primary| B[Operators]
-    A --&gt;|Primary| C[Regulators]
-    A --&gt;|Primary| D[End Users]
-    A --&gt;|Secondary| E[Maintenance Teams]
-    A --&gt;|Secondary| F[Logistics Staff]
-    </pre><ol class="arabic simple" start="3">
-<li><p><strong>System Goals</strong>:</p>
-<ul class="simple">
-<li><p>High-level objectives that define the system’s purpose.</p></li>
-<li><p>Example: Efficiency, safety, reliability, cost-effectiveness.</p></li>
-</ul>
-</li>
-<li><p><strong>Operational Scenarios</strong>:</p>
-<ul class="simple">
-<li><p><strong>Typical Scenarios</strong>: How the system operates under normal conditions.</p></li>
-<li><p><strong>Edge Cases</strong>: How the system responds to rare or failure scenarios.</p></li>
-</ul>
-</li>
-<li><p><strong>Constraints</strong>:</p>
-<ul class="simple">
-<li><p>Regulatory, environmental, or technical limitations the system must operate within.</p></li>
-</ul>
-</li>
-</ol>
-</section>
-<section id="steps-to-develop-a-conops">
-<h3><span class="section-number">1.1.2.3. </span>1.3 Steps to Develop a ConOps<a class="headerlink" href="#steps-to-develop-a-conops" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Identify stakeholders and their needs.</p></li>
-<li><p>Define the system’s high-level goals.</p></li>
-<li><p>Map out typical and edge-case operational scenarios.</p></li>
-<li><p>Specify constraints, assumptions, and dependencies.</p></li>
-<li><p>Draft and validate the ConOps with stakeholders.</p></li>
-</ol>
-</section>
-</section>
-<hr class="docutils" />
-<section id="system-architectures">
-<h2><span class="section-number">1.1.3. </span>2. System Architectures<a class="headerlink" href="#system-architectures" title="Link to this heading">#</a></h2>
-<section id="what-is-a-system-architecture">
-<h3><span class="section-number">1.1.3.1. </span>2.1 What is a System Architecture?<a class="headerlink" href="#what-is-a-system-architecture" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: A structured representation of the system that describes its components, interactions, and organization to meet its objectives.</p></li>
-</ul>
-</section>
-<section id="types-of-system-architectures">
-<h3><span class="section-number">1.1.3.2. </span>2.2 Types of System Architectures<a class="headerlink" href="#types-of-system-architectures" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Functional Architecture</strong>:</p>
-<ul class="simple">
-<li><p>Describes what the system does.</p></li>
-<li><p>Focuses on the flow of information and interactions between functions.</p></li>
-</ul>
-</li>
-<li><p><strong>Physical Architecture</strong>:</p>
-<ul class="simple">
-<li><p>Describes how the system is organized physically.</p></li>
-<li><p>Defines the layout, placement, and interaction of hardware components.</p></li>
-</ul>
-</li>
-<li><p><strong>Operational Architecture</strong>:</p>
-<ul class="simple">
-<li><p>Focuses on how the system interacts with external entities.</p></li>
-<li><p>Includes communication, data exchange, and system integration.</p></li>
-</ul>
-</li>
-</ol>
-</section>
-<section id="key-principles-of-system-architecture">
-<h3><span class="section-number">1.1.3.3. </span>2.3 Key Principles of System Architecture<a class="headerlink" href="#key-principles-of-system-architecture" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Modularity</strong>:</p>
-<ul class="simple">
-<li><p>Breaking down the system into smaller, independent components.</p></li>
-<li><p>Facilitates upgrades, repairs, and testing.</p></li>
-</ul>
-</li>
-<li><p><strong>Scalability</strong>:</p>
-<ul class="simple">
-<li><p>Ability to scale performance or capacity based on future needs.</p></li>
-</ul>
-</li>
-<li><p><strong>Redundancy</strong>:</p>
-<ul class="simple">
-<li><p>Adding backups for critical systems to improve reliability.</p></li>
-</ul>
-</li>
-<li><p><strong>Interoperability</strong>:</p>
-<ul class="simple">
-<li><p>Ensuring compatibility with other systems.</p></li>
-</ul>
-</li>
-<li><p><strong>Trade-Off Analysis</strong>:</p>
-<ul class="simple">
-<li><p>Balancing competing priorities like cost, performance, and safety.</p></li>
-</ul>
-</li>
-</ol>
-</section>
-<section id="steps-to-develop-a-system-architecture">
-<h3><span class="section-number">1.1.3.4. </span>2.4 Steps to Develop a System Architecture<a class="headerlink" href="#steps-to-develop-a-system-architecture" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Identify key functions the system must perform.</p></li>
-<li><p>Define components needed to perform these functions.</p></li>
-<li><p>Map functional components to physical components.</p></li>
-<li><p>Specify interactions between components and external systems.</p></li>
-<li><p>Analyze trade-offs and refine the architecture.</p></li>
-</ol>
-</section>
-</section>
-<hr class="docutils" />
-<section id="example-multirotor-uav-for-package-delivery">
-<h2><span class="section-number">1.1.4. </span>3. Example: Multirotor UAV for Package Delivery<a class="headerlink" href="#example-multirotor-uav-for-package-delivery" title="Link to this heading">#</a></h2>
-<section id="applying-conops-to-a-multirotor-uav">
-<h3><span class="section-number">1.1.4.1. </span>3.1 Applying ConOps to a Multirotor UAV<a class="headerlink" href="#applying-conops-to-a-multirotor-uav" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Stakeholders and Their Needs</strong>:</p>
-<ul class="simple">
-<li><p><strong>Primary Stakeholders</strong>:</p>
-<ul>
-<li><p>Delivery companies: Require cost-effective, efficient UAVs.</p></li>
-<li><p>Customers: Expect reliable and timely deliveries.</p></li>
-<li><p>Regulatory authorities: Demand compliance with safety standards.</p></li>
-</ul>
-</li>
-<li><p><strong>Secondary Stakeholders</strong>:</p>
-<ul>
-<li><p>Maintenance teams: Need easy-to-maintain designs.</p></li>
-<li><p>Logistics staff: Require smooth integration into workflows.</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<pre  class="mermaid">
-        graph TD
-    A[Stakeholders] --&gt;|Primary| B[Delivery Companies]
-    A --&gt;|Primary| C[Customers]
-    A --&gt;|Primary| D[Regulators]
-    A --&gt;|Secondary| E[Maintenance Teams]
-    A --&gt;|Secondary| F[Logistics Operators]
-    </pre><ol class="arabic simple" start="2">
-<li><p><strong>System Goals</strong>:</p>
-<ul class="simple">
-<li><p>Deliver packages autonomously within specified ranges.</p></li>
-<li><p>Operate in diverse environments (urban, rural).</p></li>
-<li><p>Ensure safety and reliability.</p></li>
-</ul>
-</li>
-<li><p><strong>Operational Scenarios</strong>:</p>
-<ul class="simple">
-<li><p><strong>Typical Scenario</strong>:</p>
-<ul>
-<li><p>UAV takes off from a logistics hub, follows a GPS-defined route, delivers a package, and returns.</p></li>
-</ul>
-</li>
-<li><p><strong>Edge Cases</strong>:</p>
-<ul>
-<li><p>Battery runs low mid-flight → UAV performs emergency landing.</p></li>
-<li><p>GPS signal lost → UAV switches to return-to-home mode via inertial navigation.</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>Constraints</strong>:</p>
-<ul class="simple">
-<li><p>Payload: 10 kg.</p></li>
-<li><p>Range: 15 km.</p></li>
-<li><p>Regulatory compliance: No-fly zones, altitude limits.</p></li>
-</ul>
-</li>
-</ol>
-</section>
-<hr class="docutils" />
-<section id="applying-system-architecture-to-a-multirotor-uav">
-<h3><span class="section-number">1.1.4.2. </span>3.2 Applying System Architecture to a Multirotor UAV<a class="headerlink" href="#applying-system-architecture-to-a-multirotor-uav" title="Link to this heading">#</a></h3>
-<section id="functional-architecture">
-<h4><span class="section-number">1.1.4.2.1. </span>Functional Architecture<a class="headerlink" href="#functional-architecture" title="Link to this heading">#</a></h4>
-<ol class="arabic simple">
-<li><p><strong>Key Functions</strong>:</p>
-<ul class="simple">
-<li><p>Navigation: Plan and follow optimal routes.</p></li>
-<li><p>Propulsion: Ensure stable and efficient flight.</p></li>
-<li><p>Package Handling: Secure and deliver packages.</p></li>
-</ul>
-</li>
-<li><p><strong>Functional Diagram</strong>:</p></li>
-</ol>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Sensors → Flight Controller → Motors
-                   ↓
-      GPS/IMU → Route Planning → Obstacle Avoidance
-                   ↓
-           Gripper → Package Delivery
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>According to the NASA Systems Engineering Handbook, a well-crafted ConOps is essential for aligning the system design with user needs and for identifying potential risks early in the development process.</p>
 </div>
+</section>
+</section>
+<section id="importance-of-conops-in-systems-engineering">
+<h2><span class="section-number">1.1.2. </span>Importance of ConOps in Systems Engineering<a class="headerlink" href="#importance-of-conops-in-systems-engineering" title="Link to this heading">#</a></h2>
+<p>Developing a ConOps is a critical step in the systems engineering process because it:</p>
+<ul class="simple">
+<li><p><strong>Aligns Stakeholders</strong>: Ensures all parties, including users, developers, and regulators, have a shared understanding of the system’s purpose and operation.</p></li>
+<li><p><strong>Guides Requirements Development</strong>: Provides a foundation for deriving system requirements and design specifications.</p></li>
+<li><p><strong>Reduces Risks</strong>: Identifies potential operational issues and challenges early, allowing for proactive mitigation strategies.</p></li>
+<li><p><strong>Enhances Communication</strong>: Serves as a communication tool among diverse stakeholders, facilitating collaboration and consensus-building.</p></li>
+<li><p><strong>Supports Verification and Validation</strong>: Establishes criteria for testing and evaluating the system against operational needs.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="steps-to-develop-a-concept-of-operations">
+<h1><span class="section-number">1.2. </span>Steps to Develop a Concept of Operations<a class="headerlink" href="#steps-to-develop-a-concept-of-operations" title="Link to this heading">#</a></h1>
+<p>Developing a comprehensive ConOps involves several iterative steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Identify Stakeholders</strong></p>
+<ul class="simple">
+<li><p><strong>Users</strong>: Individuals or organizations that will operate or benefit from the system.</p></li>
+<li><p><strong>Operators</strong>: Personnel responsible for the system’s day-to-day functioning.</p></li>
+<li><p><strong>Regulators</strong>: Authorities governing the system’s operation.</p></li>
+<li><p><strong>Maintainers</strong>: Teams responsible for system upkeep and support.</p></li>
+<li><p><strong>Others</strong>: Any group affected by or interested in the system.</p></li>
+</ul>
+</li>
+<li><p><strong>Define System Objectives</strong></p>
+<ul class="simple">
+<li><p><strong>Mission Goals</strong>: The primary purpose the system is intended to fulfill.</p></li>
+<li><p><strong>Performance Targets</strong>: Specific, measurable outcomes the system should achieve.</p></li>
+<li><p><strong>Success Criteria</strong>: Conditions that define successful operation.</p></li>
+</ul>
+</li>
+<li><p><strong>Describe the Operational Environment</strong></p>
+<ul class="simple">
+<li><p><strong>Physical Environment</strong>: Geographic, climatic, and infrastructural conditions.</p></li>
+<li><p><strong>Operational Constraints</strong>: Legal, regulatory, and policy limitations.</p></li>
+<li><p><strong>Interoperability Requirements</strong>: Need to interact with other systems or platforms.</p></li>
+</ul>
+</li>
+<li><p><strong>Outline Operational Scenarios</strong></p>
+<ul class="simple">
+<li><p><strong>Normal Operations</strong>: Typical use cases and routine activities.</p></li>
+<li><p><strong>Abnormal Situations</strong>: Conditions deviating from the norm but expected.</p></li>
+<li><p><strong>Emergency Operations</strong>: Responses to critical failures or crises.</p></li>
+<li><p><strong>Maintenance Activities</strong>: Regular upkeep and troubleshooting procedures.</p></li>
+</ul>
+</li>
+<li><p><strong>Define System Capabilities and Limitations</strong></p>
+<ul class="simple">
+<li><p><strong>Functional Capabilities</strong>: Core functions and features the system must provide.</p></li>
+<li><p><strong>Performance Characteristics</strong>: Speed, capacity, accuracy, and other performance metrics.</p></li>
+<li><p><strong>Limitations</strong>: Constraints due to technology, environment, or other factors.</p></li>
+</ul>
+</li>
+<li><p><strong>Identify Interfaces and Interactions</strong></p>
+<ul class="simple">
+<li><p><strong>User Interfaces</strong>: How users interact with the system.</p></li>
+<li><p><strong>External Systems</strong>: Connections to other systems or networks.</p></li>
+<li><p><strong>Data Flows</strong>: Information exchange within and outside the system.</p></li>
+</ul>
+</li>
+<li><p><strong>Assess Risks and Mitigation Strategies</strong></p>
+<ul class="simple">
+<li><p><strong>Risk Identification</strong>: Potential issues that could impact operation.</p></li>
+<li><p><strong>Risk Analysis</strong>: Likelihood and impact assessment.</p></li>
+<li><p><strong>Mitigation Plans</strong>: Strategies to reduce or eliminate risks.</p></li>
+</ul>
+</li>
+<li><p><strong>Review and Iterate</strong></p>
+<ul class="simple">
+<li><p><strong>Stakeholder Feedback</strong>: Solicit input and validate assumptions.</p></li>
+<li><p><strong>Document Updates</strong>: Revise the ConOps as new information emerges.</p></li>
+<li><p><strong>Version Control</strong>: Maintain records of changes for traceability.</p></li>
+</ul>
+</li>
+</ol>
 <pre  class="mermaid">
         graph TD
-    A[Actuation System]
-
-    %% Requirements
-    A --&gt; B1[Functions]
-    A --&gt; B2[Performances]
-    A --&gt; B3[Environment]
-    A --&gt; B4[Cost]
-    A --&gt; B5[Safety]
-    A --&gt; B6[Integration]
-
-    %% Design Drivers
-    B1 --&gt; C1[Main Function\nSpecific Modes of Operation]
-    B2 --&gt; C2[Transient High Forces\nDynamics and Accuracy\nInertia]
-    B3 --&gt; C3[Thermal\nVibration]
-    B4 --&gt; C4[Non-Recurring Cost\nRecurring Cost]
-    B5 --&gt; C5[Fail-Safe\nFailure Rate / Lifetime]
-    B6 --&gt; C6[Dimensions\nMass]
-
-    %% Design Choices
-    C1 --&gt; D1[Architecture]
-    C1 --&gt; D2[Technologies]
-    C2 --&gt; D3[Components Specifications]
-    C2 --&gt; D4[Displacement Curve or Control]
-    C3 --&gt; D5[Kinematic and Transmission Ratios]
-    C4 --&gt; D6[Design Models and Tools]
-    C5 --&gt; D7[Reliability Allocation]
+    A[Identify Stakeholders] --&gt; B[Define System Objectives]
+    B --&gt; C[Describe Operational Environment]
+    C --&gt; D[Outline Operational Scenarios]
+    D --&gt; E[Define System Capabilities &amp; Limitations]
+    E --&gt; F[Identify Interfaces &amp; Interactions]
+    F --&gt; G[Assess Risks &amp; Mitigation Strategies]
+    G --&gt; H[Review &amp; Iterate]
+    H --&gt; I{Is ConOps Complete?}
+    I -- Yes --&gt; J[Finalize ConOps]
+    I -- No --&gt; A
     </pre></section>
+<section class="tex2jax_ignore mathjax_ignore" id="example-package-delivery-uav-concept-of-operations-in-europe">
+<h1><span class="section-number">1.3. </span>Example: Package Delivery UAV Concept of Operations in Europe<a class="headerlink" href="#example-package-delivery-uav-concept-of-operations-in-europe" title="Link to this heading">#</a></h1>
+<p>In this example, we’ll develop a detailed ConOps for a <strong>Package Delivery Unmanned Aerial Vehicle (UAV)</strong> system operating in Europe. This system aims to revolutionize the delivery industry by providing rapid, autonomous delivery services using UAVs, while complying with European regulations and standards.</p>
+<section id="system-overview">
+<h2><span class="section-number">1.3.1. </span>1. System Overview<a class="headerlink" href="#system-overview" title="Link to this heading">#</a></h2>
+<section id="mission-statement">
+<h3><span class="section-number">1.3.1.1. </span>Mission Statement<a class="headerlink" href="#mission-statement" title="Link to this heading">#</a></h3>
+<p>To provide fast, efficient, and reliable delivery of packages using autonomous UAVs across European urban and rural areas, enhancing customer satisfaction and reducing delivery times while minimizing environmental impact.</p>
+</section>
+<section id="system-description">
+<h3><span class="section-number">1.3.1.2. </span>System Description<a class="headerlink" href="#system-description" title="Link to this heading">#</a></h3>
+<p>The package delivery UAV system comprises autonomous drones, a centralized control center, ground support infrastructure, and customer interfacing applications. The drones are equipped with navigation systems, obstacle avoidance sensors, and secure payload compartments.</p>
+<figure class="align-default" id="uav-image">
+<a class="reference internal image-reference" href="classes/Lecture0/images/uav.png"><img alt="Package Delivery UAV" src="classes/Lecture0/images/uav.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text"><em>Illustration of the package delivery UAV in operation.</em></span><a class="headerlink" href="#uav-image" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="stakeholder-analysis">
+<h2><span class="section-number">1.3.2. </span>2. Stakeholder Analysis<a class="headerlink" href="#stakeholder-analysis" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Customers</strong></p>
+<ul>
+<li><p><strong>Needs</strong>: Quick delivery, real-time tracking, secure package handling.</p></li>
+<li><p><strong>Concerns</strong>: Privacy, safety, reliability.</p></li>
+</ul>
+</li>
+<li><p><strong>Delivery Company</strong></p>
+<ul>
+<li><p><strong>Needs</strong>: Operational efficiency, cost reduction, market competitiveness.</p></li>
+<li><p><strong>Concerns</strong>: Regulatory compliance, system scalability, maintenance costs.</p></li>
+</ul>
+</li>
+<li><p><strong>Regulatory Authorities</strong></p>
+<ul>
+<li><p><strong>Needs</strong>: Airspace safety, compliance with European Union Aviation Safety Agency (EASA) regulations.</p></li>
+<li><p><strong>Concerns</strong>: Unauthorized airspace intrusion, collision risks, noise pollution.</p></li>
+</ul>
+</li>
+<li><p><strong>Local Communities</strong></p>
+<ul>
+<li><p><strong>Needs</strong>: Minimal disruption, safety assurances.</p></li>
+<li><p><strong>Concerns</strong>: Noise, privacy invasion, visual pollution.</p></li>
+</ul>
+</li>
+<li><p><strong>Employees</strong></p>
+<ul>
+<li><p><strong>Needs</strong>: Job security, clear operational procedures.</p></li>
+<li><p><strong>Concerns</strong>: Technological displacement, training requirements.</p></li>
+</ul>
+</li>
+<li><p><strong>European Commission</strong></p>
+<ul>
+<li><p><strong>Needs</strong>: Integration with European policies on drone operations and unmanned traffic management (UTM).</p></li>
+<li><p><strong>Concerns</strong>: Harmonization across member states, data protection.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="operational-environment">
+<h2><span class="section-number">1.3.3. </span>3. Operational Environment<a class="headerlink" href="#operational-environment" title="Link to this heading">#</a></h2>
+<section id="geographic-and-physical-environment">
+<h3><span class="section-number">1.3.3.1. </span>Geographic and Physical Environment<a class="headerlink" href="#geographic-and-physical-environment" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Urban Areas</strong></p>
+<ul>
+<li><p>High-density buildings, historical sites, variable altitudes, numerous obstacles.</p></li>
+</ul>
+</li>
+<li><p><strong>Suburban Areas</strong></p>
+<ul>
+<li><p>Residential zones with open spaces, parks, and low-rise structures.</p></li>
+</ul>
+</li>
+<li><p><strong>Rural Areas</strong></p>
+<ul>
+<li><p>Wide-open spaces, agricultural lands, limited infrastructure, longer distances.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="environmental-conditions">
+<h3><span class="section-number">1.3.3.2. </span>Environmental Conditions<a class="headerlink" href="#environmental-conditions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Weather Variability</strong></p>
+<ul>
+<li><p>Must withstand moderate rain, wind speeds up to 25 km/h, and temperatures ranging from -20°C to 40°C.</p></li>
+</ul>
+</li>
+<li><p><strong>Day/Night Operations</strong></p>
+<ul>
+<li><p>Equipped with lighting and sensors for limited night operations, adhering to European regulations.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="regulatory-environment">
+<h3><span class="section-number">1.3.3.3. </span>Regulatory Environment<a class="headerlink" href="#regulatory-environment" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>European Union Aviation Safety Agency (EASA) Regulations</strong></p>
+<ul>
+<li><p>Compliance with EU Regulation 2019/947 and 2019/945 on unmanned aircraft systems.</p></li>
+</ul>
+</li>
+<li><p><strong>Operational Categories</strong></p>
+<ul>
+<li><p>Operations fall under the ‘Specific’ or ‘Certified’ category, depending on risk assessments.</p></li>
+</ul>
+</li>
+<li><p><strong>Standard Scenarios (STS)</strong></p>
+<ul>
+<li><p>Use of predefined scenarios for certain types of operations to simplify authorization.</p></li>
+</ul>
+</li>
+<li><p><strong>Privacy Laws</strong></p>
+<ul>
+<li><p>Compliance with General Data Protection Regulation (GDPR) concerning data handling and privacy.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="airspace-considerations">
+<h3><span class="section-number">1.3.3.4. </span>Airspace Considerations<a class="headerlink" href="#airspace-considerations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>U-Space Integration</strong></p>
+<ul>
+<li><p>Participation in U-Space services for unmanned traffic management.</p></li>
+</ul>
+</li>
+<li><p><strong>No-Fly Zones</strong></p>
+<ul>
+<li><p>Avoidance of restricted areas such as airports, military zones, and nature reserves.</p></li>
+</ul>
+</li>
+<li><p><strong>Cross-Border Operations</strong></p>
+<ul>
+<li><p>Harmonization of operations across different EU member states.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="operational-scenarios">
+<h2><span class="section-number">1.3.4. </span>4. Operational Scenarios<a class="headerlink" href="#operational-scenarios" title="Link to this heading">#</a></h2>
+<section id="normal-operation">
+<h3><span class="section-number">1.3.4.1. </span>4.1 Normal Operation<a class="headerlink" href="#normal-operation" title="Link to this heading">#</a></h3>
+<section id="scenario-1-standard-delivery">
+<h4><span class="section-number">1.3.4.1.1. </span>Scenario 1: Standard Delivery<a class="headerlink" href="#scenario-1-standard-delivery" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Order Placement</strong></p>
+<ul class="simple">
+<li><p>Customer places an order via the mobile app, specifying delivery details.</p></li>
+</ul>
+</li>
+<li><p><strong>Order Processing</strong></p>
+<ul class="simple">
+<li><p>System validates the order, checks UAV availability, and schedules delivery.</p></li>
+</ul>
+</li>
+<li><p><strong>Risk Assessment</strong></p>
+<ul class="simple">
+<li><p>Conduct an Operational Risk Assessment (SORA) as per EASA guidelines.</p></li>
+</ul>
+</li>
+<li><p><strong>Authorization</strong></p>
+<ul class="simple">
+<li><p>Obtain necessary operational authorization from the National Aviation Authority (NAA) if required.</p></li>
+</ul>
+</li>
+<li><p><strong>Package Preparation</strong></p>
+<ul class="simple">
+<li><p>Warehouse staff package the item and load it into the UAV’s payload compartment.</p></li>
+</ul>
+</li>
+<li><p><strong>Pre-Flight Checks</strong></p>
+<ul class="simple">
+<li><p>UAV performs self-diagnostics; ground staff verify system status.</p></li>
+</ul>
+</li>
+<li><p><strong>Flight Execution</strong></p>
+<ul class="simple">
+<li><p>UAV takes off autonomously, following a predefined route optimized for efficiency and safety.</p></li>
+</ul>
+</li>
+<li><p><strong>En-Route Monitoring</strong></p>
+<ul class="simple">
+<li><p>Real-time monitoring for obstacles, air traffic, and weather conditions.</p></li>
+</ul>
+</li>
+<li><p><strong>Delivery Execution</strong></p>
+<ul class="simple">
+<li><p>UAV arrives at the destination, hovers at a safe altitude, and lowers the package using a tether system.</p></li>
+</ul>
+</li>
+<li><p><strong>Customer Notification</strong></p>
+<ul class="simple">
+<li><p>Customer receives an alert upon delivery completion.</p></li>
+</ul>
+</li>
+<li><p><strong>Return to Base</strong></p>
+<ul class="simple">
+<li><p>UAV returns to the warehouse or proceeds to the next scheduled delivery.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="scenario-2-multiple-deliveries-in-one-flight">
+<h4><span class="section-number">1.3.4.1.2. </span>Scenario 2: Multiple Deliveries in One Flight<a class="headerlink" href="#scenario-2-multiple-deliveries-in-one-flight" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>UAV carries multiple packages, delivering them sequentially based on optimized routing algorithms to minimize flight time and energy consumption.</p></li>
+</ul>
+</section>
+</section>
+<section id="abnormal-operations">
+<h3><span class="section-number">1.3.4.2. </span>4.2 Abnormal Operations<a class="headerlink" href="#abnormal-operations" title="Link to this heading">#</a></h3>
+<section id="scenario-1-adverse-weather-encounter">
+<h4><span class="section-number">1.3.4.2.1. </span>Scenario 1: Adverse Weather Encounter<a class="headerlink" href="#scenario-1-adverse-weather-encounter" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Detection</strong></p>
+<ul>
+<li><p>UAV sensors detect weather conditions exceeding operational thresholds.</p></li>
+</ul>
+</li>
+<li><p><strong>Action</strong></p>
+<ul>
+<li><p>UAV alters course to avoid the area or initiates a safe landing at a designated emergency location.</p></li>
+</ul>
+</li>
+<li><p><strong>Notification</strong></p>
+<ul>
+<li><p>Control center and affected customers are alerted about potential delays.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="scenario-2-obstacle-avoidance">
+<h4><span class="section-number">1.3.4.2.2. </span>Scenario 2: Obstacle Avoidance<a class="headerlink" href="#scenario-2-obstacle-avoidance" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Detection</strong></p>
+<ul>
+<li><p>UAV detects unexpected obstacles (e.g., new construction cranes, birds).</p></li>
+</ul>
+</li>
+<li><p><strong>Action</strong></p>
+<ul>
+<li><p>Real-time path adjustment using onboard collision avoidance algorithms.</p></li>
+</ul>
+</li>
+<li><p><strong>Continuation</strong></p>
+<ul>
+<li><p>UAV resumes original route once the obstacle is cleared.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="emergency-operations">
+<h3><span class="section-number">1.3.4.3. </span>4.3 Emergency Operations<a class="headerlink" href="#emergency-operations" title="Link to this heading">#</a></h3>
+<section id="scenario-1-system-failure">
+<h4><span class="section-number">1.3.4.3.1. </span>Scenario 1: System Failure<a class="headerlink" href="#scenario-1-system-failure" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Detection</strong></p>
+<ul>
+<li><p>Critical system malfunction detected (e.g., battery failure, sensor malfunction).</p></li>
+</ul>
+</li>
+<li><p><strong>Action</strong></p>
+<ul>
+<li><p>UAV initiates an emergency landing protocol to descend safely in a pre-designated safe area.</p></li>
+</ul>
+</li>
+<li><p><strong>Recovery</strong></p>
+<ul>
+<li><p>Maintenance team dispatched to retrieve the UAV and package.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="scenario-2-communication-loss">
+<h4><span class="section-number">1.3.4.3.2. </span>Scenario 2: Communication Loss<a class="headerlink" href="#scenario-2-communication-loss" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Detection</strong></p>
+<ul>
+<li><p>Loss of communication with the control center for more than a predefined duration.</p></li>
+</ul>
+</li>
+<li><p><strong>Action</strong></p>
+<ul>
+<li><p>UAV switches to autonomous mode, following a pre-programmed route back to base or to a safe landing area.</p></li>
+</ul>
+</li>
+<li><p><strong>Reconnection</strong></p>
+<ul>
+<li><p>Attempts to re-establish communication en route.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="system-capabilities-and-limitations">
+<h2><span class="section-number">1.3.5. </span>5. System Capabilities and Limitations<a class="headerlink" href="#system-capabilities-and-limitations" title="Link to this heading">#</a></h2>
+<section id="capabilities">
+<h3><span class="section-number">1.3.5.1. </span>Capabilities<a class="headerlink" href="#capabilities" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Autonomous Flight</strong></p>
+<ul>
+<li><p>Fully autonomous takeoff, navigation, delivery, and landing.</p></li>
+</ul>
+</li>
+<li><p><strong>Obstacle Detection and Avoidance</strong></p>
+<ul>
+<li><p>Equipped with LiDAR, cameras, and ultrasonic sensors.</p></li>
+</ul>
+</li>
+<li><p><strong>Payload Management</strong></p>
+<ul>
+<li><p>Secure handling of packages up to 5 kg.</p></li>
+</ul>
+</li>
+<li><p><strong>Real-Time Monitoring</strong></p>
+<ul>
+<li><p>Continuous data transmission to the control center.</p></li>
+</ul>
+</li>
+<li><p><strong>Redundant Systems</strong></p>
+<ul>
+<li><p>Backup systems for critical components (e.g., power supply, navigation).</p></li>
+</ul>
+</li>
+<li><p><strong>Geo-Fencing</strong></p>
+<ul>
+<li><p>Compliance with geo-fenced areas as per EASA requirements.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="performance-metrics">
+<h3><span class="section-number">1.3.5.2. </span>Performance Metrics<a class="headerlink" href="#performance-metrics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Speed</strong></p>
+<ul>
+<li><p>Maximum flight speed of 50 km/h.</p></li>
+</ul>
+</li>
+<li><p><strong>Range</strong></p>
+<ul>
+<li><p>Operational radius of up to 30 km from the base station.</p></li>
+</ul>
+</li>
+<li><p><strong>Endurance</strong></p>
+<ul>
+<li><p>Flight time of up to 60 minutes on a single charge.</p></li>
+</ul>
+</li>
+<li><p><strong>Accuracy</strong></p>
+<ul>
+<li><p>Delivery location accuracy within 1 meter.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="limitations">
+<h3><span class="section-number">1.3.5.3. </span>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Weather Conditions</strong></p>
+<ul>
+<li><p>Cannot operate in heavy rain, snowfall, fog, or wind speeds exceeding 25 km/h.</p></li>
+</ul>
+</li>
+<li><p><strong>Airspace Restrictions</strong></p>
+<ul>
+<li><p>Must comply with U-Space services and avoid prohibited zones.</p></li>
+</ul>
+</li>
+<li><p><strong>Operating Hours</strong></p>
+<ul>
+<li><p>May be limited to daylight hours unless night operations are authorized.</p></li>
+</ul>
+</li>
+<li><p><strong>Payload Constraints</strong></p>
+<ul>
+<li><p>Cannot transport dangerous goods unless specific approvals are obtained.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="interfaces-and-interactions">
+<h2><span class="section-number">1.3.6. </span>6. Interfaces and Interactions<a class="headerlink" href="#interfaces-and-interactions" title="Link to this heading">#</a></h2>
+<section id="user-interfaces">
+<h3><span class="section-number">1.3.6.1. </span>User Interfaces<a class="headerlink" href="#user-interfaces" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Mobile Application</strong></p>
+<ul>
+<li><p>For customers to place orders, track deliveries, and provide delivery instructions.</p></li>
+</ul>
+</li>
+<li><p><strong>Operator Dashboard</strong></p>
+<ul>
+<li><p>For control center staff to monitor UAV fleet status, flight paths, and system alerts.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="external-systems">
+<h3><span class="section-number">1.3.6.2. </span>External Systems<a class="headerlink" href="#external-systems" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>U-Space Services Integration</strong></p>
+<ul>
+<li><p>Interaction with U-Space service providers for traffic management and deconfliction.</p></li>
+</ul>
+</li>
+<li><p><strong>Weather Data Services</strong></p>
+<ul>
+<li><p>Real-time weather information to adjust flight operations accordingly.</p></li>
+</ul>
+</li>
+<li><p><strong>Air Navigation Service Providers (ANSP)</strong></p>
+<ul>
+<li><p>Coordination for flight information and airspace usage.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="data-management">
+<h3><span class="section-number">1.3.6.3. </span>Data Management<a class="headerlink" href="#data-management" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Data Security</strong></p>
+<ul>
+<li><p>Encryption of communication channels to prevent unauthorized access.</p></li>
+</ul>
+</li>
+<li><p><strong>Privacy Considerations</strong></p>
+<ul>
+<li><p>Compliance with GDPR, ensuring customer data and any collected imagery are handled responsibly.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="risk-assessment-and-mitigation">
+<h2><span class="section-number">1.3.7. </span>7. Risk Assessment and Mitigation<a class="headerlink" href="#risk-assessment-and-mitigation" title="Link to this heading">#</a></h2>
+<section id="identified-risks">
+<h3><span class="section-number">1.3.7.1. </span>Identified Risks<a class="headerlink" href="#identified-risks" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Technical Failures</strong></p>
+<ul>
+<li><p><strong>Risk</strong>: UAV hardware or software malfunction.</p></li>
+<li><p><strong>Mitigation</strong>: Implement redundant systems and regular maintenance schedules.</p></li>
+</ul>
+</li>
+<li><p><strong>Cybersecurity Threats</strong></p>
+<ul>
+<li><p><strong>Risk</strong>: Unauthorized access to control systems.</p></li>
+<li><p><strong>Mitigation</strong>: Employ robust encryption, intrusion detection systems, and regular security audits.</p></li>
+</ul>
+</li>
+<li><p><strong>Regulatory Changes</strong></p>
+<ul>
+<li><p><strong>Risk</strong>: New European laws imposing stricter UAV operation limits.</p></li>
+<li><p><strong>Mitigation</strong>: Engage with regulators, stay informed on policy developments, and design systems flexible enough to adapt.</p></li>
+</ul>
+</li>
+<li><p><strong>Public Acceptance</strong></p>
+<ul>
+<li><p><strong>Risk</strong>: Negative public perception leading to opposition.</p></li>
+<li><p><strong>Mitigation</strong>: Conduct community outreach programs, address concerns transparently.</p></li>
+</ul>
+</li>
+<li><p><strong>Cross-Border Operational Challenges</strong></p>
+<ul>
+<li><p><strong>Risk</strong>: Differences in national implementations of EU regulations.</p></li>
+<li><p><strong>Mitigation</strong>: Work closely with NAAs, ensure compliance with local requirements, and standardize procedures where possible.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="emergency-response-plans">
+<h3><span class="section-number">1.3.7.2. </span>Emergency Response Plans<a class="headerlink" href="#emergency-response-plans" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Incident Response Team</strong></p>
+<ul>
+<li><p>Dedicated team to handle emergencies and incidents promptly.</p></li>
+</ul>
+</li>
+<li><p><strong>Training Programs</strong></p>
+<ul>
+<li><p>Regular training for staff on emergency procedures and protocols.</p></li>
+</ul>
+</li>
+<li><p><strong>Insurance Coverage</strong></p>
+<ul>
+<li><p>Comprehensive insurance policies to cover liabilities and damages as per European regulations.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="maintenance-and-support">
+<h2><span class="section-number">1.3.8. </span>8. Maintenance and Support<a class="headerlink" href="#maintenance-and-support" title="Link to this heading">#</a></h2>
+<section id="preventive-maintenance">
+<h3><span class="section-number">1.3.8.1. </span>Preventive Maintenance<a class="headerlink" href="#preventive-maintenance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Routine Inspections</strong></p>
+<ul>
+<li><p>Scheduled checks of UAV components after a set number of flight hours.</p></li>
+</ul>
+</li>
+<li><p><strong>Software Updates</strong></p>
+<ul>
+<li><p>Regular updates to navigation algorithms and security patches.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="corrective-maintenance">
+<h3><span class="section-number">1.3.8.2. </span>Corrective Maintenance<a class="headerlink" href="#corrective-maintenance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Fault Diagnostics</strong></p>
+<ul>
+<li><p>Automated systems to detect and report faults in real-time.</p></li>
+</ul>
+</li>
+<li><p><strong>Repair Facilities</strong></p>
+<ul>
+<li><p>Equipped workshops for component replacement and repairs.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="support-infrastructure">
+<h3><span class="section-number">1.3.8.3. </span>Support Infrastructure<a class="headerlink" href="#support-infrastructure" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Charging Stations</strong></p>
+<ul>
+<li><p>Rapid charging facilities to minimize downtime between flights.</p></li>
+</ul>
+</li>
+<li><p><strong>Spare Parts Inventory</strong></p>
+<ul>
+<li><p>Stockpile of essential components to expedite repairs.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 </section>
 </section>
@@ -916,29 +1367,75 @@ window.addEventListener("load", () => mermaid.run());
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.1.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-of-operations-conops">1.1.2. 1. Concept of Operations (ConOps)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-concept-of-operations-conops">1.1.2.1. 1.1 What is a Concept of Operations (ConOps)?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-a-conops">1.1.2.2. 1.2 Components of a ConOps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-develop-a-conops">1.1.2.3. 1.3 Steps to Develop a ConOps</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.1. Introduction to Concept of Operations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-concept-of-operations">1.1.1. What is a Concept of Operations?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-of-a-conops">1.1.1.1. Objectives of a ConOps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components-of-a-conops">1.1.1.2. Key Components of a ConOps</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-architectures">1.1.3. 2. System Architectures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-system-architecture">1.1.3.1. 2.1 What is a System Architecture?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-system-architectures">1.1.3.2. 2.2 Types of System Architectures</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-principles-of-system-architecture">1.1.3.3. 2.3 Key Principles of System Architecture</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-develop-a-system-architecture">1.1.3.4. 2.4 Steps to Develop a System Architecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-conops-in-systems-engineering">1.1.2. Importance of ConOps in Systems Engineering</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-multirotor-uav-for-package-delivery">1.1.4. 3. Example: Multirotor UAV for Package Delivery</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-conops-to-a-multirotor-uav">1.1.4.1. 3.1 Applying ConOps to a Multirotor UAV</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-system-architecture-to-a-multirotor-uav">1.1.4.2. 3.2 Applying System Architecture to a Multirotor UAV</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-architecture">1.1.4.2.1. Functional Architecture</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-develop-a-concept-of-operations">1.2. Steps to Develop a Concept of Operations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-package-delivery-uav-concept-of-operations-in-europe">1.3. Example: Package Delivery UAV Concept of Operations in Europe</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-overview">1.3.1. 1. System Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mission-statement">1.3.1.1. Mission Statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-description">1.3.1.2. System Description</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stakeholder-analysis">1.3.2. 2. Stakeholder Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operational-environment">1.3.3. 3. Operational Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geographic-and-physical-environment">1.3.3.1. Geographic and Physical Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-conditions">1.3.3.2. Environmental Conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-environment">1.3.3.3. Regulatory Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#airspace-considerations">1.3.3.4. Airspace Considerations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operational-scenarios">1.3.4. 4. Operational Scenarios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-operation">1.3.4.1. 4.1 Normal Operation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-1-standard-delivery">1.3.4.1.1. Scenario 1: Standard Delivery</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-2-multiple-deliveries-in-one-flight">1.3.4.1.2. Scenario 2: Multiple Deliveries in One Flight</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abnormal-operations">1.3.4.2. 4.2 Abnormal Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-1-adverse-weather-encounter">1.3.4.2.1. Scenario 1: Adverse Weather Encounter</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-2-obstacle-avoidance">1.3.4.2.2. Scenario 2: Obstacle Avoidance</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emergency-operations">1.3.4.3. 4.3 Emergency Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-1-system-failure">1.3.4.3.1. Scenario 1: System Failure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-2-communication-loss">1.3.4.3.2. Scenario 2: Communication Loss</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-capabilities-and-limitations">1.3.5. 5. System Capabilities and Limitations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capabilities">1.3.5.1. Capabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics">1.3.5.2. Performance Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">1.3.5.3. Limitations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaces-and-interactions">1.3.6. 6. Interfaces and Interactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-interfaces">1.3.6.1. User Interfaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#external-systems">1.3.6.2. External Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-management">1.3.6.3. Data Management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-assessment-and-mitigation">1.3.7. 7. Risk Assessment and Mitigation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identified-risks">1.3.7.1. Identified Risks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emergency-response-plans">1.3.7.2. Emergency Response Plans</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maintenance-and-support">1.3.8. 8. Maintenance and Support</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preventive-maintenance">1.3.8.1. Preventive Maintenance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corrective-maintenance">1.3.8.2. Corrective Maintenance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#support-infrastructure">1.3.8.3. Support Infrastructure</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+
   </nav></div>
 
 </div></div>
