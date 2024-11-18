@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-vega/2-estimation_models';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -563,12 +565,12 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="estimation-models-with-scaling-laws-and-linear-regression">
+  <section class="tex2jax_ignore mathjax_ignore" id="estimation-models-with-scaling-laws-and-linear-regression">
 <h1>Estimation models with scaling laws and linear regression<a class="headerlink" href="#estimation-models-with-scaling-laws-and-linear-regression" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse) and Scott Delbecq (ISAE-SUPAERO), Toulouse, France</em></p>
 <p>The estimation models calculate the component characteristics requested for their selection without requiring a detailed design. Scaling laws are particularly suitable for this purpose. This notebook illustrates the approach with  roller bearings used as thrust bearing in the linear Electro-mechanical Actuator.</p>
 <p><em>Roller bearing in face to face configuration (SKF) :</em></p>
-<img src="./assets/images/RollerBearingFaceToFace.png" width="20%">
+<a class="reference internal image-reference" href="../../_images/RollerBearingFaceToFace.png"><img alt="../../_images/RollerBearingFaceToFace.png" src="../../_images/RollerBearingFaceToFace.png" style="width: 20%;" /></a>
 <p>Validation of the obtained scaling laws is realized thanks linear regression on catalog data.</p>
 <p>The <a class="reference external" href="https://hal.archives-ouvertes.fr/hal-00712986/document">following article</a> give more details and other models for electromechanical actuators:</p>
 <blockquote>
@@ -580,17 +582,17 @@
 <h3>Assumptions and notation<a class="headerlink" href="#assumptions-and-notation" title="Link to this heading">#</a></h3>
 <p>The scaling laws use two key modelling assumptions:</p>
 <ol class="arabic simple">
-<li><p>All material properties are assumed to be identical to those of the component used for reference: $E^* = \rho^* = … = 1$</p></li>
-<li><p>The ratio of all the lengths of the considered component to all the lengths of the reference component is constant (geometric similarity): $D^* = T^<em>= … = d^</em>$</p></li>
+<li><p>All material properties are assumed to be identical to those of the component used for reference: <span class="math notranslate nohighlight">\(E^* = \rho^* = ... = 1\)</span></p></li>
+<li><p>The ratio of all the lengths of the considered component to all the lengths of the reference component is constant (geometric similarity): <span class="math notranslate nohighlight">\(D^* = T^*= ... = d^*\)</span></p></li>
 </ol>
-<p>For mechanical components, the mechanical stresses in the materials must be kept below elastic, fatigue, or contact pressure (Hertz) limits. Taking the same stress limit for a full product range yields: $ F^* = d^{*2}$</p>
-<p><em>Notation</em>: The x* scaling ratio of a given parameter is calculated as $x^*=\frac{x}{x_{ref}}$ where $x_{ref}$ is the parameter taken as the reference and $x$ the parameter under study.</p>
+<p>For mechanical components, the mechanical stresses in the materials must be kept below elastic, fatigue, or contact pressure (Hertz) limits. Taking the same stress limit for a full product range yields: <span class="math notranslate nohighlight">\( F^* = d^{*2}\)</span></p>
+<p><em>Notation</em>: The x* scaling ratio of a given parameter is calculated as <span class="math notranslate nohighlight">\(x^*=\frac{x}{x_{ref}}\)</span> where <span class="math notranslate nohighlight">\(x_{ref}\)</span> is the parameter taken as the reference and <span class="math notranslate nohighlight">\(x\)</span> the parameter under study.</p>
 </section>
 <section id="axial-maximal-force-estimation">
 <h3>Axial maximal force estimation<a class="headerlink" href="#axial-maximal-force-estimation" title="Link to this heading">#</a></h3>
 <p>Propose a scaling law which links the Maximal axial force. Estimate the maximal force for a bearing of 90 mm external diameter knowing the following reference component:<br />
-$D_{ref} = 140 mm$<br />
-$F_{axial,ref} = 475 kN$</p>
+<span class="math notranslate nohighlight">\(D_{ref} = 140 mm\)</span><br />
+<span class="math notranslate nohighlight">\(F_{axial,ref} = 475 kN\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D_ref</span> <span class="o">=</span> <span class="mi">140</span>  <span class="c1"># [mm] Reference diameter</span>
@@ -1230,11 +1232,11 @@ The estimation model is: F_axial_max = 2.42e-02.D^2
 </section>
 <section id="linear-regression">
 <h3>Linear regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h3>
-<p>The filtered data will be approximeted here by a linear regression of the form: $Y=aX+b$</p>
+<p>The filtered data will be approximeted here by a linear regression of the form: <span class="math notranslate nohighlight">\(Y=aX+b\)</span></p>
 <p>We use here :</p>
 <ul class="simple">
 <li><p>the functions of the <a class="reference external" href="http://scikit-learn.org">scikit-learn</a> package (<a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">linear_model.LinearRegression</a>)</p></li>
-<li><p>a log transformation in order to linearize the power law expression $Y=k.X^a$  into $log(Y) = log(k) + a.log(X)$</p></li>
+<li><p>a log transformation in order to linearize the power law expression <span class="math notranslate nohighlight">\(Y=k.X^a\)</span>  into <span class="math notranslate nohighlight">\(log(Y) = log(k) + a.log(X)\)</span></p></li>
 </ul>
 <p>A usefull introduction to machine learning can be found here <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a>:</p>
 <blockquote>
@@ -1690,13 +1692,13 @@ The intercept is: [-1.43355268]
 The estimation model is: F_axial_max = 3.69e-02.D^1.9
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2995/430775071.py:3: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2664/430775071.py:3: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   print(&quot;The estimation model is: F_axial_max = %.2e.D^%.1f&quot; % (10**reg.intercept_, reg.coef_))
 </pre></div>
 </div>
 </div>
 </div>
-<p>Remark : unit of $D$ is $mm$ and F$_{axial,max}$ is $kN$</p>
+<p>Remark : unit of <span class="math notranslate nohighlight">\(D\)</span> is <span class="math notranslate nohighlight">\(mm\)</span> and F<span class="math notranslate nohighlight">\(_{axial,max}\)</span> is <span class="math notranslate nohighlight">\(kN\)</span></p>
 <p>We can also directly compare on a graphic the both expressions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

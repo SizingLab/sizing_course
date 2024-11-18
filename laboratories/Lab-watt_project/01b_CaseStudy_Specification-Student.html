@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-watt_project/01b_CaseStudy_Specification-Student';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -559,7 +561,7 @@
                 <article class="bd-article">
                   
   <p><img alt="Sizing Lab" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/Baniere.png" /></p>
-<section id="case-study-specification-student-version">
+<section class="tex2jax_ignore mathjax_ignore" id="case-study-specification-student-version">
 <h1>Case study specification (Student version)<a class="headerlink" href="#case-study-specification-student-version" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
 <p>We will now develop tools allowing:</p>
@@ -658,7 +660,7 @@
 <li><p>Coasting/freewheel mode</p></li>
 <li><p>Braking mode</p></li>
 </ul>
-<p>The control points for switching from one mode to another are defined in the following code using 3 parameters $k_1, k_2, k_3$ as shown in the figure below.
+<p>The control points for switching from one mode to another are defined in the following code using 3 parameters <span class="math notranslate nohighlight">\(k_1, k_2, k_3\)</span> as shown in the figure below.
 <img alt="General Speed Profile" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/GeneralspeedProfile.PNG" /></p>
 <p>The following code implements a control logic comprising the 4 phases defined previously and a numerical integration of the differential equation corresponding to the longitudinal dynamics of the vehicle.</p>
 <blockquote>
@@ -959,7 +961,7 @@ Max energy discharge: 7420 kJ
 <blockquote>
 <div><p>Tian, Z., Zhao, N., Hillmansen, S., Roberts, C., Dowens, T., &amp; Kerr, C. (2019). SmartDrive: Traction energy optimization and applications in rail systems. IEEE Transactions on Intelligent Transportation Systems, 20(7), 2764-2773.</p>
 </div></blockquote>
-<p>The previous class is now extended to allow optimization of variables $k_1, k_2, k_3$ in order to minimize energy consumption (even with braking power lower than acceleration power).</p>
+<p>The previous class is now extended to allow optimization of variables <span class="math notranslate nohighlight">\(k_1, k_2, k_3\)</span> in order to minimize energy consumption (even with braking power lower than acceleration power).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">OptimSection</span><span class="p">(</span><span class="n">SimulSection</span><span class="p">):</span>
@@ -1027,7 +1029,7 @@ Max energy discharge: 7420 kJ
 </div>
 </div>
 </div>
-<p>The usage of the class is quite simular that the previous one, except an <code class="docutils literal notranslate"><span class="pre">optimize</span></code>which enable to optimize the $k_1, k_2, k_3$ set of profile parameter:</p>
+<p>The usage of the class is quite simular that the previous one, except an <code class="docutils literal notranslate"><span class="pre">optimize</span></code>which enable to optimize the <span class="math notranslate nohighlight">\(k_1, k_2, k_3\)</span> set of profile parameter:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definition of the section under study</span>

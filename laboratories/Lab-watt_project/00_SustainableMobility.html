@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-watt_project/00_SustainableMobility';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -559,7 +561,7 @@
                 <article class="bd-article">
                   
   <p><img alt="Sizing Lab" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/Baniere.png" /></p>
-<section id="sustainable-mobilities">
+<section class="tex2jax_ignore mathjax_ignore" id="sustainable-mobilities">
 <h1>Sustainable mobilities<a class="headerlink" href="#sustainable-mobilities" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
 <p>This course is dedicated to the eco-design and Life Cycle Assessment of technological systems dedicated to sustainable mobility. This notebook is devoted to the transportation context and evolution. This introduction draws heavily on the analyses carried out in Aurelien Bigo’s <a class="reference external" href="http://www.chair-energy-prosperity.org/publications/travail-de-these-decarboner-transports-dici-2050/">thesis</a>:</p>
@@ -575,18 +577,18 @@
 <section id="breakdown-of-the-evolution-of-greenhouse-gas-emissions-from-transport">
 <h2>Breakdown of the evolution of greenhouse gas emissions from transport<a class="headerlink" href="#breakdown-of-the-evolution-of-greenhouse-gas-emissions-from-transport" title="Link to this heading">#</a></h2>
 <p>Index decomposition analyses (IDA) are used to characterise the factors that explain environmental impacts. The IPAT identity is expressed as follows:</p>
-<p>$Impact = Population \times Affluence \times Technology$</p>
+<p><span class="math notranslate nohighlight">\(Impact = Population \times Affluence \times Technology\)</span></p>
 <p>The “Affluence” factor characterizes wealth per person. Japanese researcher Yoichi Kaya proposed an adaptation of this indicator to break down an economy’s CO2 emissions at an IPCC (Intergovernmental Panel on Climate Change) conference. Kaya’s identity breaks down CO2 emissions into four factors: population (Pop), wealth or GDP (gross domestic product) per person, the energy efficiency of the economy, and the carbon intensity of energy:</p>
-<p>$CO_2=Pop \times \frac{PIB}{Pop} \times \frac{Energy}{PIB} \times \frac{CO_2}{Energy}$</p>
+<p><span class="math notranslate nohighlight">\(CO_2=Pop \times \frac{PIB}{Pop} \times \frac{Energy}{PIB} \times \frac{CO_2}{Energy}\)</span></p>
 <p>The identity retained in Aurélien Bigo’s study on the CO2 impact of transport retains five factors which are demand, modal shift, occupancy rate, energy efficiency and carbon intensity. The decomposition is also done by adding the effects of each mode of transport:</p>
-<p>$CO2_{Transport} = \sum D \times \frac{D_i}{D} \times \frac{C_i}{D_i} \times \frac{E_i}{C_i} \times \frac{CO2_i}{E_i}$</p>
+<p><span class="math notranslate nohighlight">\(CO2_{Transport} = \sum D \times \frac{D_i}{D} \times \frac{C_i}{D_i} \times \frac{E_i}{C_i} \times \frac{CO2_i}{E_i}\)</span></p>
 <p>With:</p>
 <ul class="simple">
-<li><p>$D$: the demand for passenger or goods transport (voy.km or t.km), i.e. the number of kilometers traveled by travelers and by tonnes of goods transported, with 1 t.km = 1 ton of goods traveling 1 km.</p></li>
-<li><p>$D_i$: mode i transport request (voy.km or t.km)</p></li>
-<li><p>$C_i$: circulation of mode i vehicles (veh.km: vehicle.kilometer)</p></li>
-<li><p>$E_i$: energy consumed by mode i (toe: tonne of oil equivalent)</p></li>
-<li><p>$CO_{2,i}$: CO2 emissions from mode i (tCO2: ton of CO2)</p></li>
+<li><p><span class="math notranslate nohighlight">\(D\)</span>: the demand for passenger or goods transport (<a class="reference external" href="http://voy.km">voy.km</a> or <a class="reference external" href="http://t.km">t.km</a>), i.e. the number of kilometers traveled by travelers and by tonnes of goods transported, with 1 <a class="reference external" href="http://t.km">t.km</a> = 1 ton of goods traveling 1 km.</p></li>
+<li><p><span class="math notranslate nohighlight">\(D_i\)</span>: mode i transport request (<a class="reference external" href="http://voy.km">voy.km</a> or <a class="reference external" href="http://t.km">t.km</a>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_i\)</span>: circulation of mode i vehicles (<a class="reference external" href="http://veh.km">veh.km</a>: vehicle.kilometer)</p></li>
+<li><p><span class="math notranslate nohighlight">\(E_i\)</span>: energy consumed by mode i (toe: tonne of oil equivalent)</p></li>
+<li><p><span class="math notranslate nohighlight">\(CO_{2,i}\)</span>: CO2 emissions from mode i (tCO2: ton of CO2)</p></li>
 </ul>
 <p><em>The five key levers for decarbonizing transport, used in the breakdown of emissions</em>
 <img alt="Levers" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/TransportCO2.PNG" /></p>

@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture5/1-mdao';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -571,14 +573,14 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="mdao-multidisciplinary-design-analysis-and-optimization">
+  <section class="tex2jax_ignore mathjax_ignore" id="mdao-multidisciplinary-design-analysis-and-optimization">
 <h1><span class="section-number">6.1. </span>MDAO (Multidisciplinary Design Analysis and Optimization)<a class="headerlink" href="#mdao-multidisciplinary-design-analysis-and-optimization" title="Link to this heading">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This course is under construction…</p>
 </div>
 </section>
-<section id="what-is-mdao">
+<section class="tex2jax_ignore mathjax_ignore" id="what-is-mdao">
 <h1><span class="section-number">6.2. </span>What is MDAO?<a class="headerlink" href="#what-is-mdao" title="Link to this heading">#</a></h1>
 <p>MDAO stands for Multidisciplinary Design Analysis and Optimization. It is a scientific domain developed to adress the design optimization of multidisciplinary engineering systems that:</p>
 <ul class="simple">
@@ -641,23 +643,24 @@
 </section>
 <section id="mdao-formulations-distributed-vs-monolithic-2-2">
 <h2><span class="section-number">6.2.7. </span>MDAO formulations: distributed vs monolithic (2/2)<a class="headerlink" href="#mdao-formulations-distributed-vs-monolithic-2-2" title="Link to this heading">#</a></h2>
-<p>The Sellar problem is a simple and well known test case for MDO formulations:
-\begin{equation}
-\begin{aligned}
-&amp; \text{minimize}
-&amp; &amp; x_{1}^{2} + z_{2} + y_{1} + e^{-y_{2}} \
-&amp; \text{with respect to}
-&amp; &amp; z_{1}, z_{2}, x_{1}\
-&amp; \text{subject to}
-&amp; &amp; \frac{y_{1}}{3.16} - 1 \geq 0
-&amp; &amp; 1 - \frac{y_{2}}{24} \geq 0
-&amp; &amp; -10 \geq z_{1} \leq 10
-&amp; &amp; 0 \geq z_{2} \leq 10
-&amp; &amp; 0 \geq x_{1} \leq 10
-\end{aligned}
-\end{equation}</p>
-<p>Where $y_{1} = z_{1}^2 + x_{1} + z_{2} - 0.2 y_{2}$ and $y_{2}=\sqrt{y_{1}} +
-z_{1} + z_{2}$.</p>
+<p>The Sellar problem is a simple and well known test case for MDO formulations:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-af94fc94-fc5e-479a-8285-d8833baa7f31">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-af94fc94-fc5e-479a-8285-d8833baa7f31" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \begin{aligned}
+    &amp; \text{minimize}
+    &amp; &amp; x_{1}^{2} + z_{2} + y_{1} + e^{-y_{2}} \\
+    &amp; \text{with respect to}
+    &amp; &amp; z_{1}, z_{2}, x_{1}\\
+    &amp; \text{subject to}
+    &amp; &amp; \frac{y_{1}}{3.16} - 1 \geq 0
+    &amp; &amp; 1 - \frac{y_{2}}{24} \geq 0
+    &amp; &amp; -10 \geq z_{1} \leq 10
+    &amp; &amp; 0 \geq z_{2} \leq 10
+    &amp; &amp; 0 \geq x_{1} \leq 10
+    \end{aligned}
+\end{equation}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(y_{1} = z_{1}^2 + x_{1} + z_{2} - 0.2 y_{2}\)</span> and <span class="math notranslate nohighlight">\(y_{2}=\sqrt{y_{1}} +
+z_{1} + z_{2}\)</span>.</p>
 <p>The number of function evaluation is a key metric to assess the computational cost as it enables to avoid considering the performance of the computer used.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -695,50 +698,57 @@ z_{1} + z_{2}$.</p>
 <section id="monolithic-formulations-high-dynamic-ema-case-study">
 <h2><span class="section-number">6.2.8. </span>Monolithic formulations: High dynamic EMA case study<a class="headerlink" href="#monolithic-formulations-high-dynamic-ema-case-study" title="Link to this heading">#</a></h2>
 <p><img alt="drawing50" src="../../_images/coupled_system.png" /></p>
-<p>\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ea8512b5-4f21-4fcc-8267-97cbaa56460a">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-ea8512b5-4f21-4fcc-8267-97cbaa56460a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T_{em} = J_{mot} \cdot A_{max}\frac{N_{red}}{p} + F_{ema} \frac{p}{N_{red}}
 \label{eq_1}
-\end{equation}</p>
-<p>\begin{equation}
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-233d71e0-2a62-4828-97b7-2c62f19ec502">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-233d71e0-2a62-4828-97b7-2c62f19ec502" title="Permalink to this equation">#</a></span>\[\begin{equation}
 J_{mot} = J_{mot_{ref}} \cdot \left(\frac{T_{em}}{T_{em_{ref}}}\right)^{\frac{5}{3.5}}
 \label{eq_2}
-\end{equation}</p>
-<p>\begin{equation}
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-cf84f690-b557-4d80-9ec1-df4266251865">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-cf84f690-b557-4d80-9ec1-df4266251865" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Omega_{mot} = \Omega_{mot_{ref}} \cdot  \left(\frac{T_{em}}{T_{em_{ref}}}\right)^{-\frac{1}{3.5}}
 \label{eq_3}
-\end{equation}</p>
-<p>\begin{equation}
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5de99e80-cfe6-473b-97d7-b35bac169a54">
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-5de99e80-cfe6-473b-97d7-b35bac169a54" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Omega_{mot} \geq V_{max}\cdot \frac{N_{red}}{p}
 \label{eq_4}
-\end{equation}</p>
-<p>\begin{equation}
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a8c40695-0577-46e0-9735-a5847eb6e694">
+<span class="eqno">(6.6)<a class="headerlink" href="#equation-a8c40695-0577-46e0-9735-a5847eb6e694" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M_{mot} = M_{mot_{ref}} \cdot \left(\frac{T_{em}}{T_{em_{ref}}}\right)^{\frac{3}{3.5}}
 \label{eq_5}
-\end{equation}</p>
-<p>\begin{equation}
-\begin{aligned}
-&amp; \text{minimize}
-&amp; &amp; M_{mot} \
-&amp; \text{with respect to}
-&amp; &amp;  N_{red}\
-&amp; \text{subject to}
-&amp; &amp; V_{max} \cdot \frac{N_{red}}{p} - \Omega_{mot} \leq 0
-\end{aligned}
-\end{equation}</p>
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-20158463-48a7-44e7-90f9-d705d23ed9ac">
+<span class="eqno">(6.7)<a class="headerlink" href="#equation-20158463-48a7-44e7-90f9-d705d23ed9ac" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \begin{aligned}
+    &amp; \text{minimize}
+    &amp; &amp; M_{mot} \\
+    &amp; \text{with respect to}
+    &amp; &amp;  N_{red}\\
+    &amp; \text{subject to}
+    &amp; &amp; V_{max} \cdot \frac{N_{red}}{p} - \Omega_{mot} \leq 0
+    \end{aligned}
+\end{equation}\]</div>
 </section>
 <section id="monolithic-formulations-multidisciplinary-feasible-mdf">
 <h2><span class="section-number">6.2.9. </span>Monolithic formulations: MultiDisciplinary Feasible (MDF)<a class="headerlink" href="#monolithic-formulations-multidisciplinary-feasible-mdf" title="Link to this heading">#</a></h2>
 <p><img alt="drawing50" src="../../_images/mdf.png" /></p>
-<p>\begin{equation}
-\begin{aligned}
-&amp; \text{minimize}
-&amp; &amp; M_{mot} \
-&amp; \text{with respect to}
-&amp; &amp;  N_{red}\
-&amp; \text{subject to}
-&amp; &amp; V_{max} \cdot \frac{N_{red}}{p} - \Omega_{mot} \leq 0
-\end{aligned}
-\end{equation}</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a96275de-fe7c-406c-9c1d-f526ebfd0a00">
+<span class="eqno">(6.8)<a class="headerlink" href="#equation-a96275de-fe7c-406c-9c1d-f526ebfd0a00" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \begin{aligned}
+    &amp; \text{minimize}
+    &amp; &amp; M_{mot} \\
+    &amp; \text{with respect to}
+    &amp; &amp;  N_{red}\\
+    &amp; \text{subject to}
+    &amp; &amp; V_{max} \cdot \frac{N_{red}}{p} - \Omega_{mot} \leq 0
+    \end{aligned}
+\end{equation}\]</div>
 </section>
 <section id="monolithic-formulations-individual-discipline-feasible-idf">
 <h2><span class="section-number">6.2.10. </span>Monolithic formulations: Individual Discipline Feasible (IDF)<a class="headerlink" href="#monolithic-formulations-individual-discipline-feasible-idf" title="Link to this heading">#</a></h2>
@@ -751,17 +761,18 @@ M_{mot} = M_{mot_{ref}} \cdot \left(\frac{T_{em}}{T_{em_{ref}}}\right)^{\frac{3}
 <section id="monolithic-formulations-normalized-variable-hybrid-nvh">
 <h2><span class="section-number">6.2.12. </span>Monolithic formulations: Normalized Variable Hybrid (NVH)<a class="headerlink" href="#monolithic-formulations-normalized-variable-hybrid-nvh" title="Link to this heading">#</a></h2>
 <p><img alt="drawing50" src="../../_images/nvh.png" /></p>
-<p>\begin{equation}
-\begin{aligned}
-&amp; \text{min.}
-&amp; &amp; M_{mot} \
-&amp; \text{w.r.t}
-&amp; &amp;  N_{red}, k_{os}\
-&amp; \text{s.t.}
-&amp; &amp; V_{max} \cdot \frac{N_{red}}{p} - \Omega_{mot} \leq 0 \
-&amp; &amp; &amp; J_{mot} \cdot A_{max}\frac{N_{red}}{p} + F_{ema} \frac{p}{N_{red}} - T_{em} \leq 0
-\end{aligned}
-\end{equation}</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7712909d-1ab0-46e2-9fd0-297274d6066c">
+<span class="eqno">(6.9)<a class="headerlink" href="#equation-7712909d-1ab0-46e2-9fd0-297274d6066c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \begin{aligned}
+    &amp; \text{min.}
+    &amp; &amp; M_{mot} \\
+    &amp; \text{w.r.t}
+    &amp; &amp;  N_{red}, k_{os}\\
+    &amp; \text{s.t.}
+    &amp; &amp; V_{max} \cdot \frac{N_{red}}{p} - \Omega_{mot} \leq 0 \\
+    &amp; &amp; &amp; J_{mot} \cdot A_{max}\frac{N_{red}}{p} + F_{ema} \frac{p}{N_{red}} - T_{em} \leq 0
+    \end{aligned}
+\end{equation}\]</div>
 </section>
 <section id="monolithic-formulations-performance-comparison">
 <h2><span class="section-number">6.2.13. </span>Monolithic formulations: Performance comparison<a class="headerlink" href="#monolithic-formulations-performance-comparison" title="Link to this heading">#</a></h2>

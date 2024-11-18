@@ -569,24 +569,26 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="scenarios-and-design-drivers">
+  <section class="tex2jax_ignore mathjax_ignore" id="scenarios-and-design-drivers">
 <h1><span class="section-number">2.3. </span>Scenarios and Design Drivers<a class="headerlink" href="#scenarios-and-design-drivers" title="Link to this heading">#</a></h1>
 <section id="sizing-and-optimization-process">
 <h2><span class="section-number">2.3.1. </span>Sizing and optimization process<a class="headerlink" href="#sizing-and-optimization-process" title="Link to this heading">#</a></h2>
 <p><img alt="drawing75" src="../../_images/design_drivers_process.png" /></p>
-<p>:::{dropdown} Description
-:open:<br />
-After analysing the architecture of the system to be sized, the next step is to establish the working scenarios which risk to degrade the different components.These scenarios could be expressed as a set of operational points (for example Torque, Speed) or mission profiles (variable function of the time).
-:::</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">After analysing the architecture of the system to be sized, the next step is to establish the working scenarios which risk to degrade the different components.These scenarios could be expressed as a set of operational points (for example Torque, Speed) or mission profiles (variable function of the time).</p>
+</div>
+</details></section>
 <section id="sizing-scenarios-and-design-drivers-concept">
 <h2><span class="section-number">2.3.2. </span>Sizing scenarios and design drivers concept<a class="headerlink" href="#sizing-scenarios-and-design-drivers-concept" title="Link to this heading">#</a></h2>
 <p><img alt="drawing75" src="../../_images/sizing_scenarios_design_drivers.png" /></p>
-<p>:::{dropdown} Description
-:open:<br />
-After analysing the architecture of the system to be sized, the next step is to establish the working scenarios which risk to degrade the different components.These scenarios could be expressed as a set of operational points (for example Torque, Speed) or mission profiles (variable function of the time).
-:::</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">After analysing the architecture of the system to be sized, the next step is to establish the working scenarios which risk to degrade the different components.These scenarios could be expressed as a set of operational points (for example Torque, Speed) or mission profiles (variable function of the time).</p>
+</div>
+</details></section>
 <section id="case-study-aircraft-spoiler">
 <h2><span class="section-number">2.3.3. </span>Case study: Aircraft spoiler<a class="headerlink" href="#case-study-aircraft-spoiler" title="Link to this heading">#</a></h2>
 <p>To illustrate the notion of sizing criteria and sizing scenarios, we will use a flight control actuator, more precisely for spoiler surface, as an example.</p>
@@ -597,23 +599,25 @@ After analysing the architecture of the system to be sized, the next step is to 
 <li><p>No damage (structure and actuator) if spoiler blocking or on gust action</p></li>
 </ul>
 <p><img alt="drawing75" src="../../_images/aircraft_spoiler.png" /></p>
-<p>:::{dropdown} Description
-:open:<br />
-The spoiler reduces the lift of the aircraft in order to start an approach towards the airport or to increase the action of the breaks on the wheels for landing.
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The spoiler reduces the lift of the aircraft in order to start an approach towards the airport or to increase the action of the breaks on the wheels for landing.
 On the considered aircraft, the actuator will have to position himself on 3 different angle while working againts aerodynamic forces. These forces can be either positive (when surface fully deployed) or negative (when surface fully retracted).
-No damage must appear on the structure or actuator if jamming happens or when gust action occurs.
-:::</p>
-</section>
+No damage must appear on the structure or actuator if jamming happens or when gust action occurs.</p>
+</div>
+</details></section>
 </section>
 <section id="architecture-and-components">
 <h2><span class="section-number">2.3.4. </span>Architecture and components<a class="headerlink" href="#architecture-and-components" title="Link to this heading">#</a></h2>
 <p><img alt="drawing50" src="../../_images/ema_moog.png" /></p>
-<p>:::{dropdown} Description
-:open:<br />
-Here is the architecture of the study case. It is based on an example of EMA (ElectroMechanical Actuator) for the Boeing 787’s spoiler designed and manufactured by MOOG.<br />
-It is composed of: mechanical components for effort transmision (Rod end, Rod, Housing), for power transmision ( ball screw, bearing, gear) and electro-mechanichal components such as a brushless motor.
-:::</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Here is the architecture of the study case. It is based on an example of EMA (ElectroMechanical Actuator) for the Boeing 787’s spoiler designed and manufactured by MOOG.<br />
+It is composed of: mechanical components for effort transmision (Rod end, Rod, Housing), for power transmision ( ball screw, bearing, gear) and electro-mechanichal components such as a brushless motor.</p>
+</div>
+</details></section>
 <section id="design-drivers">
 <h2><span class="section-number">2.3.5. </span>Design drivers<a class="headerlink" href="#design-drivers" title="Link to this heading">#</a></h2>
 <p>Components of the actuator have to satisfy:</p>
@@ -637,17 +641,20 @@ It is composed of: mechanical components for effort transmision (Rod end, Rod, H
 <li><p>In a gradual way, alternated efforts can reduce the component’s lifetime by creating microcracks which increase with the number of requests.</p></li>
 </ul>
 <p><img alt="drawing75" src="../../_images/dd_mechanical-1.png" /></p>
-<p>:::{dropdown} Description
-:open:<br />
-<strong>For our example:</strong> we must be sure that all the components can take the maximal effort and determine the situation which generates this maximal effort. Fatigue is often computed for rolling elements using mission profiles that represent repetitive requests.
-:::</p>
-<p>An other source of mechanical degradation comes from the vibratory environment or shocks during operating time.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>For our example:</strong> we must be sure that all the components can take the maximal effort and determine the situation which generates this maximal effort. Fatigue is often computed for rolling elements using mission profiles that represent repetitive requests.</p>
+</div>
+</details><p>An other source of mechanical degradation comes from the vibratory environment or shocks during operating time.</p>
 <p><img alt="drawing75" src="../../_images/dd_mechanical-2.png" /></p>
-<p>:::{dropdown} Description :open:<br />
-<strong>For the linear actuator:</strong> we need to be sure that the housing or the screw will not be subject to stress due to resonance mode on typical plane frequencies, between 5 Hz and 2 kHz.
-If possible, all resonance modes on this frequency range should be avoid or specific design must be undertaken.
-:::</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description :open:</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>For the linear actuator:</strong> we need to be sure that the housing or the screw will not be subject to stress due to resonance mode on typical plane frequencies, between 5 Hz and 2 kHz.
+If possible, all resonance modes on this frequency range should be avoid or specific design must be undertaken.</p>
+</div>
+</details></section>
 <section id="induced-design-drivers-of-mechanical-components-losses-friction">
 <h3><span class="section-number">2.3.5.2. </span>Induced design drivers of mechanical components: losses &amp; friction<a class="headerlink" href="#induced-design-drivers-of-mechanical-components-losses-friction" title="Link to this heading">#</a></h3>
 <p>During sizing it is important to take into account the main parasitic aspect of components in terms of power transmission. For mechanical components efficiency and friction are important.</p>
@@ -657,16 +664,18 @@ If possible, all resonance modes on this frequency range should be avoid or spec
 <img alt="drawing50" src="../../_images/losses_frictions.png" /></p></li>
 </ol>
 <p><img alt="drawing50" src="../../_images/frictions_ema.png" /></p>
-<p>:::{dropdown} Description :open:
-The mechanical power transmission components (worm gears, ball/screw systems, …) have imperfections such as friction which reduce efficency. These frictions increase the torque the motor has to transmit and therefore have an impact on component choice. Power quadrants and speed have an important effect on friction or efficiency computation.<br />
-<strong>In our example:</strong> we could model our ball/screw system with a constant efficiency. except when the speed is zero, in which case we’ll increase the friction. It is interesting to underline that the friction due to mechanical stops inside the ball/screw system depend on the effort given by the jack.
-:::</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description :open:</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The mechanical power transmission components (worm gears, ball/screw systems, …) have imperfections such as friction which reduce efficency. These frictions increase the torque the motor has to transmit and therefore have an impact on component choice. Power quadrants and speed have an important effect on friction or efficiency computation.<br />
+<strong>In our example:</strong> we could model our ball/screw system with a constant efficiency. except when the speed is zero, in which case we’ll increase the friction. It is interesting to underline that the friction due to mechanical stops inside the ball/screw system depend on the effort given by the jack.</p>
+</div>
+</details></section>
 <section id="design-drivers-of-electrical-components">
 <h3><span class="section-number">2.3.5.3. </span>Design drivers of electrical components<a class="headerlink" href="#design-drivers-of-electrical-components" title="Link to this heading">#</a></h3>
 <p>For electrical components, the current and thermal effects can induce:</p>
 <ul class="simple">
-<li><p>magnetic fields which can demagnetize the magnets.. With new magnets the odds are lower.</p></li>
+<li><p>magnetic fields which can demagnetize the magnets… With new magnets the odds are lower.</p></li>
 <li><p>Induce an excessive magnetic field which can create a saturation at teeth level where stands the winding.</p></li>
 </ul>
 <p><img alt="drawing75" src="../../_images/dd_electrical-1.png" /></p>
@@ -676,10 +685,12 @@ The mechanical power transmission components (worm gears, ball/screw systems, �
 <li><p>Brushless motor: max torque due to saturation (teeth)</p></li>
 </ul>
 <hr class="docutils" />
-<p>:::{dropdown} Description :open:
-In our example, we will consider that the maximum transient torque of the machines will be limited by the sheet‘s magnetic saturation.
-:::</p>
-<p>The electrical current generates copper losses which heat the motor. Excessive temperature can demagnetize the magnets. The higher is the temperature, the shorter is the lifetime of the copper wires’ insulation.The link between lifetime and temperature is given on the following graph and depends on the insulation type.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description :open:</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">In our example, we will consider that the maximum transient torque of the machines will be limited by the sheet‘s magnetic saturation.</p>
+</div>
+</details><p>The electrical current generates copper losses which heat the motor. Excessive temperature can demagnetize the magnets. The higher is the temperature, the shorter is the lifetime of the copper wires’ insulation.The link between lifetime and temperature is given on the following graph and depends on the insulation type.</p>
 <p><img alt="drawing75" src="../../_images/dd_electrical-2.png" /></p>
 <hr class="docutils" />
 <p><strong>For the EMA study case:</strong></p>
@@ -687,10 +698,12 @@ In our example, we will consider that the maximum transient torque of the machin
 <li><p>Brushless motor: continuous torque and max temperature due to thermal aspect (need of a thermal model)</p></li>
 </ul>
 <hr class="docutils" />
-<p>:::{dropdown} Description :open:
-In our study, we will consider that the mean torque will be limited by the winding temperature. A thermal model can be useful in order to be sure of a proper working.
-:::</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description :open:</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">In our study, we will consider that the mean torque will be limited by the winding temperature. A thermal model can be useful in order to be sure of a proper working.</p>
+</div>
+</details></section>
 <section id="induced-design-drivers-of-the-electrical-components">
 <h3><span class="section-number">2.3.5.4. </span>Induced design drivers of the electrical components<a class="headerlink" href="#induced-design-drivers-of-the-electrical-components" title="Link to this heading">#</a></h3>
 <p>Electrical motors have imperfections such as the kinetic energy stored in the <strong>rotor inertia</strong> which:</p>
@@ -716,17 +729,19 @@ In our study, we will consider that the mean torque will be limited by the windi
 <h2><span class="section-number">2.3.6. </span>Sizing scenarios and mission profiles<a class="headerlink" href="#sizing-scenarios-and-mission-profiles" title="Link to this heading">#</a></h2>
 <p>Sizing scenarios make the link between the application and the design criteria of the system components.</p>
 <p><img alt="drawing75" src="../../_images/mission_profile.png" /></p>
-<p>:::{dropdown} Description :open:
-Example of sizing scenarios for our study case are:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description :open:</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Example of sizing scenarios for our study case are:</p>
 <ul class="simple">
-<li><p>Under mechanical aspects: a displacement profile which describes expansion/retraction movements and the associated torque. This profile give an estimation of the maximum efforts on the entire power chain. Repeated over 12 000 flights give a specification of lifetimes.</p></li>
-<li><p>Under thermal aspect: a critical case can be represented with an important deflection, that means a high torque which generate important losses in the motor, with an important holding time and high external temperature (low altitude in a warm country).</p></li>
-<li><p>Vibratory aspects can be considered by using vibratory test standards for a given amplitude and frequency.</p></li>
-<li><p>The harmful aspect of inertia is took into account in a critical case such as the jamming of the spoiler at full deflection speed (implying maximum stored kinetic energy).</p></li>
-<li><p>The effort limitation function is represented by a sudden gust scenario.
-:::</p></li>
+<li><p class="sd-card-text">Under mechanical aspects: a displacement profile which describes expansion/retraction movements and the associated torque. This profile give an estimation of the maximum efforts on the entire power chain. Repeated over 12 000 flights give a specification of lifetimes.</p></li>
+<li><p class="sd-card-text">Under thermal aspect: a critical case can be represented with an important deflection, that means a high torque which generate important losses in the motor, with an important holding time and high external temperature (low altitude in a warm country).</p></li>
+<li><p class="sd-card-text">Vibratory aspects can be considered by using vibratory test standards for a given amplitude and frequency.</p></li>
+<li><p class="sd-card-text">The harmful aspect of inertia is took into account in a critical case such as the jamming of the spoiler at full deflection speed (implying maximum stored kinetic energy).</p></li>
+<li><p class="sd-card-text">The effort limitation function is represented by a sudden gust scenario.</p></li>
 </ul>
-</section>
+</div>
+</details></section>
 <section id="verification-matrix">
 <h2><span class="section-number">2.3.7. </span>Verification matrix<a class="headerlink" href="#verification-matrix" title="Link to this heading">#</a></h2>
 <p>To be sure that all design criterias are covered, a verification matrix can be used with:</p>

@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-watt_project/08_DCDC_converter_sizing_introduction';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -565,7 +567,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="design-graphs-for-the-sizing-a-dc-dc-converter">
+  <section class="tex2jax_ignore mathjax_ignore" id="design-graphs-for-the-sizing-a-dc-dc-converter">
 <h1>Design graphs for the sizing a DC/DC converter<a class="headerlink" href="#design-graphs-for-the-sizing-a-dc-dc-converter" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
 <p>The purpose of this notebook is to structure the sizing procedure of the DC / DC converter.</p>
@@ -644,28 +646,28 @@
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>Current</p></td>
-<td><p>$I$</p></td>
-<td><p>$80 A$</p></td>
+<td><p><span class="math notranslate nohighlight">\(I\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(80 A\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>Maximum voltage</p></td>
-<td><p>$V_{max}^* = 1$</p></td>
-<td><p>$900 V$</p></td>
+<td><p><span class="math notranslate nohighlight">\(V_{max}^* = 1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(900 V\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Voltage drop</p></td>
-<td><p>$V_0^*=1$</p></td>
-<td><p>$1 V$</p></td>
+<td><p><span class="math notranslate nohighlight">\(V_0^*=1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1 V\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>Dynamic resistance</p></td>
-<td><p>$R_0^<em>=I^{</em>-1}$</p></td>
-<td><p>20 m${\Omega}$</p></td>
+<td><p><span class="math notranslate nohighlight">\(R_0^*=I^{*-1}\)</span></p></td>
+<td><p>20 m<span class="math notranslate nohighlight">\({\Omega}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Commutation losses</p></td>
-<td><p>$(E_{on}+E_{off})^<em>=I^</em> E^*$</p></td>
-<td><p>$8.2 mJ$ for $E=450 V$</p></td>
+<td><p><span class="math notranslate nohighlight">\((E_{on}+E_{off})^*=I^* E^*\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(8.2 mJ\)</span> for <span class="math notranslate nohighlight">\(E=450 V\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>Thermal resistance</p></td>
-<td><p>$R_{th_JC}^<em>=I^{</em>-1}$</p></td>
-<td><p>$0.30 °C/W$</p></td>
+<td><p><span class="math notranslate nohighlight">\(R_{th_JC}^*=I^{*-1}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.30 °C/W\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -686,28 +688,28 @@
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>Current</p></td>
-<td><p>$I$</p></td>
-<td><p>$41 A$</p></td>
+<td><p><span class="math notranslate nohighlight">\(I\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(41 A\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>Maximum voltage</p></td>
-<td><p>$V_{max}^* = 1$</p></td>
-<td><p>$900 V$</p></td>
+<td><p><span class="math notranslate nohighlight">\(V_{max}^* = 1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(900 V\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Voltage drop</p></td>
-<td><p>$V_0^*=1$</p></td>
-<td><p>$1 V$</p></td>
+<td><p><span class="math notranslate nohighlight">\(V_0^*=1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1 V\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>Dynamic resistance</p></td>
-<td><p>$R_0^<em>=I^{</em>-1}$</p></td>
-<td><p>$15 m\Omega$</p></td>
+<td><p><span class="math notranslate nohighlight">\(R_0^*=I^{*-1}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(15 m\Omega\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Commutation losses</p></td>
-<td><p>$t_{rr}I_{RM}^{*}=I^<em>E^</em>$</p></td>
-<td><p>$17.2 mJ$ for $E=600 V$</p></td>
+<td><p><span class="math notranslate nohighlight">\(t_{rr}I_{RM}^{*}=I^*E^*\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(17.2 mJ\)</span> for <span class="math notranslate nohighlight">\(E=600 V\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>Thermal resistance</p></td>
-<td><p>$R_{th_JC}^{<em>}=I^{</em>-1}$</p></td>
-<td><p>$0.47 °C/W$</p></td>
+<td><p><span class="math notranslate nohighlight">\(R_{th_JC}^{*}=I^{*-1}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.47 °C/W\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -725,33 +727,33 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Mean current</p></td>
-<td><p>$I_L$</p></td>
-<td><p>$\alpha I_L$</p></td>
-<td><p>$(1-\alpha)I_L$</p></td>
+<td><p><span class="math notranslate nohighlight">\(I_L\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\alpha I_L\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\((1-\alpha)I_L\)</span></p></td>
 <td><p>0</p></td>
 </tr>
 <tr class="row-odd"><td><p>RMS current</p></td>
-<td><p>$I_{L,RMS}$</p></td>
-<td><p>$\sqrt{\alpha } I_{L,RMS}$</p></td>
-<td><p>$\sqrt{1-\alpha } I_{L,RMS}$</p></td>
-<td><p>$\sqrt{\alpha \left(1-\alpha \right)} I_{L,RMS}$</p></td>
+<td><p><span class="math notranslate nohighlight">\(I_{L,RMS}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sqrt{\alpha } I_{L,RMS}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sqrt{1-\alpha } I_{L,RMS}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sqrt{\alpha \left(1-\alpha \right)} I_{L,RMS}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>Conduction losses</p></td>
-<td><p>$R_{L}I_{RMS}^{2}$</p></td>
-<td><p>${V_{0}}{I_{mean}}+R_{0}I_{RMS}^{2}$</p></td>
-<td><p>${V_{0}}{I_{mean}}+R_{0}I_{RMS}^{2}$</p></td>
-<td><p>$R_{S}I_{RMS}^{2}$</p></td>
+<td><p><span class="math notranslate nohighlight">\(R_{L}I_{RMS}^{2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\({V_{0}}{I_{mean}}+R_{0}I_{RMS}^{2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\({V_{0}}{I_{mean}}+R_{0}I_{RMS}^{2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(R_{S}I_{RMS}^{2}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Commutation losse</p></td>
 <td><p>0</p></td>
-<td><p>$f(E_{on}+E_{off})$</p></td>
-<td><p>$\frac{1}{8} f I_{RM} E t_{rr}$</p></td>
+<td><p><span class="math notranslate nohighlight">\(f(E_{on}+E_{off})\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{8} f I_{RM} E t_{rr}\)</span></p></td>
 <td><p>0</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>with : $I_{L,RMS}=I_{L}\sqrt{1+\frac{1}{12}\left(\frac{\Delta I_{L}}{I_{L}}\right)^{2}}$</p>
+<p>with : <span class="math notranslate nohighlight">\(I_{L,RMS}=I_{L}\sqrt{1+\frac{1}{12}\left(\frac{\Delta I_{L}}{I_{L}}\right)^{2}}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>

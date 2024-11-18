@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture2/summary';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -495,7 +497,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="lecture-3-simulation-and-evaluation-models">
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-3-simulation-and-evaluation-models">
 <span id="page-lecture-3"></span><h1><span class="section-number">3. </span>Lecture 3 - Simulation and evaluation models<a class="headerlink" href="#lecture-3-simulation-and-evaluation-models" title="Link to this heading">#</a></h1>
 <p>The objective of simulation models is to establish the relationships between the different components of a system and to access the variables influencing the selection of these components. The sizing scenarios at system-level can often be represented by lumped parameter models simulated with static, transient or harmonic solvers. The level of modeling should be as simple as possible to minimize the number of parameters to be provided, and as fast as possible to allow optimization while giving access precisely to the design variables.</p>
 <p>The goal of evaluation model is to check the ability of a component to operate in its safe operating area for the required lifetime and reliability. After reviewing the state of the art of the main design drivers that limit the performance and endurance of mechatronic components, this chapter describes the possible models and ways of implementing them in system simulation environments.</p>

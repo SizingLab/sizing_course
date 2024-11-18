@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture4/4-sizing_procedure_examples';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -557,7 +559,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="design-graph-and-optimization-with-python">
+  <section class="tex2jax_ignore mathjax_ignore" id="design-graph-and-optimization-with-python">
 <h1><span class="section-number">5.4. </span>Design graph and optimization with python<a class="headerlink" href="#design-graph-and-optimization-with-python" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Toulouse, France</em></p>
 <p>This notebook continues the example started <a class="reference internal" href="2-optimization_examples.html"><span class="std std-doc">earlier</span></a>. It aims to show how a design graph can be used to structure the optimisation problem.</p>
@@ -639,7 +641,7 @@
 </div>
 <p>We assume here that :</p>
 <ul class="simple">
-<li><p>the pitch $p$ of the roller screw is 10 mm/rev.</p></li>
+<li><p>the pitch <span class="math notranslate nohighlight">\(p\)</span> of the roller screw is 10 mm/rev.</p></li>
 <li><p>The efficiency of mechanical power transmission is 100%.</p></li>
 </ul>
 <p>The objective is to select the reduction ratio of the gear reducer in order to minimize the mass of the motor.</p>
@@ -892,7 +894,7 @@ Constraints (should be &gt;= 0):
      Torque margin:  T_mot_max - T_mot_scenario= -29.089 
 -----------------------------------------------
 Calculation time:
- 0.15006566047668457 s
+ 0.14171862602233887 s
 </pre></div>
 </div>
 </div>

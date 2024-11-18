@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture4/1-design_and_optimization_problems';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -567,7 +569,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="representation-of-a-design-problem-and-basics-optimal-design">
+  <section class="tex2jax_ignore mathjax_ignore" id="representation-of-a-design-problem-and-basics-optimal-design">
 <h1><span class="section-number">5.1. </span>Representation of a design problem and basics optimal design<a class="headerlink" href="#representation-of-a-design-problem-and-basics-optimal-design" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Toulouse, France</em></p>
 <p>To date, we have been able to work on :</p>
@@ -585,19 +587,20 @@
 <h2><span class="section-number">5.1.1. </span>Preliminary design: an inverse problem<a class="headerlink" href="#preliminary-design-an-inverse-problem" title="Link to this heading">#</a></h2>
 <p>Preliminary design, is just like any other design problem, an inverse problem. The objective is to select the right components for a determined architecture. The models we use generally allow us to determine the inverse relation, which means the performances of our system (what’s required in the specifications), based on components characteristics (what systems engineers look for).</p>
 <p><img alt="Sizing Procedure and Optimization" src="../../_images/InversePb.png" /></p>
-<p>:::{dropdown} Description
-:open:
-There are essentially two types of solution to this problem:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">There are essentially two types of solution to this problem:</p>
 <ul class="simple">
-<li><p>Either selection and sizing procedures, which are an intelligent sequence of calculations and tests to determine which components should be chosen. These procedures can also be represented graphically (directed graphs or digraphs) or in the form of N-squared diagrams.</p></li>
+<li><p class="sd-card-text">Either selection and sizing procedures, which are an intelligent sequence of calculations and tests to determine which components should be chosen. These procedures can also be represented graphically (directed graphs or digraphs) or in the form of N-squared diagrams.</p></li>
 </ul>
-<p><img alt="Sizing Procedure and Optimization" src="../../_images/HarmonicDriveSelection.png" /></p>
+<p class="sd-card-text"><img alt="Sizing Procedure and Optimization" src="../../_images/HarmonicDriveSelection.png" /></p>
 <ul class="simple">
-<li><p>Or optimisation algorithms, which minimise the difference between the performance obtained and the performance required, by modifying the design parameters of the components.</p></li>
+<li><p class="sd-card-text">Or optimisation algorithms, which minimise the difference between the performance obtained and the performance required, by modifying the design parameters of the components.</p></li>
 </ul>
-<p>In this section, we show how these two types of solution can be used together.
-:::</p>
-</section>
+<p class="sd-card-text">In this section, we show how these two types of solution can be used together.</p>
+</div>
+</details></section>
 <section id="sizing-procedure-representations">
 <h2><span class="section-number">5.1.2. </span>Sizing procedure representations<a class="headerlink" href="#sizing-procedure-representations" title="Link to this heading">#</a></h2>
 <p>The sizing procedure can be considered as a major part of the whole preliminary sizing process. When the problem is complex, with numerous interactions between components of various fields (mechanical, electrical, etc.), methods for the representation and analysis of such interactions become valuable. We will focus here, on the graphical representation methods.</p>
@@ -605,40 +608,43 @@ There are essentially two types of solution to this problem:</p>
 <h3><span class="section-number">5.1.2.1. </span>Causal diagram<a class="headerlink" href="#causal-diagram" title="Link to this heading">#</a></h3>
 <p>The causal diagram is a graphical tool representing the causal relationships between variables. It is, in fact an oriented graph representing a calculation scheme. Figures below give examples of causal diagrams used in the Salome platform for the Pre- and Post-Processing of numerical simulations or for a space envelope estimation.</p>
 <p><img alt="Causal Diagrams" src="../../_images/CausalDiagrams.png" /></p>
-<p>:::{dropdown} Description
-:open:
-With a causal diagram, the couplings between the different entities can be difficult to visualize. A major problem is that of algebraic loops, which is well known in industrial processes where Excel spread-sheets bring together component sizing procedures that must not present circular reference errors (i.e. loops) such as y=f(x) and x=g(y).
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">With a causal diagram, the couplings between the different entities can be difficult to visualize. A major problem is that of algebraic loops, which is well known in industrial processes where Excel spread-sheets bring together component sizing procedures that must not present circular reference errors (i.e. loops) such as y=f(x) and x=g(y).
 Several solutions are possible:</p>
 <ul class="simple">
-<li><p>reject the possibility of such loopbacks in the construction of the causal diagram</p></li>
-<li><p>solve all the coupled equations (this analytical solution is not always possible even with a symbolic maths package) analytically</p></li>
-<li><p>solve these equations using a numerical solver.</p></li>
+<li><p class="sd-card-text">reject the possibility of such loopbacks in the construction of the causal diagram</p></li>
+<li><p class="sd-card-text">solve all the coupled equations (this analytical solution is not always possible even with a symbolic maths package) analytically</p></li>
+<li><p class="sd-card-text">solve these equations using a numerical solver.</p></li>
 </ul>
-<p>For the latter, two implementations are possible. In the first, the numerical solver used is internal to the calculation procedure and its computer support. This sizing procedure is difficult to export to other optimization or calculation tools, however.<br />
-For the second implementation, the code generated, which corresponds to the sizing procedure, postpones the task of numerical solver to the optimization algorithm. It is then necessary to add design parameters and additional constraints in the optimization problem to manage these algebraic loops. This is the preferred solution in this course.<br />
-:::</p>
-</section>
+<p class="sd-card-text">For the latter, two implementations are possible. In the first, the numerical solver used is internal to the calculation procedure and its computer support. This sizing procedure is difficult to export to other optimization or calculation tools, however.<br />
+For the second implementation, the code generated, which corresponds to the sizing procedure, postpones the task of numerical solver to the optimization algorithm. It is then necessary to add design parameters and additional constraints in the optimization problem to manage these algebraic loops. This is the preferred solution in this course.</p>
+</div>
+</details></section>
 <section id="n2-diagram">
 <h3><span class="section-number">5.1.2.2. </span>N² diagram<a class="headerlink" href="#n2-diagram" title="Link to this heading">#</a></h3>
 <p>This diagram is a causal diagram where the graphical entities (blocks) and interactions (arrows) are dictated by an organization convention as shown below.<br />
 <img alt="N2 Diagram" src="../../_images/N2diagram.png" /></p>
-<p>:::{dropdown} Description
-:open:
-The N2D formalisms were introduced in the 1970s by the system engineer Robert J. Lano. N is the number of entities considered. The inputs of the blocks are represented by vertical arrows while the outputs must be horizontal arrows. This display provides a quick visual summary of the organization of the system studied. In particular, the couplings and algebraic loops between blocks are easily identifiable, for example when a block “2” provides an input to block “3” and block “3” provides an input to block “2”.<br />
-:::</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The N2D formalisms were introduced in the 1970s by the system engineer Robert J. Lano. N is the number of entities considered. The inputs of the blocks are represented by vertical arrows while the outputs must be horizontal arrows. This display provides a quick visual summary of the organization of the system studied. In particular, the couplings and algebraic loops between blocks are easily identifiable, for example when a block “2” provides an input to block “3” and block “3” provides an input to block “2”.</p>
+</div>
+</details></section>
 <section id="graphs">
 <h3><span class="section-number">5.1.2.3. </span>Graphs<a class="headerlink" href="#graphs" title="Link to this heading">#</a></h3>
 <p>A sizing procedure is quite similar to a constraint network where sizing parameters represent variables and equalities/inequalities represent constraints. Therefore, all the tools applied to the representation of constraint networks and so graph theory, can be applied.</p>
 <p><img alt="Graph Example" src="../../_images/GraphExample.PNG" /></p>
-<p>:::{dropdown} Description
-:open:
-Graphics above represent how equations match parameters. Let us take the equation (declarative equation, not imperative assignment) of Figure a, to show these representations:<br />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Graphics above represent how equations match parameters. Let us take the equation (declarative equation, not imperative assignment) of Figure a, to show these representations:<br />
 a. in which case equations (square node) and non-determined parameters (circular node) are represented in a non-oriented graph.
 b. matching is generally represented in what is called a bi-partite graph : with all the equation nodes on one side and on all all the non-determined parameter nodes on the other side. A matching parameter/equation is then represented by a double-column.<br />
 c. once equations are oriented (one parameter is matched to the equation, i.e. is calculated by the equation), a simplified graph can be drawn with no more equation nodes.</p>
-<p>:::</p>
-</section>
+</div>
+</details></section>
 </section>
 <section id="sizing-as-an-optimization-problem">
 <h2><span class="section-number">5.1.3. </span>Sizing as an optimization problem<a class="headerlink" href="#sizing-as-an-optimization-problem" title="Link to this heading">#</a></h2>
@@ -646,17 +652,17 @@ c. once equations are oriented (one parameter is matched to the equation, i.e. i
 <h3><span class="section-number">5.1.3.1. </span>Optimization problem formulation<a class="headerlink" href="#optimization-problem-formulation" title="Link to this heading">#</a></h3>
 <p>An optimization problem can be formulated mathematically as follows:</p>
 <ul class="simple">
-<li><p>Minimize an objective function: $f(x)$</p></li>
-<li><p>Subject to equality and inequality constraints: $h(x) = 0$ and $g(x) &gt; 0$</p></li>
-<li><p>By action on the variable vector $x$ in the range $x_{low}&lt;x&lt;x_{up}$</p></li>
+<li><p>Minimize an objective function: <span class="math notranslate nohighlight">\(f(x)\)</span></p></li>
+<li><p>Subject to equality and inequality constraints: <span class="math notranslate nohighlight">\(h(x) = 0\)</span> and <span class="math notranslate nohighlight">\(g(x) &gt; 0\)</span></p></li>
+<li><p>By action on the variable vector <span class="math notranslate nohighlight">\(x\)</span> in the range <span class="math notranslate nohighlight">\(x_{low}&lt;x&lt;x_{up}\)</span></p></li>
 </ul>
 <p>where:</p>
 <ul class="simple">
-<li><p>the goal is the objective function $f$;</p></li>
-<li><p>design alternatives are expressed by a set of values assigned to the design variables $x$ within a design domain;</p></li>
-<li><p>constraints ($h$ &amp; $g$) limit the number of alternatives to those satisfying physical principles and design specifications, that is to say feasible design.</p></li>
+<li><p>the goal is the objective function <span class="math notranslate nohighlight">\(f\)</span>;</p></li>
+<li><p>design alternatives are expressed by a set of values assigned to the design variables <span class="math notranslate nohighlight">\(x\)</span> within a design domain;</p></li>
+<li><p>constraints (<span class="math notranslate nohighlight">\(h\)</span> &amp; <span class="math notranslate nohighlight">\(g\)</span>) limit the number of alternatives to those satisfying physical principles and design specifications, that is to say feasible design.</p></li>
 </ul>
-<p>The functions ($f, g, h$) can be explicit or implicit, algebraic or performed by subroutines that solve systems of differential equations iteratively.</p>
+<p>The functions (<span class="math notranslate nohighlight">\(f, g, h\)</span>) can be explicit or implicit, algebraic or performed by subroutines that solve systems of differential equations iteratively.</p>
 <div class="exercise admonition" id="SizingProblem">
 
 <p class="admonition-title"><span class="caption-number">Exercise 5.1 </span></p>
@@ -669,16 +675,16 @@ c. once equations are oriented (one parameter is matched to the equation, i.e. i
 <p class="admonition-title">Solution to</p>
 <section id="solution-content">
 <p><strong>Objective</strong>:<br />
-$\text{Minimise the mass of the entire drone}$<br />
+<span class="math notranslate nohighlight">\(\text{Minimise the mass of the entire drone}\)</span><br />
 <strong>Design variables</strong>:<br />
-$x=[\text{propeller diameter, propeller pitch, motor torque, battery capacity}]$<br />
+<span class="math notranslate nohighlight">\(x=[\text{propeller diameter, propeller pitch, motor torque, battery capacity}]\)</span><br />
 <strong>Constraints</strong>:</p>
 <ul class="simple">
 <li><p><em>equality</em>:
-$\text{hovering range - 15 min} = 0$</p></li>
+<span class="math notranslate nohighlight">\(\text{hovering range - 15 min} = 0\)</span></p></li>
 <li><p><em>inequalities</em>:
-$\text{take-off thrust - k.weight}  &gt; 0$<br />
-$\text{battery voltage - motor voltage} &gt; 0$</p></li>
+<span class="math notranslate nohighlight">\(\text{take-off thrust - k.weight}  &gt; 0\)</span><br />
+<span class="math notranslate nohighlight">\(\text{battery voltage - motor voltage} &gt; 0\)</span></p></li>
 </ul>
 </section>
 </div>

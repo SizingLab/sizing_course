@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-watt_project/02a_Architecture_UltraCapacitor';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -560,7 +562,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="architecture-of-the-converter-and-sizing-scenarios">
+  <section class="tex2jax_ignore mathjax_ignore" id="architecture-of-the-converter-and-sizing-scenarios">
 <h1>Architecture of the converter and sizing scenarios<a class="headerlink" href="#architecture-of-the-converter-and-sizing-scenarios" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
 <p>Before sizing a system, it is important to define all the constraints that could have an influence on the design. It is therefore advisable to list meticulously:</p>
@@ -587,20 +589,20 @@ An adapted Lithium-ion battery pack is installed in the bus for cases of impossi
 <h2>Ultracapacitors modules selection<a class="headerlink" href="#ultracapacitors-modules-selection" title="Link to this heading">#</a></h2>
 <p>In order to estimate the dimensions of the ultracapacities pack, we will be interested in the energy to be supplied to the motorization of the bus on a typical path:</p>
 <ul class="simple">
-<li><p>top speed $v_{max}$ = 30 km/h</p></li>
-<li><p>distance between 2 totems $d$ = 800 m</p></li>
-<li><p>maximum height difference $h$ = 3 m</p></li>
+<li><p>top speed <span class="math notranslate nohighlight">\(v_{max}\)</span> = 30 km/h</p></li>
+<li><p>distance between 2 totems <span class="math notranslate nohighlight">\(d\)</span> = 800 m</p></li>
+<li><p>maximum height difference <span class="math notranslate nohighlight">\(h\)</span> = 3 m</p></li>
 </ul>
 <p>The bus has the following characteristics:</p>
 <ul class="simple">
-<li><p>mass with passengers $m$ = 20 t</p></li>
-<li><p><a class="reference external" href="http://en.wikipedia.org/wiki/Rolling_resistance">Rolling coefficient</a> tires $C_{rr} = 0.01$</p></li>
+<li><p>mass with passengers <span class="math notranslate nohighlight">\(m\)</span> = 20 t</p></li>
+<li><p><a class="reference external" href="http://en.wikipedia.org/wiki/Rolling_resistance">Rolling coefficient</a> tires <span class="math notranslate nohighlight">\(C_{rr} = 0.01\)</span></p></li>
 </ul>
 <p>Aerodynamic effect are assume here to be negligeable dur to low speed of the bus.</p>
 <blockquote>
 <div><p>Exercice: Complete this notebook with the equations enabling to calculate the maximum energy to supply (and to store) to the electrical power train. Use for that markdown (<a class="reference external" href="https://www.markdowntutorial.com/">here</a> a markdown tutorial and <a class="reference external" href="https://guides.github.com/features/mastering-markdown/">here</a> a quick introduction) and Latex notation (between “$”).</p>
 </div></blockquote>
-<p>$E=E_k+E_g+W_r=1/2<em>m</em>v_{max}^2+m<em>g</em>h+m<em>g</em>C_{rr}*d$</p>
+<p><span class="math notranslate nohighlight">\(E=E_k+E_g+W_r=1/2*m*v_{max}^2+m*g*h+m*g*C_{rr}*d\)</span></p>
 <blockquote>
 <div><p>Exercice: Calculate (with python) the maximum energy to supply (and to store) to the electrical power train.</p>
 </div></blockquote>
@@ -640,7 +642,7 @@ Total energy     : 2.9e+06 J
 <p><em>Maxwell module characteristics</em>
 <img alt="MaxwellModule" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/MaxwellModule.png" /></p>
 <blockquote>
-<div><p>Exercice: Explain and calculate with python the minimum number of modules  assuming that the minimum operating voltage will be equal to $V_{max}/2$.</p>
+<div><p>Exercice: Explain and calculate with python the minimum number of modules  assuming that the minimum operating voltage will be equal to <span class="math notranslate nohighlight">\(V_{max}/2\)</span>.</p>
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-multirotor/07_DesignExploration-Student';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -549,9 +551,9 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomy">Autonomy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uav-total-mass-m-total-real">UAV total mass ($M_{total,real}$)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-total-real-vs-autonomy">$M_{total,real}$ vs Autonomy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-total-real-vs-payload">$M_{total,real}$ vs Payload</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uav-total-mass-m-total-real">UAV total mass (<span class="math notranslate nohighlight">\(M_{total,real}\)</span>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-total-real-vs-autonomy"><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Autonomy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-total-real-vs-payload"><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Payload</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomy-vs-payload">Autonomy vs Payload</a></li>
 </ul>
 </li>
@@ -572,7 +574,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="design-optimization-and-exploration-of-a-multirotor-drone-isae">
+  <section class="tex2jax_ignore mathjax_ignore" id="design-optimization-and-exploration-of-a-multirotor-drone-isae">
 <h1>Design optimization and exploration of a multirotor drone (ISAE)<a class="headerlink" href="#design-optimization-and-exploration-of-a-multirotor-drone-isae" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Scott Delbecq (ISAE-SUPAERO) and Félix Pollet (ISAE-SUPAERO), Toulouse, France.</em></p>
 <p>The objective of this notebook is to use and modify the sizing code of the UAV to explore the design space.</p>
@@ -705,7 +707,7 @@ The models are separated by components and located in different Python files <co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openmdao.core.problem.Problem at 0x7ff4be0506a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openmdao.core.problem.Problem at 0x7f9f5bdec8e0&gt;
 </pre></div>
 </div>
 </div>
@@ -1022,13 +1024,13 @@ constraints
 </section>
 </section>
 <section id="uav-total-mass-m-total-real">
-<h2>UAV total mass ($M_{total,real}$)<a class="headerlink" href="#uav-total-mass-m-total-real" title="Link to this heading">#</a></h2>
+<h2>UAV total mass (<span class="math notranslate nohighlight">\(M_{total,real}\)</span>)<a class="headerlink" href="#uav-total-mass-m-total-real" title="Link to this heading">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>From now on, deactivate the constraint on the MTOW.</p>
 </div>
 <section id="m-total-real-vs-autonomy">
-<h3>$M_{total,real}$ vs Autonomy<a class="headerlink" href="#m-total-real-vs-autonomy" title="Link to this heading">#</a></h3>
+<h3><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Autonomy<a class="headerlink" href="#m-total-real-vs-autonomy" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
@@ -1039,7 +1041,7 @@ constraints
 <p>Please comment…</p>
 </section>
 <section id="m-total-real-vs-payload">
-<h3>$M_{total,real}$ vs Payload<a class="headerlink" href="#m-total-real-vs-payload" title="Link to this heading">#</a></h3>
+<h3><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Payload<a class="headerlink" href="#m-total-real-vs-payload" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To be completed </span>
@@ -1171,9 +1173,9 @@ constraints
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomy">Autonomy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uav-total-mass-m-total-real">UAV total mass ($M_{total,real}$)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-total-real-vs-autonomy">$M_{total,real}$ vs Autonomy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-total-real-vs-payload">$M_{total,real}$ vs Payload</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uav-total-mass-m-total-real">UAV total mass (<span class="math notranslate nohighlight">\(M_{total,real}\)</span>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-total-real-vs-autonomy"><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Autonomy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-total-real-vs-payload"><span class="math notranslate nohighlight">\(M_{total,real}\)</span> vs Payload</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomy-vs-payload">Autonomy vs Payload</a></li>
 </ul>
 </li>

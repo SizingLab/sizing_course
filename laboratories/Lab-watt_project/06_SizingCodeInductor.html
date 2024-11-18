@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-watt_project/06_SizingCodeInductor';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -559,7 +561,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="sizing-code-of-an-inductor">
+  <section class="tex2jax_ignore mathjax_ignore" id="sizing-code-of-an-inductor">
 <h1>Sizing code of an inductor<a class="headerlink" href="#sizing-code-of-an-inductor" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
 <p>The objective of this notebook is to set up the sizing procedure of a power inductance. This procedure will subsequently be completed and integrated into the design procedure of the complete DC / DC converter.
@@ -581,25 +583,25 @@ We will see here successively:</p>
 <h2>Characteristical equations of an inductor<a class="headerlink" href="#characteristical-equations-of-an-inductor" title="Link to this heading">#</a></h2>
 <p>We will give here the equations allowing to calculate an inductance starting from its geometrical configuration. Here we use a ferrite pot with a E core geometry (as shown below).</p>
 <p><img alt="PowerInductor" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/E_CoreInductor.png" /></p>
-<p>An inductance $L$ expresses the relationship between a current $I$ and a magnetic flux $\phi$:
-$\phi=LI$</p>
-<p>The magnetic flux is calculated by surface integration of the magnetic field $B$:
-$\varphi= \iint\vec{B}.d\vec{S}$</p>
+<p>An inductance <span class="math notranslate nohighlight">\(L\)</span> expresses the relationship between a current <span class="math notranslate nohighlight">\(I\)</span> and a magnetic flux <span class="math notranslate nohighlight">\(\phi\)</span>:
+<span class="math notranslate nohighlight">\(\phi=LI\)</span></p>
+<p>The magnetic flux is calculated by surface integration of the magnetic field <span class="math notranslate nohighlight">\(B\)</span>:
+<span class="math notranslate nohighlight">\(\varphi= \iint\vec{B}.d\vec{S}\)</span></p>
 <p>The inductance contains generally a coil of multiple turns (N turns) which see the global magnetic flux:
-$\phi=N.\varphi$</p>
-<p>The Lenz Law express the induced voltage $e$ in a winding of N turns: $e=-Ndφ/dt$<br />
+<span class="math notranslate nohighlight">\(\phi=N.\varphi\)</span></p>
+<p>The Lenz Law express the induced voltage <span class="math notranslate nohighlight">\(e\)</span> in a winding of N turns: <span class="math notranslate nohighlight">\(e=-Ndφ/dt\)</span><br />
 With receptor convention, the Lenz Law gives the well-known relation for an inductance (auto-induction):
-$U=LdI/dt$</p>
-<p>The Magnetic field $B$ can be evaluated with the following relationships:</p>
+<span class="math notranslate nohighlight">\(U=LdI/dt\)</span></p>
+<p>The Magnetic field <span class="math notranslate nohighlight">\(B\)</span> can be evaluated with the following relationships:</p>
 <ul class="simple">
-<li><p>The conservation of the magnetic flow: $\iint\vec{B}.d\vec{S}=0$ for a closed surface or $\iint\vec{B_{in}}.d\vec{S}=\iint\vec{B_{out}}.d\vec{S}$</p></li>
-<li><p>The Ampere theorem: $\oint \frac{\vec{B}}{\mu}.d\vec{l}=NI$
-with $\mu=\mu_0\mu_r$ the permeability of materials ($\mu_0=4\pi10^{-7}$).</p></li>
+<li><p>The conservation of the magnetic flow: <span class="math notranslate nohighlight">\(\iint\vec{B}.d\vec{S}=0\)</span> for a closed surface or <span class="math notranslate nohighlight">\(\iint\vec{B_{in}}.d\vec{S}=\iint\vec{B_{out}}.d\vec{S}\)</span></p></li>
+<li><p>The Ampere theorem: <span class="math notranslate nohighlight">\(\oint \frac{\vec{B}}{\mu}.d\vec{l}=NI\)</span>
+with <span class="math notranslate nohighlight">\(\mu=\mu_0\mu_r\)</span> the permeability of materials (<span class="math notranslate nohighlight">\(\mu_0=4\pi10^{-7}\)</span>).</p></li>
 </ul>
-<p>A winding with multiple turns and the use of ferromagnetic material with high $\mu_r$ increase the induction.</p>
+<p>A winding with multiple turns and the use of ferromagnetic material with high <span class="math notranslate nohighlight">\(\mu_r\)</span> increase the induction.</p>
 <blockquote>
 <div><p>Exercice: demonstrate that the stored magnetic energy and inductance value can be expressed by the following relationships<br />
-$\frac{1}{2}LI^2=\frac{1}{2}\frac{B^2}{\mu_0}2A_{iron}e$ and $L=N^2\frac{\mu_0A_{iron}}{2e}$</p>
+<span class="math notranslate nohighlight">\(\frac{1}{2}LI^2=\frac{1}{2}\frac{B^2}{\mu_0}2A_{iron}e\)</span> and <span class="math notranslate nohighlight">\(L=N^2\frac{\mu_0A_{iron}}{2e}\)</span></p>
 </div></blockquote>
 </section>
 <section id="design-graph">

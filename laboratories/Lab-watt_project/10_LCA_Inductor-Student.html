@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-watt_project/10_LCA_Inductor-Student';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -568,7 +570,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="life-cycle-assessment-of-an-inductor-student-version">
+  <section class="tex2jax_ignore mathjax_ignore" id="life-cycle-assessment-of-an-inductor-student-version">
 <h1>Life Cycle Assessment of an inductor (student version)<a class="headerlink" href="#life-cycle-assessment-of-an-inductor-student-version" title="Link to this heading">#</a></h1>
 <p><em>Written by Félix Pollet, ISAE-Supaéro, France</em></p>
 <p>The objective of this notebook is to conduct a life cycle assessment (LCA) on the inductor to evaluate its environmental impact over several categories such as climate change and depletion of material resources, among others.</p>
@@ -1385,12 +1387,12 @@ Have a look at the normalized results. What impact categories are the most relev
 </section>
 <section id="sensitivity-analysis">
 <h2>4. Sensitivity analysis<a class="headerlink" href="#sensitivity-analysis" title="Link to this heading">#</a></h2>
-<p>In the first place, we have assumed that the inductor will be used for $T_{use}=14,600$ hours during its lifetime. However, this assumption may be too pessimistic or optimistic. The LCA practitioner must always check the sensitivity of the results to the assumptions to ensure the robustness of the study.</p>
+<p>In the first place, we have assumed that the inductor will be used for <span class="math notranslate nohighlight">\(T_{use}=14,600\)</span> hours during its lifetime. However, this assumption may be too pessimistic or optimistic. The LCA practitioner must always check the sensitivity of the results to the assumptions to ensure the robustness of the study.</p>
 <blockquote>
 <div><p><strong>Exercise (Sensitivity to lifetime assumption)</strong><br>
-Re-run the analysis for different assumptions over the inductors’s lifetime, for example $T_{use}$ ranging from 10,000 to 20,000 hours. Do you observe any difference?</p>
+Re-run the analysis for different assumptions over the inductors’s lifetime, for example <span class="math notranslate nohighlight">\(T_{use}\)</span> ranging from 10,000 to 20,000 hours. Do you observe any difference?</p>
 </div></blockquote>
-<p>In the following, we will keep $T_{use}= 5 \times 365 \times 8 = 14,600$ hours.</p>
+<p>In the following, we will keep <span class="math notranslate nohighlight">\(T_{use}= 5 \times 365 \times 8 = 14,600\)</span> hours.</p>
 </section>
 <section id="sizing-optimization-with-various-environmental-objectives">
 <h2>5. Sizing optimization with various environmental objectives<a class="headerlink" href="#sizing-optimization-with-various-environmental-objectives" title="Link to this heading">#</a></h2>
@@ -1736,10 +1738,11 @@ Propose a strategy to make a decision about which sizing should be used for the 
 <section id="multi-objective-optimization">
 <h2>6. Multi-objective optimization<a class="headerlink" href="#multi-objective-optimization" title="Link to this heading">#</a></h2>
 <p>The multi-objective optimization consists in having a single objective function that is expressed as a weighted sum of all the categories of environmental impact. This results in a single environmental score:</p>
-<p>$$ Single~score = \sum_i w_i \cdot {NS}_i$$</p>
-<p>where ${NS}_i$ is the normalized score obtained for the i-th impact category (1 = acidification, 2 = climate change, and so on) and $w_i$ is a weighting factor that represents the (subjective) importance accorded to this category.</p>
+<div class="math notranslate nohighlight">
+\[ Single~score = \sum_i w_i \cdot {NS}_i\]</div>
+<p>where <span class="math notranslate nohighlight">\({NS}_i\)</span> is the normalized score obtained for the i-th impact category (1 = acidification, 2 = climate change, and so on) and <span class="math notranslate nohighlight">\(w_i\)</span> is a weighting factor that represents the (subjective) importance accorded to this category.</p>
 <p>Similarly to the normalization factors, the <em>Environmental Footprint method</em> provides a set of <a class="reference external" href="https://publications.jrc.ec.europa.eu/repository/handle/JRC106545">weighting factors</a> for each impact category. Note that process for obtaining these weighting factors is rather subjective, as it suppose to rank very different environmental impacts. It can include criteria such as the reversibility of the impacts, the geographic spread of the impact and its time span.</p>
-<p>The weighting factors $w_i$ proposed by the Environmental Footprint method are provided in an excel document and displayed below:</p>
+<p>The weighting factors <span class="math notranslate nohighlight">\(w_i\)</span> proposed by the Environmental Footprint method are provided in an excel document and displayed below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import weighting factors</span>

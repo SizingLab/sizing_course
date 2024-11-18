@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-multirotor/02b_SizingScenariosEquations-Student';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -555,7 +557,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="equations-of-sizing-scenarios-insa">
+  <section class="tex2jax_ignore mathjax_ignore" id="equations-of-sizing-scenarios-insa">
 <h1>Equations of sizing scenarios (INSA)<a class="headerlink" href="#equations-of-sizing-scenarios-insa" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
 <p>The purpose of this notebook is to illustrate on an existing drone example the main equations to be taken into account during the sizing. The selected drone is the <a class="reference external" href="http://wiki.mikrokopter.de/MK-Quadro">MK-Quadro</a> drone of Mikrokopter. The technical informations about the MK-quadro drone can be found in <a class="reference internal" href="#A1_QuadroDescription.ipynb"><span class="xref myst">Annex 1</span></a> or on the website of <a class="reference external" href="http://wiki.mikrokopter.de/en/FlightTime">MikroKopter</a> company.</p>
@@ -565,13 +567,13 @@
 <h2>Propellers fundamental equations<a class="headerlink" href="#propellers-fundamental-equations" title="Link to this heading">#</a></h2>
 <p>Propellers can be described in an ideal manner by the <a class="reference external" href="https://fenix.tecnico.ulisboa.pt/downloadFile/282093452028191/3-Momentum%20Theory%20in%20hover.pdf">disk momentum theory</a>. The <a class="reference internal" href="#%5Bhttps://web.mit.edu/16.unified/www/FALL/thermodynamics/notes/node86.html#SECTION06374000000000000000%5D"><span class="xref myst">dimensional analysis</span></a> theory enables to describe with more details the propeller performances thanks to  aerodynamic coefficients:</p>
 <ul class="simple">
-<li><p>The thrust: $T = C_{T,h} \rho \Omega^2 A R^2=C_{T,p} \rho n^2 D^4$  which gives $ = k_{TD} \Omega^2$ for a given propeller and a given diameter</p></li>
-<li><p>The power: $P = C_{P,h} \rho \Omega^3 A R^3=C_{P,p} \rho n^3 D^5 $ which gives the power $P=k_{PD}\Omega^3$ or the torque $M = k_{PD} \Omega^2$ for a given propeller and a given diameter</p></li>
+<li><p>The thrust: <span class="math notranslate nohighlight">\(T = C_{T,h} \rho \Omega^2 A R^2=C_{T,p} \rho n^2 D^4\)</span>  which gives <span class="math notranslate nohighlight">\( = k_{TD} \Omega^2\)</span> for a given propeller and a given diameter</p></li>
+<li><p>The power: <span class="math notranslate nohighlight">\(P = C_{P,h} \rho \Omega^3 A R^3=C_{P,p} \rho n^3 D^5 \)</span> which gives the power <span class="math notranslate nohighlight">\(P=k_{PD}\Omega^3\)</span> or the torque <span class="math notranslate nohighlight">\(M = k_{PD} \Omega^2\)</span> for a given propeller and a given diameter</p></li>
 </ul>
 <p><strong>Remark:</strong> Be carefull, litterature shows 2 notations :</p>
 <ul class="simple">
-<li><p>the propeller notation with n the propeller speed in [rev/s], D the diameter in [m], $\rho$  the air density in [$kg/m^3$]</p></li>
-<li><p>the helicopter notation with $\Omega$ the propeller speed in [rad/s], R the radius in [m], $A$ the disk area in [$m^2$], $\rho$  the air density in [$kg/m^3$]</p></li>
+<li><p>the propeller notation with n the propeller speed in [rev/s], D the diameter in [m], <span class="math notranslate nohighlight">\(\rho\)</span>  the air density in [<span class="math notranslate nohighlight">\(kg/m^3\)</span>]</p></li>
+<li><p>the helicopter notation with <span class="math notranslate nohighlight">\(\Omega\)</span> the propeller speed in [rad/s], R the radius in [m], <span class="math notranslate nohighlight">\(A\)</span> the disk area in [<span class="math notranslate nohighlight">\(m^2\)</span>], <span class="math notranslate nohighlight">\(\rho\)</span>  the air density in [<span class="math notranslate nohighlight">\(kg/m^3\)</span>]</p></li>
 </ul>
 <blockquote>
 <div><p>Exercice: compare the caracteristics of the following <a class="reference external" href="https://www.apcprop.com/files/PER3_10x45MR.dat">APC propellers</a> to those of the MikroKopter MK-Quadro (<a class="reference external" href="https://gwsus.com/english/dealer/dealer_gwsusa.htm">GWS</a>).</p>
@@ -592,26 +594,26 @@
 <td><p>4.5</p></td>
 <td><p>4.5</p></td>
 </tr>
-<tr class="row-even"><td><p>Thrust coef $C_t$ [-]</p></td>
+<tr class="row-even"><td><p>Thrust coef <span class="math notranslate nohighlight">\(C_t\)</span> [-]</p></td>
 <td><p>0.1125</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>Power coef $C_p$ [-]</p></td>
+<tr class="row-odd"><td><p>Power coef <span class="math notranslate nohighlight">\(C_p\)</span> [-]</p></td>
 <td><p>0.0441</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p>Thrust coef $k_{TD}$ [$\frac{N}{(rad/s)^2}$]</p></td>
+<tr class="row-even"><td><p>Thrust coef <span class="math notranslate nohighlight">\(k_{TD}\)</span> [<span class="math notranslate nohighlight">\(\frac{N}{(rad/s)^2}\)</span>]</p></td>
 <td><p></p></td>
-<td><p>$1.799.10^{-5}$</p></td>
+<td><p><span class="math notranslate nohighlight">\(1.799.10^{-5}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p>Torque coefficient $k_{PD}$ [$\frac{N}{(rad/s)^2}$]</p></td>
+<tr class="row-odd"><td><p>Torque coefficient <span class="math notranslate nohighlight">\(k_{PD}\)</span> [<span class="math notranslate nohighlight">\(\frac{N}{(rad/s)^2}\)</span>]</p></td>
 <td><p></p></td>
-<td><p>$3.054.10^{-7}$</p></td>
+<td><p><span class="math notranslate nohighlight">\(3.054.10^{-7}\)</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>with: $1$ $inch = 0.0254$ $m$, $\rho=1.18$ $kg/m^3$</p>
+<p>with: <span class="math notranslate nohighlight">\(1\)</span> <span class="math notranslate nohighlight">\(inch = 0.0254\)</span> <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(\rho=1.18\)</span> <span class="math notranslate nohighlight">\(kg/m^3\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="mf">0.0254</span> <span class="c1"># [m] Propeller diameter</span>

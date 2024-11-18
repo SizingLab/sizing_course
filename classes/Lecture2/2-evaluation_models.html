@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture2/2-evaluation_models';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -558,7 +560,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="evaluation-models">
+  <section class="tex2jax_ignore mathjax_ignore" id="evaluation-models">
 <h1><span class="section-number">3.2. </span>Evaluation models<a class="headerlink" href="#evaluation-models" title="Link to this heading">#</a></h1>
 <p>The objective evaluation models is to check the ability of a component to operate in its safe operating area for the required lifetime and reliability. After reviewing the state of the art of the main design drivers that limit the performance and endurance of mechatronic components, this lecture describes the possible models and ways of implementing them in system simulation environments by focusing on lifetime evaluation.</p>
 <p><img alt="Simulation Models" src="../../_images/EvaluationModelPosition.png" /></p>
@@ -577,40 +579,42 @@ Maximum acceptable transient speed<br />
 Nominal operation point (nominal torque and speed) and reliability<br />
 <em>Addresses gradual degradation (e.g., fatigue) and ensures reliable operation during service lifetime</em></p>
 <p><img alt="Example of scenarios" src="../../_images/RadidGradualDegradation.png" /></p>
-<p>:::{dropdown} Description
-:open:
-The evaluation models determine whether each component will remain within its performance limits and can be expected to have the required lifetime and reliability. The 2 aspects to check are:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The evaluation models determine whether each component will remain within its performance limits and can be expected to have the required lifetime and reliability. The 2 aspects to check are:</p>
 <ul class="simple">
-<li><p><strong>Transient power demands</strong> to ensure system performance: the models have to analyze the maximum stress (such as torque or speed) to avoid rapid deterioration. Component degradation can be avoided if the use is kept inside a Safe Operating Area (SOA). This point can be checked by the simulation models and operating domains deduced from the estimation models.</p></li>
-<li><p><strong>Continuous power demands</strong> to ensure the endurance of the system: the models have to calculate quantities equivalent to the nominal point of operation and reliability rate in order to avoid critical degradation over time (e.g. fatigue). This point will be treated in greater detail in this chapter.</p></li>
+<li><p class="sd-card-text"><strong>Transient power demands</strong> to ensure system performance: the models have to analyze the maximum stress (such as torque or speed) to avoid rapid deterioration. Component degradation can be avoided if the use is kept inside a Safe Operating Area (SOA). This point can be checked by the simulation models and operating domains deduced from the estimation models.</p></li>
+<li><p class="sd-card-text"><strong>Continuous power demands</strong> to ensure the endurance of the system: the models have to calculate quantities equivalent to the nominal point of operation and reliability rate in order to avoid critical degradation over time (e.g. fatigue). This point will be treated in greater detail in this chapter.</p></li>
 </ul>
-<p>Operational limits in transient domain can be represented by a <strong>power plan</strong>, like the effort/speed one. The effort-speed characteristics (or effort-position) allow to represent in a graphic way the principal mechanic attributes of an actuator : effort, speed, and, as of product of those, power.
-:::</p>
-</section>
+<p class="sd-card-text">Operational limits in transient domain can be represented by a <strong>power plan</strong>, like the effort/speed one. The effort-speed characteristics (or effort-position) allow to represent in a graphic way the principal mechanic attributes of an actuator : effort, speed, and, as of product of those, power.</p>
+</div>
+</details></section>
 <section id="force-speed-diagrams-component-selection">
 <h2><span class="section-number">3.2.2. </span>Force speed diagrams &amp; component selection<a class="headerlink" href="#force-speed-diagrams-component-selection" title="Link to this heading">#</a></h2>
 <p>The force-speed plane in mechanics, voltage-current in electricity, pressure-flow in hydraulics, can be used as an abbreviated representation of a component’s operational limits.</p>
 <p><img alt="Example of scenarios" src="../../_images/ForceSpeedDiagram.png" /></p>
-<p>:::{dropdown} Description
-:open:
-Those graphs show the operational limits in an effort speed plan for several components :</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Those graphs show the operational limits in an effort speed plan for several components :</p>
 <ol class="arabic simple">
-<li><p>A mechanic reducer (gears)</p></li>
-<li><p>A combustion motor</p></li>
-<li><p>An hydraulic	jack, piloted by a servovalve</p></li>
-<li><p>An electric motor, with permanent magnets and a speed variator</p></li>
+<li><p class="sd-card-text">A mechanic reducer (gears)</p></li>
+<li><p class="sd-card-text">A combustion motor</p></li>
+<li><p class="sd-card-text">An hydraulic	jack, piloted by a servovalve</p></li>
+<li><p class="sd-card-text">An electric motor, with permanent magnets and a speed variator</p></li>
 </ol>
-<p>We can also use this graphic representation to characterize mechanical loads to move (with the receiver convention)</p>
+<p class="sd-card-text">We can also use this graphic representation to characterize mechanical loads to move (with the receiver convention)</p>
 <ol class="arabic simple">
-<li><p>For constant torque : lifting devices, conveyors, high speed vehicles</p></li>
-<li><p>Torques function of speed (square) : fans, pumps,  propellers</p></li>
-<li><p>Constant speed : synchronous alternators</p></li>
-<li><p>Constant powers : winding devices, lathe machines</p></li>
-<li><p>Any mission profile which varies with time.</p></li>
+<li><p class="sd-card-text">For constant torque : lifting devices, conveyors, high speed vehicles</p></li>
+<li><p class="sd-card-text">Torques function of speed (square) : fans, pumps,  propellers</p></li>
+<li><p class="sd-card-text">Constant speed : synchronous alternators</p></li>
+<li><p class="sd-card-text">Constant powers : winding devices, lathe machines</p></li>
+<li><p class="sd-card-text">Any mission profile which varies with time.</p></li>
 </ol>
-<p>The principle of performance checking to avoid rapid degradation is quite trivial: for a given parameter to be checked, the current value is simply compared with the maximum allowed value.
-:::</p>
-</section>
+<p class="sd-card-text">The principle of performance checking to avoid rapid degradation is quite trivial: for a given parameter to be checked, the current value is simply compared with the maximum allowed value.</p>
+</div>
+</details></section>
 <section id="gradual-degradation-lifetime">
 <h2><span class="section-number">3.2.3. </span>Gradual degradation &amp; Lifetime<a class="headerlink" href="#gradual-degradation-lifetime" title="Link to this heading">#</a></h2>
 <p>For each typical component of mechatronic systems, we list the causes of rapid and gradual degradation. The plan followed depends mainly on the gradual degradation mechanisms. For these <strong>degradation phenomena</strong>, only the simplest laws usable at preliminary design level will be given. This section does not describe the detailed design of each component exhaustively but focuses on the selection of a component.<br />
@@ -626,31 +630,33 @@ The <strong>lifetime</strong> is the acceptable period of use in service of a pr
 </ul>
 <p>For the last category, the failure mechanism can be complex and involve a mix of various fatigue phenomena. Nevertheless, when normal conditions of functioning (lubrication, sealing, etc.) are assumed, the first fatigue phenomena must be rolling fatigue of bearings, as gears are often designed to have much higher tooth flexural or Hertz stress fatigue limits. The <strong>rolling fatigue</strong> can be displayed in a log-log diagram.</p>
 <p><img alt="LogLogBearing" src="../../_images/RollingFatigue.png" /></p>
-<p>:::{dropdown} Description
-:open:
-Under varying stress or repeated deformations, micro-cracks are created in the material of a component, reducing the resistance of this component to stress and plastic deformation. This is referred to fatigue. For a mechanical component subject to fatigue this lifetime formula can normally be applied.<br />
-$N_{10}.σ^\alpha=Q$<br />
-The concept is based on the <strong>Palmgren Miner law</strong>. Here $N_{10}$ refers to the standard number of load cycles for bearings (normally 1 million cycles) that can be guaranteed for a standard reliability of 90%, $\alpha$ is the applied stress and $Q$ the resulting sum of cumulated damage. For the same component and the same reliability, the amount of cumulative damage must remain constant and identical whatever the ($N_{10}$,$σ$) pair leading to degradation of the component. For rolling components, the power coefficient $\alpha$ is a value greater than 1 and indicates that a larger load causes more damage than a load of lower value. For ball bearings, this coefficient is equal to 3. The cycle number $N_{10}$ has no power coefficient which indicates that <strong>the amount of damage is linear and cumulative</strong>.
-:::</p>
-<p>For gearboxes or components incorporating bearings, and assuming that damage accumulates linearly, in proportion to the number of revolutions, an equivalent torque for a complex profile mission can be calculated : the <strong>root-mean-cube  torque</strong>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Under varying stress or repeated deformations, micro-cracks are created in the material of a component, reducing the resistance of this component to stress and plastic deformation. This is referred to fatigue. For a mechanical component subject to fatigue this lifetime formula can normally be applied.<br />
+<span class="math notranslate nohighlight">\(N_{10}.σ^\alpha=Q\)</span><br />
+The concept is based on the <strong>Palmgren Miner law</strong>. Here <span class="math notranslate nohighlight">\(N_{10}\)</span> refers to the standard number of load cycles for bearings (normally 1 million cycles) that can be guaranteed for a standard reliability of 90%, <span class="math notranslate nohighlight">\(\alpha\)</span> is the applied stress and <span class="math notranslate nohighlight">\(Q\)</span> the resulting sum of cumulated damage. For the same component and the same reliability, the amount of cumulative damage must remain constant and identical whatever the (<span class="math notranslate nohighlight">\(N_{10}\)</span>,<span class="math notranslate nohighlight">\(σ\)</span>) pair leading to degradation of the component. For rolling components, the power coefficient <span class="math notranslate nohighlight">\(\alpha\)</span> is a value greater than 1 and indicates that a larger load causes more damage than a load of lower value. For ball bearings, this coefficient is equal to 3. The cycle number <span class="math notranslate nohighlight">\(N_{10}\)</span> has no power coefficient which indicates that <strong>the amount of damage is linear and cumulative</strong>.</p>
+</div>
+</details><p>For gearboxes or components incorporating bearings, and assuming that damage accumulates linearly, in proportion to the number of revolutions, an equivalent torque for a complex profile mission can be calculated : the <strong>root-mean-cube  torque</strong>.</p>
 <p><img alt="LogLogBearing" src="../../_images/TRMC.png" /></p>
 </section>
 <section id="electrical-motors-and-electrical-components">
 <h2><span class="section-number">3.2.5. </span>Electrical motors and electrical components<a class="headerlink" href="#electrical-motors-and-electrical-components" title="Link to this heading">#</a></h2>
 <p>This category consists mainly of components where temperature effects and thermal degradation are the major phenomena leading to failure: electrical motors, cables and wires, capacitors and resistors. Temperature effects and thermal degradation are the major causes of failure of many electrical components.</p>
 <p><img alt="Motor SOA" src="../../_images/MotorSOA.png" /></p>
-<p>:::{dropdown} Description
-:open:
-Motors are composed of mechanical parts (bearings, housing and heat-sink which can be directly machined in the housing) except when they are sold in frameless form. Therefore they inherit all the rapid degradation drivers of the mechanical parts and especially the speed limit. Another speed limit will result from centrifugal forces applied to rotor coils or permanent magnets.
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Motors are composed of mechanical parts (bearings, housing and heat-sink which can be directly machined in the housing) except when they are sold in frameless form. Therefore they inherit all the rapid degradation drivers of the mechanical parts and especially the speed limit. Another speed limit will result from centrifugal forces applied to rotor coils or permanent magnets.
 The other main operational limits are due to:</p>
 <ul class="simple">
-<li><p><strong>Current:</strong> current and thus torque are limited either by saturation or by magnet demagnetization.</p></li>
-<li><p><strong>Temperature:</strong> when considering steady-state thermal exchange, the copper losses (which depend onf torque and current) and iron losses (which depend on speed) must not exceed the nominal/rated torque or current defined for a given thermal environment.</p></li>
-<li><p><strong>Voltage:</strong> power electronics limitations can impact motor performance by introducing power limitation or additional speed limitations linked to the voltage limitation.</p></li>
+<li><p class="sd-card-text"><strong>Current:</strong> current and thus torque are limited either by saturation or by magnet demagnetization.</p></li>
+<li><p class="sd-card-text"><strong>Temperature:</strong> when considering steady-state thermal exchange, the copper losses (which depend onf torque and current) and iron losses (which depend on speed) must not exceed the nominal/rated torque or current defined for a given thermal environment.</p></li>
+<li><p class="sd-card-text"><strong>Voltage:</strong> power electronics limitations can impact motor performance by introducing power limitation or additional speed limitations linked to the voltage limitation.</p></li>
 </ul>
-<p>In the above Figure the effects of the mechanical, electrical and thermal operational limits for cylindrical brushless motors and annular brushless motors can be seen. The figure also shows that continuous operation limits are much lower than absolute transient operational boundaries.
-:::</p>
-<p>The continuous torque of a motor is limited by the losses in the body and the winding temperature. This average temperature depends on the average losses, as a function of the RMS current, which in turn depends on the RMS torque. In conclusion, it is important to ensure that the effective torque, or <strong>root-mean-square torque</strong> (RMS torque), is below the motor’s continuous limit.</p>
+<p class="sd-card-text">In the above Figure the effects of the mechanical, electrical and thermal operational limits for cylindrical brushless motors and annular brushless motors can be seen. The figure also shows that continuous operation limits are much lower than absolute transient operational boundaries.</p>
+</div>
+</details><p>The continuous torque of a motor is limited by the losses in the body and the winding temperature. This average temperature depends on the average losses, as a function of the RMS current, which in turn depends on the RMS torque. In conclusion, it is important to ensure that the effective torque, or <strong>root-mean-square torque</strong> (RMS torque), is below the motor’s continuous limit.</p>
 <p><img alt="Motor SOA" src="../../_images/TRMS.png" /></p>
 </section>
 </section>

@@ -61,6 +61,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -560,7 +562,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="sizing-procedure-and-optimization-with-openmdao-student-version">
+  <section class="tex2jax_ignore mathjax_ignore" id="sizing-procedure-and-optimization-with-openmdao-student-version">
 <h1>Sizing procedure and optimization with OpenMDAO (Student version)<a class="headerlink" href="#sizing-procedure-and-optimization-with-openmdao-student-version" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse) and Scott Delbecq (ISAE-SUPAERO), Toulouse, France</em></p>
 <p>The objective of this notebook is to learn how to implement a sizing code and use a simple numerical optimization to find the optimal design of the system. The system studied is the TVC EMA of the VEGA launcher.</p>
@@ -592,9 +594,9 @@
 <p>The objective is to select the reduction ratio of a gear reducer in order to minimize the mass of the motor.</p>
 <p>The application have to ensure at nozzle level :</p>
 <ul class="simple">
-<li><p>a max torque $T_{load}$ of $48 kNm$ and a max acceleration of $\dot{\omega}_{max}=811 °/s²$</p></li>
-<li><p>a max speed $\omega_{max}$ of 9.24 °/s</p></li>
-<li><p>a max magnitude $\alpha_{max}$ of 5.7 °</p></li>
+<li><p>a max torque <span class="math notranslate nohighlight">\(T_{load}\)</span> of <span class="math notranslate nohighlight">\(48 kNm\)</span> and a max acceleration of <span class="math notranslate nohighlight">\(\dot{\omega}_{max}=811 °/s²\)</span></p></li>
+<li><p>a max speed <span class="math notranslate nohighlight">\(\omega_{max}\)</span> of 9.24 °/s</p></li>
+<li><p>a max magnitude <span class="math notranslate nohighlight">\(\alpha_{max}\)</span> of 5.7 °</p></li>
 </ul>
 <p>We will give here an example based on a linear actuator with a preselected roller screw (pitch of 10 mm/rev).
 We assume here, for simplification, the efficiency equal to 70%.</p>
@@ -669,7 +671,7 @@ We assume here, for simplification, the efficiency equal to 70%.</p>
 <ul class="simple">
 <li><p>the reduction ratio of the reducer</p></li>
 <li><p>an oversizing coefficient for the selection of the motor used to tacke an algebraic loop</p></li>
-<li><p>the positions ($d_1$ and $d_2$) of the actuator anchorages</p></li>
+<li><p>the positions (<span class="math notranslate nohighlight">\(d_1\)</span> and <span class="math notranslate nohighlight">\(d_2\)</span>) of the actuator anchorages</p></li>
 </ul>
 <p><em>New design variables</em>
 <img alt="Mechanical Loads" src="../../_images/design_variables_vega.png" /></p>

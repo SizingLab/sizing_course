@@ -572,7 +572,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="modeling-of-the-mechanical-load">
+  <section class="tex2jax_ignore mathjax_ignore" id="modeling-of-the-mechanical-load">
 <h1>Modeling of the mechanical load<a class="headerlink" href="#modeling-of-the-mechanical-load" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse) and Scott Delbecq (ISAE-SUPAERO), Toulouse, France</em></p>
 <p>The actuation system of the 1st stage of the launcher consists of a set of Lithium-ion batteries, a control unit (2 inverters and control/command electronics) and two electromechanical actuators (EMA). This set makes it possible to control the nozzle according to 2 axes of rotation. We will be interested here only in one axis axis of rotation and we will neglect the couplings between these 2 axes.</p>
@@ -625,7 +625,7 @@
 </div>
 </div>
 <p><em>P80 Nozzle (from [ESA presentation]</em></p>
-<p>(http://www.ingaero.uniroma1.it/attachments/1609_VEGA%20%20sapienza%20small.pdf)):
+<p>(<a class="reference external" href="http://www.ingaero.uniroma1.it/attachments/1609_VEGA%20%20sapienza%20small.pdf">http://www.ingaero.uniroma1.it/attachments/1609_VEGA  sapienza small.pdf</a>)):
 <img alt="P80" src="../../_images/nozzle.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -662,14 +662,14 @@
 <h3>Lever arm calculation<a class="headerlink" href="#lever-arm-calculation" title="Link to this heading">#</a></h3>
 <p>The EMA (Electro Mechanical Actuator) is between M and N points of the following drawing. The given values correspond to a nominal case. But during the sizng we want to evaluate and optimize the position of N and M points. d1 and d2 are thus design variables.</p>
 <p><em>P80 Nozzle section :</em></p>
-<p><img src="./assets/images/LeverArmNozzle.png" style="float:center; max-width: 400px; display: center" alt="P80" /></a></p>
+<p><img alt="P80" src="../../_images/LeverArmNozzle.png" /></a></p>
 <p>For the following steps, we need to calculate the equivalent lever arm between the linear displacement of the actuator and the rotational displacement of the nozzle. Thanks to the <em>Sympy</em> package, a symbolic calculation of this lever arm, function of d1 and d2, is possible.</p>
 <p>Remember that the link between the torque T on the nozzle and the force F of the actuator can be calculated with the following cross product:<br />
-$\vec{T}=\vec{OM} \times \vec{F}=\vec{OM} \times \frac{\vec{NM}}{\left|\vec{NM}\right|} F $<br />
+<span class="math notranslate nohighlight">\(\vec{T}=\vec{OM} \times \vec{F}=\vec{OM} \times \frac{\vec{NM}}{\left|\vec{NM}\right|} F \)</span><br />
 thus the equivalent lever arm can be calculated with:<br />
-$L_{arm}=\left| \vec{OM} \times \frac{\vec{NM}}{\left|\vec{NM}\right|} \right|$<br />
+<span class="math notranslate nohighlight">\(L_{arm}=\left| \vec{OM} \times \frac{\vec{NM}}{\left|\vec{NM}\right|} \right|\)</span><br />
 and the torque can be calculated with the simple equation:<br />
-$T=L_{arm}.F$</p>
+<span class="math notranslate nohighlight">\(T=L_{arm}.F\)</span></p>
 <p>Remark: the variation of lever arm with position order is assumed to be negligeable here due to the small nozzle deflection (+/- 5.7° max)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -767,7 +767,7 @@ $T=L_{arm}.F$</p>
 <div class="cell_output docutils container">
 <img alt="../../_images/db0559adc38acdd8689022ef698370616c6bcf25996c03d2b4d2f66bce2c7846.png" src="../../_images/db0559adc38acdd8689022ef698370616c6bcf25996c03d2b4d2f66bce2c7846.png" />
 <img alt="../../_images/14c33e30fbacfffc7bdb7809f9e98cba051f440fe6b67608f258a1f65d8da293.png" src="../../_images/14c33e30fbacfffc7bdb7809f9e98cba051f440fe6b67608f258a1f65d8da293.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x7fa6f7fc9ee0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x7f63a3f12be0&gt;
 </pre></div>
 </div>
 </div>
@@ -802,8 +802,8 @@ $T=L_{arm}.F$</p>
 <section id="dynamic-sizing-scenario">
 <h3>Dynamic sizing scenario<a class="headerlink" href="#dynamic-sizing-scenario" title="Link to this heading">#</a></h3>
 <p>For this scenario, we will assume that the position close loop system will response as a second order filter between real position and order:<br />
-$H(p)=\frac{1}{1+\frac{2\xi p}{\omega_0}+\frac{p^2}{\omega_0^2}}$<br />
-with $\xi=0.7$ and thus $t_{r5}=\frac{2.9}{\omega_0}$</p>
+<span class="math notranslate nohighlight">\(H(p)=\frac{1}{1+\frac{2\xi p}{\omega_0}+\frac{p^2}{\omega_0^2}}\)</span><br />
+with <span class="math notranslate nohighlight">\(\xi=0.7\)</span> and thus <span class="math notranslate nohighlight">\(t_{r5}=\frac{2.9}{\omega_0}\)</span></p>
 <p>We calculate here position, speed and acceleration of the nozzle for a step request (5.2 to 5.7° in 72 ms).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -875,7 +875,7 @@ with $\xi=0.7$ and thus $t_{r5}=\frac{2.9}{\omega_0}$</p>
 </section>
 </section>
 </section>
-<section id="force-speed-diagram">
+<section class="tex2jax_ignore mathjax_ignore" id="force-speed-diagram">
 <h1>Force speed diagram<a class="headerlink" href="#force-speed-diagram" title="Link to this heading">#</a></h1>
 <p>This sizing scenarios can be represented on a force-speed diagram usefull for compenent selection.</p>
 <div class="cell docutils container">
@@ -935,7 +935,7 @@ with $\xi=0.7$ and thus $t_{r5}=\frac{2.9}{\omega_0}$</p>
 | Max acceleration            |   811.15    | °/s²   |</p>
 </div>
 </div>
-<p>For the linear actuator (translational movement) with $d_1=0$ and $d_2=0$:</p>
+<p>For the linear actuator (translational movement) with <span class="math notranslate nohighlight">\(d_1=0\)</span> and <span class="math notranslate nohighlight">\(d_2=0\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lin</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
