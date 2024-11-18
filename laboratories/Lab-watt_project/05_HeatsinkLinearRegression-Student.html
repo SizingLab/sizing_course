@@ -704,18 +704,11 @@ y_{p}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="k">return</span> <span class="n">arr</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">myslice</span><span class="p">)]</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">scipy</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">signaltools</span><span class="o">.</span><span class="n">_centered</span> <span class="o">=</span> <span class="n">_centered</span>
-<span class="ne">---&gt; </span><span class="mi">17</span> <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameters:  [ 1.93618886e+00 -2.22112013e-02  1.29959433e-04]
+R2:  0.999537051410613
 </pre></div>
 </div>
+<img alt="../../_images/02d671a18040a2999b8038e670b402969cfd04879fcfda62fa182e6647f9385c.png" src="../../_images/02d671a18040a2999b8038e670b402969cfd04879fcfda62fa182e6647f9385c.png" />
 </div>
 </div>
 </section>
@@ -1040,16 +1033,10 @@ y_{p}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">XHS</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)),</span> <span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;H&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">dHSlog</span><span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)))</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># OLS regression</span>
-<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">modelHS</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">YHS</span><span class="p">,</span> <span class="n">XHS</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">resultHS</span> <span class="o">=</span> <span class="n">modelHS</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># Results print</span>
-
-<span class="ne">NameError</span>: name &#39;sm&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameters:  [ 4.27428462 -0.91835926 -0.55758774 -0.73      ]
+R2:  0.9881820015880768
+The estimation function is: Rthn = 1.88e+04.W^-0.92.H^-0.56.L^-0.73
+with Rthn in [°/W], W,H and L in [mm]
 </pre></div>
 </div>
 </div>
@@ -1072,18 +1059,7 @@ y_{p}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Y vector prediction</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">y_HS</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">resultHS</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">XHS</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># plot the data </span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1">#plt.plot(dHS[&#39;Rthn&#39;].values,dHS[&#39;Rthn&#39;].values, &#39;-&#39;,dHS[&#39;Rthn&#39;].values,y_HS, &#39;o&#39;)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">dHS</span><span class="p">[</span><span class="s1">&#39;Rthn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;resultHS&#39; is not defined
-</pre></div>
-</div>
+<img alt="../../_images/36f944e5f16b87a823d4d53699143173df48723b4c35dbdc8dda871247341d9e.png" src="../../_images/36f944e5f16b87a823d4d53699143173df48723b4c35dbdc8dda871247341d9e.png" />
 </div>
 </div>
 </section>
