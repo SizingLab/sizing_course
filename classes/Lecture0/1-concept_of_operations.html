@@ -1,0 +1,961 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.1. Concept of Operations and Architectures &#8212; Sizing and optimization of mechatronic systems</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture0/1-concept_of_operations';</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2. Sizing process - Summary" href="../Lecture1/summary.html" />
+    <link rel="prev" title="1. Concept of Operations and Architectures - Summary" href="summary.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../about/homepage.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Sizing and optimization of mechatronic systems - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Sizing and optimization of mechatronic systems - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction and overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about/syllabus.html">Preliminary design and sizing of mechatronic systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/installation.html">Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">1. Concept of Operations and architectures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. Concept of Operations and Architectures</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture1/summary.html">2. Architectures, sizing scenarios and design drivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture1/1-objectives_and_ressources.html">2.1. Objectives and ressources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture1/2-needs_and_general_methodology.html">2.2. Needs and general methodology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture1/3-scenarios_and_design_drivers.html">2.3. Scenarios and Design Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture1/4-quiz.html">2.4. Quiz</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture2/summary.html">3. Simulation and evaluation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2/1-simulation_models.html">3.1. Simulation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2/2-evaluation_models.html">3.2. Evaluation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2/3-quiz_evaluation_models.html">3.3. Quiz</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2/4-homework.html">3.5. Homework: mission profile analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture3/summary.html">4. Estimation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3/1-linear_regressions.html">4.1. Linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3/2-quiz_regressions.html">4.2. Quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3/3-scaling_laws.html">4.3. Scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3/4-quiz_scaling_laws.html">4.4. Quiz</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture4/summary.html">5. Optimal sizing procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture4/1-design_and_optimization_problems.html">5.1. Representation of a design problem and basics optimal design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture4/2-optimization_examples.html">5.2. Optimization with python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture4/3-sizing_procedures.html">5.3. Development of a sizing procedure using design graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture4/4-sizing_procedure_examples.html">5.4. Design graph and optimization with python</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture5/summary.html">6. MDAO and surrogate models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture5/1-mdao.html">6.1. MDAO (Multidisciplinary Design Analysis and Optimization)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lecture5/2-mdao_examples.html">6.3. MDAO examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture5/3-surrogate_models.html">6.4. Surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture5/4-surrogate_model_examples.html">6.5. Surrogate model examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture5/5-quizz.html">6.6. Quizz</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture6/summary.html">7. LCA and sustainable scenarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture6/1-lca.html">7.1. Life Cyle Assessment (LCA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture6/2-lca_examples.html">7.2. LCA examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture6/3-sustainable_scenarios.html">7.3. Sustainable scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture6/4-sustainable_scenario_examples.html">7.4. Sustainable scenario examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture6/5-quizz.html">7.5. Quizz</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-multirotor/summary.html">Multirotor UAV</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/01_CaseStudy.html">Case study and architecture presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/02a_SizingScenarios-Student.html">Sizing scenarios and design drivers (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/02a_SizingScenarios.html">Sizing scenarios and design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/02b_SizingScenariosEquations-Student.html">Equations of sizing scenarios (INSA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/03_PropellerLinearRegression-Student.html">Propellers estimation models with dimensional analysis and linear regressions  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/03_PropellerLinearRegression.html">Propellers estimation models with dimensional analysis and linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/04_ScalingLawsElectricalComponents-Student.html">Scaling laws of electrical components (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/04_ScalingLawsElectricalComponents.html">Scaling laws of electrical components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05_SizingModelsIntroduction.html">Sizing models for multi-rotor definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05a_PropellerSelection-Student.html">Propeller selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05a_PropellerSelection.html">Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05b_MotorSelection-Student.html">Motor selection  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05b_MotorSelection.html">Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05c_BatteryESCSelection-Student.html">Battery and ESC selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05c_BatteryESCSelection.html">Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05d_FrameSelection-Student.html">Frame selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05d_FrameSelection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/07_DesignExploration-Student.html">Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/08_SystemSizingCodeOptimization.html">Sizing of a multi-rotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/A1_Sizing_equations.html">Appendix 1: Sizing equations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-vega/summary.html">VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/1-sizing_scenarios-student.html">Modeling of the mechanical load (student version)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/1-sizing_scenarios.html">Modeling of the mechanical load</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/2-estimation_models-student.html">Estimation models with scaling laws and linear regression (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/2-estimation_models.html">Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/3-simulation_models-student.html">Simulation models with Python (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/3-simulation_models.html">Simulation models with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/4-evaluation_models-student.html">Evaluation models: endurance of the actuator (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/4-evaluation_models.html">Evaluation models: endurance of the actuator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/5-sizing_and_optimization-student.html">Sizing procedure and optimization (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/5-sizing_and_optimization.html">Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student.html">Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">Sizing procedure and optimization with OpenMDAO</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-watt_project/summary-short.html">Lab - Sustainable mobility - Mission profile &amp; Specification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/00_SustainableMobility.html">Sustainable mobilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/01a_CaseStudy.html">Case study presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/01b_CaseStudy_Specification-Student.html">Case study specification (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/01b_CaseStudy_Specification.html">Case study specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/02a_Architecture-Student.html">Architecture of the converter and sizing scenarios (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/02a_Architecture_UltraCapacitor.html">Architecture of the converter and sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/02b_Architecture_Hybrid.html">Hydrid Storage Architecture and Specification</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-watt_project/summary.html">Lab - Sustainable mobility - DC/DC converter sizing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/03_SizingScenarios.html">Equations of sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/04_ScalingLaws-Student.html">Estimation models with scaling laws and linear regression (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/04_ScalingLaws.html">Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/05_HeatsinkLinearRegression-Student.html">Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/05_HeatsinkLinearRegression.html">Heatsink  estimation models with simple and multiple linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/06_SizingCodeInductor.html">Sizing code of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/07_SizingCodeInductor-Surrogate-Student.html">Sizing code of an inductor with surrogate models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/07_SizingCodeInductor-Surrogate.html">Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/08_DCDC_converter_sizing_introduction.html">Design graphs for the sizing a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/09_SizingCodeDCDCconverter.html">Sizing code of a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/10_LCA_Inductor-Student.html">Life Cycle Assessment of an inductor (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/10_LCA_Inductor.html">Life Cycle Assessment of an inductor</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/classes/Lecture0/1-concept_of_operations.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/classes/Lecture0/1-concept_of_operations.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/classes/Lecture0/1-concept_of_operations.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclasses/Lecture0/1-concept_of_operations.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/classes/Lecture0/1-concept_of_operations.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Concept of Operations and Architectures</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.1.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-of-operations-conops">1.1.2. 1. Concept of Operations (ConOps)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-concept-of-operations-conops">1.1.2.1. 1.1 What is a Concept of Operations (ConOps)?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-a-conops">1.1.2.2. 1.2 Components of a ConOps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-develop-a-conops">1.1.2.3. 1.3 Steps to Develop a ConOps</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-architectures">1.1.3. 2. System Architectures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-system-architecture">1.1.3.1. 2.1 What is a System Architecture?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-system-architectures">1.1.3.2. 2.2 Types of System Architectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-principles-of-system-architecture">1.1.3.3. 2.3 Key Principles of System Architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-develop-a-system-architecture">1.1.3.4. 2.4 Steps to Develop a System Architecture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-multirotor-uav-for-package-delivery">1.1.4. 3. Example: Multirotor UAV for Package Delivery</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-conops-to-a-multirotor-uav">1.1.4.1. 3.1 Applying ConOps to a Multirotor UAV</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-system-architecture-to-a-multirotor-uav">1.1.4.2. 3.2 Applying System Architecture to a Multirotor UAV</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-architecture">1.1.4.2.1. Functional Architecture</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="concept-of-operations-and-architectures">
+<h1><span class="section-number">1.1. </span>Concept of Operations and Architectures<a class="headerlink" href="#concept-of-operations-and-architectures" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2><span class="section-number">1.1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The <strong>Concept of Operations (ConOps)</strong> and <strong>system architecture</strong> are fundamental for designing efficient and reliable systems. This chapter introduces these concepts independently of any specific application, followed by a focused example on a <strong>multirotor UAV for package delivery</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="concept-of-operations-conops">
+<h2><span class="section-number">1.1.2. </span>1. Concept of Operations (ConOps)<a class="headerlink" href="#concept-of-operations-conops" title="Link to this heading">#</a></h2>
+<section id="what-is-a-concept-of-operations-conops">
+<h3><span class="section-number">1.1.2.1. </span>1.1 What is a Concept of Operations (ConOps)?<a class="headerlink" href="#what-is-a-concept-of-operations-conops" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: A Concept of Operations (ConOps) is a high-level description of how a system is intended to operate to achieve its objectives.</p></li>
+<li><p><strong>Purpose</strong>:</p>
+<ul>
+<li><p>Align stakeholders on the system’s goals, functionality, and usage.</p></li>
+<li><p>Provide a foundation for defining system requirements and architecture.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="components-of-a-conops">
+<h3><span class="section-number">1.1.2.2. </span>1.2 Components of a ConOps<a class="headerlink" href="#components-of-a-conops" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Stakeholders and Their Needs</strong>:</p>
+<ul class="simple">
+<li><p>Stakeholders can include:</p>
+<ul>
+<li><p>Primary users and operators.</p></li>
+<li><p>Maintenance teams.</p></li>
+<li><p>Regulatory bodies.</p></li>
+<li><p>Secondary users or beneficiaries.</p></li>
+</ul>
+</li>
+<li><p>Needs are specific to the context and include performance, safety, and operational requirements.</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>graph TD
+    A[Stakeholders] --&gt;|Primary| B[Operators]
+    A --&gt;|Primary| C[Regulators]
+    A --&gt;|Primary| D[End Users]
+    A --&gt;|Secondary| E[Maintenance Teams]
+    A --&gt;|Secondary| F[Logistics Staff]
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>System Goals</strong>:</p>
+<ul class="simple">
+<li><p>High-level objectives that define the system’s purpose.</p></li>
+<li><p>Example: Efficiency, safety, reliability, cost-effectiveness.</p></li>
+</ul>
+</li>
+<li><p><strong>Operational Scenarios</strong>:</p>
+<ul class="simple">
+<li><p><strong>Typical Scenarios</strong>: How the system operates under normal conditions.</p></li>
+<li><p><strong>Edge Cases</strong>: How the system responds to rare or failure scenarios.</p></li>
+</ul>
+</li>
+<li><p><strong>Constraints</strong>:</p>
+<ul class="simple">
+<li><p>Regulatory, environmental, or technical limitations the system must operate within.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="steps-to-develop-a-conops">
+<h3><span class="section-number">1.1.2.3. </span>1.3 Steps to Develop a ConOps<a class="headerlink" href="#steps-to-develop-a-conops" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Identify stakeholders and their needs.</p></li>
+<li><p>Define the system’s high-level goals.</p></li>
+<li><p>Map out typical and edge-case operational scenarios.</p></li>
+<li><p>Specify constraints, assumptions, and dependencies.</p></li>
+<li><p>Draft and validate the ConOps with stakeholders.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="system-architectures">
+<h2><span class="section-number">1.1.3. </span>2. System Architectures<a class="headerlink" href="#system-architectures" title="Link to this heading">#</a></h2>
+<section id="what-is-a-system-architecture">
+<h3><span class="section-number">1.1.3.1. </span>2.1 What is a System Architecture?<a class="headerlink" href="#what-is-a-system-architecture" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: A structured representation of the system that describes its components, interactions, and organization to meet its objectives.</p></li>
+</ul>
+</section>
+<section id="types-of-system-architectures">
+<h3><span class="section-number">1.1.3.2. </span>2.2 Types of System Architectures<a class="headerlink" href="#types-of-system-architectures" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Functional Architecture</strong>:</p>
+<ul class="simple">
+<li><p>Describes what the system does.</p></li>
+<li><p>Focuses on the flow of information and interactions between functions.</p></li>
+</ul>
+</li>
+<li><p><strong>Physical Architecture</strong>:</p>
+<ul class="simple">
+<li><p>Describes how the system is organized physically.</p></li>
+<li><p>Defines the layout, placement, and interaction of hardware components.</p></li>
+</ul>
+</li>
+<li><p><strong>Operational Architecture</strong>:</p>
+<ul class="simple">
+<li><p>Focuses on how the system interacts with external entities.</p></li>
+<li><p>Includes communication, data exchange, and system integration.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="key-principles-of-system-architecture">
+<h3><span class="section-number">1.1.3.3. </span>2.3 Key Principles of System Architecture<a class="headerlink" href="#key-principles-of-system-architecture" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Modularity</strong>:</p>
+<ul class="simple">
+<li><p>Breaking down the system into smaller, independent components.</p></li>
+<li><p>Facilitates upgrades, repairs, and testing.</p></li>
+</ul>
+</li>
+<li><p><strong>Scalability</strong>:</p>
+<ul class="simple">
+<li><p>Ability to scale performance or capacity based on future needs.</p></li>
+</ul>
+</li>
+<li><p><strong>Redundancy</strong>:</p>
+<ul class="simple">
+<li><p>Adding backups for critical systems to improve reliability.</p></li>
+</ul>
+</li>
+<li><p><strong>Interoperability</strong>:</p>
+<ul class="simple">
+<li><p>Ensuring compatibility with other systems.</p></li>
+</ul>
+</li>
+<li><p><strong>Trade-Off Analysis</strong>:</p>
+<ul class="simple">
+<li><p>Balancing competing priorities like cost, performance, and safety.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="steps-to-develop-a-system-architecture">
+<h3><span class="section-number">1.1.3.4. </span>2.4 Steps to Develop a System Architecture<a class="headerlink" href="#steps-to-develop-a-system-architecture" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Identify key functions the system must perform.</p></li>
+<li><p>Define components needed to perform these functions.</p></li>
+<li><p>Map functional components to physical components.</p></li>
+<li><p>Specify interactions between components and external systems.</p></li>
+<li><p>Analyze trade-offs and refine the architecture.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="example-multirotor-uav-for-package-delivery">
+<h2><span class="section-number">1.1.4. </span>3. Example: Multirotor UAV for Package Delivery<a class="headerlink" href="#example-multirotor-uav-for-package-delivery" title="Link to this heading">#</a></h2>
+<section id="applying-conops-to-a-multirotor-uav">
+<h3><span class="section-number">1.1.4.1. </span>3.1 Applying ConOps to a Multirotor UAV<a class="headerlink" href="#applying-conops-to-a-multirotor-uav" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Stakeholders and Their Needs</strong>:</p>
+<ul class="simple">
+<li><p><strong>Primary Stakeholders</strong>:</p>
+<ul>
+<li><p>Delivery companies: Require cost-effective, efficient UAVs.</p></li>
+<li><p>Customers: Expect reliable and timely deliveries.</p></li>
+<li><p>Regulatory authorities: Demand compliance with safety standards.</p></li>
+</ul>
+</li>
+<li><p><strong>Secondary Stakeholders</strong>:</p>
+<ul>
+<li><p>Maintenance teams: Need easy-to-maintain designs.</p></li>
+<li><p>Logistics staff: Require smooth integration into workflows.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>graph TD
+    A[Stakeholders] --&gt;|Primary| B[Delivery Companies]
+    A --&gt;|Primary| C[Customers]
+    A --&gt;|Primary| D[Regulators]
+    A --&gt;|Secondary| E[Maintenance Teams]
+    A --&gt;|Secondary| F[Logistics Operators]
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>System Goals</strong>:</p>
+<ul class="simple">
+<li><p>Deliver packages autonomously within specified ranges.</p></li>
+<li><p>Operate in diverse environments (urban, rural).</p></li>
+<li><p>Ensure safety and reliability.</p></li>
+</ul>
+</li>
+<li><p><strong>Operational Scenarios</strong>:</p>
+<ul class="simple">
+<li><p><strong>Typical Scenario</strong>:</p>
+<ul>
+<li><p>UAV takes off from a logistics hub, follows a GPS-defined route, delivers a package, and returns.</p></li>
+</ul>
+</li>
+<li><p><strong>Edge Cases</strong>:</p>
+<ul>
+<li><p>Battery runs low mid-flight → UAV performs emergency landing.</p></li>
+<li><p>GPS signal lost → UAV switches to return-to-home mode via inertial navigation.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Constraints</strong>:</p>
+<ul class="simple">
+<li><p>Payload: 10 kg.</p></li>
+<li><p>Range: 15 km.</p></li>
+<li><p>Regulatory compliance: No-fly zones, altitude limits.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="applying-system-architecture-to-a-multirotor-uav">
+<h3><span class="section-number">1.1.4.2. </span>3.2 Applying System Architecture to a Multirotor UAV<a class="headerlink" href="#applying-system-architecture-to-a-multirotor-uav" title="Link to this heading">#</a></h3>
+<section id="functional-architecture">
+<h4><span class="section-number">1.1.4.2.1. </span>Functional Architecture<a class="headerlink" href="#functional-architecture" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Key Functions</strong>:</p>
+<ul class="simple">
+<li><p>Navigation: Plan and follow optimal routes.</p></li>
+<li><p>Propulsion: Ensure stable and efficient flight.</p></li>
+<li><p>Package Handling: Secure and deliver packages.</p></li>
+</ul>
+</li>
+<li><p><strong>Functional Diagram</strong>:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Sensors → Flight Controller → Motors
+                   ↓
+      GPS/IMU → Route Planning → Obstacle Avoidance
+                   ↓
+           Gripper → Package Delivery
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./classes/Lecture0"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="summary.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Concept of Operations and Architectures - Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Lecture1/summary.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Sizing process - Summary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.1.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-of-operations-conops">1.1.2. 1. Concept of Operations (ConOps)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-concept-of-operations-conops">1.1.2.1. 1.1 What is a Concept of Operations (ConOps)?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-a-conops">1.1.2.2. 1.2 Components of a ConOps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-develop-a-conops">1.1.2.3. 1.3 Steps to Develop a ConOps</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-architectures">1.1.3. 2. System Architectures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-system-architecture">1.1.3.1. 2.1 What is a System Architecture?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-system-architectures">1.1.3.2. 2.2 Types of System Architectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-principles-of-system-architecture">1.1.3.3. 2.3 Key Principles of System Architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-develop-a-system-architecture">1.1.3.4. 2.4 Steps to Develop a System Architecture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-multirotor-uav-for-package-delivery">1.1.4. 3. Example: Multirotor UAV for Package Delivery</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-conops-to-a-multirotor-uav">1.1.4.1. 3.1 Applying ConOps to a Multirotor UAV</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-system-architecture-to-a-multirotor-uav">1.1.4.2. 3.2 Applying System Architecture to a Multirotor UAV</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-architecture">1.1.4.2.1. Functional Architecture</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marc Budinger, Scott Delbecq, Félix Pollet, Aurélien Reysset
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
