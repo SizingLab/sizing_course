@@ -50,6 +50,7 @@ idna = "^3.6"
 importlib-metadata = "^7.0.1"
 ipykernel = "^6.28.0"
 jinja2 = "^3.1.3"
+statsmodels = "*"
 
 
 # Plotting
@@ -69,4 +70,4 @@ jupyterlab-myst = "^2.1.0"
 sphinx="*"
 sphinx-exercise="*"
 ipydrawio = "*"
-jupyterlab_rise="*"
+jupyterlab-deck="*"
