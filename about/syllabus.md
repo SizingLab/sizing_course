@@ -11,16 +11,23 @@
 ## Course Description
 
 ### Objectives
-Mechatronic and aerospace systems are highly complex systems that often have to meet specific and severe requirements depending of the application. Several architectures in terms of topology and technology often meet the functional requirements and technological constraints. The ultimate objective is to determine the best of candidate architectures in terms of environmental performance and cost. For this purpose, this course aims at providing methods and models for sizing systems composed of multiple technologies.
+Mechatronic systems are highly complex systems that often have to meet specific and severe requirements depending of the application.
+Several architectures in terms of topology and technology often meet the functional requirements and technological constraints.
+The ultimate objective is to determine the best of candidate architectures in terms of environmental performance and cost.
+For this purpose, this course aims at providing methods and models for sizing systems composed of multiple technologies.
 
 ### Content
+- Concept of operations and architectures
+- Technologies, design drivers and sizing scenarios
+- Modelling approaches for sizing: simulation and evaluation models
+- Modelling approaches for sizing: estimation models
+- Sizing procedures
 - Design optimization
-- Architectures, design drivers and sizing scenarios
-- Modelling approaches for sizing
-- Sizing and optimization
 
 ### Study cases
-Design optimization of a multirotor UAV
+- Design optimization of a multirotor UAV [Link](https://sizinglab.github.io/sizing_course/laboratories/Lab-multirotor/summary.html)
+- VEGA Launcher TVC EMA [Link](https://sizinglab.github.io/sizing_course/laboratories/Lab-vega/summary.html)
+- Sustainable mobility [Link](https://sizinglab.github.io/sizing_course/laboratories/Lab-mobility/summary.html)
 
 ## Tools:
 - Course website (https://sizinglab.github.io/sizing_course/)
