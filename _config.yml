@@ -10,7 +10,7 @@ bibtex_bibfiles:
   - references.bib
 
 execute:
-  execute_notebooks: force
+  execute_notebooks: auto
   allow_errors: true
 
 latex:
@@ -64,6 +64,8 @@ repository:
 sphinx:
   extra_extensions:
     - sphinx_exercise
+    - sphinxcontrib.mermaid
+
   config:
     html_show_copyright: true
 
