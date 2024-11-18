@@ -556,48 +556,45 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="needs-and-general-methodology">
+  <section id="needs-and-general-methodology">
 <h1><span class="section-number">2.2. </span>Needs and general methodology<a class="headerlink" href="#needs-and-general-methodology" title="Link to this heading">#</a></h1>
 <section id="objectives">
 <h2><span class="section-number">2.2.1. </span>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 <p><img alt="drawing75" src="../../_images/objectives.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The objective of this course is to give you models and methods in order to create a sizing process of a mechatronic system. This design stage comes after the specification and architecture research and is upstream of the detailed design of each component. The objective is to chose the optimal components. Once chosen, the components can either be manufactured by ourself or bought from a supplier.</p>
-</div>
-</details></section>
+<p>:::{dropdown} Description
+:open:<br />
+The objective of this course is to give you models and methods in order to create a sizing process of a mechatronic system. This design stage comes after the specification and architecture research and is upstream of the detailed design of each component. The objective is to chose the optimal components. Once chosen, the components can either be manufactured by ourself or bought from a supplier.<br />
+:::</p>
+</section>
 <section id="modelling-needs-for-sizing">
 <h2><span class="section-number">2.2.2. </span>Modelling needs for sizing<a class="headerlink" href="#modelling-needs-for-sizing" title="Link to this heading">#</a></h2>
 <p><img alt="drawing75" src="../../_images/needs.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">In order to size a system from a system integrator point of view, different types of models can bu used:</p>
+<p>:::{dropdown} Description
+:open:<br />
+In order to size a system from a system integrator point of view, different types of models can bu used:</p>
 <ul class="simple">
-<li><p class="sd-card-text"><strong>Simulation models</strong> that  will help us compute the different sizing parameters which are necessary to chose the right components.</p></li>
-<li><p class="sd-card-text"><strong>Estimation models</strong> that will help us obtain the main characteristics of the components using a restrained set of key parameters.</p></li>
-<li><p class="sd-card-text"><strong>Evaluation models</strong> which will ensure that the components will respect the lifetime required in the specifications.</p></li>
+<li><p><strong>Simulation models</strong> that  will help us compute the different sizing parameters which are necessary to chose the right components.</p></li>
+<li><p><strong>Estimation models</strong> that will help us obtain the main characteristics of the components using a restrained set of key parameters.</p></li>
+<li><p><strong>Evaluation models</strong> which will ensure that the components will respect the lifetime required in the specifications.<br />
+:::</p></li>
 </ul>
-</div>
-</details></section>
+</section>
 <section id="modelling-process">
 <h2><span class="section-number">2.2.3. </span>Modelling process<a class="headerlink" href="#modelling-process" title="Link to this heading">#</a></h2>
 <p><img alt="drawing75" src="../../_images/modelling_process.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">This diagram shows the information flow between these different models. We will take interest in each of them succesively:</p>
+<p>:::{dropdown} Description
+:open:<br />
+This diagram shows the information flow between these different models. We will take interest in each of them succesively:</p>
 <ul class="simple">
-<li><p class="sd-card-text">establishment of <strong>sizing scenarios</strong> and mission profiles</p></li>
-<li><p class="sd-card-text">choices and implementation of the adapted simulation models</p></li>
-<li><p class="sd-card-text">estimation models using <strong>scaling laws</strong></p></li>
-<li><p class="sd-card-text">evaluation models for the computation of life time and operational limits</p></li>
-<li><p class="sd-card-text">mathematical tools which help finding  an estimation model (regressions) or the simplified expression of simulation models (metamodels)</p></li>
-<li><p class="sd-card-text">establishment of <strong>sizing processes and optimization</strong></p></li>
+<li><p>establishment of <strong>sizing scenarios</strong> and mission profiles</p></li>
+<li><p>choices and implementation of the adapted simulation models</p></li>
+<li><p>estimation models using <strong>scaling laws</strong></p></li>
+<li><p>evaluation models for the computation of life time and operational limits</p></li>
+<li><p>mathematical tools which help finding  an estimation model (regressions) or the simplified expression of simulation models (metamodels)</p></li>
+<li><p>establishment of <strong>sizing processes and optimization</strong></p></li>
 </ul>
-</div>
-</details></section>
+<p>:::</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

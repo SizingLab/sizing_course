@@ -559,7 +559,7 @@
                 <article class="bd-article">
                   
   <p><img alt="Sizing Lab" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/Baniere.png" /></p>
-<section class="tex2jax_ignore mathjax_ignore" id="hydrid-storage-architecture-and-specification">
+<section id="hydrid-storage-architecture-and-specification">
 <h1>Hydrid Storage Architecture and Specification<a class="headerlink" href="#hydrid-storage-architecture-and-specification" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
 <p>We will consider here an hybrid solutions with super capacities and traction battery packs. This notebook is dedicated :</p>
@@ -626,11 +626,11 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vehicle Max Acceleration (depending of max force) is too low or travel distance too small or mean speed too small
 Duration of traject for given mean speed: 92.76923076923077s
+Consumption per passenger: 21.18 kJ/(Pax.km)
+Max energy discharge: 5039 kJ
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 21.18 kJ/(Pax.km)
-Max energy discharge: 5039 kJ
-Consumption per passenger: 103.06 kJ/(Pax.km)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 103.06 kJ/(Pax.km)
 </pre></div>
 </div>
 <img alt="../../_images/02e0f58c0274abacf4607f3606257d1b2cfc9e51f58b1adc19e37270fbde1828.png" src="../../_images/02e0f58c0274abacf4607f3606257d1b2cfc9e51f58b1adc19e37270fbde1828.png" />
@@ -645,7 +645,7 @@ Max energy discharge: 7420 kJ
 </div>
 <img alt="../../_images/8820e2182d7479264adf73c9107b521a387502e3193b66e59dcea640665e78bf.png" src="../../_images/8820e2182d7479264adf73c9107b521a387502e3193b66e59dcea640665e78bf.png" />
 <img alt="../../_images/66a7682669dad9abf964b2358d0e5e3173d4f08456a66ac2fe6e8f944ffad54e.png" src="../../_images/66a7682669dad9abf964b2358d0e5e3173d4f08456a66ac2fe6e8f944ffad54e.png" />
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3241/2473967107.py:17: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3604/2473967107.py:17: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   k1=float(sol.x)
 </pre></div>
 </div>
@@ -661,21 +661,21 @@ Max energy discharge: 4450 kJ
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.1055508599967452
-                   x: [ 6.334e-02  6.957e-01  9.583e-01]
-                 nit: 21
-                nfev: 994
-          population: [[ 6.334e-02  6.957e-01  9.583e-01]
-                       [ 6.529e-02  7.443e-01  9.624e-01]
+                 fun: 1.1067009154182879
+                   x: [ 8.092e-02  5.925e-01  9.671e-01]
+                 nit: 14
+                nfev: 679
+          population: [[ 8.092e-02  5.925e-01  9.671e-01]
+                       [ 7.593e-02  8.332e-01  9.429e-01]
                        ...
-                       [ 5.407e-02  7.893e-01  9.562e-01]
-                       [ 5.298e-02  8.258e-01  9.709e-01]]
- population_energies: [ 1.106e+00  1.117e+00 ...  1.108e+00  1.108e+00]
-Optimal vector : [0.0633365  0.69566131 0.95827701]
-Brake power/Acceleration power ratio is: 0.4679157862941433
-Constraints vector : [0.0036302034551481347, 0.00020729684908794098, 0.13208421370585666]
-Consumption per passenger: 16.94 kJ/(Pax.km)
-Max energy discharge: 3625 kJ
+                       [ 5.390e-02  8.485e-01  9.837e-01]
+                       [ 6.606e-02  7.186e-01  9.624e-01]]
+ population_energies: [ 1.107e+00  1.139e+00 ...  1.113e+00  1.111e+00]
+Optimal vector : [0.08091639 0.5925496  0.96707767]
+Brake power/Acceleration power ratio is: 0.43211388682513496
+Constraints vector : [0.00914980169501846, 0.002902155887230561, 0.16788611317486501]
+Consumption per passenger: 17.05 kJ/(Pax.km)
+Max energy discharge: 3545 kJ
 
 ######################################
 </pre></div>
@@ -683,23 +683,23 @@ Max energy discharge: 3625 kJ
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
                  fun: 1.4627161460359577
-                   x: [ 2.722e-01  2.211e-01  9.683e-01]
-                 nit: 36
-                nfev: 1669
-          population: [[ 2.722e-01  2.211e-01  9.683e-01]
-                       [ 2.929e-01  2.120e-01  9.705e-01]
+                   x: [ 2.697e-01  2.219e-01  9.693e-01]
+                 nit: 32
+                nfev: 1489
+          population: [[ 2.697e-01  2.219e-01  9.693e-01]
+                       [ 2.430e-01  2.442e-01  9.735e-01]
                        ...
-                       [ 2.663e-01  2.245e-01  9.693e-01]
-                       [ 2.699e-01  2.224e-01  9.682e-01]]
- population_energies: [ 1.463e+00  1.517e+00 ...  1.464e+00  1.463e+00]
-Optimal vector : [0.27220629 0.22111544 0.96830885]
+                       [ 2.684e-01  2.210e-01  9.694e-01]
+                       [ 2.521e-01  2.337e-01  9.741e-01]]
+ population_energies: [ 1.463e+00  1.482e+00 ...  1.463e+00  1.469e+00]
+Optimal vector : [0.2696702  0.22192207 0.96925754]
 Brake power/Acceleration power ratio is: 0.33307979392645
 Constraints vector : [0.0006461216493124681, 0.00020729684908794098, 0.26692020607355]
 Consumption per passenger: 16.97 kJ/(Pax.km)
 Max energy discharge: 3293 kJ
 </pre></div>
 </div>
-<img alt="../../_images/87be4b8930b5e19e4648584a45465d2f413f4e900a725fdf3957761c49ccf994.png" src="../../_images/87be4b8930b5e19e4648584a45465d2f413f4e900a725fdf3957761c49ccf994.png" />
+<img alt="../../_images/0d44a1c1128e69f0543ac7253ede32e04d4bf98b4e7c13579f433c0232299ba7.png" src="../../_images/0d44a1c1128e69f0543ac7253ede32e04d4bf98b4e7c13579f433c0232299ba7.png" />
 <img alt="../../_images/657cf7ec09f5041b280e845b7c59c4ab34fa13113cfd9a340bf3545cc4542b57.png" src="../../_images/657cf7ec09f5041b280e845b7c59c4ab34fa13113cfd9a340bf3545cc4542b57.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculation of energy consumption of different vehicles: 
 
@@ -710,15 +710,15 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
                  fun: 1.2482194479805129
-                   x: [ 9.166e-02  4.946e-01  9.772e-01]
-                 nit: 18
-                nfev: 859
-          population: [[ 9.166e-02  4.946e-01  9.772e-01]
-                       [ 9.160e-02  4.816e-01  9.530e-01]
+                   x: [ 9.278e-02  4.969e-01  9.727e-01]
+                 nit: 17
+                nfev: 814
+          population: [[ 9.278e-02  4.969e-01  9.727e-01]
+                       [ 8.854e-02  5.466e-01  9.492e-01]
                        ...
-                       [ 1.077e-01  4.250e-01  9.577e-01]
-                       [ 9.469e-02  4.978e-01  9.769e-01]]
- population_energies: [ 1.248e+00  1.253e+00 ...  1.252e+00  1.248e+00]
+                       [ 9.317e-02  4.748e-01  9.737e-01]
+                       [ 8.990e-02  4.489e-01  9.484e-01]]
+ population_energies: [ 1.248e+00  1.260e+00 ...  1.249e+00  1.252e+00]
 Consumption per passenger: 19.71 kJ/(Pax.km)
 ----
 Trolleybus :
@@ -728,15 +728,15 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
                  fun: 1.1171417308272777
-                   x: [ 5.244e-02  7.603e-01  9.715e-01]
-                 nit: 18
-                nfev: 859
-          population: [[ 5.244e-02  7.603e-01  9.715e-01]
-                       [ 3.880e-02  9.648e-01  9.301e-01]
+                   x: [ 5.748e-02  7.665e-01  9.696e-01]
+                 nit: 16
+                nfev: 769
+          population: [[ 5.748e-02  7.665e-01  9.696e-01]
+                       [ 5.211e-02  8.054e-01  9.773e-01]
                        ...
-                       [ 5.500e-02  8.414e-01  9.735e-01]
-                       [ 5.092e-02  8.300e-01  9.585e-01]]
- population_energies: [ 1.117e+00  1.129e+00 ...  1.122e+00  1.124e+00]
+                       [ 4.833e-02  8.522e-01  9.809e-01]
+                       [ 7.465e-02  6.608e-01  9.701e-01]]
+ population_energies: [ 1.117e+00  1.119e+00 ...  1.122e+00  1.133e+00]
 Consumption per passenger: 33.14 kJ/(Pax.km)
 ----
 Bus :
@@ -745,39 +745,39 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.1409487341333717
-                   x: [ 5.453e-02  8.169e-01  9.754e-01]
-                 nit: 26
-                nfev: 1219
-          population: [[ 5.453e-02  8.169e-01  9.754e-01]
-                       [ 5.257e-02  8.023e-01  9.764e-01]
+                 fun: 1.1382110888204808
+                   x: [ 5.251e-02  7.636e-01  9.722e-01]
+                 nit: 22
+                nfev: 1039
+          population: [[ 5.251e-02  7.636e-01  9.722e-01]
+                       [ 5.756e-02  8.086e-01  9.744e-01]
                        ...
-                       [ 5.361e-02  8.281e-01  9.649e-01]
-                       [ 4.961e-02  8.508e-01  9.538e-01]]
- population_energies: [ 1.141e+00  1.141e+00 ...  1.145e+00  1.145e+00]
-Consumption per passenger: 35.21 kJ/(Pax.km)
+                       [ 4.860e-02  8.180e-01  9.662e-01]
+                       [ 4.686e-02  8.549e-01  9.806e-01]]
+ population_energies: [ 1.138e+00  1.141e+00 ...  1.146e+00  1.144e+00]
+Consumption per passenger: 34.50 kJ/(Pax.km)
 ----
 Car :
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.509129192627761
-                   x: [ 7.142e-02  2.319e-01  9.886e-01]
-                 nit: 35
-                nfev: 1624
-          population: [[ 7.142e-02  2.319e-01  9.886e-01]
-                       [ 6.055e-02  3.343e-01  9.862e-01]
+                 fun: 1.3512967382800352
+                   x: [ 8.198e-03  7.019e-01  9.897e-01]
+                 nit: 36
+                nfev: 1669
+          population: [[ 8.198e-03  7.019e-01  9.897e-01]
+                       [ 7.609e-03  7.020e-01  9.895e-01]
                        ...
-                       [ 6.882e-02  2.278e-01  9.868e-01]
-                       [ 6.926e-02  2.755e-01  9.837e-01]]
- population_energies: [ 1.509e+00  1.557e+00 ...  1.509e+00  1.566e+00]
+                       [ 6.162e-03  7.094e-01  9.892e-01]
+                       [ 9.518e-03  6.987e-01  9.896e-01]]
+ population_energies: [ 1.351e+00  1.351e+00 ...  1.352e+00  1.351e+00]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 99.96 kJ/(Pax.km)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 89.63 kJ/(Pax.km)
 </pre></div>
 </div>
-<img alt="../../_images/78e3ab709ba6f8977c701cce31ec1982e0ff232e1a7c3821a4189d2f5f4247f8.png" src="../../_images/78e3ab709ba6f8977c701cce31ec1982e0ff232e1a7c3821a4189d2f5f4247f8.png" />
+<img alt="../../_images/da3552c53986000641065fca6d2d0a7242bfee02cd8dd84434a145adfe915e94.png" src="../../_images/da3552c53986000641065fca6d2d0a7242bfee02cd8dd84434a145adfe915e94.png" />
 </div>
 </div>
 <p>Here we define a <code class="docutils literal notranslate"><span class="pre">line</span></code> class with all the functionalities described just before.</p>
@@ -972,124 +972,334 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.0794314042892135
-                   x: [ 4.944e-02  8.280e-01  9.785e-01]
-                 nit: 30
-                nfev: 1399
-          population: [[ 4.944e-02  8.280e-01  9.785e-01]
-                       [ 4.736e-02  8.539e-01  9.888e-01]
+                 fun: 1.0789022328098097
+                   x: [ 5.040e-02  8.163e-01  9.792e-01]
+                 nit: 32
+                nfev: 1489
+          population: [[ 5.040e-02  8.163e-01  9.792e-01]
+                       [ 5.949e-02  7.750e-01  9.812e-01]
                        ...
-                       [ 5.349e-02  8.068e-01  9.780e-01]
-                       [ 5.129e-02  8.402e-01  9.854e-01]]
- population_energies: [ 1.079e+00  1.080e+00 ...  1.083e+00  1.085e+00]
+                       [ 5.058e-02  8.225e-01  9.788e-01]
+                       [ 4.806e-02  8.373e-01  9.828e-01]]
+ population_energies: [ 1.079e+00  1.087e+00 ...  1.079e+00  1.080e+00]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.0914995735872388
-                   x: [ 8.993e-02  7.154e-01  9.652e-01]
-                 nit: 22
-                nfev: 1039
-          population: [[ 8.993e-02  7.154e-01  9.652e-01]
-                       [ 8.363e-02  7.894e-01  9.662e-01]
+                 fun: 1.0915272919516814
+                   x: [ 7.642e-02  8.311e-01  9.556e-01]
+                 nit: 18
+                nfev: 859
+          population: [[ 7.642e-02  8.311e-01  9.556e-01]
+                       [ 6.964e-02  9.032e-01  9.470e-01]
                        ...
-                       [ 1.049e-01  6.580e-01  9.735e-01]
-                       [ 1.031e-01  7.115e-01  9.646e-01]]
- population_energies: [ 1.091e+00  1.095e+00 ...  1.093e+00  1.101e+00]
+                       [ 8.718e-02  8.191e-01  9.619e-01]
+                       [ 9.120e-02  8.051e-01  9.534e-01]]
+ population_energies: [ 1.092e+00  1.094e+00 ...  1.101e+00  1.106e+00]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.1030652950960669
-                   x: [ 1.000e-01  8.456e-01  9.223e-01]
-                 nit: 12
-                nfev: 589
-          population: [[ 1.000e-01  8.456e-01  9.223e-01]
-                       [ 1.671e-01  6.207e-01  9.790e-01]
+                 fun: 1.1016814564577433
+                   x: [ 1.102e-01  8.011e-01  9.261e-01]
+                 nit: 13
+                nfev: 634
+          population: [[ 1.102e-01  8.011e-01  9.261e-01]
+                       [ 1.006e-01  9.361e-01  9.322e-01]
                        ...
-                       [ 1.257e-01  8.506e-01  9.422e-01]
-                       [ 1.361e-01  8.538e-01  9.192e-01]]
- population_energies: [ 1.103e+00  1.114e+00 ...  1.123e+00  1.129e+00]
+                       [ 1.196e-01  7.581e-01  9.360e-01]
+                       [ 1.277e-01  9.188e-01  9.580e-01]]
+ population_energies: [ 1.102e+00  1.115e+00 ...  1.105e+00  1.134e+00]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.0408802965154798
-                   x: [ 1.890e-02  9.294e-01  9.875e-01]
-                 nit: 29
-                nfev: 1354
-          population: [[ 1.890e-02  9.294e-01  9.875e-01]
-                       [ 1.823e-02  9.652e-01  9.859e-01]
+                 fun: 1.0405787055502655
+                   x: [ 1.909e-02  9.214e-01  9.898e-01]
+                 nit: 45
+                nfev: 2074
+          population: [[ 1.909e-02  9.214e-01  9.898e-01]
+                       [ 2.593e-02  9.083e-01  9.894e-01]
                        ...
-                       [ 1.798e-02  9.406e-01  9.867e-01]
-                       [ 2.057e-02  9.536e-01  9.851e-01]]
- population_energies: [ 1.041e+00  1.042e+00 ...  1.041e+00  1.046e+00]
+                       [ 3.283e-02  8.891e-01  9.849e-01]
+                       [ 1.904e-02  9.288e-01  9.888e-01]]
+ population_energies: [ 1.041e+00  1.052e+00 ...  1.064e+00  1.041e+00]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.0609393370979865
-                   x: [ 6.583e-02  7.819e-01  9.785e-01]
+                 fun: 1.061735478126468
+                   x: [ 7.836e-02  6.988e-01  9.873e-01]
                  nit: 20
                 nfev: 949
-          population: [[ 6.583e-02  7.819e-01  9.785e-01]
-                       [ 6.577e-02  7.951e-01  9.743e-01]
+          population: [[ 7.836e-02  6.988e-01  9.873e-01]
+                       [ 9.810e-02  6.496e-01  9.810e-01]
                        ...
-                       [ 5.773e-02  8.329e-01  9.838e-01]
-                       [ 6.845e-02  8.063e-01  9.756e-01]]
- population_energies: [ 1.061e+00  1.062e+00 ...  1.063e+00  1.066e+00]
+                       [ 7.675e-02  7.437e-01  9.770e-01]
+                       [ 5.855e-02  8.412e-01  9.738e-01]]
+ population_energies: [ 1.062e+00  1.070e+00 ...  1.064e+00  1.063e+00]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
                  fun: 1.060351732967735
-                   x: [ 6.732e-02  7.635e-01  9.752e-01]
+                   x: [ 6.399e-02  7.655e-01  9.749e-01]
+                 nit: 19
+                nfev: 904
+          population: [[ 6.399e-02  7.655e-01  9.749e-01]
+                       [ 6.408e-02  7.881e-01  9.757e-01]
+                       ...
+                       [ 6.875e-02  8.855e-01  9.771e-01]
+                       [ 6.743e-02  7.813e-01  9.733e-01]]
+ population_energies: [ 1.060e+00  1.062e+00 ...  1.073e+00  1.066e+00]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
+             success: True
+                 fun: 1.0610520025445085
+                   x: [ 6.447e-02  7.809e-01  9.730e-01]
                  nit: 16
                 nfev: 769
-          population: [[ 6.732e-02  7.635e-01  9.752e-01]
-                       [ 8.665e-02  7.083e-01  9.850e-01]
+          population: [[ 6.447e-02  7.809e-01  9.730e-01]
+                       [ 7.635e-02  7.608e-01  9.868e-01]
                        ...
-                       [ 6.157e-02  8.425e-01  9.686e-01]
-                       [ 6.260e-02  8.905e-01  9.687e-01]]
- population_energies: [ 1.060e+00  1.067e+00 ...  1.063e+00  1.069e+00]
+                       [ 9.909e-02  6.847e-01  9.728e-01]
+                       [ 8.927e-02  8.069e-01  9.514e-01]]
+ population_energies: [ 1.061e+00  1.069e+00 ...  1.072e+00  1.081e+00]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: 1.0611603540598697
-                   x: [ 7.750e-02  6.840e-01  9.816e-01]
-                 nit: 28
-                nfev: 1309
-          population: [[ 7.750e-02  6.840e-01  9.816e-01]
-                       [ 8.367e-02  7.119e-01  9.831e-01]
+                 fun: 1.060351732967735
+                   x: [ 6.714e-02  7.684e-01  9.723e-01]
+                 nit: 18
+                nfev: 859
+          population: [[ 6.714e-02  7.684e-01  9.723e-01]
+                       [ 6.604e-02  9.532e-01  9.668e-01]
                        ...
-                       [ 1.033e-01  6.020e-01  9.869e-01]
-                       [ 8.392e-02  6.946e-01  9.818e-01]]
- population_energies: [ 1.061e+00  1.067e+00 ...  1.067e+00  1.067e+00]
+                       [ 6.121e-02  9.180e-01  9.670e-01]
+                       [ 5.737e-02  9.667e-01  9.738e-01]]
+ population_energies: [ 1.060e+00  1.074e+00 ...  1.070e+00  1.070e+00]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
-             success: True
-                 fun: 1.0615155432561378
-                   x: [ 6.041e-02  8.071e-01  9.847e-01]
-                 nit: 14
-                nfev: 679
-          population: [[ 6.041e-02  8.071e-01  9.847e-01]
-                       [ 5.501e-02  8.719e-01  9.776e-01]
-                       ...
-                       [ 5.759e-02  8.974e-01  9.486e-01]
-                       [ 8.102e-02  8.632e-01  9.616e-01]]
- population_energies: [ 1.062e+00  1.063e+00 ...  1.066e+00  1.082e+00]
+<img alt="../../_images/c58125d1cbb7c08ef9d7a7d60bb7a6febb557bce1077a506a31ab9908723633c.png" src="../../_images/c58125d1cbb7c08ef9d7a7d60bb7a6febb557bce1077a506a31ab9908723633c.png" />
+<img alt="../../_images/b67dd2ff48ca0a689c61dddf75814caf325e8df9ba7ad80e61f7239b0e251247.png" src="../../_images/b67dd2ff48ca0a689c61dddf75814caf325e8df9ba7ad80e61f7239b0e251247.png" />
+<img alt="../../_images/b35cc6459b41f8db37dc823bd289adf95153a222bc5ef3bc1f3291bcedc23912.png" src="../../_images/b35cc6459b41f8db37dc823bd289adf95153a222bc5ef3bc1f3291bcedc23912.png" />
+<img alt="../../_images/e33ae676706bfe9b8396c12abb05b6296bdb851937744ec2fd15e4ead7d262dd.png" src="../../_images/e33ae676706bfe9b8396c12abb05b6296bdb851937744ec2fd15e4ead7d262dd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error in callback &lt;function flush_figures at 0x7ff61aac6160&gt; (for post_execute), with arguments args (),kwargs {}:
 </pre></div>
 </div>
-<img alt="../../_images/1acf3428250beffda2f334cfa454831b4724ae72fadabc0b722be32f9dce6ad7.png" src="../../_images/1acf3428250beffda2f334cfa454831b4724ae72fadabc0b722be32f9dce6ad7.png" />
-<img alt="../../_images/1004a3a7e81e2e0c85bbe95ca8e78a48d51c178889fcb55d87fe61636312c4b2.png" src="../../_images/1004a3a7e81e2e0c85bbe95ca8e78a48d51c178889fcb55d87fe61636312c4b2.png" />
-<img alt="../../_images/a68e3811208352a638dc8353dd8c235cd9ecef237f35eff6f886cf7a9c5f5a86.png" src="../../_images/a68e3811208352a638dc8353dd8c235cd9ecef237f35eff6f886cf7a9c5f5a86.png" />
-<img alt="../../_images/42a41a2e12c591d151fd6c73ae2a936f42b3e004a546b7d5aea346a2c154ace5.png" src="../../_images/42a41a2e12c591d151fd6c73ae2a936f42b3e004a546b7d5aea346a2c154ace5.png" />
-<img alt="../../_images/64acfb60b6c76adbcd15aa1348c5440cc0b150c1d412650f35d606a7854e1711.png" src="../../_images/64acfb60b6c76adbcd15aa1348c5440cc0b150c1d412650f35d606a7854e1711.png" />
-<img alt="../../_images/da92ab302f6d10c06ce76713b2c46c20629af03588afa862b619304d7c248544.png" src="../../_images/da92ab302f6d10c06ce76713b2c46c20629af03588afa862b619304d7c248544.png" />
-<img alt="../../_images/75153408531a02a740e5d509bf8769a7715d6a9c1e0a47aabe80d25a6327d194.png" src="../../_images/75153408531a02a740e5d509bf8769a7715d6a9c1e0a47aabe80d25a6327d194.png" />
-<img alt="../../_images/c38bdec77cd61577bdd5a1ec8953b615376432f4b29d5f460d7756f747030f94.png" src="../../_images/c38bdec77cd61577bdd5a1ec8953b615376432f4b29d5f460d7756f747030f94.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib_inline/backend_inline.py:126,</span> in <span class="ni">flush_figures</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span> <span class="k">if</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span><span class="o">.</span><span class="n">close_figures</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="c1"># ignore the tracking, just draw and close all figures</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">126</span>         <span class="k">return</span> <span class="n">show</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span>         <span class="c1"># safely show traceback if in IPython, else raise</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>         <span class="n">ip</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib_inline/backend_inline.py:90,</span> in <span class="ni">show</span><span class="nt">(close, block)</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span>     <span class="k">for</span> <span class="n">figure_manager</span> <span class="ow">in</span> <span class="n">Gcf</span><span class="o">.</span><span class="n">get_all_fig_managers</span><span class="p">():</span>
+<span class="ne">---&gt; </span><span class="mi">90</span>         <span class="n">display</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span>             <span class="n">figure_manager</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">92</span>             <span class="n">metadata</span><span class="o">=</span><span class="n">_fetch_figure_metadata</span><span class="p">(</span><span class="n">figure_manager</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">figure</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>         <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="n">show</span><span class="o">.</span><span class="n">_to_draw</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/display_functions.py:298,</span> in <span class="ni">display</span><span class="nt">(include, exclude, metadata, transient, display_id, raw, clear, *objs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span>     <span class="n">publish_display_data</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">298</span>     <span class="n">format_dict</span><span class="p">,</span> <span class="n">md_dict</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">format_dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span>         <span class="c1"># nothing to display (e.g. _ipython_display_ took over)</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>         <span class="k">continue</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/formatters.py:179,</span> in <span class="ni">DisplayFormatter.format</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="n">md</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">179</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">formatter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span> <span class="k">except</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="c1"># FIXME: log the exception</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>     <span class="k">raise</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/decorator.py:232,</span> in <span class="ni">decorate.&lt;locals&gt;.fun</span><span class="nt">(*args, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">kwsyntax</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span>     <span class="n">args</span><span class="p">,</span> <span class="n">kw</span> <span class="o">=</span> <span class="n">fix</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">232</span> <span class="k">return</span> <span class="n">caller</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">extras</span> <span class="o">+</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/formatters.py:223,</span> in <span class="ni">catch_format_error</span><span class="nt">(method, self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;show traceback on failed format call&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">223</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span> <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span>     <span class="c1"># don&#39;t warn on NotImplementedErrors</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_return</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/formatters.py:340,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span>     <span class="k">pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">340</span>     <span class="k">return</span> <span class="n">printer</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span> <span class="c1"># Finally look for special method names</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span> <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/pylabtools.py:152,</span> in <span class="ni">print_figure</span><span class="nt">(fig, fmt, bbox_inches, base64, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span>     <span class="kn">from</span> <span class="nn">matplotlib.backend_bases</span> <span class="kn">import</span> <span class="n">FigureCanvasBase</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span>     <span class="n">FigureCanvasBase</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">152</span> <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">print_figure</span><span class="p">(</span><span class="n">bytes_io</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span> <span class="n">data</span> <span class="o">=</span> <span class="n">bytes_io</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="k">if</span> <span class="n">fmt</span> <span class="o">==</span> <span class="s1">&#39;svg&#39;</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/backend_bases.py:2204,</span> in <span class="ni">FigureCanvasBase.print_figure</span><span class="nt">(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2200</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2201</span>     <span class="c1"># _get_renderer may change the figure dpi (as vector formats</span>
+<span class="g g-Whitespace">   </span><span class="mi">2202</span>     <span class="c1"># force the figure dpi to 72), so we need to set it again here.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2203</span>     <span class="k">with</span> <span class="n">cbook</span><span class="o">.</span><span class="n">_setattr_cm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">2204</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">print_method</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2205</span>             <span class="n">filename</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2206</span>             <span class="n">facecolor</span><span class="o">=</span><span class="n">facecolor</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2207</span>             <span class="n">edgecolor</span><span class="o">=</span><span class="n">edgecolor</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2208</span>             <span class="n">orientation</span><span class="o">=</span><span class="n">orientation</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2209</span>             <span class="n">bbox_inches_restore</span><span class="o">=</span><span class="n">_bbox_inches_restore</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2210</span>             <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2211</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2212</span>     <span class="k">if</span> <span class="n">bbox_inches</span> <span class="ow">and</span> <span class="n">restore_bbox</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/backend_bases.py:2054,</span> in <span class="ni">FigureCanvasBase._switch_canvas_and_return_print_method.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2050</span>     <span class="n">optional_kws</span> <span class="o">=</span> <span class="p">{</span>  <span class="c1"># Passed by print_figure for other renderers.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2051</span>         <span class="s2">&quot;dpi&quot;</span><span class="p">,</span> <span class="s2">&quot;facecolor&quot;</span><span class="p">,</span> <span class="s2">&quot;edgecolor&quot;</span><span class="p">,</span> <span class="s2">&quot;orientation&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2052</span>         <span class="s2">&quot;bbox_inches_restore&quot;</span><span class="p">}</span>
+<span class="g g-Whitespace">   </span><span class="mi">2053</span>     <span class="n">skip</span> <span class="o">=</span> <span class="n">optional_kws</span> <span class="o">-</span> <span class="p">{</span><span class="o">*</span><span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">meth</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span><span class="p">}</span>
+<span class="ne">-&gt; </span><span class="mi">2054</span>     <span class="n">print_method</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">meth</span><span class="p">)(</span><span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">meth</span><span class="p">(</span>
+<span class="nn">   2055         *args, **{k: v for k, v</span> in <span class="ni">kwargs.items</span><span class="nt">() if k not in skip}))</span>
+<span class="g g-Whitespace">   </span><span class="mi">2056</span> <span class="k">else</span><span class="p">:</span>  <span class="c1"># Let third-parties do as they see fit.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2057</span>     <span class="n">print_method</span> <span class="o">=</span> <span class="n">meth</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py:496,</span> in <span class="ni">FigureCanvasAgg.print_png</span><span class="nt">(self, filename_or_obj, metadata, pil_kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span> <span class="k">def</span> <span class="nf">print_png</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename_or_obj</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pil_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">451</span><span class="sd">     Write the figure to a PNG file.</span>
+<span class="g g-Whitespace">    </span><span class="mi">452</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">494</span><span class="sd">         *metadata*, including the default &#39;Software&#39; key.</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">496</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_print_pil</span><span class="p">(</span><span class="n">filename_or_obj</span><span class="p">,</span> <span class="s2">&quot;png&quot;</span><span class="p">,</span> <span class="n">pil_kwargs</span><span class="p">,</span> <span class="n">metadata</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py:444,</span> in <span class="ni">FigureCanvasAgg._print_pil</span><span class="nt">(self, filename_or_obj, fmt, pil_kwargs, metadata)</span>
+<span class="g g-Whitespace">    </span><span class="mi">439</span> <span class="k">def</span> <span class="nf">_print_pil</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename_or_obj</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">pil_kwargs</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">440</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span><span class="sd">     Draw the canvas, then save it using `.image.imsave` (to which</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span><span class="sd">     *pil_kwargs* and *metadata* are forwarded).</span>
+<span class="g g-Whitespace">    </span><span class="mi">443</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">444</span>     <span class="n">FigureCanvasAgg</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="n">mpl</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span>         <span class="n">filename_or_obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer_rgba</span><span class="p">(),</span> <span class="nb">format</span><span class="o">=</span><span class="n">fmt</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;upper&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span>         <span class="n">dpi</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">dpi</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="n">pil_kwargs</span><span class="o">=</span><span class="n">pil_kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py:387,</span> in <span class="ni">FigureCanvasAgg.draw</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span> <span class="c1"># Acquire a lock on the shared font cache.</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span> <span class="k">with</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toolbar</span><span class="o">.</span><span class="n">_wait_cursor_for_draw_cm</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">toolbar</span>
+<span class="g g-Whitespace">    </span><span class="mi">386</span>       <span class="k">else</span> <span class="n">nullcontext</span><span class="p">()):</span>
+<span class="ne">--&gt; </span><span class="mi">387</span>     <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span>     <span class="c1"># A GUI class may be need to update a window using this draw, so</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span>     <span class="c1"># don&#39;t forget to call the superclass.</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/artist.py:95,</span> in <span class="ni">_finalize_rasterization.&lt;locals&gt;.draw_wrapper</span><span class="nt">(artist, renderer, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span> <span class="nd">@wraps</span><span class="p">(</span><span class="n">draw</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span> <span class="k">def</span> <span class="nf">draw_wrapper</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">95</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="k">if</span> <span class="n">renderer</span><span class="o">.</span><span class="n">_rasterizing</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>         <span class="n">renderer</span><span class="o">.</span><span class="n">stop_rasterizing</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/artist.py:72,</span> in <span class="ni">allow_rasterization.&lt;locals&gt;.draw_wrapper</span><span class="nt">(artist, renderer)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>         <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>     <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/figure.py:3162,</span> in <span class="ni">Figure.draw</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3159</span>             <span class="c1"># ValueError can occur when resizing a window.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3161</span>     <span class="bp">self</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3162</span>     <span class="n">mimage</span><span class="o">.</span><span class="n">_draw_list_compositing_images</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3163</span>         <span class="n">renderer</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">artists</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">suppressComposite</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3165</span>     <span class="n">renderer</span><span class="o">.</span><span class="n">close_group</span><span class="p">(</span><span class="s1">&#39;figure&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3166</span> <span class="k">finally</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/image.py:132,</span> in <span class="ni">_draw_list_compositing_images</span><span class="nt">(renderer, parent, artists, suppress_composite)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="k">if</span> <span class="n">not_composite</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">has_images</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">artists</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">132</span>         <span class="n">a</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="c1"># Composite any adjacent images together</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="n">image_group</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/artist.py:72,</span> in <span class="ni">allow_rasterization.&lt;locals&gt;.draw_wrapper</span><span class="nt">(artist, renderer)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>         <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>     <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/axes/_base.py:3137,</span> in <span class="ni">_AxesBase.draw</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3134</span> <span class="k">if</span> <span class="n">artists_rasterized</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3135</span>     <span class="n">_draw_rasterized</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span> <span class="n">artists_rasterized</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3137</span> <span class="n">mimage</span><span class="o">.</span><span class="n">_draw_list_compositing_images</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3138</span>     <span class="n">renderer</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">artists</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">suppressComposite</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3140</span> <span class="n">renderer</span><span class="o">.</span><span class="n">close_group</span><span class="p">(</span><span class="s1">&#39;axes&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3141</span> <span class="bp">self</span><span class="o">.</span><span class="n">stale</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/image.py:132,</span> in <span class="ni">_draw_list_compositing_images</span><span class="nt">(renderer, parent, artists, suppress_composite)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="k">if</span> <span class="n">not_composite</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">has_images</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">artists</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">132</span>         <span class="n">a</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="c1"># Composite any adjacent images together</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="n">image_group</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/artist.py:72,</span> in <span class="ni">allow_rasterization.&lt;locals&gt;.draw_wrapper</span><span class="nt">(artist, renderer)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>         <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>     <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/axis.py:1430,</span> in <span class="ni">Axis.draw</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1427</span>     <span class="n">tick</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1429</span> <span class="c1"># Shift label away from axes to avoid overlapping ticklabels.</span>
+<span class="ne">-&gt; </span><span class="mi">1430</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_label_position</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1431</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1433</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_offset_text_position</span><span class="p">(</span><span class="n">tlb1</span><span class="p">,</span> <span class="n">tlb2</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/axis.py:2419,</span> in <span class="ni">XAxis._update_label_position</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2417</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2418</span>     <span class="n">spine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">2419</span>     <span class="n">spinebbox</span> <span class="o">=</span> <span class="n">spine</span><span class="o">.</span><span class="n">get_window_extent</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">2420</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2421</span>     <span class="c1"># use Axes if spine doesn&#39;t exist</span>
+<span class="g g-Whitespace">   </span><span class="mi">2422</span>     <span class="n">spinebbox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">bbox</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/spines.py:158,</span> in <span class="ni">Spine.get_window_extent</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="k">return</span> <span class="n">bb</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="n">bboxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">bb</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">158</span> <span class="n">drawn_ticks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">_update_ticks</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="n">major_tick</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">({</span><span class="o">*</span><span class="n">drawn_ticks</span><span class="p">}</span> <span class="o">&amp;</span> <span class="p">{</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">majorTicks</span><span class="p">}),</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="n">minor_tick</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">({</span><span class="o">*</span><span class="n">drawn_ticks</span><span class="p">}</span> <span class="o">&amp;</span> <span class="p">{</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">minorTicks</span><span class="p">}),</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/matplotlib/axis.py:1310,</span> in <span class="ni">Axis._update_ticks</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1308</span> <span class="n">minor_labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">minor</span><span class="o">.</span><span class="n">formatter</span><span class="o">.</span><span class="n">format_ticks</span><span class="p">(</span><span class="n">minor_locs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1309</span> <span class="n">minor_ticks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_minor_ticks</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">minor_locs</span><span class="p">))</span>
+<span class="ne">-&gt; </span><span class="mi">1310</span> <span class="k">for</span> <span class="n">tick</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">minor_ticks</span><span class="p">,</span> <span class="n">minor_locs</span><span class="p">,</span> <span class="n">minor_labels</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1311</span>     <span class="n">tick</span><span class="o">.</span><span class="n">update_position</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1312</span>     <span class="n">tick</span><span class="o">.</span><span class="n">label1</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
 </div>
 </div>
 <p>A time vector of evolution of the power required at each section or supplied to each charger is constructed.</p>
@@ -1101,7 +1311,7 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/82db15b44be42e3bb6e139422f314c123725edc5d54abc7b8c825727eac04e60.png" src="../../_images/82db15b44be42e3bb6e139422f314c123725edc5d54abc7b8c825727eac04e60.png" />
+<img alt="../../_images/4e0bcdc94cc5b1e5e63077d7860c0827c9991c78766ba7953ad83a5aec719a8b.png" src="../../_images/4e0bcdc94cc5b1e5e63077d7860c0827c9991c78766ba7953ad83a5aec719a8b.png" />
 </div>
 </div>
 </section>
@@ -1186,8 +1396,8 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/63ffd4cbdb7fceab32dd86ed088ac19b46de4d0969c663fb8389c52ba519d1ce.png" src="../../_images/63ffd4cbdb7fceab32dd86ed088ac19b46de4d0969c663fb8389c52ba519d1ce.png" />
-<img alt="../../_images/e081dbeec7df9fbbe20f635f9012f2eeae594295fee0f0e858ea7aeb5714a49a.png" src="../../_images/e081dbeec7df9fbbe20f635f9012f2eeae594295fee0f0e858ea7aeb5714a49a.png" />
+<img alt="../../_images/c9c8ffead837f73092f9ef7d6c68fd2ff803ac070badb04ae37c513cb8b468e4.png" src="../../_images/c9c8ffead837f73092f9ef7d6c68fd2ff803ac070badb04ae37c513cb8b468e4.png" />
+<img alt="../../_images/a0cf0db142a822b2b6238551a92c7b90b22b82417c7e449b4c65c691056b031e.png" src="../../_images/a0cf0db142a822b2b6238551a92c7b90b22b82417c7e449b4c65c691056b031e.png" />
 </div>
 </div>
 <p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Pareto_front">Pareto front</a> can help find a solution achieving a compromise between 2 objectives.</p>
@@ -1205,7 +1415,7 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ef4caf78c929b7fb8fb19a6b436e679246e42023c7fcfd301105e14a59d00b17.png" src="../../_images/ef4caf78c929b7fb8fb19a6b436e679246e42023c7fcfd301105e14a59d00b17.png" />
+<img alt="../../_images/35c4112b169af5bc6a21db127414b938277904b0f016d74641c85c07dfda4c98.png" src="../../_images/35c4112b169af5bc6a21db127414b938277904b0f016d74641c85c07dfda4c98.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1240,20 +1450,20 @@ Vehicle Max Acceleration (depending of max force) is too low or travel distance 
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Super Capacitor:
 Pmax: 109.73 kW
-NRJ:  0.23 kWh
+NRJ:  0.22 kWh
 Mass:  107.6 kg
 ---
 Traction battery:
 Pmax discharge: 99.95 kW
-Pmax charge: 44.45 kW
-NRJ: 11.30 kWh
-NRJ one travel: 3.03 kWh
-Mass:  444.5 kg
+Pmax charge: 41.44 kW
+NRJ: 11.27 kWh
+NRJ one travel: 3.02 kWh
+Mass:  414.4 kg
 Mass (brake criteria):  333.2 kg
 ---
 </pre></div>
 </div>
-<img alt="../../_images/3310f7c3020f3d0c46a4a12bd313e59ab33f259f91eb5c8f774d34c7d41d8fb4.png" src="../../_images/3310f7c3020f3d0c46a4a12bd313e59ab33f259f91eb5c8f774d34c7d41d8fb4.png" />
+<img alt="../../_images/483eb89ac87375d8dbc8fc551f9e25d837a68d5f1b657d443fcef67948d51b71.png" src="../../_images/483eb89ac87375d8dbc8fc551f9e25d837a68d5f1b657d443fcef67948d51b71.png" />
 </div>
 </div>
 </section>

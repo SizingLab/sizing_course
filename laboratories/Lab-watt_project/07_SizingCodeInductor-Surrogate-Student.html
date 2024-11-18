@@ -61,8 +61,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-watt_project/07_SizingCodeInductor-Surrogate-Student';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -561,13 +559,13 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sizing-code-of-an-inductor-with-surrogate-models-student-version">
+  <section id="sizing-code-of-an-inductor-with-surrogate-models-student-version">
 <h1>Sizing code of an inductor with surrogate models (Student version)<a class="headerlink" href="#sizing-code-of-an-inductor-with-surrogate-models-student-version" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
 <p>The previous study showed some shortcomings such as not taking into account the thermal and a limitation on the dimensions of the air gap. We will see here how to set up surrogate models from thermal or magnetic finite element simulations.</p>
 <section id="thermal-configuration-description">
 <h2>Thermal configuration description<a class="headerlink" href="#thermal-configuration-description" title="Link to this heading">#</a></h2>
-<p>In the previous notebook, the current density <span class="math notranslate nohighlight">\(J\)</span> was imposed. It would be more accurate to calculate the temperature of the hot point of the winding and adjust the value of this current density to limit, for example at 150 ° C, this temperature. The cooling architecture of the various components of the converter takes the following form in this study:</p>
+<p>In the previous notebook, the current density $J$ was imposed. It would be more accurate to calculate the temperature of the hot point of the winding and adjust the value of this current density to limit, for example at 150 ° C, this temperature. The cooling architecture of the various components of the converter takes the following form in this study:</p>
 <p><img alt="ArchiThermic" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/ThermalArchitecture.png" /></p>
 <p>In order to carry out finite element simulations in 2D, we will work on a P-type core which presents a symmetry of revolution.</p>
 <p><img alt="PotCore" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/PotCore.png" /></p>
@@ -609,14 +607,14 @@
 <p>FEM simulations can take computational time not compatible with design optimization and design space exploration. One way of reducing this computational time is by constructing approximation models, known as <a class="reference external" href="https://en.wikipedia.org/wiki/Surrogate_model">surrogate models</a>, response surface models or metamodels.<br />
 In order to reduce the number of variables to manipulate during analysises, dimensional analysis and the <a class="reference external" href="https://en.wikipedia.org/wiki/Buckingham_%CF%80_theorem">Buckinghma theorem</a> can be used.</p>
 <p>We want to find a surrogate model which enable to caculate the thermal resistance between the hot spot of the coil and the support of the core:<br />
-<span class="math notranslate nohighlight">\(R_{th}=f(D,e,...,\lambda_{eq},\lambda_{ferrite},...)\)</span>
+$R_{th}=f(D,e,…,\lambda_{eq},\lambda_{ferrite},…)$
 with:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(D,e,...\)</span> : the diameter of the pot core, the airgap thickness, other geometrical dimensions. Ferrites cores follow geometrical similarities except for the airgap.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\lambda_{eq},\lambda_{ferrite},...\)</span> : the equivalent thermal conductivity of the coil and the other thermal conductivities.</p></li>
+<li><p>$D,e,…$ : the diameter of the pot core, the airgap thickness, other geometrical dimensions. Ferrites cores follow geometrical similarities except for the airgap.</p></li>
+<li><p>$\lambda_{eq},\lambda_{ferrite},…$ : the equivalent thermal conductivity of the coil and the other thermal conductivities.</p></li>
 </ul>
 <blockquote>
-<div><p>Exercice 1: reduce the number of variables to manipulate with the Buckinghma theorem. Give expression of <span class="math notranslate nohighlight">\(/pi\)</span> numbers.</p>
+<div><p>Exercice 1: reduce the number of variables to manipulate with the Buckinghma theorem. Give expression of $/pi$ numbers.</p>
 </div></blockquote>
 <blockquote>
 <div><p>Exercice 2: Justify your dimensional analysis with the following FEMM results.</p>
@@ -624,11 +622,11 @@ with:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Diameter <span class="math notranslate nohighlight">\(D\)</span></p></th>
+<th class="head"><p>Diameter $D$</p></th>
 <th class="head"><p>Copper losses</p></th>
-<th class="head"><p>Airgap <span class="math notranslate nohighlight">\(e\)</span></p></th>
+<th class="head"><p>Airgap $e$</p></th>
 <th class="head"><p>Eequivalent thermal conductivity (coil)</p></th>
-<th class="head"><p>Temperature difference <span class="math notranslate nohighlight">\(\Delta \Teta\)</span></p></th>
+<th class="head"><p>Temperature difference $\Delta \Teta$</p></th>
 </tr>
 </thead>
 <tbody>
@@ -786,15 +784,15 @@ with:</p>
 <section id="surrogate-magnetic-model-for-inductance">
 <h2>Surrogate magnetic model for inductance<a class="headerlink" href="#surrogate-magnetic-model-for-inductance" title="Link to this heading">#</a></h2>
 <p>The same approcach can be adopted for magnetic simulations. The model has to take in account the magnetic field in the airgap for small and big values, and using finite elements simulations the proportion of the magnetic field outside the magnetic circuit is also considered. These effects are not well modelled by classical analytic models.<br />
-The inductance is represented by the reluctance of the magnetic circuit <span class="math notranslate nohighlight">\(R_L\)</span>: <span class="math notranslate nohighlight">\(L=n^2/R_L\)</span>, where <span class="math notranslate nohighlight">\(L\)</span> is the inductance, <span class="math notranslate nohighlight">\(n\)</span> the number of turns.<br />
+The inductance is represented by the reluctance of the magnetic circuit $R_L$: $L=n^2/R_L$, where $L$ is the inductance, $n$ the number of turns.<br />
 Two assumptions are considered for the study:</p>
 <ul class="simple">
 <li><p>The reluctance of the ferrite magnetic circuit is considered during the FEM simulation but neglected for the final expression.</p></li>
 <li><p>The saturation effects are not considered.</p></li>
 </ul>
 <p>Regression on FEM simulation data with log transformation give the following expression:<br />
-<span class="math notranslate nohighlight">\(R_L=\frac{3.86}{μ_0D}π_1^{0.344-0.226 log⁡(π_1)-0.0355 log⁡(π_1)}\)</span><br />
-,where <span class="math notranslate nohighlight">\(π_1=e/D\)</span>.</p>
+$R_L=\frac{3.86}{μ_0D}π_1^{0.344-0.226 log⁡(π_1)-0.0355 log⁡(π_1)}$<br />
+,where $π_1=e/D$.</p>
 </section>
 <section id="inductor-sizing-code">
 <h2>Inductor sizing code<a class="headerlink" href="#inductor-sizing-code" title="Link to this heading">#</a></h2>

@@ -61,8 +61,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture3/4-quiz_scaling_laws';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -561,7 +559,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="quiz">
+  <section id="quiz">
 <h1><span class="section-number">4.4. </span>Quiz<a class="headerlink" href="#quiz" title="Link to this heading">#</a></h1>
 <p>Test yourself with this quiz.</p>
 <div class="cell tag_remove-input docutils container">
@@ -570,16 +568,16 @@
 <h2><span class="section-number">4.4.1. </span>Scaling laws<a class="headerlink" href="#scaling-laws" title="Link to this heading">#</a></h2>
 <section id="quizzes-on-geometric-similarity">
 <h3><span class="section-number">4.4.1.1. </span>Quizzes on Geometric similarity<a class="headerlink" href="#quizzes-on-geometric-similarity" title="Link to this heading">#</a></h3>
-<p>We assume to have similarity on all geometrical parameters : <span class="math notranslate nohighlight">\(r^* = d^* = …= l^*\)</span></p>
+<p>We assume to have similarity on all geometrical parameters : $r^* = d^* = …= l^*$</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="vVeJvMIwZWst" data-shufflequestions="False"
+<div class="output text_html"><div id="ZZWIYCzZPHtI" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#vVeJvMIwZWst {
+#ZZWIYCzZPHtI {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -780,7 +778,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsvVeJvMIwZWst=[
+</style></div><script type="application/javascript">var questionsZZWIYCzZPHtI=[
     {
         "question": "What is the evolution of the areas?",
         "type": "multiple_choice",
@@ -1712,8 +1710,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("vVeJvMIwZWst")) {
-            show_questions(questionsvVeJvMIwZWst,  vVeJvMIwZWst); 
+          if(document.getElementById("ZZWIYCzZPHtI")) {
+            show_questions(questionsZZWIYCzZPHtI,  ZZWIYCzZPHtI); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1722,8 +1720,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("vVeJvMIwZWst");
-        // console.log(document.getElementById("vVeJvMIwZWst"));
+        //console.log("ZZWIYCzZPHtI");
+        // console.log(document.getElementById("ZZWIYCzZPHtI"));
 
         try_show();
         }
@@ -1733,23 +1731,23 @@ if (typeof version == 'undefined') {
 </section>
 <section id="buckingham-theorem-and-scaling-laws">
 <h2><span class="section-number">4.4.2. </span>Buckingham theorem and scaling laws<a class="headerlink" href="#buckingham-theorem-and-scaling-laws" title="Link to this heading">#</a></h2>
-<p>Thanks Buckingham theorem, find evolution of stress <span class="math notranslate nohighlight">\(\sigma\)</span> with geometrical dimension for a rectangular sample under a load in a three-point bending setup:</p>
+<p>Thanks Buckingham theorem, find evolution of stress $\sigma$ with geometrical dimension for a rectangular sample under a load in a three-point bending setup:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(F\)</span> is the load (force) at the fracture point (N)</p></li>
-<li><p><span class="math notranslate nohighlight">\(L\)</span> is the length of the support span</p></li>
-<li><p><span class="math notranslate nohighlight">\(b\)</span> is width</p></li>
-<li><p><span class="math notranslate nohighlight">\(d\)</span> is thickness</p></li>
+<li><p>$F$ is the load (force) at the fracture point (N)</p></li>
+<li><p>$L$ is the length of the support span</p></li>
+<li><p>$b$ is width</p></li>
+<li><p>$d$ is thickness</p></li>
 </ul>
 <p><img alt="beam" src="../../_images/scaling_beam.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="KYjTWfPPNdBD" data-shufflequestions="False"
+<div class="output text_html"><div id="HdPovPWGjWhp" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#KYjTWfPPNdBD {
+#HdPovPWGjWhp {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1950,7 +1948,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsKYjTWfPPNdBD=[
+</style></div><script type="application/javascript">var questionsHdPovPWGjWhp=[
     {
         "question": "Give the evolution of stress $\\sigma$ with geometrical dimension:",
         "type": "multiple_choice",
@@ -2821,8 +2819,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("KYjTWfPPNdBD")) {
-            show_questions(questionsKYjTWfPPNdBD,  KYjTWfPPNdBD); 
+          if(document.getElementById("HdPovPWGjWhp")) {
+            show_questions(questionsHdPovPWGjWhp,  HdPovPWGjWhp); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2831,8 +2829,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("KYjTWfPPNdBD");
-        // console.log(document.getElementById("KYjTWfPPNdBD"));
+        //console.log("HdPovPWGjWhp");
+        // console.log(document.getElementById("HdPovPWGjWhp"));
 
         try_show();
         }
@@ -2844,13 +2842,13 @@ if (typeof version == 'undefined') {
 <p><img alt="rod-end" src="../../_images/scaling_rodend.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="TvQOIgRaSvDS" data-shufflequestions="False"
+<div class="output text_html"><div id="ZdPSwIyRKjNj" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#TvQOIgRaSvDS {
+#ZdPSwIyRKjNj {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3051,7 +3049,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsTvQOIgRaSvDS=[
+</style></div><script type="application/javascript">var questionsZdPSwIyRKjNj=[
     {
         "question": "Estimate the diameter $d$ of a rod-end  with a static load $C_0 = 50 kN$:",
         "type": "multiple_choice",
@@ -3885,8 +3883,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("TvQOIgRaSvDS")) {
-            show_questions(questionsTvQOIgRaSvDS,  TvQOIgRaSvDS); 
+          if(document.getElementById("ZdPSwIyRKjNj")) {
+            show_questions(questionsZdPSwIyRKjNj,  ZdPSwIyRKjNj); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -3895,8 +3893,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("TvQOIgRaSvDS");
-        // console.log(document.getElementById("TvQOIgRaSvDS"));
+        //console.log("ZdPSwIyRKjNj");
+        // console.log(document.getElementById("ZdPSwIyRKjNj"));
 
         try_show();
         }

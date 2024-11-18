@@ -61,8 +61,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-watt_project/05_HeatsinkLinearRegression';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -566,7 +564,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="heatsink-estimation-models-with-simple-and-multiple-linear-regressions">
+  <section id="heatsink-estimation-models-with-simple-and-multiple-linear-regressions">
 <h1>Heatsink  estimation models with simple and multiple linear regressions<a class="headerlink" href="#heatsink-estimation-models-with-simple-and-multiple-linear-regressions" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
 <p>To improve cooling of components heatsinks with natural of forced convection are used. We want to have simple models to make the links between the dimensions, mass, heat resistance and conditions of use of a heatsink.  We will use catalogs data  to establish these estimation models necessary for our study.<br />
@@ -575,8 +573,8 @@ This tutorial illustrates how to use simple and multiple linear regressions of c
 <img alt="Heatsink" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/Heatsink.png" /></p>
 <section id="simple-linear-regression">
 <h2>Simple linear regression<a class="headerlink" href="#simple-linear-regression" title="Link to this heading">#</a></h2>
-<p>For a heat sink, the relation linking the thermal resistance <span class="math notranslate nohighlight">\(R_{th}\)</span>, temperature rise <span class="math notranslate nohighlight">\(\Delta T=T_{heatsink}-T_{ambient}\)</span> and power dissipated <span class="math notranslate nohighlight">\(P_{th}\)</span> is:<br />
-<span class="math notranslate nohighlight">\(\Delta T=T_{heatsink}-T_{ambient} = R_{th}.P_{th}\)</span></p>
+<p>For a heat sink, the relation linking the thermal resistance $R_{th}$, temperature rise $\Delta T=T_{heatsink}-T_{ambient}$ and power dissipated $P_{th}$ is:<br />
+$\Delta T=T_{heatsink}-T_{ambient} = R_{th}.P_{th}$</p>
 <p>The folowing data are from a heat sinks catalog (standard extruded heat sinks of Aavid Thermalloy). The given thermal resisatnce have to be corrected when temperature rise is not equal to 75 °C, the length different of 150 mm, and the speed for forced convection different of 2 m/s. Correction factors are thus discussed in the following sections.</p>
 <section id="temperature-correction-factor">
 <h3>Temperature correction factor<a class="headerlink" href="#temperature-correction-factor" title="Link to this heading">#</a></h3>
@@ -607,50 +605,48 @@ ambient temperature rise other than 75 º C, use the correction factor from the 
 </div>
 </div>
 <p>We want to express this relation with a polynomial model:</p>
-<p><span class="math notranslate nohighlight">\(\frac{R_{th,n}}{R_{th,n,75^{\circ} C}}=\beta _{0}+\beta _{1}.\Delta T+\beta _{2}.\Delta T^{2}\)</span></p>
+<p>$\frac{R_{th,n}}{R_{th,n,75^{\circ} C}}=\beta _{0}+\beta _{1}.\Delta T+\beta _{2}.\Delta T^{2}$</p>
 <p>For this model the relation between data and regression coefficients can be represented with a matrix notation:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
+<p>\begin{align*}
 Y=X.\beta +\varepsilon
-\end{align*}\]</div>
+\end{align*}</p>
 <p>Equivalent to:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
+<p>\begin{align*}
 \left(\begin{array}{l}
-y_{1}\\
-\ldots \\
+y_{1}\
+\ldots \
 y_{p}
 \end{array}\right)=\left(\begin{array}{lll}
-1 &amp; x_{11} &amp; \ldots \\
-\ldots &amp; \ldots &amp; \ldots \\
-1 &amp; x_{p1} &amp; \ldots 
+1 &amp; x_{11} &amp; \ldots \
+\ldots &amp; \ldots &amp; \ldots \
+1 &amp; x_{p1} &amp; \ldots
 \end{array}\right)\left(\begin{array}{l}
-\beta _{0}\\
-\ldots \\
+\beta _{0}\
+\ldots \
 \beta _{p}
 \end{array}\right)+\left(\begin{array}{l}
-\varepsilon _{1}\\
-\ldots \\
+\varepsilon _{1}\
+\ldots \
 \varepsilon _{p}
 \end{array}\right)
-\end{align*}\]</div>
+\end{align*}</p>
 <p>with:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(Y\)</span>, the output data vector: here <span class="math notranslate nohighlight">\(R_{th,n}/R_{th,n,70°C}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(X\)</span>, the input data matrix: here <span class="math notranslate nohighlight">\(\Delta T\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\beta\)</span>, the coefficients of model</p></li>
+<li><p>$Y$, the output data vector: here $R_{th,n}/R_{th,n,70°C}$</p></li>
+<li><p>$X$, the input data matrix: here $\Delta T$</p></li>
+<li><p>$\beta$, the coefficients of model</p></li>
 </ul>
 <blockquote>
-<div><p>Exercice 1: In the case of least square error assumption, demonstrate that the <span class="math notranslate nohighlight">\(\beta\)</span> vector can be calculated with the following relation: <span class="math notranslate nohighlight">\(\beta=(X^tX)^{-1}X^tY\)</span>. Implement this calculation with python numpy functions: matrix products, matrix inversion and matrix tranposition (here a tutorial about <a class="reference external" href="https://www.python-course.eu/matrix_arithmetic.php">Matrix arithmetic</a>). Plot the regression and the original data on the same plot.</p>
+<div><p>Exercice 1: In the case of least square error assumption, demonstrate that the $\beta$ vector can be calculated with the following relation: $\beta=(X^tX)^{-1}X^tY$. Implement this calculation with python numpy functions: matrix products, matrix inversion and matrix tranposition (here a tutorial about <a class="reference external" href="https://www.python-course.eu/matrix_arithmetic.php">Matrix arithmetic</a>). Plot the regression and the original data on the same plot.</p>
 </div></blockquote>
 <blockquote>
-<div><p>Answer: The errors can be expressed by <span class="math notranslate nohighlight">\(\varepsilon = Y-X\beta\)</span>. To determine the least squares estimator, we write the sum of squares of the residuals:<br />
-<span class="math notranslate nohighlight">\(S(\beta)=\sum\varepsilon^2=\varepsilon^t\varepsilon = (Y-X\beta)^t(Y-X\beta)=Y^tY-Y^tX\beta-\beta^tX^tY+\beta^tX^tX\beta\)</span><br />
-The minimum of <span class="math notranslate nohighlight">\(S(\beta)\)</span> is obtained by setting the derivatives of <span class="math notranslate nohighlight">\(S(\beta)\)</span> equal to zero:</p>
+<div><p>Answer: The errors can be expressed by $\varepsilon = Y-X\beta$. To determine the least squares estimator, we write the sum of squares of the residuals:<br />
+$S(\beta)=\sum\varepsilon^2=\varepsilon^t\varepsilon = (Y-X\beta)^t(Y-X\beta)=Y^tY-Y^tX\beta-\beta^tX^tY+\beta^tX^tX\beta$<br />
+The minimum of $S(\beta)$ is obtained by setting the derivatives of $S(\beta)$ equal to zero:</p>
 </div></blockquote>
 <blockquote>
-<div><p><span class="math notranslate nohighlight">\(\frac{\partial S(\varepsilon)}{\partial \beta}=-2Y^tX+2X^tX\beta\)</span><br />
-which gives <span class="math notranslate nohighlight">\(\beta=(X^tX)^{-1}X^tY\)</span></p>
+<div><p>$\frac{\partial S(\varepsilon)}{\partial \beta}=-2Y^tX+2X^tX\beta$<br />
+which gives $\beta=(X^tX)^{-1}X^tY$</p>
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -689,7 +685,7 @@ which gives <span class="math notranslate nohighlight">\(\beta=(X^tX)^{-1}X^tY\)
 </div></blockquote>
 <blockquote>
 <div><p>Exercice 3: Adapt the linear regression prosses to a power law model<br />
-<span class="math notranslate nohighlight">\(\frac{R_{th,n}}{R_{th,n,75^{\circ} C}}=\beta _{0}.\Delta T^{\beta_{1}}\)</span></p>
+$\frac{R_{th,n}}{R_{th,n,75^{\circ} C}}=\beta <em>{0}.\Delta T^{\beta</em>{1}}$</p>
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -776,7 +772,7 @@ the given thermal resistance data by the appropriate factor taken from the therm
 <p><img alt="Length correction factor" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/LengthCorrectionFactor.PNG" /></p>
 <blockquote>
 <div><p>Exercice : Express this relation with a power law model:
-<span class="math notranslate nohighlight">\(\frac{R_{th}}{R_{th,150mm^{\circ} C}}=k.L^a\)</span></p>
+$\frac{R_{th}}{R_{th,150mm^{\circ} C}}=k.L^a$</p>
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -817,7 +813,7 @@ thermal resistance in forced convection.</p>
 <p><img alt="Length correction factor" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/SpeedCorrectionFactor.PNG" /></p>
 <blockquote>
 <div><p>Exercice : Express this relation with a polynomial model:
-<span class="math notranslate nohighlight">\(\frac{R_{th,f}}{R_{th,f,2m/s^{\circ} C}}=\beta _{0}+\beta _{1}.v+\beta _{2}.v^{2}\)</span></p>
+$\frac{R_{th,f}}{R_{th,f,2m/s^{\circ} C}}=\beta _{0}+\beta _{1}.v+\beta _{2}.v^{2}$</p>
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -844,7 +840,7 @@ R2:  0.9991401923462344
 </section>
 <section id="thermal-resistance-identification-of-the-most-important-dimensions">
 <h2>Thermal resistance : Identification of the most important dimensions<a class="headerlink" href="#thermal-resistance-identification-of-the-most-important-dimensions" title="Link to this heading">#</a></h2>
-<p>The objective of the estimation model sought here is to evaluate the thermal resistance in natural convection of a heat sink <span class="math notranslate nohighlight">\(R_{th,n}\)</span> according to its dimensions (see Figure below). The statistical data are from a heat sinks catalog (standard extruded heat sinks of <a class="reference external" href="https://www.boydcorp.com/thermal/heat-sinks/extruded.html">Aavid Thermalloy</a>).</p>
+<p>The objective of the estimation model sought here is to evaluate the thermal resistance in natural convection of a heat sink $R_{th,n}$ according to its dimensions (see Figure below). The statistical data are from a heat sinks catalog (standard extruded heat sinks of <a class="reference external" href="https://www.boydcorp.com/thermal/heat-sinks/extruded.html">Aavid Thermalloy</a>).</p>
 <p><em>Section of a heat sink (Length L)</em>
 <img alt="HeatsinkSection" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/HeatsinkSection.png" /></p>
 <p>The first step is to import catalog data stored in a .csv file. We use for that functions from <a class="reference external" href="https://pandas.pydata.org/index.html">Panda</a> package (with here an <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/03.00-introduction-to-pandas.html">introduction to panda</a>).<br />
@@ -955,7 +951,7 @@ All heatsinks have the same length <em>L</em> = 150 mm. <em>Ml</em> corresponds 
 </div></div></div>
 </div>
 <blockquote>
-<div><p>Exercice: By using a correlation analysis or a scatter matrix (here <a class="reference external" href="http://benalexkeen.com/correlation-in-python/">examples</a>), identify the most important dimensions among <span class="math notranslate nohighlight">\(W, H, W_f, H_f, H_s\)</span>. A log transformation can be usefull because of the large range of data.</p>
+<div><p>Exercice: By using a correlation analysis or a scatter matrix (here <a class="reference external" href="http://benalexkeen.com/correlation-in-python/">examples</a>), identify the most important dimensions among $W, H, W_f, H_f, H_s$. A log transformation can be usefull because of the large range of data.</p>
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1111,11 +1107,11 @@ All heatsinks have the same length <em>L</em> = 150 mm. <em>Ml</em> corresponds 
 <section id="natural-thermal-resistance-multiple-linear-regression">
 <h3>Natural thermal resistance : Multiple linear regression<a class="headerlink" href="#natural-thermal-resistance-multiple-linear-regression" title="Link to this heading">#</a></h3>
 <p>We want to perform here a multiple linear regression to determine an estimation model of the form.<br />
-<span class="math notranslate nohighlight">\(R_{th,n}=aX^{b}Y^{c}\)</span></p>
+$R_{th,n}=aX^{b}Y^{c}$</p>
 <p>where:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\({a, b, c}\)</span> are the coefficients of the model</p></li>
-<li><p><span class="math notranslate nohighlight">\({X, Y}\)</span> are the most influential dimensions.</p></li>
+<li><p>${a, b, c}$ are the coefficients of the model</p></li>
+<li><p>${X, Y}$ are the most influential dimensions.</p></li>
 </ul>
 <blockquote>
 <div><p>Exercice: Perform this multiple linear regression with the <a class="reference external" href="https://www.statsmodels.org/stable/index.html">StatsModels</a> package and dedicated transformations.</p>

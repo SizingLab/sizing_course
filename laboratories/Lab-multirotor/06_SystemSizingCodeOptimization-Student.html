@@ -61,8 +61,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-multirotor/06_SystemSizingCodeOptimization-Student';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -567,7 +565,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sizing-of-a-multirotor-drone-isae">
+  <section id="sizing-of-a-multirotor-drone-isae">
 <h1>Sizing of a multirotor drone (ISAE)<a class="headerlink" href="#sizing-of-a-multirotor-drone-isae" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Scott Delbecq (ISAE-SUPAERO) and Félix Pollet (ISAE-SUPAERO), Toulouse, France.</em></p>
 <p>The objective of this notebook is to select the best compromise of components (propeller, motor, ESC, battery) of a multi-rotor drone for given specifiations.</p>
@@ -623,35 +621,35 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(\beta_{pro}\)</span></p></td>
+<tr class="row-even"><td class="text-center"><p>$\beta_{pro}$</p></td>
 <td class="text-center"><p>[-]</p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\beta_{pro}=pitch/diameter\)</span> ratio to define the propeller</p></td>
+<td class="text-left"><p>$\beta_{pro}=pitch/diameter$ ratio to define the propeller</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(k_{os}\)</span></p></td>
+<tr class="row-odd"><td class="text-center"><p>$k_{os}$</p></td>
 <td class="text-center"><p>[-]</p></td>
 <td class="text-left"><p>over sizing coefficient on the load mass to estimate the final total mass</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(k_{mot}\)</span></p></td>
+<tr class="row-even"><td class="text-center"><p>$k_{mot}$</p></td>
 <td class="text-center"><p>[-]</p></td>
 <td class="text-left"><p>over sizing coeffcient on the motor torque to estimate the max torque with the hover flight conditions</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(k_{speed,mot}\)</span></p></td>
+<tr class="row-odd"><td class="text-center"><p>$k_{speed,mot}$</p></td>
 <td class="text-center"><p>[-]</p></td>
 <td class="text-left"><p>over sizing coeffcient on the motor speed to take into account voltage limits during hover or take-off flight</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(k_{ND}\)</span></p></td>
+<tr class="row-even"><td class="text-center"><p>$k_{ND}$</p></td>
 <td class="text-center"><p>[-]</p></td>
-<td class="text-left"><p>slow down propeller coef : <span class="math notranslate nohighlight">\(ND = ND_{max} / k_{ND}\)</span></p></td>
+<td class="text-left"><p>slow down propeller coef : $ND = ND_{max} / k_{ND}$</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(k_{D}\)</span></p></td>
+<tr class="row-odd"><td class="text-center"><p>$k_{D}$</p></td>
 <td class="text-center"><p>[-]</p></td>
 <td class="text-left"><p>aspect ratio D_in/D_out for the beam of the frame</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(k_{mb}\)</span></p></td>
+<tr class="row-even"><td class="text-center"><p>$k_{mb}$</p></td>
 <td class="text-center"><p>[-]</p></td>
 <td class="text-left"><p>ratio battery mass / payload mass</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(k_{vb}\)</span></p></td>
+<tr class="row-odd"><td class="text-center"><p>$k_{vb}$</p></td>
 <td class="text-center"><p>[-]</p></td>
 <td class="text-left"><p>over sizing coefficient for the battery voltage</p></td>
 </tr>
@@ -668,9 +666,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(\beta_{pro}\)</span></p></td>
+<tr class="row-even"><td class="text-center"><p>$\beta_{pro}$</p></td>
 <td class="text-center"><p>[-]</p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\beta_{pro}=pitch/diameter\)</span> ratio to define the propeller</p></td>
+<td class="text-left"><p>$\beta_{pro}=pitch/diameter$ ratio to define the propeller</p></td>
 </tr>
 </tbody>
 </table>
@@ -699,31 +697,31 @@
 <tbody>
 <tr class="row-even"><td class="text-center"><p>cons_1</p></td>
 <td class="text-center"><p>[-]</p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(cons_1 = M_{total}-M_{total,real}\)</span></p></td>
+<td class="text-left"><p>$cons_1 = M_{total}-M_{total,real}$</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>cons_2</p></td>
 <td class="text-center"><p>[-]</p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(cons_2 = T_{max,mot}-T_{pro,to}\)</span></p></td>
+<td class="text-left"><p>$cons_2 = T_{max,mot}-T_{pro,to}$</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>cons_3</p></td>
 <td class="text-center"><p>[-]</p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(cons_3 = U_{bat}-U_{mot,to}\)</span></p></td>
+<td class="text-left"><p>$cons_3 = U_{bat}-U_{mot,to}$</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>cons_4</p></td>
 <td class="text-center"><p>[-]</p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(cons_4 = P_{bat,max}-(P_{el,mot,to} \cdot N_{pro})/\eta_{esc}\)</span></p></td>
+<td class="text-left"><p>$cons_4 = P_{bat,max}-(P_{el,mot,to} \cdot N_{pro})/\eta_{esc}$</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>cons_5</p></td>
 <td class="text-center"><p>[-]</p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(cons_5 = U_{esc}-U_{bat}\)</span></p></td>
+<td class="text-left"><p>$cons_5 = U_{esc}-U_{bat}$</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>cons_6</p></td>
 <td class="text-center"><p>[-]</p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(cons_6 = t_{hov}-t_{hov,spec}\)</span></p></td>
+<td class="text-left"><p>$cons_6 = t_{hov}-t_{hov,spec}$</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>cons_7</p></td>
 <td class="text-center"><p>[-]</p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(cons_7 = MTOW-M_{total,real}\)</span></p></td>
+<td class="text-left"><p>$cons_7 = MTOW-M_{total,real}$</p></td>
 </tr>
 </tbody>
 </table>
@@ -740,7 +738,7 @@
 <tbody>
 <tr class="row-even"><td class="text-center"><p>cons_1</p></td>
 <td class="text-center"><p>[-]</p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(cons_1 = M_{total}-M_{total,real}\)</span></p></td>
+<td class="text-left"><p>$cons_1 = M_{total}-M_{total,real}$</p></td>
 </tr>
 </tbody>
 </table>
@@ -790,9 +788,9 @@ For this purpose you can refer to the <a class="reference external" href="https:
 <p>The first step is to provide the specifications (top-level requirements) for the drone.</p>
 <p>Main specifications :</p>
 <ul class="simple">
-<li><p>a load (video, control card) of mass <span class="math notranslate nohighlight">\(M_{load}\)</span>.</p></li>
-<li><p>an autonomy <span class="math notranslate nohighlight">\(t_{hf}\)</span> for the hover flight.</p></li>
-<li><p>an acceleration to take off <span class="math notranslate nohighlight">\(a_{to}\)</span>.</p></li>
+<li><p>a load (video, control card) of mass $M_{load}$.</p></li>
+<li><p>an autonomy $t_{hf}$ for the hover flight.</p></li>
+<li><p>an acceleration to take off $a_{to}$.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

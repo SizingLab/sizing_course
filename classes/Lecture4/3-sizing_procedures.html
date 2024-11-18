@@ -61,8 +61,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture4/3-sizing_procedures';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -563,7 +561,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="development-of-a-sizing-procedure-using-design-graphs">
+  <section id="development-of-a-sizing-procedure-using-design-graphs">
 <h1><span class="section-number">5.3. </span>Development of a sizing procedure using design graphs<a class="headerlink" href="#development-of-a-sizing-procedure-using-design-graphs" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Toulouse, France</em></p>
 <p>The ordering of the calculation steps of a whole, highly constrained sizing procedure is not always an easy task. We propose here graphical representations that can be applied to highlight the different problems the designer has to face (singularity, calculation loop) and may help him solve these problems by proposing alternatives.</p>
@@ -585,52 +583,48 @@
 <li><p>A component layer, which represents the knowledge relating to a particular component. The calculation resources associated with this layer use finite elements or specific design tools. Information at this level may also be available in datasheets.</p></li>
 </ul>
 <p><img alt="Knowledge layers" src="../../_images/KnowledgeLevel.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">We advise you to start the implementation of a sizing procedure in an incremental way by using simple algebraic models.</p>
-<p class="sd-card-text">We can therefore generally have a set of algebraic equations that must be ordered to obtain a dimensioning code.</p>
-<p class="sd-card-text">It will then be possible to replace certain parts with more advanced models to increase the level of fidelity.</p>
-</div>
-</details></section>
+<p>:::{dropdown} Description
+:open:
+We advise you to start the implementation of a sizing procedure in an incremental way by using simple algebraic models.</p>
+<p>We can therefore generally have a set of algebraic equations that must be ordered to obtain a dimensioning code.</p>
+<p>It will then be possible to replace certain parts with more advanced models to increase the level of fidelity.
+:::</p>
+</section>
 <section id="problem-definition">
 <h2><span class="section-number">5.3.2. </span>Problem definition<a class="headerlink" href="#problem-definition" title="Link to this heading">#</a></h2>
 <p>For design problems characterized by a reduced set of equations, a skilled designer will be able to order design constraints of his area of knowledge quickly and intuitively. It is, however, also possible to represent and order these equations graphically. This graphical representation, called “Design Graph” here, can be used with advantage as a teaching tool or as an analysis tool for an engineer in the case of new design scenarios or new technology.</p>
 <p><img alt="Design graph" src="../../_images/DesignGraph.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The problem definition is realized with a bipartite graph for each design layer (mechatronic system layer and components layer) as represented in Figure above:</p>
+<p>:::{dropdown} Description
+:open:
+The problem definition is realized with a bipartite graph for each design layer (mechatronic system layer and components layer) as represented in Figure above:</p>
 <ul class="simple">
-<li><p class="sd-card-text">the parameters are set at mechatronic system layer level from requirements specifications (performance, constraints) and at component layer level by listing the components of the architecture and their main characteristics.</p></li>
-<li><p class="sd-card-text">equations are then introduced to link the different parameters: at mechatronic system layer level with equations representing design scenarios, at component layer level with estimation models.</p></li>
+<li><p>the parameters are set at mechatronic system layer level from requirements specifications (performance, constraints) and at component layer level by listing the components of the architecture and their main characteristics.</p></li>
+<li><p>equations are then introduced to link the different parameters: at mechatronic system layer level with equations representing design scenarios, at component layer level with estimation models.</p></li>
 </ul>
-<p class="sd-card-text">At this point the relationships between the parameters and equations are represented as non-oriented edges. It is not necessary to express the equations in detail.</p>
-</div>
-</details></section>
+<p>At this point the relationships between the parameters and equations are represented as non-oriented edges. It is not necessary to express the equations in detail.
+:::</p>
+</section>
 <section id="equations-ordering">
 <h2><span class="section-number">5.3.3. </span>Equations Ordering<a class="headerlink" href="#equations-ordering" title="Link to this heading">#</a></h2>
 <p>The orientation of the equations is the next step. The parameters set by the specifications are selected as inputs for the sizing procedure. Some parameters in the specification may take the form of outputs if the wording of the requirement defines them as an objective to be minimized or maximized or as a maximum or minimum limit constraint to be respected.</p>
 <p><img alt="Design graph" src="../../_images/DesignGraphToOrientate.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Figure above summarizes the graphical notation that can be taken to represent these parameters in a form approaching an influence diagram in order to prepare the implementation of the optimization problem.</p>
-</div>
-</details><section id="underconstrained-problems">
+<p>:::{dropdown} Description
+:open:
+Figure above summarizes the graphical notation that can be taken to represent these parameters in a form approaching an influence diagram in order to prepare the implementation of the optimization problem.<br />
+:::</p>
+<section id="underconstrained-problems">
 <h3><span class="section-number">5.3.3.1. </span>Underconstrained problems<a class="headerlink" href="#underconstrained-problems" title="Link to this heading">#</a></h3>
 <p>As an equation can generate only one output, the edges have to be oriented  to have only one output per calculation node.</p>
 <p><img alt="Design graph" src="../../_images/OneOutput.png" /></p>
 <p>If a given equation remains undetermined for several parameters, some design assumptions have to be made by stating some parameters as known. These new design parameters can be included in the optimization problem and their optimal value can be determined via the optimization algorithm.</p>
 <p><img alt="Design graph" src="../../_images/UnderConstrained.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">A preferred choice for these new design parameters would be parameters participating in a large number of equations (such as reduction ratio) and values defined within a known range (min, max). These assumptions balance the number of equations available and the number of parameters to be determined by the calculation procedure.</p>
-</div>
-</details><div class="admonition-example-under-constrained-singularity-the-hydraulic-jack admonition">
+<p>:::{dropdown} Description
+:open:
+A preferred choice for these new design parameters would be parameters participating in a large number of equations (such as reduction ratio) and values defined within a known range (min, max). These assumptions balance the number of equations available and the number of parameters to be determined by the calculation procedure.
+:::</p>
+<div class="admonition-example-under-constrained-singularity-the-hydraulic-jack admonition">
 <p class="admonition-title">Example: Under-constrained singularity, the hydraulic jack</p>
-<p>The aim is to implement the selection procedure for a hydraulic servo-actuator (jack and servovalve) to ensure a nominal effort <span class="math notranslate nohighlight">\(F_0\)</span> and a nominal speed <span class="math notranslate nohighlight">\(V_0\)</span> for a useful stroke <span class="math notranslate nohighlight">\(dx\)</span>. The anchorage structure has a stiffness <span class="math notranslate nohighlight">\(K\)</span> and does not tolerate efforts higher than <span class="math notranslate nohighlight">\(F_{max}\)</span>. The maximum flow rate <span class="math notranslate nohighlight">\(Q_{max}\)</span> required by the actuator should be minimized to reduce the mass of the hydraulic supply system.</p>
+<p>The aim is to implement the selection procedure for a hydraulic servo-actuator (jack and servovalve) to ensure a nominal effort $F_0$ and a nominal speed $V_0$ for a useful stroke $dx$. The anchorage structure has a stiffness $K$ and does not tolerate efforts higher than $F_{max}$. The maximum flow rate $Q_{max}$ required by the actuator should be minimized to reduce the mass of the hydraulic supply system.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Hydraulic jack equations</p></th>
@@ -753,12 +747,11 @@
 <h2><span class="section-number">5.3.4. </span>Treatment of algebraic loops<a class="headerlink" href="#treatment-of-algebraic-loops" title="Link to this heading">#</a></h2>
 <p>The treatment of possible algebraic loops is the last step. We typically find an algebraic loop when the selection of a component involves the use of characteristics of this same component. This case is represented graphically by a loop involving a design scenario equation and an estimation model equation as shown.</p>
 <p><img alt="Design graph" src="../../_images/AlgebraicLoop.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Adding a new design parameter, such as an oversizing coefficient, and a constraint to be checked by the optimization algorithm makes the sizing procedure explicit. At the end of this graphical treatment, the final sequence of equations can be represented as a triangular N² diagram or a dependency matrix in order to check that the sequence of equations is explicit.</p>
-</div>
-</details></section>
+<p>:::{dropdown} Description
+:open:
+Adding a new design parameter, such as an oversizing coefficient, and a constraint to be checked by the optimization algorithm makes the sizing procedure explicit. At the end of this graphical treatment, the final sequence of equations can be represented as a triangular N² diagram or a dependency matrix in order to check that the sequence of equations is explicit.
+:::</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

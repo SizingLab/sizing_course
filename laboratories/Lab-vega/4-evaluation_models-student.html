@@ -61,8 +61,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-vega/4-evaluation_models-student';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -560,7 +558,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="evaluation-models-endurance-of-the-actuator-student-version">
+  <section id="evaluation-models-endurance-of-the-actuator-student-version">
 <h1>Evaluation models: endurance of the actuator (student version)<a class="headerlink" href="#evaluation-models-endurance-of-the-actuator-student-version" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse) and Scott Delbecq (ISAE-SUPAERO), Toulouse, France</em></p>
 <section id="endurance-specifications">
@@ -674,7 +672,7 @@ Remark: ‘arange’, ‘concatenate’ and ‘array’ functions of numpy can b
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_2990/1604667484.py</span> in <span class="ni">?</span><span class="nt">()</span>
+<span class="nn">/tmp/ipykernel_3353/1604667484.py</span> in <span class="ni">?</span><span class="nt">()</span>
 <span class="ne">---&gt; </span><span class="mi">35</span> <span class="k">def</span> <span class="nf">test_profiles</span><span class="p">(</span><span class="n">profil</span><span class="p">,</span> <span class="n">step_size</span><span class="p">):</span>
 <span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="n">tmin</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="g g-Whitespace">     </span><span class="mi">37</span>     <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
@@ -779,14 +777,14 @@ Remark: ‘arange’, ‘concatenate’ and ‘array’ functions of numpy can b
 <h2>Rolling fatigue<a class="headerlink" href="#rolling-fatigue" title="Link to this heading">#</a></h2>
 <p>The rolling fatigue for a variable mission profile is evaluated in two stages:</p>
 <ul class="simple">
-<li><p>firstly by calculating the number of revolutions and an equivalent rolling fatigue effort called <span class="math notranslate nohighlight">\(F_{RMC}\)</span> (RMC for RootMean Cube)<br />
-<span class="math notranslate nohighlight">\(F_{RMC}=(\frac{1}{\int |\dot{x}| {d}t} \int |F|^3 |\dot{x}| {d}t)^{1/3}\)</span></p></li>
-<li><p>then by obtaining a fatigue effort <span class="math notranslate nohighlight">\(F_d\)</span> equivalent to 1 million rev.<br />
-<span class="math notranslate nohighlight">\(F_d^3 . N_{ref} = F_{RMC}^3. N_{cycles}\)</span></p></li>
+<li><p>firstly by calculating the number of revolutions and an equivalent rolling fatigue effort called $F_{RMC}$ (RMC for RootMean Cube)<br />
+$F_{RMC}=(\frac{1}{\int |\dot{x}| {d}t} \int |F|^3 |\dot{x}| {d}t)^{1/3}$</p></li>
+<li><p>then by obtaining a fatigue effort $F_d$ equivalent to 1 million rev.<br />
+$F_d^3 . N_{ref} = F_{RMC}^3. N_{cycles}$</p></li>
 </ul>
 <p>We will assume here that the screw/nut system has a pitch of 10 mm/rev. Examples of thrust bearings can be found <a class="reference internal" href="#./PDF/MatchedBearingSKF.pdf"><span class="xref myst">here</span></a>.</p>
 <blockquote>
-<div><p>Exercice: Calculate <span class="math notranslate nohighlight">\(F_{RMC}\)</span> and <span class="math notranslate nohighlight">\(F_d\)</span>. Compare relative ratio between <span class="math notranslate nohighlight">\(C_0\)</span> and <span class="math notranslate nohighlight">\(C_d\)</span>. Conclusion.</p>
+<div><p>Exercice: Calculate $F_{RMC}$ and $F_d$. Compare relative ratio between $C_0$ and $C_d$. Conclusion.</p>
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -898,20 +896,20 @@ Remark: ‘arange’, ‘concatenate’ and ‘array’ functions of numpy can b
 </div>
 </div>
 <p>The force is mainly proportional to the position:  therefore the effect of the stiffness of the flexible bearing dominates this fatigue cycle. In this case the calculation of the fatigue force can be carried out analytically using the following equations:<br />
-<span class="math notranslate nohighlight">\(F_{RMC}=(\frac{1}{\int |\dot{x}| {d}t} \int |F|^3 |\dot{x}| {d}t)^{1/3}\)</span><br />
+$F_{RMC}=(\frac{1}{\int |\dot{x}| {d}t} \int |F|^3 |\dot{x}| {d}t)^{1/3}$<br />
 where:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(F(t)=Kx(t)=F_kcos(\omega_kt)\)</span>  with <span class="math notranslate nohighlight">\(x(t)=X_kcos(\omega_kt)\)</span> and <span class="math notranslate nohighlight">\(F_k=KX_k\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\dot{x}(t)=-X_k\omega_ksin(\omega_kt)\)</span><br />
+<li><p>$F(t)=Kx(t)=F_kcos(\omega_kt)$  with $x(t)=X_kcos(\omega_kt)$ and $F_k=KX_k$</p></li>
+<li><p>$\dot{x}(t)=-X_k\omega_ksin(\omega_kt)$<br />
 with:</p></li>
-<li><p><span class="math notranslate nohighlight">\(F_k\)</span> magnitude of sinusoidal forces;</p></li>
-<li><p><span class="math notranslate nohighlight">\(A_k\)</span> magnitude of sinusoidal displacements;</p></li>
-<li><p><span class="math notranslate nohighlight">\(N_k\)</span></p></li>
+<li><p>$F_k$ magnitude of sinusoidal forces;</p></li>
+<li><p>$A_k$ magnitude of sinusoidal displacements;</p></li>
+<li><p>$N_k$</p></li>
 </ul>
 <p>Thus:<br />
-<span class="math notranslate nohighlight">\(F_{RMC}^3 = \frac{\sum{\frac{F_k^3}{4}A_k N_k}}{\sum{A_k N_k}}\)</span></p>
+$F_{RMC}^3 = \frac{\sum{\frac{F_k^3}{4}A_k N_k}}{\sum{A_k N_k}}$</p>
 <p>We have used following trigonometric formula:<br />
-<span class="math notranslate nohighlight">\(cos(\theta)^3sin(\theta) = cos(\theta)^2 sin(\theta)cos(\theta) = \frac{1+cos(2\theta)}{2} \frac{sin(2\theta)}{2}  \)</span></p>
+$cos(\theta)^3sin(\theta) = cos(\theta)^2 sin(\theta)cos(\theta) = \frac{1+cos(2\theta)}{2} \frac{sin(2\theta)}{2}  $</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profil</span>

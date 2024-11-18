@@ -61,8 +61,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture3/3-scaling_laws';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -566,7 +564,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="scaling-laws">
+  <section id="scaling-laws">
 <h1><span class="section-number">4.3. </span>Scaling laws<a class="headerlink" href="#scaling-laws" title="Link to this heading">#</a></h1>
 <p>For a preliminary design, obtaining component’s characteristics can be nessary for simulation or the comparison of different possible solutions.
 This informations can be obtained:</p>
@@ -585,39 +583,37 @@ This informations can be obtained:</p>
 <h2><span class="section-number">4.3.1. </span>Design model vs estimation model of mechatronic components<a class="headerlink" href="#design-model-vs-estimation-model-of-mechatronic-components" title="Link to this heading">#</a></h2>
 <p>The system-level design steps require models directly linking primary characteristics, which define the component functionally, to secondary characteristics, which can be seen as the features of imperfections.</p>
 <p><img alt="Estimation model need" src="../../_images/EstimationNeed.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Generally, at component level, the models (Figure 1b) link the physical dimensions and characteristics of materials used to the primary and secondary characteristics. Design at component level is an inverse problem that requires the primary characteristics as inputs. This inversion may be done through design codes from design mechanical standards, by algebraic solvers or by optimization algorithms. However at system level, the approach requires very significant expertise and time for each component.</p>
-<p class="sd-card-text"><strong>Scaling laws</strong> reduce the complexity of the inverse problem by using two modelling hypothesis on the input parameters:</p>
+<p>:::{dropdown} Description
+:open:
+Generally, at component level, the models (Figure 1b) link the physical dimensions and characteristics of materials used to the primary and secondary characteristics. Design at component level is an inverse problem that requires the primary characteristics as inputs. This inversion may be done through design codes from design mechanical standards, by algebraic solvers or by optimization algorithms. However at system level, the approach requires very significant expertise and time for each component.</p>
+<p><strong>Scaling laws</strong> reduce the complexity of the inverse problem by using two modelling hypothesis on the input parameters:</p>
 <ul class="simple">
-<li><p class="sd-card-text">Every materials’ properties are supposed to be identical to the ones of the reference component.</p></li>
-<li><p class="sd-card-text">Some geometrical dimensions vary in an homothetic way and can be expressed as scaling laws equal to the variation of one dimension (here l*).
+<li><p>Every materials’ properties are supposed to be identical to the ones of the reference component.</p></li>
+<li><p>Some geometrical dimensions vary in an homothetic way and can be expressed as scaling laws equal to the variation of one dimension (here l*).
 Because the number of input parameters has been reduced, it is easier to give the relations that link the useful parameters for our design phase to a small number of key parameters called definition parameters.</p></li>
 </ul>
-<p class="sd-card-text">The main advantages of scaling laws for model based design are:</p>
+<p>The main advantages of scaling laws for model based design are:</p>
 <ul class="simple">
-<li><p class="sd-card-text">Limited number of design parameters.</p></li>
-<li><p class="sd-card-text">Homogeneous, i.e. same level of details &amp; based on the same modeling approach.</p></li>
-<li><p class="sd-card-text">Reflect the state of the art of technology.</p></li>
+<li><p>Limited number of design parameters.</p></li>
+<li><p>Homogeneous, i.e. same level of details &amp; based on the same modeling approach.</p></li>
+<li><p>Reflect the state of the art of technology.</p></li>
 </ul>
-</div>
-</details></section>
+<p>:::</p>
+</section>
 <section id="geometric-similarity">
 <h2><span class="section-number">4.3.2. </span>Geometric similarity<a class="headerlink" href="#geometric-similarity" title="Link to this heading">#</a></h2>
 <p>The concept of geometric similarity is really important for scaling laws. We are going to use the cylinder volume to illustrate it.</p>
 <p><img alt="Scaling cylinder" src="../../_images/ScalingCylinder.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Scaling law can be written with the <a class="reference internal" href="#References"><span class="xref myst">Jufer notation</span></a> of scaling ratios:<br />
-<span class="math notranslate nohighlight">\(x^*=\frac{x}{x_{ref}}\)</span><br />
-with <span class="math notranslate nohighlight">\(x\)</span> any characteristic of the desired component and <span class="math notranslate nohighlight">\(x_{ref}\)</span> the corresponding characteristic of a reference component.</p>
-<p class="sd-card-text">Geometric similarity means that all the object’s geometric dimensions change with a same factor.
-Therefore <span class="math notranslate nohighlight">\(r^*=l^*\)</span> and the volume is proportional to the length variation to the power 3:<br />
-<span class="math notranslate nohighlight">\(V^*=r^{*2}l^*=l^{*3}\)</span></p>
-</div>
-</details><div class="exercise admonition" id="MassIneritaScalingCylinder">
+<p>:::{dropdown} Description
+:open:
+Scaling law can be written with the <a class="reference internal" href="#References"><span class="xref myst">Jufer notation</span></a> of scaling ratios:<br />
+$x^*=\frac{x}{x_{ref}}$<br />
+with $x$ any characteristic of the desired component and $x_{ref}$ the corresponding characteristic of a reference component.</p>
+<p>Geometric similarity means that all the object’s geometric dimensions change with a same factor.
+Therefore $r^<em>=l^</em>$ and the volume is proportional to the length variation to the power 3:<br />
+$V^*=r^{<em>2}l^</em>=l^{*3}$<br />
+:::</p>
+<div class="exercise admonition" id="MassIneritaScalingCylinder">
 
 <p class="admonition-title"><span class="caption-number">Exercise 4.1 </span></p>
 <section id="exercise-content">
@@ -629,49 +625,48 @@ Therefore <span class="math notranslate nohighlight">\(r^*=l^*\)</span> and the 
 <p class="admonition-title">Solution to</p>
 <section id="solution-content">
 <p>The same way of volume the mass is proportional to length to the power 3 and inertia to length to the power 5:</p>
-<p><span class="math notranslate nohighlight">\(M=\int \rho dv \Longrightarrow M^3=l^{*3}\)</span><br />
-<span class="math notranslate nohighlight">\(J=\int \rho r^2 dv \Longrightarrow J^3=l^{*5}\)</span></p>
+<p>$M=\int \rho dv \Longrightarrow M^3=l^{*3}$<br />
+$J=\int \rho r^2 dv \Longrightarrow J^3=l^{*5}$</p>
 </section>
 </div>
 </section>
 <section id="a-frist-example-of-scaling-laws">
 <h2><span class="section-number">4.3.3. </span>A frist example of scaling laws<a class="headerlink" href="#a-frist-example-of-scaling-laws" title="Link to this heading">#</a></h2>
-<p>In this example, we want to evaluate the winding resistance of a bigger motor than the reference motor : the size variation is <span class="math notranslate nohighlight">\(L^*\)</span>, the resistance variation is <span class="math notranslate nohighlight">\(R^*\)</span>.</p>
+<p>In this example, we want to evaluate the winding resistance of a bigger motor than the reference motor : the size variation is $L^<em>$, the resistance variation is $R^</em>$.</p>
 <p><img alt="Scaling motor" src="../../_images/ScalingMotor.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The winding resistance is <span class="math notranslate nohighlight">\(R=\frac{\rho.L}{S}\)</span>  with <span class="math notranslate nohighlight">\(L\)</span> the length of wire, <span class="math notranslate nohighlight">\(S\)</span> the section of wire.<br />
+<p>:::{dropdown} Description
+:open:
+The winding resistance is $R=\frac{\rho.L}{S}$  with $L$ the length of wire, $S$ the section of wire.<br />
 This wire is wound in slots whose dimensions are proportional to the dimensions of the motor, assuming complete geometric similarity. The wire diameter and length will also depend on the number of turns N made. We therefore end up with:</p>
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(R=\frac{\rho.NL_{turn}}{S_{slot}/N} \Longrightarrow  R^*=\frac{N^{*2}}{L^*} \)</span></p>
-</div>
-</details></section>
+<p>$R=\frac{\rho.NL_{turn}}{S_{slot}/N} \Longrightarrow  R^*=\frac{N^{<em>2}}{L^</em>} $</p>
+<p>:::</p>
+</section>
 <section id="different-ways-of-obtaining-scaling-laws">
 <h2><span class="section-number">4.3.4. </span>Different ways of obtaining scaling laws<a class="headerlink" href="#different-ways-of-obtaining-scaling-laws" title="Link to this heading">#</a></h2>
 <p>There are two mais ways to obtain scaling laws. We will demonstrate how to do it, by calculating the thermal constant of an electrical motor. It is assumed here that the motor temperature rise is uniform and is mainly due to convection between the stator and the air.</p>
 <section id="direct-approach">
 <h3><span class="section-number">4.3.4.1. </span>Direct approach<a class="headerlink" href="#direct-approach" title="Link to this heading">#</a></h3>
-<p>The first approach is the direct one, using known equations. The thermal time constant <span class="math notranslate nohighlight">\(\tau_{th}\)</span> is function of  the thermal resistance times and  the thermal capacity:<br />
-<span class="math notranslate nohighlight">\(\tau_{th}=R_{th}C_{th}\)</span><br />
+<p>The first approach is the direct one, using known equations. The thermal time constant $\tau_{th}$ is function of  the thermal resistance times and  the thermal capacity:<br />
+$\tau_{th}=R_{th}C_{th}$<br />
 where:</p>
 <ul class="simple">
-<li><p>The thermal resistance is inversely proportionnal to the surface of heat exchanges: <span class="math notranslate nohighlight">\(R_{th}^*=\frac{1}{S^*}=L^{*-2}\)</span></p></li>
-<li><p>The thermal capacity is proportional to the mass of the system : <span class="math notranslate nohighlight">\(C_{th}^*=L^{*3}\)</span></p></li>
+<li><p>The thermal resistance is inversely proportionnal to the surface of heat exchanges: $R_{th}^<em>=\frac{1}{S^</em>}=L^{*-2}$</p></li>
+<li><p>The thermal capacity is proportional to the mass of the system : $C_{th}^*=L^{*3}$</p></li>
 </ul>
 <p>By multiplying these results together, we can determine that the thermal constant is proportional to the length to the power 1:
-<span class="math notranslate nohighlight">\(\tau_{th}^*=R_{th}^*C_{th}^*=L^{*-2}L^{*3}=L^{*1}\)</span></p>
+$\tau_{th}^<em>=R_{th}^<em>C_{th}^</em>=L^{</em>-2}L^{*3}=L^{*1}$</p>
 </section>
 <section id="buckingham-theorem">
 <h3><span class="section-number">4.3.4.2. </span>Buckingham  theorem<a class="headerlink" href="#buckingham-theorem" title="Link to this heading">#</a></h3>
 <p>In the second approach, we will use the Buckingham theorem to find the same result. The time constant of the system is linked to the dimensions and to the physical characteristics of the component.</p>
 <div class="admonition-buckingham-theroem admonition">
 <p class="admonition-title">Buckingham theroem</p>
-<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Buckingham_%CF%80_theorem">Buckhigham theorem</a> states that if there is a physically meaningful equation involving a certain number <span class="math notranslate nohighlight">\(n\)</span> of physical variables, then the original equation can be rewritten in terms of a set of <span class="math notranslate nohighlight">\(p = n − k\)</span> dimensionless parameters <span class="math notranslate nohighlight">\(π_1\)</span>, <span class="math notranslate nohighlight">\(π_2\)</span>, …, <span class="math notranslate nohighlight">\(π_p\)</span> constructed from the original variables, where <span class="math notranslate nohighlight">\(k\)</span> is the number of physical dimensions involved.</p>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Buckingham_%CF%80_theorem">Buckhigham theorem</a> states that if there is a physically meaningful equation involving a certain number $n$ of physical variables, then the original equation can be rewritten in terms of a set of $p = n − k$ dimensionless parameters $π_1$, $π_2$, …, $π_p$ constructed from the original variables, where $k$ is the number of physical dimensions involved.</p>
 <p>The dimensions of the multiple involved parameters (geometrical dimensions, physical properties, …) can be express and analyse in the following table.</p>
 </div>
 <p>The dimensional analysis that can lead to a scaling law can be broken down into several stages:</p>
 <p><strong>Step 1:</strong> List all the variables that are involved in the problem.</p>
-<p><span class="math notranslate nohighlight">\(\tau_{th}=f(d,L,h,\rho,c_p)\)</span></p>
+<p>$\tau_{th}=f(d,L,h,\rho,c_p)$</p>
 <p><strong>Step 2:</strong> Express each of the variables in terms of basic dimensions.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -683,37 +678,37 @@ where:</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Thermal time constant <span class="math notranslate nohighlight">\(\tau_{th}\)</span></p></td>
+<tr class="row-even"><td><p>Thermal time constant $\tau_{th}$</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-odd"><td><p>Diameter <span class="math notranslate nohighlight">\(d\)</span></p></td>
+<tr class="row-odd"><td><p>Diameter $d$</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-even"><td><p>Length <span class="math notranslate nohighlight">\(L\)</span></p></td>
+<tr class="row-even"><td><p>Length $L$</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-odd"><td><p>Newton coefficient <span class="math notranslate nohighlight">\(h\)</span></p></td>
+<tr class="row-odd"><td><p>Newton coefficient $h$</p></td>
 <td><p>1</p></td>
 <td><p>0</p></td>
 <td><p>-3</p></td>
 <td><p>-1</p></td>
 </tr>
-<tr class="row-even"><td><p>Density <span class="math notranslate nohighlight">\(\rho\)</span></p></td>
+<tr class="row-even"><td><p>Density $\rho$</p></td>
 <td><p>1</p></td>
 <td><p>-3</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-odd"><td><p>Specific heat capacity <span class="math notranslate nohighlight">\(c_p\)</span></p></td>
+<tr class="row-odd"><td><p>Specific heat capacity $c_p$</p></td>
 <td><p>0</p></td>
 <td><p>2</p></td>
 <td><p>-2</p></td>
@@ -723,13 +718,13 @@ where:</p>
 </table>
 </div>
 <p><em>Note: The numbers in the table above correspond to the powers of the dimensions
-<span class="math notranslate nohighlight">\([x]=M^a L^b T^c θ^d \)</span></em></p>
+$[x]=M^a L^b T^c θ^d $</em></p>
 <p><strong>Step 3:</strong> Determine the required number of pi terms.</p>
-<p><em>The problem involves <span class="math notranslate nohighlight">\(6\)</span> of physical variables and <span class="math notranslate nohighlight">\(4\)</span> physical dimensions : the original equation can be rewritten in terms of a set of <span class="math notranslate nohighlight">\(p = 6 − 4 = 2\)</span> dimensionless parameters <span class="math notranslate nohighlight">\(π_0\)</span> and <span class="math notranslate nohighlight">\(π_1\)</span>.</em></p>
+<p><em>The problem involves $6$ of physical variables and $4$ physical dimensions : the original equation can be rewritten in terms of a set of $p = 6 − 4 = 2$ dimensionless parameters $π_0$ and $π_1$.</em></p>
 <p><strong>Step 5:</strong> Select a number of repeating variables, where the number required is equal to the number of reference dimensions. All of the required reference dimensions must be included within the
 group of repeating variables, and each repeating variable must be dimensionally independent of the others.</p>
-<p><em>The dependent variable (as <span class="math notranslate nohighlight">\(\tau_{th}\)</span>) are not include in the repeating variables. We select here
-<span class="math notranslate nohighlight">\(L,h,\rho,c_p\)</span>.</em></p>
+<p><em>The dependent variable (as $\tau_{th}$) are not include in the repeating variables. We select here
+$L,h,\rho,c_p$.</em></p>
 <p><strong>Step 6:</strong> Combine dependant variables with repeating variable in sequence, to find the π dimensionless numbers. Check dimensions with the table.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -741,49 +736,49 @@ group of repeating variables, and each repeating variable must be dimensionally 
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Thermal time constant <span class="math notranslate nohighlight">\(\tau_{th}\)</span></p></td>
+<tr class="row-even"><td><p>Thermal time constant $\tau_{th}$</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-odd"><td><p>Diameter <span class="math notranslate nohighlight">\(d\)</span></p></td>
+<tr class="row-odd"><td><p>Diameter $d$</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-even"><td><p>Length <span class="math notranslate nohighlight">\(L\)</span></p></td>
+<tr class="row-even"><td><p>Length $L$</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-odd"><td><p>Newton coefficient <span class="math notranslate nohighlight">\(h\)</span></p></td>
+<tr class="row-odd"><td><p>Newton coefficient $h$</p></td>
 <td><p>1</p></td>
 <td><p>0</p></td>
 <td><p>-3</p></td>
 <td><p>-1</p></td>
 </tr>
-<tr class="row-even"><td><p>Density <span class="math notranslate nohighlight">\(\rho\)</span></p></td>
+<tr class="row-even"><td><p>Density $\rho$</p></td>
 <td><p>1</p></td>
 <td><p>-3</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-odd"><td><p>Specific heat capacity <span class="math notranslate nohighlight">\(c_p\)</span></p></td>
+<tr class="row-odd"><td><p>Specific heat capacity $c_p$</p></td>
 <td><p>0</p></td>
 <td><p>2</p></td>
 <td><p>-2</p></td>
 <td><p>-1</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\pi_0 = \frac{\tau_{th}h}{\rho c_p L}\)</span></p></td>
+<tr class="row-even"><td><p>$\pi_0 = \frac{\tau_{th}h}{\rho c_p L}$</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\pi_1 = \frac{d}{L}\)</span></p></td>
+<tr class="row-odd"><td><p>$\pi_1 = \frac{d}{L}$</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
@@ -792,10 +787,10 @@ group of repeating variables, and each repeating variable must be dimensionally 
 </tbody>
 </table>
 </div>
-<p><strong>Step 7:</strong> Express the final form as a relationship among the <span class="math notranslate nohighlight">\(\pi\)</span> terms.</p>
-<p><span class="math notranslate nohighlight">\(\pi_0 = \frac{\tau_{th}h}{\rho c_p L} = f(\pi_1 = \frac{d}{L})\)</span></p>
+<p><strong>Step 7:</strong> Express the final form as a relationship among the $\pi$ terms.</p>
+<p>$\pi_0 = \frac{\tau_{th}h}{\rho c_p L} = f(\pi_1 = \frac{d}{L})$</p>
 <p><strong>Step 8:</strong> State ratio of geometric dimension as constant in cause of geometrical similarity and extract scaling laws.</p>
-<p><span class="math notranslate nohighlight">\(\frac{\tau_{th}h}{\rho c_p L} = C^{st}  \longrightarrow  \tau_{th}^*=L^* \)</span></p>
+<p>$\frac{\tau_{th}h}{\rho c_p L} = C^{st}  \longrightarrow  \tau_{th}^<em>=L^</em> $</p>
 </section>
 </section>
 <section id="scaling-law-adaptation">
@@ -804,9 +799,9 @@ group of repeating variables, and each repeating variable must be dimensionally 
 For example:</p>
 <ul class="simple">
 <li><p>for an electric motor, the torque that can be generated must not lead to excessive winding temperature. The entire motor range is therefore designed for the same maximum temperature, which can be noted:
-<span class="math notranslate nohighlight">\(\theta_{max}^*=1\)</span></p></li>
+$\theta_{max}^*=1$</p></li>
 <li><p>for a gearbox, the torque handled must not induce excessive stress in the mechanical structure. The entire gearbox range is therefore designed for the same maximum stress, which can be noted as follows:
-<span class="math notranslate nohighlight">\(\tau_{max}^*=1\)</span></p></li>
+$\tau_{max}^*=1$</p></li>
 </ul>
 <p>The torque the electrical motor
 Which are the quantities that limit the transmittable torque.
@@ -827,14 +822,14 @@ In a general way, we must determine the sizing constraints that means parameters
 
 <p class="admonition-title">Solution to</p>
 <section id="solution-content">
-<p><span class="math notranslate nohighlight">\(\sigma_{max}^*=1=\frac{F^*}{S^{*}}\)</span><br />
+<p>$\sigma_{max}^<em>=1=\frac{F^</em>}{S^{*}}$<br />
 with :</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\sigma_{max}\)</span> the max stress in the bone</p></li>
-<li><p><span class="math notranslate nohighlight">\(F\)</span> the applied force, i.e. the weight of the animal</p></li>
-<li><p><span class="math notranslate nohighlight">\(S\)</span> the section of the bone, function of the diameter <span class="math notranslate nohighlight">\(d\)</span> of the leg</p></li>
+<li><p>$\sigma_{max}$ the max stress in the bone</p></li>
+<li><p>$F$ the applied force, i.e. the weight of the animal</p></li>
+<li><p>$S$ the section of the bone, function of the diameter $d$ of the leg</p></li>
 </ul>
-<p><span class="math notranslate nohighlight">\(\sigma_{max}^*=1=\frac{M^*}{d^{*2}}\)</span>  and thus  <span class="math notranslate nohighlight">\(d^*=\sqrt{M^*}\)</span></p>
+<p>$\sigma_{max}^<em>=1=\frac{M^</em>}{d^{<em>2}}$  and thus  $d^</em>=\sqrt{M^*}$</p>
 <p><img alt="Bone" src="../../_images/ScalingBone.png" /></p>
 </section>
 </div>

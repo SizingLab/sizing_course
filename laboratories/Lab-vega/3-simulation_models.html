@@ -61,8 +61,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-vega/3-simulation_models';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -558,7 +556,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="simulation-models-with-python">
+  <section id="simulation-models-with-python">
 <h1>Simulation models with Python<a class="headerlink" href="#simulation-models-with-python" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse) and Scott Delbecq (ISAE-SUPAERO), Toulouse, France</em></p>
 <section id="thermal-model-of-an-electric-motor">
@@ -583,13 +581,13 @@ the electrical insulator): <em>Rth1</em></p></li>
 <p>To simulate it in Python it is possible to use Functional Mock-up Units (<a class="reference external" href="https://github.com/modelon-community/PyFMI">FMU</a>) which can be exported by system simulation softwares.</p>
 <p>Here, we propose to use a simple state-space approach using the <a class="reference external" href="https://scipy.org">scipy</a> package.</p>
 <p>Recall: the transfert function of the problem can be expressed as</p>
-<p><span class="math notranslate nohighlight">\(Z_{th}=\frac{\theta(p)}{P(p)}=R_{th,eq}\frac{1+T_0p}{1+(T_1+T_2)p+T_1T_2p}\)</span><br />
+<p>$Z_{th}=\frac{\theta(p)}{P(p)}=R_{th,eq}\frac{1+T_0p}{1+(T_1+T_2)p+T_1T_2p}$<br />
 with:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(R_{th,eq}=R_1+R_2\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(T_0=\frac{R_1R_2}{R_1+R_2}C_2\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(T_1+T_2=(R_1+R_2)C_1 + R_2C_2\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(T_1T_2=R_1C_1R_2C_2\)</span></p></li>
+<li><p>$R_{th,eq}=R_1+R_2$</p></li>
+<li><p>$T_0=\frac{R_1R_2}{R_1+R_2}C_2$</p></li>
+<li><p>$T_1+T_2=(R_1+R_2)C_1 + R_2C_2$</p></li>
+<li><p>$T_1T_2=R_1C_1R_2C_2$</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -797,7 +795,7 @@ with:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f9163301a90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f831f2858b0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/742eecc09a7eaee22ece63578401513958b98d5e505ca9df08d75981c828350f.png" src="../../_images/742eecc09a7eaee22ece63578401513958b98d5e505ca9df08d75981c828350f.png" />

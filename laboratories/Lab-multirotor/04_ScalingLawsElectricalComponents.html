@@ -61,8 +61,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-multirotor/04_ScalingLawsElectricalComponents';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -569,7 +567,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="scaling-laws-of-electrical-components">
+  <section id="scaling-laws-of-electrical-components">
 <h1>Scaling laws of electrical components<a class="headerlink" href="#scaling-laws-of-electrical-components" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Scott Delbecq (ISAE-SUPAERO) and Félix Pollet (ISAE-SUPAERO), Toulouse, France.</em></p>
 <p>The estimation models calculate the component characteristics requested for their selection without requiring a detailed design. Scaling laws are particularly suitable for this purpose. This notebook illustrates the approach with electrical drone components characteristics.
@@ -578,7 +576,7 @@ Validation of the obtained scaling laws is realized thanks catalog data.</p>
 <blockquote>
 <div><p><em>Budinger, M., Liscouët, J., Hospital, F., &amp; Maré, J. C. (2012). Estimation models for the preliminary design of electromechanical actuators. Proceedings of the Institution of Mechanical Engineers, Part G: Journal of Aerospace Engineering, 226(3), 243-259.</em></p>
 </div></blockquote>
-<p><strong>Notation</strong>: The x* scaling ratio of a given parameter is calculated as <span class="math notranslate nohighlight">\(x^*=\frac{x}{x_{ref}}\)</span> where <span class="math notranslate nohighlight">\(x_{ref}\)</span> is the parameter taken as the reference and <span class="math notranslate nohighlight">\(x\)</span> the parameter under study.</p>
+<p><strong>Notation</strong>: The x* scaling ratio of a given parameter is calculated as $x^*=\frac{x}{x_{ref}}$ where $x_{ref}$ is the parameter taken as the reference and $x$ the parameter under study.</p>
 <section id="lipo-battery">
 <h2>Lipo battery<a class="headerlink" href="#lipo-battery" title="Link to this heading">#</a></h2>
 <p>A lithium-ion polymer battery (abbreviated as LiPo) is a assembly of elementary cells. The more the cells are provided, the bigger is the power and stored energy. The following figure gives an example of a Lipo battery with the following characteristics:</p>
@@ -597,7 +595,7 @@ Validation of the obtained scaling laws is realized thanks catalog data.</p>
 
 <p class="admonition-title"><span class="caption-number">Exercise 5 </span></p>
 <section id="exercise-content">
-<p>Propose a scaling law which links battery characteristics, as mass or max discharge current, to capacity <span class="math notranslate nohighlight">\(C_{bat}\)</span> and voltage <span class="math notranslate nohighlight">\(U_{bat}\)</span>. Estimate the mass and max discharge current for a 3300 mAh - 4S battery knowing the following reference component:</p>
+<p>Propose a scaling law which links battery characteristics, as mass or max discharge current, to capacity $C_{bat}$ and voltage $U_{bat}$. Estimate the mass and max discharge current for a 3300 mAh - 4S battery knowing the following reference component:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Characteristic</p></th>
@@ -635,8 +633,8 @@ Validation of the obtained scaling laws is realized thanks catalog data.</p>
 
 <p class="admonition-title">Solution to</p>
 <section id="solution-content">
-<p><span class="math notranslate nohighlight">\(I_{max,bat}^*=C_{bat}^*\)</span><br />
-<span class="math notranslate nohighlight">\(M_{bat}^*=U_{bat}^*C_{bat}^*\)</span></p>
+<p>$I_{max,bat}^<em>=C_{bat}^</em>$<br />
+$M_{bat}^*=U_{bat}^<em>C_{bat}^</em>$</p>
 </section>
 </div>
 <div class="cell docutils container">
@@ -693,32 +691,32 @@ Max discharge current: 165 A
 <td><p>AXI 2217/20</p></td>
 </tr>
 <tr class="row-odd"><td><p>Nominal torque</p></td>
-<td><p><span class="math notranslate nohighlight">\(T_{nom}^*\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(0.151\)</span> N.m</p></td>
+<td><p>$T_{nom}^*$</p></td>
+<td><p>$0.151$ N.m</p></td>
 </tr>
 <tr class="row-even"><td><p>Torque constant</p></td>
-<td><p><span class="math notranslate nohighlight">\(K_T^*\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(1.14.10^{-2}\)</span> N.m/A</p></td>
+<td><p>$K_T^*$</p></td>
+<td><p>$1.14.10^{-2}$ N.m/A</p></td>
 </tr>
 <tr class="row-odd"><td><p>Max torque</p></td>
-<td><p><span class="math notranslate nohighlight">\(T_{max}^*=T_{nom}^*\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(0.198\)</span> N.m</p></td>
+<td><p>$T_{max}^<em>=T_{nom}^</em>$</p></td>
+<td><p>$0.198$ N.m</p></td>
 </tr>
 <tr class="row-even"><td><p>Friction torque</p></td>
-<td><p><span class="math notranslate nohighlight">\(T_{fr}^*=T_{nom}^{*3/3.5}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(6.25.10^{-3}\)</span> N.m</p></td>
+<td><p>$T_{fr}^*=T_{nom}^{*3/3.5}$</p></td>
+<td><p>$6.25.10^{-3}$ N.m</p></td>
 </tr>
 <tr class="row-odd"><td><p>Mass</p></td>
-<td><p><span class="math notranslate nohighlight">\(M^*=T_{nom}^{*3/3.5}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(69.5\)</span> g</p></td>
+<td><p>$M^*=T_{nom}^{*3/3.5}$</p></td>
+<td><p>$69.5$ g</p></td>
 </tr>
 <tr class="row-even"><td><p>Resistance</p></td>
-<td><p><span class="math notranslate nohighlight">\(R^*=K^{*2}T_{nom}^{*-5/3.5}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(0.185\)</span> ohm</p></td>
+<td><p>$R^*=K^{<em>2}T_{nom}^{</em>-5/3.5}$</p></td>
+<td><p>$0.185$ ohm</p></td>
 </tr>
 <tr class="row-odd"><td><p>Inertia</p></td>
-<td><p><span class="math notranslate nohighlight">\(J^*=T_{nom}^{*-5/3.5}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(2.5.10^{-5}\)</span> kg.m²</p></td>
+<td><p>$J^<em>=T_{nom}^{</em>-5/3.5}$</p></td>
+<td><p>$2.5.10^{-5}$ kg.m²</p></td>
 </tr>
 </tbody>
 </table>
@@ -1125,7 +1123,7 @@ The data base gives informations about mass, voltage &amp; current (DC side) and
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2493/1886987080.py:19: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2627/1886987080.py:19: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   coef = float(reg.coef_)
 </pre></div>
 </div>
@@ -1174,9 +1172,9 @@ The data base gives informations about mass, voltage &amp; current (DC side) and
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2493/1234818502.py:12: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2627/1234818502.py:12: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   coef = float(reg.coef_)
-/tmp/ipykernel_2493/1234818502.py:13: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+/tmp/ipykernel_2627/1234818502.py:13: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   intercept = float(reg.intercept_)
 </pre></div>
 </div>
@@ -1187,21 +1185,19 @@ with Power P_esc [W] and Voltage V_esc [V] of ESC controller
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Note on the mass evolution of ESC
+<p>:::{note} Note on the mass evolution of ESC
 The <em>conduction losses</em> occurring in a MOS switch are given by the following expression:<br />
-<span class="math notranslate nohighlight">\(P_{loss,MOS}=R_{ds,on}.I^2\)</span><br />
-In case of a MOS, the resistance <span class="math notranslate nohighlight">\(R_{ds,on}\)</span> which defines the conduction losses decreases inversely proportionally to the current calibration. We have thus with the scaling law notation:<br />
-<span class="math notranslate nohighlight">\(P_{loss,MOS}^*=I^*\)</span><br />
-Which gives if the voltage is approximated by <span class="math notranslate nohighlight">\(V^*\approx P*^{1/3}\)</span>:<br />
-<span class="math notranslate nohighlight">\(P_{loss,MOS}^* \approx P^{*2/3}\)</span><br />
-with <span class="math notranslate nohighlight">\(P\)</span> the converter power.</p>
-<p>The <em>heat exchange</em> of the converter shall ensure a constant temperature for the entire power range of a given line of converters. It is assumed that the dissipation is fixed here by forced convection (due to propeller air flow) which can be expressed finally with converter dimension <span class="math notranslate nohighlight">\(d^*\)</span> by:<br />
-<span class="math notranslate nohighlight">\(P_{conv}^* = h^* S^* \Delta \theta^*= d^{*2} \)</span><br />
-and as <span class="math notranslate nohighlight">\(P_{conv}^*=P_{loss,MOS}^*\)</span>, we have <span class="math notranslate nohighlight">\(d^*=P^{*1/3}\)</span> and thus a mass evolution express by the following linear trend can be deduced:<br />
-<span class="math notranslate nohighlight">\(M^*=d^{*3}=P^*\)</span></p>
-</div>
+$P_{loss,MOS}=R_{ds,on}.I^2$<br />
+In case of a MOS, the resistance $R_{ds,on}$ which defines the conduction losses decreases inversely proportionally to the current calibration. We have thus with the scaling law notation:<br />
+$P_{loss,MOS}^<em>=I^</em>$<br />
+Which gives if the voltage is approximated by $V^<em>\approx P</em>^{1/3}$:<br />
+$P_{loss,MOS}^* \approx P^{*2/3}$<br />
+with $P$ the converter power.</p>
+<p>The <em>heat exchange</em> of the converter shall ensure a constant temperature for the entire power range of a given line of converters. It is assumed that the dissipation is fixed here by forced convection (due to propeller air flow) which can be expressed finally with converter dimension $d^<em>$ by:<br />
+$P_{conv}^</em> = h^* S^* \Delta \theta^<em>= d^{<em>2} $<br />
+and as $P_{conv}^</em>=P_{loss,MOS}^</em>$, we have $d^*=P^{<em>1/3}$ and thus a mass evolution express by the following linear trend can be deduced:<br />
+$M^</em>=d^{<em>3}=P^</em>$<br />
+:::</p>
 </section>
 </section>
 </section>

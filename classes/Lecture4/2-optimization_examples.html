@@ -61,8 +61,6 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture4/2-optimization_examples';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -560,7 +558,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="optimization-with-python">
+  <section id="optimization-with-python">
 <h1><span class="section-number">5.2. </span>Optimization with python<a class="headerlink" href="#optimization-with-python" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Toulouse, France</em></p>
 <p>The objective of this notebook is to learn how to implement a sizing code and use a simple numerical optimization into a python notebook. The system studied a Electromechanical Actuator (EMA) used for Thrust Vector Control (TVC) of a launcher.</p>
@@ -646,7 +644,7 @@
 </div>
 <p>We assume here that :</p>
 <ul class="simple">
-<li><p>the pitch <span class="math notranslate nohighlight">\(p\)</span> of the roller screw is 10 mm/rev.</p></li>
+<li><p>the pitch $p$ of the roller screw is 10 mm/rev.</p></li>
 <li><p>The efficiency of mechanical power transmission is 100%.</p></li>
 </ul>
 <p>The objective is to select the reduction ratio of the gear reducer in order to minimize the mass of the motor.</p>
@@ -705,26 +703,26 @@
 <li><p>For the sizing scenario :</p></li>
 </ol>
 <ul class="simple">
-<li><p>The maximum load force (nozzle) is : <span class="math notranslate nohighlight">\(F_{max} = F_{stat} + M a_{max}\)</span> with <span class="math notranslate nohighlight">\(a_{max}  = max(\ddot{x})\)</span></p></li>
-<li><p>The maximum torque at motor level is : <span class="math notranslate nohighlight">\(T_{mot, max} = F_{max} \frac{p}{N}   + J_{mot} a_{max} \frac{N}{p}\)</span></p></li>
+<li><p>The maximum load force (nozzle) is : $F_{max} = F_{stat} + M a_{max}$ with $a_{max}  = max(\ddot{x})$</p></li>
+<li><p>The maximum torque at motor level is : $T_{mot, max} = F_{max} \frac{p}{N}   + J_{mot} a_{max} \frac{N}{p}$</p></li>
 </ul>
 <ol class="arabic simple" start="2">
 <li><p>The scaling laws are:</p></li>
 </ol>
 <ul class="simple">
-<li><p>Motor mass : <span class="math notranslate nohighlight">\(M_{mot} = M_{mot,ref} \bigl (\frac{T_{mot}}{T_{mot,nom,ref}} \bigr) ^\frac{3}{3.5}\)</span></p></li>
-<li><p>Motor inertia : <span class="math notranslate nohighlight">\(J_{mot} = J_{mot,ref} \bigl (\frac{T_{mot}}{T_{mot,nom,ref}} \bigr) ^\frac{5}{3.5}\)</span></p></li>
-<li><p>Max motor speed : <span class="math notranslate nohighlight">\(\omega_{mot,max} = \omega_{mot,max,ref} \bigl (\frac{T_{mot}}{T_{mot,nom,ref}} \bigr) ^\frac{-1}{3.5}\)</span></p></li>
-<li><p>Max motor torque : <span class="math notranslate nohighlight">\(T_{mot,max} = T_{mot,max,ref} \bigl (\frac{T_{mot}}{T_{mot,nom,ref}} \bigr) ^1\)</span></p></li>
+<li><p>Motor mass : $M_{mot} = M_{mot,ref} \bigl (\frac{T_{mot}}{T_{mot,nom,ref}} \bigr) ^\frac{3}{3.5}$</p></li>
+<li><p>Motor inertia : $J_{mot} = J_{mot,ref} \bigl (\frac{T_{mot}}{T_{mot,nom,ref}} \bigr) ^\frac{5}{3.5}$</p></li>
+<li><p>Max motor speed : $\omega_{mot,max} = \omega_{mot,max,ref} \bigl (\frac{T_{mot}}{T_{mot,nom,ref}} \bigr) ^\frac{-1}{3.5}$</p></li>
+<li><p>Max motor torque : $T_{mot,max} = T_{mot,max,ref} \bigl (\frac{T_{mot}}{T_{mot,nom,ref}} \bigr) ^1$</p></li>
 </ul>
 <ol class="arabic simple" start="3">
 <li><p>We have to check that:</p></li>
 </ol>
 <ul class="simple">
 <li><p>Max speed possible of the motor (coming from scaling laws) &gt; Max speed of the sizing scenario<br />
-<span class="math notranslate nohighlight">\(\omega_{mot,max} &gt;  max(\dot{x})\frac{N}{p}\)</span></p></li>
+$\omega_{mot,max} &gt;  max(\dot{x})\frac{N}{p}$</p></li>
 <li><p>Max torque possible of the motor (coming from scaling laws) &gt; Max torque of the sizing scenario<br />
-<span class="math notranslate nohighlight">\(T_{mot,max,scaling} &gt;  T_{mot,max,scenario}\)</span></p></li>
+$T_{mot,max,scaling} &gt;  T_{mot,max,scenario}$</p></li>
 </ul>
 </section>
 </div>
@@ -918,7 +916,7 @@ Constraints (should be &gt;= 0):
      Torque margin:  T_mot_max - T_mot_scenario= -0.000 
 -----------------------------------------------
 Calculation time:
- 0.13271474838256836 s
+ 0.13063359260559082 s
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/scipy/optimize/_slsqp_py.py:437: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
@@ -976,7 +974,7 @@ Constraints (should be &gt;= 0):
      Torque margin:  T_mot_max - T_mot_scenario= 0.000 
 -----------------------------------------------
 Calculation time:
- 0.15425682067871094 s
+ 0.14536833763122559 s
 </pre></div>
 </div>
 </div>
