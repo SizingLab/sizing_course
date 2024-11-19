@@ -60,7 +60,7 @@ seaborn="^0.11.2"
 # Jupyter ecosystem
 jupyter-client="^7.4.9"
 jupyter-core="^5.7.1"
-jupyterlab="^4.0.0"
+jupyterlab="4.0.12"
 jupyter-book="^1.0.0"
 # jupyterlab_markup="*"
 jupyterlab_imarkdown="*"
