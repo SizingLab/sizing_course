@@ -61,16 +61,20 @@ You can then download the .zip from Jupyter Hub as a normal file.
 
 ### Local
 Download the zip file from [Github](https://github.com/SizingLab/sizing_course) and unzip it.
-Open a Anaconda Prompt terminal and `cd` to the recently unziped folder.
+Open an Anaconda Prompt terminal and `cd` to the recently unziped folder.
 
 For ISAE-SUPAERO students, you can run the following line to activate conda:
-`module load anaconda3/2023`
+`module load anaconda3/2024`
 
 You can then create a new conda environment by running:
 
 `conda create -n sizing_course python=3.9`
 
 `conda activate sizing_course` or `source activate sizing_course`
+
+Export proxys (on ISAE-SUPAERO computers):
+`export http_proxy=http://proxy.isae.fr:3128`
+`export https_proxy=http://proxy.isae.fr:3128`
 
 Then install required dependencies:
 `pip install -r requirements.txt`
