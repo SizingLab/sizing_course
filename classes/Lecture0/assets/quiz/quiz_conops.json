@@ -1,0 +1,210 @@
+[
+    {
+        "question": "What is the primary purpose of a Concept of Operations (ConOps)?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "To define the technical specifications of a system",
+                "correct": false,
+                "feedback": "Incorrect. ConOps focuses on stakeholder perspectives, not technical details."
+            },
+            {
+                "answer": "To describe how a system will operate from a stakeholder\u2019s perspective",
+                "correct": true,
+                "feedback": "Correct! ConOps provides a high-level operational view."
+            },
+            {
+                "answer": "To list the components of a system",
+                "correct": false,
+                "feedback": "Incorrect. ConOps is not a component inventory."
+            },
+            {
+                "answer": "To outline only the risks associated with the system",
+                "correct": false,
+                "feedback": "Incorrect. ConOps includes much more than just risks."
+            }
+        ]
+    },
+    {
+        "question": "Which of the following is NOT typically a stakeholder in a ConOps?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Users",
+                "correct": false,
+                "feedback": "Incorrect. Users are key stakeholders in ConOps."
+            },
+            {
+                "answer": "Regulators",
+                "correct": false,
+                "feedback": "Incorrect. Regulators are important stakeholders."
+            },
+            {
+                "answer": "Technical Support Teams",
+                "correct": false,
+                "feedback": "Incorrect. Maintainers like support teams are part of stakeholders."
+            },
+            {
+                "answer": "Competitors",
+                "correct": true,
+                "feedback": "Correct! Competitors are not considered stakeholders in ConOps."
+            }
+        ]
+    },
+    {
+        "question": "In the functional architecture for a lifting and handling UAV, which of the following is a key function?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Paint the UAV",
+                "correct": false,
+                "feedback": "Incorrect. This is not a functional requirement for the UAV."
+            },
+            {
+                "answer": "Lift payloads securely",
+                "correct": true,
+                "feedback": "Correct! Securely lifting payloads is a key function of the UAV."
+            },
+            {
+                "answer": "Install the gripper system",
+                "correct": false,
+                "feedback": "Incorrect. This is part of system design, not functionality."
+            },
+            {
+                "answer": "Inspect ground infrastructure",
+                "correct": false,
+                "feedback": "Incorrect. This is not a defined function for the UAV."
+            }
+        ]
+    },
+    {
+        "question": "What would be an example of an abnormal operational scenario for the lifting and handling UAV?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Delivering materials to a rooftop",
+                "correct": false,
+                "feedback": "Incorrect. This is a normal operational scenario."
+            },
+            {
+                "answer": "Delivering medical supplies during high winds",
+                "correct": true,
+                "feedback": "Correct! This is an example of an abnormal scenario."
+            },
+            {
+                "answer": "Completing routine maintenance on the UAV",
+                "correct": false,
+                "feedback": "Incorrect. This is a maintenance activity, not an operational scenario."
+            },
+            {
+                "answer": "Landing on a flat surface",
+                "correct": false,
+                "feedback": "Incorrect. This is part of normal operations."
+            }
+        ]
+    },
+    {
+        "question": "Which of the following capabilities is crucial for the lifting and handling UAV in constrained environments?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "High-speed flight capabilities",
+                "correct": false,
+                "feedback": "Incorrect. Speed is not the priority in constrained environments."
+            },
+            {
+                "answer": "Advanced collision avoidance sensors",
+                "correct": true,
+                "feedback": "Correct! Collision avoidance is critical in constrained environments."
+            },
+            {
+                "answer": "Solar-powered operation",
+                "correct": false,
+                "feedback": "Incorrect. Solar power is not a critical capability here."
+            },
+            {
+                "answer": "Automatic refueling capabilities",
+                "correct": false,
+                "feedback": "Incorrect. Refueling is irrelevant for battery-powered UAVs."
+            }
+        ]
+    },
+    {
+        "question": "Which component would NOT be part of the lifting and handling UAV's physical architecture?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Gripping mechanism",
+                "correct": false,
+                "feedback": "Incorrect. The gripping mechanism is essential."
+            },
+            {
+                "answer": "Collision avoidance system",
+                "correct": false,
+                "feedback": "Incorrect. The collision avoidance system is a key component."
+            },
+            {
+                "answer": "Inventory management software",
+                "correct": true,
+                "feedback": "Correct! Inventory software is unrelated to the UAV's physical architecture."
+            },
+            {
+                "answer": "GPS navigation module",
+                "correct": false,
+                "feedback": "Incorrect. GPS is part of the UAV's navigation subsystem."
+            }
+        ]
+    },
+    {
+        "question": "What is a key risk mitigation strategy for the lifting and handling UAV?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Increasing the UAV's speed for faster deliveries",
+                "correct": false,
+                "feedback": "Incorrect. Speed increases risks in constrained environments."
+            },
+            {
+                "answer": "Installing redundant collision avoidance systems",
+                "correct": true,
+                "feedback": "Correct! Redundancy enhances safety."
+            },
+            {
+                "answer": "Operating only during daylight hours",
+                "correct": false,
+                "feedback": "Incorrect. Constraining operations to daylight hours is not a mitigation strategy."
+            },
+            {
+                "answer": "Limiting the payload capacity to under 10 kg",
+                "correct": false,
+                "feedback": "Incorrect. Limiting payload does not address risk mitigation."
+            }
+        ]
+    },
+    {
+        "question": "Why is it important to continuously update the ConOps for the lifting and handling UAV?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "To meet evolving stakeholder needs and regulatory requirements",
+                "correct": true,
+                "feedback": "Correct! Updating ensures relevance to current needs and rules."
+            },
+            {
+                "answer": "To replace outdated UAV components",
+                "correct": false,
+                "feedback": "Incorrect. Component updates are part of maintenance, not ConOps."
+            },
+            {
+                "answer": "To integrate new colors and designs for marketing",
+                "correct": false,
+                "feedback": "Incorrect. Marketing is not the purpose of ConOps updates."
+            },
+            {
+                "answer": "To ensure the UAV always operates at maximum speed",
+                "correct": false,
+                "feedback": "Incorrect. Speed is unrelated to updating the ConOps."
+            }
+        ]
+    }
+]

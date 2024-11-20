@@ -1,0 +1,132 @@
+[
+    {
+        "question": "What is the first step in developing a system architecture according to the guidelines?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Identify candidate architectures",
+                "correct": false,
+                "feedback": "Incorrect. Identifying candidates comes after defining physical requirements."
+            },
+            {
+                "answer": "Define physical requirements",
+                "correct": true,
+                "feedback": "Correct! Defining physical requirements is the first step."
+            },
+            {
+                "answer": "Perform trade-off analysis",
+                "correct": false,
+                "feedback": "Incorrect. Trade-off analysis occurs later in the process."
+            },
+            {
+                "answer": "Establish evaluation criteria",
+                "correct": false,
+                "feedback": "Incorrect. Evaluation criteria are established after candidate architectures are identified."
+            }
+        ]
+    },
+    {
+        "question": "Which of the following is NOT a physical requirement for the lifting and handling UAV?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Payload capacity of 25\u2013100 kg",
+                "correct": false,
+                "feedback": "Incorrect. Payload capacity is a critical requirement."
+            },
+            {
+                "answer": "Vertical takeoff and landing",
+                "correct": false,
+                "feedback": "Incorrect. VTOL capability is necessary for urban operations."
+            },
+            {
+                "answer": "Noise levels below 65 dB",
+                "correct": false,
+                "feedback": "Incorrect. Noise reduction is important for urban compliance."
+            },
+            {
+                "answer": "Fixed-wing flight capabilities",
+                "correct": true,
+                "feedback": "Correct! Fixed-wing flight is not suitable for constrained urban environments."
+            }
+        ]
+    },
+    {
+        "question": "Which architecture was selected as the best option for the lifting and handling UAV?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Fixed-Wing UAV",
+                "correct": false,
+                "feedback": "Incorrect. Fixed-wing was eliminated due to poor maneuverability."
+            },
+            {
+                "answer": "Multirotor UAV",
+                "correct": true,
+                "feedback": "Correct! Multirotor UAVs were chosen for their agility and readiness."
+            },
+            {
+                "answer": "Hybrid VTOL UAV",
+                "correct": false,
+                "feedback": "Incorrect. Hybrid VTOLs were eliminated due to complexity and cost."
+            },
+            {
+                "answer": "Tiltrotor UAV",
+                "correct": false,
+                "feedback": "Incorrect. Tiltrotor UAVs were not considered in this example."
+            }
+        ]
+    },
+    {
+        "question": "What key factor led to the elimination of the Fixed-Wing UAV architecture?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "High noise levels",
+                "correct": false,
+                "feedback": "Incorrect. Noise was not the primary reason for elimination."
+            },
+            {
+                "answer": "Poor maneuverability in constrained environments",
+                "correct": true,
+                "feedback": "Correct! Fixed-wing UAVs lack the agility needed for constrained spaces."
+            },
+            {
+                "answer": "Insufficient payload capacity",
+                "correct": false,
+                "feedback": "Incorrect. Fixed-wing UAVs can handle the required payload but lack maneuverability."
+            },
+            {
+                "answer": "Unproven technology",
+                "correct": false,
+                "feedback": "Incorrect. Fixed-wing UAVs are a mature technology but are unsuitable for urban scenarios."
+            }
+        ]
+    },
+    {
+        "question": "What is a primary evaluation criterion for selecting the best architecture?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Operational suitability",
+                "correct": true,
+                "feedback": "Correct! Operational suitability ensures the architecture meets mission needs."
+            },
+            {
+                "answer": "Appearance of the UAV",
+                "correct": false,
+                "feedback": "Incorrect. The appearance is not relevant to architecture evaluation."
+            },
+            {
+                "answer": "The ability to exceed 200 km/h speeds",
+                "correct": false,
+                "feedback": "Incorrect. Speed is not a critical requirement for this mission."
+            },
+            {
+                "answer": "Hybrid power source compatibility",
+                "correct": false,
+                "feedback": "Incorrect. Power source compatibility is not a primary criterion."
+            }
+        ]
+    }
+]
