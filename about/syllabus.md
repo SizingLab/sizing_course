@@ -1,6 +1,6 @@
 ![](../images/header.jpg)
 
-# Preliminary design and sizing of mechatronic systems
+# Preliminary design and sizing mechatronic systems: syllabus
 
 ## Authors
 - Marc Budinger (marc.budinger@insa-toulouse.fr)
