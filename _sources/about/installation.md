@@ -1,6 +1,6 @@
 ![](../images/header.jpg)
 
-# Installation
+# Installation guide
 
 The sizing course is available on this repository:
 https://github.com/SizingLab/sizing_course
