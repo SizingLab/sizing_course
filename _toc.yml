@@ -1,26 +1,32 @@
 format: jb-book
 root: about/homepage
 parts:
-- caption: Introduction and overview
+- caption: About
   chapters:
+  - file: about/context
+    title: Context
   - file: about/syllabus
+    title: Syllabus
   - file: about/installation
+    title: Installation guide
 - caption: Classes
   numbered: true
   maxdepth: 2
   chapters:
+#   - file: classes/Introduction/summary
+#     title: Introduction
+#     sections:
+#       - file: classes/Introduction/0-needs_and_methodology_overview
   - file: classes/Lecture0/summary
     title: Concept of Operations and architectures
     sections:
+      # - file: classes/Lecture0/0-needs_and_methodology_overview
       - file: classes/Lecture0/1-concept_of_operations
       - file: classes/Lecture0/2-system_architectures
-  - file: classes/Lecture1/summary
-    title: Architectures, sizing scenarios and design drivers
+  - file: classes/Lecture1_new/summary
+    title: Components, technologies, design drivers and sizing scenarios
     sections:
-      - file: classes/Lecture1/1-objectives_and_ressources
-      - file: classes/Lecture1/2-needs_and_general_methodology
-      - file: classes/Lecture1/3-scenarios_and_design_drivers
-      - file: classes/Lecture1/4-quiz
+      - file: classes/Lecture1_new/1-technologies
   - file: classes/Lecture2/summary
     title: Simulation and evaluation models
     sections:
