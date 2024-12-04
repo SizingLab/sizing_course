@@ -568,7 +568,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feasibility-assessment">1.6.5.2. Feasibility Assessment</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-select-best-architecture">1.6.6. Step 6: Select Best Architecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-select-best-architecture-qualitatively">1.6.6. Step 6: Select Best Architecture (Qualitatively)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selected-architecture">1.6.6.1. Selected Architecture</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-feasibility">1.6.6.2. Validation Feasibility</a></li>
 </ul>
@@ -593,45 +593,55 @@
 <p>In this section, we will explore the development of the physical architecture for the package delivery UAV system. We will start with some guidelines for designing the physical architecture of a system that enables us to evaluate and eliminate unsuitable concepts.</p>
 <section id="guidelines-for-developing-system-architectures">
 <h2><span class="section-number">1.5.1. </span>Guidelines for Developing System Architectures<a class="headerlink" href="#guidelines-for-developing-system-architectures" title="Link to this heading">#</a></h2>
-<p>Designing the physical architecture of a system involves several systematic steps to ensure that the final design meets all system requirements and operational needs. The following methodology outlines these steps and includes criteria to eliminate unsuitable concepts:</p>
+<p>Designing the physical architecture of a system involves several systematic steps to ensure that the final design meets all system requirements and operational needs. The following methodology outlines these steps and includes criteria to eliminate unsuitable concepts.</p>
 <ol class="arabic simple">
 <li><p><strong>Define Physical Requirements</strong></p>
 <ul class="simple">
-<li><p><strong>Extract from System Requirements</strong>: Identify all physical constraints and requirements from the system specifications.</p></li>
-<li><p><strong>Consider Environmental Factors</strong>: Include factors such as operating environment, takeoff and landing constraints, and maneuverability.</p></li>
-<li><p><strong>Regulatory Compliance</strong>: Ensure adherence to relevant standards and regulations.</p></li>
+<li><p><strong>Extract from System Requirements</strong>: Identify all physical constraints and requirements from the system specifications</p></li>
+<li><p><strong>Consider Environmental Factors</strong>: Include factors such as operating environment, takeoff and landing constraints, and maneuverability</p></li>
+<li><p><strong>Regulatory Compliance</strong>: Ensure adherence to relevant standards and regulations</p></li>
 </ul>
 </li>
+</ol>
+<ol class="arabic simple" start="2">
 <li><p><strong>Identify Candidate Architectures</strong></p>
 <ul class="simple">
-<li><p><strong>List Possible Architectures</strong>: Enumerate all feasible physical architectures (e.g., fixed-wing, multirotor, hybrid VTOL).</p></li>
-<li><p><strong>Consider Technology Readiness</strong>: Evaluate the maturity of technologies required for each architecture.</p></li>
+<li><p><strong>List Possible Architectures</strong>: Enumerate all feasible physical architectures</p></li>
+<li><p><strong>Consider Technology Readiness</strong>: Evaluate the maturity of technologies required for each architecture</p></li>
 </ul>
 </li>
+</ol>
+<ol class="arabic simple" start="3">
 <li><p><strong>Establish Evaluation Criteria</strong></p>
 <ul class="simple">
-<li><p><strong>Operational Suitability</strong>: Assess how well each architecture meets the mission profile.</p></li>
-<li><p><strong>Performance Metrics</strong>: Include payload capacity, range, speed, endurance, and maneuverability.</p></li>
-<li><p><strong>Environmental Compatibility</strong>: Consider noise levels, emissions, and impact on surroundings.</p></li>
-<li><p><strong>Constraints Compliance</strong>: Evaluate how each architecture aligns with physical, regulatory, and operational constraints.</p></li>
+<li><p><strong>Operational Suitability</strong>: Assess how well each architecture meets the mission profile</p></li>
+<li><p><strong>Performance Metrics</strong>: Include payload capacity, range, speed, endurance, and maneuverability</p></li>
+<li><p><strong>Environmental Compatibility</strong>: Consider noise levels, emissions, and impact on surroundings</p></li>
+<li><p><strong>Constraints Compliance</strong>: Evaluate how each architecture aligns with physical, regulatory, and operational constraints</p></li>
 </ul>
 </li>
+</ol>
+<ol class="arabic simple" start="4">
 <li><p><strong>Perform Trade-Off Analysis</strong></p>
 <ul class="simple">
-<li><p><strong>Quantitative Assessment</strong>: Use scoring or weighting methods to compare architectures against criteria.</p></li>
-<li><p><strong>Qualitative Assessment</strong>: Consider factors like complexity, maintainability, and scalability.</p></li>
+<li><p><strong>Quantitative Assessment</strong>: Use scoring or weighting methods to compare architectures against criteria</p></li>
+<li><p><strong>Qualitative Assessment</strong>: Consider factors like complexity, maintainability, and scalability</p></li>
 </ul>
 </li>
+</ol>
+<ol class="arabic simple" start="5">
 <li><p><strong>Eliminate Unsuitable Concepts</strong></p>
 <ul class="simple">
-<li><p><strong>Threshold Criteria</strong>: Set minimum acceptable levels for critical requirements.</p></li>
-<li><p><strong>Feasibility Assessment</strong>: Discard architectures that do not meet essential requirements or pose significant challenges.</p></li>
+<li><p><strong>Threshold Criteria</strong>: Set minimum acceptable levels for critical requirements</p></li>
+<li><p><strong>Feasibility Assessment</strong>: Discard architectures that do not meet essential requirements or pose significant challenges</p></li>
 </ul>
 </li>
-<li><p><strong>Select Best Architecture</strong></p>
+</ol>
+<ol class="arabic simple" start="6">
+<li><p><strong>Select Best Architecture (Qualitatively)</strong></p>
 <ul class="simple">
-<li><p><strong>Align with Requirements</strong>: Choose the design that best meets the system requirements and mission profile.</p></li>
-<li><p><strong>Validate Feasibility</strong>: Ensure that the selected architecture is practical, manufacturable, and maintainable.</p></li>
+<li><p><strong>Align with Requirements</strong>: Choose the design that best meets the system requirements and mission profile</p></li>
+<li><p><strong>Validate Feasibility</strong>: Ensure that the selected architecture is practical, manufacturable, and maintainable</p></li>
 </ul>
 </li>
 </ol>
@@ -647,8 +657,6 @@
 <li><p>Payload capacity: 25–100 kg.</p></li>
 <li><p>Operational range: Up to 5 km in urban environments.</p></li>
 <li><p>Flight duration: 30 minutes minimum per mission.</p></li>
-<li><p>Navigation: GPS-based with collision avoidance.</p></li>
-<li><p>Noise levels: Below 65 dB to comply with urban regulations.</p></li>
 </ul>
 </section>
 <section id="consider-environmental-factors">
@@ -667,7 +675,6 @@
 </ul>
 </section>
 </section>
-<hr class="docutils" />
 <section id="step-2-identify-candidate-architectures">
 <h2><span class="section-number">1.6.2. </span>Step 2: Identify Candidate Architectures<a class="headerlink" href="#step-2-identify-candidate-architectures" title="Link to this heading">#</a></h2>
 <section id="list-possible-architectures">
@@ -702,7 +709,6 @@
 </figure>
 </section>
 </section>
-<hr class="docutils" />
 <section id="step-3-establish-evaluation-criteria">
 <h2><span class="section-number">1.6.3. </span>Step 3: Establish Evaluation Criteria<a class="headerlink" href="#step-3-establish-evaluation-criteria" title="Link to this heading">#</a></h2>
 <section id="operational-suitability">
@@ -722,8 +728,7 @@
 <section id="environmental-compatibility">
 <h3><span class="section-number">1.6.3.3. </span>Environmental Compatibility<a class="headerlink" href="#environmental-compatibility" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Noise levels: Below 65 dB.</p></li>
-<li><p>Emissions: Zero-emission electric propulsion preferred.</p></li>
+<li><p>Emissions: Low-carbon electric propulsion preferred.</p></li>
 </ul>
 </section>
 <section id="constraints-compliance">
@@ -733,7 +738,6 @@
 </ul>
 </section>
 </section>
-<hr class="docutils" />
 <section id="step-4-perform-trade-off-analysis">
 <h2><span class="section-number">1.6.4. </span>Step 4: Perform Trade-Off Analysis<a class="headerlink" href="#step-4-perform-trade-off-analysis" title="Link to this heading">#</a></h2>
 <section id="quantitative-assessment">
@@ -783,7 +787,6 @@
 </ul>
 </section>
 </section>
-<hr class="docutils" />
 <section id="step-5-eliminate-unsuitable-concepts">
 <h2><span class="section-number">1.6.5. </span>Step 5: Eliminate Unsuitable Concepts<a class="headerlink" href="#step-5-eliminate-unsuitable-concepts" title="Link to this heading">#</a></h2>
 <section id="threshold-criteria">
@@ -801,9 +804,8 @@
 </ul>
 </section>
 </section>
-<hr class="docutils" />
-<section id="step-6-select-best-architecture">
-<h2><span class="section-number">1.6.6. </span>Step 6: Select Best Architecture<a class="headerlink" href="#step-6-select-best-architecture" title="Link to this heading">#</a></h2>
+<section id="step-6-select-best-architecture-qualitatively">
+<h2><span class="section-number">1.6.6. </span>Step 6: Select Best Architecture (Qualitatively)<a class="headerlink" href="#step-6-select-best-architecture-qualitatively" title="Link to this heading">#</a></h2>
 <section id="selected-architecture">
 <h3><span class="section-number">1.6.6.1. </span>Selected Architecture<a class="headerlink" href="#selected-architecture" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -827,13 +829,13 @@
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="DJiEqBviiKEC" data-shufflequestions="False"
+<div class="output text_html"><div id="uJcClgjUTnhN" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#DJiEqBviiKEC {
+#uJcClgjUTnhN {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1034,7 +1036,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsDJiEqBviiKEC=[
+</style></div><script type="application/javascript">var questionsuJcClgjUTnhN=[
     {
         "question": "What is the first step in developing a system architecture according to the guidelines?",
         "type": "multiple_choice",
@@ -1972,8 +1974,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("DJiEqBviiKEC")) {
-            show_questions(questionsDJiEqBviiKEC,  DJiEqBviiKEC); 
+          if(document.getElementById("uJcClgjUTnhN")) {
+            show_questions(questionsuJcClgjUTnhN,  uJcClgjUTnhN); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1982,8 +1984,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("DJiEqBviiKEC");
-        // console.log(document.getElementById("DJiEqBviiKEC"));
+        //console.log("uJcClgjUTnhN");
+        // console.log(document.getElementById("uJcClgjUTnhN"));
 
         try_show();
         }
@@ -2090,7 +2092,7 @@ if (typeof version == 'undefined') {
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feasibility-assessment">1.6.5.2. Feasibility Assessment</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-select-best-architecture">1.6.6. Step 6: Select Best Architecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-select-best-architecture-qualitatively">1.6.6. Step 6: Select Best Architecture (Qualitatively)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selected-architecture">1.6.6.1. Selected Architecture</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-feasibility">1.6.6.2. Validation Feasibility</a></li>
 </ul>
