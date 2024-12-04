@@ -69,7 +69,7 @@ parts:
 - caption: Laboratories
   chapters:
   - file: laboratories/Lab-package_delivery_UAV/summary
-    title: Multirotor UAV
+    title: Package delivery UAV
     sections:
       - file: laboratories/Lab-package_delivery_UAV/1-conops
       - file: laboratories/Lab-package_delivery_UAV/1-conops-student
