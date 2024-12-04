@@ -1,0 +1,158 @@
+[
+    {
+        "question": "What is a key function of gear reducers in mechatronic systems?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Adapt the torque and/or speed of a rotating system to match application requirements.",
+                "correct": true,
+                "feedback": "Correct! Gear reducers are used to adapt torque and speed."
+            },
+            {
+                "answer": "Store kinetic energy for later use.",
+                "correct": false,
+                "feedback": "Incorrect. Storing kinetic energy is the function of a flywheel."
+            },
+            {
+                "answer": "Convert rotational motion into linear motion.",
+                "correct": false,
+                "feedback": "Incorrect. This is the function of nut-screw mechanisms."
+            },
+            {
+                "answer": "Provide lubrication for mechanical components.",
+                "correct": false,
+                "feedback": "Incorrect. Gear reducers do not provide lubrication."
+            }
+        ]
+    },
+    {
+        "question": "What is a technological constraint of ball screws?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Backlash affecting positioning accuracy.",
+                "correct": true,
+                "feedback": "Correct! Backlash is a common constraint in ball screws."
+            },
+            {
+                "answer": "High operating temperatures.",
+                "correct": false,
+                "feedback": "Incorrect. High operating temperatures are constraints of gas turbines."
+            },
+            {
+                "answer": "Voltage regulation.",
+                "correct": false,
+                "feedback": "Incorrect. Voltage regulation is a constraint of electrical generators."
+            },
+            {
+                "answer": "Ripple effects in DC output.",
+                "correct": false,
+                "feedback": "Incorrect. Ripple effects are constraints of rectifiers."
+            }
+        ]
+    },
+    {
+        "question": "What is the primary function of flywheels in mechatronic systems?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Store kinetic energy and provide short-term power stabilization.",
+                "correct": true,
+                "feedback": "Correct! Flywheels store kinetic energy for stabilization."
+            },
+            {
+                "answer": "Adapt torque and speed.",
+                "correct": false,
+                "feedback": "Incorrect. Adapting torque and speed is the role of gear reducers."
+            },
+            {
+                "answer": "Convert rotational motion into linear motion.",
+                "correct": false,
+                "feedback": "Incorrect. This is a function of nut-screw mechanisms."
+            },
+            {
+                "answer": "Regulate electrical energy for circuits.",
+                "correct": false,
+                "feedback": "Incorrect. Electrical regulation is a function of DC/DC converters."
+            }
+        ]
+    },
+    {
+        "question": "Which motor technology is most suitable for precise incremental movement?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Stepper Motors.",
+                "correct": true,
+                "feedback": "Correct! Stepper motors are designed for precise incremental movement."
+            },
+            {
+                "answer": "Induction Motors.",
+                "correct": false,
+                "feedback": "Incorrect. Induction motors are more suitable for general-purpose drives."
+            },
+            {
+                "answer": "Synchronous Motors.",
+                "correct": false,
+                "feedback": "Incorrect. Synchronous motors are used for precise speed control."
+            },
+            {
+                "answer": "Brushless DC Motors.",
+                "correct": false,
+                "feedback": "Incorrect. Brushless DC motors are efficient but not designed for incremental movement."
+            }
+        ]
+    },
+    {
+        "question": "What is a key advantage of fuel cells compared to traditional batteries?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Combined with hydrogen, they have a higher energy mass density.",
+                "correct": true,
+                "feedback": "Correct! Fuel cells have higher energy density with hydrogen."
+            },
+            {
+                "answer": "They store electrical energy for rapid charge/discharge cycles.",
+                "correct": false,
+                "feedback": "Incorrect. Rapid charge/discharge is a function of supercapacitors."
+            },
+            {
+                "answer": "They have the lowest energy density compared to all other technologies.",
+                "correct": false,
+                "feedback": "Incorrect. We would rather have the highest energy density!"
+            },
+            {
+                "answer": "They operate without any chemical reactions.",
+                "correct": false,
+                "feedback": "Incorrect. Fuel cells rely on chemical reactions to produce energy."
+            }
+        ]
+    },
+    {
+        "question": "What is a key function of DC/DC converters?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Convert one level of DC voltage to another.",
+                "correct": true,
+                "feedback": "Correct! DC/DC converters adjust DC voltage levels."
+            },
+            {
+                "answer": "Generate electrical energy from mechanical energy.",
+                "correct": false,
+                "feedback": "Incorrect. This is the function of generators."
+            },
+            {
+                "answer": "Store electrical energy for long-term use.",
+                "correct": false,
+                "feedback": "Incorrect. This is the role of batteries."
+            },
+            {
+                "answer": "Provide harmonic filtering for AC circuits.",
+                "correct": false,
+                "feedback": "Incorrect. Harmonic filtering is related to inverters."
+            }
+        ]
+    },
+]
