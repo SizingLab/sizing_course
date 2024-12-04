@@ -211,6 +211,11 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-package_delivery_UAV/summary.html">Multirotor UAV</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/1-conops.html">Example: Package Delivery UAV Concept of Operations in Europe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/1-conops-student.html">Example: Package Delivery UAV Concept of Operations in Europe</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">Multirotor UAV</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_CaseStudy.html">Case study and architecture presentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02a_SizingScenarios-Student.html">Sizing scenarios and design drivers (student version)</a></li>
@@ -576,7 +581,7 @@ Validation of the obtained scaling laws is realized thanks catalog data.</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/LipoBattery.jpeg"><img alt="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/LipoBattery.jpeg" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/LipoBattery.jpeg" style="width: 30%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">LiPo Battery</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">LiPo Battery</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="cell docutils container">
@@ -614,7 +619,7 @@ Max discharge current: 165 A
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/BrushlessMotor.jpg"><img alt="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/BrushlessMotor.jpg" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/BrushlessMotor.jpg" style="width: 30%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Brushless motor</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Brushless motor</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="scaling-laws">
@@ -895,7 +900,7 @@ Max discharge current: 165 A
 <figure class="align-center" id="esc">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images//ESC.jpeg"><img alt="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images//ESC.jpeg" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images//ESC.jpeg" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Electronic Speed Controller (ESC)</span><a class="headerlink" href="#esc" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Electronic Speed Controller (ESC)</span><a class="headerlink" href="#esc" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The first step is to import catalog data stored in a .csv file. We use for that functions from <a class="reference external" href="https://pandas.pydata.org/index.html">Panda</a> package (with here an <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/03.00-introduction-to-pandas.html">introduction to panda</a>).<br />
@@ -1064,7 +1069,7 @@ The data base gives informations about mass, voltage &amp; current (DC side) and
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2286/813411164.py:18: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2239/813411164.py:18: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   coef = float(reg.coef_)
 </pre></div>
 </div>

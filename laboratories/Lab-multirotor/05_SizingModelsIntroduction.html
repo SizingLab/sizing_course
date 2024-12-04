@@ -211,6 +211,11 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-package_delivery_UAV/summary.html">Multirotor UAV</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/1-conops.html">Example: Package Delivery UAV Concept of Operations in Europe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/1-conops-student.html">Example: Package Delivery UAV Concept of Operations in Europe</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">Multirotor UAV</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_CaseStudy.html">Case study and architecture presentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02a_SizingScenarios-Student.html">Sizing scenarios and design drivers (student version)</a></li>
@@ -558,7 +563,7 @@
 <figure class="align-center" id="multirotor-xdsm">
 <a class="reference internal image-reference" href="../../_images/xdsm_multirotor_base.png"><img alt="../../_images/xdsm_multirotor_base.png" src="../../_images/xdsm_multirotor_base.png" style="width: 75%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Multirotor sizing XDSM diagram</span><a class="headerlink" href="#multirotor-xdsm" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Multirotor sizing XDSM diagram</span><a class="headerlink" href="#multirotor-xdsm" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="exercise admonition" id="exercice_sizing_code">
@@ -577,12 +582,12 @@
 <figure class="align-center" id="multirotor-xdsm-mda">
 <a class="reference internal image-reference" href="../../_images/xdsm_multirotor_mda.png"><img alt="../../_images/xdsm_multirotor_mda.png" src="../../_images/xdsm_multirotor_mda.png" style="width: 75%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Multirotor sizing MDA XDSM diagram</span><a class="headerlink" href="#multirotor-xdsm-mda" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Multirotor sizing MDA XDSM diagram</span><a class="headerlink" href="#multirotor-xdsm-mda" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>It consists in addition an oversizing coefficent <span class="math notranslate nohighlight">\(k_{os} \quad [1-10]\)</span> as a design variable and additional inequality constraint <span class="math notranslate nohighlight">\(M_{total} \geq M_{total,real}\)</span>. This way, we make sure that the drone is capable of lifting the load and itself. As we are minimizing the total mass <span class="math notranslate nohighlight">\(M_{total,real}\)</span> the oversizing coefficient <span class="math notranslate nohighlight">\(k_{os}\)</span> will tend to be as small as possible and thus the inequality constraint will be equivalent to an equality constraint (<span class="math notranslate nohighlight">\(M_{total} = M_{total,real}\)</span>). This is one way of solving an algebraic loop, other methods use numerical solvers or other optimizer-based formulations. The formulation of the optimization problem is the following:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1f8aa373-b941-4aea-b672-63b4df6a973d">
-<span class="eqno">(1)<a class="headerlink" href="#equation-1f8aa373-b941-4aea-b672-63b4df6a973d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3f99c5ca-e479-4514-bf44-47c4c62135fb">
+<span class="eqno">(1)<a class="headerlink" href="#equation-3f99c5ca-e479-4514-bf44-47c4c62135fb" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
         &amp; \text{minimize}
         &amp; &amp; M_{total,real} \\
