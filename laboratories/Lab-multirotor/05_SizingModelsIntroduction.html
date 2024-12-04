@@ -164,9 +164,10 @@
 </button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction and overview</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../about/syllabus.html">Preliminary design and sizing mechatronic systems: syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/context.html">Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/syllabus.html">Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about/installation.html">Installation guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
@@ -181,12 +182,8 @@
 
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1/summary.html">2. Architectures, sizing scenarios and design drivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/1-objectives_and_ressources.html">2.1. Objectives and ressources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/2-needs_and_general_methodology.html">2.2. Needs and general methodology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/3-scenarios_and_design_drivers.html">2.3. Scenarios and Design Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1/4-quiz.html">2.4. Quiz</a></li>
-
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1_new/summary.html">2. Components, technologies, design drivers and sizing scenarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1_new/1-technologies.html">2.1. Components and Technologies for Mechatronic System</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture2/summary.html">3. Simulation and evaluation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -584,8 +581,8 @@
 </figcaption>
 </figure>
 <p>It consists in addition an oversizing coefficent <span class="math notranslate nohighlight">\(k_{os} \quad [1-10]\)</span> as a design variable and additional inequality constraint <span class="math notranslate nohighlight">\(M_{total} \geq M_{total,real}\)</span>. This way, we make sure that the drone is capable of lifting the load and itself. As we are minimizing the total mass <span class="math notranslate nohighlight">\(M_{total,real}\)</span> the oversizing coefficient <span class="math notranslate nohighlight">\(k_{os}\)</span> will tend to be as small as possible and thus the inequality constraint will be equivalent to an equality constraint (<span class="math notranslate nohighlight">\(M_{total} = M_{total,real}\)</span>). This is one way of solving an algebraic loop, other methods use numerical solvers or other optimizer-based formulations. The formulation of the optimization problem is the following:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-54ae56f8-06ff-4d5f-af8d-afff55e1ac8a">
-<span class="eqno">(1)<a class="headerlink" href="#equation-54ae56f8-06ff-4d5f-af8d-afff55e1ac8a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-136f768d-209d-4faf-8b65-04000013c630">
+<span class="eqno">(1)<a class="headerlink" href="#equation-136f768d-209d-4faf-8b65-04000013c630" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
         &amp; \text{minimize}
         &amp; &amp; M_{total,real} \\
