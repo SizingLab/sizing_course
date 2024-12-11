@@ -76,8 +76,8 @@ parts:
       - file: laboratories/Lab-package_delivery_UAV/2-system_architectures-student
       - file: laboratories/Lab-package_delivery_UAV/2-system_architectures
       - file: laboratories/Lab-package_delivery_UAV/3-sizing_scenarios-student
-      - file: laboratories/Lab-package_delivery_UAV/4-estimation_models_linear_regressions-student
-      - file: laboratories/Lab-package_delivery_UAV/4-estimation_models_scaling_laws-student
+      - file: laboratories/Lab-package_delivery_UAV/4-estimation_models-linear_regressions-student
+      - file: laboratories/Lab-package_delivery_UAV/4-estimation_models-scaling_laws-student
   # - file: laboratories/Lab-multirotor/summary
   #   title: Multirotor UAV
   #   sections:
