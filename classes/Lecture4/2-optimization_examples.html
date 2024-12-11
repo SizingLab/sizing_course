@@ -217,30 +217,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/2-system_architectures-student.html">System architectures of the Package Delivery UAV (Student version)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-multirotor/summary.html">Multirotor UAV</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/01_CaseStudy.html">Case study and architecture presentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/02a_SizingScenarios-Student.html">Sizing scenarios and design drivers (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/02a_SizingScenarios.html">Sizing scenarios and design drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/02b_SizingScenariosEquations-Student.html">Equations of sizing scenarios (INSA)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/03_PropellerLinearRegression-Student.html">Propellers estimation models with dimensional analysis and linear regressions  (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/03_PropellerLinearRegression.html">Propellers estimation models with dimensional analysis and linear regressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/04_ScalingLawsElectricalComponents-Student.html">Scaling laws of electrical components (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/04_ScalingLawsElectricalComponents.html">Scaling laws of electrical components</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05_SizingModelsIntroduction.html">Sizing models for multi-rotor definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05a_PropellerSelection-Student.html">Propeller selection (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05a_PropellerSelection.html">Propeller selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05b_MotorSelection-Student.html">Motor selection  (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05b_MotorSelection.html">Motor selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05c_BatteryESCSelection-Student.html">Battery and ESC selection (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05c_BatteryESCSelection.html">Battery and ESC selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05d_FrameSelection-Student.html">Frame selection (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/05d_FrameSelection.html">Frame selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/06_SystemSizingCodeOptimization-Student.html">Sizing of a multirotor drone (ISAE)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/07_DesignExploration-Student.html">Design optimization and exploration of a multirotor drone (ISAE)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/08_SystemSizingCodeOptimization.html">Sizing of a multi-rotor drone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-multirotor/A1_Sizing_equations.html">Appendix 1: Sizing equations</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-vega/summary.html">VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/1-sizing_scenarios-student.html">Modeling of the mechanical load (student version)</a></li>
 
@@ -910,7 +886,7 @@ Constraints (should be &gt;= 0):
      Torque margin:  T_mot_max - T_mot_scenario= -0.000 
 -----------------------------------------------
 Calculation time:
- 0.13582062721252441 s
+ 0.13263320922851562 s
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/scipy/optimize/_slsqp_py.py:437: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
@@ -964,11 +940,11 @@ Components characteristics:
      Motor mass = 9.37 kg
      Motor max torque = 38.40 N.m
 Constraints (should be &gt;= 0):
-     Speed margin: W_mot-reduction_ratio*max_speed/pitch= 0.000
+     Speed margin: W_mot-reduction_ratio*max_speed/pitch= 0.001
      Torque margin:  T_mot_max - T_mot_scenario= 0.000 
 -----------------------------------------------
 Calculation time:
- 0.1272115707397461 s
+ 0.1261899471282959 s
 </pre></div>
 </div>
 </div>
