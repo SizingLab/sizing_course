@@ -1,0 +1,65 @@
+[
+    {
+        "question": "Scenario 1",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Mechanical fatigue in structural parts",
+                "correct": true,
+                "feedback": "Correct ! Force fluctuation can generate mechanical fatigue"
+            },
+            {
+                "answer": "Rolling fatigue of mechanical power transmission",
+                "correct": false,
+                "feedback": "Incorrect ! No speed = no revolution"
+            },
+			{
+                "answer": "Thermal limits of electrical components",
+                "correct": true,
+                "feedback": "Correct ! Force can generate copper losses in the motor"
+            },
+        ]
+    },
+    {
+        "question": "Scenario 2",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Mechanical fatigue in structural parts",
+                "correct": false,
+                "feedback": "Incorrect ! No force fluctuation"
+            },
+            {
+                "answer": "Rolling fatigue of mechanical power transmission",
+                "correct": false,
+                "feedback": "Incorrect ! No speed = no revolution"
+            },
+			{
+                "answer": "Thermal limits of electrical components",
+                "correct": true,
+                "feedback": "Correct ! Force can generate copper losses in the motor"
+            },
+        ]
+    },
+    {
+        "question": "Scenario 3",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Mechanical fatigue in structural parts",
+                "correct": true,
+                "feedback": "Correct ! Force fluctuation can generate mechanical fatigue"
+            },
+            {
+                "answer": "Rolling fatigue of mechanical power transmission",
+                "correct": true,
+                "feedback": "Correct ! Force & speed = rolling fatigue"
+            },
+			{
+                "answer": "Thermal limits of electrical components",
+                "correct": true,
+                "feedback": "Correct ! Force can generate copper losses in the motor"
+            },
+        ]
+    }
+]

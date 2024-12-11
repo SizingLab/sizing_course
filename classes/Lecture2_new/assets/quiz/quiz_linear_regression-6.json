@@ -1,0 +1,23 @@
+[
+    {
+        "question": "What is the equation of the regression?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "M=1.299Co-2.1398",
+                "correct": false,
+                "feedback": "Incorrect!"
+            },
+            {
+                "answer": "M=-2.1398Co^{1.299}",
+                "correct": false,
+                "feedback": "Incorrect !"
+            },
+            {
+                "answer": "M=10^-2.1398.Co^1.299",
+                "correct": true,
+                "feedback": "Correct !"
+            }
+        ]
+    }
+]

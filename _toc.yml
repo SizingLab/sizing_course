@@ -27,20 +27,20 @@ parts:
     title: Components, technologies, design drivers and sizing scenarios
     sections:
       - file: classes/Lecture1_new/1-technologies
-  - file: classes/Lecture2/summary
-    title: Simulation and evaluation models
-    sections:
-      - file: classes/Lecture2/1-simulation_models
-      - file: classes/Lecture2/2-evaluation_models
-      - file: classes/Lecture2/3-quiz_evaluation_models
-      - file: classes/Lecture2/4-homework
-  - file: classes/Lecture3/summary
+  - file: classes/Lecture2_new/summary
     title: Estimation models
     sections:
-      - file: classes/Lecture3/1-linear_regressions
-      - file: classes/Lecture3/2-quiz_regressions
-      - file: classes/Lecture3/3-scaling_laws
-      - file: classes/Lecture3/4-quiz_scaling_laws
+      - file: classes/Lecture2_new/1-linear_regressions
+      - file: classes/Lecture2_new/2-quiz_regressions
+      - file: classes/Lecture2_new/3-scaling_laws
+      - file: classes/Lecture2_new/4-quiz_scaling_laws
+  - file: classes/Lecture3_new/summary
+    title: Simulation and evaluation models
+    sections:
+      - file: classes/Lecture3_new/1-simulation_models
+      - file: classes/Lecture3_new/2-evaluation_models
+      - file: classes/Lecture3_new/3-quiz_evaluation_models
+      - file: classes/Lecture3_new/4-homework
   - file: classes/Lecture4/summary
     title: Optimal sizing procedures
     sections:

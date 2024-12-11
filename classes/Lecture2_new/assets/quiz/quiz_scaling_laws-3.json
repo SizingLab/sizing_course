@@ -1,0 +1,28 @@
+[
+    {
+        "question": "Estimate the diameter $d$ of a rod-end  with a static load $C_0 = 50 kN$:",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "10mm",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "15mm",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "20mm",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "25mm",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    }
+]

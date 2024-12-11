@@ -1,0 +1,33 @@
+[
+    {
+        "question": "What is the greatest concern about the regression above?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "It has a small slope",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "It has a high R²",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "The investigator should not be using a first order linear regression on these data",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "The residuals are too large",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "The regression line does not pass through the origin",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    }
+]

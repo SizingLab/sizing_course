@@ -1,0 +1,28 @@
+[
+    {
+        "question": "Select the variable that seems the most related to the Mass.",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Diameter D",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "Static load C0",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "Dynamic load C",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "Nominal speed Wnom",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    }
+]

@@ -1,0 +1,126 @@
+[
+    {
+        "question": "What is the evolution of the areas?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$l^∗$",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "$l^{∗2}$",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "$l^{∗-2}$",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "$l^{∗1/2}$",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "$l^{∗-1/2}$",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    },
+    {
+        "question": "What is the evolution of the volumes?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$l^∗$",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "$l^{∗2}$",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "$l^{∗3}$",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "$l^{∗-3}$",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "$l^{∗-1/3}$",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    },
+    {
+        "question": "What is the evolution of the masses?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$l^∗$",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "$l^{∗2}$",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "$l^{∗3}$",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "$l^{∗-3}$",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "$l^{∗-1/3}$",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    },
+    {
+        "question": "What is the evolution of the inertias?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$l^{∗2}$",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "$l^{∗3}$",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "$l^{∗4}$",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "$l^{∗5}$",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "$l^{∗6}$",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    }
+]

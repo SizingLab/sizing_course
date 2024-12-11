@@ -1,0 +1,65 @@
+[
+    {
+        "question": "Give the evolution of stress $\\sigma$ with geometrical dimension:",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$\\frac{\\sigma.L}{F}= f(\\frac{b}{L}, \\frac{d}{L})$",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "$\\frac{\\sigma.L^2}{F}= f(\\frac{b}{L}, \\frac{d}{L})$ ",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "$\\sigma = f(\\frac{F}{L^2}, \\frac{b}{L}, \\frac{d}{L})$",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    },
+    {
+        "question": "Using previous answer or personal knowledge, find scaling laws of stress $\\sigma$ with geometrical dimension L* if we assume and geometrical similarity:",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$\\sigma^* = \\frac{F^*}{L^{*2}}$",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "$\\sigma^* =F^*$ ",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "$\\sigma^* =F^*L^{*2}$",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    },
+    {
+        "question": "If $F^*=4$ (force x4) what should be the ratio $L^*$?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "2",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "4",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "8",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    }
+]

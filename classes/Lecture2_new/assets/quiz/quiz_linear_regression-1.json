@@ -1,0 +1,59 @@
+[
+    {
+        "question": "Which correlation correlation best describes the scatter plot?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "-0.7",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "-0.3",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "0.0",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "0.3",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "0.7",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    },
+    {
+        "question": "You are conducting a correlation analysis between a response variable and an explanatory variable. Your analysis produces a significant positive correlation between the two variables. Which of the following conclusions is the most reasonable?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Change in the explanatory variable causes change in the response variable",
+                "correct": false,
+                "feedback": "Incorrect!"
+            },
+            {
+                "answer": "Change in the explanatory variable is associated with in change in the response variable",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "Change in the response variable causes change in the explanatory variable",
+                "correct": false,
+                "feedback": "Incorrect!"
+            },
+            {
+                "answer": "All other three answers are equally reasonable",
+                "correct": false,
+                "feedback": "Incorrect!"
+            }
+        ]
+    }
+]
