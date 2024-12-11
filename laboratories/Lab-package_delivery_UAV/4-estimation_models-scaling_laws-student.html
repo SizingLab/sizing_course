@@ -68,7 +68,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Lab - VEGA Launcher TVC EMA case study" href="../Lab-vega/summary.html" />
-    <link rel="prev" title="Sizing scenarios and design drivers (student version)" href="3-sizing_scenarios-student.html" />
+    <link rel="prev" title="Estimation models with dimensional analysis and linear regressions (student version)" href="4-estimation_models-linear_regression-student.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -218,6 +218,7 @@
 <li class="toctree-l2"><a class="reference internal" href="2-system_architectures.html">System Architecture Selection for a Package Delivery UAV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3-sizing_scenarios-student.html">Sizing scenarios and design drivers (student version)</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="4-estimation_models-linear_regression-student.html">Estimation models with dimensional analysis and linear regressions  (student version)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Estimation models with scaling laws</a></li>
 </ul>
 </details></li>
@@ -568,12 +569,12 @@ Validation of the obtained scaling laws is realized thanks catalog data.</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/LipoBattery.jpeg"><img alt="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/LipoBattery.jpeg" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/LipoBattery.jpeg" style="width: 30%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">LiPo Battery</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">LiPo Battery</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="exercise admonition" id="exercice_scaling_law">
 
-<p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 9 </span></p>
 <section id="exercise-content">
 <p>Propose a scaling law which links battery characteristics, as mass or max discharge current, to capacity <span class="math notranslate nohighlight">\(C_{bat}\)</span> and voltage <span class="math notranslate nohighlight">\(U_{bat}\)</span>. Estimate the mass and max discharge current for a 3300 mAh - 4S battery knowing the following reference component:</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -653,7 +654,7 @@ Max discharge current: 165 A
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/BrushlessMotor.jpg"><img alt="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/BrushlessMotor.jpg" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/BrushlessMotor.jpg" style="width: 30%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Brushless motor</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Brushless motor</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="scaling-laws">
@@ -934,7 +935,7 @@ Max discharge current: 165 A
 <figure class="align-center" id="esc">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images//ESC.jpeg"><img alt="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images//ESC.jpeg" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images//ESC.jpeg" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Electronic Speed Controller (ESC)</span><a class="headerlink" href="#esc" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Electronic Speed Controller (ESC)</span><a class="headerlink" href="#esc" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The first step is to import catalog data stored in a .csv file. We use for that functions from <a class="reference external" href="https://pandas.pydata.org/index.html">Panda</a> package (with here an <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/03.00-introduction-to-pandas.html">introduction to panda</a>).<br />
@@ -1105,7 +1106,7 @@ The data base gives informations about mass, voltage &amp; current (DC side) and
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2247/1007377888.py:18: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2259/1007377888.py:18: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   coef = float(reg.coef_)
 </pre></div>
 </div>
@@ -1117,7 +1118,7 @@ The data base gives informations about mass, voltage &amp; current (DC side) and
 </div>
 <div class="exercise admonition" id="exercice_scaling_law_esc">
 
-<p class="admonition-title"><span class="caption-number">Exercise 8 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
 <section id="exercise-content">
 <p>Explain how the following code gives a power law which can represent the evolution of voltage with power. Complete the code with a print of the relationship.</p>
 </section>
@@ -1210,12 +1211,12 @@ and as <span class="math notranslate nohighlight">\(P_{conv}^*=P_{loss,MOS}^*\)<
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="3-sizing_scenarios-student.html"
+       href="4-estimation_models-linear_regression-student.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Sizing scenarios and design drivers (student version)</p>
+        <p class="prev-next-title">Estimation models with dimensional analysis and linear regressions  (student version)</p>
       </div>
     </a>
     <a class="right-next"
