@@ -55,7 +55,7 @@ statsmodels = "*"
 
 # Plotting
 matplotlib="^3.5.0"
-seaborn="^0.11.2"
+seaborn="^0.12.0"
 
 # Jupyter ecosystem
 jupyter-client="^7.4.9"
