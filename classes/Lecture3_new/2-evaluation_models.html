@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4.3. Scaling laws &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>4.2. Evaluation models &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -63,12 +63,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture3/3-scaling_laws';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture3_new/2-evaluation_models';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.4. Quiz" href="4-quiz_scaling_laws.html" />
-    <link rel="prev" title="4.2. Quiz" href="2-quiz_regressions.html" />
+    <link rel="next" title="4.3. Quiz" href="3-quiz_evaluation_models.html" />
+    <link rel="prev" title="4.1. Simulation models" href="1-simulation_models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -186,19 +186,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../Lecture1_new/1-technologies.html">2.1. Components and Technologies for Mechatronic System</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture2/summary.html">3. Simulation and evaluation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture2/1-simulation_models.html">3.1. Simulation models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture2/2-evaluation_models.html">3.2. Evaluation models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture2/3-quiz_evaluation_models.html">3.3. Quiz</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../Lecture2/4-homework.html">3.5. Homework: mission profile analysis</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture2_new/summary.html">3. Estimation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2_new/1-linear_regressions.html">3.1. Linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2_new/2-quiz_regressions.html">3.2. Quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2_new/3-scaling_laws.html">3.3. Scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2_new/4-quiz_scaling_laws.html">3.4. Quiz</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">4. Estimation models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1-linear_regressions.html">4.1. Linear regressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2-quiz_regressions.html">4.2. Quiz</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3. Scaling laws</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4-quiz_scaling_laws.html">4.4. Quiz</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">4. Simulation and evaluation models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-simulation_models.html">4.1. Simulation models</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. Evaluation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-quiz_evaluation_models.html">4.3. Quiz</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="4-homework.html">4.5. Homework: mission profile analysis</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture4/summary.html">5. Optimal sizing procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -313,7 +313,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/classes/Lecture3/3-scaling_laws.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/classes/Lecture3_new/2-evaluation_models.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -331,7 +331,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/classes/Lecture3/3-scaling_laws.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/classes/Lecture3_new/2-evaluation_models.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +379,7 @@
       
       
       
-      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/classes/Lecture3/3-scaling_laws.ipynb" target="_blank"
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/classes/Lecture3_new/2-evaluation_models.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -396,7 +396,7 @@
       
       
       
-      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclasses/Lecture3/3-scaling_laws.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclasses/Lecture3_new/2-evaluation_models.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -426,7 +426,7 @@
       
       
       
-      <li><a href="../../_sources/classes/Lecture3/3-scaling_laws.ipynb" target="_blank"
+      <li><a href="../../_sources/classes/Lecture3_new/2-evaluation_models.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -502,7 +502,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Scaling laws</h1>
+    <h1>Evaluation models</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -512,17 +512,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-model-vs-estimation-model-of-mechatronic-components">4.3.1. Design model vs estimation model of mechatronic components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-similarity">4.3.2. Geometric similarity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-frist-example-of-scaling-laws">4.3.3. A frist example of scaling laws</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-ways-of-obtaining-scaling-laws">4.3.4. Different ways of obtaining scaling laws</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-approach">4.3.4.1. Direct approach</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buckingham-theorem">4.3.4.2. Buckingham  theorem</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-law-adaptation">4.3.5. Scaling law adaptation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-with-constant-stress">4.3.6. Scaling with constant stress</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">4.3.7. References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rapid-damages-gradual-degradation">4.2.1. Rapid damages &amp; Gradual degradation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#force-speed-diagrams-component-selection">4.2.2. Force speed diagrams &amp; component selection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradual-degradation-lifetime">4.2.3. Gradual degradation &amp; Lifetime</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-power-transmission-components">4.2.4. Mechanical power transmission components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrical-motors-and-electrical-components">4.2.5. Electrical motors and electrical components</a></li>
 </ul>
             </nav>
         </div>
@@ -534,297 +528,104 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="scaling-laws">
-<h1><span class="section-number">4.3. </span>Scaling laws<a class="headerlink" href="#scaling-laws" title="Link to this heading">#</a></h1>
-<p>For a preliminary design, obtaining component’s characteristics can be nessary for simulation or the comparison of different possible solutions.
-This informations can be obtained:</p>
-<ul class="simple">
-<li><p>In catalogues if the component can be chosen from an industrial range and if the catalogues gives the desire characteristic.</p></li>
-<li><p>By computing them using complex design models.</p></li>
-<li><p>By asking experts or subcontractors. The answer can take a while to be found.</p></li>
-<li><p>By using light models which extrapolate a component’s charateristics from a known referenced component.</p></li>
-</ul>
-<p>This last solution is the one we will develop using scaling laws.</p>
-<p>For interested readers, more information can be found in the following document (Chapter 1 – Estimation models with scaling laws):</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="evaluation-models">
+<h1><span class="section-number">4.2. </span>Evaluation models<a class="headerlink" href="#evaluation-models" title="Link to this heading">#</a></h1>
+<p>The objective evaluation models is to check the ability of a component to operate in its safe operating area for the required lifetime and reliability. After reviewing the state of the art of the main design drivers that limit the performance and endurance of mechatronic components, this lecture describes the possible models and ways of implementing them in system simulation environments by focusing on lifetime evaluation.</p>
+<p><img alt="Simulation Models" src="../../_images/EvaluationModelPosition.png" /></p>
+<p>For interested readers, more information can be found in the following document (Chapter 3 - Evaluation models and sizing for lifetime and reliability):</p>
 <blockquote>
 <div><p>Budinger, M. (2014). Preliminary design and sizing of actuation systems (HDR dissertation, UPS Toulouse). <a class="reference external" href="https://hal.science/tel-01112448v1/document">Link</a></p>
 </div></blockquote>
-<section id="design-model-vs-estimation-model-of-mechatronic-components">
-<h2><span class="section-number">4.3.1. </span>Design model vs estimation model of mechatronic components<a class="headerlink" href="#design-model-vs-estimation-model-of-mechatronic-components" title="Link to this heading">#</a></h2>
-<p>The system-level design steps require models directly linking primary characteristics, which define the component functionally, to secondary characteristics, which can be seen as the features of imperfections.</p>
-<p><img alt="Estimation model need" src="../../_images/EstimationNeed.png" /></p>
+<section id="rapid-damages-gradual-degradation">
+<h2><span class="section-number">4.2.1. </span>Rapid damages &amp; Gradual degradation<a class="headerlink" href="#rapid-damages-gradual-degradation" title="Link to this heading">#</a></h2>
+<p>Evaluations models must ensure us that the components selected can satisfy :<br />
+<strong>1. Transient power demand - Performance</strong><br />
+Maximum acceptable transient torque<br />
+Maximum acceptable transient speed<br />
+<em>Prevents rapid damages (e.g., permanent deformation, rupture)</em></p>
+<p><strong>2. Continuous power demand - Endurance</strong><br />
+Nominal operation point (nominal torque and speed) and reliability<br />
+<em>Addresses gradual degradation (e.g., fatigue) and ensures reliable operation during service lifetime</em></p>
+<p><img alt="Example of scenarios" src="../../_images/RadidGradualDegradation.png" /></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Generally, at component level, the models (Figure 1b) link the physical dimensions and characteristics of materials used to the primary and secondary characteristics. Design at component level is an inverse problem that requires the primary characteristics as inputs. This inversion may be done through design codes from design mechanical standards, by algebraic solvers or by optimization algorithms. However at system level, the approach requires very significant expertise and time for each component.</p>
-<p class="sd-card-text"><strong>Scaling laws</strong> reduce the complexity of the inverse problem by using two modelling hypothesis on the input parameters:</p>
+<p class="sd-card-text">The evaluation models determine whether each component will remain within its performance limits and can be expected to have the required lifetime and reliability. The 2 aspects to check are:</p>
 <ul class="simple">
-<li><p class="sd-card-text">Every materials’ properties are supposed to be identical to the ones of the reference component.</p></li>
-<li><p class="sd-card-text">Some geometrical dimensions vary in an homothetic way and can be expressed as scaling laws equal to the variation of one dimension (here l*).
-Because the number of input parameters has been reduced, it is easier to give the relations that link the useful parameters for our design phase to a small number of key parameters called definition parameters.</p></li>
+<li><p class="sd-card-text"><strong>Transient power demands</strong> to ensure system performance: the models have to analyze the maximum stress (such as torque or speed) to avoid rapid deterioration. Component degradation can be avoided if the use is kept inside a Safe Operating Area (SOA). This point can be checked by the simulation models and operating domains deduced from the estimation models.</p></li>
+<li><p class="sd-card-text"><strong>Continuous power demands</strong> to ensure the endurance of the system: the models have to calculate quantities equivalent to the nominal point of operation and reliability rate in order to avoid critical degradation over time (e.g. fatigue). This point will be treated in greater detail in this chapter.</p></li>
 </ul>
-<p class="sd-card-text">The main advantages of scaling laws for model based design are:</p>
-<ul class="simple">
-<li><p class="sd-card-text">Limited number of design parameters.</p></li>
-<li><p class="sd-card-text">Homogeneous, i.e. same level of details &amp; based on the same modeling approach.</p></li>
-<li><p class="sd-card-text">Reflect the state of the art of technology.</p></li>
-</ul>
+<p class="sd-card-text">Operational limits in transient domain can be represented by a <strong>power plan</strong>, like the effort/speed one. The effort-speed characteristics (or effort-position) allow to represent in a graphic way the principal mechanic attributes of an actuator : effort, speed, and, as of product of those, power.</p>
 </div>
 </details></section>
-<section id="geometric-similarity">
-<h2><span class="section-number">4.3.2. </span>Geometric similarity<a class="headerlink" href="#geometric-similarity" title="Link to this heading">#</a></h2>
-<p>The concept of geometric similarity is really important for scaling laws. We are going to use the cylinder volume to illustrate it.</p>
-<p><img alt="Scaling cylinder" src="../../_images/ScalingCylinder.png" /></p>
+<section id="force-speed-diagrams-component-selection">
+<h2><span class="section-number">4.2.2. </span>Force speed diagrams &amp; component selection<a class="headerlink" href="#force-speed-diagrams-component-selection" title="Link to this heading">#</a></h2>
+<p>The force-speed plane in mechanics, voltage-current in electricity, pressure-flow in hydraulics, can be used as an abbreviated representation of a component’s operational limits.</p>
+<p><img alt="Example of scenarios" src="../../_images/ForceSpeedDiagram.png" /></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Scaling law can be written with the <a class="reference internal" href="#References"><span class="xref myst">Jufer notation</span></a> of scaling ratios:<br />
-<span class="math notranslate nohighlight">\(x^*=\frac{x}{x_{ref}}\)</span><br />
-with <span class="math notranslate nohighlight">\(x\)</span> any characteristic of the desired component and <span class="math notranslate nohighlight">\(x_{ref}\)</span> the corresponding characteristic of a reference component.</p>
-<p class="sd-card-text">Geometric similarity means that all the object’s geometric dimensions change with a same factor.
-Therefore <span class="math notranslate nohighlight">\(r^*=l^*\)</span> and the volume is proportional to the length variation to the power 3:<br />
-<span class="math notranslate nohighlight">\(V^*=r^{*2}l^*=l^{*3}\)</span></p>
-</div>
-</details><div class="exercise admonition" id="MassIneritaScalingCylinder">
-
-<p class="admonition-title"><span class="caption-number">Exercise 4.1 </span></p>
-<section id="exercise-content">
-<p>Give scaling laws of mass and rotational inertia of this cyclinder.</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="SolutionMassIneritaScalingCylinder">
-
-<p class="admonition-title">Solution to</p>
-<section id="solution-content">
-<p>The same way of volume the mass is proportional to length to the power 3 and inertia to length to the power 5:</p>
-<p><span class="math notranslate nohighlight">\(M=\int \rho dv \Longrightarrow M^3=l^{*3}\)</span><br />
-<span class="math notranslate nohighlight">\(J=\int \rho r^2 dv \Longrightarrow J^3=l^{*5}\)</span></p>
-</section>
-</div>
-</section>
-<section id="a-frist-example-of-scaling-laws">
-<h2><span class="section-number">4.3.3. </span>A frist example of scaling laws<a class="headerlink" href="#a-frist-example-of-scaling-laws" title="Link to this heading">#</a></h2>
-<p>In this example, we want to evaluate the winding resistance of a bigger motor than the reference motor : the size variation is <span class="math notranslate nohighlight">\(L^*\)</span>, the resistance variation is <span class="math notranslate nohighlight">\(R^*\)</span>.</p>
-<p><img alt="Scaling motor" src="../../_images/ScalingMotor.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The winding resistance is <span class="math notranslate nohighlight">\(R=\frac{\rho.L}{S}\)</span>  with <span class="math notranslate nohighlight">\(L\)</span> the length of wire, <span class="math notranslate nohighlight">\(S\)</span> the section of wire.<br />
-This wire is wound in slots whose dimensions are proportional to the dimensions of the motor, assuming complete geometric similarity. The wire diameter and length will also depend on the number of turns N made. We therefore end up with:</p>
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(R=\frac{\rho.NL_{turn}}{S_{slot}/N} \Longrightarrow  R^*=\frac{N^{*2}}{L^*} \)</span></p>
+<p class="sd-card-text">Those graphs show the operational limits in an effort speed plan for several components :</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">A mechanic reducer (gears)</p></li>
+<li><p class="sd-card-text">A combustion motor</p></li>
+<li><p class="sd-card-text">An hydraulic	jack, piloted by a servovalve</p></li>
+<li><p class="sd-card-text">An electric motor, with permanent magnets and a speed variator</p></li>
+</ol>
+<p class="sd-card-text">We can also use this graphic representation to characterize mechanical loads to move (with the receiver convention)</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">For constant torque : lifting devices, conveyors, high speed vehicles</p></li>
+<li><p class="sd-card-text">Torques function of speed (square) : fans, pumps,  propellers</p></li>
+<li><p class="sd-card-text">Constant speed : synchronous alternators</p></li>
+<li><p class="sd-card-text">Constant powers : winding devices, lathe machines</p></li>
+<li><p class="sd-card-text">Any mission profile which varies with time.</p></li>
+</ol>
+<p class="sd-card-text">The principle of performance checking to avoid rapid degradation is quite trivial: for a given parameter to be checked, the current value is simply compared with the maximum allowed value.</p>
 </div>
 </details></section>
-<section id="different-ways-of-obtaining-scaling-laws">
-<h2><span class="section-number">4.3.4. </span>Different ways of obtaining scaling laws<a class="headerlink" href="#different-ways-of-obtaining-scaling-laws" title="Link to this heading">#</a></h2>
-<p>There are two mais ways to obtain scaling laws. We will demonstrate how to do it, by calculating the thermal constant of an electrical motor. It is assumed here that the motor temperature rise is uniform and is mainly due to convection between the stator and the air.</p>
-<section id="direct-approach">
-<h3><span class="section-number">4.3.4.1. </span>Direct approach<a class="headerlink" href="#direct-approach" title="Link to this heading">#</a></h3>
-<p>The first approach is the direct one, using known equations. The thermal time constant <span class="math notranslate nohighlight">\(\tau_{th}\)</span> is function of  the thermal resistance times and  the thermal capacity:<br />
-<span class="math notranslate nohighlight">\(\tau_{th}=R_{th}C_{th}\)</span><br />
-where:</p>
+<section id="gradual-degradation-lifetime">
+<h2><span class="section-number">4.2.3. </span>Gradual degradation &amp; Lifetime<a class="headerlink" href="#gradual-degradation-lifetime" title="Link to this heading">#</a></h2>
+<p>For each typical component of mechatronic systems, we list the causes of rapid and gradual degradation. The plan followed depends mainly on the gradual degradation mechanisms. For these <strong>degradation phenomena</strong>, only the simplest laws usable at preliminary design level will be given. This section does not describe the detailed design of each component exhaustively but focuses on the selection of a component.<br />
+The <strong>lifetime</strong> is the acceptable period of use in service of a product. Acceptable refers to the product reliability (= 90%, generally). Lifetime is a stochastic variable depending on service conditions (stress, environment, etc.).</p>
+</section>
+<section id="mechanical-power-transmission-components">
+<h2><span class="section-number">4.2.4. </span>Mechanical power transmission components<a class="headerlink" href="#mechanical-power-transmission-components" title="Link to this heading">#</a></h2>
+<p>Typical components in mechanical power transmission can be divided into 3 categories according to the type of gradual degradation:</p>
 <ul class="simple">
-<li><p>The thermal resistance is inversely proportionnal to the surface of heat exchanges: <span class="math notranslate nohighlight">\(R_{th}^*=\frac{1}{S^*}=L^{*-2}\)</span></p></li>
-<li><p>The thermal capacity is proportional to the mass of the system : <span class="math notranslate nohighlight">\(C_{th}^*=L^{*3}\)</span></p></li>
+<li><p>Rolling mechanisms: bearings, roller/ball-screw and linear ball bearings</p></li>
+<li><p>Sliding mechanisms: rod-end, bushing and electromagnetic clutch/brake</p></li>
+<li><p>Gears mechanisms: gears, reducers and worm-gear.</p></li>
 </ul>
-<p>By multiplying these results together, we can determine that the thermal constant is proportional to the length to the power 1:
-<span class="math notranslate nohighlight">\(\tau_{th}^*=R_{th}^*C_{th}^*=L^{*-2}L^{*3}=L^{*1}\)</span></p>
-</section>
-<section id="buckingham-theorem">
-<h3><span class="section-number">4.3.4.2. </span>Buckingham  theorem<a class="headerlink" href="#buckingham-theorem" title="Link to this heading">#</a></h3>
-<p>In the second approach, we will use the Buckingham theorem to find the same result. The time constant of the system is linked to the dimensions and to the physical characteristics of the component.</p>
-<div class="admonition-buckingham-theroem admonition">
-<p class="admonition-title">Buckingham theroem</p>
-<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Buckingham_%CF%80_theorem">Buckhigham theorem</a> states that if there is a physically meaningful equation involving a certain number <span class="math notranslate nohighlight">\(n\)</span> of physical variables, then the original equation can be rewritten in terms of a set of <span class="math notranslate nohighlight">\(p = n − k\)</span> dimensionless parameters <span class="math notranslate nohighlight">\(π_1\)</span>, <span class="math notranslate nohighlight">\(π_2\)</span>, …, <span class="math notranslate nohighlight">\(π_p\)</span> constructed from the original variables, where <span class="math notranslate nohighlight">\(k\)</span> is the number of physical dimensions involved.</p>
-<p>The dimensions of the multiple involved parameters (geometrical dimensions, physical properties, …) can be express and analyse in the following table.</p>
+<p>For the last category, the failure mechanism can be complex and involve a mix of various fatigue phenomena. Nevertheless, when normal conditions of functioning (lubrication, sealing, etc.) are assumed, the first fatigue phenomena must be rolling fatigue of bearings, as gears are often designed to have much higher tooth flexural or Hertz stress fatigue limits. The <strong>rolling fatigue</strong> can be displayed in a log-log diagram.</p>
+<p><img alt="LogLogBearing" src="../../_images/RollingFatigue.png" /></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Under varying stress or repeated deformations, micro-cracks are created in the material of a component, reducing the resistance of this component to stress and plastic deformation. This is referred to fatigue. For a mechanical component subject to fatigue this lifetime formula can normally be applied.<br />
+<span class="math notranslate nohighlight">\(N_{10}.σ^\alpha=Q\)</span><br />
+The concept is based on the <strong>Palmgren Miner law</strong>. Here <span class="math notranslate nohighlight">\(N_{10}\)</span> refers to the standard number of load cycles for bearings (normally 1 million cycles) that can be guaranteed for a standard reliability of 90%, <span class="math notranslate nohighlight">\(\alpha\)</span> is the applied stress and <span class="math notranslate nohighlight">\(Q\)</span> the resulting sum of cumulated damage. For the same component and the same reliability, the amount of cumulative damage must remain constant and identical whatever the (<span class="math notranslate nohighlight">\(N_{10}\)</span>,<span class="math notranslate nohighlight">\(σ\)</span>) pair leading to degradation of the component. For rolling components, the power coefficient <span class="math notranslate nohighlight">\(\alpha\)</span> is a value greater than 1 and indicates that a larger load causes more damage than a load of lower value. For ball bearings, this coefficient is equal to 3. The cycle number <span class="math notranslate nohighlight">\(N_{10}\)</span> has no power coefficient which indicates that <strong>the amount of damage is linear and cumulative</strong>.</p>
 </div>
-<p>The dimensional analysis that can lead to a scaling law can be broken down into several stages:</p>
-<p><strong>Step 1:</strong> List all the variables that are involved in the problem.</p>
-<p><span class="math notranslate nohighlight">\(\tau_{th}=f(d,L,h,\rho,c_p)\)</span></p>
-<p><strong>Step 2:</strong> Express each of the variables in terms of basic dimensions.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Parameter</p></th>
-<th class="head"><p>M</p></th>
-<th class="head"><p>L</p></th>
-<th class="head"><p>T</p></th>
-<th class="head"><p>θ</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Thermal time constant <span class="math notranslate nohighlight">\(\tau_{th}\)</span></p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>Diameter <span class="math notranslate nohighlight">\(d\)</span></p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>Length <span class="math notranslate nohighlight">\(L\)</span></p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>Newton coefficient <span class="math notranslate nohighlight">\(h\)</span></p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>-3</p></td>
-<td><p>-1</p></td>
-</tr>
-<tr class="row-even"><td><p>Density <span class="math notranslate nohighlight">\(\rho\)</span></p></td>
-<td><p>1</p></td>
-<td><p>-3</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>Specific heat capacity <span class="math notranslate nohighlight">\(c_p\)</span></p></td>
-<td><p>0</p></td>
-<td><p>2</p></td>
-<td><p>-2</p></td>
-<td><p>-1</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><em>Note: The numbers in the table above correspond to the powers of the dimensions
-<span class="math notranslate nohighlight">\([x]=M^a L^b T^c θ^d \)</span></em></p>
-<p><strong>Step 3:</strong> Determine the required number of pi terms.</p>
-<p><em>The problem involves <span class="math notranslate nohighlight">\(6\)</span> of physical variables and <span class="math notranslate nohighlight">\(4\)</span> physical dimensions : the original equation can be rewritten in terms of a set of <span class="math notranslate nohighlight">\(p = 6 − 4 = 2\)</span> dimensionless parameters <span class="math notranslate nohighlight">\(π_0\)</span> and <span class="math notranslate nohighlight">\(π_1\)</span>.</em></p>
-<p><strong>Step 5:</strong> Select a number of repeating variables, where the number required is equal to the number of reference dimensions. All of the required reference dimensions must be included within the
-group of repeating variables, and each repeating variable must be dimensionally independent of the others.</p>
-<p><em>The dependent variable (as <span class="math notranslate nohighlight">\(\tau_{th}\)</span>) are not include in the repeating variables. We select here
-<span class="math notranslate nohighlight">\(L,h,\rho,c_p\)</span>.</em></p>
-<p><strong>Step 6:</strong> Combine dependant variables with repeating variable in sequence, to find the π dimensionless numbers. Check dimensions with the table.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Parameter</p></th>
-<th class="head"><p>M</p></th>
-<th class="head"><p>L</p></th>
-<th class="head"><p>T</p></th>
-<th class="head"><p>θ</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Thermal time constant <span class="math notranslate nohighlight">\(\tau_{th}\)</span></p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>Diameter <span class="math notranslate nohighlight">\(d\)</span></p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>Length <span class="math notranslate nohighlight">\(L\)</span></p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>Newton coefficient <span class="math notranslate nohighlight">\(h\)</span></p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>-3</p></td>
-<td><p>-1</p></td>
-</tr>
-<tr class="row-even"><td><p>Density <span class="math notranslate nohighlight">\(\rho\)</span></p></td>
-<td><p>1</p></td>
-<td><p>-3</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>Specific heat capacity <span class="math notranslate nohighlight">\(c_p\)</span></p></td>
-<td><p>0</p></td>
-<td><p>2</p></td>
-<td><p>-2</p></td>
-<td><p>-1</p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\pi_0 = \frac{\tau_{th}h}{\rho c_p L}\)</span></p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\pi_1 = \frac{d}{L}\)</span></p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>Step 7:</strong> Express the final form as a relationship among the <span class="math notranslate nohighlight">\(\pi\)</span> terms.</p>
-<p><span class="math notranslate nohighlight">\(\pi_0 = \frac{\tau_{th}h}{\rho c_p L} = f(\pi_1 = \frac{d}{L})\)</span></p>
-<p><strong>Step 8:</strong> State ratio of geometric dimension as constant in cause of geometrical similarity and extract scaling laws.</p>
-<p><span class="math notranslate nohighlight">\(\frac{\tau_{th}h}{\rho c_p L} = C^{st}  \longrightarrow  \tau_{th}^*=L^* \)</span></p>
+</details><p>For gearboxes or components incorporating bearings, and assuming that damage accumulates linearly, in proportion to the number of revolutions, an equivalent torque for a complex profile mission can be calculated : the <strong>root-mean-cube  torque</strong>.</p>
+<p><img alt="LogLogBearing" src="../../_images/TRMC.png" /></p>
 </section>
-</section>
-<section id="scaling-law-adaptation">
-<h2><span class="section-number">4.3.5. </span>Scaling law adaptation<a class="headerlink" href="#scaling-law-adaptation" title="Link to this heading">#</a></h2>
-<p>When a scaling change occurs, some non geometric quantities can evolve and could lead to malfunctions at component level.
-For example:</p>
+<section id="electrical-motors-and-electrical-components">
+<h2><span class="section-number">4.2.5. </span>Electrical motors and electrical components<a class="headerlink" href="#electrical-motors-and-electrical-components" title="Link to this heading">#</a></h2>
+<p>This category consists mainly of components where temperature effects and thermal degradation are the major phenomena leading to failure: electrical motors, cables and wires, capacitors and resistors. Temperature effects and thermal degradation are the major causes of failure of many electrical components.</p>
+<p><img alt="Motor SOA" src="../../_images/MotorSOA.png" /></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Motors are composed of mechanical parts (bearings, housing and heat-sink which can be directly machined in the housing) except when they are sold in frameless form. Therefore they inherit all the rapid degradation drivers of the mechanical parts and especially the speed limit. Another speed limit will result from centrifugal forces applied to rotor coils or permanent magnets.
+The other main operational limits are due to:</p>
 <ul class="simple">
-<li><p>for an electric motor, the torque that can be generated must not lead to excessive winding temperature. The entire motor range is therefore designed for the same maximum temperature, which can be noted:
-<span class="math notranslate nohighlight">\(\theta_{max}^*=1\)</span></p></li>
-<li><p>for a gearbox, the torque handled must not induce excessive stress in the mechanical structure. The entire gearbox range is therefore designed for the same maximum stress, which can be noted as follows:
-<span class="math notranslate nohighlight">\(\tau_{max}^*=1\)</span></p></li>
+<li><p class="sd-card-text"><strong>Current:</strong> current and thus torque are limited either by saturation or by magnet demagnetization.</p></li>
+<li><p class="sd-card-text"><strong>Temperature:</strong> when considering steady-state thermal exchange, the copper losses (which depend onf torque and current) and iron losses (which depend on speed) must not exceed the nominal/rated torque or current defined for a given thermal environment.</p></li>
+<li><p class="sd-card-text"><strong>Voltage:</strong> power electronics limitations can impact motor performance by introducing power limitation or additional speed limitations linked to the voltage limitation.</p></li>
 </ul>
-<p>The torque the electrical motor
-Which are the quantities that limit the transmittable torque.
-and the gear reducer:
-In a general way, we must determine the sizing constraints that means parameters that limit the studied device’s performances or leading to its destruction.</p>
-</section>
-<section id="scaling-with-constant-stress">
-<h2><span class="section-number">4.3.6. </span>Scaling with constant stress<a class="headerlink" href="#scaling-with-constant-stress" title="Link to this heading">#</a></h2>
-<p>The next two exercises will attempt to determine scaling laws with constant maximum stress: one for a biological problem, the second for a range of cyclodrive gearboxes.</p>
-<div class="exercise admonition" id="BoneExercice">
-
-<p class="admonition-title"><span class="caption-number">Exercise 4.2 </span></p>
-<section id="exercise-content">
-<p>Predict the diameter of the leg of an elephant from a mouse. This exercice assumes that the mechanical strength that characterize the bones does not depend on the animal.</p>
-</section>
+<p class="sd-card-text">In the above Figure the effects of the mechanical, electrical and thermal operational limits for cylindrical brushless motors and annular brushless motors can be seen. The figure also shows that continuous operation limits are much lower than absolute transient operational boundaries.</p>
 </div>
-<div class="solution dropdown admonition" id="BoneSolution">
-
-<p class="admonition-title">Solution to</p>
-<section id="solution-content">
-<p><span class="math notranslate nohighlight">\(\sigma_{max}^*=1=\frac{F^*}{S^{*}}\)</span><br />
-with :</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\sigma_{max}\)</span> the max stress in the bone</p></li>
-<li><p><span class="math notranslate nohighlight">\(F\)</span> the applied force, i.e. the weight of the animal</p></li>
-<li><p><span class="math notranslate nohighlight">\(S\)</span> the section of the bone, function of the diameter <span class="math notranslate nohighlight">\(d\)</span> of the leg</p></li>
-</ul>
-<p><span class="math notranslate nohighlight">\(\sigma_{max}^*=1=\frac{M^*}{d^{*2}}\)</span>  and thus  <span class="math notranslate nohighlight">\(d^*=\sqrt{M^*}\)</span></p>
-<p><img alt="Bone" src="../../_images/ScalingBone.png" /></p>
-</section>
-</div>
-<div class="exercise admonition" id="CycloExercice">
-
-<p class="admonition-title"><span class="caption-number">Exercise 4.3 </span></p>
-<section id="exercise-content">
-<p><strong>Question 1:</strong> Demonstrate the relation between torque and dimensions for a reducer.</p>
-<p><strong>Question 2 :</strong> Can we increase the diameter of a rotating device without changing its rotating speed ? Express the relation linking the rotation speed, volumic mass, diameter and a max stress. Demonstrate the relation between max speed and dimensions.</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="CycloSolution">
-
-<p class="admonition-title">Solution to</p>
-<section id="solution-content">
-<p><img alt="Bone" src="../../_images/CycloSolution.png" /></p>
-</section>
-</div>
-</section>
-<section id="references">
-<h2><span class="section-number">4.3.7. </span>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
-<p>Jufer, M. (1995). Electromécanique (Vol. 9). PPUR presses polytechniques.</p>
+</details><p>The continuous torque of a motor is limited by the losses in the body and the winding temperature. This average temperature depends on the average losses, as a function of the RMS current, which in turn depends on the RMS torque. In conclusion, it is important to ensure that the effective torque, or <strong>root-mean-square torque</strong> (RMS torque), is below the motor’s continuous limit.</p>
+<p><img alt="Motor SOA" src="../../_images/TRMS.png" /></p>
 </section>
 </section>
 
@@ -841,7 +642,7 @@ with :</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./classes/Lecture3"
+            path: "./classes/Lecture3_new"
         },
         predefinedOutput: true
     }
@@ -859,20 +660,20 @@ with :</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="2-quiz_regressions.html"
+       href="1-simulation_models.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.2. </span>Quiz</p>
+        <p class="prev-next-title"><span class="section-number">4.1. </span>Simulation models</p>
       </div>
     </a>
     <a class="right-next"
-       href="4-quiz_scaling_laws.html"
+       href="3-quiz_evaluation_models.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.4. </span>Quiz</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>Quiz</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -893,17 +694,11 @@ with :</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-model-vs-estimation-model-of-mechatronic-components">4.3.1. Design model vs estimation model of mechatronic components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-similarity">4.3.2. Geometric similarity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-frist-example-of-scaling-laws">4.3.3. A frist example of scaling laws</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-ways-of-obtaining-scaling-laws">4.3.4. Different ways of obtaining scaling laws</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-approach">4.3.4.1. Direct approach</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buckingham-theorem">4.3.4.2. Buckingham  theorem</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-law-adaptation">4.3.5. Scaling law adaptation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-with-constant-stress">4.3.6. Scaling with constant stress</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">4.3.7. References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rapid-damages-gradual-degradation">4.2.1. Rapid damages &amp; Gradual degradation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#force-speed-diagrams-component-selection">4.2.2. Force speed diagrams &amp; component selection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradual-degradation-lifetime">4.2.3. Gradual degradation &amp; Lifetime</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical-power-transmission-components">4.2.4. Mechanical power transmission components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrical-motors-and-electrical-components">4.2.5. Electrical motors and electrical components</a></li>
 </ul>
   </nav></div>
 
