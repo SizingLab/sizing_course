@@ -74,6 +74,7 @@ parts:
       - file: laboratories/Lab-package_delivery_UAV/1-conops
       - file: laboratories/Lab-package_delivery_UAV/1-conops-student
       - file: laboratories/Lab-package_delivery_UAV/2-system_architectures-student
+      - file: laboratories/Lab-package_delivery_UAV/3-sizing_scenarios-student
   # - file: laboratories/Lab-multirotor/summary
   #   title: Multirotor UAV
   #   sections:
