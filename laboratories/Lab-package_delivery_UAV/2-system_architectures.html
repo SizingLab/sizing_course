@@ -1,0 +1,1079 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>System Architecture Selection for a Package Delivery UAV &#8212; Sizing and optimization of mechatronic systems</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-package_delivery_UAV/2-system_architectures';</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sizing scenarios and design drivers (student version)" href="3-sizing_scenarios-student.html" />
+    <link rel="prev" title="System architectures of the Package Delivery UAV (Student version)" href="2-system_architectures-student.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../about/homepage.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Sizing and optimization of mechatronic systems - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Sizing and optimization of mechatronic systems - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about/context.html">Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/installation.html">Installation guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture0/summary.html">1. Concept of Operations and architectures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture0/1-concept_of_operations.html">1.1. Concept of Operations</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture0/2-system_architectures.html">1.5. System architectures</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1_new/summary.html">2. Components, technologies, design drivers and sizing scenarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1_new/1-technologies.html">2.1. Components and Technologies for Mechatronic System</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture2_new/summary.html">3. Estimation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/1-linear_regressions.html">3.1. Linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/2-quiz_regressions.html">3.2. Quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/3-scaling_laws.html">3.3. Scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/4-quiz_scaling_laws.html">3.4. Quiz</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture3_new/summary.html">4. Simulation and evaluation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/1-simulation_models.html">4.1. Simulation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/2-evaluation_models.html">4.2. Evaluation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/3-quiz_evaluation_models.html">4.3. Quiz</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/4-homework.html">4.5. Homework: mission profile analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4/summary.html">5. Optimal sizing procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/1-design_and_optimization_problems.html">5.1. Representation of a design problem and basics optimal design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/2-optimization_examples.html">5.2. Optimization with python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/3-sizing_procedures.html">5.3. Development of a sizing procedure using design graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/4-sizing_procedure_examples.html">5.4. Design graph and optimization with python</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">Package delivery UAV</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-conops.html">Package Delivery UAV Concept of Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-conops-student.html">Package Delivery UAV Concept of Operations (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-system_architectures-student.html">System architectures of the Package Delivery UAV (Student version)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">System Architecture Selection for a Package Delivery UAV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-sizing_scenarios-student.html">Sizing scenarios and design drivers (student version)</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios-student.html">Modeling of the mechanical load (student version)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios.html">Modeling of the mechanical load</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/2-estimation_models-student.html">Estimation models with scaling laws and linear regression (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/2-estimation_models.html">Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/3-simulation_models-student.html">Simulation models with Python (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/3-simulation_models.html">Simulation models with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/4-evaluation_models-student.html">Evaluation models: endurance of the actuator (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/4-evaluation_models.html">Evaluation models: endurance of the actuator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/5-sizing_and_optimization-student.html">Sizing procedure and optimization (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/5-sizing_and_optimization.html">Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student.html">Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">Sizing procedure and optimization with OpenMDAO</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">Lab - Sustainable mobility - Mission profile &amp; Specification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/00_SustainableMobility.html">Sustainable mobilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01a_CaseStudy.html">Case study presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification-Student.html">Case study specification (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification.html">Case study specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture-Student.html">Architecture of the converter and sizing scenarios (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture_UltraCapacitor.html">Architecture of the converter and sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02b_Architecture_Hybrid.html">Hydrid Storage Architecture and Specification</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary.html">Lab - Sustainable mobility - DC/DC converter sizing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/03_SizingScenarios.html">Equations of sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws-Student.html">Estimation models with scaling laws and linear regression (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws.html">Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression-Student.html">Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression.html">Heatsink  estimation models with simple and multiple linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/06_SizingCodeInductor.html">Sizing code of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate-Student.html">Sizing code of an inductor with surrogate models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate.html">Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/08_DCDC_converter_sizing_introduction.html">Design graphs for the sizing a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/09_SizingCodeDCDCconverter.html">Sizing code of a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor-Student.html">Life Cycle Assessment of an inductor (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor.html">Life Cycle Assessment of an inductor</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/laboratories/Lab-package_delivery_UAV/2-system_architectures.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-package_delivery_UAV/2-system_architectures.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/laboratories/Lab-package_delivery_UAV/2-system_architectures.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Flaboratories/Lab-package_delivery_UAV/2-system_architectures.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/laboratories/Lab-package_delivery_UAV/2-system_architectures.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>System Architecture Selection for a Package Delivery UAV</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-define-physical-requirements">Step 1: Define Physical Requirements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-from-system-requirements">Extract from System Requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consider-environmental-factors">Consider Environmental Factors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-compliance">Regulatory Compliance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-identify-candidate-architectures">Step 2: Identify Candidate Architectures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-possible-architectures">List Possible Architectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consider-technology-readiness">Consider Technology Readiness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-source">Energy source</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-establish-evaluation-criteria">Step 3: Establish Evaluation Criteria</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operational-suitability">Operational Suitability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics">Performance Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-compatibility">Environmental Compatibility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints-compliance">Constraints Compliance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-perform-trade-off-analysis">Step 4: Perform Trade-Off Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-assessment">Quantitative Assessment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-assessment">Qualitative Assessment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-eliminate-unsuitable-concepts">Step 5: Eliminate Unsuitable Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#threshold-criteria">Threshold Criteria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feasibility-assessment-list-of-discarded-solutions-along-with-the-corresponing-reasons">Feasibility Assessment <strong>(list of discarded solutions along with the corresponing reasons)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-select-best-architecture-qualitatively">Step 6: Select Best Architecture (Qualitatively)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selected-architecture-list-of-the-selected-architectures">Selected Architecture (list of the selected architectures)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-feasibility">Validation Feasibility</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="system-architecture-selection-for-a-package-delivery-uav">
+<h1>System Architecture Selection for a Package Delivery UAV<a class="headerlink" href="#system-architecture-selection-for-a-package-delivery-uav" title="Link to this heading">#</a></h1>
+<section id="step-1-define-physical-requirements">
+<h2>Step 1: Define Physical Requirements<a class="headerlink" href="#step-1-define-physical-requirements" title="Link to this heading">#</a></h2>
+<section id="extract-from-system-requirements">
+<h3>Extract from System Requirements<a class="headerlink" href="#extract-from-system-requirements" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Package Dimensions: Support packages up to 9 x 6 x 2 inches, compatible with most lightweight consumer goods.</p></li>
+<li><p>Payload capacity: 2.5 kg.</p></li>
+<li><p>MTOW: 25 kilos.</p></li>
+<li><p>Footprint: 2m x 2m.</p></li>
+<li><p>Ceiling: 122 m (400 ft) AGL.</p></li>
+<li><p>Autonomy: 10 km per delivery.</p></li>
+<li><p>Navigation: GPS-based with collision avoidance.</p></li>
+<li><p>Noise levels: Below 65 dB to comply with urban regulations.</p></li>
+<li><p>Reliability: maintain a system uptime of 99.95%.</p></li>
+<li><p>Package drop accuracy:</p>
+<ul>
+<li><p>Within 1.0 m of the destination mark.</p></li>
+</ul>
+</li>
+<li><p>Maximum load on package:</p>
+<ul>
+<li><p>2g</p></li>
+</ul>
+</li>
+<li><p>Accuracy:</p>
+<ul>
+<li><p>Achieve a delivery accuracy rate of 99.9% ensuring packages are delivered to the correct location.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="consider-environmental-factors">
+<h3>Consider Environmental Factors<a class="headerlink" href="#consider-environmental-factors" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Operating environment:</p>
+<ul>
+<li><p>Constrained urban areas (capacity to maneuver amogn buildings with different heights and with ledges, such as balconies).</p></li>
+<li><p>Open spaces in rural areas.</p></li>
+</ul>
+</li>
+<li><p>Weather:</p>
+<ul>
+<li><p>Heavy winds (resitance up to 20-25 km/h) and light rain resistance.</p></li>
+<li><p>Moderate wind in rural environment.</p></li>
+<li><p>Operating temperatures ranging from -20°C to 40°C.</p></li>
+</ul>
+</li>
+<li><p>Meneuvrability: take-off and landing in small and constrained spaces</p></li>
+</ul>
+</section>
+<section id="regulatory-compliance">
+<h3>Regulatory Compliance<a class="headerlink" href="#regulatory-compliance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Adherence to local aviation regulations (e.g., FAA, EASA).</p></li>
+<li><p>Adherance to regulations from environmental agencies (noise).</p></li>
+<li><p>Adherance to local regulations managing rural and urban integration of UAV’s.</p></li>
+<li><p>Adherence to EASA regulations: Compliance with EU Regulation 2019/947 and 2019/945.</p></li>
+<li><p>U-Space participation: Integration with U-Space services for traffic management and airspace deconfliction.</p></li>
+<li><p>Restricted airspace compliance: Avoidance of no-fly zones like airports and military zones.</p></li>
+<li><p>Privacy compliance: Adherence to GDPR regarding data handling and privacy (unauthorised collection of personal data).</p></li>
+<li><p>Aviation Authority Regulations: Compliance with FAA Part 107, EASA regulations, including registration, airworthiness certification, and remote pilot licensing.</p></li>
+<li><p>Operational Requirements: Adherence to flight restrictions, altitude limits, visual line of sight rules, and night operation regulations.</p></li>
+<li><p>Safety Standards: Compliance with DO-178C software certification, redundancy requirements, and fail-safe system implementations.</p></li>
+<li><p>Privacy Laws: Following data protection regulations, camera usage restrictions, and personal property protection laws.</p></li>
+<li><p>Security Requirements: Implementation of anti-tampering measures, cybersecurity protocols, and secure communication standards.</p></li>
+<li><p>Emergency Protocols: Compliance with mandatory safety features, emergency landing procedures, and incident reporting requirements.</p></li>
+<li><p>Documentation: Maintaining flight logs, maintenance records, and operator certifications as required by regulatory bodies.</p></li>
+</ul>
+</section>
+</section>
+<section id="step-2-identify-candidate-architectures">
+<h2>Step 2: Identify Candidate Architectures<a class="headerlink" href="#step-2-identify-candidate-architectures" title="Link to this heading">#</a></h2>
+<section id="list-possible-architectures">
+<h3>List Possible Architectures<a class="headerlink" href="#list-possible-architectures" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Quadrotor UAV:</strong></p>
+<ul class="simple">
+<li><p>Good payload lifting capabilities.</p></li>
+<li><p>Highly agile with vertical takeoff/landing capabilities.</p></li>
+<li><p>Package delivery method:</p>
+<ul>
+<li><p>Cable drop.</p></li>
+<li><p>Parachute.</p></li>
+<li><p>Low altitude drop.</p></li>
+<li><p>High altutude drop.</p></li>
+<li><p>Vertical landing (user takes the package from the drone when it is in “safe mode”, that is harmless for the user)(dangerous option due to third parties manipulating the drone).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Fixed-wing UAV:</strong></p>
+<ul class="simple">
+<li><p>Good endurance and cruise speed performances.</p></li>
+<li><p>Blended wing architecture.</p></li>
+<li><p>Limited in vertical takeoff/landing.</p></li>
+<li><p>Package delivery method:</p>
+<ul>
+<li><p>Parachute.</p></li>
+<li><p>Mother + minidrones system: the FW UAV acts as a “mother” hub by releasing small, multirotor mini-UAV for precise package delivery.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Hybrid-VTOL UAV:</strong></p>
+<ul class="simple">
+<li><p>Combines the best qualities of the above architectures (horizontal and vertical flight).</p></li>
+<li><p>Possible configuration with tilting rotors.</p></li>
+<li><p>Package delivery method:</p>
+<ul>
+<li><p>All of the above.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="consider-technology-readiness">
+<h3>Consider Technology Readiness<a class="headerlink" href="#consider-technology-readiness" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Quadrotor UAV:</strong></p>
+<ul class="simple">
+<li><p>Robust readiness.</p></li>
+<li><p>Simple architecture.</p></li>
+<li><p>Cable system technology might be difficult to find in state-of-the-art.</p></li>
+<li><p>Proven technology for payload lifting in tight environments.</p></li>
+<li><p>Because the multiple rotors, it generates significant noise.</p></li>
+</ul>
+</li>
+<li><p><strong>Fixed-wing UAV:</strong></p>
+<ul class="simple">
+<li><p>Robust readiness.</p></li>
+<li><p>Limited for constrained environments.</p></li>
+<li><p>Good noise impact: quiet operation, minimal disturbance to urban communities.</p></li>
+</ul>
+</li>
+<li><p><strong>Hybrid-VTOL UAV:</strong></p>
+<ul class="simple">
+<li><p>Still an emerging architecture/technology.</p></li>
+<li><p>Readiness depends on payload size.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="energy-source">
+<h3>Energy source<a class="headerlink" href="#energy-source" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Batteries (fix) -</strong> Good energy density (compared to supercapacitors), wide availability, slow charging performance.</p></li>
+<li><p><strong>Batteries (removable) -</strong> Same as before. Slow charging performance is not a constraint.</p></li>
+<li><p><strong>Supercapacitors -</strong> Quick charging capacities but low energy density (emerging technology)</p></li>
+<li><p><strong>Solar panels -</strong> Eco-friendly and ideal for long-duration operations in areas with consistent sunlight. However, they have low power output and depend heavily on weather conditions, limiting practical use for most UAVs.</p></li>
+<li><p><strong>Hydrogen fuel cells -</strong> Promising for extended endurance with high energy density and faster refueling compared to batteries. Still in early adoption stages, with higher costs and system complexity.</p></li>
+<li><p><strong>Ground cable alimentation -</strong> Offers unlimited operational time by providing continuous power. However, it restricts range and mobility, making it suitable only for fixed or close-range missions.</p></li>
+</ul>
+</section>
+</section>
+<section id="step-3-establish-evaluation-criteria">
+<h2>Step 3: Establish Evaluation Criteria<a class="headerlink" href="#step-3-establish-evaluation-criteria" title="Link to this heading">#</a></h2>
+<section id="operational-suitability">
+<h3>Operational Suitability<a class="headerlink" href="#operational-suitability" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Scenarios -</strong> The most constrained scenario is the urban delivery, where the major constraints are noise level and safety of operations.</p></li>
+<li><p><strong>Quadrotor UAV -</strong> Autonomy and range suitable for urban areas. Good vertical flight capability. Cable delivery represents less danger and permits delivery in crowded or difficult access places. Landing delivery option is dangerous and not suitable since it implies the manipulation of the drone by the user taking the package (risk of drone turning on during the manipulation: undesired take-off position after package recovery, hardware incidents, etc.). Delivery via dropping system is suitable for remote areas where the drone can descend down to a suitable heigh (even land vertically) and drop the package. No suitable for crowded places where the drone could represent a risk when flying at low altitudes.</p></li>
+<li><p><strong>Fixed-wing UAV -</strong> Great range capability for extra-urban areas. Good cruise velocity translates to fast delivery. Delivery system not precise due to uncapability to hover and not suitable for crowded areas (risk of collision package falling into a pedestrian).</p></li>
+<li><p><strong>Hybrid-VTOL UAV -</strong> Good range and delivery speed, capacity to hover (suitable for rural and urban areas). Delivery architecture can be variable.</p></li>
+</ol>
+</section>
+<section id="performance-metrics">
+<h3>Performance Metrics<a class="headerlink" href="#performance-metrics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Payload capacity 2.5 kg.</p></li>
+<li><p>Range of at least 10 km.</p></li>
+<li><p>MTOW 25 kg.</p></li>
+<li><p>Reliability: maintain a system uptime of 99.95%.</p></li>
+<li><p>Speed:</p>
+<ul>
+<li><p>10-20 km/h for safe urban navigation.</p></li>
+<li><p>Up to 80 km/h in unconstrained zones.</p></li>
+</ul>
+</li>
+<li><p>Operational footprint 2m x 2m.</p></li>
+<li><p>Drop accuracy:</p>
+<ul>
+<li><p>1m from the drop zone.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="environmental-compatibility">
+<h3>Environmental Compatibility<a class="headerlink" href="#environmental-compatibility" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Noise:</p>
+<ul>
+<li><p>Low noise to minimise disturbance.</p></li>
+<li><p>Noise levels below 65 dB at 25 m.</p></li>
+</ul>
+</li>
+<li><p>Emissions:</p>
+<ul>
+<li><p>Electric propulsion to produce zero direct emissions.</p></li>
+</ul>
+</li>
+<li><p>Impact of operations:</p>
+<ul>
+<li><p>Mitigate impact on local wildlife.</p></li>
+<li><p>Avoid flight paths that can disrupt natural habitats.</p></li>
+<li><p>No environmental damages.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="constraints-compliance">
+<h3>Constraints Compliance<a class="headerlink" href="#constraints-compliance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Meet environmental and regulatory standards for UAV.</p></li>
+<li><p>Safety: redundant systems and fail-safes.</p></li>
+</ul>
+</section>
+</section>
+<section id="step-4-perform-trade-off-analysis">
+<h2>Step 4: Perform Trade-Off Analysis<a class="headerlink" href="#step-4-perform-trade-off-analysis" title="Link to this heading">#</a></h2>
+<section id="quantitative-assessment">
+<h3>Quantitative Assessment<a class="headerlink" href="#quantitative-assessment" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Architecture</p></th>
+<th class="head"><p>Payload Capacity</p></th>
+<th class="head"><p>Range</p></th>
+<th class="head"><p>Maneuverability</p></th>
+<th class="head"><p>Noise</p></th>
+<th class="head"><p>Technology Readiness</p></th>
+<th class="head"><p>Package delivery modularity and precision</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mutlirotor</p></td>
+<td><p>High</p></td>
+<td><p>Moderate</p></td>
+<td><p>High</p></td>
+<td><p>High</p></td>
+<td><p>High</p></td>
+<td><p>High</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fixed-wing UAV</p></td>
+<td><p>Moderate</p></td>
+<td><p>High</p></td>
+<td><p>Low</p></td>
+<td><p>Low</p></td>
+<td><p>High</p></td>
+<td><p>High</p></td>
+</tr>
+<tr class="row-even"><td><p>Hybrid-VTOL UAV</p></td>
+<td><p>High</p></td>
+<td><p>High</p></td>
+<td><p>High</p></td>
+<td><p>High</p></td>
+<td><p>Moderate</p></td>
+<td><p>Low</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="qualitative-assessment">
+<h3>Qualitative Assessment<a class="headerlink" href="#qualitative-assessment" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Fixed-Wing -</strong> Complex in urban environments, poor maneuverability and high limitations in delivery operations. Best fits rural area for long range missions. It is the best known technology for drones so far, hence the costs will be lower. Other cons of this architecture are the higher maintenance complexity and the limited scalability for delivery operations.</p></li>
+<li><p><strong>Multirotor -</strong> High agility, simple maintenance, ideal for constrained areas and precision delivery but limited in range of operations. It shows an excellent urban adaptability, an high sclability according to a large spectrum of operations, simpler maintenance requirements, and a strong commercial support ecosystem.</p></li>
+<li><p><strong>Hybrid VTOL -</strong> Promising but may introduce complexity and higher costs, generally have larger size trhan multirotor and technology is the least developed one between the models taken into consideration. Therefore the development risk is higher. The maintenance is more complex. this architecture has the pros of both the multirotor and FW configuration; hence it has a really good operational flexibility.</p></li>
+</ul>
+</section>
+</section>
+<section id="step-5-eliminate-unsuitable-concepts">
+<h2>Step 5: Eliminate Unsuitable Concepts<a class="headerlink" href="#step-5-eliminate-unsuitable-concepts" title="Link to this heading">#</a></h2>
+<section id="threshold-criteria">
+<h3>Threshold Criteria<a class="headerlink" href="#threshold-criteria" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Must support 2.5 kg payload</p></li>
+<li><p>Must allow vertical takeoff/landing.</p></li>
+<li><p>Relatively good delivery precision.</p></li>
+<li><p>Safe and suitable urban delivery (maximum payload load of 2g).</p></li>
+</ul>
+</section>
+<section id="feasibility-assessment-list-of-discarded-solutions-along-with-the-corresponing-reasons">
+<h3>Feasibility Assessment <strong>(list of discarded solutions along with the corresponing reasons)</strong><a class="headerlink" href="#feasibility-assessment-list-of-discarded-solutions-along-with-the-corresponing-reasons" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Fixed-Wing</strong>:</p>
+<ul>
+<li><p>Eliminated due to poor maneuverability in constrained spaces and not ideal delivery option.</p></li>
+</ul>
+</li>
+<li><p><strong>Hybrid-VTOL</strong>:</p>
+<ul>
+<li><p>Eliminated due to high complexity and costs.</p></li>
+<li><p>Eliminated due to low readiness.</p></li>
+</ul>
+</li>
+<li><p><strong>Hybrid-VTOL (tilting rotors)</strong>:</p>
+<ul>
+<li><p>Eliminated due to high complexity and costs.</p></li>
+<li><p>Eliminated due to higher risk.</p></li>
+<li><p>Eliminated due to low readiness.</p></li>
+</ul>
+</li>
+<li><p><strong>Multirotor (landing)</strong>:</p>
+<ul>
+<li><p>Eliminated due to unsafe delivery option (it adds randomness to the success rate of the mission).</p></li>
+<li><p>The drone could be damaged during landing.</p></li>
+</ul>
+</li>
+<li><p><strong>Multirotor with ground cable alimentation</strong>:</p>
+<ul>
+<li><p>Eliminated due to its working impossibility in constrained environments like urban areas.</p></li>
+</ul>
+</li>
+<li><p><strong>Parachute</strong>:</p>
+<ul>
+<li><p>Discarded for not having enough precision when delivering a package.</p></li>
+<li><p>Discarded because unfeasible in complex urban environments.</p></li>
+</ul>
+</li>
+<li><p><strong>Fuel cells</strong>:</p>
+<ul>
+<li><p>Discarded due to safety reasons.</p></li>
+</ul>
+</li>
+<li><p><strong>Solar panels</strong>:</p>
+<ul>
+<li><p>Discarded because too dependent on the weather and because they require extra maintenance.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="step-6-select-best-architecture-qualitatively">
+<h2>Step 6: Select Best Architecture (Qualitatively)<a class="headerlink" href="#step-6-select-best-architecture-qualitatively" title="Link to this heading">#</a></h2>
+<section id="selected-architecture-list-of-the-selected-architectures">
+<h3>Selected Architecture (list of the selected architectures)<a class="headerlink" href="#selected-architecture-list-of-the-selected-architectures" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Multirotor UAV powered by batteries and solar panels -</strong> Selected for its high agility, proven technology, and suitability for constrained environments. It is also a technology that allows to meet delivery requirements and safety. Powered by rechargable batteries for their reliability and solar panels for higher energy efficiency.</p></li>
+<li><p><strong>Multirotor UAV with cable -</strong> Selected for its high agility, proven technology, and suitability for constrained environments. The delivery system with the cable, despite adding complexity to the system, is safe and permits deliveries in all desired areas (urban, crowded, rural), as long as the range is respected.</p></li>
+<li><p><strong>Multirotor UAV with swappable batteries and landing -</strong> All the advantages seen before. The batteries are swapped at the station between an operation and another. The delivery by landing, in order to make the operation simpler and easier.</p></li>
+<li><p><strong>Multirotor UAV with batteries and low altitude drop -</strong> All the advantages seen before. The low-altitude drop maximizes precision in urban context, avoiding complex scenarios as take-off in hostile environment.</p></li>
+<li><p><strong>Multirotor UAV OR Hybrid VTOL with minidrones-</strong> All the advantages seen before. “Also, possiibliity of reduce rotors number to reduce noise”. The distribution method relying on mini-drones guarantees high maneuverability and the ability to deliver in constrained spaces; good delivery gentelness. Less constrained with weather conditioones when compared with the multirotor + cable methood.</p></li>
+<li><p><strong>Multirotor UAV with direct mounting -</strong> For payload integration, direct mounting offers simplicity, reliability, and reduced weight but comes with limited payload flexibility and a higher center of gravity. In contrast, a cable-based system reduces rotor wash and enables flexible payload delivery, though it introduces wind sensitivity and more complex control dynamics. Parachute seems like a choice as the immediate reduce weight after drop off the package, however, The parachute method has high uncertainty when dropping, also potential makes more waste. As long as we had the Multirotor as the best choice, the direct mounting can reduce the structure weight and avoid the waste like of the parachute.</p></li>
+<li><p><strong>Hybrid VTOL + Batteries + Cable or mini-drone</strong></p></li>
+<li><p><strong>Multirotor with landing (energy sourge not specified)</strong></p></li>
+</ul>
+</section>
+<section id="validation-feasibility">
+<h3>Validation Feasibility<a class="headerlink" href="#validation-feasibility" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Technical: Meets payload, range, and endurance requirements with zero-emissions electric propulsion.</p></li>
+<li><p>Regulatory: Compliant with EASA regulations and U-Space integration.</p></li>
+<li><p>Operational: Reliable and manufacturable with minimal setup, adaptable to various environments.</p></li>
+<li><p>Limitation of landing delivery: final user must provide a suitable landing surface.
+rational and regulatory requirements (to be checked for the cable delivery system).</p></li>
+<li><p>Technology is reliable.</p></li>
+<li><p>Practical, manufacturable, and maintainable with current technology.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./laboratories/Lab-package_delivery_UAV"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2-system_architectures-student.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">System architectures of the Package Delivery UAV (Student version)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3-sizing_scenarios-student.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Sizing scenarios and design drivers (student version)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-define-physical-requirements">Step 1: Define Physical Requirements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-from-system-requirements">Extract from System Requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consider-environmental-factors">Consider Environmental Factors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-compliance">Regulatory Compliance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-identify-candidate-architectures">Step 2: Identify Candidate Architectures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-possible-architectures">List Possible Architectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consider-technology-readiness">Consider Technology Readiness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-source">Energy source</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-establish-evaluation-criteria">Step 3: Establish Evaluation Criteria</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operational-suitability">Operational Suitability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics">Performance Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environmental-compatibility">Environmental Compatibility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints-compliance">Constraints Compliance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-perform-trade-off-analysis">Step 4: Perform Trade-Off Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-assessment">Quantitative Assessment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-assessment">Qualitative Assessment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-eliminate-unsuitable-concepts">Step 5: Eliminate Unsuitable Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#threshold-criteria">Threshold Criteria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feasibility-assessment-list-of-discarded-solutions-along-with-the-corresponing-reasons">Feasibility Assessment <strong>(list of discarded solutions along with the corresponing reasons)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-select-best-architecture-qualitatively">Step 6: Select Best Architecture (Qualitatively)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selected-architecture-list-of-the-selected-architectures">Selected Architecture (list of the selected architectures)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-feasibility">Validation Feasibility</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marc Budinger, Scott Delbecq, Félix Pollet, Aurélien Reysset
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
