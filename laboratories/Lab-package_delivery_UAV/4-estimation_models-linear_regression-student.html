@@ -873,159 +873,19 @@ with the parameters express in the following table.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data Filtering</span>
-<span class="n">dfMR</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;TYPE&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;MR&quot;</span><span class="p">]</span>
+<span class="n">dfMR</span> <span class="o">=</span> 
 <span class="n">dfMR</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>LINE</th>
-      <th>COMP</th>
-      <th>TYPE</th>
-      <th>RPM</th>
-      <th>DIAMETER(IN)</th>
-      <th>PITCH(IN)</th>
-      <th>BLADE(nb)</th>
-      <th>THRUST(LBF)</th>
-      <th>POWER(HP)</th>
-      <th>TORQUE(IN.LBF)</th>
-      <th>Cp</th>
-      <th>Ct</th>
-      <th>AREA(m^2)</th>
-      <th>THRUST(N)</th>
-      <th>POWER(W)</th>
-      <th>ANGLE</th>
-      <th>EFF</th>
-      <th>N.D</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>135</th>
-      <td>147</td>
-      <td>8</td>
-      <td>MR</td>
-      <td>2000</td>
-      <td>10.0</td>
-      <td>4.5</td>
-      <td>2</td>
-      <td>0.14</td>
-      <td>0.01</td>
-      <td>0.09</td>
-      <td>0.04</td>
-      <td>0.11</td>
-      <td>0.05</td>
-      <td>0.6230</td>
-      <td>7.457</td>
-      <td>0.45</td>
-      <td>72.772802</td>
-      <td>20000.0</td>
-    </tr>
-    <tr>
-      <th>146</th>
-      <td>148</td>
-      <td>8</td>
-      <td>MR</td>
-      <td>3000</td>
-      <td>10.0</td>
-      <td>4.5</td>
-      <td>2</td>
-      <td>0.32</td>
-      <td>0.01</td>
-      <td>0.20</td>
-      <td>0.04</td>
-      <td>0.11</td>
-      <td>0.05</td>
-      <td>1.4240</td>
-      <td>7.457</td>
-      <td>0.45</td>
-      <td>72.772802</td>
-      <td>30000.0</td>
-    </tr>
-    <tr>
-      <th>147</th>
-      <td>149</td>
-      <td>8</td>
-      <td>MR</td>
-      <td>4000</td>
-      <td>10.0</td>
-      <td>4.5</td>
-      <td>2</td>
-      <td>0.57</td>
-      <td>0.02</td>
-      <td>0.36</td>
-      <td>0.04</td>
-      <td>0.11</td>
-      <td>0.05</td>
-      <td>2.5365</td>
-      <td>14.914</td>
-      <td>0.45</td>
-      <td>72.772802</td>
-      <td>40000.0</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>150</td>
-      <td>8</td>
-      <td>MR</td>
-      <td>5000</td>
-      <td>10.0</td>
-      <td>4.5</td>
-      <td>2</td>
-      <td>0.90</td>
-      <td>0.04</td>
-      <td>0.56</td>
-      <td>0.04</td>
-      <td>0.11</td>
-      <td>0.05</td>
-      <td>4.0050</td>
-      <td>29.828</td>
-      <td>0.45</td>
-      <td>72.772802</td>
-      <td>50000.0</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>151</td>
-      <td>8</td>
-      <td>MR</td>
-      <td>6000</td>
-      <td>10.0</td>
-      <td>4.5</td>
-      <td>2</td>
-      <td>1.29</td>
-      <td>0.08</td>
-      <td>0.79</td>
-      <td>0.04</td>
-      <td>0.11</td>
-      <td>0.05</td>
-      <td>5.7405</td>
-      <td>59.656</td>
-      <td>0.45</td>
-      <td>72.772802</td>
-      <td>60000.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="n">dfMR</span> <span class="o">=</span>
+           <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
 </div>
 <p>We plot the <span class="math notranslate nohighlight">\(C_p\)</span> and <span class="math notranslate nohighlight">\(C_t\)</span> for the a 10x4.5 propeller (COMP n° 8 in the previous table). We can notice that these coefficients are constant up to a certain value of speed of rotation. The manufacturer recommends using these propellers for a product speed of rotation x diameter less than a limit (depending on the type of propeller technology) and given <a class="reference external" href="https://www.apcprop.com/technical-information/rpm-limits/">here</a>:<br />
 Maximum speed(RPM) x prop diameter (inches) = 105,000<br />
@@ -1036,10 +896,10 @@ for MR type which gives a blade tip speed of 135 m/s.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Keep only the component n°8</span>
-<span class="n">df8</span> <span class="o">=</span> <span class="n">dfMR</span><span class="p">[</span><span class="n">dfMR</span><span class="p">[</span><span class="s2">&quot;COMP&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">df8</span> <span class="o">=</span> 
 
 <span class="c1"># Extract forbidden ND product</span>
-<span class="n">df8ND</span> <span class="o">=</span> <span class="n">df8</span><span class="p">[</span><span class="n">df8</span><span class="p">[</span><span class="s2">&quot;N.D&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">105000</span><span class="p">]</span>
+<span class="n">df8ND</span> <span class="o">=</span> 
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1069,7 +929,12 @@ for MR type which gives a blade tip speed of 135 m/s.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e886cb18b8a054bbe6cfa4d170b865b297374203839416ec9fc9290a6a9213b7.png" src="../../_images/e886cb18b8a054bbe6cfa4d170b865b297374203839416ec9fc9290a6a9213b7.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="n">df8</span> <span class="o">=</span>
+          <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -1084,7 +949,15 @@ for MR type which gives a blade tip speed of 135 m/s.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Keep only operating points with ND&lt;105000</span>
-<span class="n">dfMRND</span> <span class="o">=</span> <span class="n">dfMR</span><span class="p">[</span><span class="n">dfMR</span><span class="p">[</span><span class="s2">&quot;N.D&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">105000</span><span class="p">]</span>
+<span class="n">dfMRND</span> <span class="o">=</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="n">dfMRND</span> <span class="o">=</span>
+             <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
@@ -1102,28 +975,27 @@ for MR type which gives a blade tip speed of 135 m/s.</p>
 
 
 <span class="c1"># Data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">df_MR_ND</span><span class="p">[</span><span class="s2">&quot;ANGLE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">y_Ct</span> <span class="o">=</span> <span class="n">df_MR_ND</span><span class="p">[</span><span class="s2">&quot;Ct&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">x</span> <span class="o">=</span> 
+<span class="n">y_Ct</span> <span class="o">=</span> 
 
 <span class="c1"># Matrix X and Y</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> 
 
-<span class="n">Y_Ct</span> <span class="o">=</span> <span class="n">y_Ct</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">Y_Ct</span> <span class="o">=</span> 
 
 <span class="c1"># Create a new object for the linear regression</span>
-<span class="n">reg_Ct</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">reg_Ct</span> <span class="o">=</span> 
 
-<span class="n">reg_Ct</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y_Ct</span><span class="p">)</span>
 
 
 <span class="c1"># Y vector prediction</span>
-<span class="n">Ct_est</span> <span class="o">=</span> <span class="n">reg_Ct</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Ct_est</span> <span class="o">=</span>  
 
 <span class="c1"># Ct Parameters</span>
 <span class="c1"># ----</span>
-<span class="n">coef</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">reg_Ct</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
-<span class="n">intercept</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">reg_Ct</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
-<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">Y_Ct</span><span class="p">,</span> <span class="n">Ct_est</span><span class="p">)</span>
+<span class="n">coef</span> <span class="o">=</span> 
+<span class="n">intercept</span> <span class="o">=</span> 
+<span class="n">r2</span> <span class="o">=</span> 
 
 
 <span class="c1"># Plot the data</span>
@@ -1141,16 +1013,10 @@ for MR type which gives a blade tip speed of 135 m/s.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Data</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">x</span> <span class="o">=</span> <span class="n">df_MR_ND</span><span class="p">[</span><span class="s2">&quot;ANGLE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">y_Ct</span> <span class="o">=</span> <span class="n">df_MR_ND</span><span class="p">[</span><span class="s2">&quot;Ct&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># Matrix X and Y</span>
-
-<span class="ne">NameError</span>: name &#39;df_MR_ND&#39; is not defined
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+    <span class="n">x</span> <span class="o">=</span>
+        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
