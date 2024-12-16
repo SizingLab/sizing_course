@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Estimation models with scaling laws &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>Scaling laws of electrical components (student version) &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -219,7 +219,7 @@
 <li class="toctree-l2"><a class="reference internal" href="3-sizing_scenarios-student.html">Sizing scenarios and design drivers (student version)</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="4-estimation_models-linear_regression-student.html">Estimation models with dimensional analysis and linear regressions  (student version)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Estimation models with scaling laws</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Scaling laws of electrical components (student version)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -507,7 +507,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Estimation models with scaling laws</h1>
+    <h1>Scaling laws of electrical components (student version)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -517,10 +517,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrical-components">Electrical components</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lipo-battery">Lipo battery</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lipo-battery">Lipo battery</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brushless-motor">Brushless motor</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-laws">Scaling laws</a></li>
 </ul>
@@ -545,13 +542,10 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="estimation-models-with-scaling-laws">
-<h1>Estimation models with scaling laws<a class="headerlink" href="#estimation-models-with-scaling-laws" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="scaling-laws-of-electrical-components-student-version">
+<h1>Scaling laws of electrical components (student version)<a class="headerlink" href="#scaling-laws-of-electrical-components-student-version" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Scott Delbecq (ISAE-SUPAERO) and Félix Pollet (ISAE-SUPAERO), Toulouse, France.</em></p>
-<section id="electrical-components">
-<h2>Electrical components<a class="headerlink" href="#electrical-components" title="Link to this heading">#</a></h2>
-<p>The application chosen for this notebook are UAV electrical components.
-The estimation models calculate the component characteristics requested for their selection without requiring a detailed design. Scaling laws are particularly suitable for this purpose. This notebook illustrates the approach with electrical drone components characteristics.
+<p>The estimation models calculate the component characteristics requested for their selection without requiring a detailed design. Scaling laws are particularly suitable for this purpose. This notebook illustrates the approach with electrical drone components characteristics.
 Validation of the obtained scaling laws is realized thanks catalog data.</p>
 <p>The <a class="reference external" href="https://hal.archives-ouvertes.fr/hal-00712986/file/IMECHE_v1.2_full.pdf">following article</a> gives more details for components of electromechanical actuators:</p>
 <blockquote>
@@ -559,7 +553,7 @@ Validation of the obtained scaling laws is realized thanks catalog data.</p>
 </div></blockquote>
 <p><strong>Notation</strong>: The x* scaling ratio of a given parameter is calculated as <span class="math notranslate nohighlight">\(x^*=\frac{x}{x_{ref}}\)</span> where <span class="math notranslate nohighlight">\(x_{ref}\)</span> is the parameter taken as the reference and <span class="math notranslate nohighlight">\(x\)</span> the parameter under study.</p>
 <section id="lipo-battery">
-<h3>Lipo battery<a class="headerlink" href="#lipo-battery" title="Link to this heading">#</a></h3>
+<h2>Lipo battery<a class="headerlink" href="#lipo-battery" title="Link to this heading">#</a></h2>
 <p>A lithium-ion polymer battery (abbreviated as LiPo) is a assembly of elementary cells. The more the cells are provided, the bigger is the power and stored energy. The following figure gives an example of a Lipo battery with the following characteristics:</p>
 <ul class="simple">
 <li><p><strong>Voltage / Cell Count (“S”)</strong>: A LiPo cell has a nominal voltage of 3.7V (3V min, 4.2V max) . For the 7.4V battery above, this means that there are two cells in series (which means the voltage gets added together). This is sometimes why you will hear people talk about a “2S” battery pack - it means that there are 2 cells in Series.</p></li>
@@ -627,12 +621,12 @@ Validation of the obtained scaling laws is realized thanks catalog data.</p>
 <span class="n">M_bat_ref</span> <span class="o">=</span> <span class="mf">0.273</span>  <span class="c1"># [kg] mass</span>
 
 <span class="c1"># New battery 3300 mA.h 4S</span>
-<span class="n">U_bat</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="mf">7.4</span> <span class="o">/</span> <span class="mi">2</span>
-<span class="n">C_bat</span> <span class="o">=</span> <span class="mi">3300</span> <span class="o">/</span> <span class="mi">1000</span>
+<span class="n">U_bat</span> <span class="o">=</span> 
+<span class="n">C_bat</span> <span class="o">=</span> 
 
-<span class="n">I_bat_max</span> <span class="o">=</span> <span class="n">I_bat_max_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">C_bat</span> <span class="o">/</span> <span class="n">C_bat_ref</span><span class="p">)</span>
+<span class="n">I_bat_max</span> <span class="o">=</span> 
 
-<span class="n">M_bat</span> <span class="o">=</span> <span class="n">M_bat_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">C_bat</span> <span class="o">/</span> <span class="n">C_bat_ref</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">U_bat</span> <span class="o">/</span> <span class="n">U_bat_ref</span><span class="p">)</span>
+<span class="n">M_bat</span> <span class="o">=</span> 
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Battery mass: </span><span class="si">{</span><span class="n">M_bat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> kg&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max discharge current: </span><span class="si">{</span><span class="n">I_bat_max</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
@@ -640,13 +634,14 @@ Validation of the obtained scaling laws is realized thanks catalog data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Battery mass: 0.360 kg
-Max discharge current: 165 A
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+    <span class="n">U_bat</span> <span class="o">=</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="brushless-motor">
 <h2>Brushless motor<a class="headerlink" href="#brushless-motor" title="Link to this heading">#</a></h2>
@@ -862,25 +857,16 @@ Max discharge current: 165 A
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">T_mot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">num</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">T_mot</span> <span class="o">=</span> 
 
 <span class="c1"># Scaling law</span>
-<span class="n">M_mot</span> <span class="o">=</span> <span class="n">M_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
+<span class="n">M_mot</span> <span class="o">=</span> 
 
 <span class="c1"># plot</span>
 <span class="n">h</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Tnom (N.m)&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;weight (g)&quot;</span><span class="p">],</span> <span class="s2">&quot;.b&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">T_mot</span><span class="p">,</span>
-    <span class="n">M_mot</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span>
-    <span class="s2">&quot;--r&quot;</span><span class="p">,</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Tnom (N.m)&quot;</span><span class="p">],</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;weight (g)&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;.b&quot;</span><span class="p">,</span>
-    <span class="n">T_mot_ref</span><span class="p">,</span>
-    <span class="n">M_mot_ref</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span>
-    <span class="s2">&quot;.g&quot;</span><span class="p">,</span>
-<span class="p">)</span>
+
+<span class="c1"># ...</span>
+
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Motor Mass [g]&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Nominal torque [N.m]&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
@@ -888,7 +874,12 @@ Max discharge current: 165 A
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4b493d072a5d2884a4f81e4e8a444987ff49f3199fd1d3364801976620d61e68.png" src="../../_images/4b493d072a5d2884a4f81e4e8a444987ff49f3199fd1d3364801976620d61e68.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+    <span class="n">T_mot</span> <span class="o">=</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -907,16 +898,17 @@ Max discharge current: 165 A
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Resistance plot</span>
 
 <span class="c1"># Scaling law</span>
-<span class="n">T_mot</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Tnom (N.m)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">K_T</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Kt (N.m/A)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">R_mot_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;r (omn)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">T_mot</span> <span class="o">=</span> 
+<span class="n">K_T</span> <span class="o">=</span> 
+<span class="n">R_mot_data</span> <span class="o">=</span> 
 
-<span class="c1"># ...</span>
-<span class="n">R_mot_sl</span> <span class="o">=</span> <span class="n">R_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">K_T</span> <span class="o">/</span> <span class="n">K_T_ref</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
+<span class="n">R_mot_sl</span> <span class="o">=</span> 
 
 <span class="c1"># plot</span>
 <span class="n">h</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">T_mot</span><span class="p">,</span> <span class="n">R_mot_data</span> <span class="o">/</span> <span class="n">K_T</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;.b&quot;</span><span class="p">,</span> <span class="n">T_mot</span><span class="p">,</span> <span class="n">R_mot_sl</span> <span class="o">/</span> <span class="n">K_T</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;.r&quot;</span><span class="p">)</span>
+
+<span class="c1"># ...</span>
+
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Resistance/Torque constant^2 [Ohm/(N.m/A)²]&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Nominal torque [N.m]&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
@@ -924,7 +916,12 @@ Max discharge current: 165 A
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fa1236411515f2ccca80f426cba744dc82114f10b49c9bf22cc402b9694bcc1f.png" src="../../_images/fa1236411515f2ccca80f426cba744dc82114f10b49c9bf22cc402b9694bcc1f.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+    <span class="n">T_mot</span> <span class="o">=</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -938,7 +935,7 @@ Max discharge current: 165 A
 <p><span class="caption-number">Fig. 9 </span><span class="caption-text">Electronic Speed Controller (ESC)</span><a class="headerlink" href="#esc" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The first step is to import catalog data stored in a .csv file. We use for that functions from <a class="reference external" href="https://pandas.pydata.org/index.html">Panda</a> package (with here an <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/03.00-introduction-to-pandas.html">introduction to panda</a>).<br />
+<p>The first step is to import catalog data stored in a .csv file. We use for that functions from <a class="reference external" href="https://pandas.pydata.org/index.html">Pandas</a> package (with here an <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/03.00-introduction-to-pandas.html">introduction to pandas</a>).<br />
 The data base gives informations about mass, voltage &amp; current (DC side) and power of the converter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1030,9 +1027,9 @@ The data base gives informations about mass, voltage &amp; current (DC side) and
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get values from panda data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Pmax.in[W]&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;m[g]&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Vmax.in[V]&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">x</span> <span class="o">=</span> 
+<span class="n">y</span> <span class="o">=</span> 
+<span class="n">v</span> <span class="o">=</span> 
 
 <span class="c1"># plot the data : scatter plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">)</span>
@@ -1048,7 +1045,12 @@ The data base gives informations about mass, voltage &amp; current (DC side) and
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/19844fc44d80147e759ffda8d6e20e004a2ffed6d5cbdf5433d299bd5be8ff8b.png" src="../../_images/19844fc44d80147e759ffda8d6e20e004a2ffed6d5cbdf5433d299bd5be8ff8b.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="n">x</span> <span class="o">=</span>
+        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
 </div>
 </div>
 <p>The voltage increases with the power in order to maintain reasonable current values.</p>
@@ -1064,7 +1066,17 @@ The data base gives informations about mass, voltage &amp; current (DC side) and
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c002302030a9f9d98c7099f1db65a75059401797c03227a107d02698704fd96f.png" src="../../_images/c002302030a9f9d98c7099f1db65a75059401797c03227a107d02698704fd96f.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># plot the data : Voltage vs Power</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;ESC Power [W]&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;ESC Voltage [V]&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1080,15 +1092,14 @@ The data base gives informations about mass, voltage &amp; current (DC side) and
 <span class="n">X</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="n">reg</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">reg</span> <span class="o">=</span> 
 
-<span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
 
-<span class="n">y_est</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">y_est</span> <span class="o">=</span> 
 
-<span class="n">coef</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
-<span class="n">intercept</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
-<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">y_est</span><span class="p">)</span>
+<span class="n">coef</span> <span class="o">=</span> 
+<span class="n">intercept</span> <span class="o">=</span> 
+<span class="n">r2</span> <span class="o">=</span> 
 
 
 <span class="c1"># plot the data</span>
@@ -1099,19 +1110,15 @@ The data base gives informations about mass, voltage &amp; current (DC side) and
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span>
-    <span class="sa">f</span><span class="s2">&quot;Mass / Power coefficient : </span><span class="si">{</span><span class="n">coef</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2"> [g/W] or </span><span class="si">{</span><span class="n">coef</span><span class="o">/</span><span class="mi">1000</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2"> [kg/W] with R2=</span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mass / Power coefficient : </span><span class="si">{</span><span class="n">coef</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2"> [g/W] or </span><span class="si">{</span><span class="n">coef</span><span class="o">/</span><span class="mi">1000</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2"> [kg/W] with R2=</span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2259/1007377888.py:18: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
-  coef = float(reg.coef_)
-</pre></div>
-</div>
-<img alt="../../_images/9bb5fa92ef55d460146298a7d5b5af551006a63ec002130926edf7bb67d50e72.png" src="../../_images/9bb5fa92ef55d460146298a7d5b5af551006a63ec002130926edf7bb67d50e72.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mass / Power coefficient : 2.88e-02 [g/W] or 2.88e-05 [kg/W] with R2=0.738
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">12</span>
+    <span class="n">reg</span> <span class="o">=</span>
+          <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
@@ -1156,7 +1163,7 @@ The data base gives informations about mass, voltage &amp; current (DC side) and
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;ESC Power [W]&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;ESC Voltage [V]&quot;</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;yV_est&#39; is not defined
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1245,10 +1252,7 @@ and as <span class="math notranslate nohighlight">\(P_{conv}^*=P_{loss,MOS}^*\)<
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrical-components">Electrical components</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lipo-battery">Lipo battery</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lipo-battery">Lipo battery</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brushless-motor">Brushless motor</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-laws">Scaling laws</a></li>
 </ul>
