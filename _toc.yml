@@ -40,7 +40,7 @@ parts:
       - file: classes/Lecture3_new/1-simulation_models
       - file: classes/Lecture3_new/2-evaluation_models
       - file: classes/Lecture3_new/3-quiz_evaluation_models
-      - file: classes/Lecture3_new/4-homework
+      # - file: classes/Lecture3_new/4-homework
   - file: classes/Lecture4/summary
     title: Optimal sizing procedures
     sections:
@@ -78,6 +78,7 @@ parts:
       - file: laboratories/Lab-package_delivery_UAV/3-sizing_scenarios-student
       - file: laboratories/Lab-package_delivery_UAV/4-estimation_models-linear_regression-student
       - file: laboratories/Lab-package_delivery_UAV/4-estimation_models-scaling_laws-student
+      - file: laboratories/Lab-package_delivery_UAV/5-simulation_models-student
   # - file: laboratories/Lab-multirotor/summary
   #   title: Multirotor UAV
   #   sections:
