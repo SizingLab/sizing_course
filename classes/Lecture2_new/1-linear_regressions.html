@@ -545,11 +545,13 @@
 </div></blockquote>
 <section id="statistical-data-analysis-main-steps">
 <h2><span class="section-number">3.1.1. </span>Statistical data analysis: main steps<a class="headerlink" href="#statistical-data-analysis-main-steps" title="Link to this heading">#</a></h2>
-<p>The main steps to follow in order to obtain an estimation model using data are:<br />
-1– <strong>Obtaining data</strong>: components’ data can be provided by catalogues or design models on which we will have simulated a set of well chosen design parameters (using design of experiments for instance).<br />
-2– <strong>Choosing parameters</strong> representating primary characteristics: the objective here is to reduce the number of inputs for the model. In order to do that, we can detect and choose the most important parameters using a correlation analysis. A dimensional analysis  can also help to reduce the number of coefficients to be considered.<br />
-3– <strong>Choosing the mathematical model type</strong>: this means to choose the mathematical form of the equation on which the regression will be applied (polynoms, linear sum of functions, power products,…).<br />
-4– <strong>Apply the regression</strong>: the objective is to minimize the disparity between data and the mathematical equation of the model.</p>
+<p>The main steps to follow in order to obtain an estimation model using data are:</p>
+<ol class="arabic simple">
+<li><p><strong>Obtaining data</strong>: components’ data can be provided by catalogues or design models on which we will have simulated a set of well chosen design parameters (using design of experiments for instance).</p></li>
+<li><p><strong>Choosing parameters</strong> representating primary characteristics: the objective here is to reduce the number of inputs for the model. In order to do that, we can detect and choose the most important parameters using a correlation analysis. A dimensional analysis  can also help to reduce the number of coefficients to be considered.</p></li>
+<li><p><strong>Choosing the mathematical model type</strong>: this means to choose the mathematical form of the equation on which the regression will be applied (polynoms, linear sum of functions, power products,…).</p></li>
+<li><p><strong>Apply the regression</strong>: the objective is to minimize the disparity between data and the mathematical equation of the model.</p></li>
+</ol>
 </section>
 <section id="gearbox-data">
 <h2><span class="section-number">3.1.2. </span>Gearbox Data<a class="headerlink" href="#gearbox-data" title="Link to this heading">#</a></h2>
@@ -799,7 +801,7 @@ Classical statistic tools can be used to characterize a data serie and the links
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2171/1134722465.py:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1983/1134722465.py:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
   df.corr()
 </pre></div>
 </div>
@@ -1038,7 +1040,7 @@ Classical statistic tools can be used to characterize a data serie and the links
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/seaborn/matrix.py:260: FutureWarning: Format strings passed to MaskedConstant are ignored, but in future may error or produce different behavior
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/seaborn/matrix.py:260: FutureWarning: Format strings passed to MaskedConstant are ignored, but in future may error or produce different behavior
   annotation = (&quot;{:&quot; + self.fmt + &quot;}&quot;).format(val)
 </pre></div>
 </div>
@@ -1057,32 +1059,32 @@ Classical statistic tools can be used to characterize a data serie and the links
 <p>Parametric regressions are based on models requiring the estimation of a finite number of parameters <span class="math notranslate nohighlight">\(\theta\)</span> that express the effects of basis functions on the response surface. With polynomial interpolation or regression, the basis functions are <span class="math notranslate nohighlight">\({1, x, x^2, …, x^p}\)</span>. The idea is to obtain a surface that is differentiable and continuous. For a polynomial development of order 2 (p = 2), the expression is:</p>
 <p><span class="math notranslate nohighlight">\(y=f(\underline{x}, \underline{\theta})=\theta_0 + \sum_{i=1}^{k} \theta_0 x_i + \sum_{i=1, j=1}^{k} \theta_{ij} x_i x_j \)</span></p>
 <p>with <span class="math notranslate nohighlight">\(\underline{x}=\begin{pmatrix}
-           x_{1} \\
-           x_{2} \\
-           \vdots \\
+           x_{1} \
+           x_{2} \
+           \vdots \
            x_{k}
          \end{pmatrix}\)</span></p>
 <p>which, for the <span class="math notranslate nohighlight">\(n\)</span> experiments, can be written with a matrix representation:
 <span class="math notranslate nohighlight">\(\underline{Y}=\underline{X}.\underline{\theta}+\underline{\varepsilon}\)</span></p>
 <p>with <span class="math notranslate nohighlight">\(\underline{Y}=\begin{pmatrix}
-           y^{(1)} \\
-           \vdots \\
+           y^{(1)} \
+           \vdots \
            y^{(n)}
          \end{pmatrix}\)</span> ,
-<span class="math notranslate nohighlight">\(\underline{x}=\begin{pmatrix}
-           1, x_{1}^{(1)}, ..., x_{k}^{2(1)}   \\
-           \vdots \\
-           1, x_{1}^{(n)}, ..., x_{k}^{2(n)}   
+<span class="math notranslate nohighlight">\(\underline{X}=\begin{pmatrix}
+           1, x_{1}^{(1)}, ..., x_{k_x}^{2(1)}   \
+           \vdots \
+           1, x_{1}^{(n)}, ..., x_{k_x}^{2(n)}   
          \end{pmatrix}\)</span>,
-<span class="math notranslate nohighlight">\(\underline{x}=\begin{pmatrix}
-           \theta_0 \\
-           \vdots \\
-           \theta_{k_{theta}}
+<span class="math notranslate nohighlight">\(\underline{\theta}=\begin{pmatrix}
+           \theta_0 \
+           \vdots \
+           \theta_{k_{\theta}}
          \end{pmatrix}\)</span>,
-<span class="math notranslate nohighlight">\(\underline{x}=\begin{pmatrix}
-           \varepsilon^{(1)} \\
-           \vdots \\
-           y^{(n)}
+<span class="math notranslate nohighlight">\(\underline{\varepsilon}=\begin{pmatrix}
+           \varepsilon^{(1)} \
+           \vdots \
+           \varepsilon^{(n)}
          \end{pmatrix}\)</span></p>
 <p>where :</p>
 <ul class="simple">
@@ -1414,7 +1416,7 @@ Classical statistic tools can be used to characterize a data serie and the links
 <span class="c1"># Matrix X and Y</span>
 <span class="n">n</span><span class="o">=</span><span class="mi">1</span> <span class="c1"># order of polynomial regression</span>
 
-<span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">include_bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># 1 vector is nt necessary with sklearn</span>
+<span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">include_bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># 1 vector is nt necessary with sklearn</span>
 <span class="n">X</span> <span class="o">=</span><span class="n">poly</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1">#  reshape(-1,1) transforms our numpy array x from a 1D array to a 2D array</span>
 
 <span class="n">Y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
@@ -1449,12 +1451,12 @@ Classical statistic tools can be used to characterize a data serie and the links
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2171/1877653624.py:30: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1983/3185552036.py:30: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   intercept = float(reg_M.intercept_)
 </pre></div>
 </div>
-<img alt="../../_images/02235507d23406179a09b233f0d403e743ab307fe63a33df6627bfb5d33e46ff.png" src="../../_images/02235507d23406179a09b233f0d403e743ab307fe63a33df6627bfb5d33e46ff.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mass estimation model : M = 1.54 + 0.01 * Tout with R2=0.999
+<img alt="../../_images/1f6f7c474434266a6cc2f1ef3bfacb3fff21658b08ccfd8100f0f006a15c3bb3.png" src="../../_images/1f6f7c474434266a6cc2f1ef3bfacb3fff21658b08ccfd8100f0f006a15c3bb3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mass estimation model : M = 1.60 + 0.01 * Tout with R2=0.999
 </pre></div>
 </div>
 </div>
