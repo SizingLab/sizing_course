@@ -587,20 +587,6 @@ The models are separated by components and located in different Python files <co
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">openmdao.api</span> <span class="k">as</span> <span class="nn">om</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">models.openmdao.scenarios</span> <span class="kn">import</span> <span class="n">Scenarios</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">models.openmdao.propeller</span> <span class="kn">import</span> <span class="n">Propeller</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">models.openmdao.motor</span> <span class="kn">import</span> <span class="n">Motor</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;models&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>The inputs of the whole sizing code are stored in <code class="docutils literal notranslate"><span class="pre">dict</span></code>s that we be passed to the problem before the run. Here are the default values seperated by:</p>
 <ul class="simple">
@@ -709,16 +695,7 @@ The models are separated by components and located in different Python files <co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">om</span><span class="o">.</span><span class="n">Problem</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">group</span> <span class="o">=</span> <span class="n">om</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">group</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;scenarios&quot;</span><span class="p">,</span> <span class="n">Scenarios</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">group</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;propeller&quot;</span><span class="p">,</span> <span class="n">Propeller</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">group</span><span class="o">.</span><span class="n">add_subsystem</span><span class="p">(</span><span class="s2">&quot;motor&quot;</span><span class="p">,</span> <span class="n">Motor</span><span class="p">(),</span> <span class="n">promotes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;Scenarios&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;openmdao.core.problem.Problem at 0x7f9ac5ddeee0&gt;
 </pre></div>
 </div>
 </div>
@@ -735,28 +712,17 @@ The models are separated by components and located in different Python files <co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Setup initial values</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">{</span><span class="o">**</span><span class="n">specifications_default</span><span class="p">,</span> <span class="o">**</span><span class="n">design_assumptions_default</span><span class="p">,</span> <span class="o">**</span><span class="n">design_variables_default</span><span class="p">}</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">prob</span><span class="o">.</span><span class="n">set_val</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">optimization_unsuccessful</span> <span class="o">=</span> <span class="n">prob</span><span class="o">.</span><span class="n">run_driver</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/openmdao/core/problem.py:599,</span> in <span class="ni">Problem.set_val</span><span class="nt">(self, name, val, units, indices)</span>
-<span class="g g-Whitespace">    </span><span class="mi">596</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">597</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">msginfo</span><span class="si">}</span><span class="s2">: &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; Cannot call set_val before setup.&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">599</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">set_val</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="n">units</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="n">indices</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/openmdao/core/system.py:5434,</span> in <span class="ni">System.set_val</span><span class="nt">(self, name, val, units, indices)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5432</span>     <span class="n">abs_names</span> <span class="o">=</span> <span class="n">name2abs_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5433</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">5434</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">msginfo</span><span class="si">}</span><span class="s2">: Called set_val(</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, ...) before setup &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">5435</span>                        <span class="s2">&quot;completes.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5437</span> <span class="n">has_vectors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_problem_meta</span><span class="p">[</span><span class="s1">&#39;setup_status&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">_SetupStatus</span><span class="o">.</span><span class="n">POST_FINAL_SETUP</span>
-<span class="g g-Whitespace">   </span><span class="mi">5438</span> <span class="n">value</span> <span class="o">=</span> <span class="n">val</span>
-
-<span class="ne">RuntimeError</span>: &lt;class Group&gt;: Called set_val(M_pay, ...) before setup completes.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/scipy/optimize/_slsqp_py.py:437: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  fx = wrapped_fun(x)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimization terminated successfully    (Exit mode 0)
+            Current function value: 10.377302309050386
+            Iterations: 11
+            Function evaluations: 13
+            Gradient evaluations: 11
+Optimization Complete
+-----------------------------------
 </pre></div>
 </div>
 </div>
@@ -773,50 +739,43 @@ The models are separated by components and located in different Python files <co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/openmdao/core/problem.py:2074: OMDeprecationWarning:Method `list_problem_vars` has been renamed `list_driver_vars`.
-Please update your code to use list_driver_vars to avoid this warning.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------
+Design Variables
+----------------
+name         val           size  lower  upper  min         max         
+-----------  ------------  ----  -----  -----  ----------  ---------- 
+beta_pro     [0.3]         1     0.3    0.6    0.3         0.3         
+k_os         [2.07546046]  1     1.0    10.0   2.07546046  2.07546046  
+k_ND         [1.25998296]  1     1.0    10.0   1.25998296  1.25998296  
+k_mot        [1.02941176]  1     1.0    10.0   1.02941176  1.02941176  
+k_speed_mot  [1.26195253]  1     1.0    10.0   1.26195253  1.26195253  
+k_mb         [0.64317582]  1     0.1    10.0   0.64317582  0.64317582  
+k_vb         [1.]          1     1.0    10.0   1.0         1.0         
+k_D          [0.99]        1     0.01   0.99   0.99        0.99        
+
+-----------
+Constraints
+-----------
+name    val                size  lower  upper  equals  min                 max                 
+------  -----------------  ----  -----  -----  ------  ------------------  ------------------ 
+cons_1  [-7.61446017e-10]  1     0.0    1e+30  None    -0.0                -0.0                
+cons_2  [-3.75628417e-11]  1     0.0    1e+30  None    -0.0                -0.0                
+cons_3  [-5.05906428e-12]  1     0.0    1e+30  None    -0.0                -0.0                
+cons_4  [1.01877113e+09]   1     0.0    1e+30  None    1018771130.9464543  1018771130.9464543  
+cons_5  [3.17643194]       1     0.0    1e+30  None    3.17643194          3.17643194          
+cons_6  [-1.57811542e-11]  1     0.0    1e+30  None    -0.0                -0.0                
+cons_7  [256.22697691]     1     0.0    1e+30  None    256.22697691        256.22697691        
+
+----------
+Objectives
+----------
+name          val            size  scaler  
+------------  -------------  ----  ------ 
+M_total_real  [10.37730231]  1     0.1     
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">results</span> <span class="o">=</span> <span class="n">prob</span><span class="o">.</span><span class="n">list_problem_vars</span><span class="p">(</span><span class="n">print_arrays</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                        <span class="n">desvar_opts</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="s1">&#39;upper&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                        <span class="n">cons_opts</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="s1">&#39;equals&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                        <span class="n">objs_opts</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;scaler&#39;</span><span class="p">])</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/openmdao/core/problem.py:2076,</span> in <span class="ni">Problem.list_problem_vars</span><span class="nt">(self, show_promoted_name, print_arrays, driver_scaling, desvar_opts, cons_opts, objs_opts, out_stream)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2032</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2033</span><span class="sd"> Print all design variables and responses (objectives and constraints).</span>
-<span class="g g-Whitespace">   </span><span class="mi">2034</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2072</span><span class="sd">     and objectives.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2073</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2074</span> <span class="n">warn_deprecation</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;Method `list_problem_vars` has been renamed `list_driver_vars`.</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2075</span>                  <span class="s1">&#39;Please update your code to use list_driver_vars to avoid this warning.&#39;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2076</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_driver_vars</span><span class="p">(</span><span class="n">show_promoted_name</span><span class="o">=</span><span class="n">show_promoted_name</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2077</span>                              <span class="n">print_arrays</span><span class="o">=</span><span class="n">print_arrays</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2078</span>                              <span class="n">driver_scaling</span><span class="o">=</span><span class="n">driver_scaling</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2079</span>                              <span class="n">desvar_opts</span><span class="o">=</span><span class="n">desvar_opts</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2080</span>                              <span class="n">cons_opts</span><span class="o">=</span><span class="n">cons_opts</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2081</span>                              <span class="n">objs_opts</span><span class="o">=</span><span class="n">objs_opts</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2082</span>                              <span class="n">out_stream</span><span class="o">=</span><span class="n">out_stream</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/openmdao/core/problem.py:2136,</span> in <span class="ni">Problem.list_driver_vars</span><span class="nt">(self, show_promoted_name, print_arrays, driver_scaling, desvar_opts, cons_opts, objs_opts, out_stream)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2093</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2094</span><span class="sd"> Print all design variables and responses (objectives and constraints).</span>
-<span class="g g-Whitespace">   </span><span class="mi">2095</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2133</span><span class="sd">     and objectives.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2134</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2135</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span><span class="p">[</span><span class="s1">&#39;setup_status&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">_SetupStatus</span><span class="o">.</span><span class="n">POST_FINAL_SETUP</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2136</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">msginfo</span><span class="si">}</span><span class="s2">: Problem.list_driver_vars() cannot be called &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2137</span>                        <span class="s2">&quot;before `Problem.run_model()`, `Problem.run_driver()`, or &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2138</span>                        <span class="s2">&quot;`Problem.final_setup()`.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2140</span> <span class="n">default_col_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;val&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">2142</span> <span class="c1"># Design vars</span>
-
-<span class="ne">RuntimeError</span>: Problem problem: Problem.list_driver_vars() cannot be called before `Problem.run_model()`, `Problem.run_driver()`, or `Problem.final_setup()`.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/openmdao/core/problem.py:2074: OMDeprecationWarning:Method `list_problem_vars` has been renamed `list_driver_vars`.
+Please update your code to use list_driver_vars to avoid this warning.
 </pre></div>
 </div>
 </div>
@@ -829,7 +788,88 @@ Please update your code to use list_driver_vars to avoid this warning.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/openmdao/core/system.py:4357: OpenMDAOWarning:Calling `list_inputs` before `final_setup` will only display the default values of variables and will not show the result of any `set_val` calls.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70 Input(s) in &#39;model&#39;
+
+varname          val                prom_name    
+---------------  -----------------  -------------
+scenarios
+  k_os           [2.07546046]       k_os         
+  M_pay          [50.]              M_pay        
+  N_pro_arm      [1.]               N_pro_arm    
+  N_arm          [4.]               N_arm        
+  a_to           [2.4525]           a_to         
+propeller
+  beta_pro       [0.3]              beta_pro     
+  F_pro_to       [318.12917391]     F_pro_to     
+  rho_air        [1.18]             rho_air      
+  ND_max         [44.45]            ND_max       
+  k_ND           [1.25998296]       k_ND         
+  M_pro_ref      [0.014999]         M_pro_ref    
+  D_pro_ref      [0.2794]           D_pro_ref    
+  F_pro_hov      [254.50333913]     F_pro_hov    
+motor
+  k_mot          [1.02941176]       k_mot        
+  T_pro_hov      [20.72734178]      T_pro_hov    
+  k_vb           [1.]               k_vb         
+  P_pro_to       [3616.45872422]    P_pro_to     
+  k_speed_mot    [1.26195253]       k_speed_mot  
+  Omega_pro_to   [139.58215244]     Omega_pro_to 
+  M_mot_ref      [0.575]            M_mot_ref    
+  T_nom_mot_ref  [2.32]             T_nom_mot_ref
+  R_mot_ref      [0.03]             R_mot_ref    
+  K_T_ref        [0.03]             K_T_ref      
+  T_mot_fr_ref   [0.03]             T_mot_fr_ref 
+  T_max_mot_ref  [2.81714286]       T_max_mot_ref
+  Omega_pro_hov  [124.84607252]     Omega_pro_hov
+  T_pro_to       [25.90917722]      T_pro_to     
+battery
+  k_mb           [0.64317582]       k_mb         
+  M_pay          [50.]              M_pay        
+  E_bat_ref      [260568.]          E_bat_ref    
+  M_bat_ref      [0.329]            M_bat_ref    
+  U_bat          [35.13984874]      U_bat        
+  I_bat_max_ref  [250.]             I_bat_max_ref
+  C_bat_ref      [5.]               C_bat_ref    
+  P_el_mot_hov   [3226.16990396]    P_el_mot_hov 
+  N_pro          [4.]               N_pro        
+esc
+  P_el_mot_to    [4599.19695835]    P_el_mot_to  
+  U_bat          [35.13984874]      U_bat        
+  U_mot_to       [35.13984874]      U_mot_to     
+  M_esc_ref      [0.115]            M_esc_ref    
+  P_esc_ref      [3108.]            P_esc_ref    
+frame
+  N_arm          [4.]               N_arm        
+  D_pro          [1.58802403]       D_pro        
+  F_pro_to       [318.12917391]     F_pro_to     
+  N_pro_arm      [1.]               N_pro_arm    
+  sigma_max      [70000000.]        sigma_max    
+  k_D            [0.99]             k_D          
+  rho_s          [1700.]            rho_s        
+objectives
+  C_bat          [579849.10715616]  C_bat        
+  I_bat_hov      [386.56607144]     I_bat_hov    
+  M_esc          [0.17017621]       M_esc        
+  M_pro          [0.48453331]       M_pro        
+  M_mot          [3.8516699]        M_mot        
+  N_pro          [4.]               N_pro        
+  M_pay          [50.]              M_pay        
+  M_bat          [32.15879091]      M_bat        
+  M_frame        [3.58871449]       M_frame      
+constraints
+  M_total        [103.77302309]     M_total      
+  M_total_real   [103.77302309]     M_total_real 
+  T_max_mot      [25.90917722]      T_max_mot    
+  T_pro_to       [25.90917722]      T_pro_to     
+  U_bat          [35.13984874]      U_bat        
+  U_mot_to       [35.13984874]      U_mot_to     
+  P_bat_max      [1.0187905e+09]    P_bat_max    
+  P_el_mot_to    [4599.19695835]    P_el_mot_to  
+  N_pro          [4.]               N_pro        
+  U_esc          [38.31628069]      U_esc        
+  t_hov          [25.]              t_hov        
+  t_hov_spec     [25.]              t_hov_spec   
+  MTOW           [360.]             MTOW         
 </pre></div>
 </div>
 </div>
@@ -838,6 +878,79 @@ Please update your code to use list_driver_vars to avoid this warning.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outputs</span> <span class="o">=</span> <span class="n">prob</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">list_outputs</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>54 Explicit Output(s) in &#39;model&#39;
+
+varname          val                  prom_name    
+---------------  -------------------  -------------
+scenarios
+  M_total        [103.77302309]       M_total      
+  N_pro          [4.]                 N_pro        
+  F_pro_hov      [254.50333913]       F_pro_hov    
+  F_pro_to       [318.12917391]       F_pro_to     
+propeller
+  C_t            [0.0859]             C_t          
+  C_p            [0.02768]            C_p          
+  D_pro          [1.58802403]         D_pro        
+  n_pro_to       [22.21518953]        n_pro_to     
+  Omega_pro_to   [139.58215244]       Omega_pro_to 
+  M_pro          [0.48453331]         M_pro        
+  P_pro_to       [3616.45872422]      P_pro_to     
+  T_pro_to       [25.90917722]        T_pro_to     
+  n_pro_hov      [19.86986957]        n_pro_hov    
+  Omega_pro_hov  [124.84607252]       Omega_pro_hov
+  P_pro_hov      [2587.72721446]      P_pro_hov    
+  T_pro_hov      [20.72734178]        T_pro_hov    
+motor
+  T_nom_mot      [21.33696947]        T_nom_mot    
+  U_bat          [35.13984874]        U_bat        
+  K_T            [0.19949269]         K_T          
+  M_mot          [3.8516699]          M_mot        
+  R_mot          [0.05573107]         R_mot        
+  T_mot_fr       [0.20095669]         T_mot_fr     
+  T_max_mot      [25.90917722]        T_max_mot    
+  I_mot_hov      [104.90759761]       I_mot_hov    
+  U_mot_hov      [30.75249055]        U_mot_hov    
+  P_el_mot_hov   [3226.16990396]      P_el_mot_hov 
+  I_mot_to       [130.88266235]       I_mot_to     
+  U_mot_to       [35.13984874]        U_mot_to     
+  P_el_mot_to    [4599.19695835]      P_el_mot_to  
+battery
+  M_bat          [32.15879091]        M_bat        
+  E_bat          [20375809.91972557]  E_bat        
+  C_bat          [579849.10715616]    C_bat        
+  I_bat_max      [28992455.35780776]  I_bat_max    
+  P_bat_max      [1.0187905e+09]      P_bat_max    
+  I_bat_hov      [386.56607144]       I_bat_hov    
+esc
+  P_esc          [4599.19695835]      P_esc        
+  U_esc          [38.31628069]        U_esc        
+  M_esc          [0.17017621]         M_esc        
+frame
+  alpha_sep      [1.57079633]         alpha_sep    
+  L_arm          [1.12290256]         L_arm        
+  D_out_arm      [0.1096737]          D_out_arm    
+  D_in_arm       [0.10857696]         D_in_arm     
+  M_arms         [1.4354858]          M_arms       
+  M_body         [2.1532287]          M_body       
+  M_frame        [3.58871449]         M_frame      
+objectives
+  t_hov          [25.]                t_hov        
+  M_total_real   [103.77302309]       M_total_real 
+constraints
+  cons_1         [-7.61446017e-10]    cons_1       
+  cons_2         [-3.75628417e-11]    cons_2       
+  cons_3         [-5.05906428e-12]    cons_3       
+  cons_4         [1.01877113e+09]     cons_4       
+  cons_5         [3.17643194]         cons_5       
+  cons_6         [-1.57811542e-11]    cons_6       
+  cons_7         [256.22697691]       cons_7       
+
+
+0 Implicit Output(s) in &#39;model&#39;
 </pre></div>
 </div>
 </div>
