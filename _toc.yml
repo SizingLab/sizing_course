@@ -41,14 +41,14 @@ parts:
       - file: classes/Lecture3_new/2-evaluation_models
       - file: classes/Lecture3_new/3-quiz_evaluation_models
       # - file: classes/Lecture3_new/4-homework
-  - file: classes/Lecture4/summary
+  - file: classes/Lecture4_new/summary
     title: Optimal sizing procedures
     sections:
-      - file: classes/Lecture4/1-design_and_optimization_problems
-      - file: classes/Lecture4/2-optimization_examples
-      - file: classes/Lecture4/3-sizing_procedures
-      - file: classes/Lecture4/4-sizing_procedure_examples
-      - file: classes/Lecture4/5-quizz
+      - file: classes/Lecture4_new/1-design_and_optimization_problems
+      - file: classes/Lecture4_new/2-optimization_examples
+      - file: classes/Lecture4_new/3-sizing_procedures
+      - file: classes/Lecture4_new/4-sizing_procedure_examples
+      - file: classes/Lecture4_new/5-quizz
   # - file: classes/Lecture5/summary
   #   title: MDAO and surrogate models
   #   sections:
