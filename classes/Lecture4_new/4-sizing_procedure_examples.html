@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5.2. Optimization with python &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>5.4. Design graph and optimization with python &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -63,12 +63,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture4/2-optimization_examples';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture4_new/4-sizing_procedure_examples';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.3. Development of a sizing procedure using design graphs" href="3-sizing_procedures.html" />
-    <link rel="prev" title="5.1. Representation of a design problem and basics optimal design" href="1-design_and_optimization_problems.html" />
+    <link rel="next" title="Lab - Package delivery UAV" href="../../laboratories/Lab-package_delivery_UAV/summary.html" />
+    <link rel="prev" title="5.3. Development of a sizing procedure using design graphs" href="3-sizing_procedures.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -201,10 +201,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">5. Optimal sizing procedures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1-design_and_optimization_problems.html">5.1. Representation of a design problem and basics optimal design</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.2. Optimization with python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-design_and_optimization_problems.html">5.1. Representation of a Design Problem and Basics of Optimal Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-optimization_examples.html">5.2. Optimization with python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3-sizing_procedures.html">5.3. Development of a sizing procedure using design graphs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4-sizing_procedure_examples.html">5.4. Design graph and optimization with python</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.4. Design graph and optimization with python</a></li>
 </ul>
 </details></li>
 </ul>
@@ -320,7 +320,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/classes/Lecture4/2-optimization_examples.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/classes/Lecture4_new/4-sizing_procedure_examples.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -338,7 +338,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/classes/Lecture4/2-optimization_examples.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/classes/Lecture4_new/4-sizing_procedure_examples.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,7 +386,7 @@
       
       
       
-      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/classes/Lecture4/2-optimization_examples.ipynb" target="_blank"
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/classes/Lecture4_new/4-sizing_procedure_examples.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -403,7 +403,7 @@
       
       
       
-      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclasses/Lecture4/2-optimization_examples.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclasses/Lecture4_new/4-sizing_procedure_examples.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -433,7 +433,7 @@
       
       
       
-      <li><a href="../../_sources/classes/Lecture4/2-optimization_examples.ipynb" target="_blank"
+      <li><a href="../../_sources/classes/Lecture4_new/4-sizing_procedure_examples.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -509,7 +509,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Optimization with python</h1>
+    <h1>Design graph and optimization with python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -519,11 +519,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">5.2.1. Objectives and specifications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-and-constraints">5.2.2. Objective and constraints</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">5.2.3. Sizing code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">5.2.4. Optimization with SLSQP algorithm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-differential-evolution-algorithm">5.2.5. Optimization with differential evolution algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">5.4.1. Objectives and specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-graph">5.4.2. Design graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">5.4.3. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">5.4.4. Optimization with SLSQP algorithm</a></li>
 </ul>
             </nav>
         </div>
@@ -535,20 +534,16 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="optimization-with-python">
-<h1><span class="section-number">5.2. </span>Optimization with python<a class="headerlink" href="#optimization-with-python" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="design-graph-and-optimization-with-python">
+<h1><span class="section-number">5.4. </span>Design graph and optimization with python<a class="headerlink" href="#design-graph-and-optimization-with-python" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Toulouse, France</em></p>
-<p>The objective of this notebook is to learn how to implement a sizing code and use a simple numerical optimization into a python notebook. The system studied a Electromechanical Actuator (EMA) used for Thrust Vector Control (TVC) of a launcher.</p>
+<p>This notebook continues the example started <a class="reference internal" href="2-optimization_examples.html"><span class="std std-doc">earlier</span></a>. It aims to show how a design graph can be used to structure the optimisation problem.</p>
 <p>For interested readers, more information can be found in :</p>
-<ul class="simple">
-<li><p>the <a class="reference internal" href="../../laboratories/Lab-vega/summary.html"><span class="std std-doc">dedicated laboratories</span></a> of this Jupyter book</p></li>
-<li><p>in the following document</p></li>
-</ul>
 <blockquote>
-<div><p>Delbecq, S., Budinger, M., &amp; Reysset, A. (2020). Benchmarking of monolithic MDO formulations and derivative computation techniques using OpenMDAO. Structural and Multidisciplinary Optimization, 62(2), 645-666. <a class="reference external" href="https://oatao.univ-toulouse.fr/26689/1/Delbecq_26689.pdf">Link</a></p>
+<div><p>Delbecq, S., Budinger, M., Ochotorena, A., Reysset, A., &amp; Defaÿ, F. (2020). Efficient sizing and optimization of multirotor drones based on scaling laws and similarity models. Aerospace Science and Technology, 102, 105873.</p>
 </div></blockquote>
 <section id="objectives-and-specifications">
-<h2><span class="section-number">5.2.1. </span>Objectives and specifications<a class="headerlink" href="#objectives-and-specifications" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.4.1. </span>Objectives and specifications<a class="headerlink" href="#objectives-and-specifications" title="Link to this heading">#</a></h2>
 <p>We want to optimize the selection of a TVC motor/reducer set: dynamics are high and motor inertia effect is not negligeable.</p>
 <p><img alt="EMA" src="../../_images/TVC_EMA.png" /></p>
 <p>The sizing scenario is a sinusoïdal displacement with a constant force and an inertia effect:</p>
@@ -643,85 +638,66 @@
 </div>
 </div>
 </section>
-<section id="objective-and-constraints">
-<h2><span class="section-number">5.2.2. </span>Objective and constraints<a class="headerlink" href="#objective-and-constraints" title="Link to this heading">#</a></h2>
+<section id="design-graph">
+<h2><span class="section-number">5.4.2. </span>Design graph<a class="headerlink" href="#design-graph" title="Link to this heading">#</a></h2>
 <p>The objective is to select the motor and the reduction ratio of a gear reducer in order to minimize the mass of the motor.</p>
-<p>The <strong>design variables</strong> are :</p>
-<ul class="simple">
-<li><p>the reduction ratio of the reducer</p></li>
-<li><p>the selection torque of the motor</p></li>
-</ul>
-<p>The <strong>objective</strong> is the motor mass.</p>
-<p>The <strong>constraints</strong> which should be positives are here:</p>
-<ul class="simple">
-<li><p>the speed margin, ie. the motor doesn’t exceed its maximum speed</p></li>
-<li><p>the torque margin, ie. the motor doesn’t exceed its maximum torque</p></li>
-</ul>
-</section>
-<section id="sizing-code">
-<h2><span class="section-number">5.2.3. </span>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h2>
-<p>The sizing code is defined here in a function which can give an evaluation of the objective and of the constraints function of design variables.</p>
-<div class="exercise admonition" id="Equations">
+<div class="exercise admonition" id="DesignGraph">
 
-<p class="admonition-title"><span class="caption-number">Exercise 5.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 5.3 </span></p>
 <section id="exercise-content">
-<ol class="arabic simple">
-<li><p>Give equations which link forces and speeds at nozzle and motor levels.</p></li>
-<li><p>Give scaling laws usefull for the problem.</p></li>
-<li><p>Express contraints of the design problem</p></li>
-</ol>
+<ul class="simple">
+<li><p>Draw the design graph and highlight the main problems.</p></li>
+<li><p>Propose a solution which reduce the complexity of the optimization problem compared to <a class="reference internal" href="2-optimization_examples.html"><span class="std std-doc">previous solution</span></a>.</p></li>
+<li><p>Define optimization variables and the set of constraints</p></li>
+</ul>
 </section>
 </div>
-<div class="solution dropdown admonition" id="EquationsSolution">
+<div class="solution dropdown admonition" id="DesignGraphSolution">
 
 <p class="admonition-title">Solution to</p>
 <section id="solution-content">
-<ol class="arabic simple">
-<li><p>For the sizing scenario :</p></li>
-</ol>
+<p>The design graph of this sizing problem is:
+<img alt="Algebraic Loop" src="../../_images/AlgebraicLoop.png" />
+with</p>
 <ul class="simple">
-<li><p>The maximum load force (nozzle) is : <span class="math notranslate nohighlight">\(F_{max} = F_{stat} + M a_{max}\)</span> with <span class="math notranslate nohighlight">\(a_{max}  = max(\ddot{x})\)</span></p></li>
-<li><p>The maximum torque at motor level is : <span class="math notranslate nohighlight">\(T_{mot, max} = F_{max} \frac{p}{N}   + J_{mot} a_{max} \frac{N}{p}\)</span></p></li>
+<li><p>equation <code class="docutils literal notranslate"><span class="pre">1</span></code> the sizing scenario linking force and acceleration of the load to the maximal electromagnetic torque of the motor.</p></li>
+<li><p>equations <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code> scaling laws which enable to estimate inertia and mass of the motor.</p></li>
 </ul>
-<ol class="arabic simple" start="2">
-<li><p>The scaling laws are:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Motor mass : <span class="math notranslate nohighlight">\(M_{mot} = M_{mot,ref} \bigl (\frac{T_{mot}}{T_{mot,nom,ref}} \bigr) ^\frac{3}{3.5}\)</span></p></li>
-<li><p>Motor inertia : <span class="math notranslate nohighlight">\(J_{mot} = J_{mot,ref} \bigl (\frac{T_{mot}}{T_{mot,nom,ref}} \bigr) ^\frac{5}{3.5}\)</span></p></li>
-<li><p>Max motor speed : <span class="math notranslate nohighlight">\(\omega_{mot,max} = \omega_{mot,max,ref} \bigl (\frac{T_{mot}}{T_{mot,nom,ref}} \bigr) ^\frac{-1}{3.5}\)</span></p></li>
-<li><p>Max motor torque : <span class="math notranslate nohighlight">\(T_{mot,max} = T_{mot,max,ref} \bigl (\frac{T_{mot}}{T_{mot,nom,ref}} \bigr) ^1\)</span></p></li>
-</ul>
-<ol class="arabic simple" start="3">
-<li><p>We have to check that:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Max speed possible of the motor (coming from scaling laws) &gt; Max speed of the sizing scenario<br />
-<span class="math notranslate nohighlight">\(\omega_{mot,max} &gt;  max(\dot{x})\frac{N}{p}\)</span></p></li>
-<li><p>Max torque possible of the motor (coming from scaling laws) &gt; Max torque of the sizing scenario<br />
-<span class="math notranslate nohighlight">\(T_{mot,max,scaling} &gt;  T_{mot,max,scenario}\)</span></p></li>
-</ul>
+<p>The main problem is the existance of an algebraic loop. Here the choice of a motor, based on its max torque depends on its own inertia, which means we have to know what motor to chose before choosing it.<br />
+This  algebraic loop can be broken by admitting that the inertia torque is meaningless to evaluate the max torque, which allows us to choose a motor.<br />
+The global torque with inertia can subsequently be evaluated and compared to the torque of the motor we selected. To respect this last constraint, we add an oversizing constraint to the first sizing process, the solver  will chose by itself the value of this coefficient, which is at least 1 (in  the case of negligible inertia effects).</p>
 </section>
 </div>
+</section>
+<section id="sizing-code">
+<h2><span class="section-number">5.4.3. </span>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h2>
+<p>The sizing code is defined here in a function which can give an evaluation of the objective and of the constraints function of design variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sizing_code</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">arg</span><span class="o">=</span><span class="s2">&quot;print&quot;</span><span class="p">):</span>
     <span class="c1">#  Design variables</span>
     <span class="n">N</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Reduction ratio of the reducer</span>
-    <span class="n">T_mot</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Motor nominal torque</span>
-
-    <span class="c1"># --------------------------------------</span>
-    <span class="c1"># Parameter estimation with scaling laws</span>
-
-    <span class="c1"># Motor</span>
-    <span class="n">M_mot</span> <span class="o">=</span> <span class="n">M_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_nom_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
-    <span class="n">J_mot</span> <span class="o">=</span> <span class="n">J_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_nom_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
-    <span class="n">W_mot</span> <span class="o">=</span> <span class="n">W_mot_max_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_nom_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
-    <span class="n">T_mot_max</span> <span class="o">=</span> <span class="n">T_mot_max_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_nom_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">k_mot</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># oversizing coefficient</span>
 
     <span class="c1"># --------------------------------------</span>
     <span class="c1"># Load force</span>
     <span class="n">max_load</span> <span class="o">=</span> <span class="n">Fstat</span> <span class="o">+</span> <span class="n">M</span><span class="o">*</span><span class="n">Xppmax</span>   <span class="c1"># [N]</span>
+    
+    <span class="c1"># Torque approximation</span>
+    <span class="c1"># --------------------------------------</span>
+    <span class="n">T_mot_max</span> <span class="o">=</span> <span class="n">k_mot</span> <span class="o">*</span> <span class="n">max_load</span> <span class="o">/</span> <span class="n">N</span> <span class="o">*</span> <span class="n">pitch</span> <span class="c1"># [N.m] </span>
+    
+    <span class="c1"># --------------------------------------</span>
+    <span class="c1"># Parameter estimation with scaling laws</span>
+    
+    <span class="n">T_mot</span> <span class="o">=</span> <span class="n">T_mot_max</span><span class="o">/</span><span class="n">T_mot_max_ref</span><span class="o">*</span><span class="n">T_mot_max_ref</span>
+    
+    <span class="c1"># Motor</span>
+    <span class="n">M_mot</span> <span class="o">=</span> <span class="n">M_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_nom_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
+    <span class="n">J_mot</span> <span class="o">=</span> <span class="n">J_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_nom_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
+    <span class="n">W_mot</span> <span class="o">=</span> <span class="n">W_mot_max_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_nom_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
+
+    
     
     <span class="c1"># --------------------------------------</span>
     <span class="c1"># Motor torque calculation with motor inertia</span>
@@ -737,7 +713,7 @@
 
     <span class="c1"># Constraints (should be &gt;=0)</span>
     <span class="n">C1</span> <span class="o">=</span> <span class="n">W_mot</span> <span class="o">-</span> <span class="n">N</span> <span class="o">*</span> <span class="n">Xpmax</span> <span class="o">/</span> <span class="n">pitch</span>  <span class="c1"># speed margin</span>
-    <span class="n">C2</span> <span class="o">=</span> <span class="n">T_mot_max</span> <span class="o">-</span> <span class="n">T_mot_scenario</span>  <span class="c1"># Torque margin</span>
+    <span class="n">C2</span> <span class="o">=</span> <span class="n">T_mot_max</span> <span class="o">-</span> <span class="n">T_mot_scenario</span>  <span class="c1"># Torque margin </span>
     
     <span class="c1"># --------------------------------------</span>
     <span class="c1"># Objective and constraints</span>
@@ -777,7 +753,7 @@
 </div>
 </section>
 <section id="optimization-with-slsqp-algorithm">
-<h2><span class="section-number">5.2.4. </span>Optimization with SLSQP algorithm<a class="headerlink" href="#optimization-with-slsqp-algorithm" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.4.4. </span>Optimization with SLSQP algorithm<a class="headerlink" href="#optimization-with-slsqp-algorithm" title="Link to this heading">#</a></h2>
 <p>We will now use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html">opmization algorithms</a> of the Scipy package to solve and optimize the configuration. We will first use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.minimize-slsqp.html">SLSQP</a> algorithm without explicit expression of the gradient (Jacobian).</p>
 <p>The first step is to give an initial value of optimisation variables:</p>
 <div class="cell docutils container">
@@ -817,18 +793,18 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------------------------------
 Initial characteristics before optimization :
 Objective:
-     Motor mass = 2.58 kg
+     Motor mass = 26.68 kg
 Design variables:
      reduction_ratio =  5.00
-     Rated Motor torque  =  2.00 N.m
+     Rated Motor torque  =  30.51 N.m
 Performances:
      Max load = 47896 N
 Components characteristics:
-     Motor mass = 2.58 kg
-     Motor max torque = 8.54 N.m
+     Motor mass = 26.68 kg
+     Motor max torque = 30.51 N.m
 Constraints (should be &gt;= 0):
-     Speed margin: W_mot-reduction_ratio*max_speed/pitch= -128.746
-     Torque margin:  T_mot_max - T_mot_scenario= -9.077 
+     Speed margin: W_mot-reduction_ratio*max_speed/pitch= -592.694
+     Torque margin:  T_mot_max - T_mot_scenario= -100.428 
 -----------------------------------------------
 </pre></div>
 </div>
@@ -871,90 +847,42 @@ Constraints (should be &gt;= 0):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimization terminated successfully    (Exit mode 0)
-            Current function value: 0.0936881391621254
-            Iterations: 17
-            Function evaluations: 70
-            Gradient evaluations: 17
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Positive directional derivative for linesearch    (Exit mode 8)
+            Current function value: 0.09198229837941853
+            Iterations: 13
+            Function evaluations: 59
+            Gradient evaluations: 9
 -----------------------------------------------
 Final characteristics after optimization :
 Objective:
-     Motor mass = 9.37 kg
+     Motor mass = 9.20 kg
 Design variables:
-     reduction_ratio =  2.83
-     Rated Motor torque  =  9.00 N.m
+     reduction_ratio =  2.86
+     Rated Motor torque  =  8.81 N.m
 Performances:
      Max load = 47896 N
 Components characteristics:
-     Motor mass = 9.37 kg
-     Motor max torque = 38.40 N.m
+     Motor mass = 9.20 kg
+     Motor max torque = 8.81 N.m
 Constraints (should be &gt;= 0):
-     Speed margin: W_mot-reduction_ratio*max_speed/pitch= 0.000
-     Torque margin:  T_mot_max - T_mot_scenario= -0.000 
+     Speed margin: W_mot-reduction_ratio*max_speed/pitch= -2.235
+     Torque margin:  T_mot_max - T_mot_scenario= -29.089 
 -----------------------------------------------
 Calculation time:
- 0.13515281677246094 s
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/scipy/optimize/_slsqp_py.py:437: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
-  fx = wrapped_fun(x)
+ 0.13336825370788574 s
 </pre></div>
 </div>
 </div>
 </div>
+<div class="exercise admonition" id="Resolution speed">
+
+<p class="admonition-title"><span class="caption-number">Exercise 5.4 </span></p>
+<section id="exercise-content">
+<ul class="simple">
+<li><p>Compare the speed of execution of this optimization with the <a class="reference internal" href="2-optimization_examples.html"><span class="std std-doc">previous solution</span></a>. This speed can be evaluated with the number of calls to the function (the sizing code).</p></li>
+<li><p>Explain the observed discrepancy.</p></li>
+</ul>
 </section>
-<section id="optimization-with-differential-evolution-algorithm">
-<h2><span class="section-number">5.2.5. </span>Optimization with differential evolution algorithm<a class="headerlink" href="#optimization-with-differential-evolution-algorithm" title="Link to this heading">#</a></h2>
-<p>We will now use a <a class="reference external" href="https://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.differential_evolution.html">differential evolution</a> algorithm. Differential Evolution is stochastic in nature (does not use gradient methods) to find the minimium, and can search large areas of candidate space, but often requires larger numbers of function evaluations than conventional gradient based techniques. Differential evolution algorithms don’t manage directly constraints functions. A penalty method replaces the previous objective function.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Resolution of the problem</span>
-
-<span class="n">objective</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">sizing_code</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;objectiveP&quot;</span><span class="p">)</span>
-
-<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">differential_evolution</span><span class="p">(</span>
-    <span class="n">func</span><span class="o">=</span><span class="n">objective</span><span class="p">,</span>
-    <span class="n">bounds</span><span class="o">=</span><span class="p">[</span>
-        <span class="p">(</span><span class="n">reduction_ratio_min</span><span class="p">,</span> <span class="n">reduction_ratio_max</span><span class="p">),</span>
-        <span class="p">(</span><span class="n">Tmot_nom_min</span><span class="p">,</span> <span class="n">Tmot_nom_max</span><span class="p">),</span>
-    <span class="p">],</span>
-    <span class="n">tol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-
-<span class="c1"># Final characteristics after optimization</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------------------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Final characteristics after optimization :&quot;</span><span class="p">)</span>
-
-<span class="n">sizing_code</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;print&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------------------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculation time:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------------------------------
-Final characteristics after optimization :
-Objective:
-     Motor mass = 9.37 kg
-Design variables:
-     reduction_ratio =  2.83
-     Rated Motor torque  =  9.00 N.m
-Performances:
-     Max load = 47896 N
-Components characteristics:
-     Motor mass = 9.37 kg
-     Motor max torque = 38.40 N.m
-Constraints (should be &gt;= 0):
-     Speed margin: W_mot-reduction_ratio*max_speed/pitch= 0.000
-     Torque margin:  T_mot_max - T_mot_scenario= 0.000 
------------------------------------------------
-Calculation time:
- 0.14240789413452148 s
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -972,7 +900,7 @@ Calculation time:
         },
         kernelOptions: {
             name: "python3",
-            path: "./classes/Lecture4"
+            path: "./classes/Lecture4_new"
         },
         predefinedOutput: true
     }
@@ -990,20 +918,20 @@ Calculation time:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="1-design_and_optimization_problems.html"
+       href="3-sizing_procedures.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5.1. </span>Representation of a design problem and basics optimal design</p>
+        <p class="prev-next-title"><span class="section-number">5.3. </span>Development of a sizing procedure using design graphs</p>
       </div>
     </a>
     <a class="right-next"
-       href="3-sizing_procedures.html"
+       href="../../laboratories/Lab-package_delivery_UAV/summary.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.3. </span>Development of a sizing procedure using design graphs</p>
+        <p class="prev-next-title">Lab - Package delivery UAV</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1024,11 +952,10 @@ Calculation time:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">5.2.1. Objectives and specifications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-and-constraints">5.2.2. Objective and constraints</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">5.2.3. Sizing code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">5.2.4. Optimization with SLSQP algorithm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-differential-evolution-algorithm">5.2.5. Optimization with differential evolution algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">5.4.1. Objectives and specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-graph">5.4.2. Design graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">5.4.3. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">5.4.4. Optimization with SLSQP algorithm</a></li>
 </ul>
   </nav></div>
 
