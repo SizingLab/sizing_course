@@ -220,6 +220,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/4-estimation_models-linear_regression-student.html">Estimation models with dimensional analysis and linear regressions  (student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/4-estimation_models-scaling_laws-student.html">Scaling laws of electrical components (student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/5-simulation_models-student.html">Simulation models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6-sizing_models_introduction.html">Sizing models for multi-rotor definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6a-propeller_selection.html">Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6b-motor_selection.html">Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6b-motor_selection-student.html">Motor selection  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6c-battery_esc_selection.html">Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6c-battery_esc_selection-student.html">Battery and ESC selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6d-frame_selection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6d-frame_selection-student.html">Frame selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/7-system_sizing_code_optimization.html">Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/7-system_sizing_code_optimization-student.html">Sizing of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/8-design_exploration-student.html">Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/A1-sizing_equations.html">Appendix 1: Sizing equations</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-vega/summary.html">VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -545,13 +557,13 @@
 <p><img alt="Linear regression" src="../../_images/LinearRegression_ScatterPlot.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="CcvsQScjbbIO" data-shufflequestions="False"
+<div class="output text_html"><div id="mqIRmvaEkVIQ" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#CcvsQScjbbIO {
+#mqIRmvaEkVIQ {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -752,7 +764,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsCcvsQScjbbIO=[
+</style></div><script type="application/javascript">var questionsmqIRmvaEkVIQ=[
     {
         "question": "Which correlation correlation best describes the scatter plot?",
         "type": "multiple_choice",
@@ -1617,8 +1629,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("CcvsQScjbbIO")) {
-            show_questions(questionsCcvsQScjbbIO,  CcvsQScjbbIO); 
+          if(document.getElementById("mqIRmvaEkVIQ")) {
+            show_questions(questionsmqIRmvaEkVIQ,  mqIRmvaEkVIQ); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1627,8 +1639,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("CcvsQScjbbIO");
-        // console.log(document.getElementById("CcvsQScjbbIO"));
+        //console.log("mqIRmvaEkVIQ");
+        // console.log(document.getElementById("mqIRmvaEkVIQ"));
 
         try_show();
         }
@@ -1638,13 +1650,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Bearing correlation matrix" src="../../_images/LinearRegression_CorrelationBearing.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="GBpluiFDedzr" data-shufflequestions="False"
+<div class="output text_html"><div id="ovPWVkmMDzOt" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#GBpluiFDedzr {
+#ovPWVkmMDzOt {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1845,7 +1857,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsGBpluiFDedzr=[
+</style></div><script type="application/javascript">var questionsovPWVkmMDzOt=[
     {
         "question": "Select the variable that seems the most related to the Mass.",
         "type": "multiple_choice",
@@ -2679,8 +2691,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("GBpluiFDedzr")) {
-            show_questions(questionsGBpluiFDedzr,  GBpluiFDedzr); 
+          if(document.getElementById("ovPWVkmMDzOt")) {
+            show_questions(questionsovPWVkmMDzOt,  ovPWVkmMDzOt); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2689,8 +2701,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("GBpluiFDedzr");
-        // console.log(document.getElementById("GBpluiFDedzr"));
+        //console.log("ovPWVkmMDzOt");
+        // console.log(document.getElementById("ovPWVkmMDzOt"));
 
         try_show();
         }
@@ -2703,13 +2715,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Best fit" src="../../_images/LinearRegression_bestFit.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="moxjlCLcACKL" data-shufflequestions="False"
+<div class="output text_html"><div id="NhSJzaNRVimR" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#moxjlCLcACKL {
+#NhSJzaNRVimR {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2910,7 +2922,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsmoxjlCLcACKL=[
+</style></div><script type="application/javascript">var questionsNhSJzaNRVimR=[
     {
         "question": "For which data set is this line the best fit?",
         "type": "multiple_choice",
@@ -3744,8 +3756,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("moxjlCLcACKL")) {
-            show_questions(questionsmoxjlCLcACKL,  moxjlCLcACKL); 
+          if(document.getElementById("NhSJzaNRVimR")) {
+            show_questions(questionsNhSJzaNRVimR,  NhSJzaNRVimR); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -3754,8 +3766,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("moxjlCLcACKL");
-        // console.log(document.getElementById("moxjlCLcACKL"));
+        //console.log("NhSJzaNRVimR");
+        // console.log(document.getElementById("NhSJzaNRVimR"));
 
         try_show();
         }
@@ -3764,13 +3776,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Regression analysis" src="../../_images/LinearRegression_ValidationRegression.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="rltBxPLxxyRa" data-shufflequestions="False"
+<div class="output text_html"><div id="UvefoHhLHaPH" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#rltBxPLxxyRa {
+#UvefoHhLHaPH {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3971,7 +3983,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsrltBxPLxxyRa=[
+</style></div><script type="application/javascript">var questionsUvefoHhLHaPH=[
     {
         "question": "What is the greatest concern about the regression above?",
         "type": "multiple_choice",
@@ -4810,8 +4822,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("rltBxPLxxyRa")) {
-            show_questions(questionsrltBxPLxxyRa,  rltBxPLxxyRa); 
+          if(document.getElementById("UvefoHhLHaPH")) {
+            show_questions(questionsUvefoHhLHaPH,  UvefoHhLHaPH); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -4820,8 +4832,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("rltBxPLxxyRa");
-        // console.log(document.getElementById("rltBxPLxxyRa"));
+        //console.log("UvefoHhLHaPH");
+        // console.log(document.getElementById("UvefoHhLHaPH"));
 
         try_show();
         }
@@ -4831,13 +4843,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Regression analysis" src="../../_images/LinearRegression_BearingRegression.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="SeAnPharqwwq" data-shufflequestions="False"
+<div class="output text_html"><div id="LEGiYbJyeUDE" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#SeAnPharqwwq {
+#LEGiYbJyeUDE {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -5038,7 +5050,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsSeAnPharqwwq=[
+</style></div><script type="application/javascript">var questionsLEGiYbJyeUDE=[
     {
         "question": "Some points have been removed. What for?",
         "type": "multiple_choice",
@@ -5888,8 +5900,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("SeAnPharqwwq")) {
-            show_questions(questionsSeAnPharqwwq,  SeAnPharqwwq); 
+          if(document.getElementById("LEGiYbJyeUDE")) {
+            show_questions(questionsLEGiYbJyeUDE,  LEGiYbJyeUDE); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -5898,8 +5910,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("SeAnPharqwwq");
-        // console.log(document.getElementById("SeAnPharqwwq"));
+        //console.log("LEGiYbJyeUDE");
+        // console.log(document.getElementById("LEGiYbJyeUDE"));
 
         try_show();
         }
@@ -5909,13 +5921,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Regression analysis" src="../../_images/LinearRegression_BearingTransformation.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="VcnUKiSExUPm" data-shufflequestions="False"
+<div class="output text_html"><div id="XRUySGqgWFkG" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#VcnUKiSExUPm {
+#XRUySGqgWFkG {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -6116,7 +6128,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsVcnUKiSExUPm=[
+</style></div><script type="application/javascript">var questionsXRUySGqgWFkG=[
     {
         "question": "What is the equation of the regression?",
         "type": "multiple_choice",
@@ -6945,8 +6957,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("VcnUKiSExUPm")) {
-            show_questions(questionsVcnUKiSExUPm,  VcnUKiSExUPm); 
+          if(document.getElementById("XRUySGqgWFkG")) {
+            show_questions(questionsXRUySGqgWFkG,  XRUySGqgWFkG); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -6955,8 +6967,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("VcnUKiSExUPm");
-        // console.log(document.getElementById("VcnUKiSExUPm"));
+        //console.log("XRUySGqgWFkG");
+        // console.log(document.getElementById("XRUySGqgWFkG"));
 
         try_show();
         }

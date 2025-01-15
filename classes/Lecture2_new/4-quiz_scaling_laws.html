@@ -222,6 +222,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/4-estimation_models-linear_regression-student.html">Estimation models with dimensional analysis and linear regressions  (student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/4-estimation_models-scaling_laws-student.html">Scaling laws of electrical components (student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/5-simulation_models-student.html">Simulation models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6-sizing_models_introduction.html">Sizing models for multi-rotor definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6a-propeller_selection.html">Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6b-motor_selection.html">Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6b-motor_selection-student.html">Motor selection  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6c-battery_esc_selection.html">Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6c-battery_esc_selection-student.html">Battery and ESC selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6d-frame_selection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6d-frame_selection-student.html">Frame selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/7-system_sizing_code_optimization.html">Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/7-system_sizing_code_optimization-student.html">Sizing of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/8-design_exploration-student.html">Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/A1-sizing_equations.html">Appendix 1: Sizing equations</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-vega/summary.html">VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -548,13 +560,13 @@
 <p>We assume to have similarity on all geometrical parameters : <span class="math notranslate nohighlight">\(r^* = d^* = …= l^*\)</span></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="CgrgcElwxYGF" data-shufflequestions="False"
+<div class="output text_html"><div id="rVSBDQgdItiX" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#CgrgcElwxYGF {
+#rVSBDQgdItiX {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -755,7 +767,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsCgrgcElwxYGF=[
+</style></div><script type="application/javascript">var questionsrVSBDQgdItiX=[
     {
         "question": "What is the evolution of the areas?",
         "type": "multiple_choice",
@@ -1687,8 +1699,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("CgrgcElwxYGF")) {
-            show_questions(questionsCgrgcElwxYGF,  CgrgcElwxYGF); 
+          if(document.getElementById("rVSBDQgdItiX")) {
+            show_questions(questionsrVSBDQgdItiX,  rVSBDQgdItiX); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1697,8 +1709,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("CgrgcElwxYGF");
-        // console.log(document.getElementById("CgrgcElwxYGF"));
+        //console.log("rVSBDQgdItiX");
+        // console.log(document.getElementById("rVSBDQgdItiX"));
 
         try_show();
         }
@@ -1718,13 +1730,13 @@ if (typeof version == 'undefined') {
 <p><img alt="beam" src="../../_images/scaling_beam.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="opmEPRIbTwet" data-shufflequestions="False"
+<div class="output text_html"><div id="NAAIcpZAQmTL" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#opmEPRIbTwet {
+#NAAIcpZAQmTL {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1925,7 +1937,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsopmEPRIbTwet=[
+</style></div><script type="application/javascript">var questionsNAAIcpZAQmTL=[
     {
         "question": "Give the evolution of stress $\\sigma$ with geometrical dimension:",
         "type": "multiple_choice",
@@ -2796,8 +2808,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("opmEPRIbTwet")) {
-            show_questions(questionsopmEPRIbTwet,  opmEPRIbTwet); 
+          if(document.getElementById("NAAIcpZAQmTL")) {
+            show_questions(questionsNAAIcpZAQmTL,  NAAIcpZAQmTL); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2806,8 +2818,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("opmEPRIbTwet");
-        // console.log(document.getElementById("opmEPRIbTwet"));
+        //console.log("NAAIcpZAQmTL");
+        // console.log(document.getElementById("NAAIcpZAQmTL"));
 
         try_show();
         }
@@ -2819,13 +2831,13 @@ if (typeof version == 'undefined') {
 <p><img alt="rod-end" src="../../_images/scaling_rodend.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="ENAICAMXkhOT" data-shufflequestions="False"
+<div class="output text_html"><div id="lPexKzPGEEJd" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#ENAICAMXkhOT {
+#lPexKzPGEEJd {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3026,7 +3038,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsENAICAMXkhOT=[
+</style></div><script type="application/javascript">var questionslPexKzPGEEJd=[
     {
         "question": "Estimate the diameter $d$ of a rod-end  with a static load $C_0 = 50 kN$:",
         "type": "multiple_choice",
@@ -3860,8 +3872,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("ENAICAMXkhOT")) {
-            show_questions(questionsENAICAMXkhOT,  ENAICAMXkhOT); 
+          if(document.getElementById("lPexKzPGEEJd")) {
+            show_questions(questionslPexKzPGEEJd,  lPexKzPGEEJd); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -3870,8 +3882,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("ENAICAMXkhOT");
-        // console.log(document.getElementById("ENAICAMXkhOT"));
+        //console.log("lPexKzPGEEJd");
+        // console.log(document.getElementById("lPexKzPGEEJd"));
 
         try_show();
         }

@@ -221,6 +221,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/4-estimation_models-linear_regression-student.html">Estimation models with dimensional analysis and linear regressions  (student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/4-estimation_models-scaling_laws-student.html">Scaling laws of electrical components (student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/5-simulation_models-student.html">Simulation models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6-sizing_models_introduction.html">Sizing models for multi-rotor definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6a-propeller_selection.html">Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6b-motor_selection.html">Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6b-motor_selection-student.html">Motor selection  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6c-battery_esc_selection.html">Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6c-battery_esc_selection-student.html">Battery and ESC selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6d-frame_selection.html">Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6d-frame_selection-student.html">Frame selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/7-system_sizing_code_optimization.html">Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/7-system_sizing_code_optimization-student.html">Sizing of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/8-design_exploration-student.html">Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/A1-sizing_equations.html">Appendix 1: Sizing equations</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -561,14 +573,14 @@
 <p>Once the scope has been defined, you may build a process tree, which is a hierarchical representation of the materials and energy required to fulfill the functional unit.</p>
 <div class="exercise admonition" id="ex1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 13 </span> (Scope definition)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 24 </span> (Scope definition)</p>
 <section id="exercise-content">
 <p>Provide a definition for the functional unit of the inductor and the boundaries of the system. Build the associated process tree.</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="sol1">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#ex1">  ( 13</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex1">  ( 24</a></p>
 <section id="solution-content">
 <p>Here is one solution:</p>
 <ul class="simple">
@@ -588,7 +600,7 @@
 <p>Collecting data for a Life Cycle Inventory can be a time-consuming process. In this study, we will rely on a pre-existing database that directly provides the impacts associated with the production of the coil and the ferromagnetic core. This includes the entire production chain, from raw material extraction to the final product, including transportation from one site to another. In addition, the database provides the environmental impacts resulting from the production of 1 kWh of electricity, using the French electricity mix. This is useful to take into account the impact of energy losses.</p>
 <div class="exercise admonition" id="ex2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 14 </span> (Get familiar with LCA data)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 25 </span> (Get familiar with LCA data)</p>
 <section id="exercise-content">
 <p>The following lines import the databases and display the data over 16 impact categories, including climate change, particulate matter formation, and material resources depletion.</p>
 <p>Beware, the impacts are provided for 1 kg of final product, or, for the electricity, 1 kWh of electricity production.</p>
@@ -1062,14 +1074,14 @@
 <p>Now that we know how much impacts correspond to the production of 1 kg of copper, 1 kg of ferrite pot, and 1 kWh of electricity, the next step is to calculate the total impact of the inductor.</p>
 <div class="exercise admonition" id="ex3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 15 </span> (Calculate the impacts for the inductor system)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 26 </span> (Calculate the impacts for the inductor system)</p>
 <section id="exercise-content">
 <p>Using the process tree, calculate the impacts of the inductor by summing the impacts of each subprocess.</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="my-solution">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#ex3">  ( 15</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex3">  ( 26</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">M_ferrite</span> <span class="o">=</span> <span class="mf">2.88</span>  <span class="c1"># [kg] mass of ferrite pots</span>
 <span class="n">M_copper</span> <span class="o">=</span> <span class="mf">0.72</span>  <span class="c1"># [kg] mass of copper</span>
@@ -1384,7 +1396,7 @@
 </div>
 <div class="exercise admonition" id="ex4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 16 </span> (Contributions)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 27 </span> (Contributions)</p>
 <section id="exercise-content">
 <ul class="simple">
 <li><p>For each impact category, what are the main contributors?</p></li>
@@ -1394,14 +1406,14 @@
 </div>
 <div class="exercise admonition" id="ex4.2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 17 </span> (Most relevant impacts?)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 28 </span> (Most relevant impacts?)</p>
 <section id="exercise-content">
 <p>With the two previous plots, is it possible to compare the different impact categories with each other? Why?</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="laboratories/Lab-watt_project/10_LCA_Inductor-solution-7">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#ex4.2">  ( 17</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex4.2">  ( 28</a></p>
 <section id="solution-content">
 <p>Environmental impact scores in LCA are expressed in different physical units, so it is not possible to compare the different categories directly.</p>
 <p>One solution is to <em>normalize</em> the impacts with respect to a reference system, so that the results are expressed without unit.</p>
@@ -1441,7 +1453,7 @@
 </div>
 <div class="exercise admonition" id="ex5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 18 </span> (Interpretation with normalized results)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 29 </span> (Interpretation with normalized results)</p>
 <section id="exercise-content">
 <p>Have a look at the normalized results. What impact categories are the most relevant?</p>
 </section>
@@ -1459,7 +1471,7 @@
 <p>To do so, we have to change the objective function in the sizing code.</p>
 <div class="exercise admonition" id="ex6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 19 </span> (Sizing code modification)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 30 </span> (Sizing code modification)</p>
 <section id="exercise-content">
 <p>Modify the sizing code to return the environmental impact of the inductor for the requested category.</p>
 </section>
@@ -1632,7 +1644,7 @@
 <p>We can now re-run the optimization to size the inductor with respect to different objective functions.</p>
 <div class="exercise admonition" id="ex7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 20 </span> (Comparison of objective functions)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 31 </span> (Comparison of objective functions)</p>
 <section id="exercise-content">
 <p>Run the optimization with the following objective functions:</p>
 <ul class="simple">
@@ -1756,14 +1768,14 @@ Final characteristics after optimization :
 </div>
 <div class="exercise admonition" id="ex8">
 
-<p class="admonition-title"><span class="caption-number">Exercise 21 </span> (Design decision)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 32 </span> (Design decision)</p>
 <section id="exercise-content">
 <p>Propose a strategy to make a decision about which sizing should be used for the inductor. Should we select the inductor with lowest mass? the one that minimizes climate change? …</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="laboratories/Lab-watt_project/10_LCA_Inductor-solution-13">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#ex8">  ( 21</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex8">  ( 32</a></p>
 <section id="solution-content">
 <p>One way to make a environmentally-informed decision would be to select the design that minimizes the most relevant impact categories, as observed with the normalized results.</p>
 <p>Recall that two of the most important impact categories were the depletion of non-renewable energy resources and the depletion of metals/minerals. However, minimizing one or the other of these impacts leads to completely different designs for the inductor.</p>
