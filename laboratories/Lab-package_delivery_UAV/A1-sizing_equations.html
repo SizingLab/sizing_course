@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6.23. Appendix 1: Sizing equations &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>6.24. Appendix 1: Sizing equations &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -68,7 +68,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="7. Lab - VEGA Launcher TVC EMA case study" href="../Lab-vega/summary.html" />
-    <link rel="prev" title="6.22. Design optimization and exploration of a multirotor drone (ISAE)" href="8-design_exploration-student.html" />
+    <link rel="prev" title="6.23. Design optimization and exploration of a multirotor drone (ISAE)" href="8-design_exploration-student.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -224,16 +224,17 @@
 <li class="toctree-l2"><a class="reference internal" href="5-simulation_models-student.html">6.11. Simulation models (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6-sizing_models_introduction.html">6.12. Sizing models for multi-rotor definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6a-propeller_selection.html">6.13. Propeller selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection.html">6.14. Motor selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection-student.html">6.15. Motor selection  (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection.html">6.16. Battery and ESC selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection-student.html">6.17. Battery and ESC selection (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection.html">6.18. Frame selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection-student.html">6.19. Frame selection (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization.html">6.20. Sizing of a multirotor drone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization-student.html">6.21. Sizing of a multirotor drone (ISAE)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="8-design_exploration-student.html">6.22. Design optimization and exploration of a multirotor drone (ISAE)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.23. Appendix 1: Sizing equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6a-propeller_selection-student.html">6.14. Propeller selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection.html">6.15. Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection-student.html">6.16. Motor selection  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection.html">6.17. Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection-student.html">6.18. Battery and ESC selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection.html">6.19. Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection-student.html">6.20. Frame selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization.html">6.21. Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization-student.html">6.22. Sizing of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8-design_exploration-student.html">6.23. Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.24. Appendix 1: Sizing equations</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">7. VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -531,22 +532,22 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-notation">6.23.1. General notation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-variables">6.23.1.1. Power variables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrical-dimensions">6.23.1.2. Geometrical dimensions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-variables">6.23.1.3. Other variables:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-i-values-variable-definition">6.23.1.4. Index <span class="math notranslate nohighlight">\(i\)</span> (values, variable definition):</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-j-components">6.23.1.5. Index <span class="math notranslate nohighlight">\(j\)</span> (components)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-k-sizing-scenarios-reference-values">6.23.1.6. Index <span class="math notranslate nohighlight">\(k\)</span> (sizing scenarios, reference values)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-notation">6.24.1. General notation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-variables">6.24.1.1. Power variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrical-dimensions">6.24.1.2. Geometrical dimensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-variables">6.24.1.3. Other variables:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-i-values-variable-definition">6.24.1.4. Index <span class="math notranslate nohighlight">\(i\)</span> (values, variable definition):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-j-components">6.24.1.5. Index <span class="math notranslate nohighlight">\(j\)</span> (components)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-k-sizing-scenarios-reference-values">6.24.1.6. Index <span class="math notranslate nohighlight">\(k\)</span> (sizing scenarios, reference values)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-mass">6.23.2. Balance mass</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-forces">6.23.3. Global forces</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propeller">6.23.4. Propeller</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motor">6.23.5. Motor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esc">6.23.6. ESC</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#battery">6.23.7. Battery</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frame">6.23.8. Frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-mass">6.24.2. Balance mass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-forces">6.24.3. Global forces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propeller">6.24.4. Propeller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motor">6.24.5. Motor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esc">6.24.6. ESC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#battery">6.24.7. Battery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frame">6.24.8. Frame</a></li>
 </ul>
             </nav>
         </div>
@@ -560,20 +561,20 @@
                   
   <p><img alt="SizingLab" src="laboratories/Lab-package_delivery_UAV/pictures/logo_sizinglab.png" /></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="appendix-1-sizing-equations">
-<h1><span class="section-number">6.23. </span>Appendix 1: Sizing equations<a class="headerlink" href="#appendix-1-sizing-equations" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6.24. </span>Appendix 1: Sizing equations<a class="headerlink" href="#appendix-1-sizing-equations" title="Link to this heading">#</a></h1>
 <p>Summary of all sizing equations (sizing scenarios and estimation models).</p>
 <p>Here is a convention used to express variables:</p>
 <figure class="align-center" id="appendix-glosary">
 <a class="reference internal image-reference" href="../../_images/glosary.png"><img alt="../../_images/glosary.png" src="../../_images/glosary.png" style="width: 40%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.24 </span><span class="caption-text">Glosary for variable naming</span><a class="headerlink" href="#appendix-glosary" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.25 </span><span class="caption-text">Glosary for variable naming</span><a class="headerlink" href="#appendix-glosary" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>When coding the variable, the comas <code class="docutils literal notranslate"><span class="pre">,</span></code> are replaced with underscores <code class="docutils literal notranslate"><span class="pre">_</span></code>for example <span class="math notranslate nohighlight">\(T_{nom,mot,hov}\)</span> will be coded <code class="docutils literal notranslate"><span class="pre">T_nom_mot_hov</span></code>.</p>
 <section id="general-notation">
-<h2><span class="section-number">6.23.1. </span>General notation<a class="headerlink" href="#general-notation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.24.1. </span>General notation<a class="headerlink" href="#general-notation" title="Link to this heading">#</a></h2>
 <section id="power-variables">
-<h3><span class="section-number">6.23.1.1. </span>Power variables<a class="headerlink" href="#power-variables" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.24.1.1. </span>Power variables<a class="headerlink" href="#power-variables" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(F\)</span> : force, thrust <span class="math notranslate nohighlight">\([N]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(T\)</span> : torque <span class="math notranslate nohighlight">\([N.m]\)</span></p></li>
@@ -588,7 +589,7 @@
 </ul>
 </section>
 <section id="geometrical-dimensions">
-<h3><span class="section-number">6.23.1.2. </span>Geometrical dimensions<a class="headerlink" href="#geometrical-dimensions" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.24.1.2. </span>Geometrical dimensions<a class="headerlink" href="#geometrical-dimensions" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(r\)</span> : radius <span class="math notranslate nohighlight">\([m]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(l\)</span> : length <span class="math notranslate nohighlight">\([m]\)</span></p></li>
@@ -600,7 +601,7 @@
 </ul>
 </section>
 <section id="other-variables">
-<h3><span class="section-number">6.23.1.3. </span>Other variables:<a class="headerlink" href="#other-variables" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.24.1.3. </span>Other variables:<a class="headerlink" href="#other-variables" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(M\)</span> : Mass <span class="math notranslate nohighlight">\([kg]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(g\)</span> : Gravity constant <span class="math notranslate nohighlight">\([N/kg]\)</span></p></li>
@@ -614,7 +615,7 @@
 </ul>
 </section>
 <section id="index-i-values-variable-definition">
-<h3><span class="section-number">6.23.1.4. </span>Index <span class="math notranslate nohighlight">\(i\)</span> (values, variable definition):<a class="headerlink" href="#index-i-values-variable-definition" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.24.1.4. </span>Index <span class="math notranslate nohighlight">\(i\)</span> (values, variable definition):<a class="headerlink" href="#index-i-values-variable-definition" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(moy\)</span> : nominal</p></li>
 <li><p><span class="math notranslate nohighlight">\(max\)</span> : maximum</p></li>
@@ -626,7 +627,7 @@
 </ul>
 </section>
 <section id="index-j-components">
-<h3><span class="section-number">6.23.1.5. </span>Index <span class="math notranslate nohighlight">\(j\)</span> (components)<a class="headerlink" href="#index-j-components" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.24.1.5. </span>Index <span class="math notranslate nohighlight">\(j\)</span> (components)<a class="headerlink" href="#index-j-components" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(pro\)</span> : propeller</p></li>
 <li><p><span class="math notranslate nohighlight">\(mot\)</span> : motor</p></li>
@@ -640,7 +641,7 @@
 </ul>
 </section>
 <section id="index-k-sizing-scenarios-reference-values">
-<h3><span class="section-number">6.23.1.6. </span>Index <span class="math notranslate nohighlight">\(k\)</span> (sizing scenarios, reference values)<a class="headerlink" href="#index-k-sizing-scenarios-reference-values" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.24.1.6. </span>Index <span class="math notranslate nohighlight">\(k\)</span> (sizing scenarios, reference values)<a class="headerlink" href="#index-k-sizing-scenarios-reference-values" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(hov\)</span> : Hover</p></li>
 <li><p><span class="math notranslate nohighlight">\(to\)</span> : Take-Off</p></li>
@@ -651,11 +652,11 @@
 </section>
 </section>
 <section id="balance-mass">
-<h2><span class="section-number">6.23.2. </span>Balance mass<a class="headerlink" href="#balance-mass" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.24.2. </span>Balance mass<a class="headerlink" href="#balance-mass" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(M_{total}=\left(M_{mot}+M_{esc}+M_{pro}\right) \cdot N_{pro}+ \left(M_{arm}+M_{LG}\right) \cdot N_{arm}+M_{body}+M_{bat}+M_{pay}\)</span></p>
 </section>
 <section id="global-forces">
-<h2><span class="section-number">6.23.3. </span>Global forces<a class="headerlink" href="#global-forces" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.24.3. </span>Global forces<a class="headerlink" href="#global-forces" title="Link to this heading">#</a></h2>
 <p>Hover:</p>
 <p><span class="math notranslate nohighlight">\(F_{total,hov} = M_{total}g\)</span></p>
 <p>Take-Off:</p>
@@ -666,7 +667,7 @@
 <p><span class="math notranslate nohighlight">\(F_{pro,j}=\frac{F_{total,j}}{N_{pro}}\)</span></p>
 </section>
 <section id="propeller">
-<h2><span class="section-number">6.23.4. </span>Propeller<a class="headerlink" href="#propeller" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.24.4. </span>Propeller<a class="headerlink" href="#propeller" title="Link to this heading">#</a></h2>
 <p>Rotational speed of propeller:</p>
 <p><span class="math notranslate nohighlight">\(\Omega_{pro,k} = \frac{n_{pro,k}}{2\pi}\)</span></p>
 <p>Thrust generated per propeller:</p>
@@ -682,7 +683,7 @@
 <p><span class="math notranslate nohighlight">\(C_{p,pro,k,stat}=-1.48 \cdot 10^{-3} + 9.72 \cdot 10^{-2}\frac{p_{pro,k}}{D_{pro,k}}\)</span></p>
 </section>
 <section id="motor">
-<h2><span class="section-number">6.23.5. </span>Motor<a class="headerlink" href="#motor" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.24.5. </span>Motor<a class="headerlink" href="#motor" title="Link to this heading">#</a></h2>
 <p>Analytical equations:</p>
 <p><span class="math notranslate nohighlight">\(T_{mot,k} = K_TI_{mot,j}\)</span></p>
 <p><span class="math notranslate nohighlight">\(T_{mot,k} = T_{pro,k}+T_{fr,mot,k}\)</span></p>
@@ -698,7 +699,7 @@
 <p><span class="math notranslate nohighlight">\(J_{mot}=J_{mot,ref}\left(\frac{T_{nom,mot}}{T_{nom,mot,ref}}\right)^{5/3.5}\)</span></p>
 </section>
 <section id="esc">
-<h2><span class="section-number">6.23.6. </span>ESC<a class="headerlink" href="#esc" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.24.6. </span>ESC<a class="headerlink" href="#esc" title="Link to this heading">#</a></h2>
 <p>Corner power or apparent power:</p>
 <p><span class="math notranslate nohighlight">\(P_{esc,to}=P_{mot,to}\frac{U_{bat}}{U_{mot,to}}\)</span></p>
 <p>Scenario condition:</p>
@@ -708,7 +709,7 @@
 <p><span class="math notranslate nohighlight">\(M_{esc} = M_{esc,ref}\frac{P_{esc}}{P_{esc,ref}}\)</span></p>
 </section>
 <section id="battery">
-<h2><span class="section-number">6.23.7. </span>Battery<a class="headerlink" href="#battery" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.24.7. </span>Battery<a class="headerlink" href="#battery" title="Link to this heading">#</a></h2>
 <p>Condition for voltage : <span class="math notranslate nohighlight">\(U_{bat} &gt; U_{mot,to}\)</span></p>
 <p>Condition for power : <span class="math notranslate nohighlight">\(U_{bat}I_{bat} &gt; \frac{U_{mot,to}I_{mot,to}N_{pro,to}}{\eta_{esc}}\)</span></p>
 <p>Condition for autonomy: <span class="math notranslate nohighlight">\(0.8C_{bat} &gt; I_{bat} \cdot t_{hov}\)</span></p>
@@ -720,7 +721,7 @@
 <p><span class="math notranslate nohighlight">\(E_{bat}=E_{bat,ref} \cdot \frac{M_{bat}}{M_{bat,ref}}\)</span></p>
 </section>
 <section id="frame">
-<h2><span class="section-number">6.23.8. </span>Frame<a class="headerlink" href="#frame" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.24.8. </span>Frame<a class="headerlink" href="#frame" title="Link to this heading">#</a></h2>
 <p>Max force per arm:
 <span class="math notranslate nohighlight">\(\displaystyle F_{max,arm} = N_{pro,arm} \cdot F_{pro,k}\)</span></p>
 <p>Minimum arm length:
@@ -775,7 +776,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6.22. </span>Design optimization and exploration of a multirotor drone (ISAE)</p>
+        <p class="prev-next-title"><span class="section-number">6.23. </span>Design optimization and exploration of a multirotor drone (ISAE)</p>
       </div>
     </a>
     <a class="right-next"
@@ -804,22 +805,22 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-notation">6.23.1. General notation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-variables">6.23.1.1. Power variables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrical-dimensions">6.23.1.2. Geometrical dimensions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-variables">6.23.1.3. Other variables:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-i-values-variable-definition">6.23.1.4. Index <span class="math notranslate nohighlight">\(i\)</span> (values, variable definition):</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-j-components">6.23.1.5. Index <span class="math notranslate nohighlight">\(j\)</span> (components)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-k-sizing-scenarios-reference-values">6.23.1.6. Index <span class="math notranslate nohighlight">\(k\)</span> (sizing scenarios, reference values)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-notation">6.24.1. General notation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-variables">6.24.1.1. Power variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrical-dimensions">6.24.1.2. Geometrical dimensions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-variables">6.24.1.3. Other variables:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-i-values-variable-definition">6.24.1.4. Index <span class="math notranslate nohighlight">\(i\)</span> (values, variable definition):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-j-components">6.24.1.5. Index <span class="math notranslate nohighlight">\(j\)</span> (components)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-k-sizing-scenarios-reference-values">6.24.1.6. Index <span class="math notranslate nohighlight">\(k\)</span> (sizing scenarios, reference values)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-mass">6.23.2. Balance mass</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-forces">6.23.3. Global forces</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propeller">6.23.4. Propeller</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motor">6.23.5. Motor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esc">6.23.6. ESC</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#battery">6.23.7. Battery</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frame">6.23.8. Frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-mass">6.24.2. Balance mass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-forces">6.24.3. Global forces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propeller">6.24.4. Propeller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motor">6.24.5. Motor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esc">6.24.6. ESC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#battery">6.24.7. Battery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frame">6.24.8. Frame</a></li>
 </ul>
   </nav></div>
 

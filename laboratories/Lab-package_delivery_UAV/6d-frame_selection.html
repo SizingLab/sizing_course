@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6.18. Frame selection &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>6.19. Frame selection &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -65,8 +65,8 @@
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6.19. Frame selection (student version)" href="6d-frame_selection-student.html" />
-    <link rel="prev" title="6.17. Battery and ESC selection (student version)" href="6c-battery_esc_selection-student.html" />
+    <link rel="next" title="6.20. Frame selection (student version)" href="6d-frame_selection-student.html" />
+    <link rel="prev" title="6.18. Battery and ESC selection (student version)" href="6c-battery_esc_selection-student.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -222,16 +222,17 @@
 <li class="toctree-l2"><a class="reference internal" href="5-simulation_models-student.html">6.11. Simulation models (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6-sizing_models_introduction.html">6.12. Sizing models for multi-rotor definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6a-propeller_selection.html">6.13. Propeller selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection.html">6.14. Motor selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection-student.html">6.15. Motor selection  (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection.html">6.16. Battery and ESC selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection-student.html">6.17. Battery and ESC selection (student version)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.18. Frame selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection-student.html">6.19. Frame selection (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization.html">6.20. Sizing of a multirotor drone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization-student.html">6.21. Sizing of a multirotor drone (ISAE)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="8-design_exploration-student.html">6.22. Design optimization and exploration of a multirotor drone (ISAE)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="A1-sizing_equations.html">6.23. Appendix 1: Sizing equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6a-propeller_selection-student.html">6.14. Propeller selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection.html">6.15. Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection-student.html">6.16. Motor selection  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection.html">6.17. Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection-student.html">6.18. Battery and ESC selection (student version)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.19. Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection-student.html">6.20. Frame selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization.html">6.21. Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization-student.html">6.22. Sizing of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8-design_exploration-student.html">6.23. Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="A1-sizing_equations.html">6.24. Appendix 1: Sizing equations</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">7. VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -529,8 +530,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-graph">6.18.1. Design graph</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">6.18.1.1. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-graph">6.19.1. Design graph</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">6.19.1.1. Sizing code</a></li>
 </ul>
 </li>
 </ul>
@@ -545,20 +546,20 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="frame-selection">
-<h1><span class="section-number">6.18. </span>Frame selection<a class="headerlink" href="#frame-selection" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6.19. </span>Frame selection<a class="headerlink" href="#frame-selection" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Scott Delbecq (ISAE-SUPAERO) and Félix Pollet (ISAE-SUPAERO), Toulouse, France.</em></p>
 <section id="design-graph">
-<h2><span class="section-number">6.18.1. </span>Design graph<a class="headerlink" href="#design-graph" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.19.1. </span>Design graph<a class="headerlink" href="#design-graph" title="Link to this heading">#</a></h2>
 <p>The following diagram represents the design graph of the frame selection.</p>
 <figure class="align-center" id="design-graph-airframe">
 <a class="reference internal image-reference" href="../../_images/DesignGraphs_airframe.svg"><img alt="../../_images/DesignGraphs_airframe.svg" src="../../_images/DesignGraphs_airframe.svg" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.21 </span><span class="caption-text">Airframe design graph</span><a class="headerlink" href="#design-graph-airframe" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.22 </span><span class="caption-text">Airframe design graph</span><a class="headerlink" href="#design-graph-airframe" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The design graphs for the overall drone system can be found in <a class="reference download internal" download="" href="../../_downloads/6801ee8687fad90238d36587895839c1/DesignGraphs_Overall_Solution.pdf"><span class="xref download myst">here</span></a>.</p>
 <section id="sizing-code">
-<h3><span class="section-number">6.18.1.1. </span>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.19.1.1. </span>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -675,7 +676,7 @@ sigma_max   float      70000000.0
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6.17. </span>Battery and ESC selection (student version)</p>
+        <p class="prev-next-title"><span class="section-number">6.18. </span>Battery and ESC selection (student version)</p>
       </div>
     </a>
     <a class="right-next"
@@ -683,7 +684,7 @@ sigma_max   float      70000000.0
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.19. </span>Frame selection (student version)</p>
+        <p class="prev-next-title"><span class="section-number">6.20. </span>Frame selection (student version)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -704,8 +705,8 @@ sigma_max   float      70000000.0
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-graph">6.18.1. Design graph</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">6.18.1.1. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-graph">6.19.1. Design graph</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">6.19.1.1. Sizing code</a></li>
 </ul>
 </li>
 </ul>

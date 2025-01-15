@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6.20. Sizing of a multirotor drone &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>6.21. Sizing of a multirotor drone &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -67,8 +67,8 @@
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6.21. Sizing of a multirotor drone (ISAE)" href="7-system_sizing_code_optimization-student.html" />
-    <link rel="prev" title="6.19. Frame selection (student version)" href="6d-frame_selection-student.html" />
+    <link rel="next" title="6.22. Sizing of a multirotor drone (ISAE)" href="7-system_sizing_code_optimization-student.html" />
+    <link rel="prev" title="6.20. Frame selection (student version)" href="6d-frame_selection-student.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -224,16 +224,17 @@
 <li class="toctree-l2"><a class="reference internal" href="5-simulation_models-student.html">6.11. Simulation models (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6-sizing_models_introduction.html">6.12. Sizing models for multi-rotor definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6a-propeller_selection.html">6.13. Propeller selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection.html">6.14. Motor selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection-student.html">6.15. Motor selection  (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection.html">6.16. Battery and ESC selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection-student.html">6.17. Battery and ESC selection (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection.html">6.18. Frame selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection-student.html">6.19. Frame selection (student version)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.20. Sizing of a multirotor drone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization-student.html">6.21. Sizing of a multirotor drone (ISAE)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="8-design_exploration-student.html">6.22. Design optimization and exploration of a multirotor drone (ISAE)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="A1-sizing_equations.html">6.23. Appendix 1: Sizing equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6a-propeller_selection-student.html">6.14. Propeller selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection.html">6.15. Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection-student.html">6.16. Motor selection  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection.html">6.17. Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection-student.html">6.18. Battery and ESC selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection.html">6.19. Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection-student.html">6.20. Frame selection (student version)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.21. Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization-student.html">6.22. Sizing of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8-design_exploration-student.html">6.23. Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="A1-sizing_equations.html">6.24. Appendix 1: Sizing equations</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">7. VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -531,16 +532,16 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">6.20.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-variables">6.20.2. Design variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints">6.20.3. Constraints</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">6.20.4. Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">6.20.5. Workflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">6.20.6. Sizing code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifications">6.20.6.1. Specifications</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-definition-and-design-assumptions">6.20.6.2. Architecture definition and design assumptions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-variables">6.20.6.3. Optimization variables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.20.6.4. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">6.21.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-variables">6.21.2. Design variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints">6.21.3. Constraints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">6.21.4. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">6.21.5. Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">6.21.6. Sizing code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifications">6.21.6.1. Specifications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-definition-and-design-assumptions">6.21.6.2. Architecture definition and design assumptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-variables">6.21.6.3. Optimization variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.21.6.4. Sizing code</a></li>
 </ul>
 </li>
 </ul>
@@ -556,7 +557,7 @@
                   
   <p><img alt="SizingLab" src="laboratories/Lab-package_delivery_UAV/pictures/logo_sizinglab.png" /></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="sizing-of-a-multirotor-drone">
-<h1><span class="section-number">6.20. </span>Sizing of a multirotor drone<a class="headerlink" href="#sizing-of-a-multirotor-drone" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6.21. </span>Sizing of a multirotor drone<a class="headerlink" href="#sizing-of-a-multirotor-drone" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Scott Delbecq (ISAE-SUPAERO) and Félix Pollet (ISAE-SUPAERO), Toulouse, France.</em></p>
 <p>The objective of this notebook is to select the best compromise of components (propeller, motor, ESC, battery) of a multi-rotor drone for given specifiations.</p>
 <div class="cell docutils container">
@@ -569,7 +570,7 @@
 </div>
 </div>
 <section id="introduction">
-<h2><span class="section-number">6.20.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.21.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>We have seen that even at the component level the set of equations of a sizing code can generate typical issues such :</p>
 <ul class="simple">
 <li><p>Underconstrained set of equations: the lacking equations can come from additional scenarios, estimation models or additional sizing variable</p></li>
@@ -591,10 +592,10 @@
 </div></blockquote>
 </section>
 <section id="design-variables">
-<h2><span class="section-number">6.20.2. </span>Design variables<a class="headerlink" href="#design-variables" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.21.2. </span>Design variables<a class="headerlink" href="#design-variables" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="exercise_design_variables">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.19 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.21 </span></p>
 <section id="exercise-content">
 <p>Summarize the design variables that have been identified previously.</p>
 </section>
@@ -693,10 +694,10 @@
 </div>
 </section>
 <section id="constraints">
-<h2><span class="section-number">6.20.3. </span>Constraints<a class="headerlink" href="#constraints" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.21.3. </span>Constraints<a class="headerlink" href="#constraints" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="exercise_constraints">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.20 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.22 </span></p>
 <section id="exercise-content">
 <p>Summarize the constraints that have been identified previously (satisfied constraint are positive).</p>
 </section>
@@ -787,13 +788,13 @@
 </div>
 </section>
 <section id="objectives">
-<h2><span class="section-number">6.20.4. </span>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.21.4. </span>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 </section>
 <section id="workflow">
-<h2><span class="section-number">6.20.5. </span>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.21.5. </span>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="exercise_workflow">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.21 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.23 </span></p>
 <section id="exercise-content">
 <p>Propose a workflow using an N2 or XDSM diagram that represents the ordering and interconnections of the disciplines of the sizing code.</p>
 </section>
@@ -806,7 +807,7 @@
 <figure class="align-center" id="multirotor-xdsm-mdo">
 <a class="reference internal image-reference" href="../../_images/xdsm_multirotor_mdo.png"><img alt="../../_images/xdsm_multirotor_mdo.png" src="../../_images/xdsm_multirotor_mdo.png" style="width: 75%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.23 </span><span class="caption-text">Multirotor sizing MDO XDSM diagram</span><a class="headerlink" href="#multirotor-xdsm-mdo" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.24 </span><span class="caption-text">Multirotor sizing MDO XDSM diagram</span><a class="headerlink" href="#multirotor-xdsm-mdo" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -817,7 +818,7 @@
 </div>
 </section>
 <section id="sizing-code">
-<h2><span class="section-number">6.20.6. </span>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.21.6. </span>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h2>
 <p>Lets now implement the code to size the multirotor. For this purpose we use the MDAO framework <a class="reference external" href="https://openmdao.org">OpenMDAO</a>.
 To stay simple first, we will embed the sizing in a simple OpenMDAO <code class="docutils literal notranslate"><span class="pre">ExplicitComponent</span></code> which is not the most efficient way of solving the problem.
 The best practice would be to decompose the problem into several <code class="docutils literal notranslate"><span class="pre">ExplicitComponent</span></code> to make the code more modular and the problem solving more efficient.
@@ -826,7 +827,7 @@ For this purpose you can refer to the <a class="reference external" href="https:
 <div><p>Delbecq, S., Budinger, M., &amp; Reysset, A. (2020). Benchmarking of monolithic MDO formulations and derivative computation techniques using OpenMDAO. Structural and Multidisciplinary Optimization, 62(2), 645-666.</p>
 </div></blockquote>
 <section id="specifications">
-<h3><span class="section-number">6.20.6.1. </span>Specifications<a class="headerlink" href="#specifications" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.21.6.1. </span>Specifications<a class="headerlink" href="#specifications" title="Link to this heading">#</a></h3>
 <p>The first step is to provide the specifications (top-level requirements) for the drone.</p>
 <p>Main specifications :</p>
 <ul class="simple">
@@ -855,7 +856,7 @@ For this purpose you can refer to the <a class="reference external" href="https:
 </div>
 </section>
 <section id="architecture-definition-and-design-assumptions">
-<h3><span class="section-number">6.20.6.2. </span>Architecture definition and design assumptions<a class="headerlink" href="#architecture-definition-and-design-assumptions" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.21.6.2. </span>Architecture definition and design assumptions<a class="headerlink" href="#architecture-definition-and-design-assumptions" title="Link to this heading">#</a></h3>
 <p>Then, we must provide the architecture definition and design assumptions for the models.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -903,7 +904,7 @@ For this purpose you can refer to the <a class="reference external" href="https:
 </div>
 </section>
 <section id="optimization-variables">
-<h3><span class="section-number">6.20.6.3. </span>Optimization variables<a class="headerlink" href="#optimization-variables" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.21.6.3. </span>Optimization variables<a class="headerlink" href="#optimization-variables" title="Link to this heading">#</a></h3>
 <p>The next step is to give an initial value for the optimisation variables:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -922,7 +923,7 @@ For this purpose you can refer to the <a class="reference external" href="https:
 </div>
 </section>
 <section id="id1">
-<h3><span class="section-number">6.20.6.4. </span>Sizing code<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.21.6.4. </span>Sizing code<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Now, complete the following sizing code with the missing design variables (inputs), constraints/objective (outputs) and equations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1250,7 +1251,7 @@ T_mot_fr_ref    float      0.03
 T_nom_mot_ref   float      2.32
 a_to            float      2.4525
 beta_pro        float      0.33
-group           Group      &lt;openmdao.core.group.Grou&lt;...&gt;object at 0x7fdc278631f0&gt;
+group           Group      &lt;openmdao.core.group.Grou&lt;...&gt;object at 0x7f5fb4417df0&gt;
 k_D             float      0.99
 k_ND            float      1.2
 k_mb            float      1.0
@@ -1260,7 +1261,7 @@ k_speed_mot     float      1.2
 k_vb            float      1.0
 np              module     &lt;module &#39;numpy&#39; from &#39;/op&lt;...&gt;kages/numpy/__init__.py&#39;&gt;
 om              module     &lt;module &#39;openmdao.api&#39; fr&lt;...&gt;ackages/openmdao/api.py&#39;&gt;
-prob            Problem    &lt;openmdao.core.problem.Pr&lt;...&gt;object at 0x7fdc27863490&gt;
+prob            Problem    &lt;openmdao.core.problem.Pr&lt;...&gt;object at 0x7f5f709e21f0&gt;
 rho_air         float      1.18
 rho_s           float      1700.0
 sigma_max       float      70000000.0
@@ -1309,7 +1310,7 @@ t_hov_spec      float      25.0
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6.19. </span>Frame selection (student version)</p>
+        <p class="prev-next-title"><span class="section-number">6.20. </span>Frame selection (student version)</p>
       </div>
     </a>
     <a class="right-next"
@@ -1317,7 +1318,7 @@ t_hov_spec      float      25.0
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.21. </span>Sizing of a multirotor drone (ISAE)</p>
+        <p class="prev-next-title"><span class="section-number">6.22. </span>Sizing of a multirotor drone (ISAE)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1338,16 +1339,16 @@ t_hov_spec      float      25.0
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">6.20.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-variables">6.20.2. Design variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints">6.20.3. Constraints</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">6.20.4. Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">6.20.5. Workflow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">6.20.6. Sizing code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifications">6.20.6.1. Specifications</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-definition-and-design-assumptions">6.20.6.2. Architecture definition and design assumptions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-variables">6.20.6.3. Optimization variables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.20.6.4. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">6.21.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-variables">6.21.2. Design variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints">6.21.3. Constraints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">6.21.4. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">6.21.5. Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">6.21.6. Sizing code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specifications">6.21.6.1. Specifications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-definition-and-design-assumptions">6.21.6.2. Architecture definition and design assumptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-variables">6.21.6.3. Optimization variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.21.6.4. Sizing code</a></li>
 </ul>
 </li>
 </ul>

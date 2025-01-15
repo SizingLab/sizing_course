@@ -224,16 +224,17 @@
 <li class="toctree-l2"><a class="reference internal" href="5-simulation_models-student.html">6.11. Simulation models (Student version)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">6.12. Sizing models for multi-rotor definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6a-propeller_selection.html">6.13. Propeller selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection.html">6.14. Motor selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection-student.html">6.15. Motor selection  (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection.html">6.16. Battery and ESC selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection-student.html">6.17. Battery and ESC selection (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection.html">6.18. Frame selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection-student.html">6.19. Frame selection (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization.html">6.20. Sizing of a multirotor drone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization-student.html">6.21. Sizing of a multirotor drone (ISAE)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="8-design_exploration-student.html">6.22. Design optimization and exploration of a multirotor drone (ISAE)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="A1-sizing_equations.html">6.23. Appendix 1: Sizing equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6a-propeller_selection-student.html">6.14. Propeller selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection.html">6.15. Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection-student.html">6.16. Motor selection  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection.html">6.17. Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection-student.html">6.18. Battery and ESC selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection.html">6.19. Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection-student.html">6.20. Frame selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization.html">6.21. Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization-student.html">6.22. Sizing of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8-design_exploration-student.html">6.23. Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="A1-sizing_equations.html">6.24. Appendix 1: Sizing equations</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">7. VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -582,8 +583,8 @@
 </figcaption>
 </figure>
 <p>It consists in addition an oversizing coefficent <span class="math notranslate nohighlight">\(k_{os} \quad [1-10]\)</span> as a design variable and additional inequality constraint <span class="math notranslate nohighlight">\(M_{total} \geq M_{total,real}\)</span>. This way, we make sure that the drone is capable of lifting the load and itself. As we are minimizing the total mass <span class="math notranslate nohighlight">\(M_{total,real}\)</span> the oversizing coefficient <span class="math notranslate nohighlight">\(k_{os}\)</span> will tend to be as small as possible and thus the inequality constraint will be equivalent to an equality constraint (<span class="math notranslate nohighlight">\(M_{total} = M_{total,real}\)</span>). This is one way of solving an algebraic loop, other methods use numerical solvers or other optimizer-based formulations. The formulation of the optimization problem is the following:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-df9bebc9-09d8-4872-8f61-f9c8c32a53bc">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-df9bebc9-09d8-4872-8f61-f9c8c32a53bc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6da873f2-331b-49ee-a3e4-d1fff3a22318">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-6da873f2-331b-49ee-a3e4-d1fff3a22318" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
         &amp; \text{minimize}
         &amp; &amp; M_{total,real} \\
