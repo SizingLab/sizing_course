@@ -67,6 +67,8 @@ parts:
   #     - file: classes/Lecture6/5-quizz
 
 - caption: Laboratories
+  numbered: true
+  maxdepth: 2
   chapters:
   - file: laboratories/Lab-package_delivery_UAV/summary
     title: Package delivery UAV
