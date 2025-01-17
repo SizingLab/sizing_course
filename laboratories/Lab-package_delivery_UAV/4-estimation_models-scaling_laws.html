@@ -1,0 +1,1346 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6.11. Estimation models with scaling laws &#8212; Sizing and optimization of mechatronic systems</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-package_delivery_UAV/4-estimation_models-scaling_laws';</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.12. Scaling laws of electrical components (student version)" href="4-estimation_models-scaling_laws-student.html" />
+    <link rel="prev" title="6.10. Estimation models with dimensional analysis and linear regressions (student version)" href="4-estimation_models-linear_regression-student.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../about/homepage.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Sizing and optimization of mechatronic systems - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Sizing and optimization of mechatronic systems - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about/context.html">Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/installation.html">Installation guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture0/summary.html">1. Concept of Operations and architectures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture0/1-concept_of_operations.html">1.1. Concept of Operations</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture0/2-system_architectures.html">1.5. System architectures</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1_new/summary.html">2. Components, technologies, design drivers and sizing scenarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1_new/1-technologies.html">2.1. Components and Technologies for Mechatronic System</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture2_new/summary.html">3. Estimation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/1-linear_regressions.html">3.1. Linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/2-quiz_regressions.html">3.2. Quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/3-scaling_laws.html">3.3. Scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/4-quiz_scaling_laws.html">3.4. Quiz</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture3_new/summary.html">4. Simulation and evaluation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/1-simulation_models.html">4.1. Simulation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/2-evaluation_models.html">4.2. Evaluation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/3-quiz_evaluation_models.html">4.3. Quiz</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4/summary.html">5. Optimal sizing procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/1-design_and_optimization_problems.html">5.1. Representation of a design problem and basics optimal design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/2-optimization_examples.html">5.2. Optimization with python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/3-sizing_procedures.html">5.3. Development of a sizing procedure using design graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/4-sizing_procedure_examples.html">5.4. Design graph and optimization with python</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">6. Package delivery UAV</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-conops.html">6.1. Package Delivery UAV Concept of Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-conops-student.html">6.2. Package Delivery UAV Concept of Operations (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-system_architectures-student.html">6.3. System architectures of the Package Delivery UAV (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-system_architectures.html">6.4. System Architecture Selection for a Package Delivery UAV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-sizing_scenarios.html">6.5. Sizing scenarios and design drivers</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="3-sizing_scenarios-student.html">6.7. Sizing scenarios and design drivers (student version)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="4-estimation_models-linear_regression.html">6.9. Estimation models with dimensional analysis and linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-estimation_models-linear_regression-student.html">6.10. Estimation models with dimensional analysis and linear regressions  (student version)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.11. Estimation models with scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-estimation_models-scaling_laws-student.html">6.12. Scaling laws of electrical components (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-simulation_models-student.html">6.13. Simulation models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6-sizing_models_introduction.html">6.14. Sizing models for multi-rotor definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6a-propeller_selection.html">6.15. Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6a-propeller_selection-student.html">6.16. Propeller selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection.html">6.17. Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6b-motor_selection-student.html">6.18. Motor selection  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection.html">6.19. Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6c-battery_esc_selection-student.html">6.20. Battery and ESC selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection.html">6.21. Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6d-frame_selection-student.html">6.22. Frame selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization.html">6.23. Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7-system_sizing_code_optimization-student.html">6.24. Sizing of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8-design_exploration-student.html">6.25. Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="A1-sizing_equations.html">6.26. Appendix 1: Sizing equations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">7. VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios-student.html">7.1. Modeling of the mechanical load (student version)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios.html">7.3. Modeling of the mechanical load</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/2-estimation_models-student.html">7.5. Estimation models with scaling laws and linear regression (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/2-estimation_models.html">7.6. Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/3-simulation_models-student.html">7.7. Simulation models with Python (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/3-simulation_models.html">7.8. Simulation models with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/4-evaluation_models-student.html">7.9. Evaluation models: endurance of the actuator (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/4-evaluation_models.html">7.10. Evaluation models: endurance of the actuator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/5-sizing_and_optimization-student.html">7.11. Sizing procedure and optimization (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/5-sizing_and_optimization.html">7.12. Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student.html">7.13. Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">7.14. Sizing procedure and optimization with OpenMDAO</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">8. Lab - Sustainable mobility - Mission profile &amp; Specification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/00_SustainableMobility.html">8.1. Sustainable mobilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01a_CaseStudy.html">8.2. Case study presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification-Student.html">8.3. Case study specification (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification.html">8.4. Case study specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture-Student.html">8.5. Architecture of the converter and sizing scenarios (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture_UltraCapacitor.html">8.6. Architecture of the converter and sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02b_Architecture_Hybrid.html">8.7. Hydrid Storage Architecture and Specification</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary.html">9. Lab - Sustainable mobility - DC/DC converter sizing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/03_SizingScenarios.html">9.1. Equations of sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws-Student.html">9.2. Estimation models with scaling laws and linear regression (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws.html">9.3. Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression-Student.html">9.4. Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression.html">9.5. Heatsink  estimation models with simple and multiple linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/06_SizingCodeInductor.html">9.6. Sizing code of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate-Student.html">9.7. Sizing code of an inductor with surrogate models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate.html">9.8. Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/08_DCDC_converter_sizing_introduction.html">9.9. Design graphs for the sizing a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/09_SizingCodeDCDCconverter.html">9.10. Sizing code of a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor-Student.html">9.11. Life Cycle Assessment of an inductor (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor.html">9.12. Life Cycle Assessment of an inductor</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/laboratories/Lab-package_delivery_UAV/4-estimation_models-scaling_laws.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-package_delivery_UAV/4-estimation_models-scaling_laws.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/laboratories/Lab-package_delivery_UAV/4-estimation_models-scaling_laws.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Flaboratories/Lab-package_delivery_UAV/4-estimation_models-scaling_laws.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/laboratories/Lab-package_delivery_UAV/4-estimation_models-scaling_laws.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Estimation models with scaling laws</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrical-components">6.11.1. Electrical components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lipo-battery">6.11.1.1. Lipo battery</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brushless-motor">6.11.2. Brushless motor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-laws">6.11.2.1. Scaling laws</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-with-a-data-plot">6.11.3. Validation with a data plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-data">6.11.3.1. Import data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data-mass">6.11.3.1.1. Plot data: Mass</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data-resistance">6.11.3.1.2. Plot data: Resistance</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-electronic-converter">6.11.3.2. Power electronic converter</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="estimation-models-with-scaling-laws">
+<h1><span class="section-number">6.11. </span>Estimation models with scaling laws<a class="headerlink" href="#estimation-models-with-scaling-laws" title="Link to this heading">#</a></h1>
+<p><em>Written by Marc Budinger (INSA Toulouse), Scott Delbecq (ISAE-SUPAERO) and Félix Pollet (ISAE-SUPAERO), Toulouse, France.</em></p>
+<section id="electrical-components">
+<h2><span class="section-number">6.11.1. </span>Electrical components<a class="headerlink" href="#electrical-components" title="Link to this heading">#</a></h2>
+<p>The application chosen for this notebook are UAV electrical components.
+The estimation models calculate the component characteristics requested for their selection without requiring a detailed design. Scaling laws are particularly suitable for this purpose. This notebook illustrates the approach with electrical drone components characteristics.
+Validation of the obtained scaling laws is realized thanks catalog data.</p>
+<p>The <a class="reference external" href="https://hal.archives-ouvertes.fr/hal-00712986/file/IMECHE_v1.2_full.pdf">following article</a> gives more details for components of electromechanical actuators:</p>
+<blockquote>
+<div><p><em>Budinger, M., Liscouët, J., Hospital, F., &amp; Maré, J. C. (2012). Estimation models for the preliminary design of electromechanical actuators. Proceedings of the Institution of Mechanical Engineers, Part G: Journal of Aerospace Engineering, 226(3), 243-259.</em></p>
+</div></blockquote>
+<p><strong>Notation</strong>: The x* scaling ratio of a given parameter is calculated as <span class="math notranslate nohighlight">\(x^*=\frac{x}{x_{ref}}\)</span> where <span class="math notranslate nohighlight">\(x_{ref}\)</span> is the parameter taken as the reference and <span class="math notranslate nohighlight">\(x\)</span> the parameter under study.</p>
+<section id="lipo-battery">
+<h3><span class="section-number">6.11.1.1. </span>Lipo battery<a class="headerlink" href="#lipo-battery" title="Link to this heading">#</a></h3>
+<p>A lithium-ion polymer battery (abbreviated as LiPo) is a assembly of elementary cells. The more the cells are provided, the bigger is the power and stored energy. The following figure gives an example of a Lipo battery with the following characteristics:</p>
+<ul class="simple">
+<li><p><strong>Voltage / Cell Count (“S”)</strong>: A LiPo cell has a nominal voltage of 3.7V (3V min, 4.2V max) . For the 7.4V battery above, this means that there are two cells in series (which means the voltage gets added together). This is sometimes why you will hear people talk about a “2S” battery pack - it means that there are 2 cells in Series.</p></li>
+<li><p><strong>Capacity (“C”)</strong>: The capacity of a battery is basically a measure of the energy the battery can hold. The unit of measure here is milliamp hours (mAh). This is saying how much drain can be put on the battery to discharge it in one hour. The stored energy is given by the the product of voltage and thus here: Capacity (in Amps)<em>3600</em>7.4= 0.133 MJ</p></li>
+<li><p><strong>Discharge Rating (“C” Rating)</strong>: The C Rating is simply a measure of how fast the battery can be discharged safely and without harming the battery. The maximum safe continuous amp draw is here: 50C = 50 x Capacity (in Amps) = 250 A.</p></li>
+</ul>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/LipoBattery.jpeg"><img alt="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/LipoBattery.jpeg" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/LipoBattery.jpeg" style="width: 30%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.10 </span><span class="caption-text">LiPo Battery</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="exercise admonition" id="exercice_scaling_law">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.9 </span></p>
+<section id="exercise-content">
+<p>Propose a scaling law which links battery characteristics, as mass or max discharge current, to capacity <span class="math notranslate nohighlight">\(C_{bat}\)</span> and voltage <span class="math notranslate nohighlight">\(U_{bat}\)</span>. Estimate the mass and max discharge current for a 3300 mAh - 4S battery knowing the following reference component:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Characteristic</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Capacity</p></td>
+<td><p>5000mAh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Continuous discharge rate</p></td>
+<td><p>50C</p></td>
+</tr>
+<tr class="row-even"><td><p>Burst rate</p></td>
+<td><p>100C</p></td>
+</tr>
+<tr class="row-odd"><td><p>Voltage</p></td>
+<td><p>7.4V</p></td>
+</tr>
+<tr class="row-even"><td><p>Cells</p></td>
+<td><p>2S</p></td>
+</tr>
+<tr class="row-odd"><td><p>Size (LxWxH)</p></td>
+<td><p>155x48x16mm</p></td>
+</tr>
+<tr class="row-even"><td><p>Weight</p></td>
+<td><p>273g</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<div class="solution dropdown admonition" id="solution_scaling_law">
+
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
+<p>Imax,bat∗=Cbat∗<br />
+Mbat∗=Ubat∗Cbat∗</p>
+</section>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reference battery 5000mAh 2S 50C</span>
+<span class="n">C_bat_ref</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># [Ah] Capacity</span>
+<span class="n">I_bat_max_ref</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">C_bat_ref</span>  <span class="c1"># [A] max discharge current</span>
+<span class="n">U_bat_ref</span> <span class="o">=</span> <span class="mf">7.4</span>  <span class="c1"># [V] nominal voltage</span>
+<span class="n">M_bat_ref</span> <span class="o">=</span> <span class="mf">0.273</span>  <span class="c1"># [kg] mass</span>
+
+<span class="c1"># New battery 3300 mA.h 4S</span>
+<span class="n">C_bat</span> <span class="o">=</span> <span class="mf">3.3</span>  <span class="c1"># [Ah] battery capacity</span>
+<span class="n">U_bat</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="mf">3.7</span>  <span class="c1"># [V] voltage</span>
+
+<span class="c1"># Scaling</span>
+<span class="n">M_bat</span> <span class="o">=</span> <span class="n">M_bat_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">U_bat</span> <span class="o">/</span> <span class="n">U_bat_ref</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">C_bat</span> <span class="o">/</span> <span class="n">C_bat_ref</span><span class="p">)</span>  <span class="c1"># [kg] Mass</span>
+<span class="n">I_bat_max</span> <span class="o">=</span> <span class="n">I_bat_max_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">C_bat</span> <span class="o">/</span> <span class="n">C_bat_ref</span><span class="p">)</span>  <span class="c1"># [A] Max discharge current</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Battery mass: </span><span class="si">{</span><span class="n">M_bat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> kg&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max discharge current: </span><span class="si">{</span><span class="n">I_bat_max</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Battery mass: 0.360 kg
+Max discharge current: 165 A
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="brushless-motor">
+<h2><span class="section-number">6.11.2. </span>Brushless motor<a class="headerlink" href="#brushless-motor" title="Link to this heading">#</a></h2>
+<p>Multi-rotor drones use out runner brushless motors which are permanent magnet synchronous motors. The <a class="reference external" href="https://hal.archives-ouvertes.fr/hal-00712986/file/IMECHE_v1.2_full.pdf">following article</a> explains how set up the scaling laws for this technology of component.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/BrushlessMotor.jpg"><img alt="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/BrushlessMotor.jpg" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images/BrushlessMotor.jpg" style="width: 30%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.11 </span><span class="caption-text">Brushless motor</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="scaling-laws">
+<h3><span class="section-number">6.11.2.1. </span>Scaling laws<a class="headerlink" href="#scaling-laws" title="Link to this heading">#</a></h3>
+<p>The following table summarize the scaling laws which can be used for the brushless motors.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Scaling laws</p></th>
+<th class="head"><p>References</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p>AXI 2217/20</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nominal torque</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_{nom}^*\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.151\)</span> N.m</p></td>
+</tr>
+<tr class="row-even"><td><p>Torque constant</p></td>
+<td><p><span class="math notranslate nohighlight">\(K_T^*\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1.14.10^{-2}\)</span> N.m/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Max torque</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_{max}^*=T_{nom}^*\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.198\)</span> N.m</p></td>
+</tr>
+<tr class="row-even"><td><p>Friction torque</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_{fr}^*=T_{nom}^{*3/3.5}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(6.25.10^{-3}\)</span> N.m</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mass</p></td>
+<td><p><span class="math notranslate nohighlight">\(M^*=T_{nom}^{*3/3.5}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(69.5\)</span> g</p></td>
+</tr>
+<tr class="row-even"><td><p>Resistance</p></td>
+<td><p><span class="math notranslate nohighlight">\(R^*=K^{*2}T_{nom}^{*-5/3.5}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.185\)</span> ohm</p></td>
+</tr>
+<tr class="row-odd"><td><p>Inertia</p></td>
+<td><p><span class="math notranslate nohighlight">\(J^*=T_{nom}^{*-5/3.5}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2.5.10^{-5}\)</span> kg.m²</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Motor reference data: AXI 2217/20 GOLD LINE</span>
+<span class="n">T_mot_ref</span> <span class="o">=</span> <span class="mf">0.15</span>  <span class="c1"># [N.m] motor nominal torque</span>
+
+<span class="n">M_mot_ref</span> <span class="o">=</span> <span class="mf">69.5e-3</span>  <span class="c1"># [kg] motor mass</span>
+<span class="n">R_mot_ref</span> <span class="o">=</span> <span class="mf">0.185</span>  <span class="c1"># [Ohm] motor resistance</span>
+<span class="n">K_T_ref</span> <span class="o">=</span> <span class="mf">1.14e-2</span>  <span class="c1"># [N.m/A] Torque or fem constant</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="validation-with-a-data-plot">
+<h2><span class="section-number">6.11.3. </span>Validation with a data plot<a class="headerlink" href="#validation-with-a-data-plot" title="Link to this heading">#</a></h2>
+<p>We will compare the scaling law with a plot on catalog data.</p>
+<section id="import-data">
+<h3><span class="section-number">6.11.3.1. </span>Import data<a class="headerlink" href="#import-data" title="Link to this heading">#</a></h3>
+<p>The first step is to import catalog data stored in a excel file. We use for that functions from <a class="reference external" href="https://pandas.pydata.org/index.html">Panda</a> package (with here an <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/03.00-introduction-to-pandas.html">introduction to panda</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Panda package Importation</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Read the .csv file with bearing data</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/data/&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;AXI_mot_db_student.xlsx&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
+<span class="c1"># Print the head (first lines of the file)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Kv (rpm/v)</th>
+      <th>Pole (number)</th>
+      <th>Io (A)</th>
+      <th>r (omn)</th>
+      <th>weight (g)</th>
+      <th>Imax (A)</th>
+      <th>No s</th>
+      <th>Voltage</th>
+      <th>Inom_max (A)</th>
+      <th>Eta_max (%)</th>
+      <th>Kt (N.m/A)</th>
+      <th>Tnom (N.m)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AXI 2203/40VPP GOLD LINE</td>
+      <td>2000</td>
+      <td>14</td>
+      <td>0.50</td>
+      <td>0.245</td>
+      <td>17.5</td>
+      <td>9.0</td>
+      <td>2</td>
+      <td>7.4</td>
+      <td>7.5</td>
+      <td>75</td>
+      <td>0.004775</td>
+      <td>0.033423</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AXI 2203/46 GOLD LINE</td>
+      <td>1720</td>
+      <td>14</td>
+      <td>0.50</td>
+      <td>0.285</td>
+      <td>18.5</td>
+      <td>8.5</td>
+      <td>2</td>
+      <td>7.4</td>
+      <td>7.0</td>
+      <td>75</td>
+      <td>0.005552</td>
+      <td>0.036087</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AXI 2203/52 GOLD LINE</td>
+      <td>1525</td>
+      <td>14</td>
+      <td>0.40</td>
+      <td>0.390</td>
+      <td>18.5</td>
+      <td>7.0</td>
+      <td>2</td>
+      <td>7.4</td>
+      <td>5.5</td>
+      <td>74</td>
+      <td>0.006262</td>
+      <td>0.031935</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AXI 2203/RACE GOLD LINE</td>
+      <td>2300</td>
+      <td>14</td>
+      <td>0.55</td>
+      <td>0.220</td>
+      <td>18.5</td>
+      <td>9.0</td>
+      <td>3</td>
+      <td>11.1</td>
+      <td>7.5</td>
+      <td>74</td>
+      <td>0.004152</td>
+      <td>0.028855</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AXI 2204/54 GOLD LINE</td>
+      <td>1400</td>
+      <td>14</td>
+      <td>0.35</td>
+      <td>0.320</td>
+      <td>25.9</td>
+      <td>7.5</td>
+      <td>3</td>
+      <td>11.1</td>
+      <td>6.0</td>
+      <td>77</td>
+      <td>0.006821</td>
+      <td>0.038538</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="plot-data-mass">
+<h4><span class="section-number">6.11.3.1.1. </span>Plot data: Mass<a class="headerlink" href="#plot-data-mass" title="Link to this heading">#</a></h4>
+<p>We can now compare graphically the catalog data with scaling law:</p>
+<ul class="simple">
+<li><p>blue points, catalog data</p></li>
+<li><p>red line, scaling law</p></li>
+<li><p>red point, the reference for scaling law.</p></li>
+</ul>
+<p>For the plot, we use the <a class="reference external" href="https://matplotlib.org/">matplotlib</a> package.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">T_mot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">num</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Scaling law</span>
+<span class="n">M_mot</span> <span class="o">=</span> <span class="n">M_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
+
+<span class="c1"># plot</span>
+<span class="n">h</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Tnom (N.m)&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;weight (g)&quot;</span><span class="p">],</span> <span class="s2">&quot;.b&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">T_mot</span><span class="p">,</span>
+    <span class="n">M_mot</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="s2">&quot;--r&quot;</span><span class="p">,</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Tnom (N.m)&quot;</span><span class="p">],</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;weight (g)&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;.b&quot;</span><span class="p">,</span>
+    <span class="n">T_mot_ref</span><span class="p">,</span>
+    <span class="n">M_mot_ref</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="s2">&quot;^g&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Motor Mass [g]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Nominal torque [N.m]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7c14c1c0321ba6c2d1140195d6a13d1b863bb8f9e8ad14513e8bd540c8527851.png" src="../../_images/7c14c1c0321ba6c2d1140195d6a13d1b863bb8f9e8ad14513e8bd540c8527851.png" />
+</div>
+</div>
+</section>
+<section id="plot-data-resistance">
+<h4><span class="section-number">6.11.3.1.2. </span>Plot data: Resistance<a class="headerlink" href="#plot-data-resistance" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Resistance plot</span>
+
+<span class="c1"># Scaling law</span>
+<span class="n">T_mot</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Tnom (N.m)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">K_T</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Kt (N.m/A)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">R_mot_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;r (omn)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">R_mot_sl</span> <span class="o">=</span> <span class="n">R_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">K_T</span> <span class="o">/</span> <span class="n">K_T_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
+
+<span class="c1"># plot</span>
+<span class="n">h</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">T_mot</span><span class="p">,</span> <span class="n">R_mot_data</span> <span class="o">/</span> <span class="n">K_T</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;.b&quot;</span><span class="p">,</span> <span class="n">T_mot</span><span class="p">,</span> <span class="n">R_mot_sl</span> <span class="o">/</span> <span class="n">K_T</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;.r&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Resistance/Torque constant^2 [Ohm/(N.m/A)²]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Nominal torque [N.m]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fa1236411515f2ccca80f426cba744dc82114f10b49c9bf22cc402b9694bcc1f.png" src="../../_images/fa1236411515f2ccca80f426cba744dc82114f10b49c9bf22cc402b9694bcc1f.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="power-electronic-converter">
+<h3><span class="section-number">6.11.3.2. </span>Power electronic converter<a class="headerlink" href="#power-electronic-converter" title="Link to this heading">#</a></h3>
+<p>ESC (electronic speed controllers) motor controllers are mainly DC/AC converter (inverter) composed of power electronic switchs (Mosfet transistors). We will use here a simple linear regression in order to set up a model for mass estimation.</p>
+<figure class="align-center" id="esc">
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images//ESC.jpeg"><img alt="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images//ESC.jpeg" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/images//ESC.jpeg" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.12 </span><span class="caption-text">Electronic Speed Controller (ESC)</span><a class="headerlink" href="#esc" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The first step is to import catalog data stored in a .csv file. We use for that functions from <a class="reference external" href="https://pandas.pydata.org/index.html">Panda</a> package (with here an <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/03.00-introduction-to-pandas.html">introduction to panda</a>).<br />
+The data base gives informations about mass, voltage &amp; current (DC side) and power of the converter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Panda package Importation</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Read the .csv file with bearing data</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-multirotor/assets/data/&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;ESC_data.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Print the head (first lines of the file) of the following columns</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Model</th>
+      <th>Imax.in[A]</th>
+      <th>m[g]</th>
+      <th>Vmax.in[V]</th>
+      <th>Pmax.in[W]</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Jive 80+ LV</td>
+      <td>80</td>
+      <td>84.0</td>
+      <td>22.2</td>
+      <td>1776</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Jive 100+ LV</td>
+      <td>100</td>
+      <td>92.0</td>
+      <td>22.2</td>
+      <td>2220</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>FAI Jive 150+ LV</td>
+      <td>150</td>
+      <td>140.0</td>
+      <td>18.5</td>
+      <td>2775</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Jive 60+ HV</td>
+      <td>60</td>
+      <td>84.0</td>
+      <td>44.4</td>
+      <td>2664</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Jive 80+ HV</td>
+      <td>80</td>
+      <td>84.0</td>
+      <td>44.4</td>
+      <td>3552</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Here we recover the information of power, mass and voltage and we render them on a scatter plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get values from panda data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Pmax.in[W]&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;m[g]&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Vmax.in[V]&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># plot the data : scatter plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="c1"># show color scale</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;ESC Power [W]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;ESC Mass [g]&quot;</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">&quot;Voltage [V]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Mass vs Power for ESC (Voltage in color)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/19844fc44d80147e759ffda8d6e20e004a2ffed6d5cbdf5433d299bd5be8ff8b.png" src="../../_images/19844fc44d80147e759ffda8d6e20e004a2ffed6d5cbdf5433d299bd5be8ff8b.png" />
+</div>
+</div>
+<p>The voltage increases with the power in order to maintain reasonable current values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the data : Voltage vs Power</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;ESC Power [W]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;ESC Voltage [V]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c002302030a9f9d98c7099f1db65a75059401797c03227a107d02698704fd96f.png" src="../../_images/c002302030a9f9d98c7099f1db65a75059401797c03227a107d02698704fd96f.png" />
+</div>
+</div>
+<p>The use of a Ordinary Least Square linear regression (with the <a class="reference external" href="https://scikit-learn.org/stable/">Skitkit-learn</a> package) enables to generate simple mass and voltage estimation models.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Determination of the least squares estimator with the OLS function</span>
+<span class="c1"># of the SatsModels package</span>
+
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+
+<span class="c1"># Matrix X and Y</span>
+
+<span class="c1"># X=np.transpose(np.array((np.ones(np.size(x)), x)))</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">reg</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+<span class="n">y_est</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">coef</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">y_est</span><span class="p">)</span>
+
+
+<span class="c1"># plot the data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y_est</span><span class="p">,</span> <span class="s2">&quot;-g&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;ESC Power [W]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;ESC Mass [g]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Comparison of original data (circles) and regression (green)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Mass / Power coefficient : </span><span class="si">{</span><span class="n">coef</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2"> [g/W] or </span><span class="si">{</span><span class="n">coef</span><span class="o">/</span><span class="mi">1000</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2"> [kg/W] with R2=</span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2362/1033787358.py:19: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  coef = float(reg.coef_)
+</pre></div>
+</div>
+<img alt="../../_images/9bb5fa92ef55d460146298a7d5b5af551006a63ec002130926edf7bb67d50e72.png" src="../../_images/9bb5fa92ef55d460146298a7d5b5af551006a63ec002130926edf7bb67d50e72.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mass / Power coefficient : 2.88e-02 [g/W] or 2.88e-05 [kg/W] with R2=0.738
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition" id="exercice_scaling_law_esc">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.10 </span></p>
+<section id="exercise-content">
+<p>Explain how the following code gives a power law which can represent the evolution of voltage with power. Complete the code with a print of the relationship.</p>
+</section>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Matrix X and Y</span>
+<span class="n">XV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">YV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">reg</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
+
+<span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">XV</span><span class="p">,</span> <span class="n">YV</span><span class="p">)</span>
+
+<span class="n">y_est</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">XV</span><span class="p">)</span>
+<span class="n">yV_est</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">y_est</span>
+
+<span class="n">coef</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">YV</span><span class="p">,</span> <span class="n">y_est</span><span class="p">)</span>
+
+<span class="c1"># plot the data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">yV_est</span><span class="p">,</span> <span class="s2">&quot;og&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;ESC Power [W]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;ESC Voltage [V]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Comparison of original data (blue circles) and regression (green circles)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Final part to be completed</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Voltage estimation : V_esc=</span><span class="si">{</span><span class="mi">10</span><span class="o">**</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">*P_esc**(</span><span class="si">{</span><span class="n">coef</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">) with R2=</span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;with Power P_esc [W] and Voltage V_esc [V] of ESC controller&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2362/1078855560.py:12: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  coef = float(reg.coef_)
+/tmp/ipykernel_2362/1078855560.py:13: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  intercept = float(reg.intercept_)
+</pre></div>
+</div>
+<img alt="../../_images/0281289b30a43d461b9eaa516ff3e660864efe7990108e694aa9bb27f39d1aee.png" src="../../_images/0281289b30a43d461b9eaa516ff3e660864efe7990108e694aa9bb27f39d1aee.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Voltage estimation : V_esc=1.84*P_esc**(0.36) with R2=0.830
+with Power P_esc [W] and Voltage V_esc [V] of ESC controller
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note on the mass evolution of ESC
+The <em>conduction losses</em> occurring in a MOS switch are given by the following expression:<br />
+<span class="math notranslate nohighlight">\(P_{loss,MOS}=R_{ds,on}.I^2\)</span><br />
+In case of a MOS, the resistance <span class="math notranslate nohighlight">\(R_{ds,on}\)</span> which defines the conduction losses decreases inversely proportionally to the current calibration. We have thus with the scaling law notation:<br />
+<span class="math notranslate nohighlight">\(P_{loss,MOS}^*=I^*\)</span><br />
+Which gives if the voltage is approximated by <span class="math notranslate nohighlight">\(V^*\approx P*^{1/3}\)</span>:<br />
+<span class="math notranslate nohighlight">\(P_{loss,MOS}^* \approx P^{*2/3}\)</span><br />
+with <span class="math notranslate nohighlight">\(P\)</span> the converter power.</p>
+<p>The <em>heat exchange</em> of the converter shall ensure a constant temperature for the entire power range of a given line of converters. It is assumed that the dissipation is fixed here by forced convection (due to propeller air flow) which can be expressed finally with converter dimension <span class="math notranslate nohighlight">\(d^*\)</span> by:<br />
+<span class="math notranslate nohighlight">\(P_{conv}^* = h^* S^* \Delta \theta^*= d^{*2} \)</span><br />
+and as <span class="math notranslate nohighlight">\(P_{conv}^*=P_{loss,MOS}^*\)</span>, we have <span class="math notranslate nohighlight">\(d^*=P^{*1/3}\)</span> and thus a mass evolution express by the following linear trend can be deduced:<br />
+<span class="math notranslate nohighlight">\(M^*=d^{*3}=P^*\)</span></p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./laboratories/Lab-package_delivery_UAV"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="4-estimation_models-linear_regression-student.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6.10. </span>Estimation models with dimensional analysis and linear regressions  (student version)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="4-estimation_models-scaling_laws-student.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6.12. </span>Scaling laws of electrical components (student version)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrical-components">6.11.1. Electrical components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lipo-battery">6.11.1.1. Lipo battery</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brushless-motor">6.11.2. Brushless motor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-laws">6.11.2.1. Scaling laws</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-with-a-data-plot">6.11.3. Validation with a data plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-data">6.11.3.1. Import data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data-mass">6.11.3.1.1. Plot data: Mass</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data-resistance">6.11.3.1.2. Plot data: Resistance</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-electronic-converter">6.11.3.2. Power electronic converter</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marc Budinger, Scott Delbecq, Félix Pollet, Aurélien Reysset
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
