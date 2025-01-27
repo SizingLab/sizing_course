@@ -1,0 +1,68 @@
+[
+    {
+        "question": "The first one is defined by: 'Load acting on the axis of the screw resulting in a nominal life of one million revolutions.' Which type of degradation is it?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Rapid degradation",
+                "correct": false,
+                "feedback": "Incorrect. Rapid degradation occurs for extreme loads."
+            },
+            {
+                "answer": "Gradual degradation",
+                "correct": true,
+                "feedback": "Correct! Gradual degradation is due to repetitive loads."
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the load?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Dynamic load: Ca or Cd",
+                "correct": true,
+                "feedback": "Correct!"
+                
+            },
+            {
+                "answer": "Static load: C0 or Ca0",
+                 "correct": false,
+                "feedback": "Incorrect!"
+            }
+        ]
+    },
+{
+        "question": "The second one is defined by: 'Axial load which leads to a permanent deformation of the rolling elements' Which type of degradation is it?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Rapid degradation",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "Gradual degradation",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    },
+    {
+        "question": "What is the name of the load?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Dynamic load: Ca or Cd",
+                "correct": false,
+                "feedback": "Incorrect."
+
+            },
+            {
+                "answer": "Static load: C0 or Ca0",
+                "correct": true,
+                "feedback": "Correct!"
+            }
+        ]
+    }
+]

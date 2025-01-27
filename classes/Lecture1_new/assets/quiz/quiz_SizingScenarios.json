@@ -1,0 +1,76 @@
+[
+    
+    {
+        "question": "A first sizing scenario is a displacement profile which describes expansion/retraction movements and the associated torque. Indicate which family of components this profile is best suited to.",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Electrical",
+                "correct": false,
+                "feedback": "Incorrect. Notions of temperature and long duration of application are missing to have a thermal critical scenario."
+            },
+            {
+                "answer": "Mechanical",
+                "correct": true,
+                "feedback": "Correct! This profile can be used to estimate the maximum efforts of the whole power chain. Rolling fatigue can be taken into account if a number of repetitions is given."
+            },
+            {
+                "answer": "Electrical and Mechanical",
+                "correct": false,
+                "feedback": "Incorrect. Notions of temperature and long duration of application are missing to have a thermal critical scenario."
+            }
+            }
+        ]
+    },
+    {
+        "question": "A second sizing scenario is an important deflection with an important holding time and high external temperature (low altitude in a warm country). Indicate which components this profile is best suited to.",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Rod end",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "Thrust bearing",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "Roller screw",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "Brushless motor",
+                "correct": false,
+                "feedback": "Correct! The resulting high mean torque which generate important losses in the motor "
+            }
+        ]
+    },
+    {
+        "question": "Another sizing scenario is the case of the spoiler jamming at full deflection speed. Indicate which component imperfections negatively affect the overall system in this critical case. ",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Ball screw stiffness",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "Ball screw efficiency",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "Motor inertia",
+                "correct": true,
+                "feedback": "Correct! The stored kinetic energy will generate very high transient forces that could break the mechanical transmission. "
+            },
+            {
+                "answer": "Motor resistance",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+
+]

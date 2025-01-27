@@ -1,0 +1,95 @@
+[
+    {
+        "question": "Magnetic saturation",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "A",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "B",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "C",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "Transient",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "Continuous",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    },
+    {
+        "question": "Winding temperature (copper and iron losses)",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "A",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "B",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "C",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "Transient",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "Continuous",
+                "correct": true,
+                "feedback": "Correct!"
+            }
+        ]
+    },
+    {
+        "question": "Voltage supply",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "A",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "B",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "C",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "Transient",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "Continuous",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    }
+]

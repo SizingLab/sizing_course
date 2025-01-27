@@ -26,7 +26,10 @@ parts:
   - file: classes/Lecture1_new/summary
     title: Components, technologies, design drivers and sizing scenarios
     sections:
-      - file: classes/Lecture1_new/1-technologies
+      - file: classes/Lecture1_new/1-scenarios_and_design_drivers
+      - file: classes/Lecture1_new/2-quiz_DesignDrivers
+      - file: classes/Lecture1_new/3-quiz_SizingScenarios
+      - file: classes/Lecture1_new/4-technologies
   - file: classes/Lecture2_new/summary
     title: Estimation models
     sections:

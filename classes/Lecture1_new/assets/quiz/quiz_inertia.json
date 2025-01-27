@@ -1,0 +1,44 @@
+[
+    {
+        "question": "The inertia of the screw is:",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "22 kg.m²",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "1.1 10-5 kg.m²",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "4.4  10-5 kg.m²",
+                "correct": false,
+                "feedback": "Incorrect."
+            }
+        ]
+    },
+    {
+        "question": "Reflecting inertia of the motor on the screw axis is:",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "2.1 kg.m²",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "2.1 10-5 kg.m²",
+                "correct": false,
+                "feedback": "Incorrect."
+            },
+            {
+                "answer": "18.9 10-5 kg.m² ",
+                "correct": true,
+                "feedback": "Correct!"
+            }
+        ]
+    }
+]
