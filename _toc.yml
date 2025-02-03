@@ -23,6 +23,7 @@ parts:
       # - file: classes/Lecture0/0-needs_and_methodology_overview
       - file: classes/Lecture0/1-concept_of_operations
       - file: classes/Lecture0/2-system_architectures
+      - file: classes/Lecture0/3-architectures_sizing
   - file: classes/Lecture1_new/summary
     title: Components, technologies, design drivers and sizing scenarios
     sections:
@@ -41,8 +42,9 @@ parts:
     title: Simulation and evaluation models
     sections:
       - file: classes/Lecture3_new/1-simulation_models
-      - file: classes/Lecture3_new/2-evaluation_models
-      - file: classes/Lecture3_new/3-quiz_evaluation_models
+      - file: classes/Lecture3_new/2-quiz_simulation_models
+      - file: classes/Lecture3_new/3-evaluation_models
+      - file: classes/Lecture3_new/4-quiz_evaluation_models
       # - file: classes/Lecture3_new/4-homework
   - file: classes/Lecture4/summary
     title: Optimal sizing procedures

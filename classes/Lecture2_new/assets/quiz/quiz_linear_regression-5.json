@@ -35,7 +35,7 @@
                 "feedback": "Incorrect."
             },
             {
-                "answer": "M=0,0012+0,011.Co+0,00021.Co²$",
+                "answer": "M=0,0012+0,011.Co+0,00021.Co²",
                 "correct": true,
                 "feedback": "Correct!"
             }

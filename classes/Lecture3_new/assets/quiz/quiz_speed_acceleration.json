@@ -1,0 +1,54 @@
+[
+    {
+        "question": "Give expression of the maximal speed $v_{max}$",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$v_{max}=d/t$",
+                "correct": false,
+                "feedback": "Incorrect ! First integrate the velocity profile to determine the expression for d."
+            },
+            {
+                "answer": "$v_{max}=\\alpha \\frac{d}{t}$",
+                "correct": false,
+                "feedback": "Incorrect ! First integrate the velocity profile to determine the expression for d."
+            },
+			{
+                "answer": "$v_{max} = (1 - \\alpha ) \\frac{d}{t}$",
+                "correct": false,
+                "feedback": "Incorrect ! First integrate the velocity profile to determine the expression for d."
+            },
+            {
+                "answer": "$v_{max}=\\frac{1}{ 1 - \\alpha } \\frac{d}{t}$",
+                "correct": true,
+                "feedback": "Correct !"
+            }
+        ]
+    },
+    {
+        "question": "Give expression of the maximal acceleration $a_{max}$",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$a_{max}=\\alpha ^2 \\frac{d}{t}$",
+                "correct": false,
+                "feedback": "Incorrect !"
+            },
+            {
+                "answer": "$a_{max}=\\alpha \\frac{d^2}{t}$",
+                "correct": false,
+                "feedback": "Incorrect !"
+            },
+			{
+                "answer": "$a_{max}=\\frac{1}{ \\alpha ( 1 - \\alpha )} \\frac{d}{t^2}$",
+                "correct": true,
+                "feedback": "Correct !"
+            },
+            {
+                "answer": "$a_{max}=\\frac{ \\alpha }{ 1 - \\alpha } \\frac{d}{t^2}$",
+                "correct": false,
+                "feedback": "Incorrect !"
+            },
+        ]
+    }
+]
