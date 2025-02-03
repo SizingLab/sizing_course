@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3.4. Quiz &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>3.4. Quiz - Scaling Laws &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -180,6 +180,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Lecture0/2-system_architectures.html">1.5. System architectures</a></li>
 
 
+<li class="toctree-l2"><a class="reference internal" href="../Lecture0/3-architectures_sizing.html">1.8. Preliminary design of mechatronic system</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture1_new/summary.html">2. Components, technologies, design drivers and sizing scenarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -193,13 +194,16 @@
 <li class="toctree-l2"><a class="reference internal" href="1-linear_regressions.html">3.1. Linear regressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2-quiz_regressions.html">3.2. Quiz - Linear regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3-scaling_laws.html">3.3. Scaling laws</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.4. Quiz</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.4. Quiz - Scaling Laws</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture3_new/summary.html">4. Simulation and evaluation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/1-simulation_models.html">4.1. Simulation models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/2-evaluation_models.html">4.2. Evaluation models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/3-quiz_evaluation_models.html">4.3. Quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/2-quiz_simulation_models.html">4.2. Quiz - Simulation models</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/3-evaluation_models.html">4.5. Evaluation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/4-quiz_evaluation_models.html">4.6. Quiz - Evaluation models</a></li>
 
 </ul>
 </details></li>
@@ -527,7 +531,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Quiz</h1>
+    <h1>Quiz - Scaling Laws</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -537,10 +541,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-laws">3.4.1. Scaling laws</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quizzes-on-geometric-similarity">3.4.1.1. Quizzes on Geometric similarity</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-similarity">3.4.1. Geometric similarity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckingham-theorem-and-scaling-laws">3.4.2. Buckingham theorem and scaling laws</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanics-stress-components-examples">3.4.3. Mechanics: stress &amp; components examples</a></li>
 </ul>
@@ -554,25 +555,23 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="quiz">
-<h1><span class="section-number">3.4. </span>Quiz<a class="headerlink" href="#quiz" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="quiz-scaling-laws">
+<h1><span class="section-number">3.4. </span>Quiz - Scaling Laws<a class="headerlink" href="#quiz-scaling-laws" title="Link to this heading">#</a></h1>
 <p>Test yourself with this quiz.</p>
 <div class="cell tag_remove-input docutils container">
 </div>
-<section id="scaling-laws">
-<h2><span class="section-number">3.4.1. </span>Scaling laws<a class="headerlink" href="#scaling-laws" title="Link to this heading">#</a></h2>
-<section id="quizzes-on-geometric-similarity">
-<h3><span class="section-number">3.4.1.1. </span>Quizzes on Geometric similarity<a class="headerlink" href="#quizzes-on-geometric-similarity" title="Link to this heading">#</a></h3>
+<section id="geometric-similarity">
+<h2><span class="section-number">3.4.1. </span>Geometric similarity<a class="headerlink" href="#geometric-similarity" title="Link to this heading">#</a></h2>
 <p>We assume to have similarity on all geometrical parameters : <span class="math notranslate nohighlight">\(r^* = d^* = …= l^*\)</span></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="cxLCicRRSlwB" data-shufflequestions="False"
+<div class="output text_html"><div id="oVyCYiMSssux" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#cxLCicRRSlwB {
+#oVyCYiMSssux {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -773,7 +772,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionscxLCicRRSlwB=[
+</style></div><script type="application/javascript">var questionsoVyCYiMSssux=[
     {
         "question": "What is the evolution of the areas?",
         "type": "multiple_choice",
@@ -1705,8 +1704,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("cxLCicRRSlwB")) {
-            show_questions(questionscxLCicRRSlwB,  cxLCicRRSlwB); 
+          if(document.getElementById("oVyCYiMSssux")) {
+            show_questions(questionsoVyCYiMSssux,  oVyCYiMSssux); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1715,14 +1714,13 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("cxLCicRRSlwB");
-        // console.log(document.getElementById("cxLCicRRSlwB"));
+        //console.log("oVyCYiMSssux");
+        // console.log(document.getElementById("oVyCYiMSssux"));
 
         try_show();
         }
         </script></div>
 </div>
-</section>
 </section>
 <section id="buckingham-theorem-and-scaling-laws">
 <h2><span class="section-number">3.4.2. </span>Buckingham theorem and scaling laws<a class="headerlink" href="#buckingham-theorem-and-scaling-laws" title="Link to this heading">#</a></h2>
@@ -1736,13 +1734,13 @@ if (typeof version == 'undefined') {
 <p><img alt="beam" src="../../_images/scaling_beam.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="qdtCTyYnwTYa" data-shufflequestions="False"
+<div class="output text_html"><div id="rUXDewMqGFhX" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#qdtCTyYnwTYa {
+#rUXDewMqGFhX {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1943,7 +1941,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsqdtCTyYnwTYa=[
+</style></div><script type="application/javascript">var questionsrUXDewMqGFhX=[
     {
         "question": "Give the evolution of stress $\\sigma$ with geometrical dimension:",
         "type": "multiple_choice",
@@ -2814,8 +2812,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("qdtCTyYnwTYa")) {
-            show_questions(questionsqdtCTyYnwTYa,  qdtCTyYnwTYa); 
+          if(document.getElementById("rUXDewMqGFhX")) {
+            show_questions(questionsrUXDewMqGFhX,  rUXDewMqGFhX); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2824,8 +2822,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("qdtCTyYnwTYa");
-        // console.log(document.getElementById("qdtCTyYnwTYa"));
+        //console.log("rUXDewMqGFhX");
+        // console.log(document.getElementById("rUXDewMqGFhX"));
 
         try_show();
         }
@@ -2837,13 +2835,13 @@ if (typeof version == 'undefined') {
 <p><img alt="rod-end" src="../../_images/scaling_rodend.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="fbtmBlrlNNtY" data-shufflequestions="False"
+<div class="output text_html"><div id="hUHMcgkufBHd" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#fbtmBlrlNNtY {
+#hUHMcgkufBHd {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3044,7 +3042,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsfbtmBlrlNNtY=[
+</style></div><script type="application/javascript">var questionshUHMcgkufBHd=[
     {
         "question": "Estimate the diameter $d$ of a rod-end  with a static load $C_0 = 50 kN$:",
         "type": "multiple_choice",
@@ -3878,8 +3876,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("fbtmBlrlNNtY")) {
-            show_questions(questionsfbtmBlrlNNtY,  fbtmBlrlNNtY); 
+          if(document.getElementById("hUHMcgkufBHd")) {
+            show_questions(questionshUHMcgkufBHd,  hUHMcgkufBHd); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -3888,8 +3886,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("fbtmBlrlNNtY");
-        // console.log(document.getElementById("fbtmBlrlNNtY"));
+        //console.log("hUHMcgkufBHd");
+        // console.log(document.getElementById("hUHMcgkufBHd"));
 
         try_show();
         }
@@ -3963,10 +3961,7 @@ if (typeof version == 'undefined') {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-laws">3.4.1. Scaling laws</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quizzes-on-geometric-similarity">3.4.1.1. Quizzes on Geometric similarity</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-similarity">3.4.1. Geometric similarity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckingham-theorem-and-scaling-laws">3.4.2. Buckingham theorem and scaling laws</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanics-stress-components-examples">3.4.3. Mechanics: stress &amp; components examples</a></li>
 </ul>

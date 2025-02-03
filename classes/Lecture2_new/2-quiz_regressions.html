@@ -178,6 +178,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Lecture0/2-system_architectures.html">1.5. System architectures</a></li>
 
 
+<li class="toctree-l2"><a class="reference internal" href="../Lecture0/3-architectures_sizing.html">1.8. Preliminary design of mechatronic system</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture1_new/summary.html">2. Components, technologies, design drivers and sizing scenarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -191,13 +192,16 @@
 <li class="toctree-l2"><a class="reference internal" href="1-linear_regressions.html">3.1. Linear regressions</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3.2. Quiz - Linear regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3-scaling_laws.html">3.3. Scaling laws</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4-quiz_scaling_laws.html">3.4. Quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-quiz_scaling_laws.html">3.4. Quiz - Scaling Laws</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture3_new/summary.html">4. Simulation and evaluation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/1-simulation_models.html">4.1. Simulation models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/2-evaluation_models.html">4.2. Evaluation models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/3-quiz_evaluation_models.html">4.3. Quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/2-quiz_simulation_models.html">4.2. Quiz - Simulation models</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/3-evaluation_models.html">4.5. Evaluation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/4-quiz_evaluation_models.html">4.6. Quiz - Evaluation models</a></li>
 
 </ul>
 </details></li>
@@ -563,13 +567,13 @@
 <p><img alt="Linear regression" src="../../_images/LinearRegression_ScatterPlot.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="DmiuWIqUgAwL" data-shufflequestions="False"
+<div class="output text_html"><div id="JhVYCSEouNCA" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#DmiuWIqUgAwL {
+#JhVYCSEouNCA {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -770,7 +774,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsDmiuWIqUgAwL=[
+</style></div><script type="application/javascript">var questionsJhVYCSEouNCA=[
     {
         "question": "Which correlation correlation best describes the scatter plot?",
         "type": "multiple_choice",
@@ -1635,8 +1639,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("DmiuWIqUgAwL")) {
-            show_questions(questionsDmiuWIqUgAwL,  DmiuWIqUgAwL); 
+          if(document.getElementById("JhVYCSEouNCA")) {
+            show_questions(questionsJhVYCSEouNCA,  JhVYCSEouNCA); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1645,8 +1649,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("DmiuWIqUgAwL");
-        // console.log(document.getElementById("DmiuWIqUgAwL"));
+        //console.log("JhVYCSEouNCA");
+        // console.log(document.getElementById("JhVYCSEouNCA"));
 
         try_show();
         }
@@ -1656,13 +1660,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Bearing correlation matrix" src="../../_images/LinearRegression_CorrelationBearing.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="fbhsptfCmsTD" data-shufflequestions="False"
+<div class="output text_html"><div id="YxziNsZrLDEG" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#fbhsptfCmsTD {
+#YxziNsZrLDEG {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1863,7 +1867,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsfbhsptfCmsTD=[
+</style></div><script type="application/javascript">var questionsYxziNsZrLDEG=[
     {
         "question": "Select the variable that seems the most related to the Mass.",
         "type": "multiple_choice",
@@ -2697,8 +2701,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("fbhsptfCmsTD")) {
-            show_questions(questionsfbhsptfCmsTD,  fbhsptfCmsTD); 
+          if(document.getElementById("YxziNsZrLDEG")) {
+            show_questions(questionsYxziNsZrLDEG,  YxziNsZrLDEG); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2707,8 +2711,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("fbhsptfCmsTD");
-        // console.log(document.getElementById("fbhsptfCmsTD"));
+        //console.log("YxziNsZrLDEG");
+        // console.log(document.getElementById("YxziNsZrLDEG"));
 
         try_show();
         }
@@ -2721,13 +2725,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Best fit" src="../../_images/LinearRegression_bestFit.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="CEgTWpGQEesT" data-shufflequestions="False"
+<div class="output text_html"><div id="cFPwJFSbdkWQ" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#CEgTWpGQEesT {
+#cFPwJFSbdkWQ {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2928,7 +2932,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsCEgTWpGQEesT=[
+</style></div><script type="application/javascript">var questionscFPwJFSbdkWQ=[
     {
         "question": "For which data set is this line the best fit?",
         "type": "multiple_choice",
@@ -3762,8 +3766,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("CEgTWpGQEesT")) {
-            show_questions(questionsCEgTWpGQEesT,  CEgTWpGQEesT); 
+          if(document.getElementById("cFPwJFSbdkWQ")) {
+            show_questions(questionscFPwJFSbdkWQ,  cFPwJFSbdkWQ); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -3772,8 +3776,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("CEgTWpGQEesT");
-        // console.log(document.getElementById("CEgTWpGQEesT"));
+        //console.log("cFPwJFSbdkWQ");
+        // console.log(document.getElementById("cFPwJFSbdkWQ"));
 
         try_show();
         }
@@ -3782,13 +3786,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Regression analysis" src="../../_images/LinearRegression_ValidationRegression.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="GjagCUlCzNBG" data-shufflequestions="False"
+<div class="output text_html"><div id="AXTwwJuaMTra" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#GjagCUlCzNBG {
+#AXTwwJuaMTra {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3989,7 +3993,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsGjagCUlCzNBG=[
+</style></div><script type="application/javascript">var questionsAXTwwJuaMTra=[
     {
         "question": "What is the greatest concern about the regression above?",
         "type": "multiple_choice",
@@ -4828,8 +4832,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("GjagCUlCzNBG")) {
-            show_questions(questionsGjagCUlCzNBG,  GjagCUlCzNBG); 
+          if(document.getElementById("AXTwwJuaMTra")) {
+            show_questions(questionsAXTwwJuaMTra,  AXTwwJuaMTra); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -4838,8 +4842,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("GjagCUlCzNBG");
-        // console.log(document.getElementById("GjagCUlCzNBG"));
+        //console.log("AXTwwJuaMTra");
+        // console.log(document.getElementById("AXTwwJuaMTra"));
 
         try_show();
         }
@@ -4849,13 +4853,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Regression analysis" src="../../_images/LinearRegression_BearingRegression.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="ghasOVkoPtPR" data-shufflequestions="False"
+<div class="output text_html"><div id="NylKkBimEOAM" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#ghasOVkoPtPR {
+#NylKkBimEOAM {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -5056,7 +5060,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsghasOVkoPtPR=[
+</style></div><script type="application/javascript">var questionsNylKkBimEOAM=[
     {
         "question": "Some points have been removed. What for?",
         "type": "multiple_choice",
@@ -5093,7 +5097,7 @@ if (typeof version == 'undefined') {
                 "feedback": "Incorrect."
             },
             {
-                "answer": "M=0,0012+0,011.Co+0,00021.Co²$",
+                "answer": "M=0,0012+0,011.Co+0,00021.Co²",
                 "correct": true,
                 "feedback": "Correct!"
             }
@@ -5906,8 +5910,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("ghasOVkoPtPR")) {
-            show_questions(questionsghasOVkoPtPR,  ghasOVkoPtPR); 
+          if(document.getElementById("NylKkBimEOAM")) {
+            show_questions(questionsNylKkBimEOAM,  NylKkBimEOAM); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -5916,8 +5920,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("ghasOVkoPtPR");
-        // console.log(document.getElementById("ghasOVkoPtPR"));
+        //console.log("NylKkBimEOAM");
+        // console.log(document.getElementById("NylKkBimEOAM"));
 
         try_show();
         }
@@ -5927,13 +5931,13 @@ if (typeof version == 'undefined') {
 <p><img alt="Regression analysis" src="../../_images/LinearRegression_BearingTransformation.png" /></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="KmmCTdCpvHtK" data-shufflequestions="False"
+<div class="output text_html"><div id="jNUDjKJYqKHB" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#KmmCTdCpvHtK {
+#jNUDjKJYqKHB {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -6134,23 +6138,23 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsKmmCTdCpvHtK=[
+</style></div><script type="application/javascript">var questionsjNUDjKJYqKHB=[
     {
         "question": "What is the equation of the regression?",
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "M=1.299Co-2.1398",
+                "answer": "M=1.299*Co-2.1398",
                 "correct": false,
                 "feedback": "Incorrect!"
             },
             {
-                "answer": "M=-2.1398Co^{1.299}",
+                "answer": "M=-2.1398*Co^1.299",
                 "correct": false,
                 "feedback": "Incorrect !"
             },
             {
-                "answer": "M=10^-2.1398.Co^1.299",
+                "answer": "M=10^-2.1398*Co^1.299",
                 "correct": true,
                 "feedback": "Correct !"
             }
@@ -6963,8 +6967,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("KmmCTdCpvHtK")) {
-            show_questions(questionsKmmCTdCpvHtK,  KmmCTdCpvHtK); 
+          if(document.getElementById("jNUDjKJYqKHB")) {
+            show_questions(questionsjNUDjKJYqKHB,  jNUDjKJYqKHB); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -6973,8 +6977,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("KmmCTdCpvHtK");
-        // console.log(document.getElementById("KmmCTdCpvHtK"));
+        //console.log("jNUDjKJYqKHB");
+        // console.log(document.getElementById("jNUDjKJYqKHB"));
 
         try_show();
         }

@@ -180,6 +180,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Lecture0/2-system_architectures.html">1.5. System architectures</a></li>
 
 
+<li class="toctree-l2"><a class="reference internal" href="../Lecture0/3-architectures_sizing.html">1.8. Preliminary design of mechatronic system</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture1_new/summary.html">2. Components, technologies, design drivers and sizing scenarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -193,13 +194,16 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3.1. Linear regressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2-quiz_regressions.html">3.2. Quiz - Linear regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3-scaling_laws.html">3.3. Scaling laws</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4-quiz_scaling_laws.html">3.4. Quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-quiz_scaling_laws.html">3.4. Quiz - Scaling Laws</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture3_new/summary.html">4. Simulation and evaluation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/1-simulation_models.html">4.1. Simulation models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/2-evaluation_models.html">4.2. Evaluation models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/3-quiz_evaluation_models.html">4.3. Quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/2-quiz_simulation_models.html">4.2. Quiz - Simulation models</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/3-evaluation_models.html">4.5. Evaluation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/4-quiz_evaluation_models.html">4.6. Quiz - Evaluation models</a></li>
 
 </ul>
 </details></li>
@@ -819,7 +823,7 @@ Classical statistic tools can be used to characterize a data serie and the links
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2001/1134722465.py:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2044/1134722465.py:1: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
   df.corr()
 </pre></div>
 </div>
@@ -1077,31 +1081,31 @@ Classical statistic tools can be used to characterize a data serie and the links
 <p>Parametric regressions are based on models requiring the estimation of a finite number of parameters <span class="math notranslate nohighlight">\(\theta\)</span> that express the effects of basis functions on the response surface. With polynomial interpolation or regression, the basis functions are <span class="math notranslate nohighlight">\({1, x, x^2, …, x^p}\)</span>. The idea is to obtain a surface that is differentiable and continuous. For a polynomial development of order 2 (p = 2), the expression is:</p>
 <p><span class="math notranslate nohighlight">\(y=f(\underline{x}, \underline{\theta})=\theta_0 + \sum_{i=1}^{k} \theta_0 x_i + \sum_{i=1, j=1}^{k} \theta_{ij} x_i x_j \)</span></p>
 <p>with <span class="math notranslate nohighlight">\(\underline{x}=\begin{pmatrix}
-           x_{1} \
-           x_{2} \
-           \vdots \
+           x_{1} \\
+           x_{2} \\
+           \vdots \\
            x_{k}
          \end{pmatrix}\)</span></p>
-<p>which, for the <span class="math notranslate nohighlight">\(n\)</span> experiments, can be written with a matrix representation:
+<p>which, for the <span class="math notranslate nohighlight">\(n\)</span> experiments, can be written with a matrix representation:<br />
 <span class="math notranslate nohighlight">\(\underline{Y}=\underline{X}.\underline{\theta}+\underline{\varepsilon}\)</span></p>
 <p>with <span class="math notranslate nohighlight">\(\underline{Y}=\begin{pmatrix}
-           y^{(1)} \
-           \vdots \
+           y^{(1)} \\
+           \vdots \\
            y^{(n)}
          \end{pmatrix}\)</span> ,
 <span class="math notranslate nohighlight">\(\underline{X}=\begin{pmatrix}
-           1, x_{1}^{(1)}, ..., x_{k_x}^{2(1)}   \
-           \vdots \
+           1, x_{1}^{(1)}, ..., x_{k_x}^{2(1)}   \\
+           \vdots \\
            1, x_{1}^{(n)}, ..., x_{k_x}^{2(n)}   
          \end{pmatrix}\)</span>,
 <span class="math notranslate nohighlight">\(\underline{\theta}=\begin{pmatrix}
-           \theta_0 \
-           \vdots \
+           \theta_0 \\
+           \vdots \\
            \theta_{k_{\theta}}
          \end{pmatrix}\)</span>,
 <span class="math notranslate nohighlight">\(\underline{\varepsilon}=\begin{pmatrix}
-           \varepsilon^{(1)} \
-           \vdots \
+           \varepsilon^{(1)} \\
+           \vdots \\
            \varepsilon^{(n)}
          \end{pmatrix}\)</span></p>
 <p>where :</p>
@@ -1469,7 +1473,7 @@ Classical statistic tools can be used to characterize a data serie and the links
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2001/3185552036.py:30: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2044/3185552036.py:30: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   intercept = float(reg_M.intercept_)
 </pre></div>
 </div>
