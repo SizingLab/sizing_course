@@ -1,0 +1,28 @@
+[
+    {
+        "question": "Give expression of the maximal acceleration: ",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "a",
+                "correct": false,
+                "feedback": "Incorrect !"
+            },
+            {
+                "answer": "b",
+                "correct": false,
+                "feedback": "Incorrect !"
+            },
+			{
+                "answer": "c",
+                "correct": true,
+                "feedback": "Correct !"
+            },
+            {
+                "answer": "d",
+                "correct": false,
+                "feedback": "Incorrect !"
+            },
+        ]
+    }
+]

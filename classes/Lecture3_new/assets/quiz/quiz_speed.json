@@ -1,0 +1,28 @@
+[
+    {
+        "question": "Give expression of the maximal speed:",        
+		"type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "a",
+                "correct": false,
+                "feedback": "Incorrect ! First integrate the velocity profile to determine the expression for d."
+            },
+            {
+                "answer": "b",
+                "correct": false,
+                "feedback": "Incorrect ! First integrate the velocity profile to determine the expression for d."
+            },
+			{
+                "answer": "c",
+                "correct": false,
+                "feedback": "Incorrect ! First integrate the velocity profile to determine the expression for d."
+            },
+            {
+                "answer": "d",
+                "correct": true,
+                "feedback": "Correct !"
+            }
+        ]
+    }
+]

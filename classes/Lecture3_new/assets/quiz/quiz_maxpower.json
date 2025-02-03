@@ -1,25 +1,25 @@
 [
     {
-        "question": "Give value of coefficient $ \\alpha $ which minimizes maximal power $ P_{max} $",
+        "question": "Give the value which minimizes maximal power: ",
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "$\\alpha = 1$",
+                "answer": "1",
                 "correct": false,
                 "feedback": "Incorrect ! Derivate power expression"
             },
             {
-                "answer": "$\\alpha = 1/2$",
+                "answer": "1/2",
                 "correct": false,
                 "feedback": "Incorrect ! Derivate power expression"
             },
 			{
-                "answer": "$\\alpha = 1/3$",
+                "answer": "1/3",
                 "correct": true,
                 "feedback": "Correct !"
             },
             {
-                "answer": "$\\alpha = 1/4$",
+                "answer": "1/4",
                 "correct": false,
                 "feedback": "Incorrect ! Derivate power expression"
             }

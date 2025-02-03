@@ -1,25 +1,25 @@
 [
     {
-        "question": "Give expression of the maximal speed $v_{max}$",
-        "type": "multiple_choice",
+        "question": "Give expression of the maximal speed $v_{max}$",        
+		"type": "multiple_choice",
         "answers": [
             {
-                "answer": "$v_{max}=d/t$",
+                "answer": "a",
                 "correct": false,
                 "feedback": "Incorrect ! First integrate the velocity profile to determine the expression for d."
             },
             {
-                "answer": "$v_{max}=\\alpha \\frac{d}{t}$",
+                "answer": "b",
                 "correct": false,
                 "feedback": "Incorrect ! First integrate the velocity profile to determine the expression for d."
             },
 			{
-                "answer": "$v_{max} = (1 - \\alpha ) \\frac{d}{t}$",
+                "answer": "c",
                 "correct": false,
                 "feedback": "Incorrect ! First integrate the velocity profile to determine the expression for d."
             },
             {
-                "answer": "$v_{max}=\\frac{1}{ 1 - \\alpha } \\frac{d}{t}$",
+                "answer": "d",
                 "correct": true,
                 "feedback": "Correct !"
             }
