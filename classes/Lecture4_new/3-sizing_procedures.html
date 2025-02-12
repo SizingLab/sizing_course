@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5.1. Representation of a design problem and basics optimal design &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>5.3. Development of a sizing procedure using design graphs &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -63,12 +63,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture4/1-design_and_optimization_problems';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture4_new/3-sizing_procedures';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.2. Optimization with python" href="2-optimization_examples.html" />
-    <link rel="prev" title="5. Development and implementation of an optimal sizing procedure - Summary" href="summary.html" />
+    <link rel="next" title="5.4. Design graph and optimization with python" href="4-sizing_procedure_examples.html" />
+    <link rel="prev" title="5.2. Optimization with python" href="2-optimization_examples.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -208,9 +208,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">5. Optimal sizing procedures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.1. Representation of a design problem and basics optimal design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-design_and_optimization_problems.html">5.1. Representation of a Design Problem and Fundamentals of Optimal Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2-optimization_examples.html">5.2. Optimization with python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3-sizing_procedures.html">5.3. Development of a sizing procedure using design graphs</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.3. Development of a sizing procedure using design graphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4-sizing_procedure_examples.html">5.4. Design graph and optimization with python</a></li>
 </ul>
 </details></li>
@@ -342,7 +342,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/classes/Lecture4/1-design_and_optimization_problems.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/classes/Lecture4_new/3-sizing_procedures.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -360,7 +360,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/classes/Lecture4/1-design_and_optimization_problems.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/classes/Lecture4_new/3-sizing_procedures.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -408,7 +408,7 @@
       
       
       
-      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/classes/Lecture4/1-design_and_optimization_problems.ipynb" target="_blank"
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/classes/Lecture4_new/3-sizing_procedures.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -425,7 +425,7 @@
       
       
       
-      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclasses/Lecture4/1-design_and_optimization_problems.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclasses/Lecture4_new/3-sizing_procedures.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -455,7 +455,7 @@
       
       
       
-      <li><a href="../../_sources/classes/Lecture4/1-design_and_optimization_problems.ipynb" target="_blank"
+      <li><a href="../../_sources/classes/Lecture4_new/3-sizing_procedures.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -531,7 +531,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Representation of a design problem and basics optimal design</h1>
+    <h1>Development of a sizing procedure using design graphs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -541,20 +541,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-design-an-inverse-problem">5.1.1. Preliminary design: an inverse problem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-procedure-representations">5.1.2. Sizing procedure representations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-diagram">5.1.2.1. Causal diagram</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n2-diagram">5.1.2.2. N² diagram</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs">5.1.2.3. Graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-layers">5.3.1. Knowledge layers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-definition">5.3.2. Problem definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-ordering">5.3.3. Equations Ordering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underconstrained-problems">5.3.3.1. Underconstrained problems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overconstrained-problems">5.3.3.2. Overconstrained problems</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-as-an-optimization-problem">5.1.3. Sizing as an optimization problem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-problem-formulation">5.1.3.1. Optimization problem formulation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-and-local-optimum">5.1.3.2. Global and local optimum</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interior-and-boudary-optima">5.1.3.3. Interior and boudary optima</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">5.1.3.4. References</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#treatment-of-algebraic-loops">5.3.4. Treatment of algebraic loops</a></li>
 </ul>
             </nav>
         </div>
@@ -566,200 +560,202 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="representation-of-a-design-problem-and-basics-optimal-design">
-<h1><span class="section-number">5.1. </span>Representation of a design problem and basics optimal design<a class="headerlink" href="#representation-of-a-design-problem-and-basics-optimal-design" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="development-of-a-sizing-procedure-using-design-graphs">
+<h1><span class="section-number">5.3. </span>Development of a sizing procedure using design graphs<a class="headerlink" href="#development-of-a-sizing-procedure-using-design-graphs" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Toulouse, France</em></p>
-<p>To date, we have been able to work on :</p>
-<ul class="simple">
-<li><p>The establishment of scenarios and mission profiles, enabling us to represent the system’s main design constraints.</p></li>
-<li><p>Simulation, evaluation and estimation models, enabling us to calculate the usage constraints and main characteristics of our components.</p></li>
-</ul>
-<p>We now need to use this information to select the right components, while optimising our solutions (in terms of mass and dimensions) and complying with a number of constraints (speed, temperature, etc.).</p>
-<p><img alt="Sizing Procedure and Optimization" src="../../_images/SizingProcedureOptimization.png" /></p>
+<p>The ordering of the calculation steps of a whole, highly constrained sizing procedure is not always an easy task. We propose here graphical representations that can be applied to highlight the different problems the designer has to face (singularity, calculation loop) and may help him solve these problems by proposing alternatives.</p>
+<p>The following steps are suggested:</p>
+<ol class="arabic simple">
+<li><p>Problem definition : gather all the equations/inequalities describing the problem</p></li>
+<li><p>Orientate the problem</p></li>
+<li><p>Break problem calculation loops</p></li>
+</ol>
 <p>For interested readers, more information can be found in the following document (Chapter 5 – Design graphs for sizing procedures and optimization problems definition):</p>
 <blockquote>
 <div><p>Budinger, M. (2014). Preliminary design and sizing of actuation systems (HDR dissertation, UPS Toulouse). <a class="reference external" href="https://hal.science/tel-01112448v1/document">Link</a></p>
 </div></blockquote>
-<section id="preliminary-design-an-inverse-problem">
-<h2><span class="section-number">5.1.1. </span>Preliminary design: an inverse problem<a class="headerlink" href="#preliminary-design-an-inverse-problem" title="Link to this heading">#</a></h2>
-<p>Preliminary design, is just like any other design problem, an inverse problem. The objective is to select the right components for a determined architecture. The models we use generally allow us to determine the inverse relation, which means the performances of our system (what’s required in the specifications), based on components characteristics (what systems engineers look for).</p>
-<p><img alt="Sizing Procedure and Optimization" src="../../_images/InversePb.png" /></p>
+<section id="knowledge-layers">
+<h2><span class="section-number">5.3.1. </span>Knowledge layers<a class="headerlink" href="#knowledge-layers" title="Link to this heading">#</a></h2>
+<p>The knowledge required to design a mechatronic system is divided into two layers:</p>
+<ul class="simple">
+<li><p>A system layer, which represents all the interactions between the components. It is used to evaluate the overall performance of our system. It uses 0D-1D models in algorithmic or simulation environments.</p></li>
+<li><p>A component layer, which represents the knowledge relating to a particular component. The calculation resources associated with this layer use finite elements or specific design tools. Information at this level may also be available in datasheets.</p></li>
+</ul>
+<p><img alt="Knowledge layers" src="../../_images/KnowledgeLevel.png" /></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">There are essentially two types of solution to this problem:</p>
-<ul class="simple">
-<li><p class="sd-card-text">Either selection and sizing procedures, which are an intelligent sequence of calculations and tests to determine which components should be chosen. These procedures can also be represented graphically (directed graphs or digraphs) or in the form of N-squared diagrams.</p></li>
-</ul>
-<p class="sd-card-text"><img alt="Sizing Procedure and Optimization" src="../../_images/HarmonicDriveSelection.png" /></p>
-<ul class="simple">
-<li><p class="sd-card-text">Or optimisation algorithms, which minimise the difference between the performance obtained and the performance required, by modifying the design parameters of the components.</p></li>
-</ul>
-<p class="sd-card-text">In this section, we show how these two types of solution can be used together.</p>
+<p class="sd-card-text">We advise you to start the implementation of a sizing procedure in an incremental way by using simple algebraic models.</p>
+<p class="sd-card-text">We can therefore generally have a set of algebraic equations that must be ordered to obtain a dimensioning code.</p>
+<p class="sd-card-text">It will then be possible to replace certain parts with more advanced models to increase the level of fidelity.</p>
 </div>
 </details></section>
-<section id="sizing-procedure-representations">
-<h2><span class="section-number">5.1.2. </span>Sizing procedure representations<a class="headerlink" href="#sizing-procedure-representations" title="Link to this heading">#</a></h2>
-<p>The sizing procedure can be considered as a major part of the whole preliminary sizing process. When the problem is complex, with numerous interactions between components of various fields (mechanical, electrical, etc.), methods for the representation and analysis of such interactions become valuable. We will focus here, on the graphical representation methods.</p>
-<section id="causal-diagram">
-<h3><span class="section-number">5.1.2.1. </span>Causal diagram<a class="headerlink" href="#causal-diagram" title="Link to this heading">#</a></h3>
-<p>The causal diagram is a graphical tool representing the causal relationships between variables. It is, in fact an oriented graph representing a calculation scheme. Figures below give examples of causal diagrams used in the Salome platform for the Pre- and Post-Processing of numerical simulations or for a space envelope estimation.</p>
-<p><img alt="Causal Diagrams" src="../../_images/CausalDiagrams.png" /></p>
+<section id="problem-definition">
+<h2><span class="section-number">5.3.2. </span>Problem definition<a class="headerlink" href="#problem-definition" title="Link to this heading">#</a></h2>
+<p>For design problems characterized by a reduced set of equations, a skilled designer will be able to order design constraints of his area of knowledge quickly and intuitively. It is, however, also possible to represent and order these equations graphically. This graphical representation, called “Design Graph” here, can be used with advantage as a teaching tool or as an analysis tool for an engineer in the case of new design scenarios or new technology.</p>
+<p><img alt="Design graph" src="../../_images/DesignGraph.png" /></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">With a causal diagram, the couplings between the different entities can be difficult to visualize. A major problem is that of algebraic loops, which is well known in industrial processes where Excel spread-sheets bring together component sizing procedures that must not present circular reference errors (i.e. loops) such as y=f(x) and x=g(y).
-Several solutions are possible:</p>
+<p class="sd-card-text">The problem definition is realized with a bipartite graph for each design layer (mechatronic system layer and components layer) as represented in Figure above:</p>
 <ul class="simple">
-<li><p class="sd-card-text">reject the possibility of such loopbacks in the construction of the causal diagram</p></li>
-<li><p class="sd-card-text">solve all the coupled equations (this analytical solution is not always possible even with a symbolic maths package) analytically</p></li>
-<li><p class="sd-card-text">solve these equations using a numerical solver.</p></li>
+<li><p class="sd-card-text">the parameters are set at mechatronic system layer level from requirements specifications (performance, constraints) and at component layer level by listing the components of the architecture and their main characteristics.</p></li>
+<li><p class="sd-card-text">equations are then introduced to link the different parameters: at mechatronic system layer level with equations representing design scenarios, at component layer level with estimation models.</p></li>
 </ul>
-<p class="sd-card-text">For the latter, two implementations are possible. In the first, the numerical solver used is internal to the calculation procedure and its computer support. This sizing procedure is difficult to export to other optimization or calculation tools, however.<br />
-For the second implementation, the code generated, which corresponds to the sizing procedure, postpones the task of numerical solver to the optimization algorithm. It is then necessary to add design parameters and additional constraints in the optimization problem to manage these algebraic loops. This is the preferred solution in this course.</p>
+<p class="sd-card-text">At this point the relationships between the parameters and equations are represented as non-oriented edges. It is not necessary to express the equations in detail.</p>
 </div>
 </details></section>
-<section id="n2-diagram">
-<h3><span class="section-number">5.1.2.2. </span>N² diagram<a class="headerlink" href="#n2-diagram" title="Link to this heading">#</a></h3>
-<p>This diagram is a causal diagram where the graphical entities (blocks) and interactions (arrows) are dictated by an organization convention as shown below.<br />
-<img alt="N2 Diagram" src="../../_images/N2diagram.png" /></p>
+<section id="equations-ordering">
+<h2><span class="section-number">5.3.3. </span>Equations Ordering<a class="headerlink" href="#equations-ordering" title="Link to this heading">#</a></h2>
+<p>The orientation of the equations is the next step. The parameters set by the specifications are selected as inputs for the sizing procedure. Some parameters in the specification may take the form of outputs if the wording of the requirement defines them as an objective to be minimized or maximized or as a maximum or minimum limit constraint to be respected.</p>
+<p><img alt="Design graph" src="../../_images/DesignGraphToOrientate.png" /></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The N2D formalisms were introduced in the 1970s by the system engineer Robert J. Lano. N is the number of entities considered. The inputs of the blocks are represented by vertical arrows while the outputs must be horizontal arrows. This display provides a quick visual summary of the organization of the system studied. In particular, the couplings and algebraic loops between blocks are easily identifiable, for example when a block “2” provides an input to block “3” and block “3” provides an input to block “2”.</p>
+<p class="sd-card-text">Figure above summarizes the graphical notation that can be taken to represent these parameters in a form approaching an influence diagram in order to prepare the implementation of the optimization problem.</p>
 </div>
-</details></section>
-<section id="graphs">
-<h3><span class="section-number">5.1.2.3. </span>Graphs<a class="headerlink" href="#graphs" title="Link to this heading">#</a></h3>
-<p>A sizing procedure is quite similar to a constraint network where sizing parameters represent variables and equalities/inequalities represent constraints. Therefore, all the tools applied to the representation of constraint networks and so graph theory, can be applied.</p>
-<p><img alt="Graph Example" src="../../_images/GraphExample.PNG" /></p>
+</details><section id="underconstrained-problems">
+<h3><span class="section-number">5.3.3.1. </span>Underconstrained problems<a class="headerlink" href="#underconstrained-problems" title="Link to this heading">#</a></h3>
+<p>As an equation can generate only one output, the edges have to be oriented  to have only one output per calculation node.</p>
+<p><img alt="Design graph" src="../../_images/OneOutput.png" /></p>
+<p>If a given equation remains undetermined for several parameters, some design assumptions have to be made by stating some parameters as known. These new design parameters can be included in the optimization problem and their optimal value can be determined via the optimization algorithm.</p>
+<p><img alt="Design graph" src="../../_images/UnderConstrained.png" /></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Graphics above represent how equations match parameters. Let us take the equation (declarative equation, not imperative assignment) of Figure a, to show these representations:<br />
-a. in which case equations (square node) and non-determined parameters (circular node) are represented in a non-oriented graph.
-b. matching is generally represented in what is called a bi-partite graph : with all the equation nodes on one side and on all all the non-determined parameter nodes on the other side. A matching parameter/equation is then represented by a double-column.<br />
-c. once equations are oriented (one parameter is matched to the equation, i.e. is calculated by the equation), a simplified graph can be drawn with no more equation nodes.</p>
+<p class="sd-card-text">A preferred choice for these new design parameters would be parameters participating in a large number of equations (such as reduction ratio) and values defined within a known range (min, max). These assumptions balance the number of equations available and the number of parameters to be determined by the calculation procedure.</p>
+</div>
+</details><div class="admonition-example-under-constrained-singularity-the-hydraulic-jack admonition">
+<p class="admonition-title">Example: Under-constrained singularity, the hydraulic jack</p>
+<p>The aim is to implement the selection procedure for a hydraulic servo-actuator (jack and servovalve) to ensure a nominal effort <span class="math notranslate nohighlight">\(F_0\)</span> and a nominal speed <span class="math notranslate nohighlight">\(V_0\)</span> for a useful stroke <span class="math notranslate nohighlight">\(dx\)</span>. The anchorage structure has a stiffness <span class="math notranslate nohighlight">\(K\)</span> and does not tolerate efforts higher than <span class="math notranslate nohighlight">\(F_{max}\)</span>. The maximum flow rate <span class="math notranslate nohighlight">\(Q_{max}\)</span> required by the actuator should be minimized to reduce the mass of the hydraulic supply system.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Hydraulic jack equations</p></th>
+<th class="head"><p>Design variables</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Eq1:Fmax≥S.Pnet</p></td>
+<td><p>Fmax: stall load</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>S: piston section</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Pnet: network pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eq2: C=dx+K.F0</p></td>
+<td><p>C: total stroke</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>dx: desired stroke</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>K: structure stiffness</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>F0: maximal load</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eq3: F0=S.P0</p></td>
+<td><p>P0: maximal pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>Eq4: V0=Q0/S</p></td>
+<td><p>V0: maximal speed</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Q0: maximal flow</p></td>
+</tr>
+<tr class="row-even"><td><p>Eq5: Q_0=Q_nom √((Pnet-P_0)/(dP_nom ))</p></td>
+<td><p>Qnom: nominal valve flow</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>dPnom: nominal valve pressure drop</p></td>
+</tr>
+<tr class="row-even"><td><p>Eq6: Q_max=Q_nom √(P_net/(dP_nom ))</p></td>
+<td><p>Qmax: no load flow</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img alt="Design graph" src="../../_images/ServoHydro.png" /></p>
+<p>The design graph highlight the sub-constraints: calculation nodes 3 and 5 need 2 parameters to be assumed known to allow the sequencing of computations. As dPnom may be given by valve technology, it may be taken as input and P0 is easy to limit to a range equal to [0, Pnet], so it will be taken as a second input (variable).</p>
+<p><img alt="Design graph" src="../../_images/UnderConstraintServo.png" /></p>
+</div>
+</section>
+<section id="overconstrained-problems">
+<h3><span class="section-number">5.3.3.2. </span>Overconstrained problems<a class="headerlink" href="#overconstrained-problems" title="Link to this heading">#</a></h3>
+<p>If several equations of design scenarios have the same output, the problem may be over-constrained. Two solutions can be applied: adding a safety factor and managing one of the equations as a constraint in the optimization problem, or giving the assignment to the most restrictive equation when direct comparison is possible.</p>
+<p><img alt="Design graph" src="../../_images/OverConstrained.png" /></p>
+<div class="admonition-example-over-constrained-singularity-the-roller-screw admonition">
+<p class="admonition-title">Example: Over-constrained singularity, the roller-screw</p>
+<p>Here we consider an over-constrained problem that is quite simple but which presents the way to solve this kind of singularity. The objective is to select a roller screw subject to two constraints: a static load and a dynamic load. Let us consider the equations from some scaling laws :</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Roller-screw equations (initial set)</p></th>
+<th class="head"><p>Design variables</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Eq1: F0≥Fmax</p></td>
+<td><p>F0: roller-screw static load</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Fmax: maximum applied load</p></td>
+</tr>
+<tr class="row-even"><td><p>Eq2: Fd≥Frmc</p></td>
+<td><p>Fd: roller-screw dynamic load</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Frmc: rolling fatigue applied load</p></td>
+</tr>
+<tr class="row-even"><td><p>Eq3: Fd=Fdref(F0/F0ref)^0.9</p></td>
+<td><p>Fdref: roller-screw dynamic load (reference component)</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>F0ref: roller-screw static load (reference component)</p></td>
+</tr>
+<tr class="row-even"><td><p>Eq4: Ln=Lnref(F0/F0ref)^0.5</p></td>
+<td><p>Ln: roller-screw nut length</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Lnref: roller-screw nut length (reference component)</p></td>
+</tr>
+<tr class="row-even"><td><p>Eq5: Ls=C+Ln+Lb</p></td>
+<td><p>Ls: screw length</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>C: actuator stroke</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Lb: thrust bearing width</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eq6: ms=msref(F0/F0ref)</p></td>
+<td><p>ms: screw linear mass</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>msref: screw linear mass (reference component)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eq7: Ms=msLs</p></td>
+<td><p>Ms: screw total mass</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img alt="Design graph" src="../../_images/OverConstrainedScrew.png" /></p>
+<p>The design graph clearly points out that one of the last 3 equations must be removed to obtain a non-singular problem. To do this, one of the inequalities must me moved to constraints (Fd&gt;=Frmc for example). Yet, without modifying the other equation (considered as: F0=Fmax), if fatigue is the sizing criterion, the constraint will never be met. That is why a degree of freedom ‘kc’ must be introduced to the equation: kc* F0=Fmax, with kc a variable input within the range [1;Inf] here.</p>
+</div>
+</section>
+</section>
+<section id="treatment-of-algebraic-loops">
+<h2><span class="section-number">5.3.4. </span>Treatment of algebraic loops<a class="headerlink" href="#treatment-of-algebraic-loops" title="Link to this heading">#</a></h2>
+<p>The treatment of possible algebraic loops is the last step. We typically find an algebraic loop when the selection of a component involves the use of characteristics of this same component. This case is represented graphically by a loop involving a design scenario equation and an estimation model equation as shown.</p>
+<p><img alt="Design graph" src="../../_images/AlgebraicLoop.png" /></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Adding a new design parameter, such as an oversizing coefficient, and a constraint to be checked by the optimization algorithm makes the sizing procedure explicit. At the end of this graphical treatment, the final sequence of equations can be represented as a triangular N² diagram or a dependency matrix in order to check that the sequence of equations is explicit.</p>
 </div>
 </details></section>
-</section>
-<section id="sizing-as-an-optimization-problem">
-<h2><span class="section-number">5.1.3. </span>Sizing as an optimization problem<a class="headerlink" href="#sizing-as-an-optimization-problem" title="Link to this heading">#</a></h2>
-<section id="optimization-problem-formulation">
-<h3><span class="section-number">5.1.3.1. </span>Optimization problem formulation<a class="headerlink" href="#optimization-problem-formulation" title="Link to this heading">#</a></h3>
-<p>An optimization problem can be formulated mathematically as follows:</p>
-<ul class="simple">
-<li><p>Minimize an objective function: <span class="math notranslate nohighlight">\(f(x)\)</span></p></li>
-<li><p>Subject to equality and inequality constraints: <span class="math notranslate nohighlight">\(h(x) = 0\)</span> and <span class="math notranslate nohighlight">\(g(x) &gt; 0\)</span></p></li>
-<li><p>By action on the variable vector <span class="math notranslate nohighlight">\(x\)</span> in the range <span class="math notranslate nohighlight">\(x_{low}&lt;x&lt;x_{up}\)</span></p></li>
-</ul>
-<p>where:</p>
-<ul class="simple">
-<li><p>the goal is the objective function <span class="math notranslate nohighlight">\(f\)</span>;</p></li>
-<li><p>design alternatives are expressed by a set of values assigned to the design variables <span class="math notranslate nohighlight">\(x\)</span> within a design domain;</p></li>
-<li><p>constraints (<span class="math notranslate nohighlight">\(h\)</span> &amp; <span class="math notranslate nohighlight">\(g\)</span>) limit the number of alternatives to those satisfying physical principles and design specifications, that is to say feasible design.</p></li>
-</ul>
-<p>The functions (<span class="math notranslate nohighlight">\(f, g, h\)</span>) can be explicit or implicit, algebraic or performed by subroutines that solve systems of differential equations iteratively.</p>
-<div class="exercise admonition" id="SizingProblem">
-
-<p class="admonition-title"><span class="caption-number">Exercise 5.1 </span></p>
-<section id="exercise-content">
-<p>Propose an optimization formulation of a UAV design problem.</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="SizingProblemSolution">
-
-<p class="admonition-title">Solution to</p>
-<section id="solution-content">
-<p><strong>Objective</strong>:<br />
-<span class="math notranslate nohighlight">\(\text{Minimise the mass of the entire drone}\)</span><br />
-<strong>Design variables</strong>:<br />
-<span class="math notranslate nohighlight">\(x=[\text{propeller diameter, propeller pitch, motor torque, battery capacity}]\)</span><br />
-<strong>Constraints</strong>:</p>
-<ul class="simple">
-<li><p><em>equality</em>:
-<span class="math notranslate nohighlight">\(\text{hovering range - 15 min} = 0\)</span></p></li>
-<li><p><em>inequalities</em>:
-<span class="math notranslate nohighlight">\(\text{take-off thrust - k.weight}  &gt; 0\)</span><br />
-<span class="math notranslate nohighlight">\(\text{battery voltage - motor voltage} &gt; 0\)</span></p></li>
-</ul>
-</section>
-</div>
-</section>
-<section id="global-and-local-optimum">
-<h3><span class="section-number">5.1.3.2. </span>Global and local optimum<a class="headerlink" href="#global-and-local-optimum" title="Link to this heading">#</a></h3>
-<p>There are many different optimisation algorithms. A gradient algorithm follows the steepest slope of the objective function. It converges rapidly, but may stop at a local optimum rather than a global optimum, as both solutions have a zero gradient. It is possible to run the optimisation algorithm with several starting points (multistart options, in Excel), or to use slower algorithms that are less sensitive to this type of problem, such as genetic algorithms.</p>
-<p><img alt="Global Local" src="../../_images/GlobalLocal.png" /></p>
-<div class="admonition-some-examples-of-optimization-algorithms-in-python admonition">
-<p class="admonition-title">Some examples of optimization algorithms in Python</p>
-<p>The Scipy package includes several <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html">optimization algorithms</a>. In this course we will use in particular:</p>
-<ul class="simple">
-<li><p><strong>A gradient type algorithm</strong>: Sequential linear-quadratic programming (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.fmin_slsqp.html">SLQP</a>) where <a class="reference external" href="https://en.wikipedia.org/wiki/Sequential_quadratic_programming">two subproblems</a> are solved at each step: a linear program (LP) used to determine an active set of constraints, followed by an equality-constrained quadratic program (EQP) used to compute the total step.</p></li>
-<li><p><strong>A gradient free algorithm</strong>: <a class="reference external" href="https://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.differential_evolution.html">Differential Evolution</a> algorithm is stochastic in nature (does not use gradient methods) to find the minimium, and can search large areas of candidate space, but often requires larger numbers of function evaluations than conventional gradient based techniques. Differential evolution algorithms don’t manage directly constraints functions. A penalty method replaces the previous objective function.</p></li>
-</ul>
-</div>
-<div class="admonition-some-examples-of-optimization-algorithms-in-excel admonition">
-<p class="admonition-title">Some examples of optimization algorithms in Excel</p>
-<p>Excel includes also several <a class="reference external" href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/9780470387207.app1">optimization algorithms</a> usefull for sizing:</p>
-<ul class="simple">
-<li><p><strong>A gradient type algorithm</strong>: the GRG Nonlinear algorithm can stop at a local minimum. However, a multistart can easily be implemented to make the solution less sensitive to the starting point.</p></li>
-<li><p><strong>A gradient free algorithm</strong>: the  Evolutionary  method  uses  the  genetic  algorithm  approach  to  find optimal  or  near- optimal  solutions.</p></li>
-</ul>
-<p>The Solver Add-in is a Microsoft Office Excel add-in program and need to be <a class="reference external" href="https://support.microsoft.com/en-us/office/load-the-solver-add-in-in-excel-612926fc-d53b-46b4-872c-e24772f078ca">activate</a>.</p>
-</div>
-</section>
-<section id="interior-and-boudary-optima">
-<h3><span class="section-number">5.1.3.3. </span>Interior and boudary optima<a class="headerlink" href="#interior-and-boudary-optima" title="Link to this heading">#</a></h3>
-<p>Different types of optimum can appear:</p>
-<ul class="simple">
-<li><p>An optimum is interior if all the constraints are inactive.</p></li>
-<li><p>An optimum that is not interior is a limit optimum.</p></li>
-</ul>
-<p><img alt="Interior and boudary" src="../../_images/InteriorBoundary.png" /></p>
-<p>It is very often the second type of solution that is achieved in an engineering problem. It is therefore important to :</p>
-<ul class="simple">
-<li><p>analyse whether this constraint is still active. It is then possible to transform the inequality constraint into an equality and include it in the body of the design code.</p></li>
-<li><p>observe the technological limit expressed by this constraint and assess whether other design choices would make it possible to improve the performance of the system.</p></li>
-</ul>
-<div class="admonition-monotonicity-analysis admonition">
-<p class="admonition-title">Monotonicity analysis</p>
-<p>Monotonicity analysis was suggested by <a class="reference internal" href="#References"><span class="xref myst">Papalambros and Wilde</span></a> as a pre-optimization technique to determine if an optimization problem is well-bounded prior to resorting to a numerical optimization task. The technique is based on the following two rules:<br />
-<strong>Rule 1</strong>: If the objective function is monotonic with respect to a variable, then there exists at least one
-active constraint which bounds the variable in the direction opposite to the objective. A constraint
-is active if it acts at its lower or upper bound.<br />
-<strong>Rule 2</strong>: If a variable is not contained in the objective function then it must be either bounded from
-both above and below by active constraints or not actively bounded at all (that is, any constraint
-monotonic with respect to that variable must be inactive or irrelevant).</p>
-</div>
-<div class="admonition-tips-and-tricks admonition">
-<p class="admonition-title">Tips and tricks</p>
-<p>Here are a few tips for minimising calculation times during optimisation:</p>
-<p><strong>On the optimisation variables</strong></p>
-<ul class="simple">
-<li><p>minimise their number</p></li>
-<li><p>make sure there are enough of them to meet the various constraints</p></li>
-<li><p>choose variables that can be easily bounded and whose bounds do not depend on a particular case study</p></li>
-</ul>
-<p><strong>On the optimisation objective</strong></p>
-<ul class="simple">
-<li><p>if necessary for certain algorithms, normalise it around a value close to 1</p></li>
-</ul>
-<p><strong>On the constraints</strong></p>
-<ul class="simple">
-<li><p>minimise the number of constraints, especially equality constraints which can be difficult to respect with certain algorithms (gradient free)</p></li>
-<li><p>if possible, transform an equality constraint into an inequality constraint (by monotonicity analysis) or include it in the dimensioning code by analytical manipulation</p></li>
-<li><p>if possible, include inequalities that are still active in the dimensioning code</p></li>
-<li><p>if necessary for certain algorithms, normalise the various constraints</p></li>
-</ul>
-</div>
-</section>
-<section id="references">
-<h3><span class="section-number">5.1.3.4. </span>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h3>
-<blockquote>
-<div><p>Papalambros, P. Y., &amp; Wilde, D. J. (2000). Principles of optimal design: modeling and computation. Cambridge university press.</p>
-</div></blockquote>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -775,7 +771,7 @@ monotonic with respect to that variable must be inactive or irrelevant).</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./classes/Lecture4"
+            path: "./classes/Lecture4_new"
         },
         predefinedOutput: true
     }
@@ -793,20 +789,20 @@ monotonic with respect to that variable must be inactive or irrelevant).</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="summary.html"
+       href="2-optimization_examples.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Development and implementation of an optimal sizing procedure - Summary</p>
+        <p class="prev-next-title"><span class="section-number">5.2. </span>Optimization with python</p>
       </div>
     </a>
     <a class="right-next"
-       href="2-optimization_examples.html"
+       href="4-sizing_procedure_examples.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.2. </span>Optimization with python</p>
+        <p class="prev-next-title"><span class="section-number">5.4. </span>Design graph and optimization with python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -827,20 +823,14 @@ monotonic with respect to that variable must be inactive or irrelevant).</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-design-an-inverse-problem">5.1.1. Preliminary design: an inverse problem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-procedure-representations">5.1.2. Sizing procedure representations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-diagram">5.1.2.1. Causal diagram</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n2-diagram">5.1.2.2. N² diagram</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs">5.1.2.3. Graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-layers">5.3.1. Knowledge layers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-definition">5.3.2. Problem definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-ordering">5.3.3. Equations Ordering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underconstrained-problems">5.3.3.1. Underconstrained problems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overconstrained-problems">5.3.3.2. Overconstrained problems</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-as-an-optimization-problem">5.1.3. Sizing as an optimization problem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-problem-formulation">5.1.3.1. Optimization problem formulation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-and-local-optimum">5.1.3.2. Global and local optimum</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interior-and-boudary-optima">5.1.3.3. Interior and boudary optima</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">5.1.3.4. References</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#treatment-of-algebraic-loops">5.3.4. Treatment of algebraic loops</a></li>
 </ul>
   </nav></div>
 

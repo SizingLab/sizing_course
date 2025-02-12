@@ -207,11 +207,11 @@
 
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4/summary.html">5. Optimal sizing procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/1-design_and_optimization_problems.html">5.1. Representation of a design problem and basics optimal design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/2-optimization_examples.html">5.2. Optimization with python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/3-sizing_procedures.html">5.3. Development of a sizing procedure using design graphs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4/4-sizing_procedure_examples.html">5.4. Design graph and optimization with python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4_new/summary.html">5. Optimal sizing procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4_new/1-design_and_optimization_problems.html">5.1. Representation of a Design Problem and Fundamentals of Optimal Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4_new/2-optimization_examples.html">5.2. Optimization with python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4_new/3-sizing_procedures.html">5.3. Development of a sizing procedure using design graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4_new/4-sizing_procedure_examples.html">5.4. Design graph and optimization with python</a></li>
 </ul>
 </details></li>
 </ul>
@@ -592,8 +592,8 @@
 </figcaption>
 </figure>
 <p>It consists in addition an oversizing coefficent <span class="math notranslate nohighlight">\(k_{os} \quad [1-10]\)</span> as a design variable and additional inequality constraint <span class="math notranslate nohighlight">\(M_{total} \geq M_{total,real}\)</span>. This way, we make sure that the drone is capable of lifting the load and itself. As we are minimizing the total mass <span class="math notranslate nohighlight">\(M_{total,real}\)</span> the oversizing coefficient <span class="math notranslate nohighlight">\(k_{os}\)</span> will tend to be as small as possible and thus the inequality constraint will be equivalent to an equality constraint (<span class="math notranslate nohighlight">\(M_{total} = M_{total,real}\)</span>). This is one way of solving an algebraic loop, other methods use numerical solvers or other optimizer-based formulations. The formulation of the optimization problem is the following:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-677a7e59-1868-4475-98d8-8c3186424945">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-677a7e59-1868-4475-98d8-8c3186424945" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2f8f5372-d065-470e-a01e-7ee33a32b3e8">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-2f8f5372-d065-470e-a01e-7ee33a32b3e8" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
         &amp; \text{minimize}
         &amp; &amp; M_{total,real} \\

@@ -1,0 +1,1075 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5.1. Representation of a Design Problem and Fundamentals of Optimal Design &#8212; Sizing and optimization of mechatronic systems</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture4_new/1-design_and_optimization_problems';</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5.2. Optimization with python" href="2-optimization_examples.html" />
+    <link rel="prev" title="5. Development and implementation of an optimal sizing procedure - Summary" href="summary.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../about/homepage.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Sizing and optimization of mechatronic systems - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Sizing and optimization of mechatronic systems - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about/context.html">Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/installation.html">Installation guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture0/summary.html">1. Concept of Operations and architectures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture0/1-concept_of_operations.html">1.1. Concept of Operations</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Lecture0/2-system_architectures.html">1.5. System architectures</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Lecture0/3-architectures_sizing.html">1.8. Preliminary design of mechatronic system</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture1_new/summary.html">2. Components, technologies, design drivers and sizing scenarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture1_new/1-scenarios_and_design_drivers.html">2.1. Scenarios and Design Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture1_new/2-quiz_DesignDrivers.html">2.2. Quiz - Design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture1_new/3-quiz_SizingScenarios.html">2.3. Quiz - Sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture1_new/4-technologies.html">2.4. Components and Technologies for Mechatronic Systems</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture2_new/summary.html">3. Estimation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2_new/1-linear_regressions.html">3.1. Linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2_new/2-quiz_regressions.html">3.2. Quiz - Linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2_new/3-scaling_laws.html">3.3. Scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture2_new/4-quiz_scaling_laws.html">3.4. Quiz - Scaling Laws</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lecture3_new/summary.html">4. Simulation and evaluation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/1-simulation_models.html">4.1. Simulation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/2-quiz_simulation_models.html">4.2. Quiz - Simulation models</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/3-evaluation_models.html">4.5. Evaluation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lecture3_new/4-quiz_evaluation_models.html">4.6. Quiz - Evaluation models</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">5. Optimal sizing procedures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.1. Representation of a Design Problem and Fundamentals of Optimal Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-optimization_examples.html">5.2. Optimization with python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-sizing_procedures.html">5.3. Development of a sizing procedure using design graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-sizing_procedure_examples.html">5.4. Design graph and optimization with python</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/summary.html">6. Package delivery UAV</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/1-conops.html">6.1. Package Delivery UAV Concept of Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/1-conops-student.html">6.2. Package Delivery UAV Concept of Operations (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/2-system_architectures-student.html">6.3. System architectures of the Package Delivery UAV (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/2-system_architectures.html">6.4. System Architecture Selection for a Package Delivery UAV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/3-sizing_scenarios.html">6.5. Sizing scenarios and design drivers</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/3-sizing_scenarios-student.html">6.7. Sizing scenarios and design drivers (student version)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/4-estimation_models-linear_regression.html">6.9. Estimation models with dimensional analysis and linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/4-estimation_models-linear_regression-student.html">6.10. Estimation models with dimensional analysis and linear regressions  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/4-estimation_models-scaling_laws.html">6.11. Estimation models with scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/4-estimation_models-scaling_laws-student.html">6.12. Scaling laws of electrical components (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/5-simulation_models-student.html">6.13. Simulation models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6-sizing_models_introduction.html">6.14. Sizing models for multi-rotor definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6a-propeller_selection.html">6.15. Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6a-propeller_selection-student.html">6.16. Propeller selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6b-motor_selection.html">6.17. Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6b-motor_selection-student.html">6.18. Motor selection  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6c-battery_esc_selection.html">6.19. Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6c-battery_esc_selection-student.html">6.20. Battery and ESC selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6d-frame_selection.html">6.21. Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/6d-frame_selection-student.html">6.22. Frame selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/7-system_sizing_code_optimization.html">6.23. Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/7-system_sizing_code_optimization-student.html">6.24. Sizing of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/8-design_exploration-student.html">6.25. Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-package_delivery_UAV/A1-sizing_equations.html">6.26. Appendix 1: Sizing equations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-vega/summary.html">7. VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/1-sizing_scenarios-student.html">7.1. Modeling of the mechanical load (student version)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/1-sizing_scenarios.html">7.3. Modeling of the mechanical load</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/2-estimation_models-student.html">7.5. Estimation models with scaling laws and linear regression (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/2-estimation_models.html">7.6. Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/3-simulation_models-student.html">7.7. Simulation models with Python (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/3-simulation_models.html">7.8. Simulation models with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/4-evaluation_models-student.html">7.9. Evaluation models: endurance of the actuator (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/4-evaluation_models.html">7.10. Evaluation models: endurance of the actuator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/5-sizing_and_optimization-student.html">7.11. Sizing procedure and optimization (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/5-sizing_and_optimization.html">7.12. Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student.html">7.13. Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">7.14. Sizing procedure and optimization with OpenMDAO</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-watt_project/summary-short.html">8. Lab - Sustainable mobility - Mission profile &amp; Specification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/00_SustainableMobility.html">8.1. Sustainable mobilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/01a_CaseStudy.html">8.2. Case study presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/01b_CaseStudy_Specification-Student.html">8.3. Case study specification (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/01b_CaseStudy_Specification.html">8.4. Case study specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/02a_Architecture-Student.html">8.5. Architecture of the converter and sizing scenarios (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/02a_Architecture_UltraCapacitor.html">8.6. Architecture of the converter and sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/02b_Architecture_Hybrid.html">8.7. Hydrid Storage Architecture and Specification</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../laboratories/Lab-watt_project/summary.html">9. Lab - Sustainable mobility - DC/DC converter sizing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/03_SizingScenarios.html">9.1. Equations of sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/04_ScalingLaws-Student.html">9.2. Estimation models with scaling laws and linear regression (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/04_ScalingLaws.html">9.3. Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/05_HeatsinkLinearRegression-Student.html">9.4. Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/05_HeatsinkLinearRegression.html">9.5. Heatsink  estimation models with simple and multiple linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/06_SizingCodeInductor.html">9.6. Sizing code of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/07_SizingCodeInductor-Surrogate-Student.html">9.7. Sizing code of an inductor with surrogate models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/07_SizingCodeInductor-Surrogate.html">9.8. Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/08_DCDC_converter_sizing_introduction.html">9.9. Design graphs for the sizing a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/09_SizingCodeDCDCconverter.html">9.10. Sizing code of a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/10_LCA_Inductor-Student.html">9.11. Life Cycle Assessment of an inductor (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../laboratories/Lab-watt_project/10_LCA_Inductor.html">9.12. Life Cycle Assessment of an inductor</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/classes/Lecture4_new/1-design_and_optimization_problems.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/classes/Lecture4_new/1-design_and_optimization_problems.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/classes/Lecture4_new/1-design_and_optimization_problems.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclasses/Lecture4_new/1-design_and_optimization_problems.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/classes/Lecture4_new/1-design_and_optimization_problems.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Representation of a Design Problem and Fundamentals of Optimal Design</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-design-an-inverse-problem">5.1.1. Preliminary Design: An Inverse Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-an-inverse-problem">5.1.2. Solving an inverse problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-procedure-representations">5.1.3. Sizing Procedure Representations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-diagram">5.1.3.1. Causal Diagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n2-diagram">5.1.3.2. N² Diagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs">5.1.3.3. Graphs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-as-an-optimization-problem">5.1.4. Sizing as an Optimization Problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-problem-formulation">5.1.4.1. Optimization Problem Formulation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-design-optimization-issues">5.1.5. Practical design optimization issues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-and-local-optimum">5.1.5.1. Global and Local Optimum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interior-and-boundary-optima">5.1.5.2. Interior and Boundary Optima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-optimization-good-practices">5.1.6. Design optimization good practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monotonicity-analysis">5.1.6.1. Monotonicity analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensions-of-design-variables-objectives-and-constraints">5.1.6.2. Dimensions of design variables, objectives and constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">5.1.6.3. References</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="representation-of-a-design-problem-and-fundamentals-of-optimal-design">
+<h1><span class="section-number">5.1. </span>Representation of a Design Problem and Fundamentals of Optimal Design<a class="headerlink" href="#representation-of-a-design-problem-and-fundamentals-of-optimal-design" title="Link to this heading">#</a></h1>
+<p><em>Written by Marc Budinger (INSA Toulouse), Toulouse, France</em></p>
+<p>So far, we have worked on:</p>
+<ul class="simple">
+<li><p>Building scenarios and mission profiles to capture main design constraints.</p></li>
+<li><p>Developing simulation, evaluation, and estimation models to calculate usage technological constraints and component characteristics.</p></li>
+</ul>
+<p>In the next steps, we must choose the appropriate components by optimizing our solutions (in terms of mass or dimensions) while respecting various constraints (speed, temperature, etc.).</p>
+<figure class="align-default" id="sizingprocedureoptimization">
+<img alt="Sizing Procedure and Optimization" src="../../_images/SizingProcedureOptimization.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Sizing Procedure and Optimization</span><a class="headerlink" href="#sizingprocedureoptimization" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>For readers interested in more background, especially on design graphs and optimization problem definitions, refer to Chapter 5 – Design graphs for sizing procedures and optimization problems definition:</p>
+<blockquote>
+<div><p>Budinger, M. (2014). Preliminary design and sizing of actuation systems (HDR dissertation, UPS Toulouse). <a class="reference external" href="https://hal.science/tel-01112448v1/document">Link</a></p>
+</div></blockquote>
+<section id="preliminary-design-an-inverse-problem">
+<h2><span class="section-number">5.1.1. </span>Preliminary Design: An Inverse Problem<a class="headerlink" href="#preliminary-design-an-inverse-problem" title="Link to this heading">#</a></h2>
+<p>Preliminary design is an inverse problem because we select system components based on desired performance. The models usually tell us how components’ characteristics affect overall performance.</p>
+<figure class="align-default" id="inversepb">
+<img alt="Sizing Procedure and Optimization" src="../../_images/InversePb.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.2 </span><span class="caption-text">Sizing Procedure and Optimization</span><a class="headerlink" href="#inversepb" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="solving-an-inverse-problem">
+<h2><span class="section-number">5.1.2. </span>Solving an inverse problem<a class="headerlink" href="#solving-an-inverse-problem" title="Link to this heading">#</a></h2>
+<p>There are essentially two ways to handle an inverse problem:</p>
+<ul class="simple">
+<li><p>Strategic selection and sizing procedures, which use a sequence of calculations and verifications. Iterations are achieved by the designer (<a class="reference internal" href="#harmonicdriveselection"><span class="std std-numref">Fig. 5.3</span></a>).</p></li>
+<li><p>Numerical optimization, which determines the design variable values to reduce the difference between achieved performance and required performance which are implemented in a form of an objective and constraints. Iterations are achieved by the optimizer (<a class="reference internal" href="#numerical-optimization-process"><span class="std std-numref">Fig. 5.4</span></a>).</p></li>
+</ul>
+<figure class="align-default" id="harmonicdriveselection">
+<a class="reference internal image-reference" href="../../_images/HarmonicDriveSelection.png"><img alt="Sizing Procedure and Optimization" src="../../_images/HarmonicDriveSelection.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.3 </span><span class="caption-text">Sizing Procedure of an Harmonic Drive</span><a class="headerlink" href="#harmonicdriveselection" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="numerical-optimization-process">
+<a class="reference internal image-reference" href="../../_images/numerical_optimization_process.png"><img alt="Numerical Optimization Process" src="../../_images/numerical_optimization_process.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.4 </span><span class="caption-text">Numerical optimization process</span><a class="headerlink" href="#numerical-optimization-process" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>By combining these approaches, we can have a comprehensive and automated design optimization process.</p>
+</section>
+<section id="sizing-procedure-representations">
+<h2><span class="section-number">5.1.3. </span>Sizing Procedure Representations<a class="headerlink" href="#sizing-procedure-representations" title="Link to this heading">#</a></h2>
+<p>These graphical methods (causal diagrams, N² diagrams, or more general graph representations) help identify couplings, potential algebraic loops, and overall process flow.</p>
+<section id="causal-diagram">
+<h3><span class="section-number">5.1.3.1. </span>Causal Diagram<a class="headerlink" href="#causal-diagram" title="Link to this heading">#</a></h3>
+<p>The causal diagram is a graphical tool representing the causal relationships between variables. It is, in fact, an oriented graph representing a calculation scheme. Figures below give examples of causal diagrams used in the Salome platform for the Pre- and Post-Processing of numerical simulations or for a space envelope estimation.</p>
+<figure class="align-default" id="causaldiagrams">
+<img alt="Causal Diagrams" src="../../_images/CausalDiagrams.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.5 </span><span class="caption-text">Causal Diagrams</span><a class="headerlink" href="#causaldiagrams" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>With causal diagrams, ensuring no circular references is key. If loops exist, methods include:</p>
+<ul class="simple">
+<li><p>Avoid loops in the first place.</p></li>
+<li><p>Solve coupled equations analytically.</p></li>
+<li><p>Use a numerical solver internally or within an optimization routine.</p></li>
+</ul>
+<p>For the latter, two implementations are possible. In the first, the numerical solver used is internal to the calculation procedure and its computer support. This sizing procedure is difficult to export to other optimization or calculation tools, however.
+For the second implementation, the code generated, which corresponds to the sizing procedure, postpones the task of numerical solver to the optimization algorithm. It is then necessary to add design parameters and additional constraints in the optimization problem to manage these algebraic loops. This is the preferred solution in this course.</p>
+</section>
+<section id="n2-diagram">
+<h3><span class="section-number">5.1.3.2. </span>N² Diagram<a class="headerlink" href="#n2-diagram" title="Link to this heading">#</a></h3>
+<p>This diagram arranges inputs and outputs with blocks on a diagonal. It spotlights couplings and loops between components.</p>
+<figure class="align-default" id="n2diagram">
+<img alt="N2 Diagram" src="../../_images/N2diagram.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.6 </span><span class="caption-text">N2 Diagram</span><a class="headerlink" href="#n2diagram" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The N2 diagram formalisms were introduced in the 1970s by the system engineer Robert J. Lano. N is the number of entities considered. The inputs of the blocks are represented by vertical arrows while the outputs must be horizontal arrows. This display provides a quick visual summary of the organization of the system studied. In particular, the couplings and algebraic loops between blocks are easily identifiable, for example when a block “2” provides an input to block “3” and block “3” provides an input to block “2”.</p>
+</section>
+<section id="graphs">
+<h3><span class="section-number">5.1.3.3. </span>Graphs<a class="headerlink" href="#graphs" title="Link to this heading">#</a></h3>
+<p>A sizing procedure can be viewed as a constraint network. Graph theory techniques are used to match equations and parameters.</p>
+<figure class="align-default" id="graphexample">
+<img alt="Graph Example" src="../../_images/GraphExample.PNG" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.7 </span><span class="caption-text">Graph Example</span><a class="headerlink" href="#graphexample" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Graphics above represent how equations match parameters. Let us take the equation (declarative equation, not imperative assignment) of Figure a, to show these representations:
+a. in which case equations (square node) and non-determined parameters (circular node) are represented in a non-oriented graph.
+b. matching is generally represented in what is called a bi-partite graph: with all the equation nodes on one side and on all the non-determined parameter nodes on the other side. A matching parameter/equation is then represented by a double-column.
+c. once equations are oriented (one parameter is matched to the equation, i.e., is calculated by the equation), a simplified graph can be drawn with no more equation nodes.</p>
+</section>
+</section>
+<section id="sizing-as-an-optimization-problem">
+<h2><span class="section-number">5.1.4. </span>Sizing as an Optimization Problem<a class="headerlink" href="#sizing-as-an-optimization-problem" title="Link to this heading">#</a></h2>
+<p>Define an objective function, equality and inequality constraints, and design variables. Choose algorithms that efficiently explore the design domain.</p>
+<section id="optimization-problem-formulation">
+<h3><span class="section-number">5.1.4.1. </span>Optimization Problem Formulation<a class="headerlink" href="#optimization-problem-formulation" title="Link to this heading">#</a></h3>
+<p>An optimization problem can be formulated mathematically as follows:</p>
+<ul class="simple">
+<li><p>Minimize an objective function: <span class="math notranslate nohighlight">\(f(x)\)</span></p></li>
+<li><p>Subject to equality and inequality constraints: <span class="math notranslate nohighlight">\(h(x) = 0\)</span> and <span class="math notranslate nohighlight">\(g(x) &gt; 0\)</span></p></li>
+<li><p>By action on the variable vector <span class="math notranslate nohighlight">\(x\)</span> in the range <span class="math notranslate nohighlight">\(x_{low}&lt;x&lt;x_{up}\)</span></p></li>
+</ul>
+<p>where:</p>
+<ul class="simple">
+<li><p>the goal is the objective function <span class="math notranslate nohighlight">\(f\)</span>;</p></li>
+<li><p>design alternatives are expressed by a set of values assigned to the design variables <span class="math notranslate nohighlight">\(x\)</span> within a design domain;</p></li>
+<li><p>constraints (<span class="math notranslate nohighlight">\(h\)</span> &amp; <span class="math notranslate nohighlight">\(g\)</span>) limit the number of alternatives to those satisfying physical principles and design specifications, that is to say feasible design.</p></li>
+</ul>
+<p>The functions (<span class="math notranslate nohighlight">\(f, g, h\)</span>) can be explicit or implicit, algebraic or performed by subroutines that solve systems of differential equations iteratively.</p>
+<div class="exercise admonition" id="SizingProblem">
+
+<p class="admonition-title"><span class="caption-number">Exercise 5.1 </span></p>
+<section id="exercise-content">
+<p>Propose an optimization formulation of a UAV design problem.</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="SizingProblemSolution">
+
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
+<p><strong>Objective</strong>:
+<span class="math notranslate nohighlight">\(\text{Minimize the mass of the entire drone}\)</span>
+<strong>Design variables</strong>:
+<span class="math notranslate nohighlight">\(x=[\text{propeller diameter, propeller pitch, motor torque, battery capacity}]\)</span>
+<strong>Constraints</strong>:</p>
+<ul class="simple">
+<li><p><em>equality</em>:
+<span class="math notranslate nohighlight">\(\text{hovering range - 15 min} = 0\)</span></p></li>
+<li><p><em>inequalities</em>:
+<span class="math notranslate nohighlight">\(\text{take-off thrust - k.weight}  &gt; 0\)</span>
+<span class="math notranslate nohighlight">\(\text{battery voltage - motor voltage} &gt; 0\)</span></p></li>
+</ul>
+</section>
+</div>
+<div class="admonition-some-examples-of-optimization-algorithms-in-python admonition">
+<p class="admonition-title">Some Examples of Optimization Algorithms in Python</p>
+<p>The Scipy package includes several <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html">optimization algorithms</a>. In this course, we will use in particular:</p>
+<ul class="simple">
+<li><p><strong>A gradient type algorithm</strong>: Sequential linear-quadratic programming (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.fmin_slsqp.html">SLQP</a>) where <a class="reference external" href="https://en.wikipedia.org/wiki/Sequential_quadratic_programming">two subproblems</a> are solved at each step: a linear program (LP) used to determine an active set of constraints, followed by an equality-constrained quadratic program (EQP) used to compute the total step.</p></li>
+<li><p><strong>A gradient-free algorithm</strong>: <a class="reference external" href="https://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.differential_evolution.html">Differential Evolution</a> algorithm is stochastic in nature (does not use gradient methods) to find the minimum, and can search large areas of candidate space, but often requires larger numbers of function evaluations than conventional gradient-based techniques. Differential evolution algorithms don’t manage directly constraints functions. A penalty method replaces the previous objective function.</p></li>
+</ul>
+</div>
+<div class="admonition-some-examples-of-optimization-algorithms-in-excel admonition">
+<p class="admonition-title">Some Examples of Optimization Algorithms in Excel</p>
+<p>Excel includes also several <a class="reference external" href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/9780470387207.app1">optimization algorithms</a> useful for sizing:</p>
+<ul class="simple">
+<li><p><strong>A gradient type algorithm</strong>: the GRG Nonlinear algorithm can stop at a local minimum. However, a multistart can easily be implemented to make the solution less sensitive to the starting point.</p></li>
+<li><p><strong>A gradient-free algorithm</strong>: the Evolutionary method uses the genetic algorithm approach to find optimal or near-optimal solutions.</p></li>
+</ul>
+<p>The Solver Add-in is a Microsoft Office Excel add-in program and needs to be <a class="reference external" href="https://support.microsoft.com/en-us/office/load-the-solver-add-in-in-excel-612926fc-d53b-46b4-872c-e24772f078ca">activated</a>.</p>
+</div>
+</section>
+</section>
+<section id="practical-design-optimization-issues">
+<h2><span class="section-number">5.1.5. </span>Practical design optimization issues<a class="headerlink" href="#practical-design-optimization-issues" title="Link to this heading">#</a></h2>
+<section id="global-and-local-optimum">
+<h3><span class="section-number">5.1.5.1. </span>Global and Local Optimum<a class="headerlink" href="#global-and-local-optimum" title="Link to this heading">#</a></h3>
+<p>The mathematical model of design optimization problem for engineering systems are quite diverse. However, it is common to have non-convex objective functions that raise the issue of global and local minima.
+Gradient-based methods can converge quickly but may find local optima. Stochastic or population-based methods help find global solutions but can be slower.
+To illustrate this lets have a look at the following Python example that uses the Eggholder function:</p>
+<p><span class="math notranslate nohighlight">\(
+f(x_0, x_1) 
+= -\bigl(x_1 + 47\bigr)\,\sin\!\Bigl(\sqrt{\bigl|\,\tfrac{x_0}{2} + \bigl(x_1 + 47\bigr)\bigr|}\Bigr)
+  \;-\;
+  x_0\,\sin\!\Bigl(\sqrt{\bigl|\,x_0 - \bigl(x_1 + 47\bigr)\bigr|}\Bigr).\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span><span class="p">,</span> <span class="n">differential_evolution</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">eggholder</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">47</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">47</span><span class="p">))))</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">47</span><span class="p">))))</span>
+
+<span class="c1"># Plot the Eggholder function in 3D (over full x,y in [-512,512])</span>
+<span class="n">xvals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">yvals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xvals</span><span class="p">,</span> <span class="n">yvals</span><span class="p">)</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">eggholder</span><span class="p">([</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Eggholder Function&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s2">&quot;f(x, y)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/db6a8f434ae21cc020ad783a312d31f2f24e8d6813b381dc74de5d214a42473d.png" src="../../_images/db6a8f434ae21cc020ad783a312d31f2f24e8d6813b381dc74de5d214a42473d.png" />
+</div>
+</div>
+<p>We can observe the Eggholder function which is highly non-convex. To keep the visualization and understanding straigthforward we will consider only one of the two design variables. As we know that the minima is for <span class="math notranslate nohighlight">\(x=512\)</span> and <span class="math notranslate nohighlight">\(y=404.23\)</span> will fix <span class="math notranslate nohighlight">\(x\)</span> to this value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  We now fix x=512 to demonstrate multiple local minima in 2D</span>
+<span class="k">def</span> <span class="nf">eggholder_fixed_x</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">eggholder</span><span class="p">([</span><span class="mi">512</span><span class="p">,</span> <span class="n">x</span><span class="p">])</span>
+
+<span class="c1"># -- A) Gradient-based from a challenging initial guess</span>
+<span class="n">init_guess_bad</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span>
+<span class="n">start_a</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">res_slsqp_bad</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">eggholder_fixed_x</span><span class="p">,</span> <span class="n">init_guess_bad</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;SLSQP&#39;</span><span class="p">)</span>
+<span class="n">end_a</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">time_a</span> <span class="o">=</span> <span class="n">end_a</span> <span class="o">-</span> <span class="n">start_a</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SLSQP from bad init guess:&quot;</span><span class="p">,</span> <span class="n">res_slsqp_bad</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;f=&quot;</span><span class="p">,</span> <span class="n">res_slsqp_bad</span><span class="o">.</span><span class="n">fun</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time (A) SLSQP: </span><span class="si">{</span><span class="n">time_a</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+
+<span class="c1"># -- B) Differential Evolution (global search) replacing Nelder-Mead</span>
+<span class="n">bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">)]</span>  <span class="c1"># 1D for the second coordinate</span>
+<span class="n">start_b</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">res_de</span> <span class="o">=</span> <span class="n">differential_evolution</span><span class="p">(</span><span class="n">eggholder_fixed_x</span><span class="p">,</span> <span class="n">bounds</span><span class="p">)</span>
+<span class="n">end_b</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">time_b</span> <span class="o">=</span> <span class="n">end_b</span> <span class="o">-</span> <span class="n">start_b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Differential Evolution result:&quot;</span><span class="p">,</span> <span class="n">res_de</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;f=&quot;</span><span class="p">,</span> <span class="n">res_de</span><span class="o">.</span><span class="n">fun</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time (B) Differential Evolution: </span><span class="si">{</span><span class="n">time_b</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+
+<span class="c1"># -- C) Multistart with SLSQP</span>
+<span class="n">best_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+<span class="n">best_sol</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">start_c</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">init_guess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># random guess in [-512,512]</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">eggholder_fixed_x</span><span class="p">,</span> <span class="n">init_guess</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;SLSQP&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">fun</span> <span class="o">&lt;</span> <span class="n">best_val</span><span class="p">:</span>
+        <span class="n">best_val</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">fun</span>
+        <span class="n">best_sol</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
+<span class="n">end_c</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">time_c</span> <span class="o">=</span> <span class="n">end_c</span> <span class="o">-</span> <span class="n">start_c</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multistart SLSQP best:&quot;</span><span class="p">,</span> <span class="n">best_sol</span><span class="p">,</span> <span class="s2">&quot;f=&quot;</span><span class="p">,</span> <span class="n">best_val</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time (C) Multistart SLSQP: </span><span class="si">{</span><span class="n">time_c</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multistart SLSQP best:&quot;</span><span class="p">,</span> <span class="n">best_sol</span><span class="p">,</span> <span class="s2">&quot;f=&quot;</span><span class="p">,</span> <span class="n">best_val</span><span class="p">)</span>
+
+<span class="c1"># Plot results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xvals</span><span class="p">,</span> <span class="n">eggholder_fixed_x</span><span class="p">(</span><span class="n">xvals</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Eggholder with x=512&quot;</span><span class="p">)</span>
+
+<span class="c1"># Show initial guess (bad)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">init_guess_bad</span><span class="p">,</span> <span class="n">eggholder_fixed_x</span><span class="p">(</span><span class="n">init_guess_bad</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+         <span class="s1">&#39;b^&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Initial guess&quot;</span><span class="p">)</span>
+
+<span class="c1"># A) SLSQP</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">res_slsqp_bad</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">res_slsqp_bad</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span>
+         <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;SLSQP (</span><span class="si">{</span><span class="n">time_a</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">s)&quot;</span><span class="p">)</span>
+
+<span class="c1"># B) Differential Evolution</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">res_de</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">res_de</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span>
+         <span class="s1">&#39;go&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Differential Evolution (</span><span class="si">{</span><span class="n">time_b</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">s)&quot;</span><span class="p">)</span>
+
+<span class="c1"># C) Multistart SLSQP</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">best_sol</span><span class="p">,</span> <span class="n">best_val</span><span class="p">,</span>
+         <span class="s1">&#39;rx&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Multistart SLSQP (</span><span class="si">{</span><span class="n">time_c</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">s)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Optimization with 3 different methods&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;f(512, y)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SLSQP from bad init guess: [57.22391134] f= -512.3902641207342
+Time (A) SLSQP: 0.0025s
+Differential Evolution result: [404.23180739] f= -959.6406627208448
+Time (B) Differential Evolution: 0.0143s
+Multistart SLSQP best: [404.2312095] f= -959.6406623175501
+Time (C) Multistart SLSQP: 0.0127s
+Multistart SLSQP best: [404.2312095] f= -959.6406623175501
+</pre></div>
+</div>
+<img alt="../../_images/a215fb5732eb4033e8a887b90e168f663d2e5aee94d5020ad633b8aa6b5fc1ef.png" src="../../_images/a215fb5732eb4033e8a887b90e168f663d2e5aee94d5020ad633b8aa6b5fc1ef.png" />
+</div>
+</div>
+</section>
+<section id="interior-and-boundary-optima">
+<h3><span class="section-number">5.1.5.2. </span>Interior and Boundary Optima<a class="headerlink" href="#interior-and-boundary-optima" title="Link to this heading">#</a></h3>
+<p>Different types of optimum can appear:</p>
+<ul class="simple">
+<li><p>An optimum is interior if all the constraints are inactive.</p></li>
+<li><p>An optimum that is not interior is a limit optimum.</p></li>
+</ul>
+<figure class="align-default" id="interiorboundary">
+<img alt="Interior and Boundary Optima" src="../../_images/InteriorBoundary.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.8 </span><span class="caption-text">Interior and Boundary Optima</span><a class="headerlink" href="#interiorboundary" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>It is very often the second type of solution that is achieved in an engineering problem. It is therefore important to:</p>
+<ul class="simple">
+<li><p>Analyze whether this constraint is still active. It is then possible to transform the inequality constraint into an equality and include it in the body of the design code.</p></li>
+<li><p>Observe the technological limit expressed by this constraint and assess whether other design choices would make it possible to improve the performance of the system.</p></li>
+</ul>
+</section>
+</section>
+<section id="design-optimization-good-practices">
+<h2><span class="section-number">5.1.6. </span>Design optimization good practices<a class="headerlink" href="#design-optimization-good-practices" title="Link to this heading">#</a></h2>
+<section id="monotonicity-analysis">
+<h3><span class="section-number">5.1.6.1. </span>Monotonicity analysis<a class="headerlink" href="#monotonicity-analysis" title="Link to this heading">#</a></h3>
+<div class="admonition-monotonicity-analysis admonition">
+<p class="admonition-title">Monotonicity Analysis</p>
+<p>Monotonicity analysis was suggested by <a class="reference internal" href="#References"><span class="xref myst">Papalambros and Wilde</span></a> as a pre-optimization technique to determine if an optimization problem is well-bounded prior to resorting to a numerical optimization task. The technique is based on the following two rules:
+<strong>Rule 1</strong>: If the objective function is monotonic with respect to a variable, then there exists at least one active constraint which bounds the variable in the direction opposite to the objective. A constraint is active if it acts at its lower or upper bound.
+<strong>Rule 2</strong>: If a variable is not contained in the objective function then it must be either bounded from both above and below by active constraints or not actively bounded at all (that is, any constraint monotonic with respect to that variable must be inactive or irrelevant).</p>
+</div>
+</section>
+<section id="dimensions-of-design-variables-objectives-and-constraints">
+<h3><span class="section-number">5.1.6.2. </span>Dimensions of design variables, objectives and constraints<a class="headerlink" href="#dimensions-of-design-variables-objectives-and-constraints" title="Link to this heading">#</a></h3>
+<div class="admonition-tips-and-tricks admonition">
+<p class="admonition-title">Tips and Tricks</p>
+<p>Here are a few tips for minimizing calculation times during optimization:</p>
+<p><strong>On the optimization variables</strong></p>
+<ul class="simple">
+<li><p>Minimize their number</p></li>
+<li><p>Make sure there are enough of them to meet the various constraints</p></li>
+<li><p>Choose variables that can be easily bounded and whose bounds do not depend on a particular case study</p></li>
+</ul>
+<p><strong>On the optimization objective</strong></p>
+<ul class="simple">
+<li><p>If necessary for certain algorithms, normalize it around a value close to 1</p></li>
+</ul>
+<p><strong>On the constraints</strong></p>
+<ul class="simple">
+<li><p>Minimize the number of constraints, especially equality constraints which can be difficult to respect with certain algorithms (gradient-free)</p></li>
+<li><p>If possible, transform an equality constraint into an inequality constraint (by monotonicity analysis) or include it in the dimensioning code by analytical manipulation</p></li>
+<li><p>If possible, include inequalities that are still active in the dimensioning code</p></li>
+<li><p>If necessary for certain algorithms, normalize the various constraints</p></li>
+</ul>
+</div>
+</section>
+<section id="references">
+<h3><span class="section-number">5.1.6.3. </span>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>Papalambros, P. Y., &amp; Wilde, D. J. (2000). Principles of optimal design: modeling and computation. Cambridge University Press.</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./classes/Lecture4_new"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="summary.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Development and implementation of an optimal sizing procedure - Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2-optimization_examples.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5.2. </span>Optimization with python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-design-an-inverse-problem">5.1.1. Preliminary Design: An Inverse Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-an-inverse-problem">5.1.2. Solving an inverse problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-procedure-representations">5.1.3. Sizing Procedure Representations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-diagram">5.1.3.1. Causal Diagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n2-diagram">5.1.3.2. N² Diagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs">5.1.3.3. Graphs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-as-an-optimization-problem">5.1.4. Sizing as an Optimization Problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-problem-formulation">5.1.4.1. Optimization Problem Formulation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-design-optimization-issues">5.1.5. Practical design optimization issues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-and-local-optimum">5.1.5.1. Global and Local Optimum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interior-and-boundary-optima">5.1.5.2. Interior and Boundary Optima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-optimization-good-practices">5.1.6. Design optimization good practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monotonicity-analysis">5.1.6.1. Monotonicity analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensions-of-design-variables-objectives-and-constraints">5.1.6.2. Dimensions of design variables, objectives and constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">5.1.6.3. References</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marc Budinger, Scott Delbecq, Félix Pollet, Aurélien Reysset
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

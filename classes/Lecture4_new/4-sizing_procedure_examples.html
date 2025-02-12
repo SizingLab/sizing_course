@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5.3. Development of a sizing procedure using design graphs &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>5.4. Design graph and optimization with python &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -63,12 +63,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture4/3-sizing_procedures';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/Lecture4_new/4-sizing_procedure_examples';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.4. Design graph and optimization with python" href="4-sizing_procedure_examples.html" />
-    <link rel="prev" title="5.2. Optimization with python" href="2-optimization_examples.html" />
+    <link rel="next" title="6. Lab - Package delivery UAV" href="../../laboratories/Lab-package_delivery_UAV/summary.html" />
+    <link rel="prev" title="5.3. Development of a sizing procedure using design graphs" href="3-sizing_procedures.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -208,10 +208,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">5. Optimal sizing procedures</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1-design_and_optimization_problems.html">5.1. Representation of a design problem and basics optimal design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-design_and_optimization_problems.html">5.1. Representation of a Design Problem and Fundamentals of Optimal Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2-optimization_examples.html">5.2. Optimization with python</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.3. Development of a sizing procedure using design graphs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4-sizing_procedure_examples.html">5.4. Design graph and optimization with python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-sizing_procedures.html">5.3. Development of a sizing procedure using design graphs</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.4. Design graph and optimization with python</a></li>
 </ul>
 </details></li>
 </ul>
@@ -342,7 +342,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/classes/Lecture4/3-sizing_procedures.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/classes/Lecture4_new/4-sizing_procedure_examples.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -360,7 +360,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/classes/Lecture4/3-sizing_procedures.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/classes/Lecture4_new/4-sizing_procedure_examples.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -408,7 +408,7 @@
       
       
       
-      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/classes/Lecture4/3-sizing_procedures.ipynb" target="_blank"
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/classes/Lecture4_new/4-sizing_procedure_examples.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -425,7 +425,7 @@
       
       
       
-      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclasses/Lecture4/3-sizing_procedures.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Fclasses/Lecture4_new/4-sizing_procedure_examples.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -455,7 +455,7 @@
       
       
       
-      <li><a href="../../_sources/classes/Lecture4/3-sizing_procedures.ipynb" target="_blank"
+      <li><a href="../../_sources/classes/Lecture4_new/4-sizing_procedure_examples.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -531,7 +531,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Development of a sizing procedure using design graphs</h1>
+    <h1>Design graph and optimization with python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -541,14 +541,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-layers">5.3.1. Knowledge layers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-definition">5.3.2. Problem definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-ordering">5.3.3. Equations Ordering</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underconstrained-problems">5.3.3.1. Underconstrained problems</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overconstrained-problems">5.3.3.2. Overconstrained problems</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#treatment-of-algebraic-loops">5.3.4. Treatment of algebraic loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">5.4.1. Objectives and specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-graph">5.4.2. Design graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">5.4.3. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">5.4.4. Optimization with SLSQP algorithm</a></li>
 </ul>
             </nav>
         </div>
@@ -560,202 +556,357 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="development-of-a-sizing-procedure-using-design-graphs">
-<h1><span class="section-number">5.3. </span>Development of a sizing procedure using design graphs<a class="headerlink" href="#development-of-a-sizing-procedure-using-design-graphs" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="design-graph-and-optimization-with-python">
+<h1><span class="section-number">5.4. </span>Design graph and optimization with python<a class="headerlink" href="#design-graph-and-optimization-with-python" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Toulouse, France</em></p>
-<p>The ordering of the calculation steps of a whole, highly constrained sizing procedure is not always an easy task. We propose here graphical representations that can be applied to highlight the different problems the designer has to face (singularity, calculation loop) and may help him solve these problems by proposing alternatives.</p>
-<p>The following steps are suggested:</p>
-<ol class="arabic simple">
-<li><p>Problem definition : gather all the equations/inequalities describing the problem</p></li>
-<li><p>Orientate the problem</p></li>
-<li><p>Break problem calculation loops</p></li>
-</ol>
-<p>For interested readers, more information can be found in the following document (Chapter 5 – Design graphs for sizing procedures and optimization problems definition):</p>
+<p>This notebook continues the example started <a class="reference internal" href="2-optimization_examples.html"><span class="std std-doc">earlier</span></a>. It aims to show how a design graph can be used to structure the optimisation problem.</p>
+<p>For interested readers, more information can be found in :</p>
 <blockquote>
-<div><p>Budinger, M. (2014). Preliminary design and sizing of actuation systems (HDR dissertation, UPS Toulouse). <a class="reference external" href="https://hal.science/tel-01112448v1/document">Link</a></p>
+<div><p>Delbecq, S., Budinger, M., Ochotorena, A., Reysset, A., &amp; Defaÿ, F. (2020). Efficient sizing and optimization of multirotor drones based on scaling laws and similarity models. Aerospace Science and Technology, 102, 105873.</p>
 </div></blockquote>
-<section id="knowledge-layers">
-<h2><span class="section-number">5.3.1. </span>Knowledge layers<a class="headerlink" href="#knowledge-layers" title="Link to this heading">#</a></h2>
-<p>The knowledge required to design a mechatronic system is divided into two layers:</p>
-<ul class="simple">
-<li><p>A system layer, which represents all the interactions between the components. It is used to evaluate the overall performance of our system. It uses 0D-1D models in algorithmic or simulation environments.</p></li>
-<li><p>A component layer, which represents the knowledge relating to a particular component. The calculation resources associated with this layer use finite elements or specific design tools. Information at this level may also be available in datasheets.</p></li>
-</ul>
-<p><img alt="Knowledge layers" src="../../_images/KnowledgeLevel.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">We advise you to start the implementation of a sizing procedure in an incremental way by using simple algebraic models.</p>
-<p class="sd-card-text">We can therefore generally have a set of algebraic equations that must be ordered to obtain a dimensioning code.</p>
-<p class="sd-card-text">It will then be possible to replace certain parts with more advanced models to increase the level of fidelity.</p>
-</div>
-</details></section>
-<section id="problem-definition">
-<h2><span class="section-number">5.3.2. </span>Problem definition<a class="headerlink" href="#problem-definition" title="Link to this heading">#</a></h2>
-<p>For design problems characterized by a reduced set of equations, a skilled designer will be able to order design constraints of his area of knowledge quickly and intuitively. It is, however, also possible to represent and order these equations graphically. This graphical representation, called “Design Graph” here, can be used with advantage as a teaching tool or as an analysis tool for an engineer in the case of new design scenarios or new technology.</p>
-<p><img alt="Design graph" src="../../_images/DesignGraph.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The problem definition is realized with a bipartite graph for each design layer (mechatronic system layer and components layer) as represented in Figure above:</p>
-<ul class="simple">
-<li><p class="sd-card-text">the parameters are set at mechatronic system layer level from requirements specifications (performance, constraints) and at component layer level by listing the components of the architecture and their main characteristics.</p></li>
-<li><p class="sd-card-text">equations are then introduced to link the different parameters: at mechatronic system layer level with equations representing design scenarios, at component layer level with estimation models.</p></li>
-</ul>
-<p class="sd-card-text">At this point the relationships between the parameters and equations are represented as non-oriented edges. It is not necessary to express the equations in detail.</p>
-</div>
-</details></section>
-<section id="equations-ordering">
-<h2><span class="section-number">5.3.3. </span>Equations Ordering<a class="headerlink" href="#equations-ordering" title="Link to this heading">#</a></h2>
-<p>The orientation of the equations is the next step. The parameters set by the specifications are selected as inputs for the sizing procedure. Some parameters in the specification may take the form of outputs if the wording of the requirement defines them as an objective to be minimized or maximized or as a maximum or minimum limit constraint to be respected.</p>
-<p><img alt="Design graph" src="../../_images/DesignGraphToOrientate.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Figure above summarizes the graphical notation that can be taken to represent these parameters in a form approaching an influence diagram in order to prepare the implementation of the optimization problem.</p>
-</div>
-</details><section id="underconstrained-problems">
-<h3><span class="section-number">5.3.3.1. </span>Underconstrained problems<a class="headerlink" href="#underconstrained-problems" title="Link to this heading">#</a></h3>
-<p>As an equation can generate only one output, the edges have to be oriented  to have only one output per calculation node.</p>
-<p><img alt="Design graph" src="../../_images/OneOutput.png" /></p>
-<p>If a given equation remains undetermined for several parameters, some design assumptions have to be made by stating some parameters as known. These new design parameters can be included in the optimization problem and their optimal value can be determined via the optimization algorithm.</p>
-<p><img alt="Design graph" src="../../_images/UnderConstrained.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">A preferred choice for these new design parameters would be parameters participating in a large number of equations (such as reduction ratio) and values defined within a known range (min, max). These assumptions balance the number of equations available and the number of parameters to be determined by the calculation procedure.</p>
-</div>
-</details><div class="admonition-example-under-constrained-singularity-the-hydraulic-jack admonition">
-<p class="admonition-title">Example: Under-constrained singularity, the hydraulic jack</p>
-<p>The aim is to implement the selection procedure for a hydraulic servo-actuator (jack and servovalve) to ensure a nominal effort <span class="math notranslate nohighlight">\(F_0\)</span> and a nominal speed <span class="math notranslate nohighlight">\(V_0\)</span> for a useful stroke <span class="math notranslate nohighlight">\(dx\)</span>. The anchorage structure has a stiffness <span class="math notranslate nohighlight">\(K\)</span> and does not tolerate efforts higher than <span class="math notranslate nohighlight">\(F_{max}\)</span>. The maximum flow rate <span class="math notranslate nohighlight">\(Q_{max}\)</span> required by the actuator should be minimized to reduce the mass of the hydraulic supply system.</p>
+<section id="objectives-and-specifications">
+<h2><span class="section-number">5.4.1. </span>Objectives and specifications<a class="headerlink" href="#objectives-and-specifications" title="Link to this heading">#</a></h2>
+<p>We want to optimize the selection of a TVC motor/reducer set: dynamics are high and motor inertia effect is not negligeable.</p>
+<p><img alt="EMA" src="../../_images/TVC_EMA.png" /></p>
+<p>The sizing scenario is a sinusoïdal displacement with a constant force and an inertia effect:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Hydraulic jack equations</p></th>
-<th class="head"><p>Design variables</p></th>
+<tr class="row-odd"><th class="head"><p>Specification</p></th>
+<th class="head"><p></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Eq1:Fmax≥S.Pnet</p></td>
-<td><p>Fmax: stall load</p></td>
+<tr class="row-even"><td><p>static force</p></td>
+<td><p>40 kN</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>S: piston section</p></td>
+<tr class="row-odd"><td><p>Inertia</p></td>
+<td><p>800 kgg</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>Pnet: network pressure</p></td>
+<tr class="row-even"><td><p>Displacement magnitude</p></td>
+<td><p>10 mm</p></td>
 </tr>
-<tr class="row-odd"><td><p>Eq2: C=dx+K.F0</p></td>
-<td><p>C: total stroke</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>dx: desired stroke</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>K: structure stiffness</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>F0: maximal load</p></td>
-</tr>
-<tr class="row-odd"><td><p>Eq3: F0=S.P0</p></td>
-<td><p>P0: maximal pressure</p></td>
-</tr>
-<tr class="row-even"><td><p>Eq4: V0=Q0/S</p></td>
-<td><p>V0: maximal speed</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>Q0: maximal flow</p></td>
-</tr>
-<tr class="row-even"><td><p>Eq5: Q_0=Q_nom √((Pnet-P_0)/(dP_nom ))</p></td>
-<td><p>Qnom: nominal valve flow</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>dPnom: nominal valve pressure drop</p></td>
-</tr>
-<tr class="row-even"><td><p>Eq6: Q_max=Q_nom √(P_net/(dP_nom ))</p></td>
-<td><p>Qmax: no load flow</p></td>
+<tr class="row-odd"><td><p>Frequency</p></td>
+<td><p>5 Hz</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p><img alt="Design graph" src="../../_images/ServoHydro.png" /></p>
-<p>The design graph highlight the sub-constraints: calculation nodes 3 and 5 need 2 parameters to be assumed known to allow the sequencing of computations. As dPnom may be given by valve technology, it may be taken as input and P0 is easy to limit to a range equal to [0, Pnet], so it will be taken as a second input (variable).</p>
-<p><img alt="Design graph" src="../../_images/UnderConstraintServo.png" /></p>
+<p>We first define the specifications and assumptions for the sizing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="c1"># Specifications</span>
+<span class="n">Xmax</span> <span class="o">=</span> <span class="mf">10e-3</span>  <span class="c1"># [m]</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># [Hz]</span>
+<span class="n">w</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mi">5</span> <span class="c1"># [rad/s] angular frequency</span>
+
+<span class="n">Xpmax</span> <span class="o">=</span> <span class="n">w</span><span class="o">*</span><span class="n">Xmax</span>  <span class="c1"># [m/s] max linear speed</span>
+<span class="n">Xppmax</span> <span class="o">=</span> <span class="n">w</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">Xmax</span>  <span class="c1"># [m/s²] max linear acceleration</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="mi">800</span> <span class="c1"># [kg] Equivalent mass inertia of the nozzle</span>
+<span class="n">Fstat</span> <span class="o">=</span> <span class="mf">40e3</span> <span class="c1"># [N] static force</span>
+</pre></div>
 </div>
-</section>
-<section id="overconstrained-problems">
-<h3><span class="section-number">5.3.3.2. </span>Overconstrained problems<a class="headerlink" href="#overconstrained-problems" title="Link to this heading">#</a></h3>
-<p>If several equations of design scenarios have the same output, the problem may be over-constrained. Two solutions can be applied: adding a safety factor and managing one of the equations as a constraint in the optimization problem, or giving the assignment to the most restrictive equation when direct comparison is possible.</p>
-<p><img alt="Design graph" src="../../_images/OverConstrained.png" /></p>
-<div class="admonition-example-over-constrained-singularity-the-roller-screw admonition">
-<p class="admonition-title">Example: Over-constrained singularity, the roller-screw</p>
-<p>Here we consider an over-constrained problem that is quite simple but which presents the way to solve this kind of singularity. The objective is to select a roller screw subject to two constraints: a static load and a dynamic load. Let us consider the equations from some scaling laws :</p>
+</div>
+</div>
+<p>A reference example of motor is:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Roller-screw equations (initial set)</p></th>
-<th class="head"><p>Design variables</p></th>
+<tr class="row-odd"><th class="head"><p>Characteristics</p></th>
+<th class="head"><p></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Eq1: F0≥Fmax</p></td>
-<td><p>F0: roller-screw static load</p></td>
+<tr class="row-even"><td><p>Nom. torque</p></td>
+<td><p>3.14 N.m</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>Fmax: maximum applied load</p></td>
+<tr class="row-odd"><td><p>Max. torque</p></td>
+<td><p>13.4	N.m</p></td>
 </tr>
-<tr class="row-even"><td><p>Eq2: Fd≥Frmc</p></td>
-<td><p>Fd: roller-screw dynamic load</p></td>
+<tr class="row-even"><td><p>Max. speed</p></td>
+<td><p>7200	rpm</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>Frmc: rolling fatigue applied load</p></td>
+<tr class="row-odd"><td><p>Inertia</p></td>
+<td><p>2.90E-04	kg.m²</p></td>
 </tr>
-<tr class="row-even"><td><p>Eq3: Fd=Fdref(F0/F0ref)^0.9</p></td>
-<td><p>Fdref: roller-screw dynamic load (reference component)</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>F0ref: roller-screw static load (reference component)</p></td>
-</tr>
-<tr class="row-even"><td><p>Eq4: Ln=Lnref(F0/F0ref)^0.5</p></td>
-<td><p>Ln: roller-screw nut length</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>Lnref: roller-screw nut length (reference component)</p></td>
-</tr>
-<tr class="row-even"><td><p>Eq5: Ls=C+Ln+Lb</p></td>
-<td><p>Ls: screw length</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>C: actuator stroke</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>Lb: thrust bearing width</p></td>
-</tr>
-<tr class="row-odd"><td><p>Eq6: ms=msref(F0/F0ref)</p></td>
-<td><p>ms: screw linear mass</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>msref: screw linear mass (reference component)</p></td>
-</tr>
-<tr class="row-odd"><td><p>Eq7: Ms=msLs</p></td>
-<td><p>Ms: screw total mass</p></td>
+<tr class="row-even"><td><p>Mass</p></td>
+<td><p>3.8 	kg</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p><img alt="Design graph" src="../../_images/OverConstrainedScrew.png" /></p>
-<p>The design graph clearly points out that one of the last 3 equations must be removed to obtain a non-singular problem. To do this, one of the inequalities must me moved to constraints (Fd&gt;=Frmc for example). Yet, without modifying the other equation (considered as: F0=Fmax), if fatigue is the sizing criterion, the constraint will never be met. That is why a degree of freedom ‘kc’ must be introduced to the equation: kc* F0=Fmax, with kc a variable input within the range [1;Inf] here.</p>
+<p>We assume here that :</p>
+<ul class="simple">
+<li><p>the pitch <span class="math notranslate nohighlight">\(p\)</span> of the roller screw is 10 mm/rev.</p></li>
+<li><p>The efficiency of mechanical power transmission is 100%.</p></li>
+</ul>
+<p>The objective is to select the reduction ratio of the gear reducer in order to minimize the mass of the motor.</p>
+<p>We then define the main characteristics of components and the reference parameters for the scaling laws:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assumptions</span>
+<span class="n">pitch</span> <span class="o">=</span> <span class="mf">10e-3</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="mf">3.14</span>  <span class="c1"># [m/rad]</span>
+<span class="n">nu_screw</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># [-]</span>
+
+<span class="c1"># Reference motor</span>
+<span class="n">T_mot_nom_ref</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="c1"># [N.m] Max torque</span>
+<span class="n">T_mot_max_ref</span> <span class="o">=</span> <span class="mf">13.4</span>  <span class="c1"># [N.m] Rated torque</span>
+<span class="n">W_mot_max_ref</span> <span class="o">=</span> <span class="mi">754</span>  <span class="c1"># [rad/s] max speed</span>
+<span class="n">J_mot_ref</span> <span class="o">=</span> <span class="mf">2.9e-4</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># [kg.m²] Inertie </span>
+<span class="n">M_mot_ref</span> <span class="o">=</span> <span class="mf">3.8</span>  <span class="c1"># [kg] Mass</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
+<section id="design-graph">
+<h2><span class="section-number">5.4.2. </span>Design graph<a class="headerlink" href="#design-graph" title="Link to this heading">#</a></h2>
+<p>The objective is to select the motor and the reduction ratio of a gear reducer in order to minimize the mass of the motor.</p>
+<div class="exercise admonition" id="DesignGraph">
+
+<p class="admonition-title"><span class="caption-number">Exercise 5.3 </span></p>
+<section id="exercise-content">
+<ul class="simple">
+<li><p>Draw the design graph and highlight the main problems.</p></li>
+<li><p>Propose a solution which reduce the complexity of the optimization problem compared to <a class="reference internal" href="2-optimization_examples.html"><span class="std std-doc">previous solution</span></a>.</p></li>
+<li><p>Define optimization variables and the set of constraints</p></li>
+</ul>
 </section>
-<section id="treatment-of-algebraic-loops">
-<h2><span class="section-number">5.3.4. </span>Treatment of algebraic loops<a class="headerlink" href="#treatment-of-algebraic-loops" title="Link to this heading">#</a></h2>
-<p>The treatment of possible algebraic loops is the last step. We typically find an algebraic loop when the selection of a component involves the use of characteristics of this same component. This case is represented graphically by a loop involving a design scenario equation and an estimation model equation as shown.</p>
-<p><img alt="Design graph" src="../../_images/AlgebraicLoop.png" /></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Description</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Adding a new design parameter, such as an oversizing coefficient, and a constraint to be checked by the optimization algorithm makes the sizing procedure explicit. At the end of this graphical treatment, the final sequence of equations can be represented as a triangular N² diagram or a dependency matrix in order to check that the sequence of equations is explicit.</p>
 </div>
-</details></section>
+<div class="solution dropdown admonition" id="DesignGraphSolution">
+
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
+<p>The design graph of this sizing problem is:
+<img alt="Algebraic Loop" src="../../_images/AlgebraicLoop.png" />
+with</p>
+<ul class="simple">
+<li><p>equation <code class="docutils literal notranslate"><span class="pre">1</span></code> the sizing scenario linking force and acceleration of the load to the maximal electromagnetic torque of the motor.</p></li>
+<li><p>equations <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code> scaling laws which enable to estimate inertia and mass of the motor.</p></li>
+</ul>
+<p>The main problem is the existance of an algebraic loop. Here the choice of a motor, based on its max torque depends on its own inertia, which means we have to know what motor to chose before choosing it.<br />
+This  algebraic loop can be broken by admitting that the inertia torque is meaningless to evaluate the max torque, which allows us to choose a motor.<br />
+The global torque with inertia can subsequently be evaluated and compared to the torque of the motor we selected. To respect this last constraint, we add an oversizing constraint to the first sizing process, the solver  will chose by itself the value of this coefficient, which is at least 1 (in  the case of negligible inertia effects).</p>
+</section>
+</div>
+</section>
+<section id="sizing-code">
+<h2><span class="section-number">5.4.3. </span>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h2>
+<p>The sizing code is defined here in a function which can give an evaluation of the objective and of the constraints function of design variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sizing_code</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">arg</span><span class="o">=</span><span class="s2">&quot;print&quot;</span><span class="p">):</span>
+    <span class="c1">#  Design variables</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Reduction ratio of the reducer</span>
+    <span class="n">k_mot</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># oversizing coefficient</span>
+
+    <span class="c1"># --------------------------------------</span>
+    <span class="c1"># Load force</span>
+    <span class="n">max_load</span> <span class="o">=</span> <span class="n">Fstat</span> <span class="o">+</span> <span class="n">M</span><span class="o">*</span><span class="n">Xppmax</span>   <span class="c1"># [N]</span>
+    
+    <span class="c1"># Torque approximation</span>
+    <span class="c1"># --------------------------------------</span>
+    <span class="n">T_mot_max</span> <span class="o">=</span> <span class="n">k_mot</span> <span class="o">*</span> <span class="n">max_load</span> <span class="o">/</span> <span class="n">N</span> <span class="o">*</span> <span class="n">pitch</span> <span class="c1"># [N.m] </span>
+    
+    <span class="c1"># --------------------------------------</span>
+    <span class="c1"># Parameter estimation with scaling laws</span>
+    
+    <span class="n">T_mot</span> <span class="o">=</span> <span class="n">T_mot_max</span><span class="o">/</span><span class="n">T_mot_max_ref</span><span class="o">*</span><span class="n">T_mot_max_ref</span>
+    
+    <span class="c1"># Motor</span>
+    <span class="n">M_mot</span> <span class="o">=</span> <span class="n">M_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_nom_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
+    <span class="n">J_mot</span> <span class="o">=</span> <span class="n">J_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_nom_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
+    <span class="n">W_mot</span> <span class="o">=</span> <span class="n">W_mot_max_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_mot</span> <span class="o">/</span> <span class="n">T_mot_nom_ref</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="mf">3.5</span><span class="p">)</span>
+
+    
+    
+    <span class="c1"># --------------------------------------</span>
+    <span class="c1"># Motor torque calculation with motor inertia</span>
+    <span class="n">T_mot_scenario</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">max_load</span> <span class="o">*</span> <span class="n">pitch</span> <span class="o">/</span> <span class="n">N</span> <span class="o">/</span> <span class="n">nu_screw</span>
+        <span class="o">+</span> <span class="n">J_mot</span> <span class="o">*</span> <span class="n">Xppmax</span> <span class="o">*</span>  <span class="n">N</span> <span class="o">/</span> <span class="n">pitch</span>    <span class="p">)</span> <span class="c1"># [N.m] max electromagnetic torque</span>
+    
+    <span class="c1"># --------------------------------------</span>
+    <span class="c1"># Objectives and constrants calculations</span>
+
+    <span class="c1"># Objective = motor mass</span>
+    <span class="n">objective</span> <span class="o">=</span> <span class="n">M_mot</span>
+
+    <span class="c1"># Constraints (should be &gt;=0)</span>
+    <span class="n">C1</span> <span class="o">=</span> <span class="n">W_mot</span> <span class="o">-</span> <span class="n">N</span> <span class="o">*</span> <span class="n">Xpmax</span> <span class="o">/</span> <span class="n">pitch</span>  <span class="c1"># speed margin</span>
+    <span class="n">C2</span> <span class="o">=</span> <span class="n">T_mot_max</span> <span class="o">-</span> <span class="n">T_mot_scenario</span>  <span class="c1"># Torque margin </span>
+    
+    <span class="c1"># --------------------------------------</span>
+    <span class="c1"># Objective and constraints</span>
+    <span class="k">if</span> <span class="n">arg</span> <span class="o">==</span> <span class="s2">&quot;objective&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">objective</span> <span class="o">/</span> <span class="mi">100</span>
+    <span class="k">if</span> <span class="n">arg</span> <span class="o">==</span> <span class="s2">&quot;objectiveP&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">((</span><span class="n">C1</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">C2</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">)):</span>
+            <span class="c1"># If constraints are not respected we penalize</span>
+            <span class="c1"># the objective for contraint less algorithms</span>
+            <span class="k">return</span> <span class="n">objective</span> <span class="o">*</span> <span class="mf">1e5</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">objective</span> <span class="o">/</span> <span class="mi">100</span>
+    <span class="k">elif</span> <span class="n">arg</span> <span class="o">==</span> <span class="s2">&quot;print&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objective:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Motor mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="n">M_mot</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Design variables:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     reduction_ratio =  </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">N</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Rated Motor torque  =  </span><span class="si">%.2f</span><span class="s2"> N.m&quot;</span> <span class="o">%</span> <span class="n">T_mot</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Performances:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Max load = </span><span class="si">%.0f</span><span class="s2"> N&quot;</span> <span class="o">%</span> <span class="n">max_load</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Components characteristics:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Motor mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="n">M_mot</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Motor max torque = </span><span class="si">%.2f</span><span class="s2"> N.m&quot;</span> <span class="o">%</span> <span class="n">T_mot_max</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Constraints (should be &gt;= 0):&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Speed margin: W_mot-reduction_ratio*max_speed/pitch= </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">C1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Torque margin:  T_mot_max - T_mot_scenario= </span><span class="si">%.3f</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="n">C2</span><span class="p">)</span>
+        
+    <span class="k">elif</span> <span class="n">arg</span> <span class="o">==</span> <span class="s2">&quot;constraints&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">C1</span><span class="p">,</span> <span class="n">C2</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+            <span class="s2">&quot;Unknown argument for sizing_code: use &#39;print&#39;, &#39;objective&#39;, &#39;objectiveP&#39; or &#39;contraints&#39;&quot;</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="optimization-with-slsqp-algorithm">
+<h2><span class="section-number">5.4.4. </span>Optimization with SLSQP algorithm<a class="headerlink" href="#optimization-with-slsqp-algorithm" title="Link to this heading">#</a></h2>
+<p>We will now use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html">opmization algorithms</a> of the Scipy package to solve and optimize the configuration. We will first use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.minimize-slsqp.html">SLSQP</a> algorithm without explicit expression of the gradient (Jacobian).</p>
+<p>The first step is to give an initial value of optimisation variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Optimization variables</span>
+<span class="c1"># Reduction ratio</span>
+<span class="n">reduction_ratio_init</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># [-]</span>
+<span class="n">reduction_ratio_min</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># [-]</span>
+<span class="n">reduction_ratio_max</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># [-]</span>
+
+<span class="c1"># Oversizing coefficient for multidisciplinary coupling</span>
+<span class="n">Tmot_nom</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># [-]</span>
+<span class="n">Tmot_nom_min</span> <span class="o">=</span> <span class="mf">0.33</span>  <span class="c1"># [-] min catalog NK Parvex motor</span>
+<span class="n">Tmot_nom_max</span> <span class="o">=</span> <span class="mf">32.8</span>  <span class="c1"># [-] max catalog</span>
+
+<span class="c1"># Initial values vector for design variables</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">reduction_ratio_init</span><span class="p">,</span> <span class="n">Tmot_nom</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can print of the characterisitcs of the problem before optimization with the intitial vector of optimization variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initial characteristics before optimization</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial characteristics before optimization :&quot;</span><span class="p">)</span>
+
+<span class="n">sizing_code</span><span class="p">(</span><span class="n">parameters</span><span class="p">,</span> <span class="s2">&quot;print&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------------------&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------------------------------
+Initial characteristics before optimization :
+Objective:
+     Motor mass = 26.68 kg
+Design variables:
+     reduction_ratio =  5.00
+     Rated Motor torque  =  30.51 N.m
+Performances:
+     Max load = 47896 N
+Components characteristics:
+     Motor mass = 26.68 kg
+     Motor max torque = 30.51 N.m
+Constraints (should be &gt;= 0):
+     Speed margin: W_mot-reduction_ratio*max_speed/pitch= -592.694
+     Torque margin:  T_mot_max - T_mot_scenario= -100.428 
+-----------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that constraints are not respected.</p>
+<p>Then we can solve the problem and print of the optimized solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># Resolution of the problem</span>
+
+<span class="n">contrainte</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">sizing_code</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;constraints&quot;</span><span class="p">)</span>
+<span class="n">objectif</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">sizing_code</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;objective&quot;</span><span class="p">)</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">fmin_slsqp</span><span class="p">(</span>
+    <span class="n">func</span><span class="o">=</span><span class="n">objectif</span><span class="p">,</span>
+    <span class="n">x0</span><span class="o">=</span><span class="n">parameters</span><span class="p">,</span>
+    <span class="n">bounds</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">reduction_ratio_min</span><span class="p">,</span> <span class="n">reduction_ratio_max</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">Tmot_nom_min</span><span class="p">,</span> <span class="n">Tmot_nom_max</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="n">f_ieqcons</span><span class="o">=</span><span class="n">contrainte</span><span class="p">,</span>
+    <span class="nb">iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">acc</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="c1"># Final characteristics after optimization</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Final characteristics after optimization :&quot;</span><span class="p">)</span>
+
+<span class="n">sizing_code</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;print&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculation time:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Positive directional derivative for linesearch    (Exit mode 8)
+            Current function value: 0.09198229837941853
+            Iterations: 13
+            Function evaluations: 59
+            Gradient evaluations: 9
+-----------------------------------------------
+Final characteristics after optimization :
+Objective:
+     Motor mass = 9.20 kg
+Design variables:
+     reduction_ratio =  2.86
+     Rated Motor torque  =  8.81 N.m
+Performances:
+     Max load = 47896 N
+Components characteristics:
+     Motor mass = 9.20 kg
+     Motor max torque = 8.81 N.m
+Constraints (should be &gt;= 0):
+     Speed margin: W_mot-reduction_ratio*max_speed/pitch= -2.235
+     Torque margin:  T_mot_max - T_mot_scenario= -29.089 
+-----------------------------------------------
+Calculation time:
+ 0.1333785057067871 s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition" id="Resolution speed">
+
+<p class="admonition-title"><span class="caption-number">Exercise 5.4 </span></p>
+<section id="exercise-content">
+<ul class="simple">
+<li><p>Compare the speed of execution of this optimization with the <a class="reference internal" href="2-optimization_examples.html"><span class="std std-doc">previous solution</span></a>. This speed can be evaluated with the number of calls to the function (the sizing code).</p></li>
+<li><p>Explain the observed discrepancy.</p></li>
+</ul>
+</section>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -771,7 +922,7 @@
         },
         kernelOptions: {
             name: "python3",
-            path: "./classes/Lecture4"
+            path: "./classes/Lecture4_new"
         },
         predefinedOutput: true
     }
@@ -789,20 +940,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="2-optimization_examples.html"
+       href="3-sizing_procedures.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5.2. </span>Optimization with python</p>
+        <p class="prev-next-title"><span class="section-number">5.3. </span>Development of a sizing procedure using design graphs</p>
       </div>
     </a>
     <a class="right-next"
-       href="4-sizing_procedure_examples.html"
+       href="../../laboratories/Lab-package_delivery_UAV/summary.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.4. </span>Design graph and optimization with python</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Lab - Package delivery UAV</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -823,14 +974,10 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-layers">5.3.1. Knowledge layers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-definition">5.3.2. Problem definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-ordering">5.3.3. Equations Ordering</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#underconstrained-problems">5.3.3.1. Underconstrained problems</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overconstrained-problems">5.3.3.2. Overconstrained problems</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#treatment-of-algebraic-loops">5.3.4. Treatment of algebraic loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">5.4.1. Objectives and specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-graph">5.4.2. Design graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">5.4.3. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">5.4.4. Optimization with SLSQP algorithm</a></li>
 </ul>
   </nav></div>
 
