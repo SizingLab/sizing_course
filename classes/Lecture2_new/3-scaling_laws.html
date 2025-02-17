@@ -855,25 +855,42 @@ with :</p>
 <section id="scaling-with-constant-temperature">
 <h2><span class="section-number">3.3.7. </span>Scaling with constant temperature<a class="headerlink" href="#scaling-with-constant-temperature" title="Link to this heading">#</a></h2>
 <p>The next exercises will attempt to determine the scaling laws for brushless motors. We will assume that in a magnetic circuit comprising permanent magnets, such as those found in brushless motors, the magnetic field <span class="math notranslate nohighlight">\(B\)</span> can be assumed to be constant in the case of geometric similarity : <span class="math notranslate nohighlight">\(B^*=1\)</span></p>
-<div class="exercise admonition" id="Torque and current density">
+<div class="exercise admonition" id="TorqueCurrentDensity">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3.4 </span></p>
 <section id="exercise-content">
 <p>In a brushless motor, give the scaling law that relates the torque T* to the current density J* (ratio of current to conductor area) and the dimensions L*. Assume that all the dimensions of the motor change in the same way (assumption of geometric similarity).</p>
 </section>
 </div>
-<div class="exercise admonition" id="Convection and current density">
+<div class="solution dropdown admonition" id="MotorTorqueSolution">
+
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
+<p>The torque of a permanent magnet motor comes from the Laplace force. Its scaling law evolution can be obtained by dimensional analysis or by direct manipulation of equations.</p>
+<p><strong>Dimensional analysis:</strong> the torque T can be linked to dimensions and current density through <span class="math notranslate nohighlight">\(f(T,⏟L,J,B_r)=0\)</span> which, according to the Buckingham theorem, leads to <span class="math notranslate nohighlight">\(f'(T/(JB_r L^4))=0\)</span>.</p>
+<p><strong>Direct manipulation of scaling laws:</strong> Torque <span class="math notranslate nohighlight">\(T^*=F^* L^*\)</span> trough Laplace force <span class="math notranslate nohighlight">\(F^*= I^* L^* B^*\)</span>, current density  <span class="math notranslate nohighlight">\(I^* = J^* L^{*2}\)</span>, induction <span class="math notranslate nohighlight">\(B^*=1\)</span></p>
+<p>thus:  <span class="math notranslate nohighlight">\(T^*= J^* L^4*\)</span></p>
+<p>with: <span class="math notranslate nohighlight">\(J\)</span> the current density, <span class="math notranslate nohighlight">\(L\)</span> the length of the motor proportional to other geometrical dimensions, <span class="math notranslate nohighlight">\(B_r\)</span> the remanent induction of the permanent magnet, and T the electromagnetic torque.</p>
+</section>
+</div>
+<div class="exercise admonition" id="ConvectionCurrentDensity">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3.5 </span></p>
 <section id="exercise-content">
 <p>If convection is the main heat transfer problem in brushless motors, relate the winding temperature <span class="math notranslate nohighlight">\(\theta^*\)</span> to the current density <span class="math notranslate nohighlight">\(J^*\)</span> and the dimensions <span class="math notranslate nohighlight">\(L^*\)</span>. Assume that the convection parameter h (Newton’s coefficient) is constant for all motor dimensions.</p>
 </section>
 </div>
+<div class="solution dropdown admonition" id="CurrentDensitySolution">
+
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
 <p><strong>Dimensional analysis:</strong> the current density <span class="math notranslate nohighlight">\(J\)</span> can be linked to the dimensions through <span class="math notranslate nohighlight">\(f(J,L,\rho,θ,h)=0\)</span> which, according to the Buckingham theorem, leads to <span class="math notranslate nohighlight">\(f'((ρJ^2 L )/hθ)=0\)</span></p>
 <p><strong>Direct manipulation of scaling laws:</strong> Copper losses <span class="math notranslate nohighlight">\(P^*=R^* I^{*2}\)</span>, electrical resistance <span class="math notranslate nohighlight">\(R^*= \rho^* L^* / S^*\)</span>, current density  <span class="math notranslate nohighlight">\(I^* = J^* L^{*2}\)</span>, convective heat flow <span class="math notranslate nohighlight">\(P^* = h^* S^* \theta\)</span>.</p>
 <p>thus:  <span class="math notranslate nohighlight">\(J^{*2} L^* = \theta\)</span></p>
 <p>with: <span class="math notranslate nohighlight">\(J\)</span> the current density, <span class="math notranslate nohighlight">\(L\)</span> the length of the motor proportional to other geometrical dimensions, <span class="math notranslate nohighlight">\(\rho\)</span> the resistivity of the copper, <span class="math notranslate nohighlight">\(\theta\)</span> the maximal temperature rise for the winding insulation, <span class="math notranslate nohighlight">\(h\)</span> the convection coefficient.</p>
-<div class="exercise admonition" id="Brushless motor scaling laws">
+</section>
+</div>
+<div class="exercise admonition" id="BrushlesMotorScalingLaws">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3.6 </span></p>
 <section id="exercise-content">
