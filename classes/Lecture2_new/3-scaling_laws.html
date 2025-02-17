@@ -551,7 +551,8 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-law-adaptation">3.3.5. Scaling law adaptation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-with-constant-stress">3.3.6. Scaling with constant stress</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">3.3.7. References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-with-constant-temperature">3.3.7. Scaling with constant temperature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">3.3.8. References</a></li>
 </ul>
             </nav>
         </div>
@@ -851,8 +852,37 @@ with :</p>
 </section>
 </div>
 </section>
+<section id="scaling-with-constant-temperature">
+<h2><span class="section-number">3.3.7. </span>Scaling with constant temperature<a class="headerlink" href="#scaling-with-constant-temperature" title="Link to this heading">#</a></h2>
+<p>The next exercises will attempt to determine the scaling laws for brushless motors. We will assume that in a magnetic circuit comprising permanent magnets, such as those found in brushless motors, the magnetic field <span class="math notranslate nohighlight">\(B\)</span> can be assumed to be constant in the case of geometric similarity : <span class="math notranslate nohighlight">\(B^*=1\)</span></p>
+<div class="exercise admonition" id="Torque and current density">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.4 </span></p>
+<section id="exercise-content">
+<p>In a brushless motor, give the scaling law that relates the torque T* to the current density J* (ratio of current to conductor area) and the dimensions L*. Assume that all the dimensions of the motor change in the same way (assumption of geometric similarity).</p>
+</section>
+</div>
+<div class="exercise admonition" id="Convection and current density">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.5 </span></p>
+<section id="exercise-content">
+<p>If convection is the main heat transfer problem in brushless motors, relate the winding temperature <span class="math notranslate nohighlight">\(\theta^*\)</span> to the current density <span class="math notranslate nohighlight">\(J^*\)</span> and the dimensions <span class="math notranslate nohighlight">\(L^*\)</span>. Assume that the convection parameter h (Newton’s coefficient) is constant for all motor dimensions.</p>
+</section>
+</div>
+<p><strong>Dimensional analysis:</strong> the current density <span class="math notranslate nohighlight">\(J\)</span> can be linked to the dimensions through <span class="math notranslate nohighlight">\(f(J,L,\rho,θ,h)=0\)</span> which, according to the Buckingham theorem, leads to <span class="math notranslate nohighlight">\(f'((ρJ^2 L )/hθ)=0\)</span></p>
+<p><strong>Direct manipulation of scaling laws:</strong> Copper losses <span class="math notranslate nohighlight">\(P^*=R^* I^{*2}\)</span>, electrical resistance <span class="math notranslate nohighlight">\(R^*= \rho^* L^* / S^*\)</span>, current density  <span class="math notranslate nohighlight">\(I^* = J^* L^{*2}\)</span>, convective heat flow <span class="math notranslate nohighlight">\(P^* = h^* S^* \theta\)</span>.</p>
+<p>thus:  <span class="math notranslate nohighlight">\(J^{*2} L^* = \theta\)</span></p>
+<p>with: <span class="math notranslate nohighlight">\(J\)</span> the current density, <span class="math notranslate nohighlight">\(L\)</span> the length of the motor proportional to other geometrical dimensions, <span class="math notranslate nohighlight">\(\rho\)</span> the resistivity of the copper, <span class="math notranslate nohighlight">\(\theta\)</span> the maximal temperature rise for the winding insulation, <span class="math notranslate nohighlight">\(h\)</span> the convection coefficient.</p>
+<div class="exercise admonition" id="Brushless motor scaling laws">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.6 </span></p>
+<section id="exercise-content">
+<p>Express how the mass and inertia of a brushed motor change as a function of its rated torque. You will assume that the maximum temperature rise <span class="math notranslate nohighlight">\(\theta\)</span> must be constant across a range of products, i.e. <span class="math notranslate nohighlight">\(\theta^*=1\)</span>.</p>
+</section>
+</div>
+</section>
 <section id="references">
-<h2><span class="section-number">3.3.7. </span>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.3.8. </span>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <p>Jufer, M. (1995). Electromécanique (Vol. 9). PPUR presses polytechniques.</p>
 </section>
 </section>
@@ -932,7 +962,8 @@ with :</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-law-adaptation">3.3.5. Scaling law adaptation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-with-constant-stress">3.3.6. Scaling with constant stress</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">3.3.7. References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-with-constant-temperature">3.3.7. Scaling with constant temperature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">3.3.8. References</a></li>
 </ul>
   </nav></div>
 
