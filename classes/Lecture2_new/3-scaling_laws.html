@@ -897,6 +897,27 @@ with :</p>
 <p>Express how the mass and inertia of a brushed motor change as a function of its rated torque. You will assume that the maximum temperature rise <span class="math notranslate nohighlight">\(\theta\)</span> must be constant across a range of products, i.e. <span class="math notranslate nohighlight">\(\theta^*=1\)</span>.</p>
 </section>
 </div>
+<div class="solution dropdown admonition" id="MotorTorqueScalingLaws">
+
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
+<p>Combining these two aspects (Laplace Force, Convective heat transfer) provides an estimate of torque depending on motor size:</p>
+<ul class="simple">
+<li><p>Current density evolution:
+<span class="math notranslate nohighlight">\(J^*=L^{*-0,5}\)</span></p></li>
+<li><p>Torque evolution:
+<span class="math notranslate nohighlight">\(T^*= J^* L^{*4} = L^{*3.5}\)</span></p></li>
+<li><p>Dimensions:
+<span class="math notranslate nohighlight">\(L^*= T^{*1/ 3.5}\)</span></p></li>
+<li><p>Mass:
+<span class="math notranslate nohighlight">\(M^*= L^{*3} = T^{*3/ 3.5}\)</span></p></li>
+<li><p>Inertia:
+<span class="math notranslate nohighlight">\(M^*= L^{*5} = T^{*5/ 3.5}\)</span></p></li>
+</ul>
+<p>The following figure compare these relationships to data from industrial catalogues, and show that scaling laws can provide good fits for the quantities of interest of such components.</p>
+<p><img alt="Motor" src="classes/Lecture2_new/assets/images/ScalingLogMotor.PNG" /></p>
+</section>
+</div>
 </section>
 <section id="references">
 <h2><span class="section-number">3.3.8. </span>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
