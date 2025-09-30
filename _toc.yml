@@ -149,7 +149,6 @@ parts:
       - file: laboratories/Lab-watt_project/00_SustainableMobility
       - file: laboratories/Lab-watt_project/01a_CaseStudy
       - file: laboratories/Lab-watt_project/01b_CaseStudy_Specification-Student
-      - file: laboratories/Lab-watt_project/01b_CaseStudy_Specification
       - file: laboratories/Lab-watt_project/02a_Architecture-Student
       - file: laboratories/Lab-watt_project/02a_Architecture_UltraCapacitor
       - file: laboratories/Lab-watt_project/02b_Architecture_Hybrid
