@@ -266,8 +266,8 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">8. Lab - Sustainable mobility - Mission profile &amp; Specification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/00_SustainableMobility.html">8.1. Sustainable mobilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01a_CaseStudy.html">8.2. Case study presentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification-Student.html">8.3. Case study specification (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification.html">8.4. Case study specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification-Student.html">8.3. TP1 - Case study specification [Student Version]</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture-Student.html">8.5. Architecture of the converter and sizing scenarios (Student version)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture_UltraCapacitor.html">8.6. Architecture of the converter and sizing scenarios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02b_Architecture_Hybrid.html">8.7. Hydrid Storage Architecture and Specification</a></li>
@@ -1359,7 +1359,7 @@
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">90</span><span class="p">)]])</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/sklearn/linear_model/_base.py:306,</span> in <span class="ni">LinearModel.predict</span><span class="nt">(self, X)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/sklearn/linear_model/_base.py:306,</span> in <span class="ni">LinearModel.predict</span><span class="nt">(self, X)</span>
 <span class="g g-Whitespace">    </span><span class="mi">292</span> <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">293</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">294</span><span class="sd">     Predict using the linear model.</span>
@@ -1369,13 +1369,13 @@
 <span class="g g-Whitespace">    </span><span class="mi">305</span><span class="sd">     &quot;&quot;&quot;</span>
 <span class="ne">--&gt; </span><span class="mi">306</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decision_function</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/sklearn/linear_model/_base.py:283,</span> in <span class="ni">LinearModel._decision_function</span><span class="nt">(self, X)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/sklearn/linear_model/_base.py:283,</span> in <span class="ni">LinearModel._decision_function</span><span class="nt">(self, X)</span>
 <span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="k">def</span> <span class="nf">_decision_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">283</span>     <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;csr&quot;</span><span class="p">,</span> <span class="s2">&quot;csc&quot;</span><span class="p">,</span> <span class="s2">&quot;coo&quot;</span><span class="p">],</span> <span class="n">reset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">286</span>     <span class="n">coef_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coef_</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/sklearn/utils/validation.py:1661,</span> in <span class="ni">check_is_fitted</span><span class="nt">(estimator, attributes, msg, all_or_any)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/sklearn/utils/validation.py:1661,</span> in <span class="ni">check_is_fitted</span><span class="nt">(estimator, attributes, msg, all_or_any)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1658</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is not an estimator instance.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">estimator</span><span class="p">))</span>
 <span class="g g-Whitespace">   </span><span class="mi">1660</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">_is_fitted</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">all_or_any</span><span class="p">):</span>
 <span class="ne">-&gt; </span><span class="mi">1661</span>     <span class="k">raise</span> <span class="n">NotFittedError</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="nb">type</span><span class="p">(</span><span class="n">estimator</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">})</span>
