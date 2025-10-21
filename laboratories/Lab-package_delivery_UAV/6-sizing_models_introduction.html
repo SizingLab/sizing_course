@@ -268,9 +268,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01a_CaseStudy.html">8.2. Case study presentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification-Student.html">8.3. TP1 - Case study specification [Student Version]</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture-Student.html">8.5. Architecture of the converter and sizing scenarios (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02a_Architecture_UltraCapacitor.html">8.6. Architecture of the converter and sizing scenarios</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02b_Architecture_Hybrid.html">8.7. Hydrid Storage Architecture and Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02b_Architecture_Hybrid-Student.html">8.5. TD1/2 - Hydrid storage architecture &amp; specification [Student version]</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary.html">9. Lab - Sustainable mobility - DC/DC converter sizing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -592,8 +590,8 @@
 </figcaption>
 </figure>
 <p>It consists in addition an oversizing coefficent <span class="math notranslate nohighlight">\(k_{os} \quad [1-10]\)</span> as a design variable and additional inequality constraint <span class="math notranslate nohighlight">\(M_{total} \geq M_{total,real}\)</span>. This way, we make sure that the drone is capable of lifting the load and itself. As we are minimizing the total mass <span class="math notranslate nohighlight">\(M_{total,real}\)</span> the oversizing coefficient <span class="math notranslate nohighlight">\(k_{os}\)</span> will tend to be as small as possible and thus the inequality constraint will be equivalent to an equality constraint (<span class="math notranslate nohighlight">\(M_{total} = M_{total,real}\)</span>). This is one way of solving an algebraic loop, other methods use numerical solvers or other optimizer-based formulations. The formulation of the optimization problem is the following:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-62c7c102-ca7f-4f64-8efd-825cced7ddf9">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-62c7c102-ca7f-4f64-8efd-825cced7ddf9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0c6a472f-8687-435c-998f-1637ec05e1e9">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-0c6a472f-8687-435c-998f-1637ec05e1e9" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
         &amp; \text{minimize}
         &amp; &amp; M_{total,real} \\

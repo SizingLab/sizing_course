@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8.7. Hydrid Storage Architecture and Specification &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>8.5. TD1/2 - Hydrid storage architecture &amp; specification [Student version] &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -61,12 +61,14 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-watt_project/02b_Architecture_Hybrid';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-watt_project/02b_Architecture_Hybrid-Student';</script>
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="9. Lab - Sustainable Mobility - Storage Systems &amp; DC/DC converter sizing" href="summary.html" />
-    <link rel="prev" title="8.6. Architecture of the converter and sizing scenarios" href="02a_Architecture_UltraCapacitor.html" />
+    <link rel="prev" title="8.3. TP1 - Case study specification [Student Version]" href="01b_CaseStudy_Specification-Student.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -266,9 +268,7 @@
 <li class="toctree-l2"><a class="reference internal" href="01a_CaseStudy.html">8.2. Case study presentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01b_CaseStudy_Specification-Student.html">8.3. TP1 - Case study specification [Student Version]</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="02a_Architecture-Student.html">8.5. Architecture of the converter and sizing scenarios (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02a_Architecture_UltraCapacitor.html">8.6. Architecture of the converter and sizing scenarios</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.7. Hydrid Storage Architecture and Specification</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.5. TD1/2 - Hydrid storage architecture &amp; specification [Student version]</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="summary.html">9. Lab - Sustainable mobility - DC/DC converter sizing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -340,7 +340,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/laboratories/Lab-watt_project/02b_Architecture_Hybrid.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/laboratories/Lab-watt_project/02b_Architecture_Hybrid-Student.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -358,7 +358,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-watt_project/02b_Architecture_Hybrid.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-watt_project/02b_Architecture_Hybrid-Student.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -406,7 +406,7 @@
       
       
       
-      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/laboratories/Lab-watt_project/02b_Architecture_Hybrid.ipynb" target="_blank"
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/laboratories/Lab-watt_project/02b_Architecture_Hybrid-Student.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -423,7 +423,7 @@
       
       
       
-      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Flaboratories/Lab-watt_project/02b_Architecture_Hybrid.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Flaboratories/Lab-watt_project/02b_Architecture_Hybrid-Student.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -453,7 +453,7 @@
       
       
       
-      <li><a href="../../_sources/laboratories/Lab-watt_project/02b_Architecture_Hybrid.ipynb" target="_blank"
+      <li><a href="../../_sources/laboratories/Lab-watt_project/02b_Architecture_Hybrid-Student.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -529,7 +529,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hydrid Storage Architecture and Specification</h1>
+    <h1>TD1/2 - Hydrid storage architecture & specification [Student version]</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -539,11 +539,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-operating-limits-of-energy-storage-components">8.7.1. Main operating limits of energy storage components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-of-a-complete-line">8.7.2. Simulation of a complete line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-line-definition">8.7.3. Example of a line definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-storage-system-sizing">8.7.4. Hybrid storage system sizing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labwork-and-homework">8.7.5. Labwork and homework</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-operating-limits-of-energy-storage-components">8.5.1. Main operating limits of energy storage components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflexion-on-the-watt-system-architecture-capacitors">8.5.2. Reflexion on the Watt System architecture (capacitors)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-of-a-complete-line">8.5.3. Simulation of a complete line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-line-definition">8.5.4. Example of a line definition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-storage-system-sizing">8.5.4.1. Hybrid storage system sizing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labwork-and-homework">8.5.4.2. Labwork and homework</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -556,34 +559,100 @@
                 <article class="bd-article">
                   
   <p><img alt="Sizing Lab" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/Baniere.png" /></p>
-<section class="tex2jax_ignore mathjax_ignore" id="hydrid-storage-architecture-and-specification">
-<h1><span class="section-number">8.7. </span>Hydrid Storage Architecture and Specification<a class="headerlink" href="#hydrid-storage-architecture-and-specification" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="td1-2-hydrid-storage-architecture-specification-student-version">
+<h1><span class="section-number">8.5. </span>TD1/2 - Hydrid storage architecture &amp; specification [Student version]<a class="headerlink" href="#td1-2-hydrid-storage-architecture-specification-student-version" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
-<p>We will consider here an hybrid solutions with super capacities and traction battery packs. This notebook is dedicated :</p>
+<p>We will consider here an hybrid solution with super capacitors and traction batteries packs. This notebook is dedicated to :</p>
 <ul class="simple">
-<li><p>to understand main operating limits of super capacitors and batteries</p></li>
-<li><p>to understand a control architecture enabling to split power between super capacitors and batteries</p></li>
-<li><p>to specify energy storage requirements of the different energy sources.</p></li>
+<li><p>understand main operating limits of super capacitors and batteries;</p></li>
+<li><p>understand a control architecture enabling to split power between super capacitors and batteries;</p></li>
+<li><p>specify energy storage requirements of the different energy sources.</p></li>
 </ul>
 <p>The storage element selection approach developed here is inspired by the following publication:</p>
 <blockquote>
-<div><p>Jaafar, A., Sareni, B., Roboam, X., &amp; Thiounn-Guermeur, M. (2010, September). Sizing of a hybrid locomotive based on accumulators and ultracapacitors. In 2010 IEEE Vehicle Power and Propulsion Conference (pp. 1-6). IEEE.[<a class="reference external" href="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/papers/Sizing_of_a_hybrid_locomotive_based_on_accumulators_and_ultracapacitors.pdf">pdf</a>]</p>
+<div><p>Jaafar, A., Sareni, B., Roboam, X., &amp; Thiounn-Guermeur, M. (2010, September). Sizing of a hybrid locomotive based on accumulators and ultracapacitors. In 2010 IEEE Vehicle Power and Propulsion Conference (pp. 1-6). IEEE [<a class="reference external" href="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/papers/Sizing_of_a_hybrid_locomotive_based_on_accumulators_and_ultracapacitors.pdf">pdf</a>].</p>
 </div></blockquote>
 <section id="main-operating-limits-of-energy-storage-components">
-<h2><span class="section-number">8.7.1. </span>Main operating limits of energy storage components<a class="headerlink" href="#main-operating-limits-of-energy-storage-components" title="Link to this heading">#</a></h2>
-<p>To enable the selection of energy storage means, it is necessary to understand their main operational limitations. These limits can be representative:</p>
+<h2><span class="section-number">8.5.1. </span>Main operating limits of energy storage components<a class="headerlink" href="#main-operating-limits-of-energy-storage-components" title="Link to this heading">#</a></h2>
+<p>To select the energy storage means, it is necessary to understand their main operational limits which can be representative of:</p>
 <ul class="simple">
-<li><p><strong>rapid deterioration</strong> that can develop over an operating cycle, for example one journey or a few journeys over the same day.</p></li>
-<li><p><strong>gradual degradation</strong> linked to the lifespan of the component over multiple cycles, months or years, where the accumulation of degradation leads to an irreversible loss of performance.</p></li>
+<li><p><strong>rapid/quick deterioration</strong> that can develop over an short operating cycle (minutes/hours).</p></li>
+<li><p><strong>gradual degradation</strong> linked to the lifespan of the component over multiple cycles (months/years), where the accumulation of degradation leads to an irreversible loss of performance.</p></li>
 </ul>
 <blockquote>
-<div><p><strong>Questions:</strong> Examine the following Figures extract from datasheet of elementary storage cells of <a class="reference external" href="https://1188159.fs1.hubspotusercontent-na1.net/hubfs/1188159/02-DS-220909-SKELCAP-CELLS-1F.pdf">supercapacitors</a> or <a class="reference external" href="https://5.imimg.com/data5/SELLER/Doc/2021/3/VO/ZR/QG/86781150/3-2-v-10-ah-lifepo4-prismatic-cell.pdf">battery (LiFeSO4)</a>. Propose selection criteria representative of the main operational limits. Explain how to size a battery taking into account an high number of <a class="reference external" href="https://www.powertechsystems.eu/home/tech-corner/lithium-iron-phosphate-lifepo4/">discharge cycles</a>.</p>
+<div><p><strong>Questions 1:</strong> Examine the following Figures extracted from a datasheet of elementary <a class="reference external" href="https://1188159.fs1.hubspotusercontent-na1.net/hubfs/1188159/02-DS-220909-SKELCAP-CELLS-1F.pdf">supercapacitors</a> cell or <a class="reference external" href="https://5.imimg.com/data5/SELLER/Doc/2021/3/VO/ZR/QG/86781150/3-2-v-10-ah-lifepo4-prismatic-cell.pdf">battery (LiFeSO4)</a> cell. Propose selection criteria representative of the main operational limits. Explain how to take into account an high number of <a class="reference external" href="https://www.powertechsystems.eu/home/tech-corner/lithium-iron-phosphate-lifepo4/">discharge cycles</a> within the sizing process of a battery.</p>
 </div></blockquote>
 <p><img alt="Battery Cell" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/BatteryCellEXample.png" /></p>
 <p><img alt="Ultracapacitor Cell" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/SCCellExample.png" /></p>
 </section>
+<section id="reflexion-on-the-watt-system-architecture-capacitors">
+<h2><span class="section-number">8.5.2. </span>Reflexion on the Watt System architecture (capacitors)<a class="headerlink" href="#reflexion-on-the-watt-system-architecture-capacitors" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="http://www.pvi.fr/wattsystem-watt-system,172.html">WATT system</a> includes:</p>
+<ul class="simple">
+<li><p>In the bus: a battery pack and an ultra capacitors pack integrated to the electric power train, a connection system with an automatic arm installed on the roof of the vehicle;</p></li>
+<li><p>On the sidewalk: a charging station or “totem” with the connection, as well as a pack of super capacitors, all integrated in the urban landscape.</p></li>
+</ul>
+<p>Each totem (or charging station) is connected to the household electricity distribution network and allows charging between the stop of each bus.</p>
+<p>In operation the bus is powered by supercapacitors, it travels the necessary distance to the next stop, thanks to the energy stored.
+At each stop, the arm deploys and realizes in 10 seconds the transfer of energy between the super capacitors of the totem and the onboard super capacitors.
+An adapted Lithium-ion battery pack is installed in the bus in case of a connection or recharge problem and trips without passengers to return to the central station (maintenance).</p>
+<p><em>Ultracapacitor Pack and Totem</em>
+<img alt="PositionPacks" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/PositionPacks.png" /></p>
+<p>In order to estimate the dimensions of the ultracapacities pack, we will be interested in the energy to be supplied to the motorization of the bus on a typical path:</p>
+<ul class="simple">
+<li><p>Top speed <span class="math notranslate nohighlight">\(v_{max}\)</span> = 30 km/h</p></li>
+<li><p>Distance between 2 totems <span class="math notranslate nohighlight">\(d\)</span> = 800 m</p></li>
+<li><p>Maximum height difference <span class="math notranslate nohighlight">\(h\)</span> = 3 m</p></li>
+</ul>
+<p>The bus has the following characteristics:</p>
+<ul class="simple">
+<li><p>Mass with passengers <span class="math notranslate nohighlight">\(m\)</span> = 20 t</p></li>
+<li><p><a class="reference external" href="http://en.wikipedia.org/wiki/Rolling_resistance">Rolling coefficient</a> tires <span class="math notranslate nohighlight">\(C_{rr}\)</span>= 0.01</p></li>
+</ul>
+<p>Aerodynamic effect are assume here to be negligeable due to low speed.</p>
+<blockquote>
+<div><p>Exercice 1: Write the general equation enabling to calculate the maximum energy to supply (to be stored). Apply it with considered simplification (aerodynamics neglected) for defined use case scenario.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters</span>
+<span class="n">v_max</span><span class="o">=</span><span class="mi">30</span><span class="o">*</span><span class="mi">1000</span><span class="o">/</span><span class="mi">3600</span> <span class="c1"># [m/s] max speed</span>
+<span class="n">m</span><span class="o">=</span><span class="mf">20e3</span> <span class="c1"># [kg] bus mass</span>
+<span class="n">d</span><span class="o">=</span><span class="mf">800.</span> <span class="c1"># [m] distance</span>
+<span class="n">h</span><span class="o">=</span><span class="mf">3.</span> <span class="c1"># [m] rise height</span>
+<span class="n">C_rr</span><span class="o">=</span> <span class="mf">0.01</span> <span class="c1"># [-] tyre rolling coef</span>
+<span class="n">g</span><span class="o">=</span><span class="mf">9.81</span> <span class="c1"># [m/s²] gravity acceleration</span>
+
+<span class="c1"># Energies &amp; works calculations</span>
+<span class="c1"># TO BE COMPLETED</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will take as ultra-capacitor reference  the following <a class="reference external" href="http://www.maxwell.com/products/ultracapacitors/125v-tran-modules">module</a> from <a class="reference external" href="http://www.maxwell.com">Maxwell Technologies</a>.</p>
+<p><em>Maxwell module characteristics</em>
+<img alt="MaxwellModule" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/MaxwellModule.png" /></p>
+<blockquote>
+<div><p>Exercice 2: We will assume that maximum discharge is reached when capacitor voltage reaches half its naximum voltage. Explain and calculate the minimum number of modules.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="c1"># Maxwell module characteristics</span>
+<span class="n">V_max</span><span class="o">=</span><span class="mf">125.</span> <span class="c1"># [V] Max voltage</span>
+<span class="n">C</span><span class="o">=</span><span class="mf">63.</span> <span class="c1"># [F] Module capacitance</span>
+
+<span class="c1"># Modules number calculation</span>
+<span class="n">V_min</span><span class="o">=</span><span class="n">V_max</span><span class="o">/</span><span class="mi">2</span>
+<span class="c1"># TO BE COMPLETED</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="simulation-of-a-complete-line">
-<h2><span class="section-number">8.7.2. </span>Simulation of a complete line<a class="headerlink" href="#simulation-of-a-complete-line" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.5.3. </span>Simulation of a complete line<a class="headerlink" href="#simulation-of-a-complete-line" title="Link to this heading">#</a></h2>
 <p>The objective of this section is to propose an evolution of the previous python codes to be able to:</p>
 <ul class="simple">
 <li><p>simulate the power profile necessary for a complete line comprising several sections.</p></li>
@@ -613,202 +682,13 @@
 <li><p><em>Each charging station will provide the power to compensate for the energy of the travel from the last station.</em></p></li>
 </ul>
 </div></blockquote>
-<p>Here we load all the functions and classes defined in the previous notebook.</p>
+<p>Let us first load the classes developed within TP1 notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> ./01b_CaseStudy_Specification.ipynb
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="o">%</span><span class="n">run</span> <span class="o">./</span><span class="mi">01</span><span class="n">b_CaseStudy_Specification</span><span class="o">.</span><span class="n">ipynb</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Duration of traject for given mean speed: 92.77s
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 20.44 kJ/(Pax.km)
-Max energy discharge: 4450 kJ
-Max power discharge: 550 kW
-Max power recharge: -464 kW
-</pre></div>
-</div>
-<img alt="../../_images/fd7e68ae895be4a6fb0159b8460a63fc407ee093609e2721aef080f557655e18.png" src="../../_images/fd7e68ae895be4a6fb0159b8460a63fc407ee093609e2721aef080f557655e18.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ERROR3] Vehicle acceleration is too low , should be &gt;0.3114059332964806m/s²
-
-[ERROR2] Profile mean speed is too high (Vm=32.2km/h) : exceed vehicle max speed!
-</pre></div>
-</div>
-<img alt="../../_images/61e9b18530ea7078ea1b43870de4ccfacd1c30d479e9c18e47c824ff95a0edcf.png" src="../../_images/61e9b18530ea7078ea1b43870de4ccfacd1c30d479e9c18e47c824ff95a0edcf.png" />
-<img alt="../../_images/02c11a61524897f6c68ce317066573aab12bbc6ff412de65fc216f326448c52a.png" src="../../_images/02c11a61524897f6c68ce317066573aab12bbc6ff412de65fc216f326448c52a.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Max energy discharge: 4158 kJ
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Max energy discharge: 4009 kJ
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Max energy discharge: 3995 kJ
-</pre></div>
-</div>
-<img alt="../../_images/3cf2d72415db93a3557066dd0308747ffbc5b897f7742e2abe53baecceb6beef.png" src="../../_images/3cf2d72415db93a3557066dd0308747ffbc5b897f7742e2abe53baecceb6beef.png" />
-<img alt="../../_images/156712b7fe5dd460420601eced512441ea6819b3a0b198343b9f1dbe7c45b484.png" src="../../_images/156712b7fe5dd460420601eced512441ea6819b3a0b198343b9f1dbe7c45b484.png" />
-<img alt="../../_images/43f829f0c062c3cd5a67b75291bf22caa68c93efe05cd32a80f7eb3657f9a9ab.png" src="../../_images/43f829f0c062c3cd5a67b75291bf22caa68c93efe05cd32a80f7eb3657f9a9ab.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Positive directional derivative for linesearch    (Exit mode 8)
-            Current function value: 1.2338137148050947
-            Iterations: 48
-            Function evaluations: 597
-            Gradient evaluations: 44
-Optimal vector : [0.05122318 0.667643   0.95289809]
-Constraints vector : [-0.01763549366395749, -0.08872305140961852]
-Consumption per passenger: 18.50 kJ/(Pax.km)
-Max energy discharge: 3306 kJ
-</pre></div>
-</div>
-<img alt="../../_images/1bb9c6865b21faa1ed1a3f7deb6d41e3c38df9d798bf8f40424b804358e4d996.png" src="../../_images/1bb9c6865b21faa1ed1a3f7deb6d41e3c38df9d798bf8f40424b804358e4d996.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
-             success: True
-                 fun: 1.2692478005261774
-                   x: [ 1.677e-01  3.027e-01  9.874e-01]
-                 nit: 28
-                nfev: 1309
-          population: [[ 1.677e-01  3.027e-01  9.874e-01]
-                       [ 1.449e-01  3.163e-01  9.899e-01]
-                       ...
-                       [ 1.709e-01  2.890e-01  9.746e-01]
-                       [ 2.030e-01  2.624e-01  9.228e-01]]
- population_energies: [ 1.269e+00  1.270e+00 ...  1.272e+00  1.282e+00]
-Optimal vector : [0.16765224 0.30271864 0.98740602]
-Constraints vector : [0.02051320987779148, -0.002487562189054679]
-Consumption per passenger: 19.77 kJ/(Pax.km)
-Max energy discharge: 3588 kJ
-</pre></div>
-</div>
-<img alt="../../_images/6048f4277b430fa485da162efb5c2b731df4effe61ddffbe5d0d248b33cf90eb.png" src="../../_images/6048f4277b430fa485da162efb5c2b731df4effe61ddffbe5d0d248b33cf90eb.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
-             success: True
-                 fun: 1.2367359878503903
-                   x: [ 5.747e-02  6.295e-01  9.887e-01]
-                 nit: 30
-                nfev: 1399
-          population: [[ 5.747e-02  6.295e-01  9.887e-01]
-                       [ 5.794e-02  6.378e-01  9.874e-01]
-                       ...
-                       [ 6.032e-02  6.234e-01  9.879e-01]
-                       [ 5.727e-02  6.278e-01  9.896e-01]]
- population_energies: [ 1.237e+00  1.237e+00 ...  1.237e+00  1.237e+00]
-Optimal vector : [0.05746629 0.62953101 0.98866459]
-Constraints vector : [0.03335096221756688, -0.02404643449419564]
-Consumption per passenger: 19.51 kJ/(Pax.km)
-Max energy discharge: 3791 kJ
-</pre></div>
-</div>
-<img alt="../../_images/3402b6000abe1886719663fe4f075ae8336041c919b2ae01961ab4c710ffd01c.png" src="../../_images/3402b6000abe1886719663fe4f075ae8336041c919b2ae01961ab4c710ffd01c.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
-             success: True
-                 fun: 1.2218333409263697
-                   x: [ 5.461e-02  7.355e-01  9.869e-01]
-                 nit: 22
-                nfev: 1039
-          population: [[ 5.461e-02  7.355e-01  9.869e-01]
-                       [ 5.418e-02  7.324e-01  9.856e-01]
-                       ...
-                       [ 5.505e-02  7.241e-01  9.409e-01]
-                       [ 5.592e-02  7.408e-01  9.778e-01]]
- population_energies: [ 1.222e+00  1.222e+00 ...  1.230e+00  1.223e+00]
-Optimal vector : [0.05461293 0.73549472 0.98690566]
-Constraints vector : [0.05642389881327443, -0.0456053067993366]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumption per passenger: 19.70 kJ/(Pax.km)
-Max energy discharge: 4031 kJ
-</pre></div>
-</div>
-<img alt="../../_images/096db0a14450c9adb4a8521e7d7f6df5fcd3c60def95763860a4bfddaca6773b.png" src="../../_images/096db0a14450c9adb4a8521e7d7f6df5fcd3c60def95763860a4bfddaca6773b.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tramway :
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
-             success: True
-                 fun: 1.2293129555100613
-                   x: [ 1.557e-01  3.534e-01  9.899e-01]
-                 nit: 13
-                nfev: 634
-          population: [[ 1.557e-01  3.534e-01  9.899e-01]
-                       [ 1.147e-01  4.394e-01  9.841e-01]
-                       ...
-                       [ 1.406e-01  4.011e-01  9.870e-01]
-                       [ 1.154e-01  4.273e-01  9.900e-01]]
- population_energies: [ 1.229e+00  1.237e+00 ...  1.236e+00  1.236e+00]
-Optimal vector : [0.15565707 0.3534337  0.98986253]
-Constraints vector : [0.039242456029486124, -0.03482587064676612]
-Consumption per passenger: 19.55 kJ/(Pax.km)
-----
-</pre></div>
-</div>
-<img alt="../../_images/9717f4dd0f5e3390f5012202fb91b1c29e59abaca811073b7be9b0b166220806.png" src="../../_images/9717f4dd0f5e3390f5012202fb91b1c29e59abaca811073b7be9b0b166220806.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Trolleybus :
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
-             success: True
-                 fun: 1.083132254568939
-                   x: [ 5.945e-02  7.697e-01  9.740e-01]
-                 nit: 10
-                nfev: 499
-          population: [[ 5.945e-02  7.697e-01  9.740e-01]
-                       [ 5.457e-02  9.339e-01  8.821e-01]
-                       ...
-                       [ 7.542e-02  7.463e-01  9.320e-01]
-                       [ 5.812e-02  9.018e-01  8.547e-01]]
- population_energies: [ 1.083e+00  1.092e+00 ...  1.093e+00  1.092e+00]
-Optimal vector : [0.05945318 0.76971659 0.97402578]
-Constraints vector : [0.07095120144415178, 0.04063018242122724]
-Consumption per passenger: 32.01 kJ/(Pax.km)
-----
-</pre></div>
-</div>
-<img alt="../../_images/ce43ce195e17c1312c39fa59896679820134fb8722f6eac9d8f317adfa93600c.png" src="../../_images/ce43ce195e17c1312c39fa59896679820134fb8722f6eac9d8f317adfa93600c.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bus :
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
-             success: True
-                 fun: 1.1036963772929504
-                   x: [ 6.029e-02  7.707e-01  9.772e-01]
-                 nit: 20
-                nfev: 949
-          population: [[ 6.029e-02  7.707e-01  9.772e-01]
-                       [ 6.008e-02  9.136e-01  8.575e-01]
-                       ...
-                       [ 2.072e-01  4.314e-01  9.649e-01]
-                       [ 5.350e-02  8.083e-01  9.868e-01]]
- population_energies: [ 1.104e+00  1.115e+00 ...  1.146e+00  1.106e+00]
-Optimal vector : [0.06028928 0.77065714 0.97719206]
-Constraints vector : [0.07095120144415178, 0.04063018242122724]
-Consumption per passenger: 33.54 kJ/(Pax.km)
-----
-</pre></div>
-</div>
-<img alt="../../_images/3fd979d6159b3f433b8f5a27d4b9f5b686cb0cfffeab0bd29c1e8358241abe71.png" src="../../_images/3fd979d6159b3f433b8f5a27d4b9f5b686cb0cfffeab0bd29c1e8358241abe71.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Car :
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
-             success: True
-                 fun: 1.208147154313186
-                   x: [ 1.207e-02  6.579e-01  9.886e-01]
-                 nit: 23
-                nfev: 1084
-          population: [[ 1.207e-02  6.579e-01  9.886e-01]
-                       [ 1.096e-02  6.361e-01  9.597e-01]
-                       ...
-                       [ 8.411e-03  6.666e-01  9.724e-01]
-                       [ 1.199e-02  7.015e-01  9.330e-01]]
- population_energies: [ 1.208e+00  1.213e+00 ...  1.224e+00  1.226e+00]
-Optimal vector : [0.01206964 0.65787183 0.98859766]
-Constraints vector : [-0.12028808598558105, -0.9187396351575455]
-Consumption per passenger: 79.64 kJ/(Pax.km)
-----
-</pre></div>
-</div>
-<img alt="../../_images/62b0aada078fdc922c12ed7490c9a66dd8f1ddba732695e301d0370519954f43.png" src="../../_images/62b0aada078fdc922c12ed7490c9a66dd8f1ddba732695e301d0370519954f43.png" />
 </div>
 </div>
 <p>Here we define a <code class="docutils literal notranslate"><span class="pre">line</span></code> class with all the functionalities described just before.</p>
@@ -817,37 +697,37 @@ Consumption per passenger: 79.64 kJ/(Pax.km)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
 
 <span class="k">class</span> <span class="nc">line</span><span class="p">():</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">Vehicle</span><span class="p">,</span> <span class="n">Distances</span><span class="p">,</span><span class="n">Speeds</span><span class="p">,</span> <span class="n">Chargers</span><span class="p">,</span> <span class="n">StopDuration</span><span class="p">,</span> <span class="n">RatioBrakeMax</span><span class="p">):</span>
-        <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="o">=</span><span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">Chargers</span> <span class="o">=</span>  <span class="n">Chargers</span> <span class="c1"># Boolean vector (True = Charger, False = No Charger , at end of te section)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Vehicle</span><span class="p">,</span> <span class="n">Distances</span><span class="p">,</span> <span class="n">Speeds</span><span class="p">,</span> <span class="n">Chargers</span><span class="p">,</span> <span class="n">StopDuration</span><span class="p">,</span> <span class="n">RatioBrakeMax</span><span class="p">):</span>
+        
+        <span class="c1"># Save attributes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Chargers</span> <span class="o">=</span>  <span class="n">Chargers</span> <span class="c1"># Boolean vector (True = Charger, False = No Charger , at the end of the section)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">StopDuration</span> <span class="o">=</span> <span class="n">StopDuration</span> <span class="c1"># [s] station stop duration (scalar)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">RatioBrakeMax</span> <span class="o">=</span> <span class="n">RatioBrakeMax</span> <span class="c1"># [-] Ratio between max braking power / max acceleration power</span>
         
-        <span class="c1"># initialization of  transient evolution (vectors)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">PowerStorage</span><span class="o">=</span> <span class="p">[]</span> <span class="c1"># Transient evolution of requested power</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">GlobalTime</span><span class="o">=</span><span class="p">[]</span> <span class="c1"># Time vector for plot and energy integration</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">GlobalNRJStorage</span><span class="o">=</span><span class="p">[]</span> <span class="c1"># Transient evolution of energy</span>
+        <span class="c1"># Initialization of  transient evolution (vectors)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">PowerStorage</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Transient evolution of requested power</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">GlobalTime</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Time vector for plot and energy integration</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">GlobalNRJStorage</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Transient evolution of energy</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">PowerLF</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Transient evolution of power  (Low Frequency)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">PowerHF</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Transient evolution of power  (high Frequency)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">LFNRJStorage</span><span class="o">=</span><span class="p">[]</span> <span class="c1"># Time vector for plot and energy integration (Low Frequency)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">HFNRJStorage</span><span class="o">=</span><span class="p">[]</span> <span class="c1"># Time vector for plot and energy integration (High Frequency)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">TotalLineDistance</span> <span class="o">=</span>  <span class="nb">sum</span><span class="p">(</span><span class="n">Distances</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">LFNRJStorage</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Time vector for plot and energy integration (Low Frequency)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">HFNRJStorage</span>  <span class="o">=</span><span class="p">[]</span> <span class="c1"># Time vector for plot and energy integration (High Frequency)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">TotalLineDistance</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Distances</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dt</span><span class="o">=</span><span class="mf">0.25</span> <span class="c1"># Time step for numerical integration</span>
         
-        <span class="c1"># print characteristic of each section</span>
-        <span class="k">for</span> <span class="n">d</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Distances</span><span class="p">,</span><span class="n">Speeds</span><span class="p">,</span><span class="n">Chargers</span><span class="p">):</span>
+        <span class="c1"># Print characteristics of each section</span>
+        <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="o">=</span><span class="p">[]</span>
+        <span class="k">for</span> <span class="n">d</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Distances</span><span class="p">,</span> <span class="n">Speeds</span><span class="p">,</span> <span class="n">Chargers</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Section %.i: %.i m at </span><span class="si">%.2f</span><span class="s2"> m/s </span><span class="si">%s</span><span class="s2"> charger&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">s</span><span class="p">,</span> <span class="s2">&quot;whith&quot;</span> <span class="k">if</span> <span class="n">c</span> <span class="k">else</span> <span class="s2">&quot;without&quot;</span><span class="p">))</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="o">+</span><span class="p">[</span><span class="n">OptimSection</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">RatioBrakeMax</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">dt</span><span class="p">)]</span>
             <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
     
-    <span class="c1"># Optimization loop of each section of the line</span>
+    <span class="c1"># Optimization loop of each section</span>
     <span class="k">def</span> <span class="nf">optimLine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.9</span><span class="p">]</span>
+        <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">)):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">optimizeGConso</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>   
+            <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">optimizeConso_genetic</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
     
     <span class="c1"># Power vector concatenation </span>
     <span class="k">def</span> <span class="nf">CalculPowerStorage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -883,7 +763,7 @@ Consumption per passenger: 79.64 kJ/(Pax.km)
             <span class="bp">self</span><span class="o">.</span><span class="n">GlobalTime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GlobalTime</span> <span class="o">+</span> <span class="p">[</span><span class="n">t</span><span class="p">]</span>
             <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span>
             
-    <span class="c1"># Filtering of total power in order to generate LF and HF pwoers</span>
+    <span class="c1"># Filtering of total power in order to generate LF (battery) and HF (capacitor) powers</span>
     <span class="k">def</span> <span class="nf">FilterPower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">omega</span><span class="p">):</span>
         <span class="n">TF</span><span class="o">=</span><span class="n">signal</span><span class="o">.</span><span class="n">TransferFunction</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">omega</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">omega</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
         <span class="n">time</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">PowerLF</span><span class="p">,</span> <span class="n">state</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">lsim</span><span class="p">(</span><span class="n">TF</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">PowerStorage</span> <span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">GlobalTime</span><span class="p">)</span>
@@ -921,13 +801,9 @@ Consumption per passenger: 79.64 kJ/(Pax.km)
         <span class="n">NRJLF</span> <span class="o">=</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LFNRJStorage</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LFNRJStorage</span><span class="p">))</span><span class="o">/</span><span class="mi">3600</span><span class="o">/</span><span class="mf">1e3</span> <span class="c1"># NRJ en kWh</span>
         
         <span class="k">return</span> <span class="n">PmaxHF</span><span class="p">,</span> <span class="n">PmaxLF</span><span class="p">,</span> <span class="n">PmaxBrakeLF</span><span class="p">,</span> <span class="n">NRJHF</span><span class="p">,</span> <span class="n">NRJLF</span>
-          
-    
-    
-                
-    <span class="c1"># Main results plot</span>
-    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        
+                      
+    <span class="c1"># Plot the results for a local section</span>
+    <span class="k">def</span> <span class="nf">plot_power_share</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">GlobalTime</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">PowerStorage</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">)</span>
@@ -938,7 +814,6 @@ Consumption per passenger: 79.64 kJ/(Pax.km)
         <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Power (W)&quot;</span><span class="p">)</span>
         <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
         <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-        
         <span class="k">try</span><span class="p">:</span>
             <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">GlobalTime</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">GlobalNRJStorage</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">)</span>
             <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">GlobalTime</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">LFNRJStorage</span><span class="p">,</span><span class="s1">&#39;r-.&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;LF&#39;</span><span class="p">)</span>
@@ -949,199 +824,156 @@ Consumption per passenger: 79.64 kJ/(Pax.km)
             <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
         <span class="k">except</span><span class="p">:</span>
             <span class="n">fig</span><span class="o">.</span><span class="n">delaxes</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-        <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>            
-        
-        
+        <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> 
+
+    <span class="c1"># Plot the results for the complete line</span>
+    <span class="k">def</span> <span class="nf">plot_sections</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">)):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>  
+              
             
 </pre></div>
 </div>
 </div>
 </div>
+<blockquote>
+<div><p>Exercice 3: Read previous code and explain what it does method by method.</p>
+</div></blockquote>
 </section>
 <section id="example-of-a-line-definition">
-<h2><span class="section-number">8.7.3. </span>Example of a line definition<a class="headerlink" href="#example-of-a-line-definition" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.5.4. </span>Example of a line definition<a class="headerlink" href="#example-of-a-line-definition" title="Link to this heading">#</a></h2>
 <p>We can now use this new class to define a bus transport line with the following requirements:</p>
 <ul class="simple">
 <li><p>distances: 700, 500, 400, 700, 300, 300, 300, 300, 300, 300 m/s</p></li>
 <li><p>mean speed: 7, 7, 7, 5, 5, 5, 5, 5 m/s</p></li>
 <li><p>one final charger</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ToulouseC</span><span class="o">=</span><span class="n">line</span><span class="p">(</span><span class="n">Bus</span><span class="p">,[</span><span class="mi">700</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">700</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">],</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">)</span>
-<span class="c1">#ToulouseC=line(Bus,[700,500,400],[7, 7, 7],[False,False,True], 20, 0.6)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Section 1: 700 m at 7.00 m/s without charger
-Section 2: 500 m at 7.00 m/s without charger
-Section 3: 400 m at 7.00 m/s without charger
-Section 4: 700 m at 5.00 m/s without charger
-Section 5: 300 m at 5.00 m/s without charger
-Section 6: 300 m at 5.00 m/s without charger
-Section 7: 300 m at 5.00 m/s without charger
-Section 8: 300 m at 5.00 m/s whith charger
-</pre></div>
-</div>
-</div>
-</div>
+<blockquote>
+<div><p>Exercice 4: Define the line and launch an optimization process. Then plot the results on all the profiles.</p>
+</div></blockquote>
 <p>Each speed profil section can be optimized.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ToulouseC</span><span class="o">.</span><span class="n">optimLine</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ToulouseC</span><span class="o">.</span><span class="n">optimLine</span><span class="p">()</span>
-
-<span class="nn">Cell In[2], line 33,</span> in <span class="ni">line.optimLine</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.9</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">)):</span>
-<span class="ne">---&gt; </span><span class="mi">33</span>     <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">optimizeGConso</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-
-<span class="ne">AttributeError</span>: &#39;OptimSection&#39; object has no attribute &#39;optimizeGConso&#39;
-</pre></div>
-</div>
-</div>
-</div>
 <p>A time vector of evolution of the power required at each section or supplied to each charger is constructed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ToulouseC</span><span class="o">.</span><span class="n">CalculPowerStorage</span><span class="p">()</span>
-<span class="n">ToulouseC</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">ToulouseC</span><span class="o">.</span><span class="n">plot_power_share</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ToulouseC</span><span class="o">.</span><span class="n">CalculPowerStorage</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ToulouseC</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ToulouseC</span><span class="o">.</span><span class="n">plot_power_share</span><span class="p">()</span>
 
-<span class="nn">Cell In[2], line 45,</span> in <span class="ni">line.CalculPowerStorage</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="c1"># Power vector build thanks concatenation </span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">)):</span>
-<span class="ne">---&gt; </span><span class="mi">45</span>     <span class="n">NRJ</span><span class="o">=</span><span class="n">NRJ</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">NRJsection</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># we add here the energy consummed on the section</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="bp">self</span><span class="o">.</span><span class="n">PowerStorage</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">PowerStorage</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">Section</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">psection</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="c1"># Chargers effect</span>
-
-<span class="ne">AttributeError</span>: &#39;OptimSection&#39; object has no attribute &#39;NRJsection&#39;
+<span class="ne">NameError</span>: name &#39;ToulouseC&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
-</section>
 <section id="hybrid-storage-system-sizing">
-<h2><span class="section-number">8.7.4. </span>Hybrid storage system sizing<a class="headerlink" href="#hybrid-storage-system-sizing" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">8.5.4.1. </span>Hybrid storage system sizing<a class="headerlink" href="#hybrid-storage-system-sizing" title="Link to this heading">#</a></h3>
 <p>The energy flow or the resulting power demand will be shared between battery and supercapacity with control based on frequency sharing of demands. The Figure below show how the low frequency power will be provided by the batteries while the high frequency part will be provided by supercapacitors.</p>
 <p><img alt="Sizing Stategy" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/EnergyManagment.png" /></p>
 <p>The cutoff frequency defines the power sharing and has a strong influence on the sizing of the storage elements. The following code analyzes this power sharing by varying this cutoff frequency.</p>
 <blockquote>
-<div><p>Questions: Explain the sizing criteria implemented here to evaluate the mass or CO2 impact of batteries and supercapacitors.</p>
+<div><p>Exercice 5: Implement the different sizing criteria (power, energy, lifetime…) to evaluate the mass or CO2 impact of batteries and supercapacitors using emission densities (ratio between CO2 to produce components an their own embedded mass).</p>
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">omegaV</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
 <span class="n">MassStorageV</span><span class="o">=</span><span class="p">[]</span>
-<span class="n">MassSC</span><span class="o">=</span><span class="p">[]</span>
-<span class="n">MassLFPAging</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">MassLFPAgeing</span><span class="o">=</span><span class="p">[]</span>
 <span class="n">MassLFPNRJ</span><span class="o">=</span><span class="p">[]</span>
 <span class="n">MassLFPPow</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">MassSCNRJ</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">MassSCPow</span><span class="o">=</span><span class="p">[]</span>
 <span class="n">CO2Total</span><span class="o">=</span><span class="p">[]</span>
 
-<span class="c1"># Hypothese</span>
-<span class="n">Targetkm</span> <span class="o">=</span> <span class="mf">250e3</span> <span class="c1"># [km] durée de vie du vehicule</span>
+<span class="c1"># Lifetime of the vehicle</span>
+<span class="n">Targetkm</span> <span class="o">=</span> <span class="mf">250e3</span> <span class="c1"># [km]</span>
 
-<span class="c1"># Energie massique des supercapacités</span>
+<span class="c1"># Supercapacitors energy density</span>
 <span class="c1"># https://1188159.fs1.hubspotusercontent-na1.net/hubfs/1188159/02-DS-220909-SKELCAP-CELLS-1F.pdf</span>
 <span class="c1"># chez Skeleton</span>
-<span class="n">WmassSC</span><span class="o">=</span><span class="mf">6.8</span><span class="o">*</span><span class="mf">0.75</span> <span class="c1"># [Wh/kg] on suppose pouvoir recuperer 75% de l&#39;energie stockée</span>
+<span class="n">WmassSC</span><span class="o">=</span><span class="mf">6.8</span><span class="o">*</span><span class="mf">0.75</span> <span class="c1"># [Wh/kg] 75% of the fully-charge energy can be used (voltage variation from Vmax to Vmax/2)</span>
 <span class="n">PmassSC</span><span class="o">=</span><span class="mi">860</span><span class="o">/</span><span class="mf">4.3</span><span class="o">*</span><span class="mf">6.8</span><span class="o">*</span><span class="mf">0.75</span> <span class="c1"># [W/kg]</span>
 
-<span class="c1"># Energie massique des batteries</span>
-<span class="c1"># LFP</span>
-<span class="n">WmassLFP</span><span class="o">=</span> <span class="mi">100</span> <span class="c1"># [Wh/kg] les LFP peuvent pratiquement etre dechargé a 100%</span>
-<span class="n">PmassLFP</span><span class="o">=</span><span class="mi">3</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># [W/kg]  puissance massique en decharge à 3 C</span>
-<span class="n">PBmassLFP</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># [W/kg]  puissance massique en decharge à 1 C</span>
-<span class="n">Ncycle</span> <span class="o">=</span> <span class="mi">3000</span> <span class="c1"># [-] nb de cycle de decharge a 100%</span>
+<span class="c1"># Batteries energy density (LFP technology)</span>
+<span class="n">WmassLFP</span><span class="o">=</span> <span class="mi">100</span> <span class="c1"># [Wh/kg] Depth Of Discharge (DOD) of 100% does not decrease that much the lifetime</span>
+<span class="n">PmassLFP</span><span class="o">=</span><span class="mi">3</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># [W/kg]  Power density (3C acceptable discharge)</span>
+<span class="n">PBmassLFP</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># [W/kg]  Power density (1C acceptable charge)</span>
+<span class="n">Ncycle</span> <span class="o">=</span> <span class="mi">3000</span> <span class="c1"># [-] cycles number at 100% DOD</span>
 
 <span class="c1"># Bilan carbone</span>
 <span class="n">CO2SC</span> <span class="o">=</span> <span class="mi">39</span> <span class="c1"># kgCO2eq/kg d&#39;ecoInvent</span>
 <span class="n">CO2LFP</span> <span class="o">=</span> <span class="mi">11</span> <span class="c1"># kgCO2eq/kg d&#39;ecoInvent</span>
 
+<span class="c1"># For each LF/HF repartition size batteries/supercapacitors</span>
 <span class="k">for</span> <span class="n">omega</span> <span class="ow">in</span> <span class="n">omegaV</span><span class="p">:</span>
-    <span class="n">ToulouseC</span><span class="o">.</span><span class="n">FilterPower</span><span class="p">(</span><span class="n">omega</span><span class="p">)</span>
-    <span class="n">PmaxHF</span><span class="p">,</span> <span class="n">PmaxLF</span><span class="p">,</span> <span class="n">PmaxBrake</span><span class="p">,</span> <span class="n">NRJHF</span><span class="p">,</span> <span class="n">NRJLF</span> <span class="o">=</span> <span class="n">ToulouseC</span><span class="o">.</span><span class="n">IntegrateNRJ</span><span class="p">()</span>
     
+    <span class="n">ToulouseC</span><span class="o">.</span><span class="n">FilterPower</span><span class="p">(</span><span class="n">omega</span><span class="p">)</span>
+    <span class="n">PmaxHF</span><span class="p">,</span> <span class="n">PmaxLF</span><span class="p">,</span> <span class="n">PmaxBrakeLF</span><span class="p">,</span> <span class="n">NRJHF</span><span class="p">,</span> <span class="n">NRJLF</span> <span class="o">=</span> <span class="n">ToulouseC</span><span class="o">.</span><span class="n">IntegrateNRJ</span><span class="p">()</span>
+
+    <span class="c1"># Calculate batteries mass depending on criteria (Ageing, energy, power)</span>
     <span class="n">Nc</span><span class="o">=</span><span class="n">Targetkm</span><span class="o">*</span><span class="mi">1000</span><span class="o">/</span><span class="n">ToulouseC</span><span class="o">.</span><span class="n">TotalLineDistance</span> <span class="c1"># Number of cycles for global lifetime </span>
     <span class="n">DoD</span><span class="o">=</span><span class="p">(</span><span class="n">Nc</span><span class="o">/</span><span class="mi">3365</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mf">2.26</span><span class="p">)</span> <span class="c1"># DoD calculation for Target Km</span>
-    <span class="n">MassStorageV</span> <span class="o">=</span> <span class="n">MassStorageV</span> <span class="o">+</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">NRJHF</span><span class="o">/</span><span class="n">WmassSC</span><span class="o">*</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">PmaxHF</span><span class="o">/</span><span class="n">PmassSC</span><span class="o">*</span><span class="mf">1e3</span><span class="p">)</span>
-                                   <span class="o">+</span><span class="nb">max</span><span class="p">(</span><span class="n">NRJLF</span><span class="o">/</span><span class="n">DoD</span><span class="o">/</span><span class="n">WmassLFP</span><span class="o">*</span><span class="mf">1e3</span><span class="p">,</span>
-                                       <span class="n">PmaxLF</span><span class="o">/</span><span class="n">PmassLFP</span><span class="o">*</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">PmaxBrake</span><span class="o">/</span><span class="n">PBmassLFP</span><span class="o">*</span><span class="mf">1e3</span><span class="p">)]</span> 
-    <span class="n">MassSC</span> <span class="o">=</span> <span class="n">MassSC</span> <span class="o">+</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">NRJHF</span><span class="o">/</span><span class="n">WmassSC</span><span class="o">*</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">PmaxHF</span><span class="o">/</span><span class="n">PmassSC</span><span class="o">*</span><span class="mf">1e3</span><span class="p">)]</span> 
-    <span class="n">MassLFPNRJ</span> <span class="o">=</span> <span class="n">MassLFPNRJ</span> <span class="o">+</span> <span class="p">[</span><span class="n">NRJLF</span><span class="o">/</span><span class="n">WmassLFP</span><span class="o">*</span><span class="mf">1e3</span><span class="p">]</span> 
-    
-    <span class="n">MassLFPAging</span> <span class="o">=</span> <span class="n">MassLFPAging</span> <span class="o">+</span> <span class="p">[</span><span class="n">NRJLF</span><span class="o">/</span><span class="n">DoD</span><span class="o">/</span><span class="n">WmassLFP</span><span class="o">*</span><span class="mf">1e3</span><span class="p">]</span> 
-    <span class="n">MassLFPPow</span> <span class="o">=</span> <span class="n">MassLFPPow</span> <span class="o">+</span> <span class="p">[</span><span class="n">PmaxBrake</span><span class="o">/</span><span class="n">PBmassLFP</span><span class="o">*</span><span class="mf">1e3</span><span class="p">]</span>
-    <span class="n">CO2Total</span> <span class="o">=</span> <span class="n">CO2Total</span> <span class="o">+</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">NRJHF</span><span class="o">/</span><span class="n">WmassSC</span><span class="o">*</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">PmaxHF</span><span class="o">/</span><span class="n">PmassSC</span><span class="o">*</span><span class="mf">1e3</span><span class="p">)</span><span class="o">*</span><span class="n">CO2SC</span><span class="o">+</span>
-                           <span class="nb">max</span><span class="p">(</span><span class="n">NRJLF</span><span class="o">/</span><span class="n">DoD</span><span class="o">/</span><span class="n">WmassLFP</span><span class="o">*</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">PmaxLF</span><span class="o">/</span><span class="n">PmassLFP</span><span class="o">*</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">PmaxBrake</span><span class="o">/</span><span class="n">PBmassLFP</span><span class="o">*</span><span class="mf">1e3</span><span class="p">)</span><span class="o">*</span><span class="n">CO2LFP</span><span class="p">]</span>
+    <span class="c1"># TO BE COMPLETED</span>
+    <span class="c1"># MassLFPAgeing = </span>
+    <span class="c1"># MassLFPNRJ = </span>
+    <span class="c1"># MassLFPPow = </span>
+
+    <span class="c1"># Calculate capacitors mass depending on criteria (Energy, power)</span>
+    <span class="c1"># TO BE COMPLETED</span>
+    <span class="c1"># MassSCNRJ = MassSCNRJ + []</span>
+    <span class="c1"># MassSCPow = MassSCPow + []</span>
+
+    <span class="c1"># Calculate worst case total hybrid storage mass</span>
+    <span class="n">MassStorageV</span> <span class="o">=</span> <span class="n">MassStorageV</span> <span class="o">+</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">MassLFPAgeing</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">MassLFPNRJ</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">MassLFPPow</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">MassSCNRJ</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">MassSCPow</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])]</span>
+     
+    <span class="c1"># Calculate CO2 emission for hybrid mix</span>
+    <span class="n">CO2Total</span> <span class="o">=</span> <span class="n">CO2Total</span> <span class="o">+</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">MassSCNRJ</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">MassSCPow</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">CO2SC</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">MassLFPAgeing</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">MassLFPNRJ</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">MassLFPPow</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">CO2LFP</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">30</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">CO2LFP</span> <span class="o">=</span> <span class="mi">11</span> <span class="c1"># kgCO2eq/kg d&#39;ecoInvent</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="k">for</span> <span class="n">omega</span> <span class="ow">in</span> <span class="n">omegaV</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">30</span>     <span class="n">ToulouseC</span><span class="o">.</span><span class="n">FilterPower</span><span class="p">(</span><span class="n">omega</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="n">PmaxHF</span><span class="p">,</span> <span class="n">PmaxLF</span><span class="p">,</span> <span class="n">PmaxBrake</span><span class="p">,</span> <span class="n">NRJHF</span><span class="p">,</span> <span class="n">NRJLF</span> <span class="o">=</span> <span class="n">ToulouseC</span><span class="o">.</span><span class="n">IntegrateNRJ</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span>     <span class="n">Nc</span><span class="o">=</span><span class="n">Targetkm</span><span class="o">*</span><span class="mi">1000</span><span class="o">/</span><span class="n">ToulouseC</span><span class="o">.</span><span class="n">TotalLineDistance</span> <span class="c1"># Number of cycles for global lifetime </span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">32</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="c1"># For each LF/HF repartition size batteries/supercapacitors</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="k">for</span> <span class="n">omega</span> <span class="ow">in</span> <span class="n">omegaV</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">32</span>     <span class="n">ToulouseC</span><span class="o">.</span><span class="n">FilterPower</span><span class="p">(</span><span class="n">omega</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>     <span class="n">PmaxHF</span><span class="p">,</span> <span class="n">PmaxLF</span><span class="p">,</span> <span class="n">PmaxBrakeLF</span><span class="p">,</span> <span class="n">NRJHF</span><span class="p">,</span> <span class="n">NRJLF</span> <span class="o">=</span> <span class="n">ToulouseC</span><span class="o">.</span><span class="n">IntegrateNRJ</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>     <span class="c1"># Calculate batteries mass depending on criteria (Ageing, energy, power)</span>
 
-<span class="nn">Cell In[2], line 73,</span> in <span class="ni">line.FilterPower</span><span class="nt">(self, omega)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="k">def</span> <span class="nf">FilterPower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">omega</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="n">TF</span><span class="o">=</span><span class="n">signal</span><span class="o">.</span><span class="n">TransferFunction</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">omega</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">omega</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="ne">---&gt; </span><span class="mi">73</span>     <span class="n">time</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">PowerLF</span><span class="p">,</span> <span class="n">state</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">lsim</span><span class="p">(</span><span class="n">TF</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">PowerStorage</span> <span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">GlobalTime</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span>     <span class="bp">self</span><span class="o">.</span><span class="n">PowerHF</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">PowerStorage</span> <span class="o">-</span>  <span class="bp">self</span><span class="o">.</span><span class="n">PowerLF</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/scipy/signal/_ltisys.py:1890,</span> in <span class="ni">lsim</span><span class="nt">(system, U, T, X0, interp)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">X0</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n_states</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1888</span> <span class="n">xout</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">n_states</span><span class="p">),</span> <span class="n">sys</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1890</span> <span class="k">if</span> <span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1891</span>     <span class="n">xout</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">X0</span>
-<span class="g g-Whitespace">   </span><span class="mi">1892</span> <span class="k">elif</span> <span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1893</span>     <span class="c1"># step forward to initial time, with zero input</span>
-
-<span class="ne">IndexError</span>: index 0 is out of bounds for axis 0 with size 0
+<span class="ne">NameError</span>: name &#39;ToulouseC&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
-<p>The following figures represent the overall mass of the solutions according to the power sharing achieved. A simple CO2 impact is also estimated.</p>
+<p>The following figures represent the overall mass of the solutions according to the choosen power share. A simple CO2 impact is also estimated.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassStorageV</span><span class="p">,</span> <span class="s1">&#39;g^&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassSC</span><span class="p">,</span> <span class="s1">&#39;yx&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SuperCap&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassSCNRJ</span><span class="p">,</span> <span class="s1">&#39;yo&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SuperCap NRJ&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassSCPow</span><span class="p">,</span> <span class="s1">&#39;yx&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SuperCap Power&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassLFPNRJ</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;LFP NRJ&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassLFPPow</span><span class="p">,</span> <span class="s1">&#39;bx&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;LFP Power (Brake)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassLFPAging</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;LFP Aging&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassLFPAgeing</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;LFP Aging&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Weight (kg)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Cut off angular frequency (rad/s)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">CO2Total</span><span class="p">,</span> <span class="s1">&#39;g^&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;CO2  (kgCO2eq)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Cut off angular frequency (rad/s)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1151,8 +983,8 @@ Section 8: 300 m at 5.00 m/s whith charger
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassStorageV</span><span class="p">,</span> <span class="s1">&#39;g^&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassSC</span><span class="p">,</span> <span class="s1">&#39;yx&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SuperCap&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassLFPNRJ</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;LFP NRJ&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassSCNRJ</span><span class="p">,</span> <span class="s1">&#39;yo&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SuperCap NRJ&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassSCPow</span><span class="p">,</span> <span class="s1">&#39;yx&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SuperCap Power&#39;</span><span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/matplotlib/pyplot.py:3794,</span> in <span class="ni">plot</span><span class="nt">(scalex, scaley, data, *args, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3786</span> <span class="nd">@_copy_docstring_and_deprecators</span><span class="p">(</span><span class="n">Axes</span><span class="o">.</span><span class="n">plot</span><span class="p">)</span>
@@ -1351,34 +1183,20 @@ Section 8: 300 m at 5.00 m/s whith charger
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ToulouseC</span><span class="o">.</span><span class="n">FilterPower</span><span class="p">(</span><span class="mf">0.4</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">PmaxHF</span><span class="p">,</span> <span class="n">PmaxLF</span><span class="p">,</span> <span class="n">PmaxBrakeLF</span><span class="p">,</span> <span class="n">NRJHF</span><span class="p">,</span> <span class="n">NRJLF</span><span class="o">=</span><span class="n">ToulouseC</span><span class="o">.</span><span class="n">IntegrateNRJ</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">Nc</span><span class="o">=</span><span class="n">Targetkm</span><span class="o">*</span><span class="mi">1000</span><span class="o">/</span><span class="n">ToulouseC</span><span class="o">.</span><span class="n">TotalLineDistance</span> <span class="c1"># Number of cycles for global lifetime </span>
 
-<span class="nn">Cell In[2], line 73,</span> in <span class="ni">line.FilterPower</span><span class="nt">(self, omega)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="k">def</span> <span class="nf">FilterPower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">omega</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="n">TF</span><span class="o">=</span><span class="n">signal</span><span class="o">.</span><span class="n">TransferFunction</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">omega</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">omega</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="ne">---&gt; </span><span class="mi">73</span>     <span class="n">time</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">PowerLF</span><span class="p">,</span> <span class="n">state</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">lsim</span><span class="p">(</span><span class="n">TF</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">PowerStorage</span> <span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">GlobalTime</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span>     <span class="bp">self</span><span class="o">.</span><span class="n">PowerHF</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">PowerStorage</span> <span class="o">-</span>  <span class="bp">self</span><span class="o">.</span><span class="n">PowerLF</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/scipy/signal/_ltisys.py:1890,</span> in <span class="ni">lsim</span><span class="nt">(system, U, T, X0, interp)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">X0</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">n_states</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1888</span> <span class="n">xout</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">n_states</span><span class="p">),</span> <span class="n">sys</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1890</span> <span class="k">if</span> <span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1891</span>     <span class="n">xout</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">X0</span>
-<span class="g g-Whitespace">   </span><span class="mi">1892</span> <span class="k">elif</span> <span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1893</span>     <span class="c1"># step forward to initial time, with zero input</span>
-
-<span class="ne">IndexError</span>: index 0 is out of bounds for axis 0 with size 0
+<span class="ne">NameError</span>: name &#39;ToulouseC&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="labwork-and-homework">
-<h2><span class="section-number">8.7.5. </span>Labwork and homework<a class="headerlink" href="#labwork-and-homework" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">8.5.4.2. </span>Labwork and homework<a class="headerlink" href="#labwork-and-homework" title="Link to this heading">#</a></h3>
 <p>Your objective is to specify the hybrid storage system of an electric bus for doubling line 78 between the IUT Rangueil and MFJA stations.
 The characteristics of the bus are <a class="reference external" href="https://www.bluebus.fr/bluebus-6-metres">here</a><br />
 <img alt="BlueBus" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/bluebus.png" />
@@ -1403,6 +1221,7 @@ We will assume a round trip in 20 min, charge at the ends of the lines included.
 <li><p>allowing reduced functionality to be maintained in the event of a fault on part of the storage elements</p></li>
 </ul>
 </div></blockquote>
+</section>
 </section>
 </section>
 
@@ -1437,12 +1256,12 @@ We will assume a round trip in 20 min, charge at the ends of the lines included.
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="02a_Architecture_UltraCapacitor.html"
+       href="01b_CaseStudy_Specification-Student.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8.6. </span>Architecture of the converter and sizing scenarios</p>
+        <p class="prev-next-title"><span class="section-number">8.3. </span>TP1 - Case study specification [Student Version]</p>
       </div>
     </a>
     <a class="right-next"
@@ -1471,11 +1290,14 @@ We will assume a round trip in 20 min, charge at the ends of the lines included.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-operating-limits-of-energy-storage-components">8.7.1. Main operating limits of energy storage components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-of-a-complete-line">8.7.2. Simulation of a complete line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-line-definition">8.7.3. Example of a line definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-storage-system-sizing">8.7.4. Hybrid storage system sizing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labwork-and-homework">8.7.5. Labwork and homework</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-operating-limits-of-energy-storage-components">8.5.1. Main operating limits of energy storage components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflexion-on-the-watt-system-architecture-capacitors">8.5.2. Reflexion on the Watt System architecture (capacitors)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-of-a-complete-line">8.5.3. Simulation of a complete line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-line-definition">8.5.4. Example of a line definition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-storage-system-sizing">8.5.4.1. Hybrid storage system sizing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labwork-and-homework">8.5.4.2. Labwork and homework</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
