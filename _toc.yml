@@ -155,7 +155,6 @@ parts:
     sections:
       - file: laboratories/Lab-watt_project/03_SizingScenarios-Student
       - file: laboratories/Lab-watt_project/04_ScalingLaws-Student
-      - file: laboratories/Lab-watt_project/04_ScalingLaws
       - file: laboratories/Lab-watt_project/05_HeatsinkLinearRegression-Student
       - file: laboratories/Lab-watt_project/05_HeatsinkLinearRegression
       - file: laboratories/Lab-watt_project/06_SizingCodeInductor
