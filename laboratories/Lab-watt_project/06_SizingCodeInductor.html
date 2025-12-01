@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.7. Sizing code of an inductor &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>9.6. Sizing code of an inductor &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -67,8 +67,8 @@
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9.8. Sizing code of an inductor with surrogate models (Student version)" href="07_SizingCodeInductor-Surrogate-Student.html" />
-    <link rel="prev" title="9.6. Heatsink estimation models with simple and multiple linear regressions" href="05_HeatsinkLinearRegression.html" />
+    <link rel="next" title="9.7. Sizing code of an inductor with surrogate models (Student version)" href="07_SizingCodeInductor-Surrogate-Student.html" />
+    <link rel="prev" title="9.5. Heatsink estimation models with simple and multiple linear regressions" href="05_HeatsinkLinearRegression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -274,17 +274,16 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">9. Lab - Sustainable mobility - DC/DC converter sizing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="03_SizingScenarios-Student.html">9.1. TD3 - Equations of sizing scenarios [Student version]</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="04_ScalingLaws-Student.html">9.3. Estimation models with scaling laws and linear regression (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_ScalingLaws.html">9.4. Estimation models with scaling laws and linear regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression-Student.html">9.5. Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression.html">9.6. Heatsink  estimation models with simple and multiple linear regressions</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.7. Sizing code of an inductor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate-Student.html">9.8. Sizing code of an inductor with surrogate models (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate.html">9.9. Sizing code of an inductor with surrogate models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="08_DCDC_converter_sizing_introduction.html">9.10. Design graphs for the sizing a DC/DC converter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="09_SizingCodeDCDCconverter.html">9.11. Sizing code of a DC/DC converter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor-Student.html">9.12. Life Cycle Assessment of an inductor (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor.html">9.13. Life Cycle Assessment of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_ScalingLaws-Student.html">9.3. IGBT estimation models with scaling laws [Student version]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression-Student.html">9.4. Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression.html">9.5. Heatsink  estimation models with simple and multiple linear regressions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.6. Sizing code of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate-Student.html">9.7. Sizing code of an inductor with surrogate models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate.html">9.8. Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_DCDC_converter_sizing_introduction.html">9.9. Design graphs for the sizing a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_SizingCodeDCDCconverter.html">9.10. Sizing code of a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor-Student.html">9.11. Life Cycle Assessment of an inductor (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor.html">9.12. Life Cycle Assessment of an inductor</a></li>
 </ul>
 </details></li>
 </ul>
@@ -540,12 +539,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-an-inductor">9.7.1. Structure of an inductor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristical-equations-of-an-inductor">9.7.2. Characteristical equations of an inductor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-graph">9.7.3. Design graph</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">9.7.4. Objectives and specifications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">9.7.5. Sizing code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-problem">9.7.6. Optimization problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-an-inductor">9.6.1. Structure of an inductor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristical-equations-of-an-inductor">9.6.2. Characteristical equations of an inductor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-graph">9.6.3. Design graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">9.6.4. Objectives and specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">9.6.5. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-problem">9.6.6. Optimization problem</a></li>
 </ul>
             </nav>
         </div>
@@ -558,7 +557,7 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sizing-code-of-an-inductor">
-<h1><span class="section-number">9.7. </span>Sizing code of an inductor<a class="headerlink" href="#sizing-code-of-an-inductor" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">9.6. </span>Sizing code of an inductor<a class="headerlink" href="#sizing-code-of-an-inductor" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
 <p>The objective of this notebook is to set up the sizing procedure of a power inductance. This procedure will subsequently be completed and integrated into the design procedure of the complete DC / DC converter.
 We will see here successively:</p>
@@ -569,14 +568,14 @@ We will see here successively:</p>
 <li><p>the python code and optimization of the sizing problem.</p></li>
 </ul>
 <section id="structure-of-an-inductor">
-<h2><span class="section-number">9.7.1. </span>Structure of an inductor<a class="headerlink" href="#structure-of-an-inductor" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.6.1. </span>Structure of an inductor<a class="headerlink" href="#structure-of-an-inductor" title="Link to this heading">#</a></h2>
 <p>A power inductor is mainly composed of a winding and a magnetic core.</p>
 <p><img alt="PowerInductor" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/PowerInductor.png" /></p>
 <p>There are different types of inductances that differ in the shape and material of the ferromagnetic core. The following figure shows two forms of ferrite pots. Generally, ferromagnetic cores of inductances respect geometrical similarities. In other words, all geometric ratios are preserved when the geometric dimensions change.</p>
 <p><img alt="InductorCore" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/InductorCore.PNG" /></p>
 </section>
 <section id="characteristical-equations-of-an-inductor">
-<h2><span class="section-number">9.7.2. </span>Characteristical equations of an inductor<a class="headerlink" href="#characteristical-equations-of-an-inductor" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.6.2. </span>Characteristical equations of an inductor<a class="headerlink" href="#characteristical-equations-of-an-inductor" title="Link to this heading">#</a></h2>
 <p>We will give here the equations allowing to calculate an inductance starting from its geometrical configuration. Here we use a ferrite pot with a E core geometry (as shown below).</p>
 <p><img alt="PowerInductor" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/E_CoreInductor.png" /></p>
 <p>An inductance <span class="math notranslate nohighlight">\(L\)</span> expresses the relationship between a current <span class="math notranslate nohighlight">\(I\)</span> and a magnetic flux <span class="math notranslate nohighlight">\(\phi\)</span>:
@@ -601,7 +600,7 @@ with <span class="math notranslate nohighlight">\(\mu=\mu_0\mu_r\)</span> the pe
 </div></blockquote>
 </section>
 <section id="design-graph">
-<h2><span class="section-number">9.7.3. </span>Design graph<a class="headerlink" href="#design-graph" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.6.3. </span>Design graph<a class="headerlink" href="#design-graph" title="Link to this heading">#</a></h2>
 <p>The equations that can be used for the inductor design are given below:<br />
 <img alt="InductorEquations" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/DesignGraphInductorEquations.png" /></p>
 <blockquote>
@@ -618,7 +617,7 @@ with <span class="math notranslate nohighlight">\(\mu=\mu_0\mu_r\)</span> the pe
 <p><img alt="InductorEquations" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/PseudoCodeInductor.png" /></p>
 </section>
 <section id="objectives-and-specifications">
-<h2><span class="section-number">9.7.4. </span>Objectives and specifications<a class="headerlink" href="#objectives-and-specifications" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.6.4. </span>Objectives and specifications<a class="headerlink" href="#objectives-and-specifications" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specifications</span>
@@ -639,7 +638,7 @@ with <span class="math notranslate nohighlight">\(\mu=\mu_0\mu_r\)</span> the pe
 </div>
 </section>
 <section id="sizing-code">
-<h2><span class="section-number">9.7.5. </span>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.6.5. </span>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h2>
 <p>More details in the setting up of sizing code can be found in the  <a class="reference external" href="https://www.researchgate.net/profile/Marc_Budinger/publication/277933677_Computer-aided_definition_of_sizing_procedures_and_optimization_problems_of_mechatronic_systems/links/55969de508ae793d137c7ea5/Computer-aided-definition-of-sizing-procedures-and-optimization-problems-of-mechatronic-systems.pdf">following paper</a>:</p>
 <blockquote>
 <div><p>Reysset, A., Budinger, M., &amp; Maré, J. C. (2015). Computer-aided definition of sizing procedures and optimization problems of mechatronic systems. Concurrent Engineering, 23(4), 320-332.</p>
@@ -735,7 +734,7 @@ with <span class="math notranslate nohighlight">\(\mu=\mu_0\mu_r\)</span> the pe
 </div>
 </section>
 <section id="optimization-problem">
-<h2><span class="section-number">9.7.6. </span>Optimization problem<a class="headerlink" href="#optimization-problem" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.6.6. </span>Optimization problem<a class="headerlink" href="#optimization-problem" title="Link to this heading">#</a></h2>
 <p>We will now use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html">opmization algorithms</a> of the Scipy package to solve and optimize the configuration. We use here the SLQP algorithm without explicit expression of the gradient (Jacobian). A short course on Multidisplinary Gradient optimization algorithms and gradient optimization algorithm is given <a class="reference external" href="http://mdolab.engin.umich.edu/sites/default/files/Martins-MDO-course-notes.pdf">here</a>:</p>
 <blockquote>
 <div><p>Joaquim R. R. A. Martins (2012). A Short Course on Multidisciplinary Design Optimization. Univeristy of Michigan</p>
@@ -872,7 +871,7 @@ Final characteristics after optimization :
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9.6. </span>Heatsink  estimation models with simple and multiple linear regressions</p>
+        <p class="prev-next-title"><span class="section-number">9.5. </span>Heatsink  estimation models with simple and multiple linear regressions</p>
       </div>
     </a>
     <a class="right-next"
@@ -880,7 +879,7 @@ Final characteristics after optimization :
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.8. </span>Sizing code of an inductor with surrogate models (Student version)</p>
+        <p class="prev-next-title"><span class="section-number">9.7. </span>Sizing code of an inductor with surrogate models (Student version)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -901,12 +900,12 @@ Final characteristics after optimization :
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-an-inductor">9.7.1. Structure of an inductor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristical-equations-of-an-inductor">9.7.2. Characteristical equations of an inductor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-graph">9.7.3. Design graph</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">9.7.4. Objectives and specifications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">9.7.5. Sizing code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-problem">9.7.6. Optimization problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-an-inductor">9.6.1. Structure of an inductor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristical-equations-of-an-inductor">9.6.2. Characteristical equations of an inductor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-graph">9.6.3. Design graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">9.6.4. Objectives and specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">9.6.5. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-problem">9.6.6. Optimization problem</a></li>
 </ul>
   </nav></div>
 
