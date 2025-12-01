@@ -153,7 +153,7 @@ parts:
   - file: laboratories/Lab-watt_project/summary
     title: Lab - Sustainable mobility - DC/DC converter sizing
     sections:
-      - file: laboratories/Lab-watt_project/03_SizingScenarios
+      - file: laboratories/Lab-watt_project/03_SizingScenarios-Student
       - file: laboratories/Lab-watt_project/04_ScalingLaws-Student
       - file: laboratories/Lab-watt_project/04_ScalingLaws
       - file: laboratories/Lab-watt_project/05_HeatsinkLinearRegression-Student
