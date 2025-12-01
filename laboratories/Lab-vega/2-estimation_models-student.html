@@ -272,18 +272,19 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary.html">9. Lab - Sustainable mobility - DC/DC converter sizing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/03_SizingScenarios.html">9.1. Equations of sizing scenarios</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws-Student.html">9.2. Estimation models with scaling laws and linear regression (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws.html">9.3. Estimation models with scaling laws and linear regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression-Student.html">9.4. Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression.html">9.5. Heatsink  estimation models with simple and multiple linear regressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/06_SizingCodeInductor.html">9.6. Sizing code of an inductor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate-Student.html">9.7. Sizing code of an inductor with surrogate models (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate.html">9.8. Sizing code of an inductor with surrogate models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/08_DCDC_converter_sizing_introduction.html">9.9. Design graphs for the sizing a DC/DC converter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/09_SizingCodeDCDCconverter.html">9.10. Sizing code of a DC/DC converter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor-Student.html">9.11. Life Cycle Assessment of an inductor (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor.html">9.12. Life Cycle Assessment of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/03_SizingScenarios-Student.html">9.1. TD3 - Equations of sizing scenarios [Student version]</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws-Student.html">9.3. Estimation models with scaling laws and linear regression (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws.html">9.4. Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression-Student.html">9.5. Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression.html">9.6. Heatsink  estimation models with simple and multiple linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/06_SizingCodeInductor.html">9.7. Sizing code of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate-Student.html">9.8. Sizing code of an inductor with surrogate models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate.html">9.9. Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/08_DCDC_converter_sizing_introduction.html">9.10. Design graphs for the sizing a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/09_SizingCodeDCDCconverter.html">9.11. Sizing code of a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor-Student.html">9.12. Life Cycle Assessment of an inductor (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor.html">9.13. Life Cycle Assessment of an inductor</a></li>
 </ul>
 </details></li>
 </ul>
@@ -1357,7 +1358,7 @@
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">90</span><span class="p">)]])</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/sklearn/linear_model/_base.py:306,</span> in <span class="ni">LinearModel.predict</span><span class="nt">(self, X)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/sklearn/linear_model/_base.py:306,</span> in <span class="ni">LinearModel.predict</span><span class="nt">(self, X)</span>
 <span class="g g-Whitespace">    </span><span class="mi">292</span> <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">293</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">294</span><span class="sd">     Predict using the linear model.</span>
@@ -1367,13 +1368,13 @@
 <span class="g g-Whitespace">    </span><span class="mi">305</span><span class="sd">     &quot;&quot;&quot;</span>
 <span class="ne">--&gt; </span><span class="mi">306</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decision_function</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/sklearn/linear_model/_base.py:283,</span> in <span class="ni">LinearModel._decision_function</span><span class="nt">(self, X)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/sklearn/linear_model/_base.py:283,</span> in <span class="ni">LinearModel._decision_function</span><span class="nt">(self, X)</span>
 <span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="k">def</span> <span class="nf">_decision_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">283</span>     <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;csr&quot;</span><span class="p">,</span> <span class="s2">&quot;csc&quot;</span><span class="p">,</span> <span class="s2">&quot;coo&quot;</span><span class="p">],</span> <span class="n">reset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">286</span>     <span class="n">coef_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coef_</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/sklearn/utils/validation.py:1661,</span> in <span class="ni">check_is_fitted</span><span class="nt">(estimator, attributes, msg, all_or_any)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/sklearn/utils/validation.py:1661,</span> in <span class="ni">check_is_fitted</span><span class="nt">(estimator, attributes, msg, all_or_any)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1658</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is not an estimator instance.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">estimator</span><span class="p">))</span>
 <span class="g g-Whitespace">   </span><span class="mi">1660</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">_is_fitted</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">all_or_any</span><span class="p">):</span>
 <span class="ne">-&gt; </span><span class="mi">1661</span>     <span class="k">raise</span> <span class="n">NotFittedError</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="nb">type</span><span class="p">(</span><span class="n">estimator</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">})</span>

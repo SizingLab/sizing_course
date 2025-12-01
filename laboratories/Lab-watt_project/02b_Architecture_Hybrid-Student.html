@@ -272,18 +272,19 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="summary.html">9. Lab - Sustainable mobility - DC/DC converter sizing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="03_SizingScenarios.html">9.1. Equations of sizing scenarios</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_ScalingLaws-Student.html">9.2. Estimation models with scaling laws and linear regression (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_ScalingLaws.html">9.3. Estimation models with scaling laws and linear regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression-Student.html">9.4. Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression.html">9.5. Heatsink  estimation models with simple and multiple linear regressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="06_SizingCodeInductor.html">9.6. Sizing code of an inductor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate-Student.html">9.7. Sizing code of an inductor with surrogate models (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate.html">9.8. Sizing code of an inductor with surrogate models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="08_DCDC_converter_sizing_introduction.html">9.9. Design graphs for the sizing a DC/DC converter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="09_SizingCodeDCDCconverter.html">9.10. Sizing code of a DC/DC converter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor-Student.html">9.11. Life Cycle Assessment of an inductor (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor.html">9.12. Life Cycle Assessment of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_SizingScenarios-Student.html">9.1. TD3 - Equations of sizing scenarios [Student version]</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="04_ScalingLaws-Student.html">9.3. Estimation models with scaling laws and linear regression (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_ScalingLaws.html">9.4. Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression-Student.html">9.5. Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression.html">9.6. Heatsink  estimation models with simple and multiple linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_SizingCodeInductor.html">9.7. Sizing code of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate-Student.html">9.8. Sizing code of an inductor with surrogate models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate.html">9.9. Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_DCDC_converter_sizing_introduction.html">9.10. Design graphs for the sizing a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_SizingCodeDCDCconverter.html">9.11. Sizing code of a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor-Student.html">9.12. Life Cycle Assessment of an inductor (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor.html">9.13. Life Cycle Assessment of an inductor</a></li>
 </ul>
 </details></li>
 </ul>
@@ -986,7 +987,7 @@ An adapted Lithium-ion battery pack is installed in the bus in case of a connect
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassSCNRJ</span><span class="p">,</span> <span class="s1">&#39;yo&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SuperCap NRJ&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">omegaV</span><span class="p">,</span> <span class="n">MassSCPow</span><span class="p">,</span> <span class="s1">&#39;yx&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SuperCap Power&#39;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/matplotlib/pyplot.py:3794,</span> in <span class="ni">plot</span><span class="nt">(scalex, scaley, data, *args, **kwargs)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/matplotlib/pyplot.py:3794,</span> in <span class="ni">plot</span><span class="nt">(scalex, scaley, data, *args, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3786</span> <span class="nd">@_copy_docstring_and_deprecators</span><span class="p">(</span><span class="n">Axes</span><span class="o">.</span><span class="n">plot</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3787</span> <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span>
 <span class="g g-Whitespace">   </span><span class="mi">3788</span>     <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">ArrayLike</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span>
@@ -1001,7 +1002,7 @@ An adapted Lithium-ion battery pack is installed in the bus in case of a connect
 <span class="g g-Whitespace">   </span><span class="mi">3799</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="g g-Whitespace">   </span><span class="mi">3800</span>     <span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/matplotlib/axes/_axes.py:1779,</span> in <span class="ni">Axes.plot</span><span class="nt">(self, scalex, scaley, data, *args, **kwargs)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/matplotlib/axes/_axes.py:1779,</span> in <span class="ni">Axes.plot</span><span class="nt">(self, scalex, scaley, data, *args, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1536</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">   </span><span class="mi">1537</span><span class="sd"> Plot y versus x as lines and/or markers.</span>
 <span class="g g-Whitespace">   </span><span class="mi">1538</span><span class="sd"> </span>
@@ -1013,13 +1014,13 @@ An adapted Lithium-ion battery pack is installed in the bus in case of a connect
 <span class="g g-Whitespace">   </span><span class="mi">1780</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1781</span>     <span class="bp">self</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/matplotlib/axes/_base.py:296,</span> in <span class="ni">_process_plot_var_args.__call__</span><span class="nt">(self, axes, data, *args, **kwargs)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/matplotlib/axes/_base.py:296,</span> in <span class="ni">_process_plot_var_args.__call__</span><span class="nt">(self, axes, data, *args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">294</span>     <span class="n">this</span> <span class="o">+=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
 <span class="g g-Whitespace">    </span><span class="mi">295</span>     <span class="n">args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 <span class="ne">--&gt; </span><span class="mi">296</span> <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plot_args</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">297</span>     <span class="n">axes</span><span class="p">,</span> <span class="n">this</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">ambiguous_fmt_datakey</span><span class="o">=</span><span class="n">ambiguous_fmt_datakey</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/matplotlib/axes/_base.py:486,</span> in <span class="ni">_process_plot_var_args._plot_args</span><span class="nt">(self, axes, tup, kwargs, return_kwargs, ambiguous_fmt_datakey)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/matplotlib/axes/_base.py:486,</span> in <span class="ni">_process_plot_var_args._plot_args</span><span class="nt">(self, axes, tup, kwargs, return_kwargs, ambiguous_fmt_datakey)</span>
 <span class="g g-Whitespace">    </span><span class="mi">483</span>     <span class="n">axes</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">update_units</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">485</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
 <span class="ne">--&gt; </span><span class="mi">486</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x and y must have same first dimension, but &quot;</span>
@@ -1051,27 +1052,27 @@ An adapted Lithium-ion battery pack is installed in the bus in case of a connect
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/matplotlib/axes/_axes.py:4618,</span> in <span class="ni">Axes._parse_scatter_color_args</span><span class="nt">(c, edgecolors, kwargs, xsize, get_next_color_func)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/matplotlib/axes/_axes.py:4618,</span> in <span class="ni">Axes._parse_scatter_color_args</span><span class="nt">(c, edgecolors, kwargs, xsize, get_next_color_func)</span>
 <span class="g g-Whitespace">   </span><span class="mi">4617</span> <span class="k">try</span><span class="p">:</span>  <span class="c1"># Is &#39;c&#39; acceptable as PathCollection facecolors?</span>
 <span class="ne">-&gt; </span><span class="mi">4618</span>     <span class="n">colors</span> <span class="o">=</span> <span class="n">mcolors</span><span class="o">.</span><span class="n">to_rgba_array</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">4619</span> <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/matplotlib/colors.py:512,</span> in <span class="ni">to_rgba_array</span><span class="nt">(c, alpha)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/matplotlib/colors.py:512,</span> in <span class="ni">to_rgba_array</span><span class="nt">(c, alpha)</span>
 <span class="g g-Whitespace">    </span><span class="mi">511</span> <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">512</span>     <span class="n">rgba</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">to_rgba</span><span class="p">(</span><span class="n">cc</span><span class="p">)</span> <span class="k">for</span> <span class="n">cc</span> <span class="ow">in</span> <span class="n">c</span><span class="p">])</span>
 <span class="g g-Whitespace">    </span><span class="mi">514</span> <span class="k">if</span> <span class="n">alpha</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/matplotlib/colors.py:512,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/matplotlib/colors.py:512,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
 <span class="g g-Whitespace">    </span><span class="mi">511</span> <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">512</span>     <span class="n">rgba</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">to_rgba</span><span class="p">(</span><span class="n">cc</span><span class="p">)</span> <span class="k">for</span> <span class="n">cc</span> <span class="ow">in</span> <span class="n">c</span><span class="p">])</span>
 <span class="g g-Whitespace">    </span><span class="mi">514</span> <span class="k">if</span> <span class="n">alpha</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/matplotlib/colors.py:314,</span> in <span class="ni">to_rgba</span><span class="nt">(c, alpha)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/matplotlib/colors.py:314,</span> in <span class="ni">to_rgba</span><span class="nt">(c, alpha)</span>
 <span class="g g-Whitespace">    </span><span class="mi">313</span> <span class="k">if</span> <span class="n">rgba</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># Suppress exception chaining of cache lookup failure.</span>
 <span class="ne">--&gt; </span><span class="mi">314</span>     <span class="n">rgba</span> <span class="o">=</span> <span class="n">_to_rgba_no_colorcycle</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">315</span>     <span class="k">try</span><span class="p">:</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/matplotlib/colors.py:398,</span> in <span class="ni">_to_rgba_no_colorcycle</span><span class="nt">(c, alpha)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/matplotlib/colors.py:398,</span> in <span class="ni">_to_rgba_no_colorcycle</span><span class="nt">(c, alpha)</span>
 <span class="g g-Whitespace">    </span><span class="mi">397</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">iterable</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">398</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid RGBA argument: </span><span class="si">{</span><span class="n">orig_c</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">399</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]:</span>
@@ -1087,7 +1088,7 @@ An adapted Lithium-ion battery pack is installed in the bus in case of a connect
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Weight (kg)&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;CO2  (kgCO2eq)&#39;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/matplotlib/pyplot.py:3903,</span> in <span class="ni">scatter</span><span class="nt">(x, y, s, c, marker, cmap, norm, vmin, vmax, alpha, linewidths, edgecolors, plotnonfinite, data, **kwargs)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/matplotlib/pyplot.py:3903,</span> in <span class="ni">scatter</span><span class="nt">(x, y, s, c, marker, cmap, norm, vmin, vmax, alpha, linewidths, edgecolors, plotnonfinite, data, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3884</span> <span class="nd">@_copy_docstring_and_deprecators</span><span class="p">(</span><span class="n">Axes</span><span class="o">.</span><span class="n">scatter</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3885</span> <span class="k">def</span> <span class="nf">scatter</span><span class="p">(</span>
 <span class="g g-Whitespace">   </span><span class="mi">3886</span>     <span class="n">x</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">ArrayLike</span><span class="p">,</span>
@@ -1114,7 +1115,7 @@ An adapted Lithium-ion battery pack is installed in the bus in case of a connect
 <span class="g g-Whitespace">   </span><span class="mi">3920</span>     <span class="n">sci</span><span class="p">(</span><span class="n">__ret</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3921</span>     <span class="k">return</span> <span class="n">__ret</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/matplotlib/__init__.py:1473,</span> in <span class="ni">_preprocess_data.&lt;locals&gt;.inner</span><span class="nt">(ax, data, *args, **kwargs)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/matplotlib/__init__.py:1473,</span> in <span class="ni">_preprocess_data.&lt;locals&gt;.inner</span><span class="nt">(ax, data, *args, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1470</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1471</span> <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="g g-Whitespace">   </span><span class="mi">1472</span>     <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1126,7 +1127,7 @@ An adapted Lithium-ion battery pack is installed in the bus in case of a connect
 <span class="g g-Whitespace">   </span><span class="mi">1479</span>     <span class="n">auto_label</span> <span class="o">=</span> <span class="p">(</span><span class="n">bound</span><span class="o">.</span><span class="n">arguments</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label_namer</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1480</span>                   <span class="ow">or</span> <span class="n">bound</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label_namer</span><span class="p">))</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/matplotlib/axes/_axes.py:4805,</span> in <span class="ni">Axes.scatter</span><span class="nt">(self, x, y, s, c, marker, cmap, norm, vmin, vmax, alpha, linewidths, edgecolors, plotnonfinite, **kwargs)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/matplotlib/axes/_axes.py:4805,</span> in <span class="ni">Axes.scatter</span><span class="nt">(self, x, y, s, c, marker, cmap, norm, vmin, vmax, alpha, linewidths, edgecolors, plotnonfinite, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">4802</span> <span class="k">if</span> <span class="n">edgecolors</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">4803</span>     <span class="n">orig_edgecolor</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;edgecolor&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">4804</span> <span class="n">c</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">edgecolors</span> <span class="o">=</span> \
@@ -1136,7 +1137,7 @@ An adapted Lithium-ion battery pack is installed in the bus in case of a connect
 <span class="g g-Whitespace">   </span><span class="mi">4809</span> <span class="k">if</span> <span class="n">plotnonfinite</span> <span class="ow">and</span> <span class="n">colors</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">4810</span>     <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_invalid</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.23/x64/lib/python3.9/site-packages/matplotlib/axes/_axes.py:4624,</span> in <span class="ni">Axes._parse_scatter_color_args</span><span class="nt">(c, edgecolors, kwargs, xsize, get_next_color_func)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.25/x64/lib/python3.9/site-packages/matplotlib/axes/_axes.py:4624,</span> in <span class="ni">Axes._parse_scatter_color_args</span><span class="nt">(c, edgecolors, kwargs, xsize, get_next_color_func)</span>
 <span class="g g-Whitespace">   </span><span class="mi">4622</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">4623</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_shape</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">4624</span>         <span class="k">raise</span> <span class="n">invalid_shape_exception</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">xsize</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
