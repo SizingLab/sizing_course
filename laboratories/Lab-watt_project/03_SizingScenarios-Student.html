@@ -67,7 +67,7 @@
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9.3. IGBT estimation models with scaling laws [Student version]" href="04_ScalingLaws-Student.html" />
+    <link rel="next" title="9.2. IGBT estimation models with scaling laws [Student version]" href="04_ScalingLaws-Student.html" />
     <link rel="prev" title="9. Lab - Sustainable Mobility - Storage Systems &amp; DC/DC converter sizing" href="summary.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -267,23 +267,21 @@
 <li class="toctree-l2"><a class="reference internal" href="00_SustainableMobility.html">8.1. Sustainable mobilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01a_CaseStudy.html">8.2. Case study presentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01b_CaseStudy_Specification-Student.html">8.3. TP1 - Case study specification [Student Version]</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="02b_Architecture_Hybrid-Student.html">8.5. TD1/2 - Hydrid storage architecture &amp; specification [Student version]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02b_Architecture_Hybrid-Student.html">8.4. TD1/2 - Hydrid storage architecture &amp; specification [Student version]</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">9. Lab - Sustainable mobility - DC/DC converter sizing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">9.1. TD3 - Equations of sizing scenarios [Student version]</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="04_ScalingLaws-Student.html">9.3. IGBT estimation models with scaling laws [Student version]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression-Student.html">9.4. Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression.html">9.5. Heatsink  estimation models with simple and multiple linear regressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="06_SizingCodeInductor.html">9.6. Sizing code of an inductor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate-Student.html">9.7. Sizing code of an inductor with surrogate models (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate.html">9.8. Sizing code of an inductor with surrogate models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="08_DCDC_converter_sizing_introduction.html">9.9. Design graphs for the sizing a DC/DC converter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="09_SizingCodeDCDCconverter.html">9.10. Sizing code of a DC/DC converter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor-Student.html">9.11. Life Cycle Assessment of an inductor (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor.html">9.12. Life Cycle Assessment of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_ScalingLaws-Student.html">9.2. IGBT estimation models with scaling laws [Student version]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression-Student.html">9.3. Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_HeatsinkLinearRegression.html">9.4. Heatsink  estimation models with simple and multiple linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_SizingCodeInductor.html">9.5. Sizing code of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate-Student.html">9.6. Sizing code of an inductor with surrogate models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_SizingCodeInductor-Surrogate.html">9.7. Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_DCDC_converter_sizing_introduction.html">9.8. Design graphs for the sizing a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_SizingCodeDCDCconverter.html">9.9. Sizing code of a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor-Student.html">9.10. Life Cycle Assessment of an inductor (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_LCA_Inductor.html">9.11. Life Cycle Assessment of an inductor</a></li>
 </ul>
 </details></li>
 </ul>
@@ -539,22 +537,16 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">9.1. TD3 - Equations of sizing scenarios [Student version]</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-dc-converter-architecture">9.1.1. DC/DC converter architecture</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#design-drivers">9.2. Design drivers</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-sizing-scenario">9.2.1. Main sizing scenario</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-scenarios-of-dc-dc-converter-components">9.2.2. Sizing scenarios of DC/DC converter components</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#current-and-voltage-ripples-equations">9.2.2.1. Current and voltage ripples equations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-losses">9.2.2.2. Components losses</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-temperatures">9.2.2.3. Components temperatures</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-drivers">9.1.2. Design drivers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-sizing-scenario">9.1.3. Main sizing scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-scenarios-for-dc-dc-converter-components">9.1.4. Sizing scenarios for DC/DC converter components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#current-and-voltage-ripples-equations">9.1.4.1. Current and voltage ripples equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-losses">9.1.4.2. Components losses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-temperatures">9.1.4.3. Components temperatures</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -580,9 +572,8 @@ Therefore let us present first the Product Breakdown Structure of the Watt syste
 <p>The following figure illustrates the main components of this converter:
 <img alt="DCDCconverter_components" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/DCDCconverter_components.png" /></p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="design-drivers">
-<h1><span class="section-number">9.2. </span>Design drivers<a class="headerlink" href="#design-drivers" title="Link to this heading">#</a></h1>
+<section id="design-drivers">
+<h2><span class="section-number">9.1.2. </span>Design drivers<a class="headerlink" href="#design-drivers" title="Link to this heading">#</a></h2>
 <p>We are going to determine here the possible reasons of the degradation in system’s components. These degration can be:</p>
 <ul class="simple">
 <li><p>Fast and come from transient power demands (such as permanent deformation, rupture for mechanical components);</p></li>
@@ -595,8 +586,9 @@ For example, the inertia of an electrical motor increases the torque this same m
 <blockquote>
 <div><p>Exercise 1: Imagine and propose some sizing scenarios (use cases) that may lead to those degradation phenomena.</p>
 </div></blockquote>
+</section>
 <section id="main-sizing-scenario">
-<h2><span class="section-number">9.2.1. </span>Main sizing scenario<a class="headerlink" href="#main-sizing-scenario" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.1.3. </span>Main sizing scenario<a class="headerlink" href="#main-sizing-scenario" title="Link to this heading">#</a></h2>
 <p>To conservatively design the equipment, we will assume that the converter must be able to continuously support the worst operating point in boost charge or discharge.</p>
 <p>This boost charge, with an objective duration of 10 s, corresponds to the recharge of a flat path of 400 m. It is assumed that on this path the difference in height between stations is zero and that all of the kinetic energy is recovered during braking. It will also be assumed that the charges or discharges will be done at constant power. For a longer distance, we will accept a charging time longer than 10 s.</p>
 <p>Summary of the data needed for the calculations:</p>
@@ -650,14 +642,14 @@ DC/DC converter, max Current ultracapacitor module : 157.0 A
 </div>
 </div>
 </section>
-<section id="sizing-scenarios-of-dc-dc-converter-components">
-<h2><span class="section-number">9.2.2. </span>Sizing scenarios of DC/DC converter components<a class="headerlink" href="#sizing-scenarios-of-dc-dc-converter-components" title="Link to this heading">#</a></h2>
+<section id="sizing-scenarios-for-dc-dc-converter-components">
+<h2><span class="section-number">9.1.4. </span>Sizing scenarios for DC/DC converter components<a class="headerlink" href="#sizing-scenarios-for-dc-dc-converter-components" title="Link to this heading">#</a></h2>
 <p>The following figures illustrates the main components of the DC/DC converter of one ultracapicitor module.</p>
 <p><em>DC/DC converter diagram</em>
 <img alt="DCDCconverter_diagram" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/DCDCconverter_diagram.png" /></p>
 <p>The objective now is to determine the characteristic equations of the sizing scenarios of the different components.</p>
 <section id="current-and-voltage-ripples-equations">
-<h3><span class="section-number">9.2.2.1. </span>Current and voltage ripples equations<a class="headerlink" href="#current-and-voltage-ripples-equations" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.1.4.1. </span>Current and voltage ripples equations<a class="headerlink" href="#current-and-voltage-ripples-equations" title="Link to this heading">#</a></h3>
 <p>The inductor, on the ultracapacitor side,  limits the current ripple. The capacitor, on the DC bus side, limits the voltage ripple. The following figures represent the transient evolution of currents and voltages.</p>
 <p><em>Current temporal evolution</em>
 <img alt="CurrentRipple" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/CurrentRipple.png" /></p>
@@ -693,7 +685,7 @@ DC/DC converter, max Current ultracapacitor module : 157.0 A
 </div>
 </section>
 <section id="components-losses">
-<h3><span class="section-number">9.2.2.2. </span>Components losses<a class="headerlink" href="#components-losses" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.1.4.2. </span>Components losses<a class="headerlink" href="#components-losses" title="Link to this heading">#</a></h3>
 <p>The following table summarizes the equations which enable to calculate losses in the main components of the converter.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -738,7 +730,7 @@ DC/DC converter, max Current ultracapacitor module : 157.0 A
 </div></blockquote>
 </section>
 <section id="components-temperatures">
-<h3><span class="section-number">9.2.2.3. </span>Components temperatures<a class="headerlink" href="#components-temperatures" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.1.4.3. </span>Components temperatures<a class="headerlink" href="#components-temperatures" title="Link to this heading">#</a></h3>
 <p>Estimation of the hot spot temperature of the various components is important during the sizing of a converter. It is possible to use for this nodal approaches as Figure below.</p>
 <p><em>Nodal thermal model</em>
 <img alt="ThermalModel" src="https://raw.githubusercontent.com/SizingLab/sizing_course/main/laboratories/Lab-watt_project/assets/images/ThermalNetwork.png" /></p>
@@ -793,7 +785,7 @@ DC/DC converter, max Current ultracapacitor module : 157.0 A
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.3. </span>IGBT estimation models with scaling laws [Student version]</p>
+        <p class="prev-next-title"><span class="section-number">9.2. </span>IGBT estimation models with scaling laws [Student version]</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -814,22 +806,16 @@ DC/DC converter, max Current ultracapacitor module : 157.0 A
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">9.1. TD3 - Equations of sizing scenarios [Student version]</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-dc-converter-architecture">9.1.1. DC/DC converter architecture</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#design-drivers">9.2. Design drivers</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-sizing-scenario">9.2.1. Main sizing scenario</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-scenarios-of-dc-dc-converter-components">9.2.2. Sizing scenarios of DC/DC converter components</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#current-and-voltage-ripples-equations">9.2.2.1. Current and voltage ripples equations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-losses">9.2.2.2. Components losses</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-temperatures">9.2.2.3. Components temperatures</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-drivers">9.1.2. Design drivers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-sizing-scenario">9.1.3. Main sizing scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-scenarios-for-dc-dc-converter-components">9.1.4. Sizing scenarios for DC/DC converter components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#current-and-voltage-ripples-equations">9.1.4.1. Current and voltage ripples equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-losses">9.1.4.2. Components losses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-temperatures">9.1.4.3. Components temperatures</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>
