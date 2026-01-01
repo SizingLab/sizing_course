@@ -114,7 +114,7 @@ parts:
       - file: laboratories/Lab-package_delivery_UAV/8-design_exploration-student
       - file: laboratories/Lab-package_delivery_UAV/A1-sizing_equations
 
-    - file: laboratories/Lab-High_speed_multirotor/summary
+  - file: laboratories/Lab-High_speed_multirotor/summary
     title: High speed drone design
     sections:
       - file: laboratories/Lab-High_speed_multirotor/01_CaseStudy
