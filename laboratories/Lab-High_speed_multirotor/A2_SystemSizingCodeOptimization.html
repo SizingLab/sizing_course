@@ -1,0 +1,1210 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>8.13. Annex 2: Sizing of a multi-rotor drone &#8212; Sizing and optimization of mechatronic systems</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"32683e5418c346de9077befe10f591e9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1cbe48c31de64d37ae50e92533db2daf": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_8b43e91a4f014550942323cc3356a272", "IPY_MODEL_a76372c95537428d8fe24fc7ed04714e"], "layout": "IPY_MODEL_32683e5418c346de9077befe10f591e9"}}, "8ab1a1ade5224b8bb0ca797fbc15b5fb": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9e808efd392f46b9b5800f99b4e845b9": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "8b43e91a4f014550942323cc3356a272": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DropdownModel", "_options_labels": ["Battery & ESC", "Constraints", "Frame", "Motor", "Objective", "Optimization", "Propeller", "Specifications"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "DropdownView", "description": "Type", "description_tooltip": null, "disabled": false, "index": 0, "layout": "IPY_MODEL_8ab1a1ade5224b8bb0ca797fbc15b5fb", "style": "IPY_MODEL_9e808efd392f46b9b5800f99b4e845b9"}}, "55fa733c288f48b6906abdcb8d175ca5": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a76372c95537428d8fe24fc7ed04714e": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_55fa733c288f48b6906abdcb8d175ca5", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "             Type       Name     Value   Unit  \\\n48  Battery & ESC  M_bat_ref      0.33   [kg]   \n49  Battery & ESC  M_esc_ref      0.12   [kg]   \n50  Battery & ESC  P_esc_ref  3,108.00    [W]   \n51  Battery & ESC    N_s_bat      4.00    [-]   \n52  Battery & ESC      U_bat     14.27    [V]   \n53  Battery & ESC      M_bat      1.00   [kg]   \n54  Battery & ESC      C_bat 44,408.04  [A.s]   \n55  Battery & ESC      I_bat     29.46    [A]   \n56  Battery & ESC       t_hf     25.13  [min]   \n57  Battery & ESC      P_esc    357.13    [W]   \n58  Battery & ESC      M_esc      0.01   [kg]   \n59  Battery & ESC      V_esc     15.27    [V]   \n\n                                              Comment  \n48                     Mass of the reference battery   \n49                                Reference ESC mass   \n50                               Reference ESC power   \n51                           Number of battery cells   \n52                                   Battery voltage   \n53                                      Battery mass   \n54                                  Battery capacity   \n55                                   Battery current   \n56                                     Hovering time   \n57  Power electronic power (corner power or appare...  \n58                                          ESC mass   \n59                                       ESC voltage   ", "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Type</th>\n      <th>Name</th>\n      <th>Value</th>\n      <th>Unit</th>\n      <th>Comment</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>48</th>\n      <td>Battery &amp; ESC</td>\n      <td>M_bat_ref</td>\n      <td>0.33</td>\n      <td>[kg]</td>\n      <td>Mass of the reference battery</td>\n    </tr>\n    <tr>\n      <th>49</th>\n      <td>Battery &amp; ESC</td>\n      <td>M_esc_ref</td>\n      <td>0.12</td>\n      <td>[kg]</td>\n      <td>Reference ESC mass</td>\n    </tr>\n    <tr>\n      <th>50</th>\n      <td>Battery &amp; ESC</td>\n      <td>P_esc_ref</td>\n      <td>3,108.00</td>\n      <td>[W]</td>\n      <td>Reference ESC power</td>\n    </tr>\n    <tr>\n      <th>51</th>\n      <td>Battery &amp; ESC</td>\n      <td>N_s_bat</td>\n      <td>4.00</td>\n      <td>[-]</td>\n      <td>Number of battery cells</td>\n    </tr>\n    <tr>\n      <th>52</th>\n      <td>Battery &amp; ESC</td>\n      <td>U_bat</td>\n      <td>14.27</td>\n      <td>[V]</td>\n      <td>Battery voltage</td>\n    </tr>\n    <tr>\n      <th>53</th>\n      <td>Battery &amp; ESC</td>\n      <td>M_bat</td>\n      <td>1.00</td>\n      <td>[kg]</td>\n      <td>Battery mass</td>\n    </tr>\n    <tr>\n      <th>54</th>\n      <td>Battery &amp; ESC</td>\n      <td>C_bat</td>\n      <td>44,408.04</td>\n      <td>[A.s]</td>\n      <td>Battery capacity</td>\n    </tr>\n    <tr>\n      <th>55</th>\n      <td>Battery &amp; ESC</td>\n      <td>I_bat</td>\n      <td>29.46</td>\n      <td>[A]</td>\n      <td>Battery current</td>\n    </tr>\n    <tr>\n      <th>56</th>\n      <td>Battery &amp; ESC</td>\n      <td>t_hf</td>\n      <td>25.13</td>\n      <td>[min]</td>\n      <td>Hovering time</td>\n    </tr>\n    <tr>\n      <th>57</th>\n      <td>Battery &amp; ESC</td>\n      <td>P_esc</td>\n      <td>357.13</td>\n      <td>[W]</td>\n      <td>Power electronic power (corner power or appare...</td>\n    </tr>\n    <tr>\n      <th>58</th>\n      <td>Battery &amp; ESC</td>\n      <td>M_esc</td>\n      <td>0.01</td>\n      <td>[kg]</td>\n      <td>ESC mass</td>\n    </tr>\n    <tr>\n      <th>59</th>\n      <td>Battery &amp; ESC</td>\n      <td>V_esc</td>\n      <td>15.27</td>\n      <td>[V]</td>\n      <td>ESC voltage</td>\n    </tr>\n  </tbody>\n</table>\n</div>"}}]}}, "04fec735b73140dc94e1030c327b73c9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "04b4db61e6454c159568b80537f68cb3": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_3305851341c747a9b5c239a89b50d92e", "IPY_MODEL_87e38b1b00f14100b47ef3e104db949d"], "layout": "IPY_MODEL_04fec735b73140dc94e1030c327b73c9"}}, "9889c5eb4c44428fab65c0fc4cabcc98": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "95a6f84aa95149a18dcdc78204cf5a23": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "3305851341c747a9b5c239a89b50d92e": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DropdownModel", "_options_labels": ["Battery & ESC", "Constraints", "Frame", "Motor", "Objective", "Optimization", "Propeller", "Specifications"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "DropdownView", "description": "Type", "description_tooltip": null, "disabled": false, "index": 0, "layout": "IPY_MODEL_9889c5eb4c44428fab65c0fc4cabcc98", "style": "IPY_MODEL_95a6f84aa95149a18dcdc78204cf5a23"}}, "3f3f6f4dc1c6421abc98e5d286b9119f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "87e38b1b00f14100b47ef3e104db949d": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_3f3f6f4dc1c6421abc98e5d286b9119f", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "             Type       Name     Value   Unit  \\\n48  Battery & ESC  M_bat_ref      0.33   [kg]   \n49  Battery & ESC  M_esc_ref      0.12   [kg]   \n50  Battery & ESC  P_esc_ref  3,108.00    [W]   \n51  Battery & ESC    N_s_bat      4.00    [-]   \n52  Battery & ESC      U_bat     12.96    [V]   \n53  Battery & ESC      M_bat      0.28   [kg]   \n54  Battery & ESC      C_bat 13,763.28  [A.s]   \n55  Battery & ESC      I_bat     12.74    [A]   \n56  Battery & ESC       t_hf     18.00  [min]   \n57  Battery & ESC      P_esc    217.49    [W]   \n58  Battery & ESC      M_esc      0.01   [kg]   \n59  Battery & ESC      V_esc     12.77    [V]   \n\n                                              Comment  \n48                     Mass of the reference battery   \n49                                Reference ESC mass   \n50                               Reference ESC power   \n51                           Number of battery cells   \n52                                   Battery voltage   \n53                                      Battery mass   \n54                                  Battery capacity   \n55                                   Battery current   \n56                                     Hovering time   \n57  Power electronic power (corner power or appare...  \n58                                          ESC mass   \n59                                       ESC voltage   ", "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Type</th>\n      <th>Name</th>\n      <th>Value</th>\n      <th>Unit</th>\n      <th>Comment</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>48</th>\n      <td>Battery &amp; ESC</td>\n      <td>M_bat_ref</td>\n      <td>0.33</td>\n      <td>[kg]</td>\n      <td>Mass of the reference battery</td>\n    </tr>\n    <tr>\n      <th>49</th>\n      <td>Battery &amp; ESC</td>\n      <td>M_esc_ref</td>\n      <td>0.12</td>\n      <td>[kg]</td>\n      <td>Reference ESC mass</td>\n    </tr>\n    <tr>\n      <th>50</th>\n      <td>Battery &amp; ESC</td>\n      <td>P_esc_ref</td>\n      <td>3,108.00</td>\n      <td>[W]</td>\n      <td>Reference ESC power</td>\n    </tr>\n    <tr>\n      <th>51</th>\n      <td>Battery &amp; ESC</td>\n      <td>N_s_bat</td>\n      <td>4.00</td>\n      <td>[-]</td>\n      <td>Number of battery cells</td>\n    </tr>\n    <tr>\n      <th>52</th>\n      <td>Battery &amp; ESC</td>\n      <td>U_bat</td>\n      <td>12.96</td>\n      <td>[V]</td>\n      <td>Battery voltage</td>\n    </tr>\n    <tr>\n      <th>53</th>\n      <td>Battery &amp; ESC</td>\n      <td>M_bat</td>\n      <td>0.28</td>\n      <td>[kg]</td>\n      <td>Battery mass</td>\n    </tr>\n    <tr>\n      <th>54</th>\n      <td>Battery &amp; ESC</td>\n      <td>C_bat</td>\n      <td>13,763.28</td>\n      <td>[A.s]</td>\n      <td>Battery capacity</td>\n    </tr>\n    <tr>\n      <th>55</th>\n      <td>Battery &amp; ESC</td>\n      <td>I_bat</td>\n      <td>12.74</td>\n      <td>[A]</td>\n      <td>Battery current</td>\n    </tr>\n    <tr>\n      <th>56</th>\n      <td>Battery &amp; ESC</td>\n      <td>t_hf</td>\n      <td>18.00</td>\n      <td>[min]</td>\n      <td>Hovering time</td>\n    </tr>\n    <tr>\n      <th>57</th>\n      <td>Battery &amp; ESC</td>\n      <td>P_esc</td>\n      <td>217.49</td>\n      <td>[W]</td>\n      <td>Power electronic power (corner power or appare...</td>\n    </tr>\n    <tr>\n      <th>58</th>\n      <td>Battery &amp; ESC</td>\n      <td>M_esc</td>\n      <td>0.01</td>\n      <td>[kg]</td>\n      <td>ESC mass</td>\n    </tr>\n    <tr>\n      <th>59</th>\n      <td>Battery &amp; ESC</td>\n      <td>V_esc</td>\n      <td>12.77</td>\n      <td>[V]</td>\n      <td>ESC voltage</td>\n    </tr>\n  </tbody>\n</table>\n</div>"}}]}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-High_speed_multirotor/A2_SystemSizingCodeOptimization';</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.14. Appendix 3: Drone plot" href="A3_Example_PlotDrone.html" />
+    <link rel="prev" title="8.12. Appendix 1: Sizing equations" href="A1_Sizing_equations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../about/homepage.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Sizing and optimization of mechatronic systems - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Sizing and optimization of mechatronic systems - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about/context.html">Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/installation.html">Installation guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture0/summary.html">1. Concept of Operations and architectures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture0/1-concept_of_operations.html">1.1. Concept of Operations</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture0/2-system_architectures.html">1.5. System architectures</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture0/3-architectures_sizing.html">1.8. Preliminary design of mechatronic system</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1_new/summary.html">2. Components, technologies, design drivers and sizing scenarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1_new/1-scenarios_and_design_drivers.html">2.1. Scenarios and Design Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1_new/2-quiz_DesignDrivers.html">2.2. Quiz - Design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1_new/3-quiz_SizingScenarios.html">2.3. Quiz - Sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1_new/4-technologies.html">2.4. Components and Technologies for Mechatronic Systems</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture2_new/summary.html">3. Estimation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/1-linear_regressions.html">3.1. Linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/2-quiz_regressions.html">3.2. Quiz - Linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/3-scaling_laws.html">3.3. Scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/4-quiz_scaling_laws.html">3.4. Quiz - Scaling Laws</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture3_new/summary.html">4. Simulation and evaluation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/1-simulation_models.html">4.1. Simulation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/2-quiz_simulation_models.html">4.2. Quiz - Simulation models</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/3-evaluation_models.html">4.5. Evaluation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/4-quiz_evaluation_models.html">4.6. Quiz - Evaluation models</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4_new/summary.html">5. Optimal sizing procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4_new/1-design_and_optimization_problems.html">5.1. Representation of a Design Problem and Fundamentals of Optimal Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4_new/2-optimization_examples.html">5.2. Optimization with python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4_new/3-sizing_procedures.html">5.3. Development of a sizing procedure using design graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4_new/4-sizing_procedure_examples.html">5.4. Design graph and optimization with python</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">6. VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/0-Case_study.html">6.2. Thrust Vector Control (TVC) Systems: Overview, Functions, and Technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-estimation_models.html">6.3. Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/2-simulation_evaluation_models.html">6.4. Simulation and Evaluation models: endurance of the actuator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/3-SizingDesignExploration.html">6.5. Optimization of a motor/reducer set for a high dynamic application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/4-sizing_scenarios_variable_anchorage.html">6.6. Modeling mechanical load for different actuator anchorage positions</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/5-sizing_and_optimization.html">6.8. Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">6.9. Sizing procedure and optimization with OpenMDAO</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-package_delivery_UAV/summary.html">7. Package delivery UAV</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/1-conops.html">7.1. Package Delivery UAV Concept of Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/1-conops-student.html">7.2. Package Delivery UAV Concept of Operations (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/2-system_architectures-student.html">7.3. System architectures of the Package Delivery UAV (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/2-system_architectures.html">7.4. System Architecture Selection for a Package Delivery UAV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/3-sizing_scenarios.html">7.5. Sizing scenarios and design drivers</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/3-sizing_scenarios-student.html">7.7. Sizing scenarios and design drivers (student version)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/4-estimation_models-linear_regression.html">7.9. Estimation models with dimensional analysis and linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/4-estimation_models-linear_regression-student.html">7.10. Estimation models with dimensional analysis and linear regressions  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/4-estimation_models-scaling_laws.html">7.11. Estimation models with scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/4-estimation_models-scaling_laws-student.html">7.12. Scaling laws of electrical components (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/5-simulation_models-student.html">7.13. Simulation models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6-sizing_models_introduction.html">7.14. Sizing models for multi-rotor definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6a-propeller_selection.html">7.15. Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6a-propeller_selection-student.html">7.16. Propeller selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6b-motor_selection.html">7.17. Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6b-motor_selection-student.html">7.18. Motor selection  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6c-battery_esc_selection.html">7.19. Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6c-battery_esc_selection-student.html">7.20. Battery and ESC selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6d-frame_selection.html">7.21. Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6d-frame_selection-student.html">7.22. Frame selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/7-system_sizing_code_optimization.html">7.23. Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/7-system_sizing_code_optimization-student.html">7.24. Sizing of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/8-design_exploration-student.html">7.25. Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/A1-sizing_equations.html">7.26. Appendix 1: Sizing equations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">8. High speed drone design</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_CaseStudy.html">8.2. Case study and architecture presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02a_SizingScenarios-Student.html">8.3. Sizing scenarios and design drivers (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02b_SizingScenariosEquations-Student.html">8.4. Equations of sizing scenarios (INSA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03a_PropellerLinearRegression-Student.html">8.5. Propellers estimation models with dimensional analysis and linear regressions  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03b_PropellerSelection-Student.html">8.6. Propeller selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04a_ScalingLawsElectricalComponents-Student.html">8.7. Scaling laws of electrical components (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04b_MotorSelection-Student.html">8.8. Motor selection  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04c_BatteryESCSelection-Student.html">8.9. Battery and ESC selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05a_FrameSizing-Student.html">8.10. Frame selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_DesignExploration-Student.html">8.11. Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="A1_Sizing_equations.html">8.12. Appendix 1: Sizing equations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.13. Annex 2: Sizing of a multi-rotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="A3_Example_PlotDrone.html">8.14. Appendix 3: Drone plot</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">9. Lab - Sustainable mobility - Mission profile &amp; Specification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/00_SustainableMobility.html">9.1. Sustainable mobilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01a_CaseStudy.html">9.2. Case study presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification-Student.html">9.3. TP1 - Case study specification [Student Version]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02b_Architecture_Hybrid-Student.html">9.4. TD1/2 - Hydrid storage architecture &amp; specification [Student version]</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary.html">10. Lab - Sustainable mobility - DC/DC converter sizing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/03_SizingScenarios-Student.html">10.1. TD3 - Equations of sizing scenarios [Student version]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws-Student.html">10.2. IGBT estimation models with scaling laws [Student version]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression-Student.html">10.3. Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression.html">10.4. Heatsink  estimation models with simple and multiple linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/06_SizingCodeInductor.html">10.5. Sizing code of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate-Student.html">10.6. Sizing code of an inductor with surrogate models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate.html">10.7. Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/08_DCDC_converter_sizing_introduction.html">10.8. Design graphs for the sizing a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/09_SizingCodeDCDCconverter.html">10.9. Sizing code of a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor-Student.html">10.10. Life Cycle Assessment of an inductor (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor.html">10.11. Life Cycle Assessment of an inductor</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/laboratories/Lab-High_speed_multirotor/A2_SystemSizingCodeOptimization.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-High_speed_multirotor/A2_SystemSizingCodeOptimization.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/laboratories/Lab-High_speed_multirotor/A2_SystemSizingCodeOptimization.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Flaboratories/Lab-High_speed_multirotor/A2_SystemSizingCodeOptimization.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/laboratories/Lab-High_speed_multirotor/A2_SystemSizingCodeOptimization.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Annex 2: Sizing of a multi-rotor drone</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">8.13.1. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">8.13.2. Objectives and specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-defintion-and-design-assumptions">8.13.3. Architecture defintion and design assumptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-parameters">8.13.4. Reference parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-problem">8.13.5. Optimization problem</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="annex-2-sizing-of-a-multi-rotor-drone">
+<h1><span class="section-number">8.13. </span>Annex 2: Sizing of a multi-rotor drone<a class="headerlink" href="#annex-2-sizing-of-a-multi-rotor-drone" title="Link to this heading">#</a></h1>
+<p><em>Written by Marc Budinger (INSA Toulouse) and Scott Delbecq (ISAE-SUPAERO), Toulouse, France.</em></p>
+<p>The objective of this notebook is to select the best compromise of components (propeller, motor, ESC, battery) of a multi-rotor drone for given specifiations.</p>
+<p><strong>Scipy</strong> and <strong>math</strong> packages will be used for this notebook in order to illustrate the optimization algorithms of python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">scipy.optimize</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">timeit</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">float_format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{:,.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="sizing-code">
+<h2><span class="section-number">8.13.1. </span>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h2>
+<p>The set of equations of a sizing code can generate typical issues such :</p>
+<ul class="simple">
+<li><p>Underconstrained set of equations: the lacking equations can come from additional scenarios, estimation models or additional sizing variable.</p></li>
+<li><p>overconstrained equations often due to the selection of a component on multiple critera: the adding of over-sizing coefficients and constraints in the optimization problem can generally fix this issue</p></li>
+<li><p>algebraic loops often due to selection criteria requiring informations generally available after the selection</p></li>
+</ul>
+<p>Concerning overconstraints components, we have here:</p>
+<ul class="simple">
+<li><p>Brushless motors with multiple torque and voltage constraints (hover and transient vertical displacement)</p></li>
+</ul>
+<p>Multiple algebraic loops appears in the sizing problem:</p>
+<ul class="simple">
+<li><p>The thrust depends of the total mass which depend of components required for generating this thrust</p></li>
+</ul>
+<p>The final optimization problem depends thus of these parameters:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\beta_{pro}=pitch/diameter\)</span> ratio to define the propeller</p></li>
+<li><p><span class="math notranslate nohighlight">\(k_{os}\)</span> over sizing coefficient on the load mass to estimate the final total mass</p></li>
+<li><p><span class="math notranslate nohighlight">\(k_{mot}\)</span> over sizing coefficient on the motor torque to estimate the max torque with the hover flight conditions</p></li>
+<li><p><span class="math notranslate nohighlight">\(k_{speed,mot}\)</span> over sizing coeffcient on the motor speed to take into account voltage limits during hover or take-off flight</p></li>
+<li><p><span class="math notranslate nohighlight">\(k_{ND}\)</span> slow down propeller coef : ND = kNDmax / k_ND</p></li>
+<li><p><span class="math notranslate nohighlight">\(k_{D}\)</span> aspect ratio D_in_arm/D_out_arm (diameters ratio) for the beam of the frame</p></li>
+<li><p><span class="math notranslate nohighlight">\(k_{mb}\)</span> ratio battery mass / payload mass</p></li>
+<li><p><span class="math notranslate nohighlight">\(k_{vb}\)</span> over sizing coefficient for the battery voltage</p></li>
+</ul>
+<p>More details in the setting up of sizing code can be found in the  <a class="reference external" href="https://oatao.univ-toulouse.fr/26691/1/Delbecq_26691.pdf">following paper</a>:</p>
+<blockquote>
+<div><p>Delbecq, S., Budinger, M., Ochotorena, A., Reysset, A., &amp; Defaÿ, F. (2020). Efficient sizing and optimization of multirotor drones based on scaling laws and similarity models. Aerospace Science and Technology, 102, 105873.</p>
+</div></blockquote>
+<p>The sizing code is defined here in a function which can give:</p>
+<ul class="simple">
+<li><p>an evaluation of the objective: here the total mass</p></li>
+<li><p>an evaluation of the constraints:</p></li>
+</ul>
+</section>
+<section id="objectives-and-specifications">
+<h2><span class="section-number">8.13.2. </span>Objectives and specifications<a class="headerlink" href="#objectives-and-specifications" title="Link to this heading">#</a></h2>
+<p>Main specifications :</p>
+<ul class="simple">
+<li><p>a load (video, control card) of mass <span class="math notranslate nohighlight">\(M_{load}\)</span>.</p></li>
+<li><p>an autonomy <span class="math notranslate nohighlight">\(t_{hf}\)</span> for the hover flight.</p></li>
+<li><p>an acceleration to take off <span class="math notranslate nohighlight">\(a_{to}\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specifications</span>
+
+<span class="c1"># Load</span>
+<span class="n">M_pay</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># [kg] load mass</span>
+
+<span class="c1"># Acceleration during take off</span>
+<span class="n">a_to</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mf">9.81</span> <span class="c1"># [m/s²] acceleration</span>
+
+<span class="c1"># Autonomy</span>
+<span class="n">t_hov_spec</span> <span class="o">=</span> <span class="mf">18.</span> <span class="c1"># [min] time of hover flight</span>
+
+<span class="c1"># MTOW</span>
+<span class="n">MTOW</span> <span class="o">=</span> <span class="mi">12</span> <span class="c1"># [kg] maximal mass</span>
+
+<span class="c1"># Objectif</span>
+<span class="n">MAX_TIME</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># Objective</span>
+
+<span class="c1"># Optimization bounds</span>
+<span class="c1"># beta,  k_os, k_ND, k_mot, k_speed_mot, k_mb, k_vb, k_D</span>
+<span class="n">bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.6</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">400</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">400</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.95</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="architecture-defintion-and-design-assumptions">
+<h2><span class="section-number">8.13.3. </span>Architecture defintion and design assumptions<a class="headerlink" href="#architecture-defintion-and-design-assumptions" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Architecture of the multi-rotor drone (4,6, 8 arms, ...)</span>
+<span class="n">N_arm</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># [-] number of arm</span>
+<span class="n">N_pro_arm</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># [-] number of propeller per arm (1 or 2)</span>
+<span class="n">N_pro</span> <span class="o">=</span> <span class="n">N_pro_arm</span> <span class="o">*</span> <span class="n">N_arm</span> <span class="c1"># [-] Propellers number</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reference-parameters">
+<h2><span class="section-number">8.13.4. </span>Reference parameters<a class="headerlink" href="#reference-parameters" title="Link to this heading">#</a></h2>
+<ul>
+<li><h3 class="rubric" id="battery">Battery</h3>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reference parameters for scaling laws</span>
+<span class="c1"># Ref : MK-quadro</span>
+<span class="n">M_bat_ref</span> <span class="o">=</span> <span class="mf">.329</span> <span class="c1"># [kg] mass</span>
+<span class="n">E_bat_ref</span> <span class="o">=</span> <span class="mf">220.</span><span class="o">*</span><span class="mf">3600.</span><span class="o">*</span><span class="mf">.329</span> <span class="c1"># [J]</span>
+
+<span class="c1"># Ref : Turnigy K_Force 70HV </span>
+<span class="n">P_esc_ref</span> <span class="o">=</span> <span class="mf">3108.</span> <span class="c1"># [W] Power</span>
+<span class="n">M_esc_ref</span> <span class="o">=</span> <span class="mf">.115</span> <span class="c1"># [kg] Mass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul>
+<li><h3 class="rubric" id="motor">Motor</h3>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Motor reference</span>
+<span class="c1"># Ref : AXI 5325/16 GOLD LINE</span>
+<span class="n">T_nom_mot_ref</span> <span class="o">=</span> <span class="mf">2.32</span>  <span class="c1"># [N.m] rated torque</span>
+<span class="n">T_max_mot_ref</span> <span class="o">=</span> <span class="mf">85.</span><span class="o">/</span><span class="mf">70.</span><span class="o">*</span><span class="n">T_nom_mot_ref</span> <span class="c1"># [N.m] max torque</span>
+<span class="n">R_mot_ref</span> <span class="o">=</span> <span class="mf">0.03</span>  <span class="c1"># [Ohm] resistance</span>
+<span class="n">M_mot_ref</span> <span class="o">=</span> <span class="mf">0.575</span> <span class="c1"># [kg] mass</span>
+<span class="n">K_mot_ref</span> <span class="o">=</span> <span class="mf">0.03</span> <span class="c1"># [N.m/A] torque coefficient</span>
+<span class="n">T_mot_fr_ref</span> <span class="o">=</span> <span class="mf">0.03</span> <span class="c1"># [N.m] friction torque (zero load, nominal speed)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul>
+<li><h3 class="rubric" id="frame">Frame</h3>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reference parameters for scaling laws</span>
+<span class="n">sigma_max</span> <span class="o">=</span> <span class="mf">280e6</span><span class="o">/</span><span class="mf">4.</span> <span class="c1"># [Pa] Composite max stress (2 reduction for dynamic, 2 reduction for stress concentration)</span>
+<span class="n">rho_s</span> <span class="o">=</span> <span class="mf">1700.</span> <span class="c1"># [kg/m3] Volumic mass of aluminum</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul>
+<li><h3 class="rubric" id="propeller">Propeller</h3>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specifications</span>
+<span class="n">rho_air</span><span class="o">=</span><span class="mf">1.18</span><span class="c1"># [kg/m^3] Air density</span>
+<span class="n">ND_max</span><span class="o">=</span><span class="mf">105000.</span><span class="o">/</span><span class="mf">60.</span><span class="o">*</span><span class="mf">.0254</span> <span class="c1">#[Hz.m] Max speed limit (N.D max) for APC MR propellers</span>
+
+
+<span class="c1"># Reference parameters for scaling laws</span>
+<span class="n">D_pro_ref</span><span class="o">=</span><span class="mf">11.</span><span class="o">*</span><span class="mf">.0254</span><span class="c1"># [m] Reference propeller diameter</span>
+<span class="n">M_pro_ref</span><span class="o">=</span><span class="mf">0.53</span><span class="o">*</span><span class="mf">0.0283</span><span class="c1"># [kg] Reference propeller mass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -----------------------</span>
+<span class="c1"># sizing code</span>
+<span class="c1"># -----------------------</span>
+<span class="c1"># inputs: </span>
+<span class="c1"># - param: optimisation variables vector (reduction ratio, oversizing coefficient)</span>
+<span class="c1"># - arg: selection of output  </span>
+<span class="c1"># output: </span>
+<span class="c1"># - objective if arg=&#39;Obj&#39;, problem characteristics if arg=&#39;Prt&#39;, constraints other else</span>
+<span class="k">def</span> <span class="nf">SizingCode</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+<span class="c1"># Design variables</span>
+<span class="c1"># ---</span>
+    <span class="n">beta_pro</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># pitch/diameter ratio of the propeller</span>
+    <span class="n">k_os</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># over sizing coefficient on the load mass </span>
+    <span class="n">k_ND</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># slow down propeller coef : ND = kNDmax / k_ND</span>
+    <span class="n">k_mot</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># over sizing coefficient on the motor torque</span>
+    <span class="n">k_speed_mot</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="c1"># over sizing coefficient on the motor speed</span>
+    <span class="n">k_mb</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># ratio battery / payload mass </span>
+    <span class="n">k_vb</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="c1"># over sizing coefficient for the battery voltage</span>
+    <span class="n">k_D</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="c1"># aspect ratio e_arm/D_out_arm (thickness/diameter) for the beam of the frame</span>
+
+<span class="c1"># Hover&amp; Take-Off thrust </span>
+<span class="c1"># ---</span>
+    <span class="n">M_total</span> <span class="o">=</span> <span class="n">k_os</span> <span class="o">*</span> <span class="n">M_pay</span> <span class="c1"># [kg] Estimation of the total mass (or equivalent weight of dynamic scenario)</span>
+    <span class="n">F_pro_hov</span> <span class="o">=</span> <span class="n">M_total</span> <span class="o">*</span> <span class="p">(</span><span class="mf">9.81</span><span class="p">)</span> <span class="o">/</span> <span class="n">N_pro</span> <span class="c1"># [N] Thrust per propeller for hover</span>
+    <span class="n">F_pro_to</span> <span class="o">=</span> <span class="n">M_total</span> <span class="o">*</span> <span class="p">(</span><span class="mf">9.81</span> <span class="o">+</span> <span class="n">a_to</span><span class="p">)</span> <span class="o">/</span> <span class="n">N_pro</span> <span class="c1"># [N] Thrust per propeller for take-off</span>
+
+
+<span class="c1">#PROPELLER</span>
+<span class="c1"># --- </span>
+
+    <span class="n">C_t</span> <span class="o">=</span> <span class="mf">4.27e-02</span> <span class="o">+</span> <span class="mf">1.44e-01</span> <span class="o">*</span> <span class="n">beta_pro</span>  <span class="c1"># Thrust coef with T=C_T.rho.n^2.D^4 - 0.8 for de-rating of APC catalog</span>
+    <span class="n">C_p</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.48e-03</span> <span class="o">+</span> <span class="mf">9.72e-02</span> <span class="o">*</span> <span class="n">beta_pro</span>  <span class="c1"># Power coef with P=C_p.rho.n^3.D^5</span>
+
+    <span class="c1"># Propeller selection with take-off scenario</span>
+    <span class="n">D_pro</span> <span class="o">=</span> <span class="p">(</span><span class="n">F_pro_to</span> <span class="o">/</span> <span class="p">(</span><span class="n">C_t</span><span class="o">*</span><span class="n">rho_air</span><span class="o">*</span><span class="p">(</span><span class="n">ND_max</span><span class="o">/</span><span class="n">k_ND</span><span class="p">)</span><span class="o">**</span><span class="mf">2.</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>  <span class="c1"># [m] Propeller diameter</span>
+    <span class="n">n_pro_to</span> <span class="o">=</span> <span class="n">ND_max</span> <span class="o">/</span> <span class="n">k_ND</span> <span class="o">/</span> <span class="n">D_pro</span> <span class="c1"># [Hz] Propeller speed </span>
+    <span class="n">Omega_pro_to</span> <span class="o">=</span> <span class="n">n_pro_to</span> <span class="o">*</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span> <span class="c1"># [rad/s] Propeller speed</span>
+
+    <span class="n">M_pro</span> <span class="o">=</span> <span class="n">M_pro_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">D_pro</span><span class="o">/</span><span class="n">D_pro_ref</span><span class="p">)</span><span class="o">**</span><span class="mf">2.</span> <span class="c1"># [kg] Propeller mass</span>
+
+    <span class="n">P_pro_to</span> <span class="o">=</span> <span class="n">C_p</span> <span class="o">*</span> <span class="n">rho_air</span> <span class="o">*</span> <span class="n">n_pro_to</span><span class="o">**</span><span class="mf">3.</span> <span class="o">*</span> <span class="n">D_pro</span><span class="o">**</span><span class="mf">5.</span> <span class="c1"># [W] Power per propeller</span>
+    <span class="n">T_pro_to</span> <span class="o">=</span> <span class="n">P_pro_to</span> <span class="o">/</span> <span class="n">Omega_pro_to</span> <span class="c1"># [N.m] Propeller torque</span>
+
+    <span class="c1"># Propeller torque &amp; speed for hover</span>
+    <span class="n">n_pro_hov</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">F_pro_hov</span><span class="o">/</span><span class="p">(</span><span class="n">C_t</span> <span class="o">*</span> <span class="n">rho_air</span> <span class="o">*</span><span class="n">D_pro</span><span class="o">**</span><span class="mf">4.</span><span class="p">))</span> <span class="c1"># [Hz] hover speed</span>
+    <span class="n">Omega_pro_hov</span> <span class="o">=</span> <span class="n">n_pro_hov</span> <span class="o">*</span> <span class="mf">2.</span><span class="o">*</span><span class="n">pi</span> <span class="c1"># [rad/s] Propeller speed</span>
+
+    <span class="n">P_pro_hov</span> <span class="o">=</span> <span class="n">C_p</span> <span class="o">*</span> <span class="n">rho_air</span> <span class="o">*</span> <span class="n">n_pro_hov</span><span class="o">**</span><span class="mf">3.</span> <span class="o">*</span> <span class="n">D_pro</span><span class="o">**</span><span class="mf">5.</span> <span class="c1"># [W] Power per propeller</span>
+    <span class="n">T_pro_hov</span> <span class="o">=</span> <span class="n">P_pro_hov</span> <span class="o">/</span> <span class="n">Omega_pro_hov</span> <span class="c1"># [N.m] Propeller torque       </span>
+    <span class="n">U_bat_est</span> <span class="o">=</span> <span class="n">k_vb</span><span class="o">*</span><span class="mf">1.84</span><span class="o">*</span><span class="n">P_pro_to</span><span class="o">**</span><span class="p">(</span><span class="mf">0.36</span><span class="p">)</span> <span class="c1"># [V] battery voltage estimation</span>
+    
+
+<span class="c1"># MOTOR</span>
+<span class="c1"># --- </span>
+    <span class="n">T_nom_mot</span> <span class="o">=</span> <span class="n">k_mot</span> <span class="o">*</span> <span class="n">T_pro_hov</span>   <span class="c1"># [N.m] Motor nominal torque per propeller</span>
+
+    <span class="n">M_mot</span> <span class="o">=</span> <span class="n">M_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_nom_mot</span><span class="o">/</span><span class="n">T_nom_mot_ref</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">3.</span><span class="o">/</span><span class="mf">3.5</span><span class="p">)</span> <span class="c1"># [kg] Motor mass</span>
+
+    <span class="c1"># Selection with take-off speed</span>
+    <span class="n">K_mot</span> <span class="o">=</span> <span class="n">U_bat_est</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_speed_mot</span><span class="o">*</span><span class="n">Omega_pro_to</span><span class="p">)</span> <span class="c1"># [N.m/A] or [V/(rad/s)] Kt motor</span>
+
+    <span class="n">R_mot</span> <span class="o">=</span> <span class="n">R_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_nom_mot</span><span class="o">/</span><span class="n">T_nom_mot_ref</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">5.</span><span class="o">/</span><span class="mf">3.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">K_mot</span><span class="o">/</span><span class="n">K_mot_ref</span><span class="p">)</span><span class="o">**</span><span class="mf">2.</span>  <span class="c1"># [Ohm] motor resistance</span>
+    <span class="n">T_mot_fr</span> <span class="o">=</span> <span class="n">T_mot_fr_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_nom_mot</span><span class="o">/</span><span class="n">T_nom_mot_ref</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">3.</span><span class="o">/</span><span class="mf">3.5</span><span class="p">)</span> <span class="c1"># [N.m] Friction torque</span>
+    <span class="n">T_max_mot</span> <span class="o">=</span> <span class="n">T_max_mot_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">T_nom_mot</span><span class="o">/</span><span class="n">T_nom_mot_ref</span><span class="p">)</span>
+
+    <span class="c1"># Hover current and voltage</span>
+    <span class="n">I_mot_hov</span> <span class="o">=</span> <span class="p">(</span><span class="n">T_pro_hov</span><span class="o">+</span><span class="n">T_mot_fr</span><span class="p">)</span> <span class="o">/</span> <span class="n">K_mot</span> <span class="c1"># [I] Current of the motor per propeller</span>
+    <span class="n">U_mot_hov</span> <span class="o">=</span> <span class="n">R_mot</span><span class="o">*</span><span class="n">I_mot_hov</span> <span class="o">+</span> <span class="n">Omega_pro_hov</span><span class="o">*</span><span class="n">K_mot</span> <span class="c1"># [V] Voltage of the motor per propeller</span>
+    <span class="n">P_el_mot_hov</span> <span class="o">=</span> <span class="n">U_mot_hov</span><span class="o">*</span><span class="n">I_mot_hov</span> <span class="c1"># [W] Hover : electrical power</span>
+
+    <span class="c1"># Takeoff current and voltage</span>
+    <span class="n">I_mot_to</span> <span class="o">=</span> <span class="p">(</span><span class="n">T_pro_to</span><span class="o">+</span><span class="n">T_mot_fr</span><span class="p">)</span> <span class="o">/</span> <span class="n">K_mot</span> <span class="c1"># [I] Current of the motor per propeller</span>
+    <span class="n">U_mot_to</span> <span class="o">=</span> <span class="n">R_mot</span><span class="o">*</span><span class="n">I_mot_to</span> <span class="o">+</span> <span class="n">Omega_pro_to</span><span class="o">*</span><span class="n">K_mot</span> <span class="c1"># [V] Voltage of the motor per propeller</span>
+    <span class="n">P_el_mot_to</span> <span class="o">=</span> <span class="n">U_mot_to</span><span class="o">*</span><span class="n">I_mot_to</span> <span class="c1"># [W] Takeoff : electrical power</span>
+
+<span class="c1"># BATTERY AND ESC</span>
+<span class="c1"># ---     </span>
+    <span class="c1"># Battery selection &amp; scaling laws sized from hover</span>
+    
+    <span class="n">N_s_bat</span> <span class="o">=</span> <span class="n">U_bat_est</span><span class="o">/</span><span class="mf">3.7</span> <span class="c1"># [-] Cell number, round (up value)</span>
+    <span class="n">U_bat</span> <span class="o">=</span> <span class="mf">3.7</span> <span class="o">*</span> <span class="n">N_s_bat</span> <span class="c1"># [V] Battery voltage</span>
+
+    <span class="n">M_bat</span> <span class="o">=</span> <span class="n">k_mb</span> <span class="o">*</span> <span class="n">M_pay</span> <span class="c1"># [kg] Battery mass</span>
+
+    <span class="c1"># Hover --&gt; autonomy</span>
+    <span class="n">E_bat</span> <span class="o">=</span> <span class="n">E_bat_ref</span> <span class="o">*</span> <span class="n">M_bat</span><span class="o">/</span><span class="n">M_bat_ref</span><span class="o">*</span><span class="mf">.8</span> <span class="c1"># [J] Energy  of the battery (.8 coefficient because 80% use only of the total capacity)</span>
+    <span class="n">C_bat</span> <span class="o">=</span> <span class="n">E_bat</span><span class="o">/</span><span class="n">U_bat</span> <span class="c1"># [A.s] Capacity  of the battery </span>
+    <span class="n">I_bat</span> <span class="o">=</span> <span class="p">(</span><span class="n">P_el_mot_hov</span> <span class="o">*</span> <span class="n">N_pro</span><span class="p">)</span> <span class="o">/</span><span class="mf">.95</span><span class="o">/</span><span class="n">U_bat</span> <span class="c1"># [A] Current of the battery</span>
+    <span class="n">t_hov</span> <span class="o">=</span> <span class="n">C_bat</span><span class="o">/</span><span class="n">I_bat</span><span class="o">/</span><span class="mf">60.</span> <span class="c1"># [min] Hover time </span>
+
+    <span class="c1"># ESC</span>
+    <span class="n">P_esc</span> <span class="o">=</span> <span class="n">P_el_mot_to</span> <span class="o">*</span> <span class="n">U_bat_est</span> <span class="o">/</span> <span class="n">U_mot_to</span> <span class="c1"># [W] power electronic power (corner power or apparent power)</span>
+    <span class="n">M_esc</span> <span class="o">=</span> <span class="n">M_esc_ref</span> <span class="o">*</span> <span class="p">(</span><span class="n">P_esc</span><span class="o">/</span><span class="n">P_esc_ref</span><span class="p">)</span> <span class="c1"># [kg] Mass ESC</span>
+    <span class="n">V_esc</span> <span class="o">=</span> <span class="mf">1.84</span> <span class="o">*</span> <span class="n">P_esc</span><span class="o">**</span><span class="mf">0.36</span> <span class="c1"># [V] ESC voltage        </span>
+
+<span class="c1"># Frame sized from max thrust</span>
+<span class="c1"># ---</span>
+    <span class="n">alpha_sep</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span> <span class="o">/</span> <span class="n">N_arm</span> <span class="c1"># [rad] interior angle separation between propellers</span>
+    <span class="n">L_arm</span> <span class="o">=</span> <span class="n">D_pro</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha_sep</span><span class="o">/</span><span class="mf">2.</span><span class="p">))</span> <span class="c1"># [m] length of the arm</span>
+
+    <span class="c1"># Tube diameter &amp; thickness</span>
+    <span class="n">D_out_arm</span> <span class="o">=</span> <span class="p">(</span><span class="n">F_pro_to</span><span class="o">*</span><span class="n">N_pro_arm</span><span class="o">/</span><span class="n">sigma_max</span><span class="o">*</span><span class="n">L_arm</span><span class="o">*</span><span class="mf">32.</span><span class="o">/</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="mf">1.</span><span class="o">-</span><span class="n">k_D</span><span class="o">**</span><span class="mf">4.</span><span class="p">)))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># [m] outer diameter of the arm (hollow cylinder)</span>
+    <span class="n">D_in_arm</span> <span class="o">=</span> <span class="n">k_D</span> <span class="o">*</span> <span class="n">D_out_arm</span> <span class="c1"># [m] inner diameter of the arm (hollow cylinder) </span>
+
+    <span class="c1"># Mass</span>
+    <span class="n">M_arm</span> <span class="o">=</span> <span class="n">pi</span><span class="o">/</span><span class="mf">4.</span> <span class="o">*</span> <span class="p">(</span><span class="n">D_out_arm</span><span class="o">**</span><span class="mf">2.</span><span class="o">-</span><span class="n">D_in_arm</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">L_arm</span><span class="o">*</span><span class="n">rho_s</span> <span class="c1"># [kg] mass of the arm (x1) (beams only)  composite</span>
+    <span class="n">M_frame</span> <span class="o">=</span> <span class="n">N_arm</span> <span class="o">*</span> <span class="n">M_arm</span> <span class="o">/</span> <span class="mf">0.4</span> <span class="c1"># [kg] mass of the frame (40% of total mass is the arms)</span>
+
+<span class="c1"># Objective and Constraints sum up</span>
+<span class="c1"># ---</span>
+    <span class="n">M_total_real</span><span class="o">=</span><span class="p">(</span><span class="n">M_esc</span><span class="o">+</span><span class="n">M_pro</span><span class="o">+</span><span class="n">M_mot</span><span class="p">)</span><span class="o">*</span><span class="n">N_pro</span><span class="o">+</span><span class="n">M_pay</span><span class="o">+</span><span class="n">M_bat</span><span class="o">+</span><span class="n">M_frame</span><span class="o">+</span><span class="n">M_arm</span>
+
+    <span class="k">if</span> <span class="n">MAX_TIME</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span><span class="n">M_total</span><span class="o">-</span><span class="n">M_total_real</span><span class="p">,</span>
+                           <span class="n">U_bat</span><span class="o">-</span><span class="n">U_mot_to</span><span class="p">,</span>
+                           <span class="n">T_max_mot</span><span class="o">-</span><span class="n">T_pro_to</span><span class="p">,</span>
+                           <span class="n">U_bat</span><span class="o">-</span><span class="n">V_esc</span><span class="p">,</span>
+                           <span class="n">MTOW</span><span class="o">-</span><span class="n">M_total_real</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+            <span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span><span class="n">M_total</span><span class="o">-</span><span class="n">M_total_real</span><span class="p">,</span>
+                           <span class="n">U_bat</span><span class="o">-</span><span class="n">U_mot_to</span><span class="p">,</span>
+                           <span class="n">T_max_mot</span><span class="o">-</span><span class="n">T_pro_to</span><span class="p">,</span>
+                           <span class="n">U_bat</span><span class="o">-</span><span class="n">V_esc</span><span class="p">,</span>
+                           <span class="n">t_hov</span><span class="o">-</span><span class="n">t_hov_spec</span><span class="p">]</span>
+
+    <span class="c1"># Run algorithm slsqp</span>
+    <span class="k">if</span> <span class="n">arg</span> <span class="o">==</span> <span class="s1">&#39;Obj&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">MAX_TIME</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">1.</span><span class="o">/</span><span class="n">t_hov</span> <span class="c1"># for time maximisation</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">M_total_real</span> <span class="c1"># for mass optimisation</span>
+
+     <span class="c1"># Run algorithm differential evolution</span>
+    <span class="k">elif</span> <span class="n">arg</span> <span class="o">==</span> <span class="s1">&#39;ObjP&#39;</span><span class="p">:</span>
+        <span class="n">P</span> <span class="o">=</span> <span class="mf">0.</span> <span class="c1"># Penalisation nulle</span>
+        <span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="n">constraints</span><span class="p">:</span> 
+            <span class="k">if</span> <span class="p">(</span><span class="n">C</span> <span class="o">&lt;</span> <span class="mf">0.</span><span class="p">):</span> 
+                <span class="n">P</span> <span class="o">=</span> <span class="n">P</span><span class="o">-</span><span class="mf">1e9</span><span class="o">*</span><span class="n">C</span>
+        <span class="k">if</span> <span class="n">MAX_TIME</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">1.</span><span class="o">/</span><span class="n">t_hov</span> <span class="o">+</span> <span class="n">P</span> <span class="c1"># for time maximisation</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">M_total_real</span> <span class="o">+</span> <span class="n">P</span> <span class="c1"># for mass optimisation       </span>
+
+    <span class="k">elif</span> <span class="n">arg</span><span class="o">==</span><span class="s1">&#39;Prt&#39;</span><span class="p">:</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+        <span class="mi">0</span> <span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Optimization&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;beta_pro&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">beta_pro</span><span class="p">,</span>  <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;ratio pitch-to-diameter &#39;</span><span class="p">},</span>        <span class="mi">1</span> <span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Optimization&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;k_os&#39;</span><span class="p">,</span> <span class="s1">&#39;Min&#39;</span><span class="p">:</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">k_os</span><span class="p">,</span>  <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;over sizing coefficient on the load mass &#39;</span><span class="p">},</span>
+        <span class="mi">1</span> <span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Optimization&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;k_ND&#39;</span><span class="p">,</span>  <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">k_ND</span><span class="p">,</span>  <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;over sizing coefficient on the propeller speed&#39;</span><span class="p">},</span>
+        <span class="mi">2</span> <span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Optimization&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;k_mot&#39;</span><span class="p">,</span>  <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">k_mot</span><span class="p">,</span>  <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;over sizing coefficient on the motor torque  &#39;</span><span class="p">},</span>
+        <span class="mi">3</span> <span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Optimization&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;k_speed_mot&#39;</span><span class="p">,</span>  <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">k_speed_mot</span><span class="p">,</span>  <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;over sizing coefficient on the propeller speed&#39;</span><span class="p">},</span>
+        <span class="mi">4</span> <span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Optimization&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;k_mb&#39;</span><span class="p">,</span>  <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">k_mb</span><span class="p">,</span>  <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;over sizing coefficient on the battery load mass&#39;</span><span class="p">},</span>
+        <span class="mi">5</span> <span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Optimization&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;k_vb&#39;</span><span class="p">,</span>  <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">k_vb</span><span class="p">,</span>  <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;over sizing coefficient for the battery voltage&#39;</span><span class="p">},</span>
+        <span class="mi">6</span> <span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Optimization&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;k_D&#39;</span><span class="p">,</span>  <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">k_D</span><span class="p">,</span>  <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;aspect ratio e/c (thickness/side) for the beam of the frame&#39;</span><span class="p">},</span>
+        <span class="mi">7</span> <span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Constraints&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Const 0&#39;</span><span class="p">,</span>  <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">constraints</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>  <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;M_total-M_total_real&#39;</span><span class="p">},</span>
+        <span class="mi">8</span> <span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Constraints&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Const 1&#39;</span><span class="p">,</span>  <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">constraints</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>  <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;U_bat-U_mot_to&#39;</span><span class="p">},</span>
+        <span class="mi">9</span> <span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Constraints&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Const 2&#39;</span><span class="p">,</span>  <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">constraints</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>  <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;T_max_mot-T_pro_to&#39;</span><span class="p">},</span>
+        <span class="mi">10</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Constraints&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Const 3&#39;</span><span class="p">,</span>  <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">constraints</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>  <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;U_bat-V_esc&#39;</span><span class="p">},</span>
+        <span class="mi">11</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Constraints&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Const 4&#39;</span><span class="p">,</span>  <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">constraints</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span>  <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;t_hov-t_hov_spec&#39;</span><span class="p">},</span>
+        <span class="mi">12</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Objective&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Objective&#39;</span><span class="p">,</span>  <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">M_total_real</span><span class="p">,</span>  <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[kg]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Total mass&#39;</span><span class="p">},</span>
+        <span class="mi">13</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;F_pro_to&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">F_pro_to</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[N]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Thrust for 1 propeller during Take Off&#39;</span><span class="p">},</span>
+        <span class="mi">14</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;F_pro_hov&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">F_pro_hov</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[N]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Thrust for 1 propeller during Hover&#39;</span><span class="p">},</span>
+        <span class="mi">15</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;rho_air&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">rho_air</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[kg/m^3]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Air density&#39;</span><span class="p">},</span>
+        <span class="mi">16</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;ND_max&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">ND_max</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[Hz.m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Max speed limit (N.D max)&#39;</span><span class="p">},</span>
+        <span class="mi">17</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Dpro_ref&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">D_pro_ref</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Reference propeller diameter&#39;</span><span class="p">},</span>
+        <span class="mi">18</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;M_pro_ref&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">M_pro_ref</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[kg]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Reference propeller mass&#39;</span><span class="p">},</span>
+        <span class="mi">19</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;C_t_sta&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">C_t</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Static thrust coefficient of the propeller&#39;</span><span class="p">},</span>
+        <span class="mi">20</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;C_p_sta&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">C_p</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Static power coefficient of the propeller&#39;</span><span class="p">},</span>
+        <span class="mi">21</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;D_pro&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">D_pro</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Diameter of the propeller&#39;</span><span class="p">},</span>
+        <span class="mi">22</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;n_pro_to&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">n_pro_to</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[Hz]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Rev speed of the propeller during takeoff&#39;</span><span class="p">},</span>
+        <span class="mi">23</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;n_pro_hov&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">n_pro_hov</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[Hz]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Rev speed of the propeller during hover&#39;</span><span class="p">},</span>
+        <span class="mi">24</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;P_pro_to&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">P_pro_to</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[W]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Power on the mechanical shaft of the propeller during takeoff&#39;</span><span class="p">},</span>
+        <span class="mi">25</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;P_pro_hov&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">P_pro_hov</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[W]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Power on the mechanical shaft of the propeller during hover&#39;</span><span class="p">},</span>
+        <span class="mi">26</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;M_pro&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">M_pro</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[kg]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Mass of the propeller&#39;</span><span class="p">},</span>
+        <span class="mi">27</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Omega_pro_to&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">Omega_pro_to</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[rad/s]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Rev speed of the propeller during takeoff&#39;</span><span class="p">},</span>
+        <span class="mi">28</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Omega_pro_hov&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">Omega_pro_hov</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[rad/s]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Rev speed of the propeller during hover&#39;</span><span class="p">},</span>
+        <span class="mi">29</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;T_pro_hov&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">T_pro_hov</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[N.m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Torque on the mechanical shaft of the propeller during hover&#39;</span><span class="p">},</span>
+        <span class="mi">30</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Propeller&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;T_pro_to&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">T_pro_to</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[N.m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Torque on the mechanical shaft of the propeller during takeoff&#39;</span><span class="p">},</span>
+        <span class="mi">31</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;T_max_mot_ref&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">T_max_mot_ref</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[N.m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Max torque&#39;</span><span class="p">},</span>
+        <span class="mi">32</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;R_mot_ref&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">R_mot_ref</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[Ohm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Resistance&#39;</span><span class="p">},</span>
+        <span class="mi">33</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;M_mot_ref&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">M_mot_ref</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[kg]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Reference motor mass&#39;</span><span class="p">},</span>
+        <span class="mi">34</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;K_mot_ref&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">K_mot_ref</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[N.m/A]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Torque coefficient&#39;</span><span class="p">},</span>
+        <span class="mi">35</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;T_mot_fr_ref&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">T_mot_fr_ref</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[N.m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Friction torque (zero load, nominal speed)&#39;</span><span class="p">},</span>
+        <span class="mi">36</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;T_nom_mot&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">T_nom_mot</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[N.m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Continuous of the selected motor torque&#39;</span><span class="p">},</span>
+        <span class="mi">37</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;T_max_mot&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">T_max_mot</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[N.m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Transient torque possible for climbing&#39;</span><span class="p">},</span>
+        <span class="mi">38</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;R_mot&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">R_mot</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[Ohm]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Resistance&#39;</span><span class="p">},</span>
+        <span class="mi">39</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;M_mot&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">M_mot</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[kg]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor mass&#39;</span><span class="p">},</span>
+        <span class="mi">40</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;K_mot&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">K_mot</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[N.m/A&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Torque constant of the selected motor&#39;</span><span class="p">},</span>
+        <span class="mi">41</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;T_mot_fr&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">T_mot_fr</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[N.m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Friction torque of the selected motor&#39;</span><span class="p">},</span>
+        <span class="mi">42</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;I_mot_hov&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">I_mot_hov</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[A]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor current for hover&#39;</span><span class="p">},</span>
+        <span class="mi">43</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;I_mot_to&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">I_mot_to</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[A]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor current for takeoff&#39;</span><span class="p">},</span>
+        <span class="mi">44</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;U_mot_to&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">U_mot_to</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[V]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor voltage for takeoff&#39;</span><span class="p">},</span>
+        <span class="mi">45</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;U_mot&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">U_mot_hov</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[V]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Nominal voltage &#39;</span><span class="p">},</span>
+        <span class="mi">46</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;P_el_mot_to&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">P_el_mot_to</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[W]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor electrical power for takeoff&#39;</span><span class="p">},</span>
+        <span class="mi">47</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;P_el_mot_hov&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">P_el_mot_hov</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[W]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Motor electrical power for hover&#39;</span><span class="p">},</span>
+        <span class="mi">48</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery &amp; ESC&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;M_bat_ref&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">M_bat_ref</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[kg]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Mass of the reference battery &#39;</span><span class="p">},</span>
+        <span class="mi">49</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery &amp; ESC&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;M_esc_ref&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">M_esc_ref</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[kg]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Reference ESC mass &#39;</span><span class="p">},</span>
+        <span class="mi">50</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery &amp; ESC&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;P_esc_ref&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">P_esc_ref</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[W]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Reference ESC power &#39;</span><span class="p">},</span>
+        <span class="mi">51</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery &amp; ESC&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;N_s_bat&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">N_s_bat</span><span class="p">),</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Number of battery cells &#39;</span><span class="p">},</span>
+        <span class="mi">52</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery &amp; ESC&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;U_bat&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">U_bat</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[V]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery voltage &#39;</span><span class="p">},</span>
+        <span class="mi">53</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery &amp; ESC&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;M_bat&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">M_bat</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[kg]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery mass &#39;</span><span class="p">},</span>
+        <span class="mi">54</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery &amp; ESC&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;C_bat&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">C_bat</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[A.s]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery capacity &#39;</span><span class="p">},</span>
+        <span class="mi">55</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery &amp; ESC&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;I_bat&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">I_bat</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[A]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery current &#39;</span><span class="p">},</span>
+        <span class="mi">56</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery &amp; ESC&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;t_hf&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">t_hov</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[min]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Hovering time &#39;</span><span class="p">},</span>
+        <span class="mi">57</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery &amp; ESC&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;P_esc&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">P_esc</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[W]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Power electronic power (corner power or apparent power) &#39;</span><span class="p">},</span>
+        <span class="mi">58</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery &amp; ESC&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;M_esc&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">M_esc</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[kg]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;ESC mass &#39;</span><span class="p">},</span>
+        <span class="mi">59</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Battery &amp; ESC&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;V_esc&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">V_esc</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[V]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;ESC voltage &#39;</span><span class="p">},</span>
+        <span class="mi">60</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Frame&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;N_arm&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">N_arm</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Number of arms &#39;</span><span class="p">},</span>
+        <span class="mi">61</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Frame&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;N_pro_arm&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">N_pro_arm</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Number of propellers per arm &#39;</span><span class="p">},</span>
+        <span class="mi">62</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Frame&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;sigma_max&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">sigma_max</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[Pa]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Max admisible stress&#39;</span><span class="p">},</span>
+        <span class="mi">63</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Frame&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;L_arm&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">L_arm</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Length of the arm&#39;</span><span class="p">},</span>
+        <span class="mi">64</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Frame&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;D_out&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">D_out_arm</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[m]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Outer diameter of the arm (tube)&#39;</span><span class="p">},</span>
+        <span class="mi">65</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Frame&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Marm&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">M_arm</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[kg]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;1 Arm mass&#39;</span><span class="p">},</span>
+        <span class="mi">66</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Frame&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;M_frame&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">M_frame</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[kg]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Frame mass&#39;</span><span class="p">},</span>
+        <span class="mi">67</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Specifications&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;M_load&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">M_pay</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[kg]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Payload mass&#39;</span><span class="p">},</span>
+        <span class="mi">68</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Specifications&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;t_hf&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">t_hov</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[min]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Hovering time &#39;</span><span class="p">},</span>
+        <span class="mi">69</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Specifications&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;N_arm&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">N_arm</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Number of arms &#39;</span><span class="p">},</span>
+        <span class="mi">70</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Specifications&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;N_pro_arm&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">N_pro_arm</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[-]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Number of propellers per arm &#39;</span><span class="p">},</span>
+        <span class="mi">71</span><span class="p">:{</span><span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Specifications&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;MTOW&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">MTOW</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">:</span> <span class="s1">&#39;[kg]&#39;</span><span class="p">,</span> <span class="s1">&#39;Comment&#39;</span><span class="p">:</span> <span class="s1">&#39;Max takeoff Weight&#39;</span><span class="p">},</span>
+        <span class="p">}</span>
+
+        <span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        
+        <span class="c1"># swap the columns with indexes</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+   
+        <span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+        <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">Type</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">Type</span><span class="p">]</span> 
+        <span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Type</span><span class="o">=</span><span class="n">items</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">f</span>
+        
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">constraints</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="optimization-problem">
+<h2><span class="section-number">8.13.5. </span>Optimization problem<a class="headerlink" href="#optimization-problem" title="Link to this heading">#</a></h2>
+<p>We will now use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html">optimization algorithms</a> of the Scipy package to solve and optimize the configuration. We use here the SLSQP algorithm without explicit expression of the gradient (Jacobian). A course on Multidisplinary Gradient optimization algorithms and gradient optimization algorithm is given <a class="reference external" href="http://mdolab.engin.umich.edu/sites/default/files/Martins-MDO-course-notes.pdf">here</a>:</p>
+<blockquote>
+<div><p>Joaquim R. R. A. Martins (2012). A Short Course on Multidisciplinary Design Optimization. University of Michigan</p>
+</div></blockquote>
+<p>The first step is to give an initial value of optimisation variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimisation variables</span>
+<span class="n">beta_pro</span> <span class="o">=</span> <span class="mf">.33</span> <span class="c1"># pitch/diameter ratio of the propeller</span>
+<span class="n">k_os</span> <span class="o">=</span> <span class="mf">3.2</span> <span class="c1"># over sizing coefficient on the load mass </span>
+<span class="n">k_ND</span> <span class="o">=</span> <span class="mf">1.2</span> <span class="c1"># slow down propeller coef : ND = kNDmax / k_ND</span>
+<span class="n">k_mot</span> <span class="o">=</span> <span class="mf">1.</span> <span class="c1"># over sizing coefficient on the motor torque</span>
+<span class="n">k_speed_mot</span> <span class="o">=</span> <span class="mf">1.2</span> <span class="c1"># adaption winding coef on the motor speed</span>
+<span class="n">k_mb</span> <span class="o">=</span> <span class="mf">1.</span> <span class="c1"># ratio battery/load mass</span>
+<span class="n">k_vb</span> <span class="o">=</span> <span class="mf">1.</span> <span class="c1"># oversizing coefficient for voltage evaluation</span>
+<span class="n">k_D</span> <span class="o">=</span> <span class="mf">.9</span> <span class="c1"># aspect ratio D_in/D_out (diameters ratio) for the beam of the frame</span>
+
+
+<span class="c1"># Vector of parameters</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">beta_pro</span><span class="p">,</span> <span class="n">k_os</span><span class="p">,</span> <span class="n">k_ND</span><span class="p">,</span><span class="n">k_mot</span><span class="p">,</span> <span class="n">k_speed_mot</span><span class="p">,</span> <span class="n">k_mb</span><span class="p">,</span> <span class="n">k_vb</span><span class="p">,</span><span class="n">k_D</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can print of the characterisitcs of the problem before optimization with the initial vector of optimization variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initial characteristics before optimization </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial characteristics before optimization :&quot;</span><span class="p">)</span>
+<span class="n">SizingCode</span><span class="p">(</span><span class="n">parameters</span><span class="p">,</span><span class="s1">&#39;Prt&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------------------&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------------------------------
+Initial characteristics before optimization :
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "1cbe48c31de64d37ae50e92533db2daf"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we can solve the problem and print of the optimized solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimization with SLSQP algorithm</span>
+<span class="n">contrainte</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">SizingCode</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;Const&#39;</span><span class="p">)</span>
+<span class="n">objectif</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">SizingCode</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;Obj&#39;</span><span class="p">)</span>
+<span class="n">objectifP</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">SizingCode</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;ObjP&#39;</span><span class="p">)</span>
+
+<span class="n">SLSQP</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># Optimization algorithm choice</span>
+
+<span class="k">if</span> <span class="n">SLSQP</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># SLSQP omptimisation</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">fmin_slsqp</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">objectif</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">parameters</span><span class="p">,</span> 
+                                   <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span>
+                                   <span class="n">f_ieqcons</span><span class="o">=</span><span class="n">contrainte</span><span class="p">,</span> <span class="nb">iter</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span> <span class="n">acc</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Differential evolution omptimisation</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">differential_evolution</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">objectifP</span><span class="p">,</span>
+                                   <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span>
+                                   <span class="n">tol</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">)</span>
+
+<span class="c1"># Final characteristics after optimization </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Final characteristics after optimization :&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">SLSQP</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">SizingCode</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="s1">&#39;Obj&#39;</span><span class="p">)</span>
+    <span class="n">SizingCode</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s1">&#39;Prt&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">SizingCode</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;Obj&#39;</span><span class="p">)</span>
+    <span class="n">SizingCode</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;Prt&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------------------&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimization terminated successfully    (Exit mode 0)
+            Current function value: 1.56796162321685
+            Iterations: 7
+            Function evaluations: 64
+            Gradient evaluations: 7
+-----------------------------------------------
+Final characteristics after optimization :
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "04b4db61e6454c159568b80537f68cb3"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./laboratories/Lab-High_speed_multirotor"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="A1_Sizing_equations.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">8.12. </span>Appendix 1: Sizing equations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="A3_Example_PlotDrone.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">8.14. </span>Appendix 3: Drone plot</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">8.13.1. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">8.13.2. Objectives and specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-defintion-and-design-assumptions">8.13.3. Architecture defintion and design assumptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-parameters">8.13.4. Reference parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-problem">8.13.5. Optimization problem</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marc Budinger, Scott Delbecq, Félix Pollet, Aurélien Reysset
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

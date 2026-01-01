@@ -1,0 +1,950 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>8.4. Equations of sizing scenarios (INSA) &#8212; Sizing and optimization of mechatronic systems</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'laboratories/Lab-High_speed_multirotor/02b_SizingScenariosEquations-Student';</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.5. Propellers estimation models with dimensional analysis and linear regressions (student version)" href="03a_PropellerLinearRegression-Student.html" />
+    <link rel="prev" title="8.3. Sizing scenarios and design drivers (student version)" href="02a_SizingScenarios-Student.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../about/homepage.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Sizing and optimization of mechatronic systems - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Sizing and optimization of mechatronic systems - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about/context.html">Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/syllabus.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/installation.html">Installation guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture0/summary.html">1. Concept of Operations and architectures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture0/1-concept_of_operations.html">1.1. Concept of Operations</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture0/2-system_architectures.html">1.5. System architectures</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture0/3-architectures_sizing.html">1.8. Preliminary design of mechatronic system</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture1_new/summary.html">2. Components, technologies, design drivers and sizing scenarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1_new/1-scenarios_and_design_drivers.html">2.1. Scenarios and Design Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1_new/2-quiz_DesignDrivers.html">2.2. Quiz - Design drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1_new/3-quiz_SizingScenarios.html">2.3. Quiz - Sizing scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture1_new/4-technologies.html">2.4. Components and Technologies for Mechatronic Systems</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture2_new/summary.html">3. Estimation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/1-linear_regressions.html">3.1. Linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/2-quiz_regressions.html">3.2. Quiz - Linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/3-scaling_laws.html">3.3. Scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture2_new/4-quiz_scaling_laws.html">3.4. Quiz - Scaling Laws</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture3_new/summary.html">4. Simulation and evaluation models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/1-simulation_models.html">4.1. Simulation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/2-quiz_simulation_models.html">4.2. Quiz - Simulation models</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/3-evaluation_models.html">4.5. Evaluation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture3_new/4-quiz_evaluation_models.html">4.6. Quiz - Evaluation models</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../classes/Lecture4_new/summary.html">5. Optimal sizing procedures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4_new/1-design_and_optimization_problems.html">5.1. Representation of a Design Problem and Fundamentals of Optimal Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4_new/2-optimization_examples.html">5.2. Optimization with python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4_new/3-sizing_procedures.html">5.3. Development of a sizing procedure using design graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../classes/Lecture4_new/4-sizing_procedure_examples.html">5.4. Design graph and optimization with python</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">6. VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/0-Case_study.html">6.2. Thrust Vector Control (TVC) Systems: Overview, Functions, and Technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-estimation_models.html">6.3. Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/2-simulation_evaluation_models.html">6.4. Simulation and Evaluation models: endurance of the actuator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/3-SizingDesignExploration.html">6.5. Optimization of a motor/reducer set for a high dynamic application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/4-sizing_scenarios_variable_anchorage.html">6.6. Modeling mechanical load for different actuator anchorage positions</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/5-sizing_and_optimization.html">6.8. Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">6.9. Sizing procedure and optimization with OpenMDAO</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-package_delivery_UAV/summary.html">7. Package delivery UAV</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/1-conops.html">7.1. Package Delivery UAV Concept of Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/1-conops-student.html">7.2. Package Delivery UAV Concept of Operations (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/2-system_architectures-student.html">7.3. System architectures of the Package Delivery UAV (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/2-system_architectures.html">7.4. System Architecture Selection for a Package Delivery UAV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/3-sizing_scenarios.html">7.5. Sizing scenarios and design drivers</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/3-sizing_scenarios-student.html">7.7. Sizing scenarios and design drivers (student version)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/4-estimation_models-linear_regression.html">7.9. Estimation models with dimensional analysis and linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/4-estimation_models-linear_regression-student.html">7.10. Estimation models with dimensional analysis and linear regressions  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/4-estimation_models-scaling_laws.html">7.11. Estimation models with scaling laws</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/4-estimation_models-scaling_laws-student.html">7.12. Scaling laws of electrical components (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/5-simulation_models-student.html">7.13. Simulation models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6-sizing_models_introduction.html">7.14. Sizing models for multi-rotor definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6a-propeller_selection.html">7.15. Propeller selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6a-propeller_selection-student.html">7.16. Propeller selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6b-motor_selection.html">7.17. Motor selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6b-motor_selection-student.html">7.18. Motor selection  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6c-battery_esc_selection.html">7.19. Battery and ESC selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6c-battery_esc_selection-student.html">7.20. Battery and ESC selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6d-frame_selection.html">7.21. Frame selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/6d-frame_selection-student.html">7.22. Frame selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/7-system_sizing_code_optimization.html">7.23. Sizing of a multirotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/7-system_sizing_code_optimization-student.html">7.24. Sizing of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/8-design_exploration-student.html">7.25. Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-package_delivery_UAV/A1-sizing_equations.html">7.26. Appendix 1: Sizing equations</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">8. High speed drone design</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_CaseStudy.html">8.2. Case study and architecture presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02a_SizingScenarios-Student.html">8.3. Sizing scenarios and design drivers (student version)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.4. Equations of sizing scenarios (INSA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03a_PropellerLinearRegression-Student.html">8.5. Propellers estimation models with dimensional analysis and linear regressions  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03b_PropellerSelection-Student.html">8.6. Propeller selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04a_ScalingLawsElectricalComponents-Student.html">8.7. Scaling laws of electrical components (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04b_MotorSelection-Student.html">8.8. Motor selection  (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04c_BatteryESCSelection-Student.html">8.9. Battery and ESC selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05a_FrameSizing-Student.html">8.10. Frame selection (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_DesignExploration-Student.html">8.11. Design optimization and exploration of a multirotor drone (ISAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="A1_Sizing_equations.html">8.12. Appendix 1: Sizing equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="A2_SystemSizingCodeOptimization.html">8.13. Annex 2: Sizing of a multi-rotor drone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="A3_Example_PlotDrone.html">8.14. Appendix 3: Drone plot</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">9. Lab - Sustainable mobility - Mission profile &amp; Specification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/00_SustainableMobility.html">9.1. Sustainable mobilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01a_CaseStudy.html">9.2. Case study presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/01b_CaseStudy_Specification-Student.html">9.3. TP1 - Case study specification [Student Version]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/02b_Architecture_Hybrid-Student.html">9.4. TD1/2 - Hydrid storage architecture &amp; specification [Student version]</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary.html">10. Lab - Sustainable mobility - DC/DC converter sizing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/03_SizingScenarios-Student.html">10.1. TD3 - Equations of sizing scenarios [Student version]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/04_ScalingLaws-Student.html">10.2. IGBT estimation models with scaling laws [Student version]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression-Student.html">10.3. Heatsink  estimation models with simple and multiple linear regressions (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/05_HeatsinkLinearRegression.html">10.4. Heatsink  estimation models with simple and multiple linear regressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/06_SizingCodeInductor.html">10.5. Sizing code of an inductor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate-Student.html">10.6. Sizing code of an inductor with surrogate models (Student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/07_SizingCodeInductor-Surrogate.html">10.7. Sizing code of an inductor with surrogate models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/08_DCDC_converter_sizing_introduction.html">10.8. Design graphs for the sizing a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/09_SizingCodeDCDCconverter.html">10.9. Sizing code of a DC/DC converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor-Student.html">10.10. Life Cycle Assessment of an inductor (student version)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-watt_project/10_LCA_Inductor.html">10.11. Life Cycle Assessment of an inductor</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/SizingLab/sizing_course/main?urlpath=lab/tree/laboratories/Lab-High_speed_multirotor/02b_SizingScenariosEquations-Student.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/SizingLab/sizing_course/blob/main/laboratories/Lab-High_speed_multirotor/02b_SizingScenariosEquations-Student.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/edit/main/laboratories/Lab-High_speed_multirotor/02b_SizingScenariosEquations-Student.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SizingLab/sizing_course/issues/new?title=Issue%20on%20page%20%2Flaboratories/Lab-High_speed_multirotor/02b_SizingScenariosEquations-Student.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/laboratories/Lab-High_speed_multirotor/02b_SizingScenariosEquations-Student.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Equations of sizing scenarios (INSA)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propellers-fundamental-equations">8.4.1. Propellers fundamental equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hover-flight-scenario">8.4.2. Hover flight scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-scenarios">8.4.3. Other scenarios</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="equations-of-sizing-scenarios-insa">
+<h1><span class="section-number">8.4. </span>Equations of sizing scenarios (INSA)<a class="headerlink" href="#equations-of-sizing-scenarios-insa" title="Link to this heading">#</a></h1>
+<p><em>Written by Marc Budinger, INSA Toulouse, France</em></p>
+<p>The purpose of this notebook is to illustrate on an existing drone example the main equations to be taken into account during the sizing. The selected drone is the <a class="reference external" href="http://wiki.mikrokopter.de/MK-Quadro">MK-Quadro</a> drone of Mikrokopter. The technical informations about the MK-quadro drone can be found in <a class="reference internal" href="#A1_QuadroDescription.ipynb"><span class="xref myst">Annex 1</span></a> or on the website of <a class="reference external" href="http://wiki.mikrokopter.de/en/FlightTime">MikroKopter</a> company.</p>
+<p><em>MK-Quadro from MikroKopter company</em><br />
+<img alt="Quadro" src="../../_images/MikroQuadro.JPG" /></p>
+<section id="propellers-fundamental-equations">
+<h2><span class="section-number">8.4.1. </span>Propellers fundamental equations<a class="headerlink" href="#propellers-fundamental-equations" title="Link to this heading">#</a></h2>
+<p>Propellers can be described in an ideal manner by the <a class="reference external" href="https://fenix.tecnico.ulisboa.pt/downloadFile/282093452028191/3-Momentum%20Theory%20in%20hover.pdf">disk momentum theory</a>. The <a class="reference internal" href="#%5Bhttps://web.mit.edu/16.unified/www/FALL/thermodynamics/notes/node86.html#SECTION06374000000000000000%5D"><span class="xref myst">dimensional analysis</span></a> theory enables to describe with more details the propeller performances thanks to  aerodynamic coefficients:</p>
+<ul class="simple">
+<li><p>The thrust: <span class="math notranslate nohighlight">\(T = C_{T,h} \rho \Omega^2 A R^2=C_{T,p} \rho n^2 D^4\)</span>  which gives <span class="math notranslate nohighlight">\( = k_{TD} \Omega^2\)</span> for a given propeller and a given diameter</p></li>
+<li><p>The power: <span class="math notranslate nohighlight">\(P = C_{P,h} \rho \Omega^3 A R^3=C_{P,p} \rho n^3 D^5 \)</span> which gives the power <span class="math notranslate nohighlight">\(P=k_{PD}\Omega^3\)</span> or the torque <span class="math notranslate nohighlight">\(M = k_{PD} \Omega^2\)</span> for a given propeller and a given diameter</p></li>
+</ul>
+<p><strong>Remark:</strong> Be carefull, litterature shows 2 notations :</p>
+<ul class="simple">
+<li><p>the propeller notation with n the propeller speed in [rev/s], D the diameter in [m], <span class="math notranslate nohighlight">\(\rho\)</span>  the air density in [<span class="math notranslate nohighlight">\(kg/m^3\)</span>]</p></li>
+<li><p>the helicopter notation with <span class="math notranslate nohighlight">\(\Omega\)</span> the propeller speed in [rad/s], R the radius in [m], <span class="math notranslate nohighlight">\(A\)</span> the disk area in [<span class="math notranslate nohighlight">\(m^2\)</span>], <span class="math notranslate nohighlight">\(\rho\)</span>  the air density in [<span class="math notranslate nohighlight">\(kg/m^3\)</span>]</p></li>
+</ul>
+<blockquote>
+<div><p>Exercice: compare the caracteristics of the following <a class="reference external" href="https://www.apcprop.com/files/PER3_10x45MR.dat">APC propellers</a> to those of the MikroKopter MK-Quadro (<a class="reference external" href="https://gwsus.com/english/dealer/dealer_gwsusa.htm">GWS</a>).</p>
+</div></blockquote>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Characteristics</p></th>
+<th class="head"><p>APC Propeller</p></th>
+<th class="head"><p>GWS Propeller</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Diameter [inch]</p></td>
+<td><p>10</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pitch [inch]</p></td>
+<td><p>4.5</p></td>
+<td><p>4.5</p></td>
+</tr>
+<tr class="row-even"><td><p>Thrust coef <span class="math notranslate nohighlight">\(C_t\)</span> [-]</p></td>
+<td><p>0.1125</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Power coef <span class="math notranslate nohighlight">\(C_p\)</span> [-]</p></td>
+<td><p>0.0441</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Thrust coef <span class="math notranslate nohighlight">\(k_{TD}\)</span> [<span class="math notranslate nohighlight">\(\frac{N}{(rad/s)^2}\)</span>]</p></td>
+<td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(1.799.10^{-5}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Torque coefficient <span class="math notranslate nohighlight">\(k_{PD}\)</span> [<span class="math notranslate nohighlight">\(\frac{N}{(rad/s)^2}\)</span>]</p></td>
+<td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(3.054.10^{-7}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>with: <span class="math notranslate nohighlight">\(1\)</span> <span class="math notranslate nohighlight">\(inch = 0.0254\)</span> <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(\rho=1.18\)</span> <span class="math notranslate nohighlight">\(kg/m^3\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="mf">0.0254</span> <span class="c1"># [m] Propeller diameter</span>
+<span class="n">rho</span><span class="o">=</span><span class="mf">1.18</span> <span class="c1"># [kg/m^3] Air mass volumic (25°C)</span>
+
+<span class="c1"># APC coefficients </span>
+<span class="c1"># Ct=T/(rho * n**2 * D**4) (thrust coef.)                                                              </span>
+<span class="n">Ct</span><span class="o">=</span><span class="mf">0.1125</span> <span class="c1"># [-] Thrust coefficient, propeller notation</span>
+<span class="c1"># Cp=P/(rho * n**3 * D**5) (power coef.)    </span>
+<span class="n">Cp</span><span class="o">=</span><span class="mf">0.0441</span> <span class="c1"># [-] Power coefficient, propeller notation</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="hover-flight-scenario">
+<h2><span class="section-number">8.4.2. </span>Hover flight scenario<a class="headerlink" href="#hover-flight-scenario" title="Link to this heading">#</a></h2>
+<p>The flight conditions in static hover are no forward speed, no vertical speed. This scenario influences in a very important way the autonomy of the vehicle. The thrust generated by propellers have to compensate the global weight of the drone and the load.</p>
+<p><em>Hover flight (V=0)</em><br />
+<img alt="Disk momentum" src="laboratories/Lab-High_speed_multirotor/pictures/disk_momentum_hover.jpg" /></p>
+<blockquote>
+<div><p>Questions: with the given technical informations, calculate the requested thrust for each propeller for a no load hover flight.</p>
+</div></blockquote>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Characteristics</p></th>
+<th class="head"><p>MK-MikroKopter drone</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Total mass ready to take off</p></td>
+<td><p>1350 g</p></td>
+</tr>
+<tr class="row-odd"><td><p>Number of propellers</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="c1"># Hover scenario</span>
+<span class="c1"># ------------ </span>
+<span class="n">Mass_total</span><span class="o">=</span><span class="mf">1.35</span> <span class="c1"># [kg] mass of the drone </span>
+
+<span class="n">N_prop</span><span class="o">=</span><span class="mi">4</span> <span class="c1"># [-] propeller number</span>
+<span class="n">d_prop</span><span class="o">=</span><span class="mf">2.54e-2</span><span class="o">*</span><span class="mi">10</span> <span class="c1"># [m] propeller diameter</span>
+
+<span class="c1"># to be completed</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Questions: with the technical informations of GWS propellers calculate the propeller torque, speed and the mechanical power.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Propeller characteristics</span>
+<span class="c1"># -----------------------------</span>
+
+<span class="n">Kw</span> <span class="o">=</span><span class="mf">1.799e-5</span> <span class="c1"># [N/(rad/s)^2] thrust coef</span>
+<span class="n">Mw</span> <span class="o">=</span> <span class="mf">3.054e-7</span> <span class="c1"># [N.m/(rad/s)^3] torque coef</span>
+
+<span class="c1"># to be compared to the ones calculated with regression</span>
+<span class="c1"># GWS 10*4.5</span>
+
+<span class="n">d_prop</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="mf">.0254</span> <span class="c1">#[m] diameter</span>
+
+<span class="c1"># Torque and RPM of motors</span>
+<span class="c1"># -----------------------</span>
+
+<span class="c1"># to be completed</span>
+<span class="c1">#</span>
+
+<span class="c1">#print(&quot;----------------&quot;)</span>
+<span class="c1">#print(&quot;Propeller speed: %.2f rad/s or %.0f RPM&quot;%(W,W/2/3.14*60))</span>
+<span class="c1">#print(&quot;Propeller torque: %.2f N.m &quot;%(M))</span>
+<span class="c1">#print(&quot;Propeller power: %.2f W &quot;%(M*W))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Questions: with the following technical informations calculate the motor voltage and current, the autonomy of the drone if we assume an efficiency of 95% for electronic speed controllers (ESC) and a depth of discharge of 80% for the battery.</p>
+</div></blockquote>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Characteristic</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Motor</p></td>
+<td><p>Poles pair number</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>Load current</p></td>
+<td><p>6‐9A (DC)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Max current</p></td>
+<td><p>10A (DC)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Speed constant Kv</p></td>
+<td><p>760 tr/min/V</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Mechanical power</p></td>
+<td><p>110 W</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Dimensions</p></td>
+<td><p>28.8 x 29 mm</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Max efficiency</p></td>
+<td><p>76 %</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>mass</p></td>
+<td><p>65 g</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Resistance</p></td>
+<td><p>R = 0.26 ohm</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Inertia</p></td>
+<td><p>J= 2.5e-5 kg.m²</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Battery</p></td>
+<td><p>Voltage</p></td>
+<td><p>LIPO 4S (4*3.7V)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Capacity</p></td>
+<td><p>3300mAh</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>mass</p></td>
+<td><p>329g</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Voltage / current calculation</span>
+<span class="c1"># -----------------------------</span>
+
+<span class="n">K_mot</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">760</span><span class="p">)</span><span class="o">*</span><span class="mi">60</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="mf">3.14</span> <span class="c1"># [V/(rad/s)] Motor torque coef </span>
+<span class="n">R_mot</span> <span class="o">=</span> <span class="mf">0.26</span> <span class="c1"># [Ohm] Motor resistance</span>
+
+<span class="c1"># Voltage / current calculation</span>
+
+<span class="c1"># to be completed</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Motor current: </span><span class="si">%.2f</span><span class="s2"> A &quot;</span><span class="o">%</span><span class="k">I</span>)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Motor voltage: </span><span class="si">%.2f</span><span class="s2"> V &quot;</span><span class="o">%</span><span class="k">U</span>)
+
+<span class="c1"># Autonomy of the battery</span>
+
+<span class="c1"># to be completed</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Battery current: </span><span class="si">%.2f</span><span class="s2"> A &quot;</span> <span class="o">%</span> <span class="n">I_bat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Battery voltage: </span><span class="si">%.2f</span><span class="s2"> V &quot;</span> <span class="o">%</span> <span class="n">V_bat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Autonomy of the battery : </span><span class="si">%.1f</span><span class="s2"> min&quot;</span> <span class="o">%</span> <span class="n">Aut_bat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">12</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Voltage / current calculation</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># to be completed</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------&quot;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Motor current: </span><span class="si">%.2f</span><span class="s2"> A &quot;</span><span class="o">%</span><span class="k">I</span>)
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Motor voltage: </span><span class="si">%.2f</span><span class="s2"> V &quot;</span><span class="o">%</span><span class="k">U</span>)
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># Autonomy of the battery</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="c1"># to be completed</span>
+
+<span class="ne">NameError</span>: name &#39;I&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="other-scenarios">
+<h2><span class="section-number">8.4.3. </span>Other scenarios<a class="headerlink" href="#other-scenarios" title="Link to this heading">#</a></h2>
+<p>Adapt these equations to other usage scenarios (takeoff with acceleration, vertical flight at high speed, etc.) that are useful for your study configuration.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./laboratories/Lab-High_speed_multirotor"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02a_SizingScenarios-Student.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">8.3. </span>Sizing scenarios and design drivers (student version)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="03a_PropellerLinearRegression-Student.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">8.5. </span>Propellers estimation models with dimensional analysis and linear regressions  (student version)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propellers-fundamental-equations">8.4.1. Propellers fundamental equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hover-flight-scenario">8.4.2. Hover flight scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-scenarios">8.4.3. Other scenarios</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marc Budinger, Scott Delbecq, Félix Pollet, Aurélien Reysset
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
