@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.12. Sizing procedure and optimization &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>7.2. Sizing procedure and optimization &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -67,8 +67,8 @@
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7.13. Sizing procedure and optimization with OpenMDAO (Student version)" href="6-sizing_and_optimization_with_mdao_using_om-student.html" />
-    <link rel="prev" title="7.11. Sizing procedure and optimization (Student version)" href="5-sizing_and_optimization-student.html" />
+    <link rel="next" title="7.3. Sizing procedure and optimization with OpenMDAO" href="6-sizing_and_optimization_with_mdao_using_om.html" />
+    <link rel="prev" title="7. Lab - VEGA Launcher TVC EMA case study" href="summary.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -247,20 +247,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">7. VEGA Launcher TVC EMA</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1-sizing_scenarios-student.html">7.1. Modeling of the mechanical load (student version)</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="1-sizing_scenarios.html">7.3. Modeling of the mechanical load</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="2-estimation_models-student.html">7.5. Estimation models with scaling laws and linear regression (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2-estimation_models.html">7.6. Estimation models with scaling laws and linear regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3-simulation_models-student.html">7.7. Simulation models with Python (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3-simulation_models.html">7.8. Simulation models with Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4-evaluation_models-student.html">7.9. Evaluation models: endurance of the actuator (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4-evaluation_models.html">7.10. Evaluation models: endurance of the actuator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization-student.html">7.11. Sizing procedure and optimization (Student version)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.12. Sizing procedure and optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om-student.html">7.13. Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om.html">7.14. Sizing procedure and optimization with OpenMDAO</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.2. Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om.html">7.3. Sizing procedure and optimization with OpenMDAO</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">8. Lab - Sustainable mobility - Mission profile &amp; Specification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -537,10 +525,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">7.12.1. Objectives and specifications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">7.12.2. Sizing code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">7.12.3. Optimization with SLSQP algorithm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-differential-evolution-algorithm">7.12.4. Optimization with differential evolution algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">7.2.1. Objectives and specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">7.2.2. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">7.2.3. Optimization with SLSQP algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-differential-evolution-algorithm">7.2.4. Optimization with differential evolution algorithm</a></li>
 </ul>
             </nav>
         </div>
@@ -553,7 +541,7 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sizing-procedure-and-optimization">
-<h1><span class="section-number">7.12. </span>Sizing procedure and optimization<a class="headerlink" href="#sizing-procedure-and-optimization" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7.2. </span>Sizing procedure and optimization<a class="headerlink" href="#sizing-procedure-and-optimization" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse) and Scott Delbecq (ISAE-SUPAERO), Toulouse, France</em></p>
 <p>The objective of this notebook is to learn how to implement a sizing code and use a simple numerical optimization to find the optimal design of the system. The system studied is the TVC EMA of the VEGA launcher.</p>
 <div class="cell docutils container">
@@ -580,7 +568,7 @@
 </div>
 </div>
 <section id="objectives-and-specifications">
-<h2><span class="section-number">7.12.1. </span>Objectives and specifications<a class="headerlink" href="#objectives-and-specifications" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2.1. </span>Objectives and specifications<a class="headerlink" href="#objectives-and-specifications" title="Link to this heading">#</a></h2>
 <p>The objective is to select the reduction ratio of a gear reducer in order to minimize the mass of the motor.</p>
 <p>The application have to ensure at nozzle level :</p>
 <ul class="simple">
@@ -655,7 +643,7 @@ We assume here, for simplification, the efficiency equal to 70%.</p>
 </div>
 </section>
 <section id="sizing-code">
-<h2><span class="section-number">7.12.2. </span>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2.2. </span>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h2>
 <p>The sizing code is defined here in a function which can give an evaluation of the objective and of the constraints function of design variables.</p>
 <p>The <strong>design variables</strong> of this sizing code are :</p>
 <ul class="simple">
@@ -782,6 +770,7 @@ We assume here, for simplification, the efficiency equal to 70%.</p>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Actuator length = </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">actuator_length</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Motor mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="n">M_mot</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Max Tem = </span><span class="si">%.2f</span><span class="s2"> N.m&quot;</span> <span class="o">%</span> <span class="n">T_mot_real</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Motor inertia = </span><span class="si">%.2e</span><span class="s2"> kg.m²&quot;</span> <span class="o">%</span> <span class="n">J_mot</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Rod-end mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">M_rod</span><span class="p">))</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Rod-end length = </span><span class="si">%.2f</span><span class="s2"> m&quot;</span> <span class="o">%</span> <span class="n">L_rod</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Screw mass = </span><span class="si">%.2f</span><span class="s2"> kg&quot;</span> <span class="o">%</span> <span class="n">M_screw</span><span class="p">)</span>
@@ -804,7 +793,7 @@ We assume here, for simplification, the efficiency equal to 70%.</p>
 </div>
 </section>
 <section id="optimization-with-slsqp-algorithm">
-<h2><span class="section-number">7.12.3. </span>Optimization with SLSQP algorithm<a class="headerlink" href="#optimization-with-slsqp-algorithm" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2.3. </span>Optimization with SLSQP algorithm<a class="headerlink" href="#optimization-with-slsqp-algorithm" title="Link to this heading">#</a></h2>
 <p>We will now use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html">opmization algorithms</a> of the Scipy package to solve and optimize the configuration. We will first use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.minimize-slsqp.html">SLSQP</a> algorithm without explicit expression of the gradient (Jacobian).</p>
 <p>The first step is to give an initial value of optimisation variables:</p>
 <div class="cell docutils container">
@@ -981,7 +970,7 @@ Initial characteristics before optimization :
 </div>
 </section>
 <section id="optimization-with-differential-evolution-algorithm">
-<h2><span class="section-number">7.12.4. </span>Optimization with differential evolution algorithm<a class="headerlink" href="#optimization-with-differential-evolution-algorithm" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2.4. </span>Optimization with differential evolution algorithm<a class="headerlink" href="#optimization-with-differential-evolution-algorithm" title="Link to this heading">#</a></h2>
 <p>We will now use a <a class="reference external" href="https://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.differential_evolution.html">differential evolution</a> algorithm. Differential Evolution is stochastic in nature (does not use gradient methods) to find the minimium, and can search large areas of candidate space, but often requires larger numbers of function evaluations than conventional gradient based techniques. Differential evolution algorithms don’t manage directly constraints functions. A penalty method replaces the previous objective function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1125,20 +1114,20 @@ Initial characteristics before optimization :
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="5-sizing_and_optimization-student.html"
+       href="summary.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7.11. </span>Sizing procedure and optimization (Student version)</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Lab - VEGA Launcher TVC EMA case study</p>
       </div>
     </a>
     <a class="right-next"
-       href="6-sizing_and_optimization_with_mdao_using_om-student.html"
+       href="6-sizing_and_optimization_with_mdao_using_om.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7.13. </span>Sizing procedure and optimization with OpenMDAO (Student version)</p>
+        <p class="prev-next-title"><span class="section-number">7.3. </span>Sizing procedure and optimization with OpenMDAO</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1159,10 +1148,10 @@ Initial characteristics before optimization :
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">7.12.1. Objectives and specifications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">7.12.2. Sizing code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">7.12.3. Optimization with SLSQP algorithm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-differential-evolution-algorithm">7.12.4. Optimization with differential evolution algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">7.2.1. Objectives and specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">7.2.2. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">7.2.3. Optimization with SLSQP algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-differential-evolution-algorithm">7.2.4. Optimization with differential evolution algorithm</a></li>
 </ul>
   </nav></div>
 

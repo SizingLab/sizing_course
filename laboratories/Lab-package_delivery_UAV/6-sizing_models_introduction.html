@@ -247,20 +247,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-vega/summary.html">7. VEGA Launcher TVC EMA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios-student.html">7.1. Modeling of the mechanical load (student version)</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/1-sizing_scenarios.html">7.3. Modeling of the mechanical load</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/2-estimation_models-student.html">7.5. Estimation models with scaling laws and linear regression (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/2-estimation_models.html">7.6. Estimation models with scaling laws and linear regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/3-simulation_models-student.html">7.7. Simulation models with Python (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/3-simulation_models.html">7.8. Simulation models with Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/4-evaluation_models-student.html">7.9. Evaluation models: endurance of the actuator (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/4-evaluation_models.html">7.10. Evaluation models: endurance of the actuator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/5-sizing_and_optimization-student.html">7.11. Sizing procedure and optimization (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/5-sizing_and_optimization.html">7.12. Sizing procedure and optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student.html">7.13. Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">7.14. Sizing procedure and optimization with OpenMDAO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/5-sizing_and_optimization.html">7.2. Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lab-vega/6-sizing_and_optimization_with_mdao_using_om.html">7.3. Sizing procedure and optimization with OpenMDAO</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">8. Lab - Sustainable mobility - Mission profile &amp; Specification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -588,8 +576,8 @@
 </figcaption>
 </figure>
 <p>It consists in addition an oversizing coefficent <span class="math notranslate nohighlight">\(k_{os} \quad [1-10]\)</span> as a design variable and additional inequality constraint <span class="math notranslate nohighlight">\(M_{total} \geq M_{total,real}\)</span>. This way, we make sure that the drone is capable of lifting the load and itself. As we are minimizing the total mass <span class="math notranslate nohighlight">\(M_{total,real}\)</span> the oversizing coefficient <span class="math notranslate nohighlight">\(k_{os}\)</span> will tend to be as small as possible and thus the inequality constraint will be equivalent to an equality constraint (<span class="math notranslate nohighlight">\(M_{total} = M_{total,real}\)</span>). This is one way of solving an algebraic loop, other methods use numerical solvers or other optimizer-based formulations. The formulation of the optimization problem is the following:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9ab690c5-5452-4ba1-ab7f-75fc04dfe60c">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-9ab690c5-5452-4ba1-ab7f-75fc04dfe60c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e4f20cb7-7774-464a-a40e-760e49321b3a">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-e4f20cb7-7774-464a-a40e-760e49321b3a" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \begin{aligned}
         &amp; \text{minimize}
         &amp; &amp; M_{total,real} \\

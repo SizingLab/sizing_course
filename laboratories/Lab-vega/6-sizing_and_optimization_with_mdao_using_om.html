@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.14. Sizing procedure and optimization with OpenMDAO &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>7.3. Sizing procedure and optimization with OpenMDAO &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -68,7 +68,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="8. Lab - Sustainable Mobility - Storage Systems &amp; DC/DC converter sizing" href="../Lab-watt_project/summary-short.html" />
-    <link rel="prev" title="7.13. Sizing procedure and optimization with OpenMDAO (Student version)" href="6-sizing_and_optimization_with_mdao_using_om-student.html" />
+    <link rel="prev" title="7.2. Sizing procedure and optimization" href="5-sizing_and_optimization.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -247,20 +247,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">7. VEGA Launcher TVC EMA</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1-sizing_scenarios-student.html">7.1. Modeling of the mechanical load (student version)</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="1-sizing_scenarios.html">7.3. Modeling of the mechanical load</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="2-estimation_models-student.html">7.5. Estimation models with scaling laws and linear regression (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2-estimation_models.html">7.6. Estimation models with scaling laws and linear regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3-simulation_models-student.html">7.7. Simulation models with Python (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3-simulation_models.html">7.8. Simulation models with Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4-evaluation_models-student.html">7.9. Evaluation models: endurance of the actuator (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4-evaluation_models.html">7.10. Evaluation models: endurance of the actuator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization-student.html">7.11. Sizing procedure and optimization (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization.html">7.12. Sizing procedure and optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om-student.html">7.13. Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.14. Sizing procedure and optimization with OpenMDAO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization.html">7.2. Sizing procedure and optimization</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.3. Sizing procedure and optimization with OpenMDAO</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">8. Lab - Sustainable mobility - Mission profile &amp; Specification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -537,11 +525,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">7.14.1. Objectives and specifications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">7.14.2. Sizing code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">7.14.3. Optimization with SLSQP algorithm</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mdf-formulation">7.14.3.1. MDF formulation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nvh-formulation">7.14.3.2. NVH formulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">7.3.1. Objectives and specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">7.3.2. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">7.3.3. Optimization with SLSQP algorithm</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mdf-formulation">7.3.3.1. MDF formulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nvh-formulation">7.3.3.2. NVH formulation</a></li>
 </ul>
 </li>
 </ul>
@@ -556,7 +544,7 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sizing-procedure-and-optimization-with-openmdao">
-<h1><span class="section-number">7.14. </span>Sizing procedure and optimization with OpenMDAO<a class="headerlink" href="#sizing-procedure-and-optimization-with-openmdao" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7.3. </span>Sizing procedure and optimization with OpenMDAO<a class="headerlink" href="#sizing-procedure-and-optimization-with-openmdao" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse) and Scott Delbecq (ISAE-SUPAERO), Toulouse, France</em></p>
 <p>The objective of this notebook is to learn how to implement a sizing code and use a simple numerical optimization to find the optimal design of the system. The system studied is the TVC EMA of the VEGA launcher.</p>
 <div class="cell docutils container">
@@ -583,7 +571,7 @@
 </div>
 </div>
 <section id="objectives-and-specifications">
-<h2><span class="section-number">7.14.1. </span>Objectives and specifications<a class="headerlink" href="#objectives-and-specifications" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3.1. </span>Objectives and specifications<a class="headerlink" href="#objectives-and-specifications" title="Link to this heading">#</a></h2>
 <p>The objective is to select the reduction ratio of a gear reducer in order to minimize the mass of the motor.</p>
 <p>The application have to ensure at nozzle level :</p>
 <ul class="simple">
@@ -658,7 +646,7 @@ We assume here, for simplification, the efficiency equal to 70%.</p>
 </div>
 </section>
 <section id="sizing-code">
-<h2><span class="section-number">7.14.2. </span>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3.2. </span>Sizing code<a class="headerlink" href="#sizing-code" title="Link to this heading">#</a></h2>
 <p>The sizing code is defined here in a function which can give an evaluation of the objective and of the constraints function of design variables.</p>
 <p>The <strong>design variables</strong> of this sizing code are :</p>
 <ul class="simple">
@@ -965,7 +953,7 @@ We assume here, for simplification, the efficiency equal to 70%.</p>
 </div>
 </section>
 <section id="optimization-with-slsqp-algorithm">
-<h2><span class="section-number">7.14.3. </span>Optimization with SLSQP algorithm<a class="headerlink" href="#optimization-with-slsqp-algorithm" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3.3. </span>Optimization with SLSQP algorithm<a class="headerlink" href="#optimization-with-slsqp-algorithm" title="Link to this heading">#</a></h2>
 <p>We will now use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html">opmization algorithms</a> of the Scipy package to solve and optimize the configuration. We will first use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.minimize-slsqp.html">SLSQP</a> algorithm without explicit expression of the gradient (Jacobian).</p>
 <p>The first step is to give an initial value of optimisation variables:</p>
 <div class="cell docutils container">
@@ -997,7 +985,7 @@ We assume here, for simplification, the efficiency equal to 70%.</p>
 </div>
 </div>
 <section id="mdf-formulation">
-<h3><span class="section-number">7.14.3.1. </span>MDF formulation<a class="headerlink" href="#mdf-formulation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.3.3.1. </span>MDF formulation<a class="headerlink" href="#mdf-formulation" title="Link to this heading">#</a></h3>
 <p><img alt="MDF" src="../../_images/mdf.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1325,7 +1313,7 @@ We assume here, for simplification, the efficiency equal to 70%.</p>
 </div>
 </section>
 <section id="nvh-formulation">
-<h3><span class="section-number">7.14.3.2. </span>NVH formulation<a class="headerlink" href="#nvh-formulation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.3.3.2. </span>NVH formulation<a class="headerlink" href="#nvh-formulation" title="Link to this heading">#</a></h3>
 <p><img alt="MDF" src="../../_images/mdf.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1688,12 +1676,12 @@ We assume here, for simplification, the efficiency equal to 70%.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="6-sizing_and_optimization_with_mdao_using_om-student.html"
+       href="5-sizing_and_optimization.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7.13. </span>Sizing procedure and optimization with OpenMDAO (Student version)</p>
+        <p class="prev-next-title"><span class="section-number">7.2. </span>Sizing procedure and optimization</p>
       </div>
     </a>
     <a class="right-next"
@@ -1722,11 +1710,11 @@ We assume here, for simplification, the efficiency equal to 70%.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">7.14.1. Objectives and specifications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">7.14.2. Sizing code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">7.14.3. Optimization with SLSQP algorithm</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mdf-formulation">7.14.3.1. MDF formulation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nvh-formulation">7.14.3.2. NVH formulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-and-specifications">7.3.1. Objectives and specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-code">7.3.2. Sizing code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-slsqp-algorithm">7.3.3. Optimization with SLSQP algorithm</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mdf-formulation">7.3.3.1. MDF formulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nvh-formulation">7.3.3.2. NVH formulation</a></li>
 </ul>
 </li>
 </ul>

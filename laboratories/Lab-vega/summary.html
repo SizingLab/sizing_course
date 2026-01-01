@@ -67,7 +67,7 @@
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7.1. Modeling of the mechanical load (student version)" href="1-sizing_scenarios-student.html" />
+    <link rel="next" title="7.2. Sizing procedure and optimization" href="5-sizing_and_optimization.html" />
     <link rel="prev" title="6.26. Appendix 1: Sizing equations" href="../Lab-package_delivery_UAV/A1-sizing_equations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -247,20 +247,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">7. VEGA Launcher TVC EMA</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="1-sizing_scenarios-student.html">7.1. Modeling of the mechanical load (student version)</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="1-sizing_scenarios.html">7.3. Modeling of the mechanical load</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="2-estimation_models-student.html">7.5. Estimation models with scaling laws and linear regression (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2-estimation_models.html">7.6. Estimation models with scaling laws and linear regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3-simulation_models-student.html">7.7. Simulation models with Python (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3-simulation_models.html">7.8. Simulation models with Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4-evaluation_models-student.html">7.9. Evaluation models: endurance of the actuator (student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4-evaluation_models.html">7.10. Evaluation models: endurance of the actuator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization-student.html">7.11. Sizing procedure and optimization (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization.html">7.12. Sizing procedure and optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om-student.html">7.13. Sizing procedure and optimization with OpenMDAO (Student version)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om.html">7.14. Sizing procedure and optimization with OpenMDAO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization.html">7.2. Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om.html">7.3. Sizing procedure and optimization with OpenMDAO</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-watt_project/summary-short.html">8. Lab - Sustainable mobility - Mission profile &amp; Specification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -465,7 +453,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -481,6 +471,14 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">7.1. Schedule</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -492,10 +490,33 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lab-vega-launcher-tvc-ema-case-study">
 <span id="page-lab-vega"></span><h1><span class="section-number">7. </span>Lab - VEGA Launcher TVC EMA case study<a class="headerlink" href="#lab-vega-launcher-tvc-ema-case-study" title="Link to this heading">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This course is under construction…</p>
-</div>
+<p>This laboratory will seek to illustrate approaches for selecting the main components of an <strong>Electromechanical Actuator (EMA)</strong>:</p>
+<ul class="simple">
+<li><p><strong>Electric Motor:</strong> Converts electrical energy into mechanical motion.</p></li>
+<li><p><strong>Gearbox:</strong> Amplifies torque to deflect the engine or nozzle.</p></li>
+<li><p><strong>Power and force transmission</strong>: Converts torque into linear motion</p></li>
+</ul>
+<p>The aspect:</p>
+<ul class="simple">
+<li><p><strong>Control Electronics:</strong> Manages actuator positioning and feedback loops for precision.</p></li>
+</ul>
+<p>will not be covered here but will be illustrated in other case studies in this course.</p>
+<p>The rest of this case study consists of two distinct parts:</p>
+<p>The <strong>first part</strong> aims to provide a concise and simplified overview of the main concepts and models useful for preliminary design:</p>
+<ul class="simple">
+<li><p>estimation models and scaling laws</p></li>
+<li><p>simulation and evaluation models</p></li>
+<li><p>implementation of an optimal sizing code
+The approaches will be illustrated using Excel or Python implementations.</p></li>
+</ul>
+<p>The <strong>second part</strong> revisits these concepts with a more refined mechanical model that allows greater design freedom in terms of actuator positioning.</p>
+<section id="schedule">
+<h2><span class="section-number">7.1. </span>Schedule<a class="headerlink" href="#schedule" title="Link to this heading">#</a></h2>
+<p>INSA Toulouse:</p>
+<ul class="simple">
+<li><p>See ADE (Marc Budinger)</p></li>
+</ul>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -540,11 +561,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="1-sizing_scenarios-student.html"
+       href="5-sizing_and_optimization.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7.1. </span>Modeling of the mechanical load (student version)</p>
+        <p class="prev-next-title"><span class="section-number">7.2. </span>Sizing procedure and optimization</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -554,6 +575,22 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">7.1. Schedule</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
