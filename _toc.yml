@@ -75,6 +75,17 @@ parts:
   numbered: true
   maxdepth: 2
   chapters:
+  - file: laboratories/Lab-vega/summary
+    title: VEGA Launcher TVC EMA
+    sections:
+      - file: laboratories/Lab-vega/0-Case_study
+      - file: laboratories/Lab-vega/1-estimation_models
+      - file: laboratories/Lab-vega/2-simulation_evaluation_models
+      - file: laboratories/Lab-vega/3-SizingDesignExploration
+      - file: laboratories/Lab-vega/4-sizing_scenarios_variable_anchorage
+      - file: laboratories/Lab-vega/5-sizing_and_optimization
+      - file: laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om
+  
   - file: laboratories/Lab-package_delivery_UAV/summary
     title: Package delivery UAV
     sections:
@@ -103,6 +114,23 @@ parts:
       - file: laboratories/Lab-package_delivery_UAV/8-design_exploration-student
       - file: laboratories/Lab-package_delivery_UAV/A1-sizing_equations
 
+    - file: laboratories/Lab-High_speed_multirotor/summary
+    title: High speed drone design
+    sections:
+      - file: laboratories/Lab-High_speed_multirotor/01_CaseStudy
+      - file: laboratories/Lab-High_speed_multirotor/02a_SizingScenarios-Student
+      - file: laboratories/Lab-High_speed_multirotor/02b_SizingScenariosEquations-Student
+      - file: laboratories/Lab-High_speed_multirotor/03a_PropellerLinearRegression-Student
+      - file: laboratories/Lab-High_speed_multirotor/03b_PropellerSelection-Student
+      - file: laboratories/Lab-High_speed_multirotor/04a_ScalingLawsElectricalComponents-Student  
+      - file: laboratories/Lab-High_speed_multirotor/04b_MotorSelection-Student
+      - file: laboratories/Lab-High_speed_multirotor/04c_BatteryESCSelection-Student
+      - file: laboratories/Lab-High_speed_multirotor/05a_FrameSizing-Student
+      - file: laboratories/Lab-High_speed_multirotor/05d_FrameSelection-Student
+      - file: laboratories/Lab-High_speed_multirotor/06_DesignExploration-Student
+      - file: laboratories/Lab-High_speed_multirotor/A1_Sizing_equations
+      - file: laboratories/Lab-High_speed_multirotor/A2_SystemSizingCodeOptimization
+      - file: laboratories/Lab-High_speed_multirotor/A3_Example_PlotDrone   
   # - file: laboratories/Lab-multirotor/summary
   #   title: Multirotor UAV
   #   sections:
@@ -128,21 +156,7 @@ parts:
   #     - file: laboratories/Lab-multirotor/07_DesignExploration-Student
   #     - file: laboratories/Lab-multirotor/08_SystemSizingCodeOptimization
   #     - file: laboratories/Lab-multirotor/A1_Sizing_equations
-  - file: laboratories/Lab-vega/summary
-    title: VEGA Launcher TVC EMA
-    sections:
-      - file: laboratories/Lab-vega/1-sizing_scenarios-student
-      - file: laboratories/Lab-vega/1-sizing_scenarios
-      - file: laboratories/Lab-vega/2-estimation_models-student
-      - file: laboratories/Lab-vega/2-estimation_models
-      - file: laboratories/Lab-vega/3-simulation_models-student
-      - file: laboratories/Lab-vega/3-simulation_models
-      - file: laboratories/Lab-vega/4-evaluation_models-student
-      - file: laboratories/Lab-vega/4-evaluation_models
-      - file: laboratories/Lab-vega/5-sizing_and_optimization-student
-      - file: laboratories/Lab-vega/5-sizing_and_optimization
-      - file: laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om-student
-      - file: laboratories/Lab-vega/6-sizing_and_optimization_with_mdao_using_om
+
   - file: laboratories/Lab-watt_project/summary-short
     title: Lab - Sustainable mobility - Mission profile & Specification
     sections:
