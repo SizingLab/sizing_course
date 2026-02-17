@@ -22,6 +22,6 @@ The approaches will be illustrated using Excel or Python implementations.
 
 The **second part** revisits these concepts with a more refined mechanical model that allows greater design freedom in terms of actuator positioning.
 
-### Schedule 
+**Schedule** :
 INSA Toulouse:   
 - See ADE (Marc Budinger)  
