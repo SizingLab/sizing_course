@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6.4. Simulation and Evaluation models: endurance of the actuator &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>6.3. Simulation and Evaluation models: endurance of the actuator &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -67,8 +67,8 @@
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6.5. Optimization of a motor/reducer set for a high dynamic application" href="3-SizingDesignExploration.html" />
-    <link rel="prev" title="6.3. Estimation models with scaling laws and linear regression" href="1-estimation_models.html" />
+    <link rel="next" title="6.4. Optimization of a motor/reducer set for a high dynamic application" href="3-SizingDesignExploration.html" />
+    <link rel="prev" title="6.2. Estimation models with scaling laws and linear regression" href="1-estimation_models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -218,14 +218,14 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">6. VEGA Launcher TVC EMA</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="0-Case_study.html">6.2. Thrust Vector Control (TVC) Systems: Overview, Functions, and Technologies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="1-estimation_models.html">6.3. Estimation models with scaling laws and linear regression</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.4. Simulation and Evaluation models: endurance of the actuator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3-SizingDesignExploration.html">6.5. Optimization of a motor/reducer set for a high dynamic application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4-sizing_scenarios_variable_anchorage.html">6.6. Modeling mechanical load for different actuator anchorage positions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="0-Case_study.html">6.1. Thrust Vector Control (TVC) Systems: Overview, Functions, and Technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-estimation_models.html">6.2. Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.3. Simulation and Evaluation models: endurance of the actuator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-SizingDesignExploration.html">6.4. Optimization of a motor/reducer set for a high dynamic application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-sizing_scenarios_variable_anchorage.html">6.5. Modeling mechanical load for different actuator anchorage positions</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization.html">6.8. Sizing procedure and optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om.html">6.9. Sizing procedure and optimization with OpenMDAO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization.html">6.7. Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om.html">6.8. Sizing procedure and optimization with OpenMDAO</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-package_delivery_UAV/summary.html">7. Package delivery UAV</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -547,12 +547,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nozzle-equivalent-model">6.4.1. Nozzle equivalent model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endurance-specifications">6.4.2. Endurance specifications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#force-mission-profile">6.4.3. Force mission profile</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalent-mean-torque">6.4.4. Equivalent mean torque</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-calculation-of-equivalent-rolling-force">6.4.5. Analytic calculation of equivalent rolling force</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-validation-with-test-profiles">6.4.6. Direct validation with test profiles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nozzle-equivalent-model">6.3.1. Nozzle equivalent model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endurance-specifications">6.3.2. Endurance specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#force-mission-profile">6.3.3. Force mission profile</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalent-mean-torque">6.3.4. Equivalent mean torque</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-calculation-of-equivalent-rolling-force">6.3.5. Analytic calculation of equivalent rolling force</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-validation-with-test-profiles">6.3.6. Direct validation with test profiles</a></li>
 </ul>
             </nav>
         </div>
@@ -565,7 +565,7 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="simulation-and-evaluation-models-endurance-of-the-actuator">
-<h1><span class="section-number">6.4. </span>Simulation and Evaluation models: endurance of the actuator<a class="headerlink" href="#simulation-and-evaluation-models-endurance-of-the-actuator" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6.3. </span>Simulation and Evaluation models: endurance of the actuator<a class="headerlink" href="#simulation-and-evaluation-models-endurance-of-the-actuator" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Toulouse, France</em></p>
 <p>In this course:</p>
 <ul class="simple">
@@ -574,7 +574,7 @@
 </ul>
 <p>We will illustrate these concepts using endurance scenarios for the TVC system.</p>
 <section id="nozzle-equivalent-model">
-<h2><span class="section-number">6.4.1. </span>Nozzle equivalent model<a class="headerlink" href="#nozzle-equivalent-model" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3.1. </span>Nozzle equivalent model<a class="headerlink" href="#nozzle-equivalent-model" title="Link to this heading">#</a></h2>
 <p>The nozzle is composed of:</p>
 <ul class="simple">
 <li><p>a flexible bearing or flexseal which links the nozzle to the launcher and enables rotational movement. The equivalent characteristics and parameters for this flexible bearing are: a stiffness of 15200 Nm/deg, a viscous damping of 174 Nms/deg</p></li>
@@ -595,7 +595,7 @@
 </div>
 </section>
 <section id="endurance-specifications">
-<h2><span class="section-number">6.4.2. </span>Endurance specifications<a class="headerlink" href="#endurance-specifications" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3.2. </span>Endurance specifications<a class="headerlink" href="#endurance-specifications" title="Link to this heading">#</a></h2>
 <p>In the description of the TVC system given in the <a class="reference external" href="http://esmats.eu/esmatspapers/pastpapers/pdfs/2009/vanthuyne.pdf">following article</a> an endurance test profile composed of multiple sinusoidal displacements is given.</p>
 <p><em>Endurance profile for P80 EMA</em></p>
 <p><img alt="Endurance profile" src="../../_images/EnduranceP80.png" /></p>
@@ -696,7 +696,7 @@
 </ul>
 </section>
 <section id="force-mission-profile">
-<h2><span class="section-number">6.4.3. </span>Force mission profile<a class="headerlink" href="#force-mission-profile" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3.3. </span>Force mission profile<a class="headerlink" href="#force-mission-profile" title="Link to this heading">#</a></h2>
 <p><strong>Exercice:</strong> Knowing the main characteristics of the nozzle, give expression of the mechanical force to be applied by the actuation system. Complete the table with a max force (Fmax) column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -725,7 +725,7 @@
 </div>
 </section>
 <section id="equivalent-mean-torque">
-<h2><span class="section-number">6.4.4. </span>Equivalent mean torque<a class="headerlink" href="#equivalent-mean-torque" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3.4. </span>Equivalent mean torque<a class="headerlink" href="#equivalent-mean-torque" title="Link to this heading">#</a></h2>
 <p><strong>Question:</strong> What torques need to be calculated to ensure the performance and endurance of the electric motor? Recall the assumptions used in the calculations and the validity of these quantities.</p>
 <p>The overall mechanical transmission ratio between the translational movement of the actuator and the rotation of the motor is 1.22 mm/rad. The motor inertia is 2.75 x 10⁻³ kg·m².</p>
 <p><strong>Question:</strong> Complete the table above with the maximum electromagnetic torque and the RMS torque to be provided by the electric motor. In which phases does motor inertia play an important role?</p>
@@ -759,7 +759,7 @@ dtype: float64
 </div>
 </section>
 <section id="analytic-calculation-of-equivalent-rolling-force">
-<h2><span class="section-number">6.4.5. </span>Analytic calculation of equivalent rolling force<a class="headerlink" href="#analytic-calculation-of-equivalent-rolling-force" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3.5. </span>Analytic calculation of equivalent rolling force<a class="headerlink" href="#analytic-calculation-of-equivalent-rolling-force" title="Link to this heading">#</a></h2>
 <p>The following figures show the evolution of the actuator forces as a function of the position, speed and acceleration.</p>
 <p><em>Scatter plot of force profil for different inputs</em>
 <img alt="Plot profil" src="../../_images/EnduranceProfilHyp.png" /></p>
@@ -936,7 +936,7 @@ with:</p></li>
 </div>
 </section>
 <section id="direct-validation-with-test-profiles">
-<h2><span class="section-number">6.4.6. </span>Direct validation with test profiles<a class="headerlink" href="#direct-validation-with-test-profiles" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3.6. </span>Direct validation with test profiles<a class="headerlink" href="#direct-validation-with-test-profiles" title="Link to this heading">#</a></h2>
 <p>The target is now to generate from this specification a set of time vectors representing the displacement, speed and acceleration in order to validate previous calculations.<br />
 For that a <a class="reference external" href="https://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/functions.html">function</a> which take as parameters a dataframe <em>profil</em> and a time step and return the desired time vectors is first defined.
 Remark: ‘arange’, ‘concatenate’ and ‘array’ functions of numpy can be usefull.</p>
@@ -1270,7 +1270,7 @@ The equivalent dynamic load for one million revolutions is <em>F<sub>d</sub></em
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6.3. </span>Estimation models with scaling laws and linear regression</p>
+        <p class="prev-next-title"><span class="section-number">6.2. </span>Estimation models with scaling laws and linear regression</p>
       </div>
     </a>
     <a class="right-next"
@@ -1278,7 +1278,7 @@ The equivalent dynamic load for one million revolutions is <em>F<sub>d</sub></em
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.5. </span>Optimization of a motor/reducer set for a high dynamic application</p>
+        <p class="prev-next-title"><span class="section-number">6.4. </span>Optimization of a motor/reducer set for a high dynamic application</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1299,12 +1299,12 @@ The equivalent dynamic load for one million revolutions is <em>F<sub>d</sub></em
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nozzle-equivalent-model">6.4.1. Nozzle equivalent model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endurance-specifications">6.4.2. Endurance specifications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#force-mission-profile">6.4.3. Force mission profile</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalent-mean-torque">6.4.4. Equivalent mean torque</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-calculation-of-equivalent-rolling-force">6.4.5. Analytic calculation of equivalent rolling force</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-validation-with-test-profiles">6.4.6. Direct validation with test profiles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nozzle-equivalent-model">6.3.1. Nozzle equivalent model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endurance-specifications">6.3.2. Endurance specifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#force-mission-profile">6.3.3. Force mission profile</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalent-mean-torque">6.3.4. Equivalent mean torque</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-calculation-of-equivalent-rolling-force">6.3.5. Analytic calculation of equivalent rolling force</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-validation-with-test-profiles">6.3.6. Direct validation with test profiles</a></li>
 </ul>
   </nav></div>
 

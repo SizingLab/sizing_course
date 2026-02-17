@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6.2. Thrust Vector Control (TVC) Systems: Overview, Functions, and Technologies &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>6.1. Thrust Vector Control (TVC) Systems: Overview, Functions, and Technologies &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -65,7 +65,7 @@
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6.3. Estimation models with scaling laws and linear regression" href="1-estimation_models.html" />
+    <link rel="next" title="6.2. Estimation models with scaling laws and linear regression" href="1-estimation_models.html" />
     <link rel="prev" title="6. Lab - VEGA Launcher TVC EMA case study" href="summary.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -216,14 +216,14 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">6. VEGA Launcher TVC EMA</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.2. Thrust Vector Control (TVC) Systems: Overview, Functions, and Technologies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="1-estimation_models.html">6.3. Estimation models with scaling laws and linear regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2-simulation_evaluation_models.html">6.4. Simulation and Evaluation models: endurance of the actuator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3-SizingDesignExploration.html">6.5. Optimization of a motor/reducer set for a high dynamic application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4-sizing_scenarios_variable_anchorage.html">6.6. Modeling mechanical load for different actuator anchorage positions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.1. Thrust Vector Control (TVC) Systems: Overview, Functions, and Technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-estimation_models.html">6.2. Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-simulation_evaluation_models.html">6.3. Simulation and Evaluation models: endurance of the actuator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-SizingDesignExploration.html">6.4. Optimization of a motor/reducer set for a high dynamic application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-sizing_scenarios_variable_anchorage.html">6.5. Modeling mechanical load for different actuator anchorage positions</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization.html">6.8. Sizing procedure and optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om.html">6.9. Sizing procedure and optimization with OpenMDAO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization.html">6.7. Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om.html">6.8. Sizing procedure and optimization with OpenMDAO</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-package_delivery_UAV/summary.html">7. Package delivery UAV</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -545,9 +545,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-thrust-vector-control-tvc">6.2.1. 1. Introduction to Thrust Vector Control (TVC)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-tvc-systems">6.2.2. 2. Functions of TVC Systems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tvc-technologies-hydraulic-vs-electromechanical">6.2.3. 3. TVC Technologies: Hydraulic vs. Electromechanical</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-thrust-vector-control-tvc">6.1.1. 1. Introduction to Thrust Vector Control (TVC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-tvc-systems">6.1.2. 2. Functions of TVC Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tvc-technologies-hydraulic-vs-electromechanical">6.1.3. 3. TVC Technologies: Hydraulic vs. Electromechanical</a></li>
 </ul>
             </nav>
         </div>
@@ -560,16 +560,16 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="thrust-vector-control-tvc-systems-overview-functions-and-technologies">
-<h1><span class="section-number">6.2. </span>Thrust Vector Control (TVC) Systems: Overview, Functions, and Technologies<a class="headerlink" href="#thrust-vector-control-tvc-systems-overview-functions-and-technologies" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6.1. </span>Thrust Vector Control (TVC) Systems: Overview, Functions, and Technologies<a class="headerlink" href="#thrust-vector-control-tvc-systems-overview-functions-and-technologies" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Toulouse, France</em></p>
 <section id="introduction-to-thrust-vector-control-tvc">
-<h2><span class="section-number">6.2.1. </span>1. Introduction to Thrust Vector Control (TVC)<a class="headerlink" href="#introduction-to-thrust-vector-control-tvc" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1.1. </span>1. Introduction to Thrust Vector Control (TVC)<a class="headerlink" href="#introduction-to-thrust-vector-control-tvc" title="Link to this heading">#</a></h2>
 <p>Thrust Vector Control (TVC) is a critical subsystem in modern rockets, enabling precise control of the vehicle’s trajectory by adjusting the direction of the engine’s thrust. This capability is essential for maintaining stability, correcting deviations, and executing maneuvers during ascent, especially in the absence of aerodynamic surfaces in the vacuum of space. TVC systems are employed in both liquid and solid rocket engines, ensuring optimal performance and mission success.
 TVC systems are typically integrated at the interface between the rocket engine and the vehicle’s structure near the base of the rocket, close to the main engines and boosters, to minimize structural loads and maximize control authority.</p>
 <p><img alt="Rocket family" src="../../_images/VEGA_Ariane.JPG" /></p>
 </section>
 <section id="functions-of-tvc-systems">
-<h2><span class="section-number">6.2.2. </span>2. Functions of TVC Systems<a class="headerlink" href="#functions-of-tvc-systems" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1.2. </span>2. Functions of TVC Systems<a class="headerlink" href="#functions-of-tvc-systems" title="Link to this heading">#</a></h2>
 <p>The primary functions of TVC include:</p>
 <ul class="simple">
 <li><p><strong>Attitude Control:</strong> Adjusting the rocket’s pitch, yaw, and roll to follow the planned trajectory.</p></li>
@@ -580,7 +580,7 @@ TVC systems are typically integrated at the interface between the rocket engine 
 <p>TVC is particularly vital during the initial ascent phase, where aerodynamic forces are insufficient for control, and in upper stages, where precise orbital maneuvers are required.</p>
 </section>
 <section id="tvc-technologies-hydraulic-vs-electromechanical">
-<h2><span class="section-number">6.2.3. </span>3. TVC Technologies: Hydraulic vs. Electromechanical<a class="headerlink" href="#tvc-technologies-hydraulic-vs-electromechanical" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1.3. </span>3. TVC Technologies: Hydraulic vs. Electromechanical<a class="headerlink" href="#tvc-technologies-hydraulic-vs-electromechanical" title="Link to this heading">#</a></h2>
 <p><strong>Hydraulic TVC Systems</strong>
 Hydraulic systems use pressurized fluid to drive actuators, offering high force and reliability. They are commonly used in legacy and high-thrust applications, such as the <strong>Space Shuttle’s Main Engines</strong> or <strong>Ariane 5’s Vulcain engine</strong>.</p>
 <ul class="simple">
@@ -679,7 +679,7 @@ Electromechanical Actuation (EMA) systems replace hydraulic fluids with electric
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.3. </span>Estimation models with scaling laws and linear regression</p>
+        <p class="prev-next-title"><span class="section-number">6.2. </span>Estimation models with scaling laws and linear regression</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -700,9 +700,9 @@ Electromechanical Actuation (EMA) systems replace hydraulic fluids with electric
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-thrust-vector-control-tvc">6.2.1. 1. Introduction to Thrust Vector Control (TVC)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-tvc-systems">6.2.2. 2. Functions of TVC Systems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tvc-technologies-hydraulic-vs-electromechanical">6.2.3. 3. TVC Technologies: Hydraulic vs. Electromechanical</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-thrust-vector-control-tvc">6.1.1. 1. Introduction to Thrust Vector Control (TVC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-tvc-systems">6.1.2. 2. Functions of TVC Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tvc-technologies-hydraulic-vs-electromechanical">6.1.3. 3. TVC Technologies: Hydraulic vs. Electromechanical</a></li>
 </ul>
   </nav></div>
 

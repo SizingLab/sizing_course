@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6.6. Modeling mechanical load for different actuator anchorage positions &#8212; Sizing and optimization of mechatronic systems</title>
+    <title>6.5. Modeling mechanical load for different actuator anchorage positions &#8212; Sizing and optimization of mechatronic systems</title>
   
   
   
@@ -67,8 +67,8 @@
     <link rel="icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6.8. Sizing procedure and optimization" href="5-sizing_and_optimization.html" />
-    <link rel="prev" title="6.5. Optimization of a motor/reducer set for a high dynamic application" href="3-SizingDesignExploration.html" />
+    <link rel="next" title="6.7. Sizing procedure and optimization" href="5-sizing_and_optimization.html" />
+    <link rel="prev" title="6.4. Optimization of a motor/reducer set for a high dynamic application" href="3-SizingDesignExploration.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -218,14 +218,14 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratories</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="summary.html">6. VEGA Launcher TVC EMA</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="0-Case_study.html">6.2. Thrust Vector Control (TVC) Systems: Overview, Functions, and Technologies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="1-estimation_models.html">6.3. Estimation models with scaling laws and linear regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2-simulation_evaluation_models.html">6.4. Simulation and Evaluation models: endurance of the actuator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3-SizingDesignExploration.html">6.5. Optimization of a motor/reducer set for a high dynamic application</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.6. Modeling mechanical load for different actuator anchorage positions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="0-Case_study.html">6.1. Thrust Vector Control (TVC) Systems: Overview, Functions, and Technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-estimation_models.html">6.2. Estimation models with scaling laws and linear regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-simulation_evaluation_models.html">6.3. Simulation and Evaluation models: endurance of the actuator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-SizingDesignExploration.html">6.4. Optimization of a motor/reducer set for a high dynamic application</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.5. Modeling mechanical load for different actuator anchorage positions</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization.html">6.8. Sizing procedure and optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om.html">6.9. Sizing procedure and optimization with OpenMDAO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-sizing_and_optimization.html">6.7. Sizing procedure and optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6-sizing_and_optimization_with_mdao_using_om.html">6.8. Sizing procedure and optimization with OpenMDAO</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Lab-package_delivery_UAV/summary.html">7. Package delivery UAV</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -547,20 +547,20 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6.6. Modeling mechanical load for different actuator anchorage positions</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nozzle-modeling">6.6.1. Nozzle modeling</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lever-arm-calculation">6.6.1.1. Lever arm calculation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6.5. Modeling mechanical load for different actuator anchorage positions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nozzle-modeling">6.5.1. Nozzle modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lever-arm-calculation">6.5.1.1. Lever arm calculation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-scenarios-modeling">6.6.2. Sizing scenarios modeling</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#static-sizing-scenario">6.6.2.1. Static sizing scenario</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-sizing-scenario">6.6.2.2. Dynamic sizing scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-scenarios-modeling">6.5.2. Sizing scenarios modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#static-sizing-scenario">6.5.2.1. Static sizing scenario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-sizing-scenario">6.5.2.2. Dynamic sizing scenario</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#force-speed-diagram">6.7. Force speed diagram</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">6.7.1. Summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#force-speed-diagram">6.6. Force speed diagram</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">6.6.1. Summary</a></li>
 </ul>
 </li>
 </ul>
@@ -576,7 +576,7 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modeling-mechanical-load-for-different-actuator-anchorage-positions">
-<h1><span class="section-number">6.6. </span>Modeling mechanical load for different actuator anchorage positions<a class="headerlink" href="#modeling-mechanical-load-for-different-actuator-anchorage-positions" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6.5. </span>Modeling mechanical load for different actuator anchorage positions<a class="headerlink" href="#modeling-mechanical-load-for-different-actuator-anchorage-positions" title="Link to this heading">#</a></h1>
 <p><em>Written by Marc Budinger (INSA Toulouse), Toulouse, France</em></p>
 <p>The first stage actuation system of the launcher consists of a set of lithium-ion batteries, a control unit (two inverters and electronic control/command components), and two electromechanical actuators (EMA). This assembly controls the nozzle along two axes of rotation. Here, we will focus on a single axis of rotation and ignore the couplings between these two axes. However, we will take into account the possibility of positioning the actuator in different ways relative to the nozzle.</p>
 <p><em>Vega Launcher 1st stage (P80) :</em><br />
@@ -584,7 +584,7 @@
 <p><em>Thrust Vector Control (TVC) actuation system :</em><br />
 <img alt="TVC Actuation system" src="../../_images/P80_vega_TVC_system.png" /></p>
 <section id="nozzle-modeling">
-<h2><span class="section-number">6.6.1. </span>Nozzle modeling<a class="headerlink" href="#nozzle-modeling" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5.1. </span>Nozzle modeling<a class="headerlink" href="#nozzle-modeling" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Markdown</span> <span class="k">as</span> <span class="n">md</span>  <span class="c1"># enable Markdown printing</span>
@@ -662,7 +662,7 @@
 </div>
 </div>
 <section id="lever-arm-calculation">
-<h3><span class="section-number">6.6.1.1. </span>Lever arm calculation<a class="headerlink" href="#lever-arm-calculation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.1.1. </span>Lever arm calculation<a class="headerlink" href="#lever-arm-calculation" title="Link to this heading">#</a></h3>
 <p>The EMA (Electro Mechanical Actuator) is between M and N points of the following drawing. The given values correspond to a nominal case. But during the sizng we want to evaluate and optimize the position of N and M points. d1 and d2 are thus design variables.</p>
 <p><em>P80 Nozzle section :</em></p>
 <p><img alt="P80" src="../../_images/LeverArmNozzle.png" /></a></p>
@@ -770,7 +770,7 @@ and the torque can be calculated with the simple equation:<br />
 <div class="cell_output docutils container">
 <img alt="../../_images/db0559adc38acdd8689022ef698370616c6bcf25996c03d2b4d2f66bce2c7846.png" src="../../_images/db0559adc38acdd8689022ef698370616c6bcf25996c03d2b4d2f66bce2c7846.png" />
 <img alt="../../_images/14c33e30fbacfffc7bdb7809f9e98cba051f440fe6b67608f258a1f65d8da293.png" src="../../_images/14c33e30fbacfffc7bdb7809f9e98cba051f440fe6b67608f258a1f65d8da293.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x7f0e2ba0ffd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x7f9c3ee7afa0&gt;
 </pre></div>
 </div>
 </div>
@@ -778,14 +778,14 @@ and the torque can be calculated with the simple equation:<br />
 </section>
 </section>
 <section id="sizing-scenarios-modeling">
-<h2><span class="section-number">6.6.2. </span>Sizing scenarios modeling<a class="headerlink" href="#sizing-scenarios-modeling" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5.2. </span>Sizing scenarios modeling<a class="headerlink" href="#sizing-scenarios-modeling" title="Link to this heading">#</a></h2>
 <p>2 use cases must be checked during the design:</p>
 <ul class="simple">
 <li><p>a static deflection of 5.7 °</p></li>
 <li><p>a dynamic mission profile which must ensure a response time of 72 ms for a position step from 5.2 to 5.7°.</p></li>
 </ul>
 <section id="static-sizing-scenario">
-<h3><span class="section-number">6.6.2.1. </span>Static sizing scenario<a class="headerlink" href="#static-sizing-scenario" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.2.1. </span>Static sizing scenario<a class="headerlink" href="#static-sizing-scenario" title="Link to this heading">#</a></h3>
 <p>The maximal angular displacement is 5.7°. The corresping force can be calculated thanks the flexible bearing stiffness.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -803,7 +803,7 @@ and the torque can be calculated with the simple equation:<br />
 </div>
 </section>
 <section id="dynamic-sizing-scenario">
-<h3><span class="section-number">6.6.2.2. </span>Dynamic sizing scenario<a class="headerlink" href="#dynamic-sizing-scenario" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.2.2. </span>Dynamic sizing scenario<a class="headerlink" href="#dynamic-sizing-scenario" title="Link to this heading">#</a></h3>
 <p>For this scenario, we will assume that the position close loop system will response as a second order filter between real position and order:<br />
 <span class="math notranslate nohighlight">\(H(p)=\frac{1}{1+\frac{2\xi p}{\omega_0}+\frac{p^2}{\omega_0^2}}\)</span><br />
 with <span class="math notranslate nohighlight">\(\xi=0.7\)</span> and thus <span class="math notranslate nohighlight">\(t_{r5}=\frac{2.9}{\omega_0}\)</span></p>
@@ -879,7 +879,7 @@ with <span class="math notranslate nohighlight">\(\xi=0.7\)</span> and thus <spa
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="force-speed-diagram">
-<h1><span class="section-number">6.7. </span>Force speed diagram<a class="headerlink" href="#force-speed-diagram" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6.6. </span>Force speed diagram<a class="headerlink" href="#force-speed-diagram" title="Link to this heading">#</a></h1>
 <p>This sizing scenarios can be represented on a force-speed diagram usefull for compenent selection.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -898,7 +898,7 @@ with <span class="math notranslate nohighlight">\(\xi=0.7\)</span> and thus <spa
 </div>
 </div>
 <section id="summary">
-<h2><span class="section-number">6.7.1. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.6.1. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>For the next sizing steps, we will use</p>
 <ul class="simple">
 <li><p>the nozzle max speed (step response)</p></li>
@@ -1014,7 +1014,7 @@ with <span class="math notranslate nohighlight">\(\xi=0.7\)</span> and thus <spa
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6.5. </span>Optimization of a motor/reducer set for a high dynamic application</p>
+        <p class="prev-next-title"><span class="section-number">6.4. </span>Optimization of a motor/reducer set for a high dynamic application</p>
       </div>
     </a>
     <a class="right-next"
@@ -1022,7 +1022,7 @@ with <span class="math notranslate nohighlight">\(\xi=0.7\)</span> and thus <spa
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.8. </span>Sizing procedure and optimization</p>
+        <p class="prev-next-title"><span class="section-number">6.7. </span>Sizing procedure and optimization</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1043,20 +1043,20 @@ with <span class="math notranslate nohighlight">\(\xi=0.7\)</span> and thus <spa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6.6. Modeling mechanical load for different actuator anchorage positions</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nozzle-modeling">6.6.1. Nozzle modeling</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lever-arm-calculation">6.6.1.1. Lever arm calculation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6.5. Modeling mechanical load for different actuator anchorage positions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nozzle-modeling">6.5.1. Nozzle modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lever-arm-calculation">6.5.1.1. Lever arm calculation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-scenarios-modeling">6.6.2. Sizing scenarios modeling</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#static-sizing-scenario">6.6.2.1. Static sizing scenario</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-sizing-scenario">6.6.2.2. Dynamic sizing scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizing-scenarios-modeling">6.5.2. Sizing scenarios modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#static-sizing-scenario">6.5.2.1. Static sizing scenario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-sizing-scenario">6.5.2.2. Dynamic sizing scenario</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#force-speed-diagram">6.7. Force speed diagram</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">6.7.1. Summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#force-speed-diagram">6.6. Force speed diagram</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">6.6.1. Summary</a></li>
 </ul>
 </li>
 </ul>
